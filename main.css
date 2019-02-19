@@ -1,0 +1,29 @@
+*, *:after {
+	box-sizing: border-box;
+}
+
+#page {
+}
+
+#head {
+	display: flex;
+	background-image: url("kc2.png");
+	height: 200px;
+}
+#head .pic {
+}
+#head .contact {
+}
+#head .resume {
+}
+
+#resume {
+	background-image: url("kc.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+
+#page-projects {
+
+}
