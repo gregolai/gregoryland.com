@@ -1,0 +1,34 @@
+{
+	"name": "gregolai.github.io",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"build": "npm run build:html && npm run build:styles",
+		"build:html": "npx static-react src/index.js > public/index.html",
+		"build:styles": "npx sass --no-source-map src/main.scss public/main.css",
+		"run": "open index.html && npm run watch",
+		"watch": "npx watch \"npm run build\" ./src"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gregolai/gregolai.github.io.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/gregolai/gregolai.github.io/issues"
+	},
+	"homepage": "https://github.com/gregolai/gregolai.github.io#readme",
+	"dependencies": {
+		"react": "^16.8.2",
+		"react-dom": "^16.8.2",
+		"static-react": "^4.0.0-3",
+		"styled-components": "^4.1.3",
+		"styled-normalize": "^8.0.6",
+		"styled-reset": "^1.6.8"
+	},
+	"devDependencies": {
+		"sass": "^1.23.0"
+	}
+}
