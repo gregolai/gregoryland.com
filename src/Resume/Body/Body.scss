@@ -1,0 +1,23 @@
+.container {
+	display: flex;
+}
+
+.left {
+	width: 236px;
+	padding-right: 16px;
+	margin-right: 16px;
+	border-right: 1px solid #BFBEB6;
+}
+
+.right {
+	flex: 1;
+}
+
+.section {
+	&:not(:last-child) {
+		padding-bottom: 32px;
+	}
+}
+.sectionChildren {
+	padding-top: 16px;
+}

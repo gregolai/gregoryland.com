@@ -19,6 +19,7 @@
 	},
 	"homepage": "https://github.com/gregolai/gregolai.github.io#readme",
 	"dependencies": {
+		"classnames": "^2.2.6",
 		"preact": "^10.2.1"
 	},
 	"devDependencies": {

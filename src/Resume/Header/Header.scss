@@ -1,0 +1,30 @@
+.container {
+	display: flex;
+	padding-bottom: 16px;
+	margin-bottom: 16px;
+	border-bottom: 1px solid #BFBEB6;
+}
+
+.left {
+	flex: 1;
+}
+
+.right {}
+
+
+.contactRow {
+	display: flex;
+	align-items: center;
+
+	&:not(:first-child) {
+		padding-top: 8px;
+	}
+}
+
+.contactIcon {
+	width: 24px;
+	height: 24px;
+}
+.contactInfo {
+	padding-left: 16px;
+}

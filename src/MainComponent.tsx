@@ -1,7 +1,8 @@
 import { h, Fragment } from 'preact';
-const cat = (stringArr: string[]) => stringArr.join(' ');
+import { Header } from './Header';
+import { Resume } from './Resume';
 
-const css = require('./MainComponent.scss');
+const cat = (stringArr: string[]) => stringArr.join(' ');
 
 // https://freebiesbug.com/psd-freebies/rounded-download-button-psd/
 const Button = ({}) => (
@@ -67,63 +68,9 @@ const Button = ({}) => (
 	</div>
 );
 
-const Button2 = () => (
-	<div
-		style={{
-			backgroundColor: ''
-		}}
-	>
-		hello world
-	</div>
-);
-
-const Skill = ({ lang, desc }) => (
-	<div className={css.skill}>
-		<span className={css.skillLang}>{lang}</span>
-		<span className={css.skillLangDesc}>{desc}</span>
-	</div>
-);
-
-const ResumeSection = ({ children }) => <section className={css.resumeSection}>{children}</section>;
-
-ResumeSection.Title = ({ children }) => <h3 className={css.resumeSectionTitle}>{children}</h3>;
-
-const Job = ({ where, role = null, dates, items }) => (
-	<div>
-		<div className={css.jobHeader}>
-			<span className={css.jobHeaderWhere}>{where}</span>
-			{role && <span className={css.jobHeaderRole}>{role}</span>}
-		</div>
-		<span className={css.jobDates}>{dates}</span>
-		<ul>
-			{items.map((item, i2) => (
-				<li key={i2}>{item}</li>
-			))}
-		</ul>
-	</div>
-);
-
 export default () => (
 	<Fragment>
-		<header className={css.header}>
-			<div className={css.headerLeft}>
-				<img className={css.headerPic} src="static/img/gregory.jpg" />
-
-				{/* <div className="links">
-                                    <a id="pf-header-resume-download" href="resume/Gregory Dalton - Resume.pdf">Resumé</a>
-                                    <a id="pf-header-resume-linkedin" href="https://www.linkedin.com/in/gregolai/">LinkedIn</a>
-                                </div> */}
-			</div>
-
-			<div className={css.headerRight}>
-				<p className={css.headerName}>Gregory Dalton</p>
-				<p className={css.headerRole}>Software Engineer</p>
-				{/* <p className="email">gregolai@gmail.com</p> */}
-			</div>
-
-			{/* <img id="pf-header-accessory-img" src="static/img/Sprite-0001.png" /> */}
-		</header>
-
+		<Header />
 		<div
 			style={{
 				display: 'flex',
@@ -137,260 +84,117 @@ export default () => (
 			<Button2 /> */}
 
 			{/* WRAPPER AROUND RESUME AREA */}
-			<div style={{ position: 'relative', width: '80%', maxWidth: 1100 }}>
+			<div style={{ position: 'relative', width: '90%', maxWidth: 1100, minWidth: 800 }}>
 				<button style={{ position: 'absolute', bottom: '100%', right: 0, marginBottom: 16 }}>
 					PRINT
 				</button>
-				<div
-					style={{
-						background: '#F4F2F0',
-
-						padding: 32,
-						boxShadow: '4px 4px 2px rgba(0,0,0,0.3)'
-					}}
-				>
-					{/* HEADER */}
-					<div
-						style={{
-							display: 'flex',
-							paddingBottom: 16,
-							marginBottom: 16,
-							borderBottom: '1px solid #BFBEB6'
-						}}
-					>
-						<div style={{ flex: 1 }}>
-							<h1>GREGORY DALTON</h1>
-							<h3>SOFTWARE ENGINEER</h3>
-						</div>
-						<div>
-							<div style={{ display: 'flex', alignItems: 'center' }}>
-								<img src="static/img/envelope.svg" style={{ height: 24, width: 24 }} />
-								<div style={{ paddingLeft: 16 }}>(714) 651-2126</div>
-							</div>
-
-							<div style={{ display: 'flex', alignItems: 'center', paddingTop: 8 }}>
-								<img
-									src="static/img/phone-smartphone-apple-iphone-device-mobile-icon.svg"
-									style={{ height: 24, width: 24 }}
-								/>
-								<div style={{ paddingLeft: 16 }}>gregolai@gmail.com</div>
-							</div>
-						</div>
-					</div>
-					<div style={{ display: 'flex' }}>
-						{/* EDUCATION + SKILLS */}
-						<div
-							style={{
-								width: 184,
-								paddingRight: 16,
-								marginRight: 16,
-								borderRight: '1px solid #BFBEB6'
-							}}
-						>
-							<div style={{ paddingBottom: 32 }}>
-								<h3>EDUCATION</h3>
-								<div style={{ paddingTop: 16 }}>
-									<p>California State University, Long Beach</p>
-									<p>August 2004 - May 2009</p>
-								</div>
-							</div>
-							<div>
-								<h3>SKILLS</h3>
-								<div style={{ paddingTop: 16 }}>
-									<p>Skill 1</p>
-									<p>Skill 2</p>
-									<p>Skill 3</p>
-								</div>
-							</div>
-						</div>
-
-						{/* MAIN BODY */}
-						<div style={{ flex: 1 }}>
-							<div style={{ paddingBottom: 32 }}>
-								<h3>PROFILE</h3>
-								<div style={{ paddingTop: 16 }}>
-									Lorem idiv style={{ paddingTop: 16 }}sum dolor sit amet, consectetur
-									adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-									magna aliqua. Faucibus nisl tincidunt eget nullam. Elit ullamcorper
-									dignissim cras tincidunt lobortis feugiat vivamus. Vitae ultricies leo
-									integer malesuada nunc vel. Ut tortor pretium viverra suspendisse potenti
-									nullam ac tortor vitae. Faucibus scelerisque eleifend donec pretium
-									vulputate sapien nec. Elementum sagittis vitae et leo duis ut diam quam.
-								</div>
-							</div>
-							<div>
-								<h3>EXPERIENCE</h3>
-								<div style={{ paddingTop: 16 }}>
-									Donec pretium vulputate sapien nec sagittis. Nec sagittis aliquam
-									malesuada bibendum arcu vitae elementum curabitur. Sollicitudin tempor id
-									eu nisl nunc mi ipsum faucibus. Praesent elementum facilisis leo vel
-									fringilla. Eget gravida cum sociis natoque penatibus. Lacus sed viverra
-									tellus in hac habitasse platea dictumst. Augue ut lectus arcu bibendum at
-									varius vel pharetra. Nulla posuere sollicitudin aliquam ultrices sagittis
-									orci a scelerisque purus. Egestas tellus rutrum tellus pellentesque eu
-									tincidunt. Augue eget arcu dictum varius duis at consectetur. Dolor purus
-									non enim praesent elementum facilisis leo vel. Sit amet mattis vulputate
-									enim nulla aliquet porttitor lacus. Turpis egestas maecenas pharetra
-									convallis posuere morbi leo urna. Mattis molestie a iaculis at. Pharetra
-									et ultrices neque ornare aenean euismod elementum nisi. Quis commodo odio
-									aenean sed adipiscing diam. Eu mi bibendum neque egestas. Ridiculus mus
-									mauris vitae ultricies leo integer malesuada nunc vel. Facilisis gravida
-									neque convallis a cras semper auctor neque. Sit amet nisl suscipit
-									adipiscing bibendum est ultricies. Mattis vulputate enim nulla aliquet
-									porttitor. Ut tellus elementum sagittis vitae. Nulla malesuada
-									pellentesque elit eget gravida cum. Et tortor at risus viverra. Quam
-									quisque id diam vel quam elementum. Dapibus ultrices in iaculis nunc sed
-									augue lacus viverra vitae. Tellus molestie nunc non blandit massa enim
-									nec. Lacus vestibulum sed arcu non. Urna nec tincidunt praesent semper
-									feugiat nibh. Condimentum id venenatis a condimentum vitae sapien. Egestas
-									egestas fringilla phasellus faucibus scelerisque eleifend donec pretium.
-									Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque sit.
-									Nunc sed blandit libero volutpat sed cras ornare arcu dui. Amet aliquam id
-									diam maecenas ultricies. Rhoncus aenean vel elit scelerisque mauris
-									pellentesque pulvinar pellentesque. Eget velit aliquet sagittis id
-									consectetur. Risus nullam eget felis eget nunc. Sit amet tellus cras
-									adipiscing enim eu. Pellentesque elit ullamcorper dignissim cras tincidunt
-									lobortis feugiat vivamus. Nec dui nunc mattis enim ut tellus elementum. Et
-									malesuada fames ac turpis. Erat velit scelerisque in dictum non
-									consectetur. Feugiat in ante metus dictum at tempor commodo ullamcorper.
-									Pharetra magna ac placerat vestibulum lectus mauris ultrices eros in.
-									Nulla at volutpat diam ut venenatis tellus. Eu lobortis elementum nibh
-									tellus molestie nunc. Amet mauris commodo quis imperdiet massa tincidunt
-									nunc pulvinar. Morbi leo urna molestie at elementum eu facilisis sed odio.
-									Tellus pellentesque eu tincidunt tortor aliquam nulla facilisi. Ac odio
-									tempor orci dapibus ultrices. Quam nulla porttitor massa id neque aliquam
-									vestibulum morbi blandit. Arcu non odio euismod lacinia at quis risus.
-									Elementum tempus egestas sed sed risus pretium quam vulputate. A erat nam
-									at lectus urna duis convallis. Pharetra pharetra massa massa ultricies mi
-									quis hendrerit dolor magna. Purus in massa tempor nec. Elit ut aliquam
-									purus sit amet luctus. Molestie at elementum eu facilisis sed odio morbi
-									quis. Egestas erat imperdiet sed euismod nisi. Ac tincidunt vitae semper
-									quis lectus. Adipiscing enim eu turpis egestas pretium aenean pharetra
-									magna. Vel orci porta non pulvinar. Id aliquet risus feugiat in ante.
-									Lobortis scelerisque fermentum dui faucibus. Vestibulum lorem sed risus
-									ultricies tristique nulla. At risus viverra adipiscing at in tellus
-									integer. Enim eu turpis egestas pretium. Nunc eget lorem dolor sed viverra
-									ipsum nunc aliquet. Pellentesque habitant morbi tristique senectus et
-									netus. Neque aliquam vestibulum morbi blandit. Sed felis eget velit
-									aliquet sagittis. Neque convallis a cras semper auctor neque vitae tempus.
-									Vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam.
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<main role="main">
-			<div className={css.resume}>
-				<ResumeSection>
-					<ResumeSection.Title>About Me</ResumeSection.Title>
-					<div>
-						<div>Improving my skills and learning new things daily</div>
-					</div>
-				</ResumeSection>
-
-				<ResumeSection>
-					<ResumeSection.Title>Skills</ResumeSection.Title>
-					<div>
-						<Skill lang="JavaScript" desc="The language I write every day." />
-						<Skill lang="TypeScript" desc="Using since 2012." />
-						<Skill lang="C#" desc="A Pick up new things here and there, as a hobby." />
-						<Skill lang="C++" desc="First programming language." />
-					</div>
-				</ResumeSection>
-
-				<ResumeSection>
-					<ResumeSection.Title>Career</ResumeSection.Title>
-					<div>
-						{[
-							{
-								where: 'Squarespace',
-								dates: 'May 2017 - Present',
-								role: 'Software Engineer',
-								url: 'https://www.squarespace.com',
-								items: [
-									cat([
-										"I'm a software developer on Squarespace's Design Platform team.",
-										'I work with designers on a daily basis to implement UI specs for React components that are used across teams.',
-										'Much of this work has enlightened me to the challenges of building a shared component library versus building a front-facing application.',
-										'Having a consistent and thought-out API is crucial for any shared library.',
-										'Unlike refactoring a front-facing application, refactoring a library without introducing breaking changes is often non-trivial if the consumer API requires a change.',
-										'On top of that, there are trade-offs with how much flexibility to expose to the consumer versus the likelihood of breaking changes.'
-									]),
-									'The designs are implemented across desktop, mobile-web, iOS, and Android platforms. Our components make heavy use of React and React-Native.',
-									'We use Jest, Enzyme, Puppeteer, and Cypress for unit and integration testing.'
-								]
-							},
-							{
-								where: 'Agorafy',
-								dates: 'December 2016 - May 2017',
-								role: 'Front-End Web Developer',
-								url: 'https://www.agorafy.com',
-								items: [
-									cat([
-										'I worked as a frontend engineer to build a CMS for creating and editing real estate listings.',
-										'I collaborated daily with backend engineers to ensure the REST API endpoints we hit were consistent had correct.',
-										'Got my hands dirty with new technologies at the time - React and Redux.'
-									]),
-									'Collaborated with designers to implement UI/UX mockups.',
-									'Daily standups helped frontend, backend, and management stay in-sync'
-								]
-							},
-							{
-								where: 'YouVisit',
-								dates: 'January 2015 - April 2016',
-								role: 'Full-Stack Web Developer',
-								url: 'https://www.youvisit.com',
-								items: [
-									'Hybrid app development and testing for both mobile and desktop systems using JavaScript, PHP, MySQL, and Node. Used an MVC back-end with a RESTful API and some unit testing.',
-									'Developed a project tracking system in our CMS to track the stages of tour production.',
-									'Implemented mobile geolocation tracking, batching requests from Node to our database, and using Google Maps API to view campus paths and hotspots.',
-									'Organized large-scale analytics of site visitor data into useful for our clients to download.',
-									'Worked on embedding tours into 3rd party websites using JavaScript with JSONP to load iframe settings.',
-									'Coordinated with design, sales, and marketing to implement A/B testing with a massive redesign and refactor for our visitor registration form, using jQuery, AJAX, PHP, and MySQL.',
-									'Daily standups, Jira, and git workflow for tasks, code reviews, QA, staging, and release.'
-								]
-							},
-							{
-								where: 'M & M Environmental',
-								dates: 'August 2014 - December 2014',
-								role: 'Junior Web Developer',
-								items: [
-									'Built a calendar and scheduling application using PHP, MySQL/MSSQL, and JavaScript for managing technician availability.',
-									'Implemented a Vehicle GPS viewer using Google Maps API with JavaScript for monitoring technician proximity to their scheduled appointments.',
-									'Created a Yelp review scraper that would email our recent Yelp reviews to our staff.',
-									'Built an admin portal using JavaScript/Auth0 single-sign-on through Google. Used Wordpress for viewing work shift calendars, technician locations, and Yelp reviews.'
-								]
-							}
-						].map((job, i) => (
-							<Job key={i} {...job} />
-						))}
-					</div>
-				</ResumeSection>
-
-				<ResumeSection>
-					<ResumeSection.Title>Education</ResumeSection.Title>
-					<div>
-						{[
-							{
-								where: 'California State University, Long Beach',
-								dates: 'August 2004 - May 2009',
-								items: [
+				<Resume>
+					<Resume.Header
+						name="GREGORY DALTON"
+						role="SOFTWARE ENGINEER"
+						email="gregolai@gmail.com"
+						phone="(714) 651-2126"
+					/>
+					<Resume.Body
+						renderEducation={() => (
+							<Resume.School
+								name="California State University, Long Beach"
+								from="August 2004"
+								to="May 2009"
+								items={[
 									'<b><i>Bachelor of Science in Computer Science</i></b>',
 									'Joined the Programming Team and competed in two regional competitions',
 									'Member of Tau Beta Pi Engineering Honor Society, Theta Chapter',
 									'Transferred from San Jose State University (2004 - 2006)'
-								]
-							}
-						].map((edu, i) => (
-							<Job key={i} {...edu} />
-						))}
-					</div>
-				</ResumeSection>
+								]}
+							/>
+						)}
+						renderSkills={() => (
+							<Fragment>
+								<Resume.Skill name="JavaScript" desc="The language I write every day." />
+								<Resume.Skill name="TypeScript" desc="Using since 2012." />
+								<Resume.Skill
+									name="C#"
+									desc="A Pick up new things here and there, as a hobby."
+								/>
+								<Resume.Skill name="C++" desc="First programming language." />
+							</Fragment>
+						)}
+						renderProfile={() => (
+							<Resume.Text.Body>
+								Improving my skills and learning new things daily
+							</Resume.Text.Body>
+						)}
+						renderCareer={() => (
+							<Fragment>
+								<Resume.Job
+									where="Squarespace"
+									from="May 2017"
+									to="Present"
+									role="Software Engineer"
+									items={[
+										cat([
+											"I'm a software developer on Squarespace's Design Platform team.",
+											'I work with designers on a daily basis to implement UI specs for React components that are used across teams.',
+											'Much of this work has enlightened me to the challenges of building a shared component library versus building a front-facing application.',
+											'Having a consistent and thought-out API is crucial for any shared library.',
+											'Unlike refactoring a front-facing application, refactoring a library without introducing breaking changes is often non-trivial if the consumer API requires a change.',
+											'On top of that, there are trade-offs with how much flexibility to expose to the consumer versus the likelihood of breaking changes.'
+										]),
+										'The designs are implemented across desktop, mobile-web, iOS, and Android platforms. Our components make heavy use of React and React-Native.',
+										'We use Jest, Enzyme, Puppeteer, and Cypress for unit and integration testing.'
+									]}
+								/>
+								<Resume.Job
+									where="Agorafy"
+									from="December 2016"
+									to="May 2017"
+									role="Front-End Web Developer"
+									items={[
+										cat([
+											'I worked as a frontend engineer to build a CMS for creating and editing real estate listings.',
+											'I collaborated daily with backend engineers to ensure the REST API endpoints we hit were consistent had correct.',
+											'Got my hands dirty with new technologies at the time - React and Redux.'
+										]),
+										'Collaborated with designers to implement UI/UX mockups.',
+										'Daily standups helped frontend, backend, and management stay in-sync'
+									]}
+								/>
+								<Resume.Job
+									where="YouVisit"
+									from="January 2015"
+									to="April 2016"
+									role="Full-Stack Developer"
+									items={[
+										'Hybrid app development and testing for both mobile and desktop systems using JavaScript, PHP, MySQL, and Node. Used an MVC back-end with a RESTful API and some unit testing.',
+										'Developed a project tracking system in our CMS to track the stages of tour production.',
+										'Implemented mobile geolocation tracking, batching requests from Node to our database, and using Google Maps API to view campus paths and hotspots.',
+										'Organized large-scale analytics of site visitor data into useful for our clients to download.',
+										'Worked on embedding tours into 3rd party websites using JavaScript with JSONP to load iframe settings.',
+										'Coordinated with design, sales, and marketing to implement A/B testing with a massive redesign and refactor for our visitor registration form, using jQuery, AJAX, PHP, and MySQL.',
+										'Daily standups, Jira, and git workflow for tasks, code reviews, QA, staging, and release.'
+									]}
+								/>
+								<Resume.Job
+									where="M & M Environmental"
+									from="August 2014"
+									to="December 2014"
+									role="Junior Web Developer"
+									items={[
+										'Built a calendar and scheduling application using PHP, MySQL/MSSQL, and JavaScript for managing technician availability.',
+										'Implemented a Vehicle GPS viewer using Google Maps API with JavaScript for monitoring technician proximity to their scheduled appointments.',
+										'Created a Yelp review scraper that would email our recent Yelp reviews to our staff.',
+										'Built an admin portal using JavaScript/Auth0 single-sign-on through Google. Used Wordpress for viewing work shift calendars, technician locations, and Yelp reviews.'
+									]}
+								/>
+							</Fragment>
+						)}
+					/>
+				</Resume>
 			</div>
+		</div>
 
+		<main role="main">
 			{/* PROJECTS */}
 			<div>
 				{[
