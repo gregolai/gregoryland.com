@@ -1,0 +1,62 @@
+// Pin-stripe background
+@mixin pinstripe($color) {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAI0lEQVQIW2NkwAT/GdHE/gP5jMiCYAGQIpggXAAmiCIAEgQAAE4FBbECyZcAAAAASUVORK5CYII=) $color;
+}
+
+.header {
+	@include pinstripe(#2C2E2F);
+	position: relative;
+	box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.2);
+	padding: 32px;
+	color: ghostwhite;
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.headerLeft {}
+
+.headerPic {
+	border: 1px solid ghostwhite;
+	padding: 4px;
+}
+.headerName {
+	font-size: 2em;
+}
+.headerRole {
+	font-size: 1.2em;
+}
+
+.headerRight {
+	padding-left: 32px;
+	flex: 1;
+}
+
+.resumeSection {
+	padding: 0 0 32px 0;
+}
+.resumeSectionTitle {
+	border-bottom: 2px solid black;
+}
+
+.skill {
+	padding: 16px 0 0 0;
+}
+.skillLang {
+	display: inline-block;
+	width: 200px;
+	text-align: right;
+	padding-right: 16px;
+}
+.skillLangDesc {}
+
+
+.jobHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.jobHeaderWhere {
+	font-size: 1.4em;
+	font-weight: 500;
+}
+.jobHeaderRole {}

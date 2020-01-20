@@ -1,0 +1,188 @@
+// CORE
+
+[role="button"] {
+	cursor: pointer;
+}
+
+
+
+// VARS
+$body-font-family: "Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif;
+$body-font-size: 14px;
+$body-line-height: 20/14;
+$body-text-color: #333333;
+$body-background-color: #ffffff;
+
+$link-text-color: #337ab7;
+$link-hover-text-color: darken($link-text-color, 15%);
+$link-hover-text-decoration: underline;
+
+$h1-font-size: floor(($body-font-size * 2.6));
+$h2-font-size: floor(($body-font-size * 2.15));
+$h3-font-size: ceil(($body-font-size * 1.7));
+$h4-font-size: ceil(($body-font-size * 1.25));
+$h5-font-size: ceil(($body-font-size * 1.1));
+$h6-font-size: $body-font-size;
+
+body {
+	font-family: $body-font-family;
+	font-size: $body-font-size;
+	line-height: $body-line-height;
+	color: $body-text-color;
+	background-color: $body-background-color;
+	min-width: 320px;
+	background: #D6D7E1;
+}
+
+a {
+	color: $link-text-color;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: $link-hover-text-color;
+		text-decoration: $link-hover-text-decoration;
+	}
+
+	// &:focus {
+	// 	@include tab-focus;
+	// }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-weight: 600;
+	font-family: inherit;
+}
+
+h1 {
+	font-size: $h1-font-size;
+}
+
+h2 {
+	font-size: $h2-font-size;
+}
+
+h3 {
+	font-size: $h3-font-size;
+}
+
+h4 {
+	font-size: $h4-font-size;
+}
+
+h5 {
+	font-size: $h5-font-size;
+}
+
+h6 {
+	font-size: $h6-font-size;
+}
+
+
+
+// PORTFOLIO
+
+// Pin-stripe background
+@mixin pinstripe($color) {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAI0lEQVQIW2NkwAT/GdHE/gP5jMiCYAGQIpggXAAmiCIAEgQAAE4FBbECyZcAAAAASUVORK5CYII=) $color;
+}
+
+#pf-header {
+	@include pinstripe(#2C2E2F);
+	position: relative;
+	box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.2);
+	padding: 32px;
+	color: ghostwhite;
+	display: flex;
+	flex-wrap: nowrap;
+
+	.left {
+		.pic {
+			border: 1px solid ghostwhite;
+			padding: 4px;
+		}
+
+		.links {
+			margin-top: 4px;
+			display: flex;
+			justify-content: space-between;
+
+			a {
+				padding: 4px 8px;
+				background-color: ghostwhite;
+			}
+		}
+	}
+
+	.right {
+		padding-left: 32px;
+		flex: 1;
+
+		.name {
+			font-size: 2em;
+		}
+
+		.role {
+			font-size: 1.2em;
+		}
+	}
+}
+
+#pf-header-accessory-img {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+#pf-content {
+	// @include pinstripe(rgba(135, 206, 250, 0.8));
+	padding: 32px;
+}
+
+#pf-resume {
+	background-color: ghostwhite;
+	box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.2);
+	padding: 32px;
+}
+
+.resume-section {
+	padding: 0 0 32px 0;
+}
+
+.resume-section-title {
+	border-bottom: 2px solid black;
+}
+
+.resume-section-item {
+	padding: 16px 0 0 0;
+
+
+	.lang {
+		width: 200px;
+		text-align: right;
+		padding-right: 16px;
+	}
+
+	.lang-desc {}
+
+}
+
+.job-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.job-where {
+	font-size: 1.4em;
+	font-weight: 500;
+}
