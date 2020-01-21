@@ -5,7 +5,7 @@ const css = require('./Body.scss');
 
 const Section = ({ children, title }) => (
 	<div className={css.section}>
-		<Text.Title>{title}</Text.Title>
+		<Text.Title className={css.sectionTitle}>{title}</Text.Title>
 		<div className={css.sectionChildren}>{children}</div>
 	</div>
 );

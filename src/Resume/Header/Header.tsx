@@ -13,7 +13,7 @@ const ContactRow = ({ icon, children }) => (
 export const Header = ({ name, role, email, phone }) => (
 	<div className={css.container}>
 		<div className={css.left}>
-			<h1>{name}</h1>
+			<h1 style={{ margin: 0 }}>{name}</h1>
 			<Text.Title>{role}</Text.Title>
 		</div>
 		<div className={css.right}>

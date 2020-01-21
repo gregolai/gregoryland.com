@@ -6,7 +6,6 @@
 	width: 236px;
 	padding-right: 16px;
 	margin-right: 16px;
-	border-right: 1px solid #BFBEB6;
 }
 
 .right {
@@ -17,6 +16,9 @@
 	&:not(:last-child) {
 		padding-bottom: 32px;
 	}
+}
+.sectionTitle {
+	border-bottom: 2px solid black;
 }
 .sectionChildren {
 	padding-top: 16px;

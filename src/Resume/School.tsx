@@ -9,9 +9,7 @@ export const School = ({ name, from, to, items }) => (
 		</Text.Desc>
 		<ul>
 			{items.map((item, index) => (
-				<li key={index}>
-					<Text.Bullet>{item}</Text.Bullet>
-				</li>
+				<Text.Bullet key={index}>{item}</Text.Bullet>
 			))}
 		</ul>
 	</div>

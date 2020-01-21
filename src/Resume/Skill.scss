@@ -1,5 +1,8 @@
 .container {
-	padding: 16px 0 0 0;
+	padding: 0;
+	&:not(:first-child) {
+		padding-top: 16px;
+	}
 }
 .name {
 

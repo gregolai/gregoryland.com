@@ -1,21 +1,24 @@
 .title {
-	font-size: 1.3em;
+	font-size: 1.2em;
 	font-weight: 600;
 	text-transform: uppercase;
 }
 .label {
-	font-size: 0.8em;
+	font-size: 0.9em;
 	font-weight: 600;
 	text-transform: uppercase;
 }
 .body {
 	font-weight: 500;
-	font-size: 1em;
+	font-size: 0.9em;
 }
 .desc {
 	font-weight: 500;
-	font-size: 0.8em;
+	font-size: 0.9em;
 }
 .bullet {
+	margin-top: 8px;
+	margin-bottom: 8px;
+	list-style: none;
 	font-size: 0.8em
 }
