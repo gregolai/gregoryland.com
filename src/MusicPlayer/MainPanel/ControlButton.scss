@@ -1,0 +1,56 @@
+@mixin centerChildren {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@mixin circle {
+	border-radius: 50%;
+
+	// ANTIALIASING HAX
+	// box-shadow: 0 0 1px 0px white inset, 0 0 1px 0px white;
+}
+
+.container {
+	@include centerChildren;
+	@include circle;
+	background: rgb(204,209,215);
+	box-shadow: 1px 1px 0px 0px inset rgba(0,0,0,0.1);
+	background: linear-gradient(155deg, #EBF0FA 0%, #B5CCE3 100%);
+	color: white;
+
+	&.small {
+		width: 32px;
+		height: 32px;
+
+		.innerLayer {
+			width: 24px;
+			height: 24px;
+		}
+	}
+	&.large {
+		height: 56px;
+		width: 56px;
+
+		.innerLayer {
+			width: 46px;
+			height: 46px;
+		}
+	}
+}
+
+.innerLayer {
+	@include centerChildren;
+	@include circle;
+	box-shadow: 0 0 4px 0px rgba(0,0,0,0.4), 0px 1px rgba(0,0,0,0.2);
+	background:  radial-gradient(circle at 70% 100%, #F5F3F7 10%, #D3DFED 81%, #F5F3F7 88%)
+}
+
+// display: 'flex',
+// 			alignItems: 'center',
+// 			justifyContent: 'center',
+// 			borderRadius: '50%',
+// 			boxShadow: '',
+// 			backgroundColor: 'rgb(204,209,215)',
+// 			width: 80,
+// 			height: 80

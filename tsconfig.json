@@ -11,7 +11,7 @@
 		"module": "esnext",
 		"moduleResolution": "node",
 		"sourceMap": true,
-		"target": "esnext",
+		"target": "ES2017",
 		"types": ["node"],
 		"typeRoots": ["node_modules/@types", "src/@types"]
 	},
