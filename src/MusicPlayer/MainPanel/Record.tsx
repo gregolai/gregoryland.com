@@ -12,7 +12,9 @@ export const Record = props => {
 	setTimeout(() => {
 		setPerspective(true);
 	}, 2000);
-
+	if (!currentSong) {
+		return null;
+	}
 	return (
 		<div
 			className={cx(
@@ -20,9 +22,8 @@ export const Record = props => {
 				isPlaylistOpen && css.isPlaylistOpen,
 				perspective && css.perspective
 			)}
-			onClick={() => setPlaying(!isPlaying)}
 		>
-			<div className={css.disc_0}>
+			<div className={css.disc_0} onClick={() => setPlaying(!isPlaying)}>
 				<div className={css.disc_1}>
 					<div className={css.disc_2}>
 						<div className={cx(css.discImage, isPlaying && css.rotating)}>

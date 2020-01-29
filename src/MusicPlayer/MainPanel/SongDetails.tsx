@@ -7,6 +7,10 @@ const css = require('./SongDetails.scss');
 
 export const SongDetails = props => {
 	const { currentSong, isPlaylistOpen } = useContext(Context);
+	if (!currentSong) {
+		return null;
+	}
+
 	return (
 		<div className={cx(css.container, isPlaylistOpen && css.isPlaylistOpen)}>
 			<div className={css.songTitle}>{currentSong.title}</div>

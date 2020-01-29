@@ -1,19 +1,27 @@
 import { h, createContext } from 'preact';
-import { useState } from 'preact/hooks';
+import { useState, useRef, useContext } from 'preact/hooks';
 import { MainPanel } from './MainPanel';
 import { PlaylistPanel } from './PlaylistPanel';
-import { Provider } from './MusicPlayerProvider';
+import { Provider, Context } from './MusicPlayerProvider';
 
 const css = require('./MusicPlayer.scss');
+
+const Inner = () => {
+	const { capturePlayerRef, knockStyle, knockAt } = useContext(Context);
+
+	return (
+		<div ref={capturePlayerRef} className={css.container} style={knockStyle}>
+			<MainPanel />
+			<PlaylistPanel />
+		</div>
+	);
+};
 
 // https://dribbble.com/shots/9651842-Player-app-UI-animation
 export const MusicPlayer = props => {
 	return (
 		<Provider>
-			<div className={css.container}>
-				<MainPanel />
-				<PlaylistPanel />
-			</div>
+			<Inner />
 		</Provider>
 	);
 };

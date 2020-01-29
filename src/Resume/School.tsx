@@ -3,13 +3,15 @@ import { Text } from './tokens';
 
 export const School = ({ name, from, to, items }) => (
 	<div>
-		<Text.Label>{name}</Text.Label>
-		<Text.Desc>
+		<Text.Subtitle>{name}</Text.Subtitle>
+		<Text.Caption>
 			{from} - {to}
-		</Text.Desc>
+		</Text.Caption>
 		<ul>
 			{items.map((item, index) => (
-				<Text.Bullet key={index}>{item}</Text.Bullet>
+				<li key={index}>
+					<Text.BodyBookTabular key={index}>{item}</Text.BodyBookTabular>
+				</li>
 			))}
 		</ul>
 	</div>

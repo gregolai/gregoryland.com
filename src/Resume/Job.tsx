@@ -5,14 +5,16 @@ const css = require('./Job.scss');
 
 export const Job = ({ where, role, from, to, items }) => (
 	<div className={css.container}>
-		<Text.Label className={css.role}>{role}</Text.Label>
-		<Text.Desc className={css.where}>{where}</Text.Desc>
-		<Text.Desc className={css.dates}>
+		<Text.Subtitle className={css.role}>{role}</Text.Subtitle>
+		<Text.BodyMedium className={css.where}>{where}</Text.BodyMedium>
+		<Text.Caption className={css.dates}>
 			{from} - {to}
-		</Text.Desc>
+		</Text.Caption>
 		<ul>
 			{items.map((item, index) => (
-				<Text.Bullet key={index}>{item}</Text.Bullet>
+				<li key={index}>
+					<Text.BodyBookTabular key={index}>{item}</Text.BodyBookTabular>
+				</li>
 			))}
 		</ul>
 	</div>

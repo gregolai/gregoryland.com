@@ -5,7 +5,7 @@ const css = require('./Skill.scss');
 
 export const Skill = ({ name, desc }) => (
 	<div className={css.container}>
-		<Text.Label className={css.name}>{name}</Text.Label>
-		<Text.Desc className={css.desc}>{desc}</Text.Desc>
+		<Text.Subtitle className={css.name}>{name}</Text.Subtitle>
+		<Text.Caption className={css.desc}>{desc}</Text.Caption>
 	</div>
 );

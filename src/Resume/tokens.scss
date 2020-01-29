@@ -1,24 +1,79 @@
-.title {
-	font-size: 1.2em;
-	font-weight: 600;
-	text-transform: uppercase;
+%allText {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothting: antialiased;
+	-webkit-font-smoothting: subpixel-antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: #313131;
 }
+
 .label {
-	font-size: 0.9em;
-	font-weight: 600;
+	@extend %allText;
+	font-size: 9.75px;
+	line-height: 11px;
+	letter-spacing: 0.75px;
+
 	text-transform: uppercase;
 }
-.body {
-	font-weight: 500;
-	font-size: 0.9em;
+
+.caption {
+	@extend %allText;
+	font-size: 12px;
+	line-height: 16px;
 }
-.desc {
-	font-weight: 500;
-	font-size: 0.9em;
+
+.button {
+	@extend %allText;
+	font-size: 12.5px;
+	line-height: 22px;
+	letter-spacing: 0.5px;
+
+	text-transform: uppercase;
 }
-.bullet {
-	margin-top: 8px;
-	margin-bottom: 8px;
-	list-style: none;
-	font-size: 0.8em
+
+.bodyBook {
+	@extend %allText;
+	font-size: 14px;
+	line-height: 22px;
 }
+
+.bodyBookTabular {
+	@extend %allText;
+	font-size: 14px;
+	line-height: 22px;
+	font-feature-settings: "tnum" on, "lnum" on;
+}
+
+.bodyMedium {
+	@extend %allText;
+	font-size: 14px;
+	line-height: 22px;
+	font-weight: 600;
+}
+
+.subtitle {
+	@extend %allText;
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 600;
+}
+
+.title {
+	@extend %allText;
+	font-size: 28px;
+	line-height: 28px;
+	font-weight: 600;
+}
+
+
+/*
+
+const Label = props => <div {...props} className={cx(css.label, props.className)} />;
+const Caption = props => <div {...props} className={cx(css.caption, props.className)} />;
+const Button = props => <div {...props} className={cx(css.button, props.className)} />;
+const BodyBook = props => <div {...props} className={cx(css.bodyBook, props.className)} />;
+const BodyBookTabular = props => <div {...props} className={cx(css.bodyBookTabular, props.className)} />;
+const BodyMedium = props => <div {...props} className={cx(css.bodyMedium, props.className)} />;
+const Subtitle = props => <div {...props} className={cx(css.subtitle, props.className)} />;
+const Title = props => <div {...props} className={cx(css.title, props.className)} />;
+
+*/

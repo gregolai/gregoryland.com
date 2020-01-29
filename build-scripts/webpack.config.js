@@ -3,7 +3,11 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
+const PreloadPlugin = require('preload-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+
+// SIZE HELPERS
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const Visualizer = require('webpack-visualizer-plugin');
 
 const opts = require('./options');
@@ -93,6 +97,10 @@ const config = {
 						}
 					}
 				]
+			},
+			{
+				test: /\.md$/i,
+				use: [{ loader: 'raw-loader' }]
 			}
 			// {
 			// 	// BLUEPRINTJS ASSETS/FONTS
@@ -135,6 +143,9 @@ const config = {
 				title: `---${opts.dev ? 'DEV' : 'PROD'}---`,
 				template: path.join(paths.src, 'index.ejs')
 			}),
+			// new PreloadPlugin({
+			// 	rel: 'prefetch'
+			// }),
 			new MiniCssExtractPlugin({
 				filename: '[name].css',
 				chunkFilename: '[id].css'
@@ -146,8 +157,7 @@ const config = {
 		];
 
 		if (opts.stats) {
-			// Large, lengthy file generated. Only use when needed.
-			// Generate a stats.html file in output dir
+			plugins.push(new BundleAnalyzerPlugin());
 			plugins.push(new Visualizer());
 		}
 
@@ -167,13 +177,19 @@ const config = {
 	})(),
 
 	resolve: {
+		alias: {
+			react: 'preact/compat',
+			'react-dom': 'preact/compat'
+		},
 		extensions: ['.ts', '.tsx', '.js', '.jsx'],
 		modules: [paths.src, 'node_modules']
 	},
 
+	resolveLoader: {},
+
 	// https://webpack.js.org/configuration/optimization/
 	optimization: {
-		minimize: opts.stats || opts.prod,
+		minimize: opts.prod,
 		minimizer: [new TerserPlugin()],
 		nodeEnv: opts.env,
 		noEmitOnErrors: true,

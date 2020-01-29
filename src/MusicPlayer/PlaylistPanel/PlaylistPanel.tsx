@@ -1,15 +1,24 @@
 import { h } from 'preact';
 import { PlaylistEntry } from './PlaylistEntry';
-import { songs } from '../songs';
+import { useContext } from 'preact/hooks';
+import { Context } from '../MusicPlayerProvider';
 
 const css = require('./PlaylistPanel.scss');
 
-export const PlaylistPanel = props => {
+import uid from 'uid';
+window['uid'] = uid;
+
+export const PlaylistPanel = () => {
+	const { currentAlbum } = useContext(Context);
+	if (!currentAlbum) {
+		return null;
+	}
+
 	return (
 		<div className={css.container}>
 			<div className={css.innerContainer}>
-				{songs.map((song, index) => (
-					<PlaylistEntry key={index} song={song} />
+				{currentAlbum.songs.map(song => (
+					<PlaylistEntry key={song.id} song={song} />
 				))}
 			</div>
 		</div>
