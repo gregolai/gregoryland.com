@@ -1,12 +1,10 @@
 import { Page } from './Blog';
 
-const xyz = import('./pages/page1.md');
-
 export const pages: Page[] = [
 	{
 		md: () =>
 			import(
-				/* webpackChunkName: "page1" */
+				/* webpackChunkName: "page-test" */
 				'./pages/Test.md'
 			),
 		thumb:

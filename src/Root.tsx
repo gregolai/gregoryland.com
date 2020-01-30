@@ -3,7 +3,11 @@ import { useContext } from 'preact/hooks';
 import { Portfolio } from './Portfolio';
 import { Resume } from './Resume';
 
-const Context = createContext(null);
+const FUNC_NOT_IMPLEMENTED = () => console.error('Not implemented');
+
+const Context = createContext({
+	printResume: FUNC_NOT_IMPLEMENTED
+});
 
 export class Root extends Component {
 	printResume = () => {
