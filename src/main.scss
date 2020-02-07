@@ -1,33 +1,40 @@
-/* https://raw.githubusercontent.com/hankchizljaw/modern-css-reset/master/src/reset.css */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+:global {
+  /* https://raw.githubusercontent.com/hankchizljaw/modern-css-reset/master/src/reset.css */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-p,
-ul,
-li,
-body {
-  padding: 0;
-  margin: 0;
-}
+  p,
+  ul,
+  li,
+  body {
+    padding: 0;
+    margin: 0;
+  }
 
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  line-height: 1.5;
-  
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: subpixel-antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: #aaa;
-  font-family: sans-serif;
-  font-size: 16px;
-  margin: 0;
-}
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    line-height: 1.5;
+    
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: sans-serif;
+    font-size: 16px;
+    margin: 0;
+  }
 
-button {
-  cursor: pointer;
+  button {
+    cursor: pointer;
+  }
+
+  #root {
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: rgb(214, 229, 244);
+  }
 }

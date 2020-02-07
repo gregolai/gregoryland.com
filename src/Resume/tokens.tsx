@@ -1,4 +1,4 @@
-import { h, createElement } from 'preact';
+import { h } from 'preact';
 import cx from 'classnames';
 
 const css = require('./tokens.scss');
