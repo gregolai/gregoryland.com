@@ -1,6 +1,6 @@
 import { h, FunctionComponent } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
-import cx from 'classnames';
+import { cx } from 'pu2';
 
 const css = require('./LetterTransition.scss');
 

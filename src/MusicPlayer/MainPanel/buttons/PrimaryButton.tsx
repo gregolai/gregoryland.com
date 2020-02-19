@@ -1,9 +1,9 @@
 import { h } from 'preact';
-import cx from 'classnames';
+import { cx } from 'pu2';
 
-const css = require('./ControlButton.scss');
+const css = require('./PrimaryButton.scss');
 
-export const ControlButton = ({ size, ...props }) => {
+export const PrimaryButton = ({ size, ...props }) => {
 	return (
 		<div
 			{...props}

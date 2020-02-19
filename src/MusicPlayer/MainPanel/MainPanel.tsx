@@ -1,10 +1,12 @@
 import { h } from 'preact';
 import { useContext } from 'preact/hooks';
-import cx from 'classnames';
+import { cx } from 'pu2';
 import { Context } from '../MusicPlayerProvider';
-import { ControlButton } from './ControlButton';
+import { PrimaryButton } from './buttons/PrimaryButton';
 import { SongDetails } from './SongDetails';
 import { Record } from './Record';
+import { DragHandle } from './DragHandle';
+import MainPanelStore from './MainPanelStore';
 
 const css = require('./MainPanel.scss');
 
@@ -130,12 +132,16 @@ const LoopSvg = () => {
 	);
 };
 
-export const MainPanel = props => {
+const MainPanel = props => {
 	const { isPlaylistOpen, setPlaylistOpen, knockAt, isPlaying, setPlaying } = useContext(Context);
+	const { dragY, isDragging } = useContext(MainPanelStore.Context);
 
 	return (
-		<div className={cx(css.container, isPlaylistOpen && css.playlistOpen)}>
-			{isPlaylistOpen && <div className={css.hiddenHover} onClick={() => setPlaylistOpen(false)} />}
+		<div
+			className={cx(css.container, isPlaylistOpen && css.playlistOpen)}
+			style={{ transform: isDragging ? `translateY(${dragY}px)` : undefined }}
+		>
+			{/* {isPlaylistOpen && <div className={css.hiddenHover} onClick={() => setPlaylistOpen(false)} />} */}
 			<SongDetails />
 
 			<Record />
@@ -146,29 +152,33 @@ export const MainPanel = props => {
 					<LoopSvg />
 				</div>
 				<div className={css.controlButtons}>
-					<ControlButton size="small" onPointerDown={knockAt}>
+					<PrimaryButton size="small" /*onPointerDown={knockAt}*/>
 						<PrevSongSvg />
-					</ControlButton>
-					<ControlButton
+					</PrimaryButton>
+					<PrimaryButton
 						size="large"
 						className={css.playButton}
 						onClick={() => setPlaying(!isPlaying)}
-						onPointerDown={knockAt}
+						/* onPointerDown={knockAt} */
 					>
 						{isPlaying ? <PauseSvg /> : <PlaySvg />}
-					</ControlButton>
-					<ControlButton size="small" onPointerDown={knockAt}>
+					</PrimaryButton>
+					<PrimaryButton size="small" /*onPointerDown={knockAt}*/>
 						<NextSongSvg />
-					</ControlButton>
+					</PrimaryButton>
 				</div>
 				<div className={css.auxButton}>
 					<PlusSvg />
 				</div>
 			</div>
 
-			<div className={css.playlistDragHandle} onClick={() => setPlaylistOpen(!isPlaylistOpen)}>
-				<div className={css.playlistDragNotch} />
-			</div>
+			<DragHandle />
 		</div>
 	);
 };
+
+export default props => (
+	<MainPanelStore>
+		<MainPanel {...props} />
+	</MainPanelStore>
+);

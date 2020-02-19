@@ -180,6 +180,10 @@ const config = {
 		alias: {
 			react: 'preact/compat',
 			'react-dom': 'preact/compat'
+
+			// 'create-react-class': 'preact-compat/lib/create-react-class',
+			// Not necessary unless you consume a module requiring `react-dom-factories`
+			// 'react-dom-factories': 'preact-compat/lib/react-dom-factories'
 		},
 		extensions: ['.ts', '.tsx', '.js', '.jsx'],
 		modules: [paths.src, 'node_modules']
@@ -188,13 +192,44 @@ const config = {
 	resolveLoader: {},
 
 	// https://webpack.js.org/configuration/optimization/
-	optimization: {
-		minimize: opts.prod,
-		minimizer: [new TerserPlugin()],
-		nodeEnv: opts.env,
-		noEmitOnErrors: true,
-		usedExports: true
-	}
+	optimization: (() => {
+		const SUPER_AGGRESSIVE = true;
+
+		/**
+		 * @type {TerserPlugin.TerserPluginOptions}
+		 */
+		let minimizerOpts = undefined;
+
+		if (SUPER_AGGRESSIVE) {
+			minimizerOpts = {
+				terserOptions: {
+					ecma: undefined,
+					warnings: false,
+					parse: {},
+					compress: {},
+					mangle: {
+						properties: true
+					},
+					module: false,
+					output: null,
+					toplevel: false,
+					nameCache: null,
+					ie8: false,
+					keep_classnames: undefined,
+					keep_fnames: false,
+					safari10: false
+				}
+			};
+		}
+
+		return {
+			minimize: opts.prod,
+			minimizer: [new TerserPlugin(minimizerOpts)],
+			nodeEnv: opts.env,
+			noEmitOnErrors: true,
+			usedExports: true
+		};
+	})()
 };
 
 module.exports = config;

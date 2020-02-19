@@ -11,7 +11,6 @@ gulp.task('build:dev', callback => {
 			console.error('[build:dev]', err);
 		}
 		console.log(
-			'[build:dev]',
 			stats.toString({
 				colors: true
 			})

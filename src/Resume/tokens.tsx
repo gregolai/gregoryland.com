@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import cx from 'classnames';
+import { cx } from 'pu2';
 
 const css = require('./tokens.scss');
 

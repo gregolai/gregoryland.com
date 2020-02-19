@@ -1,6 +1,7 @@
 import { h } from 'preact';
 import { useContext, useState } from 'preact/hooks';
-import cx from 'classnames';
+import { cx } from 'pu2';
+
 import { Context } from '../MusicPlayerProvider';
 
 const css = require('./Record.scss');

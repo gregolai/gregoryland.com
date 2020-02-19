@@ -7,6 +7,7 @@
 		"build:dev": "NODE_ENV=development gulp build:dev",
 		"build:prod": "NODE_ENV=production gulp build:prod",
 		"build:stats": "NODE_ENV=production STATS=1 gulp build:prod",
+		"start": "npm run watch:dev",
 		"watch:dev": "NODE_ENV=development gulp watch:dev"
 	},
 	"repository": {
@@ -20,12 +21,13 @@
 	},
 	"homepage": "https://github.com/gregolai/gregolai.github.io#readme",
 	"dependencies": {
-		"axios": "^0.19.2",
-		"classnames": "^2.2.6",
 		"markdown-to-jsx": "^6.10.3",
-		"preact": "^10.2.1"
+		"preact": "^10.3.2",
+		"pu2": "0.0.6",
+		"react-use": "^13.26.1"
 	},
 	"devDependencies": {
+		"@types/react": "^16.9.20",
 		"awesome-typescript-loader": "^5.2.1",
 		"clean-webpack-plugin": "^0.1.19",
 		"cors": "^2.8.5",
@@ -40,7 +42,7 @@
 		"prettier": "^1.19.1",
 		"raw-loader": "^4.0.0",
 		"sass-loader": "^8.0.2",
-		"terser-webpack-plugin": "^2.3.2",
+		"terser-webpack-plugin": "^2.3.5",
 		"ts-loader": "^6.2.1",
 		"typescript": "^3.7.5",
 		"uid": "0.0.2",

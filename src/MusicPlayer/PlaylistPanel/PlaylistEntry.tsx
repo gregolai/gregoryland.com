@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import { useContext, useRef } from 'preact/hooks';
-import cx from 'classnames';
+import { cx } from 'pu2';
 import { Context } from '../MusicPlayerProvider';
 
 const css = require('./PlaylistEntry.scss');

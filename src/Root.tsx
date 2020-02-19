@@ -1,6 +1,6 @@
 import { h, createContext, Component } from 'preact';
 import { useContext } from 'preact/hooks';
-import { Portfolio } from './Portfolio';
+// import { Portfolio } from './Portfolio';
 import { Resume } from './Resume';
 
 const FUNC_NOT_IMPLEMENTED = () => console.error('Not implemented');
@@ -39,7 +39,7 @@ export class Root extends Component {
 					printResume: this.printResume
 				}}
 			>
-				<Portfolio />
+				{/* <Portfolio /> */}
 			</Context.Provider>
 		);
 	}

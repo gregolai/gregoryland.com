@@ -1,5 +1,5 @@
 import { h, createContext, Component, RefCallback, ComponentChildren } from 'preact';
-import axios from 'axios';
+import { Ref } from 'preact/hooks/src';
 
 export interface Album {
 	id: number;
@@ -21,7 +21,8 @@ interface ContextValue {
 	bufferingSongProgress: number;
 	bufferAndPlaySong: (song: Song) => void;
 
-	capturePlayerRef: RefCallback<HTMLDivElement>;
+	playerRef: HTMLDivElement;
+	setPlayerRef: RefCallback<HTMLDivElement>;
 
 	currentAlbum: Album;
 
@@ -61,10 +62,6 @@ interface KnockAt {
 
 export const Context = createContext<ContextValue>(null);
 
-const Context2 = createContext<{
-	hello: string;
-}>(null);
-
 interface Props {
 	children: ComponentChildren;
 }
@@ -76,6 +73,7 @@ interface State {
 	isPlaying: boolean;
 	isPlaylistOpen: boolean;
 	knockStyle: any;
+	playerRef: HTMLDivElement;
 }
 
 export class Provider extends Component<Props, State> {
@@ -86,18 +84,22 @@ export class Provider extends Component<Props, State> {
 		bufferingSongProgress: 0,
 		isPlaying: false,
 		isPlaylistOpen: false,
-		knockStyle: {}
+		knockStyle: {},
+		playerRef: null
 	};
 
 	knock: number;
 
-	playerRef: HTMLDivElement;
-	capturePlayerRef = ref => (this.playerRef = ref);
+	playerRef: HTMLDivElement = null;
+
+	setPlayerRef = playerRef => this.setState({ playerRef });
 
 	async componentDidMount() {
-		const res = await axios.get('http://localhost:8087/albums/2');
+		const res = await fetch('http://localhost:8087/albums/2');
 
-		const { album, error, success } = res.data;
+		const data = await res.json();
+
+		const { album, error, success } = data;
 
 		if (success) {
 			this.setState({
@@ -257,7 +259,8 @@ export class Provider extends Component<Props, State> {
 			currentSong,
 			isPlaying,
 			isPlaylistOpen,
-			knockStyle
+			knockStyle,
+			playerRef
 		} = this.state;
 
 		return (
@@ -278,7 +281,9 @@ export class Provider extends Component<Props, State> {
 					isPlaylistOpen,
 					setPlaylistOpen: this.setPlaylistOpen,
 
-					capturePlayerRef: this.capturePlayerRef,
+					playerRef,
+					setPlayerRef: this.setPlayerRef,
+
 					knockAt: this.knockAt,
 					knockStyle
 				}}

@@ -8,6 +8,32 @@ import { ScreenSplat, Screen } from './Portfolio/Screen';
 import { LetterTransition } from './Portfolio/LetterTransition';
 import { Tabs } from './Tabs';
 
+// 2020-02-18 TODO: Implement some kind of easily-configurable parallax effect
+import { useScroll, useIntersection } from 'react-use';
+/*
+POSSIBLE API (TODO):
+{
+	// parallax from 0 to 100%
+	screenStartY: 0,
+	screenEndY: '100%',
+	[
+		{
+			screenDistanceStart: '90%', // distance from bottom of screen
+			screenDistanceEnd: '10%', // distance from top of screen
+
+			position: 'absolute',
+
+			// from: { top: '100px' },
+			// to: { bottom: '100px' },
+			// distance: '500px'
+		},
+		{
+			position: 'fixed'
+		}
+	]
+}
+*/
+
 const Bar = ({ delay, dir, duration, height }) => {
 	const position = 'absolute';
 	const bottom = 0;
@@ -66,33 +92,33 @@ const INTERSECTION_THRESHOLDS = Array.from(Array(101)).map((_, i) => i * 0.01);
 // 	return thresholds;
 // }
 
-const useIntersectionObserver = ({ isActive, callback, options = { root: null } }) => {
-	const [target, setTarget] = useState(null);
+// const useIntersectionObserver = ({ isActive, callback, options = { root: null } }) => {
+// 	const [target, setTarget] = useState(null);
 
-	useEffect(() => {
-		if (!isActive || !target) {
-			return;
-		}
+// 	useEffect(() => {
+// 		if (!isActive || !target) {
+// 			return;
+// 		}
 
-		const observer = new IntersectionObserver(
-			(entries, observer) => {
-				callback({ entries, observer });
-			},
-			{
-				root: null,
-				rootMargin: '0px',
-				threshold: INTERSECTION_THRESHOLDS, //buildThresholdList(),
-				...options
-			}
-		);
+// 		const observer = new IntersectionObserver(
+// 			(entries, observer) => {
+// 				callback({ entries, observer });
+// 			},
+// 			{
+// 				root: null,
+// 				rootMargin: '0px',
+// 				threshold: INTERSECTION_THRESHOLDS, //buildThresholdList(),
+// 				...options
+// 			}
+// 		);
 
-		observer.observe(target);
+// 		observer.observe(target);
 
-		return () => observer.disconnect(); //observer.unobserve(target);
-	}, [isActive, target]);
+// 		return () => observer.disconnect(); //observer.unobserve(target);
+// 	}, [isActive, target]);
 
-	return { setTarget };
-};
+// 	return { setTarget };
+// };
 
 const InnerMain = ({ children, delay, distance }) => {
 	const [ref, setRef] = useState(null);
@@ -134,18 +160,24 @@ const InnerMain = ({ children, delay, distance }) => {
 	);
 };
 
-const useDocumentScroll = () => {
+const useDocumentScroll = (enable = true) => {
 	const [top, setTop] = useState(document.scrollingElement.scrollTop);
 
 	useEffect(() => {
+		if (!enable) return () => {};
+
 		const onScroll = e => {
 			setTop(document.scrollingElement.scrollTop);
 		};
 
-		document.addEventListener('scroll', onScroll);
+		const options = {
+			capture: false,
+			passive: true
+		};
+		document.addEventListener('scroll', onScroll, options);
 
-		return () => document.removeEventListener('scroll', onScroll);
-	}, []);
+		return () => document.removeEventListener('scroll', onScroll, options);
+	}, [enable]);
 
 	return top;
 };
@@ -204,6 +236,22 @@ const MyCustom = () => {
 		transform: `translate(${translate}px, 0px) scale(${scale}, ${scale})`
 	};
 	return <div style={style}>HELLO</div>;
+};
+
+const MyCustom2 = () => {
+	const ref = useRef<HTMLDivElement>(null);
+	const intersection = useIntersection(ref, {});
+	const scrollY = useDocumentScroll(intersection?.isIntersecting);
+
+	console.log({ scrollY, intersection });
+	const style = {
+		//transform: `translate(${translate}px, 0px) scale(${scale}, ${scale})`
+	};
+	return (
+		<div ref={ref} style={style}>
+			HELLO2
+		</div>
+	);
 };
 
 const ControlledTabs = () => {
@@ -297,10 +345,19 @@ screens.addScreen(
 			'linear-gradient(transparent 0%, rgba(175, 204, 232, 0.5) 50%, transparent 100%), radial-gradient(circle at 50% 50%, rgba(181, 175, 233, 0.3) 0%, transparent 350px)'
 	}
 );
-screens.addScreen('second', () => <div style={{ height: 200, overflow: 'hidden' }}>lorem ipsum</div>, {
-	height: 900,
-	background: 'linear-gradient(180deg,transparent 0%, rgb(169, 203, 236) 50%, transparent 100%)'
-});
+screens.addScreen(
+	'second',
+	() => (
+		<div>
+			<div style={{ height: 200, overflow: 'hidden' }}>lorem ipsum</div>
+			<MyCustom2 />
+		</div>
+	),
+	{
+		height: 900,
+		background: 'linear-gradient(180deg,transparent 0%, rgb(169, 203, 236) 50%, transparent 100%)'
+	}
+);
 
 screens.addScreen(
 	'third',

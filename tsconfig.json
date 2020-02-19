@@ -14,7 +14,7 @@
 		"sourceMap": true,
 		"target": "ES2017",
 		"types": ["node"],
-		"typeRoots": ["node_modules/@types", "src/@types", "src/@types/md.d.ts"]
+		"typeRoots": ["node_modules/@types", "src/@types"]
 	},
 	"include": ["./src/**/*.ts", "./src/**/*.tsx"]
 }
