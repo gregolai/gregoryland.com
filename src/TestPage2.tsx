@@ -9,7 +9,7 @@ import { LetterTransition } from './Portfolio/LetterTransition';
 import { Tabs } from './Tabs';
 
 // 2020-02-18 TODO: Implement some kind of easily-configurable parallax effect
-import { useScroll, useIntersection } from 'react-use';
+import { useRafState, useScroll, useIntersection } from 'react-use';
 /*
 POSSIBLE API (TODO):
 {
@@ -161,7 +161,7 @@ const InnerMain = ({ children, delay, distance }) => {
 };
 
 const useDocumentScroll = (enable = true) => {
-	const [top, setTop] = useState(document.scrollingElement.scrollTop);
+	const [top, setTop] = useRafState(document.scrollingElement.scrollTop);
 
 	useEffect(() => {
 		if (!enable) return () => {};
