@@ -23,12 +23,11 @@
 	"dependencies": {
 		"markdown-to-jsx": "^6.10.3",
 		"preact": "^10.3.2",
-		"pu2": "0.0.6",
+		"pu2": "0.0.9",
 		"react-use": "^13.26.1"
 	},
 	"devDependencies": {
 		"@types/react": "^16.9.20",
-		"awesome-typescript-loader": "^5.2.1",
 		"clean-webpack-plugin": "^0.1.19",
 		"cors": "^2.8.5",
 		"css-loader": "^3.4.2",
@@ -44,7 +43,7 @@
 		"sass-loader": "^8.0.2",
 		"terser-webpack-plugin": "^2.3.5",
 		"ts-loader": "^6.2.1",
-		"typescript": "^3.7.5",
+		"typescript": "^3.8.2",
 		"uid": "0.0.2",
 		"webpack": "^4.41.5",
 		"webpack-bundle-analyzer": "^3.6.0",

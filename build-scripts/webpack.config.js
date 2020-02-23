@@ -50,28 +50,37 @@ const config = {
 
 	module: (() => {
 		const rules = [
-			// {
-			// 	test: /\.(js|jsx)$/,
-			// 	exclude: /node_modules/,
-			// 	use: [
-			// 		{
-			// 			loader: 'babel-loader',
-			// 			options: babelOptions
-			// 		}
-			// 	]
-			// },
+			{
+				test: /\.(js|jsx)$/,
+				exclude: /node_modules/,
+				// include: /node_modules\/pu2/,
+				use: [
+					{
+						loader: 'ts-loader',
+						options: {}
+					}
+					// {
+					// 	loader: 'babel-loader',
+					// 	options: babelOptions
+					// }
+				]
+			},
 			{
 				test: /\.(ts|tsx)$/,
 				exclude: /node_modules/,
 				use: [
 					{
-						loader: 'awesome-typescript-loader',
-						options: {
-							//useBabel: true,
-							useCache: true
-							//babelOptions
-						}
+						loader: 'ts-loader',
+						options: {}
 					}
+					// {
+					// 	loader: 'awesome-typescript-loader',
+					// 	options: {
+					// 		//useBabel: true,
+					// 		useCache: true
+					// 		//babelOptions
+					// 	}
+					// }
 				]
 			},
 			{

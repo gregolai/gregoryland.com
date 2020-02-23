@@ -4,6 +4,7 @@ const WebpackDevServer = require('webpack-dev-server');
 const opts = require('./options');
 
 gulp.task('build:dev', callback => {
+	console.log('build:dev');
 	const config = require('./webpack.config');
 
 	const compiler = webpack(config, (err, stats) => {

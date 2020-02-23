@@ -1,15 +1,15 @@
 import { h, createContext, Component } from 'preact';
 import { useContext } from 'preact/hooks';
-// import { Portfolio } from './Portfolio';
+import { Portfolio } from './Portfolio';
 import { Resume } from './Resume';
 
-const FUNC_NOT_IMPLEMENTED = () => console.error('Not implemented');
-
 const Context = createContext({
-	printResume: FUNC_NOT_IMPLEMENTED
+	printResume: () => {}
 });
 
-export class Root extends Component {
+export class App extends Component {
+	static useContext = () => useContext(Context);
+
 	printResume = () => {
 		const iframe = document.createElement('iframe');
 		iframe.src = window.location.href;
@@ -39,10 +39,8 @@ export class Root extends Component {
 					printResume: this.printResume
 				}}
 			>
-				{/* <Portfolio /> */}
+				<Portfolio />
 			</Context.Provider>
 		);
 	}
 }
-
-export const useRootContext = () => useContext(Context);

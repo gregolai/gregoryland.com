@@ -2,7 +2,7 @@ import { h, Fragment } from 'preact';
 import { Suspense, lazy } from 'preact/compat';
 import { Header } from './Header';
 import { Resume } from '../Resume';
-import { useRootContext } from '../Root';
+import { App } from '../App';
 
 const Projects = lazy(() =>
 	import(
@@ -12,7 +12,7 @@ const Projects = lazy(() =>
 );
 
 export const Portfolio = () => {
-	const { printResume } = useRootContext();
+	const { printResume } = App.useContext();
 	return (
 		<Fragment>
 			{/* <Header /> */}
