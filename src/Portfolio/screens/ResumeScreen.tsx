@@ -15,7 +15,20 @@ export default () => {
 				// height: 800
 			}}
 		>
-			<Resume style={{ width: '80%' }} />
+			<Resume style={{ zIndex: 1, width: '80%' }} />
+
+			{/* DIAGONAL LINE */}
+			<div
+				style={{
+					background: 'black',
+					height: '500px',
+					position: 'absolute',
+					top: '600px',
+					left: '0px',
+					width: '100%',
+					transform: 'rotate(25deg) scaleX(20)'
+				}}
+			></div>
 		</Screen>
 	);
 };
