@@ -1,16 +1,18 @@
-import { h, createContext, Component } from 'preact';
+import { h, createContext, Component, createRef, ComponentChildren } from 'preact';
 import { useContext } from 'preact/hooks';
 import { Screens } from './Screens';
 import { useScrollBreakpoints } from './useScrollBreakpoints';
+import { Tabs } from './Tabs';
 
-interface ScreenOptions {
+const css = require('./Portfolio.scss');
+
+interface NavigationProps {
 	id: string;
-	element: HTMLDivElement;
+	label: ComponentChildren;
 }
 
 const Context = createContext({
-	registerScreen: (opts: ScreenOptions) => {},
-	navigateToScreen: (screenId: string) => {}
+	registerScreen: (opts: NavigationProps) => {}
 });
 
 const MyCustom = () => {
@@ -52,48 +54,87 @@ const MyCustom = () => {
 	return <div style={style}>HELLO</div>;
 };
 
-export class Portfolio extends Component {
+interface State {
+	currentScreenId: string;
+	// screens: NavigationProps[];
+	// screensById: Mapped<NavigationProps>;
+}
+
+export default class Portfolio extends Component<{}, State> {
 	static useContext = () => useContext(Context);
 
-	_screens: { [screenId: string]: any } = [];
+	_ref = createRef<HTMLDivElement>();
 
-	registerScreen = ({ id, element }: ScreenOptions) => {
-		this._screens[id] = element;
+	state = {
+		currentScreenId: ''
 	};
 
-	navigateToScreen = (screenId: string) => {
-		const screen = this._screens[screenId];
-		if (screen) {
+	_screens: NavigationProps[] = [];
+	_screensById: Mapped<NavigationProps> = {};
+
+	registerScreen = (screen: NavigationProps) => {
+		this._screens.push(screen);
+		this._screensById[screen.id] = screen;
+		this.forceUpdate();
+	};
+
+	setCurrentScreen = (screenId: string) => {
+		const screen = this._screensById[screenId];
+		if (screen && screenId !== this.state.currentScreenId) {
+			const DURATION = 300;
 			// TODO: Fade out
-			(document.querySelector('#root') as HTMLDivElement).setAttribute('style', 'opacity:0;');
+			this._ref.current.setAttribute('style', `transition-duration:${DURATION}ms;opacity:0;`);
 
-			window.location.hash = '#' + screenId;
-			document.scrollingElement.scrollTo(0, screen.offsetTop);
+			this.setState({ currentScreenId: screenId }, () => {
+				setTimeout(() => {
+					console.log('hash:', `#${screenId}`);
+					window.location.hash = `#${screenId}`;
+					//document.scrollingElement.scrollTo(0, screen.offsetTop);
 
-			// TODO: Fade in
-			(document.querySelector('#root') as HTMLDivElement).setAttribute('style', 'opacity:1;');
+					this._ref.current.setAttribute('style', `transition-duration:${DURATION}ms;opacity:1;`);
+					setTimeout(() => {
+						// done
+					}, DURATION);
+				}, DURATION);
+			});
 		}
 	};
 
 	render() {
+		const { currentScreenId } = this.state;
 		return (
 			<Context.Provider
 				value={{
-					registerScreen: this.registerScreen,
-					navigateToScreen: this.navigateToScreen
+					registerScreen: this.registerScreen
 				}}
 			>
-				<div
+				<div className={css.container} ref={this._ref}>
+					<div
+						style={{
+							position: 'fixed',
+							top: 0,
+							left: 0,
+							zIndex: 2
+						}}
+					>
+						<MyCustom />
+					</div>
+					<Screens />
+				</div>
+
+				<Tabs
 					style={{
 						position: 'fixed',
-						top: 0,
-						left: 0,
-						zIndex: 2
+						right: 50,
+						top: 50
 					}}
-				>
-					<MyCustom />
-				</div>
-				<Screens />
+					onChange={this.setCurrentScreen}
+					options={this._screens.map(({ label, id }) => ({
+						label,
+						value: id
+					}))}
+					value={currentScreenId}
+				/>
 			</Context.Provider>
 		);
 	}

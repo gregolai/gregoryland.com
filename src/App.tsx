@@ -1,7 +1,7 @@
 import { h, createContext, Component } from 'preact';
 import { useContext } from 'preact/hooks';
-import { Portfolio } from './Portfolio';
-import { Resume } from './Resume';
+import Portfolio from './Portfolio';
+import Resume from './Resume';
 
 const Context = createContext({
 	printResume: () => {}

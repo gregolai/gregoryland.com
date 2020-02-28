@@ -6,7 +6,7 @@ import { Provider, Context } from './MusicPlayerProvider';
 
 const css = require('./MusicPlayer.scss');
 
-const Inner = () => {
+const MusicPlayer = () => {
 	const { setPlayerRef, knockStyle, knockAt } = useContext(Context);
 
 	return (
@@ -18,10 +18,10 @@ const Inner = () => {
 };
 
 // https://dribbble.com/shots/9651842-Player-app-UI-animation
-export const MusicPlayer = props => {
+export default () => {
 	return (
 		<Provider>
-			<Inner />
+			<MusicPlayer />
 		</Provider>
 	);
 };

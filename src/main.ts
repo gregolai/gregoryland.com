@@ -3,4 +3,4 @@ import { App } from './App';
 
 require('./main.scss');
 
-render(createElement(App, {}), document.getElementById('root'));
+render(createElement(App, {}), document.getElementById('app'));

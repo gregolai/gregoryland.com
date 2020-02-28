@@ -5,13 +5,14 @@ import { Job } from './Job';
 import { Skill } from './Skill';
 import { School } from './School';
 import { Text } from './tokens';
+import { cx } from 'pu2';
 
 const css = require('./Resume.scss');
 
 const cat = (stringArr: string[]) => stringArr.join(' ');
 
-export const Resume = () => (
-	<div className={css.container}>
+export default props => (
+	<div {...props} className={cx(css.container, props.clasName)}>
 		<Header
 			name="GREGORY DALTON"
 			role="SOFTWARE ENGINEER"

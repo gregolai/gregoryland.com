@@ -1,7 +1,7 @@
 import { h, Fragment } from 'preact';
 import { Suspense, lazy } from 'preact/compat';
 import { Header } from './Header';
-import { Resume } from '../Resume';
+// import { Resume } from '../Resume';
 import { App } from '../App';
 
 const Projects = lazy(() =>
