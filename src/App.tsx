@@ -7,7 +7,7 @@ const Context = createContext({
 	printResume: () => {}
 });
 
-export class App extends Component {
+export default class App extends Component {
 	static useContext = () => useContext(Context);
 
 	printResume = () => {

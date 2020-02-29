@@ -1,6 +1,6 @@
-import { useDocumentScroll } from './useDocumentScroll';
+import useDocumentScroll from './useDocumentScroll';
 
-export const useScrollBreakpoints = ({ init, breakpoints }) => {
+export default ({ init, breakpoints }) => {
 	const scrollTop = useDocumentScroll();
 
 	const acc = { ...init };

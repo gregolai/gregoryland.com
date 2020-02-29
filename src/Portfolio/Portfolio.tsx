@@ -1,7 +1,7 @@
 import { h, createContext, Component, createRef, ComponentChildren } from 'preact';
 import { useContext } from 'preact/hooks';
 import { Screens } from './Screens';
-import { useScrollBreakpoints } from './useScrollBreakpoints';
+import useScrollBreakpoints from './useScrollBreakpoints';
 import { Tabs } from './Tabs';
 
 const css = require('./Portfolio.scss');

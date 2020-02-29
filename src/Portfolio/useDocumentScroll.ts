@@ -1,13 +1,14 @@
 import { useEffect } from 'preact/hooks';
 import { useRafState } from 'react-use';
 
-export const useDocumentScroll = (enable = true) => {
+export default (enable = true) => {
 	const [top, setTop] = useRafState(document.scrollingElement.scrollTop);
 
 	useEffect(() => {
 		if (!enable) return () => {};
 
 		const onScroll = e => {
+			console.log('onScroll', document.scrollingElement.scrollTop);
 			setTop(document.scrollingElement.scrollTop);
 		};
 
