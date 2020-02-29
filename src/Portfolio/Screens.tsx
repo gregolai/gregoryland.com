@@ -4,6 +4,7 @@ import MusicPlayerScreen from './screens/MusicPlayerScreen';
 import LoremIpsumScreen from './screens/LoremIpsumScreen';
 import FourthScreen from './screens/FourthScreen';
 import ResumeScreen from './screens/ResumeScreen';
+import ProjectsScreen from './screens/ProjectsScreen';
 
 export const Screens = () => {
 	return (
@@ -13,6 +14,7 @@ export const Screens = () => {
 			<MusicPlayerScreen />
 			<LoremIpsumScreen />
 			<FourthScreen />
+			<ProjectsScreen />
 		</Fragment>
 	);
 };

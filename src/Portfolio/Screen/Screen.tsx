@@ -23,7 +23,7 @@ export const Screen: FunctionComponent<Props> = ({ id, label, children, ...props
 
 	return (
 		<div {...props} id={id} className={cx(css.container, props.className)}>
-			<Text.Title style={{ position: 'absolute', top: 50, left: 50 }}>{label}</Text.Title>
+			<Text.Title style={{ position: 'absolute', top: 32, left: 64 }}>{label}</Text.Title>
 			<Suspense fallback={<ActivityIndicator />}>{children}</Suspense>
 		</div>
 	);
