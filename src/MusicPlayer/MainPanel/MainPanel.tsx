@@ -1,5 +1,4 @@
-import { h } from 'preact';
-import { useContext } from 'preact/hooks';
+import React, { useContext } from 'react';
 import { cx } from 'pu2';
 import { Context } from '../MusicPlayerProvider';
 import { PrimaryButton } from './buttons/PrimaryButton';

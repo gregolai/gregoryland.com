@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import React from 'react';
 import { Text } from './tokens';
 
 export const School = ({ name, from, to, items }) => (

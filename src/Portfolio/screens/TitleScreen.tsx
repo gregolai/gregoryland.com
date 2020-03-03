@@ -1,7 +1,6 @@
-import { h } from 'preact';
+import React, { useState, useEffect } from 'react';
 import { Screen } from '../Screen';
 import useScrollBreakpoints from 'Portfolio/useScrollBreakpoints';
-import { useState, useEffect } from 'preact/hooks';
 import { LetterTransition } from 'Portfolio/LetterTransition';
 import { Text } from '../../Resume/tokens';
 
@@ -45,7 +44,7 @@ const Bar = ({ delay, dir, duration, height }) => {
 		);
 	}, []);
 
-	return <div style={style} />;
+	return <div style={style as any} />;
 };
 
 const InnerMain = ({ children, delay, distance }) => {

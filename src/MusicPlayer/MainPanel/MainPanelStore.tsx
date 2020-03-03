@@ -1,4 +1,4 @@
-import { h, createContext, Component, Context } from 'preact';
+import React, { createContext, Component, Context } from 'react';
 
 const Context = createContext({
 	isDragging: false,

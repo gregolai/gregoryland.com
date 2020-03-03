@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import React from 'react';
 import { School } from '../School';
 import { Text } from '../tokens';
 const css = require('./Body.scss');

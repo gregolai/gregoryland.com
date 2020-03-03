@@ -1,6 +1,5 @@
-import { h, FunctionComponent, ComponentChildren } from 'preact';
+import React, { FunctionComponent, Suspense, forwardRef, Ref, useRef, useEffect, useState } from 'react';
 import { cx } from 'pu2';
-import { Suspense, forwardRef, Ref, useRef, useEffect } from 'preact/compat';
 import { ActivityIndicator } from './ActivityIndicator';
 import Portfolio from '../Portfolio';
 import { Text } from '../../Resume/tokens';
@@ -10,7 +9,7 @@ const css = require('./Screen.scss');
 interface Props {
 	id: string;
 	label: string;
-	children: ComponentChildren;
+	children: React.ReactChild | React.ReactChild[];
 	[key: string]: any;
 }
 

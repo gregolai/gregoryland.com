@@ -1,5 +1,5 @@
-import { h, createContext } from 'preact';
-import { useState, useRef, useContext } from 'preact/hooks';
+import React, { createContext, useState, useRef, useContext } from 'react';
+
 import MainPanel from './MainPanel';
 import { PlaylistPanel } from './PlaylistPanel';
 import { Provider, Context } from './MusicPlayerProvider';

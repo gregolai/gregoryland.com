@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import React from 'react';
 import MusicPlayer from 'MusicPlayer';
 import { Screen } from '../Screen';
 import { Text } from '../../Resume/tokens';

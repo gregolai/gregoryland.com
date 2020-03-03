@@ -1,5 +1,5 @@
-import { h, createContext, Component, createRef, ComponentChildren } from 'preact';
-import { useContext } from 'preact/hooks';
+import React, { createContext, Component, createRef, useContext, useState, useRef } from 'react';
+
 import { Screens } from './Screens';
 import useScrollBreakpoints from './useScrollBreakpoints';
 import { Tabs } from './Tabs';
@@ -8,7 +8,7 @@ const css = require('./Portfolio.scss');
 
 interface NavigationProps {
 	id: string;
-	label: ComponentChildren;
+	label: React.ReactChild;
 }
 
 const Context = createContext({
@@ -54,88 +54,82 @@ const MyCustom = () => {
 	return <div style={style}>HELLO</div>;
 };
 
-interface State {
-	currentScreenId: string;
-	// screens: NavigationProps[];
-	// screensById: Mapped<NavigationProps>;
-}
+const Portfolio = () => {
+	const ref = useRef(null);
+	const [state, setState] = useState({
+		currentScreenId: '',
+		screens: [],
+		screensById: {}
+	});
 
-export default class Portfolio extends Component<{}, State> {
-	static useContext = () => useContext(Context);
-
-	_ref = createRef<HTMLDivElement>();
-
-	state = {
-		currentScreenId: ''
-	};
-
-	_screens: NavigationProps[] = [];
-	_screensById: Mapped<NavigationProps> = {};
-
-	registerScreen = (screen: NavigationProps) => {
-		this._screens.push(screen);
-		this._screensById[screen.id] = screen;
-		this.forceUpdate();
-	};
-
-	setCurrentScreen = (screenId: string) => {
-		const screen = this._screensById[screenId];
-		if (screen && screenId !== this.state.currentScreenId) {
+	const setCurrentScreen = (screenId: string) => {
+		const screen = state.screensById[screenId];
+		if (screen && screenId !== state.currentScreenId) {
 			const DURATION = 300;
 			// TODO: Fade out
-			this._ref.current.setAttribute('style', `transition-duration:${DURATION}ms;opacity:0;`);
+			ref.current.setAttribute('style', `transition-duration:${DURATION}ms;opacity:0;`);
 
-			this.setState({ currentScreenId: screenId }, () => {
+			setState(state => ({
+				...state,
+				currentScreenId: screenId
+			}));
+			setTimeout(() => {
+				//document.scrollingElement.scrollTo(0, screen.offsetTop);
+
+				ref.current.setAttribute('style', `transition-duration:${DURATION}ms;opacity:1;`);
 				setTimeout(() => {
-					console.log('hash:', `#${screenId}`);
-					window.location.hash = `#${screenId}`;
-					//document.scrollingElement.scrollTo(0, screen.offsetTop);
-
-					this._ref.current.setAttribute('style', `transition-duration:${DURATION}ms;opacity:1;`);
-					setTimeout(() => {
-						// done
-					}, DURATION);
+					// done
 				}, DURATION);
-			});
+			}, DURATION);
 		}
 	};
 
-	render() {
-		const { currentScreenId } = this.state;
-		return (
-			<Context.Provider
-				value={{
-					registerScreen: this.registerScreen
-				}}
-			>
-				<div className={css.container} ref={this._ref}>
-					<div
-						style={{
-							position: 'fixed',
-							top: 0,
-							left: 0,
-							zIndex: 2
-						}}
-					>
-						<MyCustom />
-					</div>
-					<Screens />
-				</div>
+	const registerScreen = (screen: NavigationProps) => {
+		setState(state => ({
+			...state,
+			screens: [...state.screens, screen],
+			screensById: {
+				...state.screensById,
+				[screen.id]: screen
+			}
+		}));
+	};
 
-				<Tabs
+	return (
+		<Context.Provider
+			value={{
+				registerScreen
+			}}
+		>
+			<div className={css.container} ref={ref}>
+				<div
 					style={{
 						position: 'fixed',
-						right: 50,
-						top: 50
+						top: 0,
+						left: 0,
+						zIndex: 2
 					}}
-					onChange={this.setCurrentScreen}
-					options={this._screens.map(({ label, id }) => ({
-						label,
-						value: id
-					}))}
-					value={currentScreenId}
-				/>
-			</Context.Provider>
-		);
-	}
-}
+				>
+					<MyCustom />
+				</div>
+				<Screens />
+			</div>
+
+			<Tabs
+				style={{
+					position: 'fixed',
+					right: 50,
+					top: 50
+				}}
+				onChange={setCurrentScreen}
+				options={state.screens.map(({ label, id }) => ({
+					label,
+					value: id
+				}))}
+				value={state.currentScreenId}
+			/>
+		</Context.Provider>
+	);
+};
+Portfolio.useContext = () => useContext(Context);
+export default Portfolio;

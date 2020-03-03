@@ -1,4 +1,4 @@
-import { h, Fragment } from 'preact';
+import React, { Fragment } from 'react';
 import { Header } from './Header';
 import { Body } from './Body';
 import { Job } from './Job';

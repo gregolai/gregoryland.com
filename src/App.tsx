@@ -1,5 +1,4 @@
-import { h, createContext, Component } from 'preact';
-import { useContext } from 'preact/hooks';
+import React, { useContext, createContext, Component } from 'react';
 import Portfolio from './Portfolio';
 import Resume from './Resume';
 

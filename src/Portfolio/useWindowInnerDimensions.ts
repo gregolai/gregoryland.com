@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect } from 'react';
 
 export default () => {
 	const [state, setState] = useState<[number, number]>([window.innerWidth, window.innerHeight]);

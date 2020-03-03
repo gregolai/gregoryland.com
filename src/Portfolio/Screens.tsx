@@ -1,4 +1,4 @@
-import { h, Fragment } from 'preact';
+import React, { Fragment } from 'react';
 import TitleScreen from './screens/TitleScreen';
 import MusicPlayerScreen from './screens/MusicPlayerScreen';
 import LoremIpsumScreen from './screens/LoremIpsumScreen';

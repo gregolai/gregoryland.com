@@ -1,5 +1,4 @@
-import { h, createContext, Component, RefCallback, ComponentChildren } from 'preact';
-import { Ref } from 'preact/hooks/src';
+import React, { createContext, Component, RefCallback } from 'react';
 
 export interface Album {
 	id: number;
@@ -63,7 +62,7 @@ interface KnockAt {
 export const Context = createContext<ContextValue>(null);
 
 interface Props {
-	children: ComponentChildren;
+	children: React.ReactChild;
 }
 interface State {
 	currentAlbum: Album;

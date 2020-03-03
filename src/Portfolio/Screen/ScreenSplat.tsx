@@ -1,4 +1,4 @@
-import { h, FunctionComponent } from 'preact';
+import React, { FunctionComponent } from 'react';
 import { cx } from 'pu2';
 
 const css = require('./ScreenSplat.scss');

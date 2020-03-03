@@ -1,5 +1,4 @@
-import { h } from 'preact';
-import { useContext, useState } from 'preact/hooks';
+import React, { useContext, useState } from 'react';
 import { startDrag } from 'pu2';
 import { Context } from '../MusicPlayerProvider';
 

@@ -1,8 +1,31 @@
-import { h, Fragment } from 'preact';
-import { useState, useEffect } from 'preact/hooks';
+import React, { Fragment, createContext, useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import useDocumentScroll from './Portfolio/useDocumentScroll';
 
 import useWindowInnerDimensions from './Portfolio/useWindowInnerDimensions';
+
+interface ParallaxProviderProps {
+	children: React.ReactChild;
+	container: HTMLElement;
+}
+const ParallaxContext = createContext(null);
+const ParallaxProvider2 = ({ children, container }: ParallaxProviderProps) => {
+	const elements = useRef<HTMLElement[]>([]);
+	const [winWidth, winHeight] = useWindowInnerDimensions();
+
+	const register = (element: HTMLElement) => {
+		elements.current.push(element);
+	};
+	const unregister = (element: HTMLElement) => {
+		elements.current.splice(elements.current.indexOf(element), 1);
+	};
+	const getTop = () => {};
+
+	return (
+		<ParallaxContext.Provider value={{ register, unregister, getTop }}>
+			{children}
+		</ParallaxContext.Provider>
+	);
+};
 
 const TARGET_STYLE = {
 	position: 'absolute',
@@ -16,11 +39,13 @@ const TARGET_STYLE = {
 const ParallaxOriginalTarget = () => {
 	return (
 		<div
-			style={{
-				...TARGET_STYLE,
-				left: TARGET_STYLE.height,
-				opacity: 0.5
-			}}
+			style={
+				{
+					...TARGET_STYLE,
+					left: TARGET_STYLE.height,
+					opacity: 0.5
+				} as any
+			}
 		>
 			ORIGINAL TARGET
 		</div>
@@ -44,7 +69,7 @@ const ParallaxTarget = ({ cacheTargetHeight, getTargetHeight, parallaxFactor }) 
 		}
 	}, [element]);
 
-	const style = { ...TARGET_STYLE };
+	const style: any = { ...TARGET_STYLE };
 	if (y0 !== null) {
 		// Can calculate parallax now
 		const h = cachedH === null ? getTargetHeight(element) : cachedH;
@@ -93,6 +118,10 @@ const getTargetHeight = el =>
 })();*/
 
 const ParallaxTestDemo = () => {
+	// TODO:
+	// - Prevent flickering without needing to call useDocumentScroll() at a higher level
+	// - Allow for a parent element to calculate offsetTop from (instead of using page top)
+
 	const [pageElement, setPageElement] = useState(null);
 
 	// function loop() {
@@ -112,7 +141,7 @@ const ParallaxTestDemo = () => {
 	const scrollY = useDocumentScroll();
 
 	return (
-		<div ref={setPageElement} style={{ position: 'relative', height: 4000 }}>
+		<div ref={setPageElement} style={{ background: '#ccc', position: 'relative', height: 4000 }}>
 			{/* <div style={{ position: 'fixed', top: 16, left: 16, zIndex: 100 }}>SCROLL Y: {scrollY}</div> */}
 			{pageElement && (
 				<ParallaxTarget

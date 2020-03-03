@@ -187,12 +187,9 @@ const config = {
 
 	resolve: {
 		alias: {
-			react: 'preact/compat',
-			'react-dom': 'preact/compat'
-
-			// 'create-react-class': 'preact-compat/lib/create-react-class',
-			// Not necessary unless you consume a module requiring `react-dom-factories`
-			// 'react-dom-factories': 'preact-compat/lib/react-dom-factories'
+			// NOT READY TO REMAP REACT TO PREACT
+			// react: 'preact/compat',
+			// 'react-dom': 'preact/compat'
 		},
 		extensions: ['.ts', '.tsx', '.js', '.jsx'],
 		modules: [paths.src, 'node_modules']

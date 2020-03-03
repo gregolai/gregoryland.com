@@ -1,6 +1,5 @@
-import { h } from 'preact';
+import React, { useContext } from 'react';
 import { PlaylistEntry } from './PlaylistEntry';
-import { useContext } from 'preact/hooks';
 import { Context } from '../MusicPlayerProvider';
 
 const css = require('./PlaylistPanel.scss');

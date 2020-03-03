@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import React from 'react';
 import { cx } from 'pu2';
 
 const css = require('./Tabs.scss');

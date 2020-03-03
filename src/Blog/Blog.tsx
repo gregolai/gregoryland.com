@@ -1,6 +1,5 @@
-import { h } from 'preact';
-import { useState } from 'preact/hooks';
-import { Suspense, lazy } from 'preact/compat';
+import React from 'react';
+import { useState, Suspense, lazy } from 'react';
 import { pages } from './pages';
 
 export interface Page {

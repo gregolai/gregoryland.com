@@ -1,5 +1,4 @@
-import { h } from 'preact';
-import { useContext, useRef } from 'preact/hooks';
+import React, { useContext, useRef } from 'react';
 import { cx } from 'pu2';
 import { Context } from '../MusicPlayerProvider';
 
