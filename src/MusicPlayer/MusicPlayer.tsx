@@ -1,19 +1,29 @@
-import React, { createContext, useState, useRef, useContext } from 'react';
+import React, { useContext } from 'react';
 
 import MainPanel from './MainPanel';
 import { PlaylistPanel } from './PlaylistPanel';
 import { Provider, Context } from './MusicPlayerProvider';
-
-const css = require('./MusicPlayer.scss');
+import { Box } from 'primitives';
 
 const MusicPlayer = () => {
 	const { setPlayerRef, knockStyle, knockAt } = useContext(Context);
 
 	return (
-		<div ref={setPlayerRef} className={css.container} style={knockStyle}>
+		<Box
+			ref={setPlayerRef}
+			css={{
+				position: 'relative',
+				width: '246px',
+				height: '532px',
+				borderRadius: '16px',
+				overflow: 'hidden',
+				userSelect: 'none'
+			}}
+			style={knockStyle}
+		>
 			<MainPanel />
 			<PlaylistPanel />
-		</div>
+		</Box>
 	);
 };
 

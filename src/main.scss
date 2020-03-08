@@ -1,4 +1,13 @@
 :global {
+  $font-prefix: '' !default;
+  // @import 'node_modules/@ibm/plex/scss/sans/regular/latin1.scss'; // 400
+  // @import 'node_modules/@ibm/plex/scss/sans/text/latin1.scss'; // 450
+  // @import 'node_modules/@ibm/plex/scss/sans/medium/latin1.scss'; // 500
+  // @import 'node_modules/@ibm/plex/scss/sans/semibold/latin1.scss'; // 600
+  // @import 'node_modules/@ibm/plex/scss/sans/bold/latin1.scss'; // 700
+  // ALL IBM FONTS
+  @import 'node_modules/@ibm/plex/scss/ibm-plex.scss';
+
   /* https://raw.githubusercontent.com/hankchizljaw/modern-css-reset/master/src/reset.css */
   *,
   *::before,
@@ -6,7 +15,7 @@
     box-sizing: border-box;
   }
 
-  p,
+  // p,
   ul,
   li,
   body {
@@ -35,5 +44,14 @@
     overflow-x: hidden;
     overflow-y: auto;
     background-color: rgb(214, 229, 244);
+
+
+    // font-family: 'IBM Plex Mono', 'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace;
+    font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+    // font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
+    // font-family: 'IBM Plex Serif', 'Georgia', Times, serif;
   }
+
+
+
 }

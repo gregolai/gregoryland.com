@@ -1,19 +1,15 @@
 import React from 'react';
+import Router from '../Router';
 import { cx } from 'pu2';
+
+const { Link } = Router;
 
 const css = require('./Tabs.scss');
 
 const Tab = ({ children, value, isActive, onClick }) => (
-	<a
-		className={cx(css.tab, isActive && css.tabActive)}
-		onClick={e => {
-			e.preventDefault();
-			onClick(e);
-		}}
-		href={`#${value}`}
-	>
+	<Link className={cx(css.tab, isActive && css.tabActive)} onClick={onClick} to={`/${value}`}>
 		{children}
-	</a>
+	</Link>
 );
 
 export const Tabs = ({ onChange, options, value, ...props }) => {

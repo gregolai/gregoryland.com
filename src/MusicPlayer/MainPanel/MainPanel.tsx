@@ -1,20 +1,22 @@
 import React, { useContext } from 'react';
 import { cx } from 'pu2';
 import { Context } from '../MusicPlayerProvider';
-import { PrimaryButton } from './buttons/PrimaryButton';
+import { PrimaryButton } from './PrimaryButton';
 import { SongDetails } from './SongDetails';
 import { Record } from './Record';
 import { DragHandle } from './DragHandle';
 import MainPanelStore from './MainPanelStore';
-
-const css = require('./MainPanel.scss');
+import { Box, Button, Flex } from 'primitives';
 
 const SVG_FILL_OPACITY = '40%';
 
 const PlaySvg = () => (
 	<svg
-		className={css.largeIcon}
-		style={{ opacity: SVG_FILL_OPACITY }}
+		style={{
+			width: '10px',
+			height: '10px',
+			opacity: SVG_FILL_OPACITY
+		}}
 		viewBox="0 0 100 100"
 		version="1.1"
 		xmlns="http://www.w3.org/2000/svg"
@@ -26,8 +28,11 @@ const PlaySvg = () => (
 
 const PauseSvg = () => (
 	<svg
-		className={css.largeIcon}
-		style={{ opacity: SVG_FILL_OPACITY }}
+		style={{
+			width: '10px',
+			height: '10px',
+			opacity: SVG_FILL_OPACITY
+		}}
 		viewBox="0 0 100 100"
 		version="1.1"
 		xmlns="http://www.w3.org/2000/svg"
@@ -40,8 +45,11 @@ const PauseSvg = () => (
 
 const PrevSongSvg = () => (
 	<svg
-		className={css.smallIcon}
-		style={{ opacity: SVG_FILL_OPACITY }}
+		style={{
+			width: '8px',
+			height: '8px',
+			opacity: SVG_FILL_OPACITY
+		}}
 		viewBox="0 0 100 100"
 		version="1.1"
 		xmlns="http://www.w3.org/2000/svg"
@@ -54,8 +62,11 @@ const PrevSongSvg = () => (
 
 const NextSongSvg = () => (
 	<svg
-		className={css.smallIcon}
-		style={{ opacity: SVG_FILL_OPACITY }}
+		style={{
+			width: '8px',
+			height: '8px',
+			opacity: SVG_FILL_OPACITY
+		}}
 		viewBox="0 0 100 100"
 		version="1.1"
 		xmlns="http://www.w3.org/2000/svg"
@@ -68,8 +79,11 @@ const NextSongSvg = () => (
 
 const PlusSvg = () => (
 	<svg
-		className={css.largeIcon}
-		style={{ opacity: SVG_FILL_OPACITY }}
+		style={{
+			width: '10px',
+			height: '10px',
+			opacity: SVG_FILL_OPACITY
+		}}
 		viewBox="0 0 100 100"
 		version="1.1"
 		xmlns="http://www.w3.org/2000/svg"
@@ -95,8 +109,11 @@ const LoopSvg = () => {
 
 	return (
 		<svg
-			style={{ opacity: SVG_FILL_OPACITY }}
-			className={css.largestIcon}
+			style={{
+				width: '20px',
+				height: '20px',
+				opacity: SVG_FILL_OPACITY
+			}}
 			viewBox="0 0 100 100"
 			version="1.1"
 			xmlns="http://www.w3.org/2000/svg"
@@ -131,32 +148,68 @@ const LoopSvg = () => {
 	);
 };
 
+const AuxButton = ({ children }) => (
+	<Button
+		css={{
+			height: '48px',
+			width: '48px'
+		}}
+	>
+		{children}
+	</Button>
+);
+
 const MainPanel = props => {
 	const { isPlaylistOpen, setPlaylistOpen, knockAt, isPlaying, setPlaying } = useContext(Context);
 	const { dragY, isDragging } = useContext(MainPanelStore.Context);
 
 	return (
-		<div
-			className={cx(css.container, isPlaylistOpen && css.playlistOpen)}
+		<Box
+			css={{
+				position: 'absolute',
+				left: '0px',
+				top: '0px',
+				bottom: isPlaylistOpen ? 'calc(100% - 140px)' : '0px',
+				width: '100%',
+				overflow: 'hidden',
+				zIndex: '2',
+				background: 'linear-gradient(155deg, #F2F6FA 10%, #D6E5F4 90%)',
+				boxShadow: '0 0 36px rgba(0,0,0,0.2)',
+				borderRadius: '16px'
+			}}
 			style={{ transform: isDragging ? `translateY(${dragY}px)` : undefined }}
 		>
-			{/* {isPlaylistOpen && <div className={css.hiddenHover} onClick={() => setPlaylistOpen(false)} />} */}
 			<SongDetails />
 
 			<Record />
 
 			{/* CONTROLS */}
-			<div className={cx(css.controlButtonsRow, isPlaylistOpen && css.isPlaylistOpen)}>
-				<div className={css.auxButton}>
+			<Flex
+				css={{
+					alignItems: 'center',
+					justifyContent: 'space-between',
+
+					// MAYBE TEMP FOR NOW - CONSTRAIN TO BOTTOM
+					position: 'absolute',
+					bottom: isPlaylistOpen ? '32px' : '42px',
+					left: '0px',
+					width: '100%',
+					transition: 'all 600ms cubic-bezier(0.770, 0.060, 0.240, 0.925)'
+				}}
+			>
+				<AuxButton>
 					<LoopSvg />
-				</div>
-				<div className={css.controlButtons}>
+				</AuxButton>
+				<Flex css={{ alignItems: 'center' }}>
 					<PrimaryButton size="small" /*onPointerDown={knockAt}*/>
 						<PrevSongSvg />
 					</PrimaryButton>
 					<PrimaryButton
 						size="large"
-						className={css.playButton}
+						css={{
+							marginLeft: '8px',
+							marginRight: '8px'
+						}}
 						onClick={() => setPlaying(!isPlaying)}
 						/* onPointerDown={knockAt} */
 					>
@@ -165,14 +218,14 @@ const MainPanel = props => {
 					<PrimaryButton size="small" /*onPointerDown={knockAt}*/>
 						<NextSongSvg />
 					</PrimaryButton>
-				</div>
-				<div className={css.auxButton}>
+				</Flex>
+				<AuxButton>
 					<PlusSvg />
-				</div>
-			</div>
+				</AuxButton>
+			</Flex>
 
 			<DragHandle />
-		</div>
+		</Box>
 	);
 };
 

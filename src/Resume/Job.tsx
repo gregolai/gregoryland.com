@@ -1,13 +1,13 @@
 import React from 'react';
-import { Text } from './tokens';
-
-const css = require('./Job.scss');
+import { Text, Box, Flex } from './tokens';
 
 export const Job = ({ where, role, from, to, items }) => (
-	<div className={css.container}>
-		<Text.Subtitle className={css.role}>{role}</Text.Subtitle>
-		<Text.BodyMedium className={css.where}>{where}</Text.BodyMedium>
-		<Text.Caption className={css.dates}>
+	<Box>
+		<Flex css={{ alignItems: 'center' }}>
+			<Text.Subtitle css={{ textTransform: 'uppercase' }}>{role}</Text.Subtitle>
+			<Text.BodyMedium css={{ paddingLeft: '16px' }}>{where}</Text.BodyMedium>
+		</Flex>
+		<Text.Caption>
 			{from} - {to}
 		</Text.Caption>
 		<ul>
@@ -17,5 +17,5 @@ export const Job = ({ where, role, from, to, items }) => (
 				</li>
 			))}
 		</ul>
-	</div>
+	</Box>
 );

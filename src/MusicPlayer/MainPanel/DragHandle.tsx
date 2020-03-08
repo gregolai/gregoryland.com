@@ -3,17 +3,27 @@ import { startDrag } from 'pu2';
 import { Context } from '../MusicPlayerProvider';
 
 import MainPanelStore from './MainPanelStore';
-
-const css = require('./DragHandle.scss');
+import { Box, Flex } from 'primitives';
 
 export const DragHandle = () => {
+	const [isHovering, setHovering] = useState(false);
 	const { playerRef, isPlaylistOpen, setPlaylistOpen } = useContext(Context);
 	const { setDragY, setDragging } = useContext(MainPanelStore.Context);
 
 	return (
-		<div
-			className={css.container}
+		<Flex
+			css={{
+				justifyContent: 'center',
+				alignItems: 'center',
+				position: 'absolute',
+				bottom: '0px',
+				left: '0px',
+				height: '42px',
+				width: '100%'
+			}}
 			onClick={() => setPlaylistOpen(!isPlaylistOpen)}
+			onMouseEnter={() => setHovering(true)}
+			onMouseLeave={() => setHovering(false)}
 			onMouseDown={e => {
 				startDrag(e, {
 					measureTarget: playerRef,
@@ -31,8 +41,28 @@ export const DragHandle = () => {
 				});
 			}}
 		>
-			<div className={css.background} />
-			<div className={css.notch} />
-		</div>
+			<Box
+				css={{
+					position: 'absolute',
+					top: '0px',
+					left: '0px',
+					width: '100%',
+					height: '100%',
+					background: 'linear-gradient(0deg, rgba(255,255,255,0.3), transparent)',
+					transition: 'all 300ms cubic-bezier(0.770, 0.060, 0.240, 0.925)',
+					opacity: isHovering ? '1' : '0'
+				}}
+			/>
+			<Box
+				css={{
+					position: 'relative',
+					marginTop: '14px',
+					background: 'rgba(0,0,0,0.4)',
+					height: '2px',
+					width: isHovering ? '26px' : '12px',
+					transition: 'all 300ms cubic-bezier(0.770, 0.060, 0.240, 0.925)'
+				}}
+			/>
+		</Flex>
 	);
 };

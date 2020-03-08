@@ -1,11 +1,16 @@
 import React from 'react';
-import { Text } from './tokens';
-
-const css = require('./Skill.scss');
+import { Text, Box } from './tokens';
 
 export const Skill = ({ name, desc }) => (
-	<div className={css.container}>
-		<Text.Subtitle className={css.name}>{name}</Text.Subtitle>
-		<Text.Caption className={css.desc}>{desc}</Text.Caption>
-	</div>
+	<Box
+		css={{
+			padding: '0px',
+			':not(:first-child)': {
+				paddingTop: '16px'
+			}
+		}}
+	>
+		<Text.Subtitle>{name}</Text.Subtitle>
+		<Text.Caption>{desc}</Text.Caption>
+	</Box>
 );
