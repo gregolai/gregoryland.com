@@ -14,7 +14,7 @@ export default () => {
 				paddingBottom: '100px'
 			}}
 		>
-			<Resume style={{ zIndex: 1, width: '80%' }} />
+			<Resume css={{ zIndex: 1, width: '80%', maxWidth: '1000px' }} />
 
 			<ScreenSplat color="rgba(255,255,255,0.5)" width="1800px" x="200px" y="600px" colorPos="20%" />
 

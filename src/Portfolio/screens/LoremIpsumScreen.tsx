@@ -6,7 +6,7 @@ import { Flex } from 'primitives';
 export default () => {
 	return (
 		<Screen
-			id="third"
+			id="lorem"
 			label="Lorem Ipsum"
 			center
 			css={{

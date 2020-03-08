@@ -59,11 +59,13 @@ const TRANSITION_DURATION = 300;
 
 const Portfolio = () => {
 	const ref = useRef(null);
-	const [state, setState] = useState({
-		currentScreenId: '',
-		screens: [] as ScreenProps[],
-		screensById: {} as Mapped<ScreenProps>
+
+	const [screens, setScreens] = useState({
+		list: [] as ScreenProps[],
+		byId: {} as Mapped<ScreenProps>
 	});
+
+	const [currentScreen, setCurrentScreen] = useState(null);
 
 	const [transition, setTransition] = useState({
 		state: 0,
@@ -72,13 +74,12 @@ const Portfolio = () => {
 
 	const registerScreen = (screen: ScreenProps) => {
 		console.log('registerScreen', screen);
-		setState(state => ({
-			...state,
-			screens: [...state.screens, screen],
-			screensById: {
-				...state.screensById,
+		setScreens(state => ({
+			byId: {
+				...state.byId,
 				[screen.id]: screen
-			}
+			},
+			list: [...state.list, screen]
 		}));
 	};
 
@@ -119,11 +120,14 @@ const Portfolio = () => {
 				// 	...state,
 				// 	currentScreenId: screenId
 				// }));
-				console.log({ screenId, state, screen: state.screensById[screenId] });
+
+				const nextScreen = screens.byId[screenId];
+
 				setTransition({
 					state: 1,
-					screen: state.screensById[screenId]
+					screen: nextScreen
 				});
+				setCurrentScreen(nextScreen);
 			}}
 			// onTransition={async (location, action) => {
 			// 	return;
@@ -185,11 +189,11 @@ const Portfolio = () => {
 						right: '50px',
 						top: '50px'
 					}}
-					options={state.screens.map(({ label, id }) => ({
+					options={screens.list.map(({ label, id }) => ({
 						label,
 						value: id
 					}))}
-					value={state.currentScreenId}
+					value={currentScreen?.id}
 				/>
 			</Context.Provider>
 		</PageRouter>

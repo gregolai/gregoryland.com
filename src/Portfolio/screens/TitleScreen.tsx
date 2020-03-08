@@ -28,7 +28,7 @@ const Bar = ({ delay, dir, duration, height }) => {
 	);
 };
 
-const InnerMain = ({ children, delay, distance }) => {
+const InnerMain = ({ children }) => {
 	const [ref, setRef] = useState(null);
 
 	const { scale, translate } = useScrollBreakpoints({
@@ -78,7 +78,7 @@ const InnerMain = ({ children, delay, distance }) => {
 export default () => {
 	return (
 		<Screen
-			id="first"
+			id="title"
 			label="Title"
 			center
 			css={{
@@ -87,7 +87,7 @@ export default () => {
 					'linear-gradient(rgb(255, 255, 255) 0%, rgb(242, 246, 250) 10%, rgb(214, 229, 244) 90%)'
 			}}
 		>
-			<InnerMain delay={2200} distance={-100}>
+			<InnerMain>
 				<div>
 					<Box css={{ position: 'relative', display: 'inline-block' }}>
 						<Text.Title as="div">

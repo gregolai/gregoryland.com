@@ -6,7 +6,7 @@ import { Box, Text } from 'primitives';
 export default () => {
 	return (
 		<Screen
-			id="second"
+			id="music"
 			label="Music Player"
 			center
 			css={{
