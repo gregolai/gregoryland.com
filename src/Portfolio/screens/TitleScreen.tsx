@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Screen } from '../Screen';
 import useScrollBreakpoints from 'Portfolio/useScrollBreakpoints';
 import { LetterTransition } from 'Portfolio/LetterTransition';
-import { Box, Text } from 'primitives';
+import { Box, Text } from 'core/primitives';
 
 const Bar = ({ delay, dir, duration, height }) => {
 	const [flag, setFlag] = useState(false);

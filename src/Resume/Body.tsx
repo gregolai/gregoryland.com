@@ -1,10 +1,9 @@
 import React from 'react';
 import { School } from './School';
-import { Text, Flex, Box } from './tokens';
+import { Text, Flex, Box } from './primitives';
 
 const Section = ({ children, title }) => (
 	<Box
-		debug-tag="Body.Section"
 		css={{
 			':not(:last-child)': {
 				paddingBottom: '32px'
@@ -17,7 +16,7 @@ const Section = ({ children, title }) => (
 );
 
 export const Body = ({ renderEducation, renderSkills, renderProfile, renderCareer }) => (
-	<Flex debug-tag="Body">
+	<Flex>
 		<Box
 			css={{
 				width: '236px',

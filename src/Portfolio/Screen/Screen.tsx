@@ -1,7 +1,7 @@
 import React, { FunctionComponent, Suspense, forwardRef, Ref, useRef, useEffect, useState } from 'react';
 import { ActivityIndicator } from './ActivityIndicator';
 import Portfolio from '../Portfolio';
-import { Box, Flex, Text } from 'primitives';
+import { Box, Flex, Text } from 'core/primitives';
 
 interface Props {
 	id: string;

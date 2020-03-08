@@ -1,7 +1,7 @@
 import React from 'react';
 import { Screen } from 'Portfolio/Screen';
 import { ActivityIndicator } from '../Screen/ActivityIndicator';
-import { Flex } from 'primitives';
+import { Flex } from 'core/primitives';
 
 export default () => {
 	return (

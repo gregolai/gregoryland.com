@@ -4,7 +4,7 @@ import { Body } from './Body';
 import { Job } from './Job';
 import { Skill } from './Skill';
 import { School } from './School';
-import { Text, Box } from './tokens';
+import { Text, Box } from './primitives';
 import { cx } from 'pu2';
 
 const cat = (stringArr: string[]) => stringArr.join(' ');

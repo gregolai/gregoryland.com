@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Box, Flex } from './tokens';
+import { Text, Box, Flex } from './primitives';
 
 export const Job = ({ where, role, from, to, items }) => (
 	<Box>

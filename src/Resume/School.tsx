@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from './tokens';
+import { Text } from './primitives';
 
 export const School = ({ name, from, to, items }) => (
 	<div>

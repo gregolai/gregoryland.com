@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState, useEffect } from 'react';
-import { Box } from 'primitives';
+import { Box } from 'core/primitives';
 
 interface LetterProps {
 	delay: number;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Flex, Box } from './tokens';
+import { Text, Flex, Box } from './primitives';
 
 const Contact = ({ icon, text }) => (
 	<Flex

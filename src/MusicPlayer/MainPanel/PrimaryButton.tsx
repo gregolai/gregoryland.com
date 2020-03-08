@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Flex } from 'primitives';
+import { Button, Flex } from 'core/primitives';
 
 export const PrimaryButton: React.FC<any> = ({ children, css, onClick, size }) => {
 	const small = size === 'small';

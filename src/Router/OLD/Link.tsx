@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import RouterContext from './RouterContext';
-import { Text } from 'primitives';
+import { Text } from 'core/primitives';
 
 interface Props {
 	children: React.ReactChild | React.ReactChild[];

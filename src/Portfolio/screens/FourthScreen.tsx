@@ -1,7 +1,7 @@
 import React from 'react';
 import MusicPlayer from 'MusicPlayer';
 import { Screen } from '../Screen';
-import { Text } from 'primitives';
+import { Text } from 'core/primitives';
 
 export default () => {
 	return (

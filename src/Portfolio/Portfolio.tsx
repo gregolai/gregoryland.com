@@ -3,7 +3,7 @@ import React, { createContext, Component, createRef, useContext, useState, useRe
 import { Screens } from './Screens';
 import useScrollBreakpoints from './useScrollBreakpoints';
 import { Tabs } from './Tabs';
-import { Box } from 'primitives';
+import { Box } from 'core/primitives';
 import { PageRouter } from '../Router/router_3rd_party/NewRouter';
 
 interface ScreenProps {

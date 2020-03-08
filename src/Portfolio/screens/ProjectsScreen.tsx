@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Screen } from 'Portfolio/Screen';
-import { Flex, Box, Text } from 'primitives';
+import { Flex, Box, Text } from 'core/primitives';
 
 export default () => {
 	return (

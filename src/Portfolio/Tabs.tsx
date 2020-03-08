@@ -1,6 +1,6 @@
 import React from 'react';
 //import Router from '../Router';
-import { Box, Text } from 'primitives';
+import { Box, Text } from 'core/primitives';
 
 import { PageLink } from '../Router/router_3rd_party/NewRouter';
 //const { Link } = Router;

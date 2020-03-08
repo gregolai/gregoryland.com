@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Box } from 'primitives';
+import { Box } from 'core/primitives';
 
 interface Props {
 	color: string;

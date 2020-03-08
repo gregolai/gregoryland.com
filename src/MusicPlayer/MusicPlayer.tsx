@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import MainPanel from './MainPanel';
 import { PlaylistPanel } from './PlaylistPanel';
 import { Provider, Context } from './MusicPlayerProvider';
-import { Box } from 'primitives';
+import { Box } from 'core/primitives';
 
 const MusicPlayer = () => {
 	const { setPlayerRef, knockStyle, knockAt } = useContext(Context);

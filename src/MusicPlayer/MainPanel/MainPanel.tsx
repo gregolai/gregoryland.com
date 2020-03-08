@@ -6,7 +6,7 @@ import { SongDetails } from './SongDetails';
 import { Record } from './Record';
 import { DragHandle } from './DragHandle';
 import MainPanelStore from './MainPanelStore';
-import { Box, Button, Flex } from 'primitives';
+import { Box, Button, Flex } from 'core/primitives';
 
 const SVG_FILL_OPACITY = '40%';
 

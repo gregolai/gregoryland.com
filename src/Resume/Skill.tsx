@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Box } from './tokens';
+import { Text, Box } from './primitives';
 
 export const Skill = ({ name, desc }) => (
 	<Box
