@@ -12,25 +12,25 @@ interface Props {
 }
 
 export const Screen: FunctionComponent<Props> = ({ center = false, css, id, label, children }) => {
-	const [ref, setRef] = useState(null);
+	const [el, setEl] = useState(null);
 	const { registerScreen } = Portfolio.useContext();
-	const { registerRoute, unregisterRoute } = Router.useContext();
+	// const { registerRoute, unregisterRoute } = Router.useContext();
 
 	useEffect(() => {
-		if (ref) {
-			registerRoute(`/${id}`, ref);
-			registerScreen({ label, id });
+		if (el) {
+			//registerRoute(`/${id}`, ref);
+			registerScreen({ el, label, id });
 
 			return () => {
-				unregisterRoute(`/${id}`);
+				//unregisterRoute(`/${id}`);
 			};
 		}
-	}, [ref]);
+	}, [el]);
 
 	const Component = center ? Flex : Box;
 	return (
 		<Component
-			ref={setRef}
+			ref={setEl}
 			id={id}
 			css={{
 				position: 'relative',

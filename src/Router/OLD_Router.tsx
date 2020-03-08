@@ -33,7 +33,7 @@ export default class Router extends Component<Props, {}> {
 		// href: "http://localhost:8086/third"
 
 		const nextState = update(prevState);
-		console.log('getDerivedStateFromProps', nextState);
+		// console.log('getDerivedStateFromProps', nextState);
 		return nextState;
 	}
 
@@ -59,7 +59,7 @@ export default class Router extends Component<Props, {}> {
 			'popstate',
 			e => {
 				e.preventDefault();
-				console.log('popstate', { e, 'window.location': window.location });
+				// console.log('popstate', { e, 'window.location': window.location });
 				this.setState(update(this.state));
 			},
 			false
@@ -68,7 +68,7 @@ export default class Router extends Component<Props, {}> {
 			'pushstate',
 			e => {
 				e.preventDefault();
-				console.log('pushstate', { e, 'window.location': window.location });
+				// console.log('pushstate', { e, 'window.location': window.location });
 				this.setState(update(this.state));
 			},
 			false

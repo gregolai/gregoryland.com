@@ -1,7 +1,7 @@
 import React, { useContext, createContext, Component } from 'react';
 import Portfolio from './Portfolio';
 import Resume from './Resume';
-import Router from 'Router';
+//import Router from 'Router';
 
 const Context = createContext({
 	printResume: () => {}
@@ -39,9 +39,7 @@ export default class App extends Component {
 					printResume: this.printResume
 				}}
 			>
-				<Router>
-					<Portfolio />
-				</Router>
+				<Portfolio />
 			</Context.Provider>
 		);
 	}
