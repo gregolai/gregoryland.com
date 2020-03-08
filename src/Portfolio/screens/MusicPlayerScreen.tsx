@@ -1,7 +1,7 @@
 import React from 'react';
 import { Screen, ScreenSplat } from 'Portfolio/Screen';
 import MusicPlayer from 'MusicPlayer';
-import { Text } from '../../Resume/tokens';
+import { Box, Text } from 'primitives';
 
 export default () => {
 	return (
@@ -17,12 +17,12 @@ export default () => {
 		>
 			<ScreenSplat color="rgba(255,255,255,0.3)" x="20%" y="20%" width={900} />
 			<ScreenSplat color="rgba(255,255,255,0.3)" x="80%" y="80%" width={1400} />
-			<div style={{ position: 'relative' }}>
+			<Box css={{ position: 'relative' }}>
 				<MusicPlayer />
 				<Text.Caption>
 					Designed by <a href="https://dribbble.com/AntonSKV">Anton Skvortsov</a>
 				</Text.Caption>
-			</div>
+			</Box>
 
 			{/* DIAGONAL LINE BACK */}
 			<div

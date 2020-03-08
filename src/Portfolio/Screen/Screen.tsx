@@ -1,7 +1,6 @@
 import React, { FunctionComponent, Suspense, forwardRef, Ref, useRef, useEffect, useState } from 'react';
 import { ActivityIndicator } from './ActivityIndicator';
 import Portfolio from '../Portfolio';
-import Router from '../../Router';
 import { Box, Flex, Text } from 'primitives';
 
 interface Props {
@@ -14,16 +13,10 @@ interface Props {
 export const Screen: FunctionComponent<Props> = ({ center = false, css, id, label, children }) => {
 	const [el, setEl] = useState(null);
 	const { registerScreen } = Portfolio.useContext();
-	// const { registerRoute, unregisterRoute } = Router.useContext();
 
 	useEffect(() => {
 		if (el) {
-			//registerRoute(`/${id}`, ref);
 			registerScreen({ el, label, id });
-
-			return () => {
-				//unregisterRoute(`/${id}`);
-			};
 		}
 	}, [el]);
 
@@ -39,7 +32,9 @@ export const Screen: FunctionComponent<Props> = ({ center = false, css, id, labe
 				...css
 			}}
 		>
-			<Text.Title style={{ position: 'absolute', top: '32px', left: '64px' }}>{label}</Text.Title>
+			<Text.Title css={{ position: 'absolute', top: '32px', left: '64px', zIndex: '1' }}>
+				{label}
+			</Text.Title>
 			<Suspense fallback={<ActivityIndicator />}>{children}</Suspense>
 		</Component>
 	);

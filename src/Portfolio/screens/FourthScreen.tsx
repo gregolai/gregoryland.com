@@ -1,7 +1,7 @@
 import React from 'react';
 import MusicPlayer from 'MusicPlayer';
 import { Screen } from '../Screen';
-import { Text } from '../../Resume/tokens';
+import { Text } from 'primitives';
 
 export default () => {
 	return (

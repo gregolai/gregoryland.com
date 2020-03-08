@@ -3,27 +3,18 @@ import React, { useEffect, useCallback, createContext, useState, useContext } fr
 import { LocationListener, Location } from 'history';
 import { BrowserRouter, useHistory, Link, Route, NavLink } from 'react-router-dom';
 
-const useListener = (listener: LocationListener) => {
-	const history = useHistory();
+const PageRouterContext = createContext<{
+	links: string[];
+	addLink: (pathname: string) => void;
+	removeLink: (pathname: string) => void;
+	onHistoryChange: LocationListener;
+}>(null);
 
-	useEffect(() => {
-		const unlisten = history.listen(listener);
-		return unlisten;
-	}, [listener]);
-};
-
-const PageRouterContext = createContext({
-	links: [],
-	addLink: (pathname: string) => null,
-	removeLink: (pathname: string) => null,
-	dispatch: (location, action) => null
-});
-export const PageRouter = ({
-	children,
-	//onBeforeTransition = async (location: Location, action: string) => false,
-	onTransition = (location: Location, action: string) => {}
-	//onAfterTransition = async (location: Location, action: string) => {}
-}) => {
+interface PageRouterProps {
+	children: any;
+	onTransition: (location: Location, action: string) => void;
+}
+export const PageRouter: React.FC<PageRouterProps> = ({ children, onTransition }) => {
 	const [links, setLinks] = useState<string[]>([]);
 
 	const addLink = (pathname: string) => {
@@ -37,17 +28,8 @@ export const PageRouter = ({
 		setLinks(nextLinks);
 	};
 
-	const dispatch: LocationListener = async (location, action) => {
+	const onHistoryChange: LocationListener = async (location, action) => {
 		await onTransition(location, action);
-		// if (shouldTransition) {
-		// 	await onTransition(location, action);
-		// 	await onAfterTransition(location, action);
-		// }
-
-		console.log('dispatched', {
-			location,
-			action
-		});
 	};
 
 	return (
@@ -58,7 +40,7 @@ export const PageRouter = ({
 					addLink,
 					removeLink,
 
-					dispatch
+					onHistoryChange
 				}}
 			>
 				<Route path="*">{children}</Route>
@@ -92,14 +74,14 @@ const LinkAnchor = ({ as: Component, navigate, ...rest }) => {
 };
 
 export const PageLink = ({ children, pathname, ...rest }) => {
-	const { addLink, removeLink, dispatch } = useContext(PageRouterContext);
+	const { addLink, removeLink, onHistoryChange } = useContext(PageRouterContext);
 
 	const history = useHistory();
 
 	useEffect(() => {
 		const unlisten = history.listen((location, action) => {
 			if (location.pathname === pathname) {
-				dispatch(location, action);
+				onHistoryChange(location, action);
 			}
 		});
 		addLink(pathname);
@@ -110,7 +92,6 @@ export const PageLink = ({ children, pathname, ...rest }) => {
 	}, [history, pathname]);
 
 	return (
-		// @ts-ignore
 		<Link {...rest} component={LinkAnchor} to={pathname}>
 			{children}
 		</Link>

@@ -2,49 +2,30 @@ import React, { useState, useEffect } from 'react';
 import { Screen } from '../Screen';
 import useScrollBreakpoints from 'Portfolio/useScrollBreakpoints';
 import { LetterTransition } from 'Portfolio/LetterTransition';
-import { Text } from '../../Resume/tokens';
+import { Box, Text } from 'primitives';
 
 const Bar = ({ delay, dir, duration, height }) => {
-	const position = 'absolute';
-	const bottom = 0;
-	const left = 0;
-	const width = '100%';
-	const backgroundColor = 'black';
-	const transition = `all ${duration}ms cubic-bezier(0.075, 1.140, 0.425, 1.150)`;
-
-	const [style, setStyle] = useState({
-		position,
-		bottom,
-		left,
-		height,
-		width,
-		backgroundColor,
-		transition,
-
-		opacity: 0,
-		transform: `translate(${dir * 100}%, 0px)`
-	});
+	const [flag, setFlag] = useState(false);
 
 	useEffect(() => {
-		setTimeout(
-			() =>
-				setStyle({
-					position,
-					bottom,
-					left,
-					height,
-					width,
-					backgroundColor,
-					transition,
-
-					opacity: 1,
-					transform: 'translate(0px, 0px)'
-				}),
-			delay
-		);
+		setTimeout(() => setFlag(true), delay);
 	}, []);
 
-	return <div style={style as any} />;
+	return (
+		<Box
+			css={{
+				position: 'absolute',
+				bottom: '0px',
+				left: '0px',
+				width: '100%',
+				height: `${height}px`,
+				backgroundColor: 'black',
+				transition: `all ${duration}ms cubic-bezier(0.075, 1.140, 0.425, 1.150)`,
+				opacity: flag ? '1' : '0',
+				transform: `translate(${flag ? 0 : dir * 100}%, 0px)`
+			}}
+		/>
+	);
 };
 
 const InnerMain = ({ children, delay, distance }) => {
@@ -88,9 +69,9 @@ const InnerMain = ({ children, delay, distance }) => {
 	};
 
 	return (
-		<div ref={setRef} style={style}>
+		<Box ref={setRef} style={style}>
 			{children}
-		</div>
+		</Box>
 	);
 };
 
@@ -108,24 +89,24 @@ export default () => {
 		>
 			<InnerMain delay={2200} distance={-100}>
 				<div>
-					<div style={{ position: 'relative', display: 'inline-block' }}>
+					<Box css={{ position: 'relative', display: 'inline-block' }}>
 						<Text.Title as="div">
 							<LetterTransition dir={-1} duration={1400}>
 								Gregory Dalton
 							</LetterTransition>
 						</Text.Title>
 						<Bar delay={1500} height={3} dir={1} duration={500} />
-					</div>
+					</Box>
 				</div>
 				<div>
-					<div style={{ position: 'relative', display: 'inline-block' }}>
+					<Box css={{ position: 'relative', display: 'inline-block' }}>
 						<Text.Subtitle as="div">
 							<LetterTransition dir={+1} duration={1400}>
 								Software Engineer
 							</LetterTransition>
 						</Text.Subtitle>
 						<Bar delay={1800} height={2} dir={-1} duration={500} />
-					</div>
+					</Box>
 				</div>
 			</InnerMain>
 		</Screen>

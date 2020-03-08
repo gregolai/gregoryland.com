@@ -1,7 +1,6 @@
 import React from 'react';
 import { Screen, ScreenSplat } from 'Portfolio/Screen';
 
-import { Text } from '../../Resume/tokens';
 import Resume from 'Resume';
 
 export default () => {
@@ -16,6 +15,8 @@ export default () => {
 			}}
 		>
 			<Resume style={{ zIndex: 1, width: '80%' }} />
+
+			<ScreenSplat color="rgba(255,255,255,0.5)" width="1800px" x="200px" y="600px" colorPos="20%" />
 
 			{/* DIAGONAL LINE */}
 			<div
