@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import RouterContext from './RouterContext';
+import { Text } from 'primitives';
 
 interface Props {
 	children: React.ReactChild | React.ReactChild[];
@@ -11,7 +12,8 @@ const Link: React.FC<Props> = ({ children, to, ...props }) => {
 	const { goToHref } = useContext(RouterContext);
 
 	return (
-		<a
+		<Text.Subtitle
+			as="a"
 			{...props}
 			href={to}
 			onClick={e => {
@@ -28,7 +30,7 @@ const Link: React.FC<Props> = ({ children, to, ...props }) => {
 			}}
 		>
 			{children}
-		</a>
+		</Text.Subtitle>
 	);
 };
 export default Link;

@@ -199,7 +199,7 @@ const config = {
 
 	// https://webpack.js.org/configuration/optimization/
 	optimization: (() => {
-		const SUPER_AGGRESSIVE = true;
+		const SUPER_AGGRESSIVE = false;
 
 		/**
 		 * @type {TerserPlugin.TerserPluginOptions}

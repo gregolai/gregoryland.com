@@ -1,20 +1,39 @@
 import React from 'react';
 import Router from '../Router';
-import { cx } from 'pu2';
+import { Box } from 'primitives';
 
 const { Link } = Router;
 
-const css = require('./Tabs.scss');
-
 const Tab = ({ children, value, isActive, onClick }) => (
-	<Link className={cx(css.tab, isActive && css.tabActive)} onClick={onClick} to={`/${value}`}>
+	<Link
+		css={{
+			cursor: 'pointer',
+			outline: 'none',
+			display: 'block',
+			width: '120px',
+			padding: '4px 8px',
+			fontSize: '12px',
+			border: '2px solid black',
+			backgroundColor: isActive ? 'white' : 'black',
+			color: isActive ? 'black' : 'white',
+			textDecoration: 'none',
+			':focus': {
+				textDecoration: 'underline'
+			},
+			':hover': {
+				textDecoration: 'underline'
+			}
+		}}
+		onClick={onClick}
+		to={`/${value}`}
+	>
 		{children}
 	</Link>
 );
 
 export const Tabs = ({ onChange, options, value, ...props }) => {
 	return (
-		<div {...props} className={cx(css.container, props.className)}>
+		<Box {...props}>
 			{options.map(option => (
 				<Tab
 					key={option.value}
@@ -25,6 +44,6 @@ export const Tabs = ({ onChange, options, value, ...props }) => {
 					{option.label}
 				</Tab>
 			))}
-		</div>
+		</Box>
 	);
 };

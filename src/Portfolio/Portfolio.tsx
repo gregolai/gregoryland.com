@@ -3,8 +3,7 @@ import React, { createContext, Component, createRef, useContext, useState, useRe
 import { Screens } from './Screens';
 import useScrollBreakpoints from './useScrollBreakpoints';
 import { Tabs } from './Tabs';
-
-const css = require('./Portfolio.scss');
+import { Box } from 'primitives';
 
 interface NavigationProps {
 	id: string;
@@ -101,7 +100,15 @@ const Portfolio = () => {
 				registerScreen
 			}}
 		>
-			<div className={css.container} ref={ref}>
+			<Box
+				css={{
+					overflow: 'hidden',
+					opacity: '1',
+					transitionTimingFunction: 'ease-in-out',
+					transitionProperty: 'opacity'
+				}}
+				ref={ref}
+			>
 				<div
 					style={{
 						position: 'fixed',
@@ -113,13 +120,13 @@ const Portfolio = () => {
 					<MyCustom />
 				</div>
 				<Screens />
-			</div>
+			</Box>
 
 			<Tabs
-				style={{
+				css={{
 					position: 'fixed',
-					right: 50,
-					top: 50
+					right: '50px',
+					top: '50px'
 				}}
 				onChange={setCurrentScreen}
 				options={state.screens.map(({ label, id }) => ({

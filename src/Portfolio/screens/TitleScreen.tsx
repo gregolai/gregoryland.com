@@ -99,7 +99,8 @@ export default () => {
 		<Screen
 			id="first"
 			label="Title"
-			style={{
+			center
+			css={{
 				height: '100vh',
 				background:
 					'linear-gradient(rgb(255, 255, 255) 0%, rgb(242, 246, 250) 10%, rgb(214, 229, 244) 90%)'
@@ -108,7 +109,7 @@ export default () => {
 			<InnerMain delay={2200} distance={-100}>
 				<div>
 					<div style={{ position: 'relative', display: 'inline-block' }}>
-						<Text.Title>
+						<Text.Title as="div">
 							<LetterTransition dir={-1} duration={1400}>
 								Gregory Dalton
 							</LetterTransition>
@@ -118,7 +119,7 @@ export default () => {
 				</div>
 				<div>
 					<div style={{ position: 'relative', display: 'inline-block' }}>
-						<Text.Subtitle>
+						<Text.Subtitle as="div">
 							<LetterTransition dir={+1} duration={1400}>
 								Software Engineer
 							</LetterTransition>

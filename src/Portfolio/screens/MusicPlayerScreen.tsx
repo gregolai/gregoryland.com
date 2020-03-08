@@ -8,8 +8,9 @@ export default () => {
 		<Screen
 			id="second"
 			label="Music Player"
-			style={{
-				height: 800,
+			center
+			css={{
+				height: '800px',
 				background:
 					'linear-gradient(transparent 0%, rgba(175, 204, 232, 0.5) 50%, transparent 100%), radial-gradient(circle at 50% 50%, rgba(181, 175, 233, 0.3) 0%, transparent 350px)'
 			}}
@@ -22,6 +23,21 @@ export default () => {
 					Designed by <a href="https://dribbble.com/AntonSKV">Anton Skvortsov</a>
 				</Text.Caption>
 			</div>
+
+			{/* DIAGONAL LINE BACK */}
+			<div
+				style={{
+					background: 'rgb(97, 95, 107)',
+					height: '500px',
+					position: 'absolute',
+					width: '100%',
+					transform: 'translateY(-250px) rotate(-25deg) scaleX(20)',
+
+					top: '0px',
+					right: '0px',
+					transformOrigin: 'right top'
+				}}
+			></div>
 		</Screen>
 	);
 };

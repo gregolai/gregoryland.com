@@ -1,17 +1,23 @@
 import React from 'react';
 import { Screen } from 'Portfolio/Screen';
+import { ActivityIndicator } from '../Screen/ActivityIndicator';
+import { Flex } from 'primitives';
 
 export default () => {
 	return (
 		<Screen
 			id="third"
 			label="Lorem Ipsum"
-			style={{
-				height: 900,
+			center
+			css={{
+				height: '900px',
 				background: 'linear-gradient(180deg,transparent 0%, rgb(169, 203, 236) 50%, transparent 100%)'
 			}}
 		>
-			<div style={{ height: 200, overflow: 'hidden' }}>lorem ipsum</div>
+			<Flex>
+				<div style={{ height: 200, overflow: 'hidden' }}>lorem ipsum</div>
+				<ActivityIndicator />
+			</Flex>
 		</Screen>
 	);
 };

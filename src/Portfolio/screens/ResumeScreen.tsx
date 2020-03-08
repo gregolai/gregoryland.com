@@ -9,10 +9,10 @@ export default () => {
 		<Screen
 			id="resume"
 			label="Resume"
-			style={{
-				paddingTop: 100,
-				paddingBottom: 100
-				// height: 800
+			center
+			css={{
+				paddingTop: '100px',
+				paddingBottom: '100px'
 			}}
 		>
 			<Resume style={{ zIndex: 1, width: '80%' }} />
@@ -23,10 +23,12 @@ export default () => {
 					background: 'black',
 					height: '500px',
 					position: 'absolute',
-					top: '600px',
-					left: '0px',
 					width: '100%',
-					transform: 'rotate(25deg) scaleX(20)'
+					transform: 'translateY(250px) rotate(25deg) scaleX(20)',
+
+					right: '0px',
+					bottom: '0px',
+					transformOrigin: 'right top'
 				}}
 			></div>
 		</Screen>

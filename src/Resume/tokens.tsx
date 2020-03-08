@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { StyledPrimitive } from 'pu2';
 
 const BASE_TEXT_STYLE = {
@@ -10,7 +10,7 @@ const BASE_TEXT_STYLE = {
 };
 
 const createPrimitive = (name, baseProps, css) => {
-	return props => (
+	return forwardRef<any, any>((props, ref) => (
 		<StyledPrimitive
 			{...baseProps}
 			{...props}
@@ -18,8 +18,9 @@ const createPrimitive = (name, baseProps, css) => {
 				...css,
 				...props.css
 			}}
+			ref={ref}
 		/>
-	);
+	));
 };
 
 const createText = (name, baseProps, css) => {

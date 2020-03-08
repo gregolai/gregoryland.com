@@ -1,7 +1,5 @@
 import React, { FunctionComponent, useState, useEffect } from 'react';
-import { cx } from 'pu2';
-
-const css = require('./LetterTransition.scss');
+import { Box } from 'primitives';
 
 interface LetterProps {
 	delay: number;
@@ -10,35 +8,29 @@ interface LetterProps {
 	symbol: string;
 }
 
-interface LetterState {
-	className: string;
-	style: { [key: string]: string | number };
-}
-
 const Letter: FunctionComponent<LetterProps> = ({ delay, distance, duration, symbol }) => {
-	const transition = `all ${duration}ms ease-in-out`;
-
-	const [{ className, style }, setState] = useState<LetterState>({
-		className: css.letter,
-		style: {
-			transition,
-			transform: `translate(0px, ${distance}px)`
-		}
-	});
+	const [show, setShow] = useState(false);
 
 	useEffect(() => {
 		setTimeout(() => {
-			setState({
-				className: cx(css.letter, css.letterShow),
-				style: { transition }
-			});
+			setShow(true);
 		}, delay);
 	}, []);
 
 	return (
-		<div className={className} style={style}>
+		<Box
+			css={{
+				display: 'inline-block',
+				whiteSpace: 'pre',
+				opacity: show ? '1' : '0'
+			}}
+			style={{
+				transition: `all ${duration}ms ease-in-out`,
+				transform: `translate(0px, ${show ? 0 : distance}px)`
+			}}
+		>
 			{symbol}
-		</div>
+		</Box>
 	);
 };
 

@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Screen } from 'Portfolio/Screen';
+import { Text } from 'primitives';
+import { Flex, Box } from 'Resume/tokens';
 
 export default () => {
 	return (
 		<Screen
 			id="projects"
 			label="Projects"
-			style={{
-				paddingTop: 100,
+			css={{
+				paddingTop: '100px',
 				background: 'linear-gradient(180deg,transparent 0%, rgb(169, 203, 236) 50%, transparent 100%)'
 			}}
 		>
@@ -27,8 +29,8 @@ export default () => {
 						images: [
 							{
 								title: 'SNEK',
-								url: 'img/snek1.png',
-								thumb: 'img/thumbs/snek1.jpg'
+								url: 'img/projects/snek1.png',
+								thumb: 'img/projects/thumbs/snek1.jpg'
 							}
 						],
 						items: ['100% Vanilla HTML/JS/CSS']
@@ -47,13 +49,13 @@ export default () => {
 						images: [
 							{
 								title: 'User Interface',
-								url: 'img/html5-player1.png',
-								thumb: 'img/thumbs/html5-player1.jpg'
+								url: 'img/projects/html5-player1.png',
+								thumb: 'img/projects/thumbs/html5-player1.jpg'
 							},
 							{
 								title: 'Fullscreen',
-								url: 'img/html5-player2.png',
-								thumb: 'img/thumbs/html5-player2.jpg'
+								url: 'img/projects/html5-player2.png',
+								thumb: 'img/projects/thumbs/html5-player2.jpg'
 							}
 						],
 						items: [
@@ -77,8 +79,8 @@ export default () => {
 						images: [
 							{
 								title: 'Pretty colors',
-								url: 'img/starfield-js-1.png',
-								thumb: 'img/thumbs/starfield-js-1.jpg'
+								url: 'img/projects/starfield-js-1.png',
+								thumb: 'img/projects/thumbs/starfield-js-1.jpg'
 							}
 						],
 						items: [
@@ -98,13 +100,13 @@ export default () => {
 							{
 								title:
 									'Similar to "Warcraft 3" - five units are selected, but 3 peasants are grouped as active (as shown by the yellow icon border)',
-								url: 'img/war1.png',
-								thumb: 'img/thumbs/war1.jpg'
+								url: 'img/projects/war1.png',
+								thumb: 'img/projects/thumbs/war1.jpg'
 							},
 							{
 								title: 'Units moving, Debug mode - Quad tree, grid coords, unit IDs',
-								url: 'img/war2.png',
-								thumb: 'img/thumbs/war2.jpg'
+								url: 'img/projects/war2.png',
+								thumb: 'img/projects/thumbs/war2.jpg'
 							}
 						],
 						items: [
@@ -128,8 +130,8 @@ export default () => {
 						images: [
 							{
 								title: 'Two 2D inputs; One WebGL output',
-								url: 'img/masking.png',
-								thumb: 'img/thumbs/masking.jpg'
+								url: 'img/projects/masking.png',
+								thumb: 'img/projects/thumbs/masking.jpg'
 							}
 						],
 						items: [
@@ -148,33 +150,33 @@ export default () => {
 						images: [
 							{
 								title: 'Command listing',
-								url: 'img/cmdtool1.png',
-								thumb: 'img/thumbs/cmdtool1.jpg'
+								url: 'img/projects/cmdtool1.png',
+								thumb: 'img/projects/thumbs/cmdtool1.jpg'
 							},
 							{
 								title: 'Editor',
-								url: 'img/cmdtool2.png',
-								thumb: 'img/thumbs/cmdtool2.jpg'
+								url: 'img/projects/cmdtool2.png',
+								thumb: 'img/projects/thumbs/cmdtool2.jpg'
 							},
 							{
 								title: 'Command page',
-								url: 'img/cmdtool3.png',
-								thumb: 'img/thumbs/cmdtool3.jpg'
+								url: 'img/projects/cmdtool3.png',
+								thumb: 'img/projects/thumbs/cmdtool3.jpg'
 							},
 							{
 								title: 'You can pop it out for multiple instances!',
-								url: 'img/cmdtool4.png',
-								thumb: 'img/thumbs/cmdtool4.jpg'
+								url: 'img/projects/cmdtool4.png',
+								thumb: 'img/projects/thumbs/cmdtool4.jpg'
 							},
 							{
 								title: 'Editor command version selector',
-								url: 'img/cmdtool5.png',
-								thumb: 'img/thumbs/cmdtool5.jpg'
+								url: 'img/projects/cmdtool5.png',
+								thumb: 'img/projects/thumbs/cmdtool5.jpg'
 							},
 							{
 								title: 'Select desired version on command page',
-								url: 'img/cmdtool6.png',
-								thumb: 'img/thumbs/cmdtool6.jpg'
+								url: 'img/projects/cmdtool6.png',
+								thumb: 'img/projects/thumbs/cmdtool6.jpg'
 							}
 						],
 						items: [
@@ -198,8 +200,8 @@ export default () => {
 						images: [
 							{
 								title: 'Star Field',
-								url: 'img/starfield-as-1.png',
-								thumb: 'img/thumbs/starfield-as-1.jpg'
+								url: 'img/projects/starfield-as-1.png',
+								thumb: 'img/projects/thumbs/starfield-as-1.jpg'
 							}
 						],
 						items: [
@@ -223,13 +225,13 @@ export default () => {
 						images: [
 							{
 								title: 'Lowest level-of-detail',
-								url: 'img/ico-lod0-1.png',
-								thumb: 'img/thumbs/ico-lod0-1.jpg'
+								url: 'img/projects/ico-lod0-1.png',
+								thumb: 'img/projects/thumbs/ico-lod0-1.jpg'
 							},
 							{
 								title: 'Highest level-of-detail',
-								url: 'img/ico-lod5-1.png',
-								thumb: 'img/thumbs/ico-lod5-1.jpg'
+								url: 'img/projects/ico-lod5-1.png',
+								thumb: 'img/projects/thumbs/ico-lod5-1.jpg'
 							}
 						],
 						items: [
@@ -251,13 +253,13 @@ export default () => {
 						images: [
 							{
 								title: 'Screenshot #1',
-								url: 'img/catgame1.png',
-								thumb: 'img/thumbs/catgame1.jpg'
+								url: 'img/projects/catgame1.png',
+								thumb: 'img/projects/thumbs/catgame1.jpg'
 							},
 							{
 								title: 'Screenshot #2',
-								url: 'img/catgame2.png',
-								thumb: 'img/thumbs/catgame2.jpg'
+								url: 'img/projects/catgame2.png',
+								thumb: 'img/projects/thumbs/catgame2.jpg'
 							}
 						],
 						items: [
@@ -268,16 +270,40 @@ export default () => {
 						]
 					}
 				].map((proj, i) => (
-					<div key={i} style={{ paddingLeft: 64, paddingRight: 64 }}>
-						<div>{proj.name}</div>
-						<div style={{ paddingBottom: 32 }}>
+					<Box key={i} css={{ paddingLeft: '64px', paddingRight: '64px' }}>
+						<Text.Title>{proj.name}</Text.Title>
+						{proj.images && (
+							<Flex css={{ alignItems: 'stretch' }}>
+								{proj.images.map(({ title, url, thumb }, i) => (
+									<Flex
+										key={i}
+										css={{
+											maxWidth: '300px',
+											padding: '12px',
+											flexDirection: 'column',
+											alignItems: 'center',
+											justifyContent: 'space-between'
+										}}
+									>
+										<Text.Label>{title}</Text.Label>
+										<a href={`static/${url}`} style={{ display: 'block' }}>
+											<img src={`static/${thumb}`} style={{ display: 'block' }} />
+										</a>
+									</Flex>
+								))}
+							</Flex>
+						)}
+						<Box css={{ paddingBottom: '32px' }}>
 							{proj.items.map((item, i2) => (
-								<div key={i2} style={{ paddingLeft: 32, paddingTop: 4 }}>
+								<Text.BodyBookTabular
+									key={i2}
+									css={{ paddingLeft: '32px', paddingTop: '4px' }}
+								>
 									{item}
-								</div>
+								</Text.BodyBookTabular>
 							))}
-						</div>
-					</div>
+						</Box>
+					</Box>
 				))}
 			</div>
 		</Screen>

@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext } from 'react';
 import { Context } from '../MusicPlayerProvider';
 import { Box, Button, Flex } from 'primitives';
 
@@ -22,14 +22,12 @@ const Progress = ({ percent }) => {
 };
 
 export const PlaylistEntry = ({ song }) => {
-	const ref = useRef(null);
 	const { bufferingSongId, bufferingSongProgress, bufferAndPlaySong, currentSong } = useContext(Context);
 	const isCurrent = currentSong && currentSong.id === song.id;
 
 	// TODO: SHOULD THIS BE <Flex> or <Relative>, SINCE IT'S A FLEX CONTAINER AND HOLDS AN ABSOLUTE ELEMENT
 	return (
 		<Flex
-			ref={ref}
 			css={{
 				position: 'relative',
 				paddingTop: '14px',

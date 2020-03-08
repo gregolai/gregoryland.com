@@ -8,8 +8,9 @@ export default () => {
 		<Screen
 			id="fourth"
 			label="Fourth Screen"
-			style={{
-				height: 1200,
+			center
+			css={{
+				height: '1200px',
 				background: 'green'
 			}}
 		>

@@ -1,7 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { cx } from 'pu2';
-
-const css = require('./ScreenSplat.scss');
+import { Box } from 'primitives';
 
 interface Props {
 	color: string;
@@ -25,8 +23,12 @@ export const ScreenSplat: FunctionComponent<Props> = ({
 	width,
 	height = width
 }) => (
-	<div
-		className={cx(css.container, overlay && css.overlay)}
+	<Box
+		css={{
+			position: 'absolute',
+			transform: 'translate(-50%, -50%)',
+			zIndex: overlay && '2'
+		}}
 		style={{
 			left: x,
 			top: y,

@@ -1,11 +1,8 @@
 import React, { FunctionComponent, Suspense, forwardRef, Ref, useRef, useEffect, useState } from 'react';
-import { cx } from 'pu2';
 import { ActivityIndicator } from './ActivityIndicator';
 import Portfolio from '../Portfolio';
 import Router from '../../Router';
-import { Text } from '../../Resume/tokens';
-
-const css = require('./Screen.scss');
+import { Box, Flex, Text } from 'primitives';
 
 interface Props {
 	id: string;
@@ -14,7 +11,7 @@ interface Props {
 	[key: string]: any;
 }
 
-export const Screen: FunctionComponent<Props> = ({ id, label, children, ...props }) => {
+export const Screen: FunctionComponent<Props> = ({ center = false, css, id, label, children }) => {
 	const [ref, setRef] = useState(null);
 	const { registerScreen } = Portfolio.useContext();
 	const { registerRoute, unregisterRoute } = Router.useContext();
@@ -30,10 +27,20 @@ export const Screen: FunctionComponent<Props> = ({ id, label, children, ...props
 		}
 	}, [ref]);
 
+	const Component = center ? Flex : Box;
 	return (
-		<div {...props} ref={setRef} id={id} className={cx(css.container, props.className)}>
-			<Text.Title style={{ position: 'absolute', top: 32, left: 64 }}>{label}</Text.Title>
+		<Component
+			ref={setRef}
+			id={id}
+			css={{
+				position: 'relative',
+				justifyContent: center && 'center',
+				alignItems: center && 'center',
+				...css
+			}}
+		>
+			<Text.Title style={{ position: 'absolute', top: '32px', left: '64px' }}>{label}</Text.Title>
 			<Suspense fallback={<ActivityIndicator />}>{children}</Suspense>
-		</div>
+		</Component>
 	);
 };
