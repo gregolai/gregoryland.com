@@ -189,7 +189,7 @@ export default () => {
 					name: 'StarField (ActionScript)',
 					dates: 'February 2012',
 					play: {
-						title: 'Run',
+						title: 'Run (.swf file is safe)',
 						url: 'starfield-as/bin-debug/Starfield.swf'
 					},
 					download: {
@@ -270,7 +270,27 @@ export default () => {
 				}
 			].map((proj, i) => (
 				<Box key={i} css={{ paddingLeft: '64px', paddingRight: '64px' }}>
-					<Text.Title>{proj.name}</Text.Title>
+					<Flex css={{ alignItems: 'center' }}>
+						<Text.Title>{proj.name}</Text.Title>
+						{proj.play && (
+							<Text.Caption
+								css={{ marginLeft: '48px' }}
+								as="a"
+								href={`https://gregoryland.com/projects/${proj.play.url}`}
+							>
+								{proj.play.title}
+							</Text.Caption>
+						)}
+						{proj.download && (
+							<Text.Caption
+								css={{ marginLeft: '48px' }}
+								as="a"
+								href={`https://gregoryland.com/projects/${proj.download.url}`}
+							>
+								{proj.download.title}
+							</Text.Caption>
+						)}
+					</Flex>
 					{proj.images && (
 						<Flex css={{ alignItems: 'stretch' }}>
 							{proj.images.map(({ title, url, thumb }, i) => (
