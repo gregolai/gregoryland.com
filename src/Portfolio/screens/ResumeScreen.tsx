@@ -7,14 +7,17 @@ export default () => {
 	return (
 		<Screen
 			id="resume"
-			label="Resume"
+			link={{
+				label: 'Resume',
+				pathname: '/resume'
+			}}
 			center
 			css={{
-				paddingTop: '100px',
-				paddingBottom: '100px'
+				paddingTop: '32px',
+				paddingBottom: '32px'
 			}}
 		>
-			<Resume css={{ zIndex: 1, width: '80%', maxWidth: '1000px' }} />
+			<Resume css={{ zIndex: '1', width: '80%', maxWidth: '1000px' }} />
 
 			<ScreenSplat color="rgba(255,255,255,0.5)" width="1800px" x="200px" y="600px" colorPos="20%" />
 

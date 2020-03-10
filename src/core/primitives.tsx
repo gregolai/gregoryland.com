@@ -6,7 +6,7 @@ const BASE_TEXT_STYLE = {
 	webkitFontSmoothing: 'antialiased',
 	mozOsxFontSmoothing: 'grayscale',
 	color: '#313131',
-	margin: 0
+	margin: '0'
 };
 
 const createPrimitive = (name, baseProps, css) => {

@@ -1,4 +1,4 @@
-import React, { createContext, Component, createRef, useContext, useState, useRef, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 import { Screens } from './Screens';
 import useScrollBreakpoints from './useScrollBreakpoints';
@@ -6,10 +6,15 @@ import { Tabs } from './Tabs';
 import { Box } from 'core/primitives';
 import { PageRouter } from '../Router/router_3rd_party/NewRouter';
 
+interface LinkProps {
+	pathname: string;
+	label: string;
+}
+
 interface ScreenProps {
 	el: HTMLElement;
 	id: string;
-	label: React.ReactChild;
+	link: LinkProps;
 }
 
 const Context = createContext({
@@ -52,18 +57,24 @@ const MyCustom = () => {
 		opacity,
 		transform: `translate(${translate}px, ${translate}px) scale(${scale}, ${scale})`
 	};
-	return <div style={style}>HELLO</div>;
+	return (
+		<div
+			style={{
+				position: 'fixed',
+				top: 0,
+				left: 0,
+				zIndex: 2
+			}}
+		>
+			<div style={style}>HELLO</div>
+		</div>
+	);
 };
 
 const TRANSITION_DURATION = 300;
 
 const Portfolio = () => {
-	const ref = useRef(null);
-
-	const [screens, setScreens] = useState({
-		list: [] as ScreenProps[],
-		byId: {} as Mapped<ScreenProps>
-	});
+	const [screens, setScreens] = useState<ScreenProps[]>([]);
 
 	const [currentScreen, setCurrentScreen] = useState(null);
 
@@ -71,17 +82,6 @@ const Portfolio = () => {
 		state: 0,
 		screen: undefined
 	});
-
-	const registerScreen = (screen: ScreenProps) => {
-		console.log('registerScreen', screen);
-		setScreens(state => ({
-			byId: {
-				...state.byId,
-				[screen.id]: screen
-			},
-			list: [...state.list, screen]
-		}));
-	};
 
 	useEffect(() => {
 		const { state, screen } = transition;
@@ -113,15 +113,10 @@ const Portfolio = () => {
 	return (
 		<PageRouter
 			onTransition={(location, action) => {
-				const screenId = location.pathname.substr(1);
-				// if (screenId === state.currentScreenId) return false;
+				if (transition.state !== 0) return;
 
-				// setState(state => ({
-				// 	...state,
-				// 	currentScreenId: screenId
-				// }));
-
-				const nextScreen = screens.byId[screenId];
+				const nextScreen = screens.find(s => s.link.pathname === location.pathname);
+				if (!nextScreen) return;
 
 				setTransition({
 					state: 1,
@@ -129,34 +124,12 @@ const Portfolio = () => {
 				});
 				setCurrentScreen(nextScreen);
 			}}
-			// onTransition={async (location, action) => {
-			// 	return;
-			// 	return new Promise(resolve => {
-			// 		setTimeout(() => {
-			// 			console.log({ transition });
-			// 			const { screen } = transition;
-			// 			document.scrollingElement.scrollTo(0, screen.el.offsetTop);
-
-			// 			setTransition({
-			// 				state: 2,
-			// 				screen: transition.screen
-			// 			});
-
-			// 			setTimeout(resolve, TRANSITION_DURATION);
-			// 		}, TRANSITION_DURATION);
-			// 	});
-			// }}
-			// onAfterTransition={async (location, action) => {
-			// 	return;
-			// 	setTransition({
-			// 		state: 0,
-			// 		screen: undefined
-			// 	});
-			// }}
 		>
 			<Context.Provider
 				value={{
-					registerScreen
+					registerScreen: (screen: ScreenProps) => {
+						setScreens(state => [...state, screen]);
+					}
 				}}
 			>
 				<Box
@@ -168,18 +141,8 @@ const Portfolio = () => {
 
 						opacity: transition.state === 1 ? '0' : '1'
 					}}
-					ref={ref}
 				>
-					<div
-						style={{
-							position: 'fixed',
-							top: 0,
-							left: 0,
-							zIndex: 2
-						}}
-					>
-						<MyCustom />
-					</div>
+					<MyCustom />
 					<Screens />
 				</Box>
 
@@ -189,9 +152,9 @@ const Portfolio = () => {
 						right: '50px',
 						top: '50px'
 					}}
-					options={screens.list.map(({ label, id }) => ({
-						label,
-						value: id
+					options={screens.map(({ link }) => ({
+						label: link.label,
+						value: link.pathname
 					}))}
 					value={currentScreen?.id}
 				/>

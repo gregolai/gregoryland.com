@@ -79,7 +79,10 @@ export default () => {
 	return (
 		<Screen
 			id="title"
-			label="Title"
+			link={{
+				label: 'Home',
+				pathname: '/'
+			}}
 			center
 			css={{
 				height: '100vh',

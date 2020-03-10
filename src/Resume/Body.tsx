@@ -27,7 +27,7 @@ export const Body = ({ renderEducation, renderSkills, renderProfile, renderCaree
 			<Section title="EDUCATION">{renderEducation()}</Section>
 			<Section title="SKILLS">{renderSkills()}</Section>
 		</Box>
-		<Box css={{ flex: 1 }}>
+		<Box css={{ flex: '1' }}>
 			<Section title="PROFILE">{renderProfile()}</Section>
 			<Section title="CAREER">{renderCareer()}</Section>
 		</Box>

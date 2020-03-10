@@ -66,7 +66,7 @@ export const PlaylistEntry = ({ song }) => {
 			/>
 			<Box
 				css={{
-					flex: 1,
+					flex: '1',
 					paddingLeft: '8px'
 				}}
 			>

@@ -3,20 +3,26 @@ import { ActivityIndicator } from './ActivityIndicator';
 import Portfolio from '../Portfolio';
 import { Box, Flex, Text } from 'core/primitives';
 
-interface Props {
-	id: string;
+interface LinkProps {
+	pathname: string;
 	label: string;
+}
+
+interface Props {
+	id?: string;
+	label?: string;
+	link?: LinkProps;
 	children: React.ReactChild | React.ReactChild[];
 	[key: string]: any;
 }
 
-export const Screen: FunctionComponent<Props> = ({ center = false, css, id, label, children }) => {
+export const Screen: FunctionComponent<Props> = ({ center = false, css, id, link, label, children }) => {
 	const [el, setEl] = useState(null);
 	const { registerScreen } = Portfolio.useContext();
 
 	useEffect(() => {
-		if (el) {
-			registerScreen({ el, label, id });
+		if (el && link) {
+			registerScreen({ el, id, link });
 		}
 	}, [el]);
 
@@ -32,9 +38,11 @@ export const Screen: FunctionComponent<Props> = ({ center = false, css, id, labe
 				...css
 			}}
 		>
-			<Text.Title css={{ position: 'absolute', top: '32px', left: '64px', zIndex: '1' }}>
-				{label}
-			</Text.Title>
+			{label && (
+				<Text.Title css={{ position: 'absolute', top: '32px', left: '64px', zIndex: '1' }}>
+					{label}
+				</Text.Title>
+			)}
 			<Suspense fallback={<ActivityIndicator />}>{children}</Suspense>
 		</Component>
 	);

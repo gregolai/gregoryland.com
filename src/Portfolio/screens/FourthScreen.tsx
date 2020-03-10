@@ -7,10 +7,14 @@ export default () => {
 	return (
 		<Screen
 			id="fourth"
-			label="Fourth Screen"
+			link={{
+				label: 'Fourth Screen',
+				pathname: '/fourth'
+			}}
 			center
 			css={{
-				height: '1200px',
+				minHeight: '640px',
+				height: '100vh',
 				background: 'green'
 			}}
 		>

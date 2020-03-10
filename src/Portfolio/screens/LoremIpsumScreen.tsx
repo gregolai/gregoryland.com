@@ -8,6 +8,10 @@ export default () => {
 		<Screen
 			id="lorem"
 			label="Lorem Ipsum"
+			link={{
+				label: 'Lorem Ipsum',
+				pathname: '/lorem'
+			}}
 			center
 			css={{
 				height: '900px',

@@ -8,6 +8,10 @@ export default () => {
 		<Screen
 			id="music"
 			label="Music Player"
+			link={{
+				label: 'Music Player',
+				pathname: '/music'
+			}}
 			center
 			css={{
 				height: '800px',

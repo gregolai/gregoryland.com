@@ -17,8 +17,8 @@ const Contact = ({ icon, text }) => (
 
 export const Header = ({ name, role, email, phone }) => (
 	<Flex css={{ paddingTop: '16px', paddingBottom: '16px' }}>
-		<Box css={{ flex: 1 }}>
-			<Text.Title style={{ margin: 0 }}>{name}</Text.Title>
+		<Box css={{ flex: '1' }}>
+			<Text.Title style={{ margin: '0' }}>{name}</Text.Title>
 			<Text.Subtitle>{role}</Text.Subtitle>
 		</Box>
 		<Box>

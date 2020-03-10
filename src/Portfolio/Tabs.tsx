@@ -27,23 +27,18 @@ const Tab = ({ children, value, isActive }) => {
 					textDecoration: 'underline'
 				}
 			}}
-			pathname={`/${value}`}
+			pathname={value}
 		>
 			{children}
 		</PageLink>
 	);
 };
 
-export const Tabs = ({ options, value, ...props }) => {
+export const Tabs = ({ css, options, value }) => {
 	return (
-		<Box {...props}>
+		<Box css={css}>
 			{options.map(option => (
-				<Tab
-					key={option.value}
-					value={option.value}
-					isActive={option.value === value}
-					//onClick={() => onChange(option.value)}
-				>
+				<Tab key={option.value} value={option.value} isActive={option.value === value}>
 					{option.label}
 				</Tab>
 			))}

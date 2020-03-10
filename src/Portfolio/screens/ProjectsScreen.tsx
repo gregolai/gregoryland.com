@@ -7,6 +7,10 @@ export default () => {
 		<Screen
 			id="projects"
 			label="Projects"
+			link={{
+				label: 'Projects',
+				pathname: '/projects'
+			}}
 			css={{
 				paddingTop: '100px',
 				background: 'linear-gradient(180deg,transparent 0%, rgb(169, 203, 236) 50%, transparent 100%)'
