@@ -10,7 +10,7 @@ const BASE_TEXT_STYLE = {
 	m: space._0
 };
 
-const createPrimitive = (name, baseProps, css) => {
+const createPrimitive = (baseProps, css) => {
 	return forwardRef<any, any>((props, ref) => (
 		<StyledPrimitive
 			{...baseProps}
@@ -26,10 +26,10 @@ const createPrimitive = (name, baseProps, css) => {
 
 const createText = (name, baseProps, css) => {
 	if (__DEV__) {
-		baseProps['debug-tag'] = name;
+		baseProps['debug-tag'] = `Text.${name}`;
 	}
 
-	return createPrimitive(`Text.${name}`, baseProps, {
+	return createPrimitive(baseProps, {
 		...BASE_TEXT_STYLE,
 		...css
 	});
@@ -128,9 +128,8 @@ export const Text = {
 	Title
 };
 
-export const Box = createPrimitive(undefined, undefined, {});
+export const Box = createPrimitive(undefined, {});
 export const Button = createPrimitive(
-	undefined,
 	{ role: 'button' },
 	{
 		cursor: 'pointer',
@@ -139,4 +138,4 @@ export const Button = createPrimitive(
 		justifyContent: 'center'
 	}
 );
-export const Flex = createPrimitive(undefined, undefined, { display: 'flex' });
+export const Flex = createPrimitive(undefined, { display: 'flex' });
