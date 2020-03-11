@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Screen } from 'Portfolio/Screen';
 import { Flex, Box, Text } from 'core/primitives';
+import { space } from 'core/tokens';
 
 export default () => {
 	return (
@@ -12,7 +13,7 @@ export default () => {
 				pathname: '/projects'
 			}}
 			css={{
-				paddingTop: '100px',
+				pt: '100px',
 				background: 'linear-gradient(180deg,transparent 0%, rgb(169, 203, 236) 50%, transparent 100%)'
 			}}
 		>
@@ -272,12 +273,12 @@ export default () => {
 					]
 				}
 			].map((proj, i) => (
-				<Box key={i} css={{ paddingLeft: '64px', paddingRight: '64px' }}>
+				<Box key={i} css={{ px: space._9 }}>
 					<Flex css={{ alignItems: 'center' }}>
 						<Text.Title>{proj.name}</Text.Title>
 						{proj.play && (
 							<Text.Caption
-								css={{ marginLeft: '48px' }}
+								css={{ ml: space._9 }}
 								as="a"
 								href={`https://gregoryland.com/projects/${proj.play.url}`}
 							>
@@ -286,7 +287,7 @@ export default () => {
 						)}
 						{proj.download && (
 							<Text.Caption
-								css={{ marginLeft: '48px' }}
+								css={{ ml: space._9 }}
 								as="a"
 								href={`https://gregoryland.com/projects/${proj.download.url}`}
 							>
@@ -301,7 +302,7 @@ export default () => {
 									key={i}
 									css={{
 										maxWidth: '300px',
-										padding: '12px',
+										p: space._4,
 										flexDirection: 'column',
 										alignItems: 'center',
 										justifyContent: 'space-between'
@@ -315,9 +316,9 @@ export default () => {
 							))}
 						</Flex>
 					)}
-					<Box css={{ paddingBottom: '32px' }}>
+					<Box css={{ pb: space._7 }}>
 						{proj.items.map((item, i2) => (
-							<Text.BodyBookTabular key={i2} css={{ paddingLeft: '32px', paddingTop: '4px' }}>
+							<Text.BodyBookTabular key={i2} css={{ pl: space._7, pt: space._2 }}>
 								{item}
 							</Text.BodyBookTabular>
 						))}

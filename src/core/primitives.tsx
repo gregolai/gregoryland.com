@@ -1,12 +1,13 @@
 import React, { forwardRef } from 'react';
 import { StyledPrimitive } from 'pu2';
+import { space } from './tokens';
 
 const BASE_TEXT_STYLE = {
 	textRendering: 'optimizeLegibility',
 	webkitFontSmoothing: 'antialiased',
 	mozOsxFontSmoothing: 'grayscale',
 	color: '#313131',
-	margin: '0'
+	m: space._0
 };
 
 const createPrimitive = (name, baseProps, css) => {
@@ -115,21 +116,6 @@ const Title = createText(
 		letterSpacing: '1.2px'
 	}
 );
-
-// const Bullet = props => (
-// 	<li {...props} className={cx(css.bullet, props.className)}>
-// 		{/* <div
-// 			style={{
-// 				background: 'black',
-// 				width: 4,
-// 				height: 4,
-// 				display: 'inline-block',
-// 				marginRight: 8
-// 			}}
-// 		/> */}
-// 		{props.children}
-// 	</li>
-// );
 
 export const Text = {
 	Label,

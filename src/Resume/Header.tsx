@@ -6,19 +6,19 @@ const Contact = ({ icon, text }) => (
 		css={{
 			alignItems: 'center',
 			':not(:first-child)': {
-				paddingTop: '8px'
+				pt: '8px'
 			}
 		}}
 	>
 		<img src={icon} style={{ width: '24px', height: '24px' }} />
-		<Text.BodyMedium css={{ paddingLeft: '16px' }}>{text}</Text.BodyMedium>
+		<Text.BodyMedium css={{ pl: '16px' }}>{text}</Text.BodyMedium>
 	</Flex>
 );
 
 export const Header = ({ name, role, email, phone }) => (
-	<Flex css={{ paddingTop: '16px', paddingBottom: '16px' }}>
+	<Flex css={{ py: '16px' }}>
 		<Box css={{ flex: '1' }}>
-			<Text.Title style={{ margin: '0' }}>{name}</Text.Title>
+			<Text.Title>{name}</Text.Title>
 			<Text.Subtitle>{role}</Text.Subtitle>
 		</Box>
 		<Box>

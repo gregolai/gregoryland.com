@@ -5,6 +5,7 @@ import useScrollBreakpoints from './useScrollBreakpoints';
 import { Tabs } from './Tabs';
 import { Box } from 'core/primitives';
 import { PageRouter } from '../Router/router_3rd_party/NewRouter';
+import { space } from 'core/tokens';
 
 interface LinkProps {
 	pathname: string;
@@ -149,8 +150,8 @@ const Portfolio = () => {
 				<Tabs
 					css={{
 						position: 'fixed',
-						right: '50px',
-						top: '50px'
+						right: space._6,
+						top: space._6
 					}}
 					options={screens.map(({ link }) => ({
 						label: link.label,

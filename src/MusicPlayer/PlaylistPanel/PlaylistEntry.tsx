@@ -30,19 +30,17 @@ export const PlaylistEntry = ({ song }) => {
 		<Flex
 			css={{
 				position: 'relative',
-				paddingTop: '14px',
-				paddingBottom: '14px',
-				paddingLeft: '16px',
-				paddingRight: '16px',
+				py: '14px',
+				px: '16px',
 
 				alignItems: 'center',
 				justifyContent: 'space-between',
 
 				':first-child': {
-					paddingTop: '30px'
+					pt: '30px'
 				},
 				':last-child': {
-					paddingBottom: '30px'
+					pb: '30px'
 				},
 
 				':not(:first-child)': {
@@ -67,7 +65,7 @@ export const PlaylistEntry = ({ song }) => {
 			<Box
 				css={{
 					flex: '1',
-					paddingLeft: '8px'
+					pl: '8px'
 				}}
 			>
 				<Box

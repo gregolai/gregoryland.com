@@ -3,6 +3,7 @@ import React from 'react';
 import { Box, Text } from 'core/primitives';
 
 import { PageLink } from '../Router/router_3rd_party/NewRouter';
+import { space } from 'core/tokens';
 //const { Link } = Router;
 
 const Tab = ({ children, value, isActive }) => {
@@ -14,7 +15,8 @@ const Tab = ({ children, value, isActive }) => {
 				outline: 'none',
 				display: 'block',
 				width: '120px',
-				padding: '4px 8px',
+				py: space._2,
+				px: space._3,
 				fontSize: '12px',
 				border: '2px solid black',
 				backgroundColor: isActive ? 'white' : 'black',

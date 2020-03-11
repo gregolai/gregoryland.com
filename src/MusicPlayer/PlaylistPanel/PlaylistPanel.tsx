@@ -21,7 +21,7 @@ export const PlaylistPanel = () => {
 				width: '100%',
 				zIndex: '1',
 				background: '#977ADE',
-				paddingTop: '140px'
+				pt: '140px'
 			}}
 		>
 			<Box css={{ overflow: 'auto' }}>

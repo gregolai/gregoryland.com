@@ -2,6 +2,7 @@ import React from 'react';
 import { Screen, ScreenSplat } from 'Portfolio/Screen';
 
 import Resume from 'Resume';
+import { space } from 'core/tokens';
 
 export default () => {
 	return (
@@ -13,8 +14,7 @@ export default () => {
 			}}
 			center
 			css={{
-				paddingTop: '32px',
-				paddingBottom: '32px'
+				py: space._7
 			}}
 		>
 			<Resume css={{ zIndex: '1', width: '80%', maxWidth: '1000px' }} />

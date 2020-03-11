@@ -207,8 +207,7 @@ const MainPanel = props => {
 					<PrimaryButton
 						size="large"
 						css={{
-							marginLeft: '8px',
-							marginRight: '8px'
+							mx: '8px'
 						}}
 						onClick={() => setPlaying(!isPlaying)}
 						/* onPointerDown={knockAt} */

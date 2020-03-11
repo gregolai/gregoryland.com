@@ -2,6 +2,7 @@ import React, { FunctionComponent, Suspense, forwardRef, Ref, useRef, useEffect,
 import { ActivityIndicator } from './ActivityIndicator';
 import Portfolio from '../Portfolio';
 import { Box, Flex, Text } from 'core/primitives';
+import { space } from 'core/tokens';
 
 interface LinkProps {
 	pathname: string;
@@ -39,7 +40,7 @@ export const Screen: FunctionComponent<Props> = ({ center = false, css, id, link
 			}}
 		>
 			{label && (
-				<Text.Title css={{ position: 'absolute', top: '32px', left: '64px', zIndex: '1' }}>
+				<Text.Title css={{ position: 'absolute', top: space._9, left: space._9, zIndex: '1' }}>
 					{label}
 				</Text.Title>
 			)}

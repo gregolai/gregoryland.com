@@ -17,7 +17,7 @@ export default props => (
 			lineHeight: '1',
 
 			background: 'white',
-			padding: '32px',
+			p: '32px',
 			boxShadow: '4px 4px 2px rgba(0,0,0,0.3)',
 			...props.css
 		}}

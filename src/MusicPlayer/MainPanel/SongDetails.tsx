@@ -30,7 +30,7 @@ export const SongDetails = props => {
 			</Box>
 			<Box
 				css={{
-					marginTop: '4px',
+					mt: '4px',
 					fontSize: '11px',
 					color: 'rgba(0,0,0,0.4)'
 				}}

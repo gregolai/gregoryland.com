@@ -4,9 +4,8 @@ import { Text, Box } from './primitives';
 export const Skill = ({ name, desc }) => (
 	<Box
 		css={{
-			padding: '0px',
 			':not(:first-child)': {
-				paddingTop: '16px'
+				pt: '16px'
 			}
 		}}
 	>

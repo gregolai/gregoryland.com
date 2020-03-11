@@ -5,7 +5,7 @@ export const Job = ({ where, role, from, to, items }) => (
 	<Box>
 		<Flex css={{ alignItems: 'center' }}>
 			<Text.Subtitle css={{ textTransform: 'uppercase' }}>{role}</Text.Subtitle>
-			<Text.BodyMedium css={{ paddingLeft: '16px' }}>{where}</Text.BodyMedium>
+			<Text.BodyMedium css={{ pl: '16px' }}>{where}</Text.BodyMedium>
 		</Flex>
 		<Text.Caption>
 			{from} - {to}

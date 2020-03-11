@@ -56,7 +56,7 @@ export const DragHandle = () => {
 			<Box
 				css={{
 					position: 'relative',
-					marginTop: '14px',
+					mt: '14px',
 					background: 'rgba(0,0,0,0.4)',
 					height: '2px',
 					width: isHovering ? '26px' : '12px',

@@ -6,12 +6,12 @@ const Section = ({ children, title }) => (
 	<Box
 		css={{
 			':not(:last-child)': {
-				paddingBottom: '32px'
+				pb: '32px'
 			}
 		}}
 	>
 		<Text.Title css={{ borderBottom: '2px solid black' }}>{title}</Text.Title>
-		<Box css={{ paddingTop: '16px' }}>{children}</Box>
+		<Box css={{ pt: '16px' }}>{children}</Box>
 	</Box>
 );
 
@@ -20,8 +20,8 @@ export const Body = ({ renderEducation, renderSkills, renderProfile, renderCaree
 		<Box
 			css={{
 				width: '236px',
-				paddingRight: '16px',
-				marginRight: '16px'
+				pr: '16px',
+				mr: '16px'
 			}}
 		>
 			<Section title="EDUCATION">{renderEducation()}</Section>
