@@ -273,12 +273,12 @@ export default () => {
 					]
 				}
 			].map((proj, i) => (
-				<Box key={i} css={{ px: space._9 }}>
+				<Box key={i} css={{ px: space._7 }}>
 					<Flex css={{ alignItems: 'center' }}>
 						<Text.Title>{proj.name}</Text.Title>
 						{proj.play && (
 							<Text.Caption
-								css={{ ml: space._9 }}
+								css={{ ml: space._7 }}
 								as="a"
 								href={`https://gregoryland.com/projects/${proj.play.url}`}
 							>
@@ -287,7 +287,7 @@ export default () => {
 						)}
 						{proj.download && (
 							<Text.Caption
-								css={{ ml: space._9 }}
+								css={{ ml: space._7 }}
 								as="a"
 								href={`https://gregoryland.com/projects/${proj.download.url}`}
 							>
@@ -316,9 +316,9 @@ export default () => {
 							))}
 						</Flex>
 					)}
-					<Box css={{ pb: space._7 }}>
+					<Box css={{ pb: space._6 }}>
 						{proj.items.map((item, i2) => (
-							<Text.BodyBookTabular key={i2} css={{ pl: space._7, pt: space._2 }}>
+							<Text.BodyBookTabular key={i2} css={{ pl: space._6, pt: space._1 }}>
 								{item}
 							</Text.BodyBookTabular>
 						))}

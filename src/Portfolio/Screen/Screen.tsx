@@ -40,7 +40,7 @@ export const Screen: FunctionComponent<Props> = ({ center = false, css, id, link
 			}}
 		>
 			{label && (
-				<Text.Title css={{ position: 'absolute', top: space._9, left: space._9, zIndex: '1' }}>
+				<Text.Title css={{ position: 'absolute', top: space._7, left: space._7, zIndex: '1' }}>
 					{label}
 				</Text.Title>
 			)}

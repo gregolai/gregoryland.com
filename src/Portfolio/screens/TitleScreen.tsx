@@ -113,17 +113,17 @@ export default () => {
 					</Box>
 				</Box>
 				<Box>
-					<Text.BodyBook css={{ pt: space._6 }}>
+					<Text.BodyBook css={{ pt: space._5 }}>
 						Hey, I'm Greg, a software developer in NYC. This site showcases my career experience
 						and passion for software development. I built this site to reflect my joy of creation;
 						forging a beautiful website without depending too much on external libraries.
 					</Text.BodyBook>
 					<Text.BodyBook css={{ pt: space._5 }}>
-						For instance, I wrote my own styled component system to support this website, without
-						the cruft that comes with using external libraries. I have always been a supporter of
-						the "build your own" camp, as it's a great way to learn! I have also learned,
-						throughout my professional career, that there's also great value in using trusted,
-						well-tested, open source libraries.
+						For instance, I wrote my own little CSS-in-JS component system to support this
+						website, without the cruft that comes with using external libraries. I have always
+						been a supporter of the "build your own" camp, as it's a great way to learn! I have
+						also learned, throughout my professional career, that there's also great value in
+						using trusted, well-tested, open source libraries.
 					</Text.BodyBook>
 				</Box>
 			</InnerMain>

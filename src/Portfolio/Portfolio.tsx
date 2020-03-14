@@ -150,8 +150,8 @@ const Portfolio = () => {
 				<Tabs
 					css={{
 						position: 'fixed',
-						right: space._6,
-						top: space._6
+						right: space._5,
+						top: space._5
 					}}
 					options={screens.map(({ link }) => ({
 						label: link.label,

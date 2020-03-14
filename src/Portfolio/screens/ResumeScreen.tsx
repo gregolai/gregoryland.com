@@ -14,7 +14,7 @@ export default () => {
 			}}
 			center
 			css={{
-				py: space._7
+				py: space._6
 			}}
 		>
 			<Resume css={{ zIndex: '1', width: '80%', maxWidth: '1000px' }} />
