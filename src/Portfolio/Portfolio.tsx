@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-import { Screens } from './Screens';
+import Screens from './Screens';
 import useScrollBreakpoints from './useScrollBreakpoints';
 import { Tabs } from './Tabs';
 import { Box } from 'core/primitives';

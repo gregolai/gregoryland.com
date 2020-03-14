@@ -1,8 +1,7 @@
 {
-	"name": "gregolai.github.io",
+	"name": "gregoryland",
 	"version": "1.0.0",
-	"description": "",
-	"main": "main.js",
+	"description": "https://gregoryland.com",
 	"scripts": {
 		"build:dev": "NODE_ENV=development gulp build:dev",
 		"build:prod": "NODE_ENV=production gulp build:prod",
@@ -14,12 +13,8 @@
 		"type": "git",
 		"url": "git+https://github.com/gregolai/gregolai.github.io.git"
 	},
-	"author": "",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/gregolai/gregolai.github.io/issues"
-	},
-	"homepage": "https://github.com/gregolai/gregolai.github.io#readme",
+	"author": "Gregory Dalton",
+	"homepage": "https://gregoryland.com",
 	"dependencies": {
 		"@ibm/plex": "^4.0.2",
 		"markdown-to-jsx": "^6.10.3",
@@ -51,7 +46,7 @@
 		"sass-loader": "^8.0.2",
 		"terser-webpack-plugin": "^2.3.5",
 		"ts-loader": "^6.2.1",
-		"typescript": "^3.8.2",
+		"typescript": "^3.8.3",
 		"uid": "0.0.2",
 		"webpack": "^4.41.5",
 		"webpack-bundle-analyzer": "^3.6.0",

@@ -1,22 +1,10 @@
 import React, { Fragment } from 'react';
-import { Screen } from 'Portfolio/Screen';
 import { Flex, Box, Text } from 'core/primitives';
 import { space } from 'core/tokens';
 
 export default () => {
 	return (
-		<Screen
-			id="projects"
-			label="Projects"
-			link={{
-				label: 'Projects',
-				pathname: '/projects'
-			}}
-			css={{
-				pt: '100px',
-				background: 'linear-gradient(180deg,transparent 0%, rgb(169, 203, 236) 50%, transparent 100%)'
-			}}
-		>
+		<Fragment>
 			{[
 				{
 					name: 'SNEK',
@@ -325,6 +313,6 @@ export default () => {
 					</Box>
 				</Box>
 			))}
-		</Screen>
+		</Fragment>
 	);
 };

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, Suspense, forwardRef, Ref, useRef, useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import { ActivityIndicator } from './ActivityIndicator';
 import Portfolio from '../Portfolio';
 import { Box, Flex, Text } from 'core/primitives';
@@ -17,7 +17,20 @@ interface Props {
 	[key: string]: any;
 }
 
-export const Screen: FunctionComponent<Props> = ({ center = false, css, id, link, label, children }) => {
+const Loading = () => (
+	<Flex
+		css={{
+			py: space._8,
+			height: '100%',
+			justifyContent: 'center',
+			alignItems: 'center'
+		}}
+	>
+		<ActivityIndicator />
+	</Flex>
+);
+
+const Screen: React.FC<Props> = ({ center = false, css, id, link, label, children }) => {
 	const [el, setEl] = useState(null);
 	const { registerScreen } = Portfolio.useContext();
 
@@ -44,7 +57,9 @@ export const Screen: FunctionComponent<Props> = ({ center = false, css, id, link
 					{label}
 				</Text.Title>
 			)}
-			<Suspense fallback={<ActivityIndicator />}>{children}</Suspense>
+			{/* <Loading /> */}
+			<Suspense fallback={<Loading />}>{children}</Suspense>
 		</Component>
 	);
 };
+export default Screen;

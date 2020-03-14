@@ -1,2 +1,2 @@
 export { ScreenSplat } from './ScreenSplat';
-export { Screen } from './Screen';
+export { default } from './Screen';

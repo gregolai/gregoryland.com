@@ -1,16 +1,14 @@
 import React from 'react';
-import { cx } from 'pu2';
 
 const css = require('./ActivityIndicator.scss');
 
-export const ActivityIndicator = props => (
+export const ActivityIndicator = () => (
 	<svg
 		viewBox="0 0 128 128"
 		version="1.1"
 		xmlns="http://www.w3.org/2000/svg"
 		preserveAspectRatio="xMidYMid"
-		{...props}
-		className={cx(css.container, props.className)}
+		className={css.container}
 	>
 		<g>
 			<path

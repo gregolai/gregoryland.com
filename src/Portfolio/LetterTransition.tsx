@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box } from 'core/primitives';
 
 interface LetterProps {
@@ -8,7 +8,7 @@ interface LetterProps {
 	symbol: string;
 }
 
-const Letter: FunctionComponent<LetterProps> = ({ delay, distance, duration, symbol }) => {
+const Letter: React.FC<LetterProps> = ({ delay, distance, duration, symbol }) => {
 	const [show, setShow] = useState(false);
 
 	useEffect(() => {
@@ -40,7 +40,7 @@ interface Props {
 	duration: number;
 }
 
-export const LetterTransition: FunctionComponent<Props> = ({ children, dir, duration }) => {
+export const LetterTransition: React.FC<Props> = ({ children, dir, duration }) => {
 	const [trigger, setTrigger] = useState(false);
 
 	useEffect(() => {

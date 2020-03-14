@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Screen } from '../Screen';
 import useScrollBreakpoints from 'Portfolio/useScrollBreakpoints';
 import { LetterTransition } from 'Portfolio/LetterTransition';
 import { Box, Text } from 'core/primitives';
@@ -78,55 +77,41 @@ const InnerMain = ({ children }) => {
 
 export default () => {
 	return (
-		<Screen
-			id="title"
-			link={{
-				label: 'Home',
-				pathname: '/'
-			}}
-			center
-			css={{
-				height: '100vh',
-				background:
-					'linear-gradient(rgb(255, 255, 255) 0%, rgb(242, 246, 250) 10%, rgb(214, 229, 244) 90%)'
-			}}
-		>
-			<InnerMain>
-				<Box>
-					<Box css={{ position: 'relative', display: 'inline-block' }}>
-						<Text.Title as="div">
-							<LetterTransition dir={-1} duration={1400}>
-								Gregory Dalton
-							</LetterTransition>
-						</Text.Title>
-						<Bar delay={1500} height={3} dir={1} duration={500} />
-					</Box>
+		<InnerMain>
+			<Box>
+				<Box css={{ position: 'relative', display: 'inline-block' }}>
+					<Text.Title as="div">
+						<LetterTransition dir={-1} duration={1400}>
+							Gregory Dalton
+						</LetterTransition>
+					</Text.Title>
+					<Bar delay={1500} height={3} dir={1} duration={500} />
 				</Box>
-				<Box>
-					<Box css={{ position: 'relative', display: 'inline-block' }}>
-						<Text.Subtitle as="div">
-							<LetterTransition dir={+1} duration={1400}>
-								Software Engineer
-							</LetterTransition>
-						</Text.Subtitle>
-						<Bar delay={1800} height={2} dir={-1} duration={500} />
-					</Box>
+			</Box>
+			<Box>
+				<Box css={{ position: 'relative', display: 'inline-block' }}>
+					<Text.Subtitle as="div">
+						<LetterTransition dir={+1} duration={1400}>
+							Software Engineer
+						</LetterTransition>
+					</Text.Subtitle>
+					<Bar delay={1800} height={2} dir={-1} duration={500} />
 				</Box>
-				<Box>
-					<Text.BodyBook css={{ pt: space._5 }}>
-						Hey, I'm Greg, a software developer in NYC. This site showcases my career experience
-						and passion for software development. I built this site to reflect my joy of creation;
-						forging a beautiful website without depending too much on external libraries.
-					</Text.BodyBook>
-					<Text.BodyBook css={{ pt: space._5 }}>
-						For instance, I wrote my own little CSS-in-JS component system to support this
-						website, without the cruft that comes with using external libraries. I have always
-						been a supporter of the "build your own" camp, as it's a great way to learn! I have
-						also learned, throughout my professional career, that there's also great value in
-						using trusted, well-tested, open source libraries.
-					</Text.BodyBook>
-				</Box>
-			</InnerMain>
-		</Screen>
+			</Box>
+			<Box>
+				<Text.BodyBook css={{ pt: space._5 }}>
+					Hey, I'm Greg, a software developer in NYC. This site showcases my career experience and
+					passion for software development. I built this site to reflect my joy of creation; forging
+					a beautiful website without depending too much on external libraries.
+				</Text.BodyBook>
+				<Text.BodyBook css={{ pt: space._5 }}>
+					For instance, I wrote my own little CSS-in-JS component system to support this website,
+					without the cruft that comes with using external libraries. I have always been a supporter
+					of the "build your own" camp, as it's a great way to learn! I have also learned,
+					throughout my professional career, that there's also great value in using trusted,
+					well-tested, open source libraries.
+				</Text.BodyBook>
+			</Box>
+		</InnerMain>
 	);
 };

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { Box } from 'core/primitives';
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 	height?: number | string;
 }
 
-export const ScreenSplat: FunctionComponent<Props> = ({
+export const ScreenSplat: React.FC<Props> = ({
 	color,
 	colorPos = '0%',
 
