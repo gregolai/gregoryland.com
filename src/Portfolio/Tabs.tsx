@@ -2,7 +2,7 @@ import React from 'react';
 //import Router from '../Router';
 import { Box, Text } from 'core/primitives';
 
-import { PageLink } from '../Router/router_3rd_party/NewRouter';
+import { PageLink } from '../Router/NewRouter';
 import { space } from 'core/tokens';
 //const { Link } = Router;
 

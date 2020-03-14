@@ -4,7 +4,7 @@ import { Screens } from './Screens';
 import useScrollBreakpoints from './useScrollBreakpoints';
 import { Tabs } from './Tabs';
 import { Box } from 'core/primitives';
-import { PageRouter } from '../Router/router_3rd_party/NewRouter';
+import { PageRouter } from '../Router/NewRouter';
 import { space } from 'core/tokens';
 
 interface LinkProps {
