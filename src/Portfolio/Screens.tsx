@@ -110,8 +110,7 @@ export default () => (
 			center
 			css={{
 				minHeight: '640px',
-				height: '100vh',
-				background: 'green'
+				height: '100vh'
 			}}
 		>
 			<FourthScreen />
