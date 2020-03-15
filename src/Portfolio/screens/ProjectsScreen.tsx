@@ -1,6 +1,41 @@
-import React, { Fragment } from 'react';
-import { Flex, Box, Text } from 'core/primitives';
+import React, { Fragment, useState } from 'react';
+import { Flex, Box, Text, Button } from 'core/primitives';
 import { space } from 'core/tokens';
+
+const PlayInline = ({ height, src, title }) => {
+	const [isOpen, setOpen] = useState(false);
+	return (
+		<Box>
+			{isOpen && <Button onClick={() => setOpen(false)}>Close</Button>}
+			<Flex
+				css={{
+					height: isOpen && height,
+					justifyContent: 'center',
+					alignItems: 'center',
+					backgroundColor: 'rgba(0,0,0,0.2)'
+				}}
+			>
+				{!isOpen && (
+					<Button
+						onClick={() => setOpen(true)}
+						css={{
+							backgroundColor: 'rgba(255,255,255,0.4)',
+							my: space._7,
+							px: space._4,
+							py: space._3,
+							':hover': {
+								backgroundColor: 'rgba(255,255,255,0.6)'
+							}
+						}}
+					>
+						{title}
+					</Button>
+				)}
+				{isOpen && <iframe style={{ width: '100%', height }} src={src} />}
+			</Flex>
+		</Box>
+	);
+};
 
 export default () => {
 	return (
@@ -9,10 +44,6 @@ export default () => {
 				{
 					name: 'SNEK',
 					dates: 'May 2017',
-					play: {
-						title: 'Play',
-						url: 'snek/'
-					},
 					download: {
 						title: 'Source Code',
 						url: 'snek/snek.zip'
@@ -24,15 +55,16 @@ export default () => {
 							thumb: 'img/projects/thumbs/snek1.jpg'
 						}
 					],
-					items: ['100% Vanilla HTML/JS/CSS']
+					items: ['100% Vanilla HTML/JS/CSS'],
+					playInline: {
+						title: 'Play SNEK',
+						src: `https://gregoryland.com/projects/snek/`,
+						height: '800px'
+					}
 				},
 				{
 					name: 'HTML5 Video Player Coding Exercise',
 					dates: 'September 2016',
-					play: {
-						title: 'Run',
-						url: 'vimeo-player/'
-					},
 					download: {
 						title: 'Source Code',
 						url: 'vimeo-player/vimeo-player-src.zip'
@@ -54,15 +86,16 @@ export default () => {
 						'Self-designed interface with playhead scrubbing, video buffer, fullscreen capabilities, and switching to next/previous video.',
 						'Uses vanilla javascript with no 3rd party libraries.',
 						'Not mobile-friendly at the moment, but I could fix that by rendering the video to a canvas and creating a custom UI.'
-					]
+					],
+					playInline: {
+						title: 'Play Vimeo Coding Project',
+						src: 'https://gregoryland.com/projects/vimeo-player/public/',
+						height: '800px'
+					}
 				},
 				{
 					name: 'StarField (JavaScript)',
 					dates: 'April 2016',
-					play: {
-						title: 'Run',
-						url: 'starfield-js/'
-					},
 					download: {
 						title: 'Source Code',
 						url: 'starfield-js/starfield-js.zip'
@@ -77,7 +110,12 @@ export default () => {
 					items: [
 						'I wanted to port the Star Field project from ActionScript over to JavaScript canvas, so I did.',
 						'If using Chrome, the sliders will sometimes cause the page to freeze. Use Firefox if you encounter this issue.'
-					]
+					],
+					playInline: {
+						title: 'Play Starfield',
+						src: 'https://gregoryland.com/projects/starfield-js/',
+						height: '700px'
+					}
 				},
 				{
 					name: 'War Game',
@@ -104,16 +142,17 @@ export default () => {
 						'An attempt at an HTML5 web port of Warcraft 2',
 						'Contains multiplayer support using websockets, web workers, and the lock-step algorithm for keeping players in-sync.',
 						'I have refactored the codebase for awhile and decided to put this project on hold.'
-					]
+					],
+					playInline: {
+						title: 'Play War Game',
+						src: 'https://gregoryland.com/projects/warnew/',
+						height: '90vh'
+					}
 				},
 				{
 					name: 'Masking Demo',
 					dates: 'December 2012',
 					note: '2D or WebGL? Why not both!',
-					play: {
-						title: 'Run',
-						url: 'masking/'
-					},
 					download: {
 						title: 'Source Code',
 						url: 'masking/masking.zip'
@@ -128,7 +167,12 @@ export default () => {
 					items: [
 						'Demonstrates using two 2D canvas elements and a shader to do masking using WebGL.',
 						'This could be used for fast 2D shadows or for other interesting purposes.'
-					]
+					],
+					playInline: {
+						title: 'Play Masking Demo',
+						src: 'https://gregoryland.com/projects/masking/',
+						height: '660px'
+					}
 				},
 				{
 					name: 'CmdTool',
@@ -180,10 +224,10 @@ export default () => {
 				{
 					name: 'StarField (ActionScript)',
 					dates: 'February 2012',
-					play: {
-						title: 'Run (.swf file is safe)',
-						url: 'starfield-as/bin-debug/Starfield.swf'
-					},
+					// play: {
+					// 	title: 'Run (.swf file is safe)',
+					// 	url: 'starfield-as/bin-debug/Starfield.swf'
+					// },
 					download: {
 						title: 'Source Code (FlashBuilder ActionScript)',
 						url: 'starfield-as/starfield-as.zip'
@@ -311,6 +355,7 @@ export default () => {
 							</Text.BodyBookTabular>
 						))}
 					</Box>
+					{proj.playInline && <PlayInline {...proj.playInline} />}
 				</Box>
 			))}
 		</Fragment>
