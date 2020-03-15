@@ -10,7 +10,7 @@ const BASE_TEXT_STYLE = {
 	m: space._0
 };
 
-const createPrimitive = (baseProps, css) => {
+export const createPrimitive = (baseProps, css) => {
 	return forwardRef<any, any>((props, ref) => (
 		<StyledPrimitive
 			{...baseProps}
@@ -24,7 +24,7 @@ const createPrimitive = (baseProps, css) => {
 	));
 };
 
-const createText = (name, baseProps, css) => {
+export const createText = (name, baseProps, css) => {
 	if (__DEV__) {
 		baseProps['debug-tag'] = `Text.${name}`;
 	}

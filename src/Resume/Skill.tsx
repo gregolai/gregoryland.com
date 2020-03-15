@@ -1,11 +1,12 @@
 import React from 'react';
 import { Text, Box } from './primitives';
+import { space } from './tokens';
 
 export const Skill = ({ name, desc }) => (
 	<Box
 		css={{
-			':not(:first-child)': {
-				pt: '16px'
+			':not(:first-of-type)': {
+				pt: space._5
 			}
 		}}
 	>

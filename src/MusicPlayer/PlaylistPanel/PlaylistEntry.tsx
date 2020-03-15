@@ -36,17 +36,17 @@ export const PlaylistEntry = ({ song }) => {
 				alignItems: 'center',
 				justifyContent: 'space-between',
 
-				':first-child': {
+				':first-of-type': {
 					pt: '30px'
 				},
-				':last-child': {
+				':last-of-type': {
 					pb: '30px'
 				},
 
-				':not(:first-child)': {
+				':not(:first-of-type)': {
 					borderTop: '1px solid rgba(255,255,255,0.3)'
 				},
-				':not(:last-child)': {
+				':not(:last-of-type)': {
 					borderBottom: '1px solid rgba(0,0,0,0.2)'
 				}
 			}}

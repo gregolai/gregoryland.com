@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import useScrollBreakpoints from 'Portfolio/useScrollBreakpoints';
 import { LetterTransition } from 'Portfolio/LetterTransition';
-import { Box, Text } from 'core/primitives';
+import { Box, Text, Flex } from 'core/primitives';
 import { space } from 'core/tokens';
 
 const Bar = ({ delay, dir, duration, height }) => {
@@ -69,7 +69,7 @@ const InnerMain = ({ children }) => {
 	};
 
 	return (
-		<Box ref={setRef} style={style}>
+		<Box ref={setRef} css={{ mx: space._8, px: space._8 }} style={style}>
 			{children}
 		</Box>
 	);
@@ -78,39 +78,39 @@ const InnerMain = ({ children }) => {
 export default () => {
 	return (
 		<InnerMain>
-			<Box>
-				<Box css={{ position: 'relative', display: 'inline-block' }}>
-					<Text.Title as="div">
-						<LetterTransition dir={-1} duration={1400}>
-							Gregory Dalton
-						</LetterTransition>
-					</Text.Title>
-					<Bar delay={1500} height={3} dir={1} duration={500} />
+			<Flex css={{ justifyContent: 'center' }}>
+				<Box>
+					<Box css={{ position: 'relative' }}>
+						<Text.Title as="div">
+							<LetterTransition dir={-1} duration={1400}>
+								Gregory Dalton
+							</LetterTransition>
+						</Text.Title>
+						<Bar delay={1500} height={3} dir={1} duration={500} />
+					</Box>
+					<Box css={{ position: 'relative' }}>
+						<Text.Subtitle as="div">
+							<LetterTransition dir={+1} duration={1400}>
+								Software Engineer
+							</LetterTransition>
+						</Text.Subtitle>
+						<Bar delay={1800} height={2} dir={-1} duration={500} />
+					</Box>
 				</Box>
-			</Box>
-			<Box>
-				<Box css={{ position: 'relative', display: 'inline-block' }}>
-					<Text.Subtitle as="div">
-						<LetterTransition dir={+1} duration={1400}>
-							Software Engineer
-						</LetterTransition>
-					</Text.Subtitle>
-					<Bar delay={1800} height={2} dir={-1} duration={500} />
-				</Box>
-			</Box>
-			<Box>
+			</Flex>
+			<Box css={{ mx: space._8, px: space._8 }}>
 				<Text.BodyBook css={{ pt: space._5 }}>
-					Hey, I'm Greg, a software developer in NYC. This site showcases my career experience and
-					passion for software development. I built this site to reflect my joy of creation; forging
-					a beautiful website without depending too much on external libraries.
+					Hey, I'm Greg, a software developer in NYC. This site showcases my passing for software
+					development and my career experience. I built this site to reflect my joy of creation;
+					forging a beautiful website from the ground up, with simplicity in mind.
 				</Text.BodyBook>
-				<Text.BodyBook css={{ pt: space._5 }}>
+				{/* <Text.BodyBook css={{ pt: space._5 }}>
 					For instance, I wrote my own little CSS-in-JS component system to support this website,
 					without the cruft that comes with using external libraries. I have always been a supporter
 					of the "build your own" camp, as it's a great way to learn! I have also learned,
 					throughout my professional career, that there's also great value in using trusted,
 					well-tested, open source libraries.
-				</Text.BodyBook>
+				</Text.BodyBook> */}
 			</Box>
 		</InnerMain>
 	);
