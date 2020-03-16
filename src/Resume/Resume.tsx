@@ -47,21 +47,16 @@ export default props => (
 					<Box>
 						<Text.Subtitle>B.S. Computer Science</Text.Subtitle>
 						<Text.Label>California State University, Long Beach</Text.Label>
-						<Text.Label css={{ pb: space._4 }}>August 2004 - May 2009</Text.Label>
+						<Text.Label css={{ pb: space._4 }}>Class of 2009</Text.Label>
 						<Ul>
 							<Li>
 								<Text.BodyBook>
-									Joined the Programming Team and competed in two regional competitions.
+									Participated in the programming team and two regional competitions.
 								</Text.BodyBook>
 							</Li>
 							<Li>
 								<Text.BodyBook>
-									Member of Tau Beta Pi Engineering Honor Society, Theta Chapter.
-								</Text.BodyBook>
-							</Li>
-							<Li>
-								<Text.BodyBook>
-									Transferred from San Jose State University (2004 - 2006).
+									Tau Beta Pi Engineering Honor Society member, Theta Chapter.
 								</Text.BodyBook>
 							</Li>
 						</Ul>
@@ -81,31 +76,38 @@ export default props => (
 				</BodySection>
 				<BodySection title="CAREER">
 					<Job where="Squarespace" from="May 2017" to="Present" role="Software Engineer">
+						<Text.Subtitle>Design Platform Team</Text.Subtitle>
 						<Ul>
 							<Li>
+								<Text.BodyBook>Level 3 Engineer</Text.BodyBook>
+							</Li>
+							<Li>
 								<Text.BodyBook>
-									I'm a software developer on Squarespace's Design Platform team. I work
-									with designers on a daily basis to implement UI specs for React components
-									that are used across teams. Much of this work has enlightened me to the
-									challenges of building a shared component library versus building a
-									front-facing application. Having a consistent and thought-out API is
-									crucial for any shared library. Unlike refactoring a front-facing
-									application, refactoring a library without introducing breaking changes is
-									often non-trivial if the consumer API requires a change. On top of that,
-									there are trade-offs with how much flexibility to expose to the consumer
-									versus the likelihood of breaking changes.
+									Configured build tools, NPM package management systems, and code migration
+									strategies.
 								</Text.BodyBook>
 							</Li>
 							<Li>
 								<Text.BodyBook>
-									The designs are implemented across desktop, mobile-web, iOS, and Android
-									platforms. Our components make heavy use of React and React-Native.
+									Part of a team effort to move a deeply integrated, consumer-facing DESKTOP
+									CMS to be a responsive and mobile-friendly experience.
 								</Text.BodyBook>
 							</Li>
 							<Li>
 								<Text.BodyBook>
-									We use Jest, Enzyme, Puppeteer, and Cypress for unit and integration
-									testing.
+									Some React-Native experience, targeting iOS and Android devices.
+								</Text.BodyBook>
+							</Li>
+							<Li>
+								<Text.BodyBook>
+									Unit and integration tests using Jest, Enzyme, Puppeteer/Cypress. Some
+									test-driven development used for refactoring and codemods.
+								</Text.BodyBook>
+							</Li>
+							<Li>
+								<Text.BodyBook>
+									Consideration on exposiing a clean API, composition patterns, and
+									tradeoffs between simplicity and flexibility.
 								</Text.BodyBook>
 							</Li>
 						</Ul>
