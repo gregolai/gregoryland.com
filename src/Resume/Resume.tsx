@@ -116,20 +116,17 @@ export default props => (
 						<Ul>
 							<Li>
 								<Text.BodyBook>
-									I worked as a frontend engineer to build a CMS for creating and editing
-									real estate listings. I collaborated daily with backend engineers to
-									ensure the REST API endpoints we hit were consistent had correct. Got my
-									hands dirty with new technologies at the time - React and Redux.
+									Engineered a CMS frontend from scratch, allowing users to search and
+									filter through a wide variety of real estate properties
+								</Text.BodyBook>
+								<Text.BodyBook>
+									Communication with our backend developers to sync the needs of our backend
+									REST API with the needs of our frontend.
 								</Text.BodyBook>
 							</Li>
 							<Li>
 								<Text.BodyBook>
-									Collaborated with designers to implement UI/UX mockups.
-								</Text.BodyBook>
-							</Li>
-							<Li>
-								<Text.BodyBook>
-									Daily standups helped frontend, backend, and management stay in-sync
+									Implementing new technologies at the time, such as React + Redux.
 								</Text.BodyBook>
 							</Li>
 						</Ul>
