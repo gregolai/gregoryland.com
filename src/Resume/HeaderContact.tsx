@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, Flex } from './primitives';
 import { space } from './tokens';
 
-export const HeaderContact = ({ icon, text }) => (
+export const HeaderContact = ({ label, text }) => (
 	<Flex
 		css={{
 			alignItems: 'center',
@@ -11,7 +11,7 @@ export const HeaderContact = ({ icon, text }) => (
 			}
 		}}
 	>
-		<img src={icon} style={{ width: '24px', height: '24px' }} />
+		<Text.Label css={{ width: '100px', textAlign: 'right' }}>{label}</Text.Label>
 		<Text.BodyMedium css={{ pl: space._5 }}>{text}</Text.BodyMedium>
 	</Flex>
 );

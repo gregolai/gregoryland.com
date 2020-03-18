@@ -26,11 +26,8 @@ export default props => (
 				<Text.Subtitle>Software Engineer</Text.Subtitle>
 			</Box>
 			<Box>
-				<HeaderContact
-					icon="static/img/phone-smartphone-apple-iphone-device-mobile-icon.svg"
-					text="(714) 651-2126"
-				/>
-				<HeaderContact icon="static/img/envelope.svg" text="gregolai@gmail.com" />
+				<HeaderContact label="Phone" text="(714) 651-2126" />
+				<HeaderContact label="Email" text="gregolai@gmail.com" />
 			</Box>
 		</Flex>
 		{/* BODY */}
