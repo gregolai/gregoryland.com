@@ -6,12 +6,10 @@ export const HeaderContact = ({ label, text }) => (
 	<Flex
 		css={{
 			alignItems: 'center',
-			':not(:first-of-type)': {
-				pt: space._4
-			}
+			justifyContent: 'space-between'
 		}}
 	>
-		<Text.Label css={{ width: '100px', textAlign: 'right' }}>{label}</Text.Label>
-		<Text.BodyMedium css={{ pl: space._5 }}>{text}</Text.BodyMedium>
+		<Text.Label>{label}</Text.Label>
+		<Text.BodyMedium css={{ textAlign: 'right' }}>{text}</Text.BodyMedium>
 	</Flex>
 );
