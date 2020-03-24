@@ -100,7 +100,7 @@ export default () => {
 			</Flex>
 			<Box css={{ mx: space._8, px: space._8 }}>
 				<Text.BodyBook css={{ pt: space._5 }}>
-					Hey, I'm Greg, a software developer in NYC. This site showcases my passing for software
+					Hey, I'm Greg, a software developer in NYC. This site showcases my passion for software
 					development and my career experience. I built this site to reflect my joy of creation;
 					forging a beautiful website from the ground up, with simplicity in mind.
 				</Text.BodyBook>

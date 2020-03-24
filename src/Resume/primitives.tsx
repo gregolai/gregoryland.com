@@ -10,7 +10,7 @@ export const Text = {
 		{ as: 'h1' },
 		{
 			fontSize: '120px',
-			lineHeight: '120px',
+			lineHeight: '1',
 			fontWeight: '500',
 			/*
 font-family: 'Playfair Display', serif;

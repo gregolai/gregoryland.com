@@ -1,11 +1,12 @@
 import React, { useContext, createContext, Component } from 'react';
 import Portfolio from './Portfolio';
 import Resume from './Resume';
-//import Router from 'Router';
 
 const Context = createContext({
 	printResume: () => {}
 });
+
+export const useApp = () => useContext(Context);
 
 export default class App extends Component {
 	static useContext = () => useContext(Context);

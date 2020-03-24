@@ -2,11 +2,18 @@ import React, { Fragment } from 'react';
 import { ScreenSplat } from 'Portfolio/Screen';
 
 import Resume from 'Resume';
+import { useApp } from 'App';
 
 export default () => {
+	const { printResume } = useApp();
+
 	return (
 		<Fragment>
-			<Resume css={{ zIndex: '1', width: '80%', maxWidth: '1000px' }} />
+			<button style={{ zIndex: 1 }} onClick={printResume}>
+				Print Resume
+			</button>
+
+			<Resume css={{ zIndex: '1', width: '80%', minWidth: '800px', maxWidth: '1000px' }} />
 
 			<ScreenSplat color="rgba(255,255,255,0.5)" width="1800px" x="200px" y="600px" colorPos="20%" />
 

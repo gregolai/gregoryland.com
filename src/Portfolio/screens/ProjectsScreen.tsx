@@ -31,7 +31,16 @@ const PlayInline = ({ height, src, title }) => {
 						{title}
 					</Button>
 				)}
-				{isOpen && <iframe style={{ width: '100%', height }} src={src} />}
+				{isOpen && (
+					<iframe
+						// @ts-ignore
+						webkitallowfullscreen
+						mozallowfullscreen
+						allowFullScreen
+						style={{ width: '100%', height }}
+						src={src}
+					/>
+				)}
 			</Flex>
 		</Box>
 	);

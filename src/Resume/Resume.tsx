@@ -17,28 +17,25 @@ export default props => (
 			// Keep lineHeight: '1' until it's defaulted to globally
 			lineHeight: '1',
 
-			p: space._6,
+			p: space._8,
 			boxShadow: '4px 4px 2px rgba(0,0,0,0.3)',
 			...props.css
 		}}
 	>
 		{/* HEADER */}
-		<Flex css={{ justifyContent: 'space-between', pb: space._7, minHeight: '332px' }}>
+		<Flex css={{ justifyContent: 'space-between', pb: space._7, minHeight: '310px' }}>
 			<Flex
 				css={{
 					flex: '0',
 					flexDirection: 'column',
 					justifyContent: 'space-between',
-					pl: space._4,
-					pr: space._9,
-					pb: space._6
+					pr: space._9
 				}}
 			>
 				<Text.MegaTitle>Gregory Dalton</Text.MegaTitle>
 
 				{/* SKILLS */}
-
-				<Flex css={{ justifyContent: 'space-between' }}>
+				<Flex css={{ justifyContent: 'space-around' }}>
 					<Text.BodyMedium css={{ display: 'inline-block' }}>TypeScript</Text.BodyMedium>
 					<Text.BodyMedium css={{ display: 'inline-block', px: space._2 }}>
 						{'\u25CF'}
@@ -57,40 +54,47 @@ export default props => (
 
 			<Flex
 				css={{
-					pt: space._5, // Perception modifier
+					pt: space._8, // Perception modifier
 					flexDirection: 'column',
 					justifyContent: 'space-between',
 					maxWidth: '352px'
 				}}
 			>
-				<BodySection title="Contact">
+				{/* CONTACT */}
+				<Box>
 					<HeaderContact label="Phone" text="(714) 651-2126" />
 					<HeaderContact label="Email" text="gregolai@gmail.com" />
-				</BodySection>
-				<BodySection title="Education">
-					<Box>
-						<Text.Subtitle>B.S. Computer Science</Text.Subtitle>
-						<Text.Label>California State University, Long Beach</Text.Label>
-						<Text.Label css={{ pb: space._4 }}>Class of 2009</Text.Label>
-						<Ul>
-							<Li>
-								<Text.BodyBook>
-									Participated in the programming team and two regional competitions.
-								</Text.BodyBook>
-							</Li>
-							<Li>
-								<Text.BodyBook>
-									Tau Beta Pi Engineering Honor Society member, Theta Chapter.
-								</Text.BodyBook>
-							</Li>
-						</Ul>
-					</Box>
-				</BodySection>
+					<HeaderContact label="Site" text="www.gregoryland.com" />
+				</Box>
+				{/* EDUCATION */}
+				<Box>
+					<Text.Subtitle>B.S. Computer Science</Text.Subtitle>
+					<Text.Label>California State University, Long Beach</Text.Label>
+					<Text.Label css={{ pb: space._4 }}>Class of 2009</Text.Label>
+					<Ul>
+						<Li>
+							<Text.BodyBook>
+								Participated in the programming team and two regional competitions.
+							</Text.BodyBook>
+						</Li>
+						<Li>
+							<Text.BodyBook>
+								Tau Beta Pi Engineering Honor Society member, Theta Chapter.
+							</Text.BodyBook>
+						</Li>
+					</Ul>
+				</Box>
 			</Flex>
 		</Flex>
 
 		{/* BODY */}
-		<BodySection title="Career" largeSpace>
+		<Box
+			css={{
+				px: space._8,
+				pt: space._5,
+				pb: space._6
+			}}
+		>
 			<Job
 				where="Squarespace"
 				from="May 2017"
@@ -100,7 +104,7 @@ export default props => (
 			>
 				<Ul>
 					<Li>
-						<Text.BodyBook>Level 3 Engineer - Design Platform Team</Text.BodyBook>
+						<Text.BodyBook>Design Platform Team - Level 3 Engineer</Text.BodyBook>
 					</Li>
 					<Li>
 						<Text.BodyBook>
@@ -133,7 +137,7 @@ export default props => (
 					</Li>
 				</Ul>
 			</Job>
-			<Job where="Agorafy" from="December 2016" to="May 2017" role="Front-End Web Developer">
+			<Job where="Agorafy" from="December 2016" to="May 2017" role="Software Engineer">
 				<Ul>
 					<Li>
 						<Text.BodyBook>
@@ -152,7 +156,7 @@ export default props => (
 					</Li>
 				</Ul>
 			</Job>
-			<Job where="YouVisit" from="January 2015" to="April 2016" role="Full-Stack Developer">
+			<Job where="YouVisit" from="January 2015" to="April 2016" role="Software Engineer">
 				<Ul>
 					<Li>
 						<Text.BodyBook>
@@ -200,12 +204,7 @@ export default props => (
 					</Li>
 				</Ul>
 			</Job>
-			<Job
-				where="M & M Environmental"
-				from="August 2014"
-				to="December 2014"
-				role="Junior Web Developer"
-			>
+			<Job where="M & M Environmental" from="August 2014" to="December 2014" role="Software Engineer">
 				<Ul>
 					<Li>
 						<Text.BodyBook>
@@ -234,6 +233,6 @@ export default props => (
 					</Li>
 				</Ul>
 			</Job>
-		</BodySection>
+		</Box>
 	</Box>
 );
