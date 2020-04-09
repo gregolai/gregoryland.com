@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import { HeaderContact } from './HeaderContact';
-import { BodySection } from './BodySection';
 import { Job } from './Job';
 import { Text, Box, Ul, Li, Flex } from './primitives';
 import { space } from './tokens';
@@ -19,6 +18,11 @@ export default props => (
 
 			p: space._8,
 			boxShadow: '4px 4px 2px rgba(0,0,0,0.3)',
+
+			'@media print': {
+				p: space._0
+			},
+
 			...props.css
 		}}
 	>
@@ -90,18 +94,11 @@ export default props => (
 		{/* BODY */}
 		<Box
 			css={{
-				px: space._8,
-				pt: space._5,
-				pb: space._6
+				px: space._5,
+				pt: space._5
 			}}
 		>
-			<Job
-				where="Squarespace"
-				from="May 2017"
-				to="Present"
-				role="Software Engineer"
-				css={{ pt: space._0 }}
-			>
+			<Job where="Squarespace" from="May 2017" to="Present" role="Software Engineer">
 				<Ul>
 					<Li>
 						<Text.BodyBook>Design Platform Team - Level 3 Engineer</Text.BodyBook>

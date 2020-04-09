@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 import Screens from './Screens';
 import useScrollBreakpoints from './useScrollBreakpoints';
-import { Tabs } from './Tabs';
+import Tabs from './Tabs';
 import { Box } from 'core/primitives';
 import { PageRouter } from '../Router/NewRouter';
 import { space } from 'core/tokens';
@@ -147,18 +147,38 @@ const Portfolio = () => {
 					<Screens />
 				</Box>
 
-				<Tabs
+				<Box
 					css={{
 						position: 'fixed',
-						right: space._5,
-						top: space._5
+						left: '0px',
+						top: '0px',
+						height: '100%',
+						width: '120px',
+						display: 'flex',
+						flexDirection: 'column'
 					}}
-					options={screens.map(({ link }) => ({
-						label: link.label,
-						value: link.pathname
-					}))}
-					value={currentScreen?.id}
-				/>
+				>
+					<Box
+						css={{
+							flex: '1',
+							background: 'linear-gradient(transparent, white)'
+						}}
+					/>
+					<Tabs
+						css={{ background: 'white' }}
+						options={screens.map(({ link }) => ({
+							label: link.label,
+							value: link.pathname
+						}))}
+						value={currentScreen?.id}
+					/>
+					<Box
+						css={{
+							flex: '1',
+							background: 'linear-gradient(white, transparent)'
+						}}
+					/>
+				</Box>
 			</Context.Provider>
 		</PageRouter>
 	);
