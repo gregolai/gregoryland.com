@@ -10,10 +10,20 @@ const Tabs = ({ css, options, value }) => {
 	return (
 		<Box
 			css={{
-				borderRight: '2px solid black',
+				position: 'relative',
 				...css
 			}}
 		>
+			<Box
+				css={{
+					position: 'absolute',
+					top: '0px',
+					right: '0px',
+					width: '2px',
+					height: '100%',
+					background: 'linear-gradient(transparent, black, transparent)'
+				}}
+			/>
 			{options.map(option => {
 				const isActive = option.value === value;
 				return (
