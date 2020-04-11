@@ -1,5 +1,4 @@
 import React, { Suspense, useEffect, useState } from 'react';
-import { ActivityIndicator } from './ActivityIndicator';
 import Portfolio from '../Portfolio';
 import { Box, Flex, Text } from 'core/primitives';
 import { space } from 'core/tokens';
@@ -17,22 +16,52 @@ interface Props {
 	[key: string]: any;
 }
 
-const Loading = () => (
-	<Flex
+const Loading2Bar = ({ i }) => (
+	<Box
 		css={{
-			py: space._8,
-			height: '100%',
-			justifyContent: 'center',
-			alignItems: 'center'
+			display: 'inline-block',
+			width: '8px',
+			height: '0px',
+			mx: '2px',
+			mt: '24px',
+			backgroundColor: 'white',
+			animationName: 'loading-bar',
+			animationDuration: '400ms',
+			animationIterationCount: 'infinite',
+			animationDirection: 'alternate',
+			animationDelay: `${i * 100}ms`
 		}}
-	>
-		<ActivityIndicator />
-	</Flex>
+	/>
 );
+
+const Loading2 = () => {
+	return (
+		<Flex
+			css={{
+				justifyContent: 'center'
+			}}
+		>
+			<Box
+				css={{
+					p: '8px',
+					backgroundColor: 'rgba(0,0,0,0.5)',
+					border: '1px solid rgba(0,0,0,0.8)'
+				}}
+			>
+				<Loading2Bar i={0} />
+				<Loading2Bar i={1} />
+				<Loading2Bar i={2} />
+				<Loading2Bar i={3} />
+				<Loading2Bar i={4} />
+				<Text.Caption css={{ textAlign: 'center', color: 'white' }}>Loading</Text.Caption>
+			</Box>
+		</Flex>
+	);
+};
 
 const NAV_WIDTH = '160px';
 
-const Screen: React.FC<Props> = ({ center = false, css, id, link, label, children }) => {
+const Screen: React.FC<Props> = ({ center = false, background, css, id, link, label, children }) => {
 	const [el, setEl] = useState(null);
 	const { registerScreen } = Portfolio.useContext();
 
@@ -55,15 +84,13 @@ const Screen: React.FC<Props> = ({ center = false, css, id, link, label, childre
 				...css
 			}}
 		>
+			<Box>{background}</Box>
 			{label && (
-				<Text.Title
-					css={{ position: 'absolute', ml: NAV_WIDTH, top: space._7, left: space._7, zIndex: '1' }}
-				>
+				<Text.Title css={{ position: 'absolute', ml: NAV_WIDTH, left: space._7, zIndex: '1' }}>
 					{label}
 				</Text.Title>
 			)}
-			{/* <Loading /> */}
-			<Suspense fallback={<Loading />}>{children}</Suspense>
+			<Suspense fallback={<Loading2 />}>{children}</Suspense>
 		</Component>
 	);
 };

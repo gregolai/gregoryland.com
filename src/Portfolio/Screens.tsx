@@ -11,6 +11,7 @@ import { space } from 'core/tokens';
 // Height not initially known
 import ResumeScreen from './screens/ResumeScreen';
 import ProjectsScreen from './screens/ProjectsScreen';
+import { ScreenSplat } from './Screen/ScreenSplat';
 
 const MusicPlayerScreen = lazy(() =>
 	import(
@@ -54,6 +55,31 @@ export default () => (
 				label: 'Resume',
 				pathname: '/resume'
 			}}
+			background={
+				<Fragment>
+					<ScreenSplat
+						color="rgba(255,255,255,0.5)"
+						width="1800px"
+						x="200px"
+						y="600px"
+						colorPos="20%"
+					/>
+					{/* DIAGONAL LINE BACK */}
+					<div
+						style={{
+							background: 'black',
+							height: '500px',
+							position: 'absolute',
+							width: '100%',
+							transform: 'translateY(250px) rotate(25deg) scaleX(20)',
+
+							right: '0px',
+							bottom: '0px',
+							transformOrigin: 'right top'
+						}}
+					/>
+				</Fragment>
+			}
 			center
 			css={{
 				minHeight: '100vh',
@@ -64,11 +90,32 @@ export default () => (
 		</Screen>
 		<Screen
 			id="music"
-			label="Music Player"
+			// label="Music Player"
 			link={{
 				label: 'Music Player',
 				pathname: '/music'
 			}}
+			background={
+				<Fragment>
+					<ScreenSplat color="rgba(255,255,255,0.3)" x="20%" y="20%" width={900} />
+					<ScreenSplat color="rgba(255,255,255,0.3)" x="80%" y="80%" width={1400} />
+
+					{/* DIAGONAL LINE BACK */}
+					<div
+						style={{
+							background: 'rgb(97, 95, 107)',
+							height: '500px',
+							position: 'absolute',
+							width: '100%',
+							transform: 'translateY(-250px) rotate(-25deg) scaleX(20)',
+
+							top: '0px',
+							right: '0px',
+							transformOrigin: 'right top'
+						}}
+					/>
+				</Fragment>
+			}
 			center
 			css={{
 				height: '800px',
@@ -80,11 +127,18 @@ export default () => (
 		</Screen>
 		<Screen
 			id="lorem"
-			label="Lorem Ipsum"
+			// label="Lorem Ipsum"
 			link={{
 				label: 'Lorem Ipsum',
 				pathname: '/lorem'
 			}}
+			background={
+				<Fragment>
+					<ScreenSplat x="60%" y="30%" color="rgba(255,255,255,0.4)" width="1200px" />
+					<ScreenSplat x="10%" y="100%" color="rgba(255,0,255,0.2)" width="2100px" />
+					<ScreenSplat x="90%" y="100%" color="rgba(255,137,60,0.2)" width="2100px" />
+				</Fragment>
+			}
 			center
 			css={{
 				height: '900px',
@@ -109,7 +163,7 @@ export default () => (
 		</Screen>
 		<Screen
 			id="projects"
-			label="Projects"
+			// label="Projects"
 			link={{
 				label: 'Projects',
 				pathname: '/projects'

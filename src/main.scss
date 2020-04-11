@@ -8,6 +8,11 @@
   // ALL IBM FONTS
   @import 'node_modules/@ibm/plex/scss/ibm-plex.scss';
 
+  @keyframes :global(loading-bar) {
+    from { margin-top: 24px; height: 0; }
+    to { margin-top: 0; height: 24px; }
+  }
+
   /* https://raw.githubusercontent.com/hankchizljaw/modern-css-reset/master/src/reset.css */
   *,
   *::before,
@@ -41,7 +46,4 @@
     // font-family: 'IBM Plex Sans Condensed', 'Helvetica Neue', Arial, sans-serif;
     // font-family: 'IBM Plex Serif', 'Georgia', Times, serif;
   }
-
-
-
 }
