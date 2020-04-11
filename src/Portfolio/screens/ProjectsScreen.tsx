@@ -351,7 +351,10 @@ export default () => {
 								>
 									<Text.Label>{title}</Text.Label>
 									<a href={`static/${url}`} style={{ display: 'block' }}>
-										<img src={`static/${thumb}`} style={{ display: 'block' }} />
+										<img
+											src={`static/${thumb}`}
+											style={{ display: 'block', height: '120px' }}
+										/>
 									</a>
 								</Flex>
 							))}

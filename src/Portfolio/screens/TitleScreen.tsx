@@ -63,13 +63,14 @@ const InnerMain = ({ children }) => {
 		]
 	});
 
-	const style = {
-		// zIndex: 999,
-		transform: `translate(0px, ${translate}px) scale(${scale}, ${scale})`
-	};
-
 	return (
-		<Box ref={setRef} css={{ mx: space._8, px: space._8 }} style={style}>
+		<Box
+			ref={setRef}
+			css={{ mx: space._8, px: space._8 }}
+			style={{
+				transform: `translate(0px, ${translate}px) scale(${scale}, ${scale})`
+			}}
+		>
 			{children}
 		</Box>
 	);
@@ -82,19 +83,19 @@ export default () => {
 				<Box>
 					<Box css={{ position: 'relative' }}>
 						<Text.Title as="div">
-							<LetterTransition dir={-1} duration={1400}>
-								Gregory Dalton
-							</LetterTransition>
+							{/* <LetterTransition dir={-1} duration={1400}> */}
+							Gregory Dalton
+							{/* </LetterTransition> */}
 						</Text.Title>
-						<Bar delay={1500} height={3} dir={1} duration={500} />
+						{/* <Bar delay={1500} height={3} dir={1} duration={500} /> */}
 					</Box>
 					<Box css={{ position: 'relative' }}>
 						<Text.Subtitle as="div">
-							<LetterTransition dir={+1} duration={1400}>
-								Software Engineer
-							</LetterTransition>
+							{/* <LetterTransition dir={+1} duration={1400}> */}
+							Software Engineer
+							{/* </LetterTransition> */}
 						</Text.Subtitle>
-						<Bar delay={1800} height={2} dir={-1} duration={500} />
+						{/* <Bar delay={1800} height={2} dir={-1} duration={500} /> */}
 					</Box>
 				</Box>
 			</Flex>

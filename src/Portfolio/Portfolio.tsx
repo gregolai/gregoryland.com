@@ -2,10 +2,10 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 import Screens from './Screens';
 import useScrollBreakpoints from './useScrollBreakpoints';
-import Tabs from './Tabs';
 import { Box } from 'core/primitives';
 import { PageRouter } from '../Router/NewRouter';
 import { space } from 'core/tokens';
+import Nav from './Nav';
 
 interface LinkProps {
 	pathname: string;
@@ -143,7 +143,7 @@ const Portfolio = () => {
 						opacity: transition.state === 1 ? '0' : '1'
 					}}
 				>
-					<MyCustom />
+					{/* <MyCustom /> */}
 					<Screens />
 				</Box>
 
@@ -153,7 +153,6 @@ const Portfolio = () => {
 						left: '0px',
 						top: '0px',
 						height: '100%',
-						width: '120px',
 						display: 'flex',
 						flexDirection: 'column'
 					}}
@@ -164,14 +163,7 @@ const Portfolio = () => {
 							background: 'linear-gradient(transparent, white)'
 						}}
 					/>
-					<Tabs
-						css={{ background: 'white' }}
-						options={screens.map(({ link }) => ({
-							label: link.label,
-							value: link.pathname
-						}))}
-						value={currentScreen?.id}
-					/>
+					<Nav screens={screens} currentScreen={currentScreen} />
 					<Box
 						css={{
 							flex: '1',

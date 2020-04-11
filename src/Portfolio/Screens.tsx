@@ -8,12 +8,10 @@ import TitleScreen from './screens/TitleScreen';
 import Screen from './Screen';
 import { space } from 'core/tokens';
 
-const ResumeScreen = lazy(() =>
-	import(
-		/* webpackChunkName: "ResumeScreen" */
-		'./screens/ResumeScreen'
-	)
-);
+// Height not initially known
+import ResumeScreen from './screens/ResumeScreen';
+import ProjectsScreen from './screens/ProjectsScreen';
+
 const MusicPlayerScreen = lazy(() =>
 	import(
 		/* webpackChunkName: "MusicPlayerScreen" */
@@ -30,12 +28,6 @@ const FourthScreen = lazy(() =>
 	import(
 		/* webpackChunkName: "FourthScreen" */
 		'./screens/FourthScreen'
-	)
-);
-const ProjectsScreen = lazy(() =>
-	import(
-		/* webpackChunkName: "ProjectsScreen" */
-		'./screens/ProjectsScreen'
 	)
 );
 
@@ -124,7 +116,6 @@ export default () => (
 			}}
 			css={{
 				minHeight: '100vh',
-				pt: '100px',
 				background: 'linear-gradient(180deg,transparent 0%, rgb(169, 203, 236) 50%, transparent 100%)'
 			}}
 		>

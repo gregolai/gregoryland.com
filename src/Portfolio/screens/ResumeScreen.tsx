@@ -9,8 +9,8 @@ export default () => {
 
 	return (
 		<Fragment>
-			<button style={{ zIndex: 1 }} onClick={printResume}>
-				Print Resume
+			<button style={{ position: 'absolute', top: 0, right: 0, zIndex: 1 }} onClick={printResume}>
+				Print My Resume
 			</button>
 
 			<Resume css={{ zIndex: '1', width: '80%', minWidth: '800px', maxWidth: '1000px' }} />
