@@ -53,7 +53,7 @@ const ParallaxOriginalTarget = () => {
 };
 
 const ParallaxTarget = ({ cacheTargetHeight, getTargetHeight, parallaxFactor }) => {
-	const scrollY = useDocumentScroll();
+	const { scrollY } = useDocumentScroll();
 	const [element, setElement] = useState<HTMLElement>(null);
 	const [y0, setY0] = useState(null);
 	const [cachedH, setCachedH] = useState(null);
@@ -138,7 +138,7 @@ const ParallaxTestDemo = () => {
 	// loop();
 
 	// FOR SOME REASON, CALLING useDocumentScroll HERE PREVENTS FLICKERING
-	const scrollY = useDocumentScroll();
+	const { scrollY } = useDocumentScroll();
 
 	return (
 		<div ref={setPageElement} style={{ background: '#ccc', position: 'relative', height: 4000 }}>

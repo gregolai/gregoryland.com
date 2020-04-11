@@ -2,6 +2,26 @@ import React from 'react';
 import { Box, Text } from 'core/primitives';
 import { space } from 'core/tokens';
 import { PageLink } from '../Router/NewRouter';
+import useDocumentScroll from './useDocumentScroll';
+
+const Helper = () => {
+	const { scrollY, ratioY } = useDocumentScroll(true);
+
+	return (
+		<Box
+			css={{
+				position: 'absolute',
+				right: '0px',
+				width: '2px',
+				height: '80px',
+				background: 'linear-gradient(transparent, black, transparent)'
+			}}
+			style={{
+				top: `${ratioY * 100}%`
+			}}
+		/>
+	);
+};
 
 const Nav = ({ currentScreen, screens }) => {
 	const options = screens.map(({ link }) => ({
@@ -38,17 +58,7 @@ const Nav = ({ currentScreen, screens }) => {
 					background: color
 				}}
 			>
-				{/* RIGHT THING */}
-				<Box
-					css={{
-						position: 'absolute',
-						top: '0px',
-						right: '0px',
-						width: '2px',
-						height: '100%',
-						background: 'linear-gradient(transparent, black, transparent)'
-					}}
-				/>
+				<Helper />
 
 				{options.map(option => {
 					const isActive = option.value === value;

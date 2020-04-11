@@ -2,12 +2,17 @@ import { useEffect } from 'react';
 import { useRafState } from 'react-use';
 
 export default (enable = true) => {
-	const [top, setTop] = useRafState(document.scrollingElement.scrollTop);
+	const [scrollY, setScrollY] = useRafState(document.scrollingElement.scrollTop);
+
+	console.log({
+		scrollY,
+		ratioY: scrollY / document.scrollingElement.scrollHeight
+	});
 
 	useEffect(() => {
 		if (enable) {
 			const onScroll = e => {
-				setTop(document.scrollingElement.scrollTop);
+				setScrollY(document.scrollingElement.scrollTop);
 			};
 
 			const options = {
@@ -20,5 +25,5 @@ export default (enable = true) => {
 		}
 	}, [enable]);
 
-	return top;
+	return { scrollY, ratioY: scrollY / document.scrollingElement.scrollHeight };
 };
