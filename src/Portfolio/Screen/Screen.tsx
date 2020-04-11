@@ -30,6 +30,8 @@ const Loading = () => (
 	</Flex>
 );
 
+const NAV_WIDTH = '160px';
+
 const Screen: React.FC<Props> = ({ center = false, css, id, link, label, children }) => {
 	const [el, setEl] = useState(null);
 	const { registerScreen } = Portfolio.useContext();
@@ -49,11 +51,14 @@ const Screen: React.FC<Props> = ({ center = false, css, id, link, label, childre
 				position: 'relative',
 				justifyContent: center && 'center',
 				alignItems: center && 'center',
+				pl: NAV_WIDTH,
 				...css
 			}}
 		>
 			{label && (
-				<Text.Title css={{ position: 'absolute', top: space._7, left: space._7, zIndex: '1' }}>
+				<Text.Title
+					css={{ position: 'absolute', ml: NAV_WIDTH, top: space._7, left: space._7, zIndex: '1' }}
+				>
 					{label}
 				</Text.Title>
 			)}

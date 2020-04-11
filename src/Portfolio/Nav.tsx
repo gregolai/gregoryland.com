@@ -19,6 +19,7 @@ const Nav = ({ currentScreen, screens }) => {
 				left: '0px',
 				top: '0px',
 				height: '100%',
+				width: '160px',
 				display: 'flex',
 				flexDirection: 'column'
 			}}
