@@ -6,6 +6,8 @@ import { Box } from 'core/primitives';
 import { PageRouter } from '../Router/NewRouter';
 import { space } from 'core/tokens';
 import Nav from './Nav';
+import useDocumentScroll from './useDocumentScroll';
+import useWindowInnerDimensions from './useWindowInnerDimensions';
 
 interface LinkProps {
 	pathname: string;
@@ -83,6 +85,31 @@ const Portfolio = () => {
 		state: 0,
 		screen: undefined
 	});
+
+	const [currentWindowScreen, setCurrentWindowScreen] = useState<ScreenProps>(null);
+	{
+		const { scrollY } = useDocumentScroll(true);
+		const [windowWidth, windowHeight] = useWindowInnerDimensions();
+
+		useEffect(() => {
+			const atY = scrollY + windowHeight * 0.35;
+
+			for (let i = 0; i < screens.length; ++i) {
+				const screen = screens[i];
+				if (currentWindowScreen === screen) {
+					continue;
+				}
+
+				const { offsetHeight, offsetTop } = screen.el;
+				if (atY >= offsetTop && atY < offsetTop + offsetHeight) {
+					setCurrentWindowScreen(screen);
+					break;
+				}
+			}
+		}, [scrollY, windowHeight, screens]);
+	}
+
+	console.log({ currentWindowScreen: currentWindowScreen?.id });
 
 	useEffect(() => {
 		const { state, screen } = transition;
@@ -163,7 +190,7 @@ const Portfolio = () => {
 							background: 'linear-gradient(transparent, white)'
 						}}
 					/>
-					<Nav screens={screens} currentScreen={currentScreen} />
+					<Nav screens={screens} currentScreen={currentWindowScreen} />
 					<Box
 						css={{
 							flex: '1',

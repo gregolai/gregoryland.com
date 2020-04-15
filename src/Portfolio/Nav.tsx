@@ -24,9 +24,10 @@ const Helper = () => {
 };
 
 const Nav = ({ currentScreen, screens }) => {
-	const options = screens.map(({ link }) => ({
+	const options = screens.map(({ id, link }) => ({
 		label: link.label,
-		value: link.pathname
+		pathname: link.pathname,
+		value: id
 	}));
 	const value = currentScreen?.id;
 
@@ -58,7 +59,7 @@ const Nav = ({ currentScreen, screens }) => {
 					background: color
 				}}
 			>
-				<Helper />
+				{/* <Helper /> */}
 
 				{options.map(option => {
 					const isActive = option.value === value;
@@ -75,6 +76,7 @@ const Nav = ({ currentScreen, screens }) => {
 								pr: space._3,
 								fontSize: '12px',
 								color: 'black',
+								borderRight: isActive && '2px solid black',
 								textAlign: 'right',
 								textDecoration: 'none',
 								':focus': {
@@ -84,7 +86,7 @@ const Nav = ({ currentScreen, screens }) => {
 									textDecoration: 'underline'
 								}
 							}}
-							pathname={option.value}
+							pathname={option.pathname}
 						>
 							{option.label}
 						</PageLink>
