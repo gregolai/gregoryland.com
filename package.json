@@ -5,7 +5,7 @@
 	"scripts": {
 		"build:dev": "NODE_ENV=development gulp build:dev",
 		"build:prod": "NODE_ENV=production gulp build:prod",
-		"build:stats": "NODE_ENV=production STATS=1 gulp build:prod",
+		"build:stats": "NODE_ENV=development STATS=1 gulp build:dev",
 		"start": "npm run watch:dev",
 		"watch:dev": "NODE_ENV=development gulp watch:dev"
 	},

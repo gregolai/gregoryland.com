@@ -35,21 +35,21 @@ const MyCustom = () => {
 			{
 				from: 20,
 				to: 500,
-				get: ratio => ({
+				get: (ratio) => ({
 					scale: 1 + ratio * 0.4
 				})
 			},
 			{
 				from: 40,
 				to: 200,
-				get: ratio => ({
+				get: (ratio) => ({
 					translate: ratio * 200
 				})
 			},
 			{
 				from: 40,
 				to: 160,
-				get: ratio => ({
+				get: (ratio) => ({
 					opacity: 1 - Math.abs(1 - ratio * 2)
 				})
 			}
@@ -92,7 +92,7 @@ const Portfolio = () => {
 		const [windowWidth, windowHeight] = useWindowInnerDimensions();
 
 		useEffect(() => {
-			const atY = scrollY + windowHeight * 0.35;
+			const atY = scrollY + windowHeight * 0.5;
 
 			for (let i = 0; i < screens.length; ++i) {
 				const screen = screens[i];
@@ -143,7 +143,7 @@ const Portfolio = () => {
 			onTransition={(location, action) => {
 				if (transition.state !== 0) return;
 
-				const nextScreen = screens.find(s => s.link.pathname === location.pathname);
+				const nextScreen = screens.find((s) => s.link.pathname === location.pathname);
 				if (!nextScreen) return;
 
 				setTransition({
@@ -156,7 +156,7 @@ const Portfolio = () => {
 			<Context.Provider
 				value={{
 					registerScreen: (screen: ScreenProps) => {
-						setScreens(state => [...state, screen]);
+						setScreens((state) => [...state, screen]);
 					}
 				}}
 			>

@@ -19,12 +19,7 @@ const MusicPlayerScreen = lazy(() =>
 		'./screens/MusicPlayerScreen'
 	)
 );
-const LoremIpsumScreen = lazy(() =>
-	import(
-		/* webpackChunkName: "LoremIpsumScreen" */
-		'./screens/LoremIpsumScreen'
-	)
-);
+
 const FourthScreen = lazy(() =>
 	import(
 		/* webpackChunkName: "FourthScreen" */
@@ -126,33 +121,18 @@ export default () => (
 			<MusicPlayerScreen />
 		</Screen>
 		<Screen
-			id="lorem"
-			// label="Lorem Ipsum"
+			id="fourth"
 			link={{
-				label: 'Lorem Ipsum',
-				pathname: '/lorem'
+				label: 'Music Player 2',
+				pathname: '/fourth'
 			}}
 			background={
 				<Fragment>
-					<ScreenSplat x="60%" y="30%" color="rgba(255,255,255,0.4)" width="1200px" />
-					<ScreenSplat x="10%" y="100%" color="rgba(255,0,255,0.2)" width="2100px" />
-					<ScreenSplat x="90%" y="100%" color="rgba(255,137,60,0.2)" width="2100px" />
+					<ScreenSplat x="50%" y="0%" color="rgba(255,255,255,0.4)" width="1200px" />
+					<ScreenSplat x="10%" y="70%" color="rgba(255,0,255,0.2)" width="2100px" />
+					<ScreenSplat x="80%" y="30%" color="rgba(255,137,60,0.2)" width="2100px" />
 				</Fragment>
 			}
-			center
-			css={{
-				height: '900px',
-				background: 'linear-gradient(180deg,transparent 0%, rgb(169, 203, 236) 50%, transparent 100%)'
-			}}
-		>
-			<LoremIpsumScreen />
-		</Screen>
-		<Screen
-			id="fourth"
-			link={{
-				label: 'Fourth Screen',
-				pathname: '/fourth'
-			}}
 			center
 			css={{
 				minHeight: '640px',
