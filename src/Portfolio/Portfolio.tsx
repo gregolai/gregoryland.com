@@ -170,34 +170,9 @@ const Portfolio = () => {
 						opacity: transition.state === 1 ? '0' : '1'
 					}}
 				>
-					{/* <MyCustom /> */}
 					<Screens />
 				</Box>
-
-				<Box
-					css={{
-						position: 'fixed',
-						left: '0px',
-						top: '0px',
-						height: '100%',
-						display: 'flex',
-						flexDirection: 'column'
-					}}
-				>
-					<Box
-						css={{
-							flex: '1',
-							background: 'linear-gradient(transparent, white)'
-						}}
-					/>
-					<Nav screens={screens} currentScreen={currentWindowScreen} />
-					<Box
-						css={{
-							flex: '1',
-							background: 'linear-gradient(white, transparent)'
-						}}
-					/>
-				</Box>
+				<Nav screens={screens} currentScreen={currentWindowScreen} />
 			</Context.Provider>
 		</PageRouter>
 	);

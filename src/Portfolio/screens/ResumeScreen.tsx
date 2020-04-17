@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { ScreenSplat } from 'Portfolio/Screen';
 
 import Resume from 'Resume';
 import { useApp } from 'App';

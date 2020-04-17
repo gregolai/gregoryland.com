@@ -85,7 +85,6 @@ export default () => (
 		</Screen>
 		<Screen
 			id="music"
-			// label="Music Player"
 			link={{
 				label: 'Music Player',
 				pathname: '/music'
@@ -143,7 +142,6 @@ export default () => (
 		</Screen>
 		<Screen
 			id="projects"
-			// label="Projects"
 			link={{
 				label: 'Projects',
 				pathname: '/projects'

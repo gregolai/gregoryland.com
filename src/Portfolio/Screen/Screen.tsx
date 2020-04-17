@@ -61,7 +61,7 @@ const Loading = () => {
 
 const NAV_WIDTH = '160px';
 
-const Screen: React.FC<Props> = ({ center = false, background, css, id, link, label, children }) => {
+const Screen: React.FC<Props> = ({ center = false, background, css, id, link, children }) => {
 	const [el, setEl] = useState(null);
 	const { registerScreen } = Portfolio.useContext();
 
@@ -84,12 +84,17 @@ const Screen: React.FC<Props> = ({ center = false, background, css, id, link, la
 				...css
 			}}
 		>
-			<Box>{background}</Box>
-			{label && (
-				<Text.Title css={{ position: 'absolute', ml: NAV_WIDTH, left: space._7, zIndex: '1' }}>
-					{label}
-				</Text.Title>
-			)}
+			<Box
+				css={{
+					position: 'absolute',
+					top: '0px',
+					left: '0px',
+					width: '100%',
+					height: '100%'
+				}}
+			>
+				{background}
+			</Box>
 			<Suspense fallback={<Loading />}>{children}</Suspense>
 		</Component>
 	);
