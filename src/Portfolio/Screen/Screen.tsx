@@ -16,7 +16,7 @@ interface Props {
 	[key: string]: any;
 }
 
-const Loading2Bar = ({ i }) => (
+const LoadingBar = ({ i }) => (
 	<Box
 		css={{
 			display: 'inline-block',
@@ -34,7 +34,7 @@ const Loading2Bar = ({ i }) => (
 	/>
 );
 
-const Loading2 = () => {
+const Loading = () => {
 	return (
 		<Flex
 			css={{
@@ -48,11 +48,11 @@ const Loading2 = () => {
 					border: '1px solid rgba(0,0,0,0.8)'
 				}}
 			>
-				<Loading2Bar i={0} />
-				<Loading2Bar i={1} />
-				<Loading2Bar i={2} />
-				<Loading2Bar i={3} />
-				<Loading2Bar i={4} />
+				<LoadingBar i={0} />
+				<LoadingBar i={1} />
+				<LoadingBar i={2} />
+				<LoadingBar i={3} />
+				<LoadingBar i={4} />
 				<Text.Caption css={{ textAlign: 'center', color: 'white' }}>Loading</Text.Caption>
 			</Box>
 		</Flex>
@@ -90,7 +90,7 @@ const Screen: React.FC<Props> = ({ center = false, background, css, id, link, la
 					{label}
 				</Text.Title>
 			)}
-			<Suspense fallback={<Loading2 />}>{children}</Suspense>
+			<Suspense fallback={<Loading />}>{children}</Suspense>
 		</Component>
 	);
 };
