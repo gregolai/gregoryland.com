@@ -13,6 +13,7 @@ import { Box } from 'core/primitives';
 import ResumeScreen from './screens/ResumeScreen';
 import ProjectsScreen from './screens/ProjectsScreen';
 import { ScreenSplat } from './Screen/ScreenSplat';
+import useDocumentScroll from './useDocumentScroll';
 
 const MusicPlayerScreen = lazy(() =>
 	import(
@@ -28,31 +29,37 @@ const FourthScreen = lazy(() =>
 	)
 );
 
-const maskImage = 'linear-gradient(to bottom, black 85%, transparent 100%)';
+const TitleImage = () => {
+	const maskImage = 'linear-gradient(to bottom, black 85%, transparent 100%)';
+	const { scrollY } = useDocumentScroll();
+	return (
+		<Box
+			css={{
+				position: 'relative',
+				/*p: space._6,*/ height: '70vh',
+				overflow: 'hidden',
+
+				webkitMaskImage: maskImage,
+				maskImage
+			}}
+		>
+			<img
+				style={{
+					// Fake parallax
+					marginTop: `-${scrollY * 0.2}px`,
+					width: '100%'
+				}}
+				src="static/img/IMG-2660.jpg"
+			/>
+		</Box>
+	);
+};
 
 export default () => (
 	<Fragment>
 		<Screen
 			id="title"
-			background={
-				<Box
-					css={{
-						position: 'relative',
-						/*p: space._6,*/ height: '70vh',
-						overflow: 'hidden',
-
-						webkitMaskImage: maskImage,
-						maskImage
-					}}
-				>
-					<img
-						style={{
-							width: '100%'
-						}}
-						src="static/img/IMG-2660.jpg"
-					/>
-				</Box>
-			}
+			background={<TitleImage />}
 			link={{
 				label: 'Home',
 				pathname: '/'
