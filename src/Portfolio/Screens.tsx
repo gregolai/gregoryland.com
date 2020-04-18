@@ -7,6 +7,7 @@ import TitleScreen from './screens/TitleScreen';
 // import ProjectsScreen from './screens/ProjectsScreen';
 import Screen from './Screen';
 import { space } from 'core/tokens';
+import { Box } from 'core/primitives';
 
 // Height not initially known
 import ResumeScreen from './screens/ResumeScreen';
@@ -27,15 +28,35 @@ const FourthScreen = lazy(() =>
 	)
 );
 
+const maskImage = 'linear-gradient(to bottom, black 85%, transparent 100%)';
+
 export default () => (
 	<Fragment>
 		<Screen
 			id="title"
+			background={
+				<Box
+					css={{
+						position: 'relative',
+						/*p: space._6,*/ height: '70vh',
+						overflow: 'hidden',
+
+						webkitMaskImage: maskImage,
+						maskImage
+					}}
+				>
+					<img
+						style={{
+							width: '100%'
+						}}
+						src="static/img/IMG-2660.jpg"
+					/>
+				</Box>
+			}
 			link={{
 				label: 'Home',
 				pathname: '/'
 			}}
-			center
 			css={{
 				height: '100vh',
 				background:

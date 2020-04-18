@@ -80,22 +80,13 @@ const Screen: React.FC<Props> = ({ center = false, background, css, id, link, ch
 				position: 'relative',
 				justifyContent: center && 'center',
 				alignItems: center && 'center',
-				pl: NAV_WIDTH,
 				...css
 			}}
 		>
-			<Box
-				css={{
-					position: 'absolute',
-					top: '0px',
-					left: '0px',
-					width: '100%',
-					height: '100%'
-				}}
-			>
-				{background}
+			<Box>{background}</Box>
+			<Box css={{ position: 'relative', pl: NAV_WIDTH }}>
+				<Suspense fallback={<Loading />}>{children}</Suspense>
 			</Box>
-			<Suspense fallback={<Loading />}>{children}</Suspense>
 		</Component>
 	);
 };

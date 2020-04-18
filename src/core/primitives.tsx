@@ -113,7 +113,18 @@ const Title = createText(
 		fontSize: '28px',
 		lineHeight: '42px',
 		fontWeight: '600',
-		letterSpacing: '1.2px'
+		letterSpacing: '1px'
+	}
+);
+
+const MegaTitle = createText(
+	'MegaTitle',
+	{ as: 'h1' },
+	{
+		fontSize: '78px',
+		lineHeight: '90px',
+		fontWeight: '600',
+		letterSpacing: '1px'
 	}
 );
 
@@ -125,7 +136,8 @@ export const Text = {
 	BodyBookTabular,
 	BodyMedium,
 	Subtitle,
-	Title
+	Title,
+	MegaTitle
 };
 
 export const Box = createPrimitive(undefined, {});
