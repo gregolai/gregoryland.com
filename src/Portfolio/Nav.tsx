@@ -31,8 +31,6 @@ const Nav = ({ currentScreen, screens }) => {
 					background: `linear-gradient(transparent, ${color})`
 				}}
 			/>
-
-			{/* TABS */}
 			<Box
 				css={{
 					position: 'relative',

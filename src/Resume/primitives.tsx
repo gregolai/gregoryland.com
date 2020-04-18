@@ -12,17 +12,7 @@ export const Text = {
 			fontSize: '120px',
 			lineHeight: '1',
 			fontWeight: '500',
-			/*
-font-family: 'Playfair Display', serif;
-font-family: 'Odibee Sans', cursive;
-font-family: 'Cormorant Garamond', serif;
-font-family: 'Nanum Myeongjo', serif;
-font-family: 'Old Standard TT', serif;
-font-family: 'Markazi Text', serif;
-*/
-
 			fontFamily: '"Playfair Display", serif'
-			//fontFamily: '"Playfair Display", serif'
 		}
 	),
 	Section: createText(

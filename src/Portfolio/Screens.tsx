@@ -36,7 +36,7 @@ const TitleImage = () => {
 		<Box
 			css={{
 				position: 'relative',
-				/*p: space._6,*/ height: '70vh',
+				height: '70vh',
 				overflow: 'hidden',
 
 				webkitMaskImage: maskImage,
