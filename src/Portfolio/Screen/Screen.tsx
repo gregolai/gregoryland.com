@@ -73,21 +73,37 @@ const Screen: React.FC<Props> = ({ center = false, background, css, id, link, ch
 
 	const Component = center ? Flex : Box;
 	return (
-		<Component
+		<Box
 			ref={setEl}
 			id={id}
 			css={{
 				position: 'relative',
-				justifyContent: center && 'center',
-				alignItems: center && 'center',
 				...css
 			}}
 		>
-			<Box>{background}</Box>
-			<Box css={{ position: 'relative', pl: NAV_WIDTH }}>
-				<Suspense fallback={<Loading />}>{children}</Suspense>
+			<Box
+				css={{
+					position: 'absolute',
+					top: '0px',
+					left: '0px',
+					width: '100%',
+					height: '100%'
+				}}
+			>
+				{background}
 			</Box>
-		</Component>
+			<Component
+				css={{
+					position: 'relative',
+					height: '100%',
+					pl: NAV_WIDTH,
+					justifyContent: center && 'center',
+					alignItems: center && 'center'
+				}}
+			>
+				<Suspense fallback={<Loading />}>{children}</Suspense>
+			</Component>
+		</Box>
 	);
 };
 export default Screen;

@@ -30,7 +30,7 @@ const FourthScreen = lazy(() =>
 );
 
 const TitleImage = () => {
-	const maskImage = 'linear-gradient(to bottom, black 85%, transparent 100%)';
+	const maskImage = 'linear-gradient(to bottom, black 80%, transparent 100%)';
 	const { scrollY } = useDocumentScroll();
 	return (
 		<Box
@@ -47,7 +47,8 @@ const TitleImage = () => {
 				style={{
 					// Fake parallax
 					marginTop: `-${scrollY * 0.2}px`,
-					width: '100%'
+					width: '100%',
+					objectFit: 'none'
 				}}
 				src="static/img/IMG-2660.jpg"
 			/>
