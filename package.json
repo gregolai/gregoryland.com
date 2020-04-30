@@ -16,7 +16,6 @@
 	"author": "Gregory Dalton",
 	"homepage": "https://gregoryland.com",
 	"dependencies": {
-		"@ibm/plex": "^4.0.2",
 		"markdown-to-jsx": "^6.11.1",
 		"pu2": "0.0.28",
 		"react": "^16.13.1",
