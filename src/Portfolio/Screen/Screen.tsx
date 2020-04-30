@@ -43,7 +43,7 @@ const Loading = () => {
 		>
 			<Box
 				css={{
-					p: '8px',
+					p: space._2,
 					backgroundColor: 'rgba(0,0,0,0.5)',
 					border: '1px solid rgba(0,0,0,0.8)'
 				}}
@@ -60,6 +60,7 @@ const Loading = () => {
 };
 
 const NAV_WIDTH = '160px';
+const FALLBACK = <Loading />;
 
 const Screen: React.FC<Props> = ({ center = false, background, css, id, link, children }) => {
 	const [el, setEl] = useState(null);
@@ -101,7 +102,7 @@ const Screen: React.FC<Props> = ({ center = false, background, css, id, link, ch
 					alignItems: center && 'center'
 				}}
 			>
-				<Suspense fallback={<Loading />}>{children}</Suspense>
+				<Suspense fallback={FALLBACK}>{children}</Suspense>
 			</Component>
 		</Box>
 	);

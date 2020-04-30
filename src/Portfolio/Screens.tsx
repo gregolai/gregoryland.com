@@ -15,6 +15,8 @@ import ProjectsScreen from './screens/ProjectsScreen';
 import { ScreenSplat } from './Screen/ScreenSplat';
 import useDocumentScroll from './useDocumentScroll';
 
+import Snek from './screens/projects/Snek';
+
 const MusicPlayerScreen = lazy(() =>
 	import(
 		/* webpackChunkName: "MusicPlayerScreen" */
@@ -182,5 +184,6 @@ export default () => (
 		>
 			<ProjectsScreen />
 		</Screen>
+		<Snek />
 	</Fragment>
 );

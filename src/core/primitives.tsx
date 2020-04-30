@@ -140,7 +140,7 @@ export const Text = {
 	MegaTitle
 };
 
-export const Box = createPrimitive(undefined, {});
+export const Box = StyledPrimitive;
 export const Button = createPrimitive(
 	{ role: 'button' },
 	{
