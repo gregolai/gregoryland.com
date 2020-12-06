@@ -14,7 +14,7 @@ export const Text = {
 			fontFamily: '"Playfair Display", serif'
 		};
 		if (__DEV__) {
-			baseProps['data-text-tag'] = 'Text.MegaTitle';
+			baseProps['debug-tag'] = 'Text.MegaTitle';
 		}
 		return createTextComponent(baseProps);
 	})(),
@@ -28,7 +28,7 @@ export const Text = {
 			textTransform: 'uppercase'
 		};
 		if (__DEV__) {
-			baseProps['data-text-tag'] = 'Text.Section';
+			baseProps['debug-tag'] = 'Text.Section';
 		}
 	})()
 };
@@ -41,7 +41,7 @@ export const Ul = (() => {
 		p: space._0
 	};
 	if (__DEV__) {
-		baseProps['data-tag'] = 'Ul';
+		baseProps['debug-tag'] = 'Ul';
 	}
 	return createComponent(baseProps);
 })();
@@ -53,7 +53,7 @@ export const Li = (() => {
 		listStyleType: 'none'
 	};
 	if (__DEV__) {
-		baseProps['data-tag'] = 'Li';
+		baseProps['debug-tag'] = 'Li';
 	}
 	return createComponent(baseProps);
 })();

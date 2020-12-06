@@ -31,7 +31,7 @@ const Label = (() => {
 		textTransform: 'uppercase'
 	};
 	if (__DEV__) {
-		baseProps['data-text-tag'] = 'Text.Label';
+		baseProps['debug-tag'] = 'Text.Label';
 	}
 	return createTextComponent(baseProps);
 })();
@@ -43,7 +43,7 @@ const Caption = (() => {
 		lineHeight: '16px'
 	};
 	if (__DEV__) {
-		baseProps['data-text-tag'] = 'Text.Caption';
+		baseProps['debug-tag'] = 'Text.Caption';
 	}
 	return createTextComponent(baseProps);
 })();
@@ -57,7 +57,7 @@ const Action = (() => {
 		textTransform: 'uppercase'
 	};
 	if (__DEV__) {
-		baseProps['data-text-tag'] = 'Text.Action';
+		baseProps['debug-tag'] = 'Text.Action';
 	}
 	return createTextComponent(baseProps);
 })();
@@ -69,7 +69,7 @@ const BodyBook = (() => {
 		lineHeight: '22px'
 	};
 	if (__DEV__) {
-		baseProps['data-text-tag'] = 'Text.BodyBook';
+		baseProps['debug-tag'] = 'Text.BodyBook';
 	}
 	return createTextComponent(baseProps);
 })();
@@ -82,7 +82,7 @@ const BodyBookTabular = (() => {
 		'font-feature-settings': '"tnum" on, "lnum" on'
 	};
 	if (__DEV__) {
-		baseProps['data-text-tag'] = 'Text.BodyBookTabular';
+		baseProps['debug-tag'] = 'Text.BodyBookTabular';
 	}
 	return createTextComponent(baseProps);
 })();
@@ -95,7 +95,7 @@ const BodyMedium = (() => {
 		fontWeight: '600'
 	};
 	if (__DEV__) {
-		baseProps['data-text-tag'] = 'Text.BodyMedium';
+		baseProps['debug-tag'] = 'Text.BodyMedium';
 	}
 	return createTextComponent(baseProps);
 })();
@@ -109,7 +109,7 @@ const Subtitle = (() => {
 		letterSpacing: '1px'
 	};
 	if (__DEV__) {
-		baseProps['data-text-tag'] = 'Text.Subtitle';
+		baseProps['debug-tag'] = 'Text.Subtitle';
 	}
 	return createComponent(baseProps);
 })();
@@ -123,7 +123,7 @@ const Title = (() => {
 		letterSpacing: '1px'
 	};
 	if (__DEV__) {
-		baseProps['data-text-tag'] = 'Text.Title';
+		baseProps['debug-tag'] = 'Text.Title';
 	}
 	return createTextComponent(baseProps);
 })();
@@ -137,7 +137,7 @@ const MegaTitle = (() => {
 		letterSpacing: '1px'
 	};
 	if (__DEV__) {
-		baseProps['data-text-tag'] = 'Text.MegaTitle';
+		baseProps['debug-tag'] = 'Text.MegaTitle';
 	}
 	return createTextComponent(baseProps);
 })();
@@ -163,7 +163,7 @@ export const Button = (() => {
 		justifyContent: 'center'
 	};
 	if (__DEV__) {
-		baseProps['data-text-tag'] = 'Button';
+		baseProps['debug-tag'] = 'Button';
 	}
 	return createComponent(baseProps);
 })();
@@ -173,7 +173,7 @@ export const Flex = (() => {
 		display: 'flex'
 	};
 	if (__DEV__) {
-		baseProps['data-text-tag'] = 'Flex';
+		baseProps['debug-tag'] = 'Flex';
 	}
 	return createComponent(baseProps);
 })();
