@@ -18,42 +18,32 @@ interface Props {
 
 const LoadingBar = ({ i }) => (
 	<Box
-		css={{
-			display: 'inline-block',
-			width: '8px',
-			height: '0px',
-			mx: '2px',
-			mt: '24px',
-			backgroundColor: 'white',
-			animationName: 'loading-bar',
-			animationDuration: '400ms',
-			animationIterationCount: 'infinite',
-			animationDirection: 'alternate',
-			animationDelay: `${i * 100}ms`
-		}}
+		animationName="loading-bar"
+		animationDuration="400ms"
+		animationIterationCount="infinite"
+		animationDirection="alternate"
+		animationDelay={`${i * 100}ms`}
+		backgroundColor="white"
+		display="inline-block"
+		height="0px"
+		mx="2px"
+		mt="24px"
+		width="8px"
 	/>
 );
 
 const Loading = () => {
 	return (
-		<Flex
-			css={{
-				justifyContent: 'center'
-			}}
-		>
-			<Box
-				css={{
-					p: space._2,
-					backgroundColor: 'rgba(0,0,0,0.5)',
-					border: '1px solid rgba(0,0,0,0.8)'
-				}}
-			>
+		<Flex justifyContent="center">
+			<Box backgroundColor="rgba(0,0,0,0.5)" border="1px solid rgba(0,0,0,0.8)" p={space._2}>
 				<LoadingBar i={0} />
 				<LoadingBar i={1} />
 				<LoadingBar i={2} />
 				<LoadingBar i={3} />
 				<LoadingBar i={4} />
-				<Text.Caption css={{ textAlign: 'center', color: 'white' }}>Loading</Text.Caption>
+				<Text.Caption color="white" textAlign="center">
+					Loading
+				</Text.Caption>
 			</Box>
 		</Flex>
 	);
@@ -74,33 +64,16 @@ const Screen: React.FC<Props> = ({ center = false, background, css, id, link, ch
 
 	const Component = center ? Flex : Box;
 	return (
-		<Box
-			ref={setEl}
-			id={id}
-			css={{
-				position: 'relative',
-				...css
-			}}
-		>
-			<Box
-				css={{
-					position: 'absolute',
-					top: '0px',
-					left: '0px',
-					width: '100%',
-					height: '100%'
-				}}
-			>
+		<Box ref={setEl} id={id} position="relative" css={css}>
+			<Box position="absolute" top="0px" left="0px" width="100%" height="100%">
 				{background}
 			</Box>
 			<Component
-				css={{
-					position: 'relative',
-					height: '100%',
-					pl: NAV_WIDTH,
-					justifyContent: center && 'center',
-					alignItems: center && 'center'
-				}}
+				position="relative"
+				height="100%"
+				pl={NAV_WIDTH}
+				alignItems={center && 'center'}
+				justifyContent={center && 'center'}
 			>
 				<Suspense fallback={FALLBACK}>{children}</Suspense>
 			</Component>

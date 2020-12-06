@@ -1,7 +1,8 @@
-import React, { useEffect, useCallback, createContext, useState, useContext } from 'react';
+import React, { useEffect, createContext, useState, useContext } from 'react';
 
 import { LocationListener, Location } from 'history';
 import { BrowserRouter, useHistory, Link, Route, NavLink } from 'react-router-dom';
+import { Button } from 'core/primitives';
 
 const PageRouterContext = createContext<{
 	links: string[];
@@ -49,18 +50,21 @@ export const PageRouter: React.FC<PageRouterProps> = ({ children, onTransition }
 	);
 };
 
-const LinkAnchor = ({ as: Component, navigate, ...rest }) => {
+type ButtonProps = React.ComponentProps<typeof Button>;
+type LinkProps = React.ComponentProps<typeof Link>;
+
+const LinkAnchor = ({ as: Component, navigate, ...rest }: ButtonProps & { navigate: () => void }) => {
 	const { onClick, onKeyPress } = rest;
+	console.log({ rest });
 	return (
-		<Component
-			as="a"
+		<Button
 			{...rest}
-			onClick={e => {
+			onClick={(e) => {
 				onClick && onClick(e);
 				e.preventDefault();
 				navigate();
 			}}
-			onKeyPress={e => {
+			onKeyPress={(e) => {
 				onKeyPress && onKeyPress(e);
 				if (e.key === ' ' || e.key === 'Enter') {
 					e.preventDefault();
@@ -69,30 +73,30 @@ const LinkAnchor = ({ as: Component, navigate, ...rest }) => {
 			}}
 		>
 			{rest.children}
-		</Component>
+		</Button>
 	);
 };
 
-export const PageLink = ({ children, pathname, ...rest }) => {
+export const PageLink = ({ children, to, ...rest }: ButtonProps & LinkProps) => {
 	const { addLink, removeLink, onHistoryChange } = useContext(PageRouterContext);
 
 	const history = useHistory();
 
 	useEffect(() => {
 		const unlisten = history.listen((location, action) => {
-			if (location.pathname === pathname) {
+			if (location.pathname === to) {
 				onHistoryChange(location, action);
 			}
 		});
-		addLink(pathname);
+		addLink(to as string);
 		return () => {
-			removeLink(pathname);
+			removeLink(to as string);
 			unlisten();
 		};
-	}, [history, pathname]);
-
+	}, [history, to]);
+	console.log({ rest });
 	return (
-		<Link {...rest} component={LinkAnchor} to={pathname}>
+		<Link {...rest} component={LinkAnchor} to={to}>
 			{children}
 		</Link>
 	);

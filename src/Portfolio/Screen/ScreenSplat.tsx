@@ -24,11 +24,9 @@ export const ScreenSplat: React.FC<Props> = ({
 	height = width
 }) => (
 	<Box
-		css={{
-			position: 'absolute',
-			transform: 'translate(-50%, -50%)',
-			zIndex: overlay && '2'
-		}}
+		position="absolute"
+		transform="translate(-50%, -50%)"
+		zIndex={overlay && '2'}
 		style={{
 			left: x,
 			top: y,

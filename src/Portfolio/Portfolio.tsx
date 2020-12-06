@@ -161,14 +161,9 @@ const Portfolio = () => {
 				}}
 			>
 				<Box
-					css={{
-						overflow: 'hidden',
-						transitionTimingFunction: 'ease-in-out',
-						transitionProperty: 'opacity',
-						transitionDuration: `${TRANSITION_DURATION}ms`,
-
-						opacity: transition.state === 1 ? '0' : '1'
-					}}
+					opacity={transition.state === 1 ? '0' : '1'}
+					overflow="hidden"
+					transition={`opacity ${TRANSITION_DURATION}ms ease-in-out`}
 				>
 					<Screens />
 				</Box>

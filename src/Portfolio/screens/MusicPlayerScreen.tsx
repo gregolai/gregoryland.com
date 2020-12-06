@@ -8,7 +8,7 @@ export default () => {
 	return (
 		<Box>
 			<MusicPlayer />
-			<Text.Caption css={{ pt: space._4, textAlign: 'center' }}>
+			<Text.Caption pt={space._4} textAlign="center">
 				Designed by <a href="https://dribbble.com/AntonSKV">Anton Skvortsov</a>
 			</Text.Caption>
 		</Box>

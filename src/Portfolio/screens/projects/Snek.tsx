@@ -39,7 +39,7 @@ const Snek = () => {
 				// background: 'linear-gradient(180deg,transparent 0%, rgb(169, 203, 236) 50%, transparent 100%)'
 			}}
 		>
-			<Flex css={{ justifyContent: 'space-between', px: space._7 }}>
+			<Flex justifyContent="space-between" px={space._7}>
 				<Box>
 					<Text.Caption>May 2017</Text.Caption>
 					<Text.Caption as="a" href={'https://gregoryland.com/projects/snek/snek.zip'}>
@@ -51,8 +51,8 @@ const Snek = () => {
 					</Text.Caption>
 				</Box>
 				<Box>
-					<Box css={{ background: 'black', p: space._5, width: '300px' }}>
-						<Text.BodyBook css={{ color: 'white' }}>100% Vanilla HTML/JS/CSS</Text.BodyBook>
+					<Box backgroundColor="black" p={space._5} width="300px">
+						<Text.BodyBook color="white">100% Vanilla HTML/JS/CSS</Text.BodyBook>
 					</Box>
 				</Box>
 			</Flex>

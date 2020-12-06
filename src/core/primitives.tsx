@@ -5,9 +5,13 @@ import { space } from './tokens';
 type BoxProps = React.ComponentPropsWithRef<typeof Box>;
 
 export const createComponent = (baseProps: BoxProps) => {
-	return forwardRef<HTMLElement, BoxProps>((props: BoxProps, ref) => (
-		<Box {...baseProps} {...props} ref={ref} />
-	)) as React.FunctionComponent<BoxProps>;
+	return forwardRef<HTMLElement, BoxProps>(
+		(props: BoxProps, ref) =>
+			// @ts-ignore
+			(baseProps['role'] === 'button' && console.log(baseProps, props)) || (
+				<Box {...baseProps} {...props} ref={ref} />
+			)
+	) as React.FunctionComponent<BoxProps>;
 };
 
 export const createTextComponent = (() => {

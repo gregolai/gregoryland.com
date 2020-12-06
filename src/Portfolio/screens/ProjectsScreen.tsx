@@ -8,21 +8,19 @@ const PlayInline = ({ height, src, title }) => {
 		<Box>
 			{isOpen && <Button onClick={() => setOpen(false)}>Close</Button>}
 			<Flex
-				css={{
-					height: isOpen && height,
-					justifyContent: 'center',
-					alignItems: 'center',
-					backgroundColor: 'rgba(0,0,0,0.2)'
-				}}
+				alignItems="center"
+				backgroundColor="rgba(0,0,0,0.2)"
+				height={isOpen && height}
+				justifyContent="center"
 			>
 				{!isOpen && (
 					<Button
 						onClick={() => setOpen(true)}
+						backgroundColor="rgba(255,255,255,0.4)"
+						my={space._7}
+						px={space._4}
+						py={space._3}
 						css={{
-							backgroundColor: 'rgba(255,255,255,0.4)',
-							my: space._7,
-							px: space._4,
-							py: space._3,
 							':hover': {
 								backgroundColor: 'rgba(255,255,255,0.6)'
 							}
@@ -314,12 +312,12 @@ export default () => {
 					]
 				}
 			].map((proj, i) => (
-				<Box key={i} css={{ px: space._7 }}>
-					<Flex css={{ alignItems: 'center' }}>
+				<Box key={i} px={space._7}>
+					<Flex alignItems="center">
 						<Text.Title>{proj.name}</Text.Title>
 						{proj.play && (
 							<Text.Caption
-								css={{ ml: space._7 }}
+								ml={space._7}
 								as="a"
 								href={`https://gregoryland.com/projects/${proj.play.url}`}
 							>
@@ -328,7 +326,7 @@ export default () => {
 						)}
 						{proj.download && (
 							<Text.Caption
-								css={{ ml: space._7 }}
+								ml={space._7}
 								as="a"
 								href={`https://gregoryland.com/projects/${proj.download.url}`}
 							>
@@ -337,17 +335,15 @@ export default () => {
 						)}
 					</Flex>
 					{proj.images && (
-						<Flex css={{ alignItems: 'stretch' }}>
+						<Flex alignItems="stretch">
 							{proj.images.map(({ title, url, thumb }, i) => (
 								<Flex
 									key={i}
-									css={{
-										maxWidth: '300px',
-										p: space._4,
-										flexDirection: 'column',
-										alignItems: 'center',
-										justifyContent: 'space-between'
-									}}
+									alignItems="center"
+									flexDirection="column"
+									justifyContent="space-between"
+									maxWidth="300px"
+									p={space._4}
 								>
 									<Text.Label>{title}</Text.Label>
 									<a href={`static/${url}`} style={{ display: 'block' }}>
@@ -360,9 +356,9 @@ export default () => {
 							))}
 						</Flex>
 					)}
-					<Box css={{ pb: space._6 }}>
+					<Box pb={space._6}>
 						{proj.items.map((item, i2) => (
-							<Text.BodyBookTabular key={i2} css={{ pl: space._6, pt: space._1 }}>
+							<Text.BodyBookTabular key={i2} pl={space._6} pt={space._1}>
 								{item}
 							</Text.BodyBookTabular>
 						))}

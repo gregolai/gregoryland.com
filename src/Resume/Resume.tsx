@@ -12,10 +12,10 @@ export default (props) => (
 		p={space._8}
 		{...props}
 		css={{
+			...props.css,
 			'@media print': {
 				p: space._0
-			},
-			...props.css
+			}
 		}}
 	>
 		{/* HEADER */}

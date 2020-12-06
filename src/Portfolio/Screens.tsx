@@ -36,13 +36,12 @@ const TitleImage = () => {
 	const { scrollY } = useDocumentScroll();
 	return (
 		<Box
+			position="relative"
+			height="70vh"
+			overflow="hidden"
+			maskImage={maskImage}
 			css={{
-				position: 'relative',
-				height: '70vh',
-				overflow: 'hidden',
-
-				webkitMaskImage: maskImage,
-				maskImage
+				webkitMaskImage: maskImage
 			}}
 		>
 			<img

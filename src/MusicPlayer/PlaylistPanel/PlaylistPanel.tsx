@@ -24,8 +24,8 @@ export const PlaylistPanel = () => {
 				pt: '140px'
 			}}
 		>
-			<Box css={{ overflow: 'auto' }}>
-				{currentAlbum.songs.map(song => (
+			<Box overflow="auto">
+				{currentAlbum.songs.map((song) => (
 					<PlaylistEntry key={song.id} song={song} />
 				))}
 			</Box>
