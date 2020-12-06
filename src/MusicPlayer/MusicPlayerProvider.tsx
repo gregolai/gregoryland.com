@@ -91,7 +91,7 @@ export class Provider extends Component<Props, State> {
 
 	playerRef: HTMLDivElement = null;
 
-	setPlayerRef = playerRef => this.setState({ playerRef });
+	setPlayerRef = (playerRef) => this.setState({ playerRef });
 
 	async componentDidMount() {
 		const res = await fetch('http://localhost:8087/albums/2');
@@ -217,7 +217,6 @@ export class Provider extends Component<Props, State> {
 			-normRatioX * intensity
 		)}deg)`;
 
-		console.log({ transform });
 		const DURATION = 2000;
 		this.setState({
 			knockStyle: {

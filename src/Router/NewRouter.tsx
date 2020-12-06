@@ -55,7 +55,7 @@ type LinkProps = React.ComponentProps<typeof Link>;
 
 const LinkAnchor = ({ as: Component, navigate, ...rest }: ButtonProps & { navigate: () => void }) => {
 	const { onClick, onKeyPress } = rest;
-	console.log({ rest });
+
 	return (
 		<Button
 			{...rest}
@@ -94,7 +94,7 @@ export const PageLink = ({ children, to, ...rest }: ButtonProps & LinkProps) => 
 			unlisten();
 		};
 	}, [history, to]);
-	console.log({ rest });
+
 	return (
 		<Link {...rest} component={LinkAnchor} to={to}>
 			{children}
