@@ -45,7 +45,7 @@ const Caption = (() => {
 	if (__DEV__) {
 		baseProps['data-text-tag'] = 'Text.Caption';
 	}
-	return createComponent(baseProps);
+	return createTextComponent(baseProps);
 })();
 
 const Action = (() => {
@@ -59,7 +59,7 @@ const Action = (() => {
 	if (__DEV__) {
 		baseProps['data-text-tag'] = 'Text.Action';
 	}
-	return createComponent(baseProps);
+	return createTextComponent(baseProps);
 })();
 
 const BodyBook = (() => {
@@ -71,7 +71,7 @@ const BodyBook = (() => {
 	if (__DEV__) {
 		baseProps['data-text-tag'] = 'Text.BodyBook';
 	}
-	return createComponent(baseProps);
+	return createTextComponent(baseProps);
 })();
 
 const BodyBookTabular = (() => {
@@ -84,7 +84,7 @@ const BodyBookTabular = (() => {
 	if (__DEV__) {
 		baseProps['data-text-tag'] = 'Text.BodyBookTabular';
 	}
-	return createComponent(baseProps);
+	return createTextComponent(baseProps);
 })();
 
 const BodyMedium = (() => {
@@ -97,7 +97,7 @@ const BodyMedium = (() => {
 	if (__DEV__) {
 		baseProps['data-text-tag'] = 'Text.BodyMedium';
 	}
-	return createComponent(baseProps);
+	return createTextComponent(baseProps);
 })();
 
 const Subtitle = (() => {
@@ -125,7 +125,7 @@ const Title = (() => {
 	if (__DEV__) {
 		baseProps['data-text-tag'] = 'Text.Title';
 	}
-	return createComponent(baseProps);
+	return createTextComponent(baseProps);
 })();
 
 const MegaTitle = (() => {
@@ -139,7 +139,7 @@ const MegaTitle = (() => {
 	if (__DEV__) {
 		baseProps['data-text-tag'] = 'Text.MegaTitle';
 	}
-	return createComponent(baseProps);
+	return createTextComponent(baseProps);
 })();
 
 export const Text = {
