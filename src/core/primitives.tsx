@@ -1,132 +1,146 @@
 import React, { forwardRef } from 'react';
-import { StyledPrimitive } from 'pu2';
+import { Box } from 'pu2';
 import { space } from './tokens';
 
-const BASE_TEXT_STYLE = {
-	textRendering: 'optimizeLegibility',
-	webkitFontSmoothing: 'antialiased',
-	mozOsxFontSmoothing: 'grayscale',
-	color: '#313131',
-	m: space._0
+type BoxProps = React.ComponentPropsWithRef<typeof Box>;
+
+export const createComponent = (baseProps: BoxProps) => {
+	return forwardRef<HTMLElement, BoxProps>((props: BoxProps, ref) => (
+		<Box {...baseProps} {...props} ref={ref} />
+	)) as React.FunctionComponent<BoxProps>;
 };
 
-export const createPrimitive = (baseProps, css) => {
-	return forwardRef<any, any>((props, ref) => (
-		<StyledPrimitive
-			{...baseProps}
-			{...props}
-			css={{
-				...css,
-				...props.css
-			}}
-			ref={ref}
-		/>
-	));
-};
+export const createTextComponent = (() => {
+	return (baseProps: BoxProps) =>
+		createComponent({
+			textRendering: 'optimizeLegibility',
+			webkitFontSmoothing: 'antialiased',
+			mozOsxFontSmoothing: 'grayscale',
+			color: '#313131',
+			m: space._0,
+			...baseProps
+		});
+})();
 
-export const createText = (name, baseProps, css) => {
-	if (__DEV__) {
-		baseProps['debug-tag'] = `Text.${name}`;
-	}
-
-	return createPrimitive(baseProps, {
-		...BASE_TEXT_STYLE,
-		...css
-	});
-};
-
-const Label = createText(
-	'Label',
-	{ as: 'p' },
-	{
+const Label = (() => {
+	const baseProps = {
+		as: 'p',
 		fontSize: '9.75px',
 		lineHeight: '11px',
 		letterSpacing: '0.75px',
 		textTransform: 'uppercase'
+	};
+	if (__DEV__) {
+		baseProps['data-text-tag'] = 'Text.Label';
 	}
-);
+	return createTextComponent(baseProps);
+})();
 
-const Caption = createText(
-	'Caption',
-	{ as: 'p' },
-	{
+const Caption = (() => {
+	const baseProps = {
+		as: 'p',
 		fontSize: '12px',
 		lineHeight: '16px'
+	};
+	if (__DEV__) {
+		baseProps['data-text-tag'] = 'Text.Caption';
 	}
-);
+	return createComponent(baseProps);
+})();
 
-const Action = createText(
-	'Action',
-	{ as: 'p' },
-	{
+const Action = (() => {
+	const baseProps = {
+		as: 'p',
 		fontSize: '12.5px',
 		lineHeight: '22px',
 		letterSpacing: '0.5px',
 		textTransform: 'uppercase'
+	};
+	if (__DEV__) {
+		baseProps['data-text-tag'] = 'Text.Action';
 	}
-);
+	return createComponent(baseProps);
+})();
 
-const BodyBook = createText(
-	'BodyBook',
-	{ as: 'p' },
-	{
+const BodyBook = (() => {
+	const baseProps = {
+		as: 'p',
 		fontSize: '14px',
 		lineHeight: '22px'
+	};
+	if (__DEV__) {
+		baseProps['data-text-tag'] = 'Text.BodyBook';
 	}
-);
+	return createComponent(baseProps);
+})();
 
-const BodyBookTabular = createText(
-	'BodyBook',
-	{ as: 'p' },
-	{
+const BodyBookTabular = (() => {
+	const baseProps = {
+		as: 'p',
 		fontSize: '14px',
 		lineHeight: '22px',
 		'font-feature-settings': '"tnum" on, "lnum" on'
+	};
+	if (__DEV__) {
+		baseProps['data-text-tag'] = 'Text.BodyBookTabular';
 	}
-);
+	return createComponent(baseProps);
+})();
 
-const BodyMedium = createText(
-	'BodyMedium',
-	{ as: 'p' },
-	{
+const BodyMedium = (() => {
+	const baseProps = {
+		as: 'p',
 		fontSize: '14px',
 		lineHeight: '22px',
 		fontWeight: '600'
+	};
+	if (__DEV__) {
+		baseProps['data-text-tag'] = 'Text.BodyMedium';
 	}
-);
+	return createComponent(baseProps);
+})();
 
-const Subtitle = createText(
-	'Subtitle',
-	{ as: 'p' },
-	{
+const Subtitle = (() => {
+	const baseProps = {
+		as: 'p',
 		fontSize: '18px',
 		lineHeight: '28px',
 		fontWeight: '600',
 		letterSpacing: '1px'
+	};
+	if (__DEV__) {
+		baseProps['data-text-tag'] = 'Text.Subtitle';
 	}
-);
+	return createComponent(baseProps);
+})();
 
-const Title = createText(
-	'Title',
-	{ as: 'p' },
-	{
+const Title = (() => {
+	const baseProps = {
+		as: 'p',
 		fontSize: '28px',
 		lineHeight: '42px',
 		fontWeight: '600',
 		letterSpacing: '1px'
+	};
+	if (__DEV__) {
+		baseProps['data-text-tag'] = 'Text.Title';
 	}
-);
+	return createComponent(baseProps);
+})();
 
-const MegaTitle = createText(
-	'MegaTitle',
-	{ as: 'h1' },
-	{
+const MegaTitle = (() => {
+	const baseProps = {
+		as: 'h1',
 		fontSize: '78px',
 		lineHeight: '90px',
 		fontWeight: '600',
 		letterSpacing: '1px'
+	};
+	if (__DEV__) {
+		baseProps['data-text-tag'] = 'Text.MegaTitle';
 	}
-);
+	return createComponent(baseProps);
+})();
 
 export const Text = {
 	Label,
@@ -140,14 +154,28 @@ export const Text = {
 	MegaTitle
 };
 
-export const Box = StyledPrimitive;
-export const Button = createPrimitive(
-	{ role: 'button' },
-	{
+export const Button = (() => {
+	const baseProps = {
+		role: 'button',
 		cursor: 'pointer',
 		display: 'flex',
 		alignItems: 'center',
 		justifyContent: 'center'
+	};
+	if (__DEV__) {
+		baseProps['data-text-tag'] = 'Button';
 	}
-);
-export const Flex = createPrimitive(undefined, { display: 'flex' });
+	return createComponent(baseProps);
+})();
+
+export const Flex = (() => {
+	const baseProps = {
+		display: 'flex'
+	};
+	if (__DEV__) {
+		baseProps['data-text-tag'] = 'Flex';
+	}
+	return createComponent(baseProps);
+})();
+
+export { Box };

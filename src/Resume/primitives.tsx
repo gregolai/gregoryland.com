@@ -1,49 +1,59 @@
-import { createText, createPrimitive, Text as _CoreText } from 'core/primitives';
+import { createTextComponent, createComponent, Text as _CoreText } from 'core/primitives';
 import { space } from './tokens';
 export { Box, Button, Flex } from 'core/primitives';
 
 export const Text = {
 	..._CoreText,
 
-	MegaTitle: createText(
-		'MegaTitle',
-		{ as: 'h1' },
-		{
+	MegaTitle: (() => {
+		const baseProps = {
+			as: 'h1',
 			fontSize: '120px',
 			lineHeight: '1',
 			fontWeight: '500',
 			fontFamily: '"Playfair Display", serif'
+		};
+		if (__DEV__) {
+			baseProps['data-text-tag'] = 'Text.MegaTitle';
 		}
-	),
-	Section: createText(
-		'Section',
-		{ as: 'h2' },
-		{
+		return createTextComponent(baseProps);
+	})(),
+
+	Section: (() => {
+		const baseProps = {
+			as: 'h2',
 			fontSize: '26px',
 			lineHeight: '26px',
 			letterSpacing: '0.5px',
 			textTransform: 'uppercase'
+		};
+		if (__DEV__) {
+			baseProps['data-text-tag'] = 'Text.Section';
 		}
-	)
+	})()
 };
 
-export const Ul = createPrimitive(
-	{
+export const Ul = (() => {
+	const baseProps = {
 		as: 'ul',
-		role: 'list'
-	},
-	{
+		role: 'list',
 		m: space._0,
 		p: space._0
+	};
+	if (__DEV__) {
+		baseProps['data-tag'] = 'Ul';
 	}
-);
+	return createComponent(baseProps);
+})();
 
-export const Li = createPrimitive(
-	{
+export const Li = (() => {
+	const baseProps = {
 		as: 'li',
-		role: 'listitem'
-	},
-	{
+		role: 'listitem',
 		listStyleType: 'none'
+	};
+	if (__DEV__) {
+		baseProps['data-tag'] = 'Li';
 	}
-);
+	return createComponent(baseProps);
+})();

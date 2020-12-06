@@ -1,68 +1,51 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { HeaderContact } from './HeaderContact';
 import { Job } from './Job';
 import { Text, Box, Ul, Li, Flex } from './primitives';
 import { space } from './tokens';
 
-export default props => (
+export default (props) => (
 	<Box
+		backgroundColor="white"
+		boxShadow="4px 4px 2px rgba(0,0,0,0.3)"
+		lineHeight="1" // Keep lineHeight: '1' until it's defaulted to globally
+		p={space._8}
 		{...props}
 		css={{
-			// backgroundImage: 'url("static/img/grain.png")',
-			// backgroundRepeat: 'repeat',
-			// backgroundSize: '100px 100px',
-			background: 'white',
-
-			// Keep lineHeight: '1' until it's defaulted to globally
-			lineHeight: '1',
-
-			p: space._8,
-			boxShadow: '4px 4px 2px rgba(0,0,0,0.3)',
-
 			'@media print': {
 				p: space._0
 			},
-
 			...props.css
 		}}
 	>
 		{/* HEADER */}
-		<Flex css={{ justifyContent: 'space-between', pb: space._7, minHeight: '310px' }}>
-			<Flex
-				css={{
-					flex: '0',
-					flexDirection: 'column',
-					justifyContent: 'space-between',
-					pr: space._9
-				}}
-			>
+		<Flex justifyContent="space-between" pb={space._7} minHeight="310px">
+			<Flex flex="0" flexDirection="column" justifyContent="space-between" pr={space._9}>
 				<Text.MegaTitle>Gregory Dalton</Text.MegaTitle>
 
 				{/* SKILLS */}
-				<Flex css={{ justifyContent: 'space-around' }}>
-					<Text.BodyMedium css={{ display: 'inline-block' }}>TypeScript</Text.BodyMedium>
-					<Text.BodyMedium css={{ display: 'inline-block', px: space._2 }}>
+				<Flex justifyContent="space-around">
+					<Text.BodyMedium display="inline-block">TypeScript</Text.BodyMedium>
+					<Text.BodyMedium display="inline-block" px={space._2}>
 						{'\u25CF'}
 					</Text.BodyMedium>
-					<Text.BodyMedium css={{ display: 'inline-block' }}>JavaScript</Text.BodyMedium>
-					<Text.BodyMedium css={{ display: 'inline-block', px: space._2 }}>
+					<Text.BodyMedium display="inline-block">JavaScript</Text.BodyMedium>
+					<Text.BodyMedium display="inline-block" px={space._2}>
 						{'\u25CF'}
 					</Text.BodyMedium>
-					<Text.BodyMedium css={{ display: 'inline-block' }}>C#</Text.BodyMedium>
-					<Text.BodyMedium css={{ display: 'inline-block', px: space._2 }}>
+					<Text.BodyMedium display="inline-block">C#</Text.BodyMedium>
+					<Text.BodyMedium display="inline-block" px={space._2}>
 						{'\u25CF'}
 					</Text.BodyMedium>
-					<Text.BodyMedium css={{ display: 'inline-block' }}>C++</Text.BodyMedium>
+					<Text.BodyMedium display="inline-block">C++</Text.BodyMedium>
 				</Flex>
 			</Flex>
 
 			<Flex
-				css={{
-					pt: space._8, // Perception modifier
-					flexDirection: 'column',
-					justifyContent: 'space-between',
-					maxWidth: '352px'
-				}}
+				flexDirection="column"
+				justifyContent="sapce-between"
+				maxWidth="352px"
+				pt={space._8} // Perception modifier
 			>
 				{/* CONTACT */}
 				<Box>
@@ -74,7 +57,7 @@ export default props => (
 				<Box>
 					<Text.Subtitle>B.S. Computer Science</Text.Subtitle>
 					<Text.Label>California State University, Long Beach</Text.Label>
-					<Text.Label css={{ pb: space._4 }}>Class of 2009</Text.Label>
+					<Text.Label pb={space._4}>Class of 2009</Text.Label>
 					<Ul>
 						<Li>
 							<Text.BodyBook>
@@ -92,12 +75,7 @@ export default props => (
 		</Flex>
 
 		{/* BODY */}
-		<Box
-			css={{
-				px: space._5,
-				pt: space._5
-			}}
-		>
+		<Box px={space._5} pt={space._5}>
 			<Job where="Squarespace" from="May 2017" to="Present" role="Software Engineer">
 				<Ul>
 					<Li>
