@@ -12,19 +12,17 @@ export const DragHandle = () => {
 
 	return (
 		<Flex
-			css={{
-				justifyContent: 'center',
-				alignItems: 'center',
-				position: 'absolute',
-				bottom: '0px',
-				left: '0px',
-				height: '42px',
-				width: '100%'
-			}}
+			alignItems="center"
+			bottom="0px"
+			height="42px"
+			justifyContent="center"
+			left="0px"
+			position="absolute"
+			width="100%"
 			onClick={() => setPlaylistOpen(!isPlaylistOpen)}
 			onMouseEnter={() => setHovering(true)}
 			onMouseLeave={() => setHovering(false)}
-			onMouseDown={e => {
+			onMouseDown={(e) => {
 				startDrag(e, {
 					measureTarget: playerRef,
 					distance: 0,

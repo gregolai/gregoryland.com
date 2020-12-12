@@ -1,13 +1,11 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 import Screens from './Screens';
-import useScrollBreakpoints from './useScrollBreakpoints';
 import { Box } from 'core/primitives';
 import { PageRouter } from '../Router/NewRouter';
-import { space } from 'core/tokens';
 import Nav from './Nav';
-import useDocumentScroll from './useDocumentScroll';
-import useWindowInnerDimensions from './useWindowInnerDimensions';
+import { useDocumentScrollY } from '../utils/DocumentScrollProvider';
+import { useWindowInnerDimensions } from '../utils/WindowInnerDimensionsProvider';
 
 interface LinkProps {
 	pathname: string;
@@ -24,56 +22,6 @@ const Context = createContext({
 	registerScreen: (opts: ScreenProps) => {}
 });
 
-const MyCustom = () => {
-	const { opacity, scale, translate } = useScrollBreakpoints({
-		init: {
-			opacity: 0,
-			scale: 1,
-			translate: 0
-		},
-		breakpoints: [
-			{
-				from: 20,
-				to: 500,
-				get: (ratio) => ({
-					scale: 1 + ratio * 0.4
-				})
-			},
-			{
-				from: 40,
-				to: 200,
-				get: (ratio) => ({
-					translate: ratio * 200
-				})
-			},
-			{
-				from: 40,
-				to: 160,
-				get: (ratio) => ({
-					opacity: 1 - Math.abs(1 - ratio * 2)
-				})
-			}
-		]
-	});
-
-	const style = {
-		opacity,
-		transform: `translate(${translate}px, ${translate}px) scale(${scale}, ${scale})`
-	};
-	return (
-		<div
-			style={{
-				position: 'fixed',
-				top: 0,
-				left: 0,
-				zIndex: 2
-			}}
-		>
-			<div style={style}>HELLO</div>
-		</div>
-	);
-};
-
 const TRANSITION_DURATION = 300;
 
 const Portfolio = () => {
@@ -88,7 +36,7 @@ const Portfolio = () => {
 
 	const [currentWindowScreen, setCurrentWindowScreen] = useState<ScreenProps>(null);
 	{
-		const { scrollY } = useDocumentScroll(true);
+		const scrollY = useDocumentScrollY();
 		const [windowWidth, windowHeight] = useWindowInnerDimensions();
 
 		useEffect(() => {

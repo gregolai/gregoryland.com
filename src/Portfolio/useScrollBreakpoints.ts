@@ -1,7 +1,7 @@
-import useDocumentScroll from './useDocumentScroll';
+import { useDocumentScrollY } from '../utils/DocumentScrollProvider';
 
 export default ({ init, breakpoints }) => {
-	const { scrollY } = useDocumentScroll();
+	const scrollY = useDocumentScrollY();
 
 	const acc = { ...init };
 

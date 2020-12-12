@@ -13,7 +13,7 @@ import { Box } from 'core/primitives';
 import ResumeScreen from './screens/ResumeScreen';
 import ProjectsScreen from './screens/ProjectsScreen';
 import { ScreenSplat } from './Screen/ScreenSplat';
-import useDocumentScroll from './useDocumentScroll';
+import { useDocumentScrollY } from '../utils/DocumentScrollProvider';
 
 import Snek from './screens/projects/Snek';
 
@@ -33,7 +33,7 @@ const FourthScreen = lazy(() =>
 
 const TitleImage = () => {
 	const maskImage = 'linear-gradient(to bottom, black 80%, transparent 100%)';
-	const { scrollY } = useDocumentScroll();
+	const scrollY = useDocumentScrollY();
 	return (
 		<Box
 			position="relative"

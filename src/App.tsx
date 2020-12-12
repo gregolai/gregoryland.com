@@ -1,4 +1,6 @@
 import React, { useContext, createContext, Component } from 'react';
+import DocumentScrollProvider from './utils/DocumentScrollProvider';
+import WindowInnerDimensionsProvider from './utils/WindowInnerDimensionsProvider';
 import Portfolio from './Portfolio';
 import Resume from './Resume';
 
@@ -35,13 +37,17 @@ export default class App extends Component {
 		}
 
 		return (
-			<Context.Provider
-				value={{
-					printResume: this.printResume
-				}}
-			>
-				<Portfolio />
-			</Context.Provider>
+			<DocumentScrollProvider>
+				<WindowInnerDimensionsProvider>
+					<Context.Provider
+						value={{
+							printResume: this.printResume
+						}}
+					>
+						<Portfolio />
+					</Context.Provider>
+				</WindowInnerDimensionsProvider>
+			</DocumentScrollProvider>
 		);
 	}
 }

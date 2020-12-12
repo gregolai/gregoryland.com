@@ -130,8 +130,9 @@ const LoopSvg = () => {
 			/>
 			<polygon points={`${a0} ${a1} ${a2}`} fill="black" />
 			<path
-				d={`M${100 - p0[0]},${100 - p0[1]} C${100 - c[0]},${100 - c[1]} ${100 - c[0]},${100 -
-					c[1]} ${100 - p1[0]},${100 - p1[1]}`}
+				d={`M${100 - p0[0]},${100 - p0[1]} C${100 - c[0]},${100 - c[1]} ${100 - c[0]},${100 - c[1]} ${
+					100 - p1[0]
+				},${100 - p1[1]}`}
 				stroke="black"
 				fill="transparent"
 				style={{
@@ -140,8 +141,9 @@ const LoopSvg = () => {
 				}}
 			/>
 			<polygon
-				points={`${100 - a0[0]},${100 - a0[1]} ${100 - a1[0]},${100 - a1[1]} ${100 - a2[0]},${100 -
-					a2[1]}`}
+				points={`${100 - a0[0]},${100 - a0[1]} ${100 - a1[0]},${100 - a1[1]} ${100 - a2[0]},${
+					100 - a2[1]
+				}`}
 				fill="black"
 			/>
 		</svg>
@@ -159,7 +161,7 @@ const AuxButton = ({ children }) => (
 	</Button>
 );
 
-const MainPanel = props => {
+const MainPanel = (props) => {
 	const { isPlaylistOpen, setPlaylistOpen, knockAt, isPlaying, setPlaying } = useContext(Context);
 	const { dragY, isDragging } = useContext(MainPanelStore.Context);
 
@@ -200,7 +202,7 @@ const MainPanel = props => {
 				<AuxButton>
 					<LoopSvg />
 				</AuxButton>
-				<Flex css={{ alignItems: 'center' }}>
+				<Flex alignItems="center">
 					<PrimaryButton size="small" /*onPointerDown={knockAt}*/>
 						<PrevSongSvg />
 					</PrimaryButton>
@@ -228,7 +230,7 @@ const MainPanel = props => {
 	);
 };
 
-export default props => (
+export default (props) => (
 	<MainPanelStore>
 		<MainPanel {...props} />
 	</MainPanelStore>
