@@ -55,45 +55,20 @@ export const PlaylistEntry = ({ song }) => {
 			}}
 		>
 			<Button
-				css={{
-					background: isCurrent ? 'yellow' : 'white',
-					width: '24px',
-					height: '24px',
-					borderRadius: '50%'
-				}}
+				background={isCurrent ? 'yellow' : 'white'}
+				borderRadius="50%"
+				height="24px"
+				width="24px"
 			/>
-			<Box
-				css={{
-					flex: '1',
-					pl: '8px'
-				}}
-			>
-				<Box
-					css={{
-						fontSize: '11px',
-						letterSpacing: '0.4px',
-						color: 'rgba(255,255,255,0.8)'
-					}}
-				>
+			<Box flex="1" pl="8px">
+				<Box fontSize="11px" letterSpacing="0.4px" color="rgba(255,255,255,0.8)">
 					{song.title}
 				</Box>
-				<Box
-					css={{
-						fontSize: '9px',
-						letterSpacing: '0.8px',
-						color: 'rgba(255,255,255,0.5)'
-					}}
-				>
+				<Box color="rgba(255,255,255,0.5)" fontSize="9px" letterSpacing="0.8px">
 					{song.artist}
 				</Box>
 			</Box>
-			<Box
-				css={{
-					fontSize: '10px',
-					letterSpacing: '0.8px',
-					color: 'rgba(255, 255, 255, 0.6)'
-				}}
-			>
+			<Box color="rgba(255, 255, 255, 0.6)" fontSize="10px" letterSpacing="0.8px">
 				{song.duration}
 			</Box>
 			{bufferingSongId === song.id && <Progress percent={bufferingSongProgress} />}

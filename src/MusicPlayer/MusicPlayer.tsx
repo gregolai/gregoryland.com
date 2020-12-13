@@ -11,14 +11,12 @@ const MusicPlayer = () => {
 	return (
 		<Box
 			ref={setPlayerRef}
-			css={{
-				position: 'relative',
-				width: '246px',
-				height: '532px',
-				borderRadius: '16px',
-				overflow: 'hidden',
-				userSelect: 'none'
-			}}
+			borderRadius="16px"
+			height="532px"
+			overflow="hidden"
+			position="relative"
+			userSelect="none"
+			width="246px"
 			style={knockStyle}
 		>
 			<MainPanel />

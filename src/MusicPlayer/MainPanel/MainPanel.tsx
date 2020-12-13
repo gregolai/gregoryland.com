@@ -151,12 +151,7 @@ const LoopSvg = () => {
 };
 
 const AuxButton = ({ children }) => (
-	<Button
-		css={{
-			height: '48px',
-			width: '48px'
-		}}
-	>
+	<Button height="48px" width="48px">
 		{children}
 	</Button>
 );
@@ -167,19 +162,17 @@ const MainPanel = (props) => {
 
 	return (
 		<Box
-			css={{
-				position: 'absolute',
-				left: '0px',
-				top: '0px',
-				bottom: isPlaylistOpen ? 'calc(100% - 140px)' : '0px',
-				width: '100%',
-				overflow: 'hidden',
-				zIndex: '2',
-				background: 'linear-gradient(155deg, #F2F6FA 10%, #D6E5F4 90%)',
-				boxShadow: '0 0 36px rgba(0,0,0,0.2)',
-				borderRadius: '16px'
-			}}
-			style={{ transform: isDragging ? `translateY(${dragY}px)` : undefined }}
+			background="linear-gradient(155deg, #F2F6FA 10%, #D6E5F4 90%)"
+			borderRadius="16px"
+			bottom={isPlaylistOpen ? 'calc(100% - 140px)' : '0px'}
+			boxShadow="0 0 36px rgba(0,0,0,0.2)"
+			left="0px"
+			overflow="hidden"
+			position="absolute"
+			top="0px"
+			transform={isDragging && `translateY(${dragY}px)`}
+			width="100%"
+			zIndex="2"
 		>
 			<SongDetails />
 
@@ -187,17 +180,13 @@ const MainPanel = (props) => {
 
 			{/* CONTROLS */}
 			<Flex
-				css={{
-					alignItems: 'center',
-					justifyContent: 'space-between',
-
-					// MAYBE TEMP FOR NOW - CONSTRAIN TO BOTTOM
-					position: 'absolute',
-					bottom: isPlaylistOpen ? '32px' : '42px',
-					left: '0px',
-					width: '100%',
-					transition: 'all 600ms cubic-bezier(0.770, 0.060, 0.240, 0.925)'
-				}}
+				alignItems="center"
+				bottom={isPlaylistOpen ? '32px' : '42px'}
+				justifyContent="space-between"
+				left="0px"
+				position="absolute"
+				transition="all 600ms cubic-bezier(0.770, 0.060, 0.240, 0.925)"
+				width="100%"
 			>
 				<AuxButton>
 					<LoopSvg />

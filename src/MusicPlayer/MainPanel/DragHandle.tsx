@@ -40,26 +40,22 @@ export const DragHandle = () => {
 			}}
 		>
 			<Box
-				css={{
-					position: 'absolute',
-					top: '0px',
-					left: '0px',
-					width: '100%',
-					height: '100%',
-					background: 'linear-gradient(0deg, rgba(255,255,255,0.3), transparent)',
-					transition: 'all 300ms cubic-bezier(0.770, 0.060, 0.240, 0.925)',
-					opacity: isHovering ? '1' : '0'
-				}}
+				background="linear-gradient(0deg, rgba(255,255,255,0.3), transparent)"
+				height="100%"
+				left="0px"
+				opacity={isHovering ? '1' : '0'}
+				position="absolute"
+				top="0px"
+				transition="all 300ms cubic-bezier(0.770, 0.060, 0.240, 0.925)"
+				width="100%"
 			/>
 			<Box
-				css={{
-					position: 'relative',
-					mt: '14px',
-					background: 'rgba(0,0,0,0.4)',
-					height: '2px',
-					width: isHovering ? '26px' : '12px',
-					transition: 'all 300ms cubic-bezier(0.770, 0.060, 0.240, 0.925)'
-				}}
+				background="rgba(0,0,0,0.4)"
+				height="2px"
+				mt="14px"
+				position="relative"
+				transition="all 300ms cubic-bezier(0.770, 0.060, 0.240, 0.925)"
+				width={isHovering ? '26px' : '12px'}
 			/>
 		</Flex>
 	);

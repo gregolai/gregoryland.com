@@ -11,18 +11,15 @@ export const PlaylistPanel = () => {
 
 	return (
 		<Flex
-			css={{
-				flexDirection: 'column',
-
-				position: 'absolute',
-				top: '0px',
-				left: '0px',
-				height: '100%',
-				width: '100%',
-				zIndex: '1',
-				background: '#977ADE',
-				pt: '140px'
-			}}
+			background="#977ADE"
+			flexDirection="column"
+			height="100%"
+			left="0px"
+			position="absolute"
+			pt="140px"
+			top="0px"
+			width="100%"
+			zIndex="1"
 		>
 			<Box overflow="auto">
 				{currentAlbum.songs.map((song) => (

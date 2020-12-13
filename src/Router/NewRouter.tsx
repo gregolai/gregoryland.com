@@ -1,4 +1,4 @@
-import React, { useEffect, createContext, useState, useContext } from 'react';
+import React, { useEffect, createContext, useState, useCallback, useContext } from 'react';
 
 import { LocationListener, Location } from 'history';
 import { BrowserRouter, useHistory, Link, Route, NavLink } from 'react-router-dom';
@@ -18,11 +18,13 @@ interface PageRouterProps {
 export const PageRouter: React.FC<PageRouterProps> = ({ children, onTransition }) => {
 	const [links, setLinks] = useState<string[]>([]);
 
-	const addLink = (pathname: string) => {
-		const nextLinks = [...links];
-		nextLinks.push(pathname);
-		setLinks(nextLinks);
-	};
+	const addLink = useCallback(
+		(pathname: string) => {
+			setLinks([...links, pathname]);
+		},
+		[links]
+	);
+
 	const removeLink = (pathname: string) => {
 		const nextLinks = [...links];
 		nextLinks.splice(nextLinks.indexOf(pathname), 1);

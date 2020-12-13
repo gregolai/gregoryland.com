@@ -35,6 +35,7 @@ const Portfolio = () => {
 	});
 
 	const [currentWindowScreen, setCurrentWindowScreen] = useState<ScreenProps>(null);
+
 	{
 		const scrollY = useDocumentScrollY();
 		const [windowWidth, windowHeight] = useWindowInnerDimensions();
