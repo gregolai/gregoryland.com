@@ -70,7 +70,7 @@ const config = {
 				]
 			},
 			{
-				test: /\.scss$/,
+				test: /\.css$/,
 				exclude: /node_modules/,
 				use: [
 					{ loader: MiniCssExtractPlugin.loader, options: {} },
@@ -82,12 +82,6 @@ const config = {
 							modules: {
 								localIdentName
 							},
-							sourceMap: opts.dev
-						}
-					},
-					{
-						loader: 'sass-loader',
-						options: {
 							sourceMap: opts.dev
 						}
 					}

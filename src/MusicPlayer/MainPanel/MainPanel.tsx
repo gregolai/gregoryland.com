@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { cx } from 'pu2';
+import React, { useContext, CSSProperties } from 'react';
 import { Context } from '../MusicPlayerProvider';
 import { PrimaryButton } from './PrimaryButton';
 import { SongDetails } from './SongDetails';
@@ -8,93 +7,60 @@ import { DragHandle } from './DragHandle';
 import MainPanelStore from './MainPanelStore';
 import { Box, Button, Flex } from 'core/primitives';
 
-const SVG_FILL_OPACITY = '40%';
+const createSvgStyle = (width: string) => ({
+	width,
+	height: width,
+	opacity: '40%'
+});
+const svgStyle8px = createSvgStyle('8px');
+const svgStyle10px = createSvgStyle('10px');
+const svgStyle20px = createSvgStyle('20px');
+
+const SvgIcon = (props: React.SVGProps<SVGSVGElement>) => (
+	<svg
+		preserveAspectRatio="xMidYMid"
+		version="1.1"
+		viewBox="0 0 100 100"
+		xmlns="http://www.w3.org/2000/svg"
+		{...props}
+	/>
+);
 
 const PlaySvg = () => (
-	<svg
-		style={{
-			width: '10px',
-			height: '10px',
-			opacity: SVG_FILL_OPACITY
-		}}
-		viewBox="0 0 100 100"
-		version="1.1"
-		xmlns="http://www.w3.org/2000/svg"
-		preserveAspectRatio="xMidYMid"
-	>
+	<SvgIcon style={svgStyle10px}>
 		<polygon points="10,0 90,50 10,100" fill="black" />
-	</svg>
+	</SvgIcon>
 );
 
 const PauseSvg = () => (
-	<svg
-		style={{
-			width: '10px',
-			height: '10px',
-			opacity: SVG_FILL_OPACITY
-		}}
-		viewBox="0 0 100 100"
-		version="1.1"
-		xmlns="http://www.w3.org/2000/svg"
-		preserveAspectRatio="xMidYMid"
-	>
+	<SvgIcon style={svgStyle10px}>
 		<rect x="10" y="0" width="20" height="100" fill="black" />
 		<rect x="70" y="0" width="20" height="100" fill="black" />
-	</svg>
+	</SvgIcon>
 );
 
 const PrevSongSvg = () => (
-	<svg
-		style={{
-			width: '8px',
-			height: '8px',
-			opacity: SVG_FILL_OPACITY
-		}}
-		viewBox="0 0 100 100"
-		version="1.1"
-		xmlns="http://www.w3.org/2000/svg"
-		preserveAspectRatio="xMidYMid"
-	>
+	<SvgIcon style={svgStyle8px}>
 		<rect x="0" y="0" width="20" height="100" fill="black" />
 		<polygon points="20,50 100,0 100,100" fill="black" />
-	</svg>
+	</SvgIcon>
 );
 
 const NextSongSvg = () => (
-	<svg
-		style={{
-			width: '8px',
-			height: '8px',
-			opacity: SVG_FILL_OPACITY
-		}}
-		viewBox="0 0 100 100"
-		version="1.1"
-		xmlns="http://www.w3.org/2000/svg"
-		preserveAspectRatio="xMidYMid"
-	>
+	<SvgIcon style={svgStyle8px}>
 		<rect x="80" y="0" width="20" height="100" fill="black" />
 		<polygon points="80,50 0,0 0,100" fill="black" />
-	</svg>
+	</SvgIcon>
 );
 
 const PlusSvg = () => (
-	<svg
-		style={{
-			width: '10px',
-			height: '10px',
-			opacity: SVG_FILL_OPACITY
-		}}
-		viewBox="0 0 100 100"
-		version="1.1"
-		xmlns="http://www.w3.org/2000/svg"
-		preserveAspectRatio="xMidYMid"
-	>
+	<SvgIcon style={svgStyle10px}>
 		<rect x="40" y="0" width="20" height="100" fill="black" />
 		<rect x="0" y="40" width="100" height="20" fill="black" />
-	</svg>
+	</SvgIcon>
 );
 
-const LoopSvg = () => {
+const LoopSvg = (() => {
 	// arrow distance x and y
 	const ax = 22;
 	const ay = 16;
@@ -107,48 +73,45 @@ const LoopSvg = () => {
 	const a1 = [p1[0] + ax, p1[1]];
 	const a2 = [p1[0], p1[1] + ay];
 
-	return (
-		<svg
-			style={{
-				width: '20px',
-				height: '20px',
-				opacity: SVG_FILL_OPACITY
-			}}
-			viewBox="0 0 100 100"
-			version="1.1"
-			xmlns="http://www.w3.org/2000/svg"
-			preserveAspectRatio="xMidYMid"
-		>
-			<path
-				d={`M${p0} C${c} ${c} ${p1}`}
-				stroke="black"
-				fill="transparent"
-				style={{
-					stroke: 'black',
-					strokeWidth: 10
-				}}
-			/>
-			<polygon points={`${a0} ${a1} ${a2}`} fill="black" />
-			<path
-				d={`M${100 - p0[0]},${100 - p0[1]} C${100 - c[0]},${100 - c[1]} ${100 - c[0]},${100 - c[1]} ${
-					100 - p1[0]
-				},${100 - p1[1]}`}
-				stroke="black"
-				fill="transparent"
-				style={{
-					stroke: 'black',
-					strokeWidth: 10
-				}}
-			/>
-			<polygon
-				points={`${100 - a0[0]},${100 - a0[1]} ${100 - a1[0]},${100 - a1[1]} ${100 - a2[0]},${
-					100 - a2[1]
-				}`}
-				fill="black"
-			/>
-		</svg>
+	const pathTopLeft: React.SVGProps<SVGPathElement> = {
+		d: `M${p0} C${c} ${c} ${p1}`,
+		stroke: 'black',
+		fill: 'transparent',
+		style: {
+			stroke: 'black',
+			strokeWidth: 10
+		}
+	};
+	const polygonArrowRight: React.SVGProps<SVGPolygonElement> = {
+		points: `${a0} ${a1} ${a2}`,
+		fill: 'black'
+	};
+
+	const pathBottomRight: React.SVGProps<SVGPathElement> = {
+		d: `M${100 - p0[0]},${100 - p0[1]} C${100 - c[0]},${100 - c[1]} ${100 - c[0]},${100 - c[1]} ${
+			100 - p1[0]
+		},${100 - p1[1]}`,
+		stroke: 'black',
+		fill: 'transparent',
+		style: {
+			stroke: 'black',
+			strokeWidth: 10
+		}
+	};
+	const polygonArrowLeft: React.SVGProps<SVGPolygonElement> = {
+		points: `${100 - a0[0]},${100 - a0[1]} ${100 - a1[0]},${100 - a1[1]} ${100 - a2[0]},${100 - a2[1]}`,
+		fill: 'black'
+	};
+
+	return () => (
+		<SvgIcon style={svgStyle20px}>
+			<path {...pathTopLeft} />
+			<polygon {...polygonArrowRight} />
+			<path {...pathBottomRight} />
+			<polygon {...polygonArrowLeft} />
+		</SvgIcon>
 	);
-};
+})();
 
 const AuxButton = ({ children }) => (
 	<Button height="48px" width="48px">
@@ -192,20 +155,16 @@ const MainPanel = (props) => {
 					<LoopSvg />
 				</AuxButton>
 				<Flex alignItems="center">
-					<PrimaryButton size="small" /*onPointerDown={knockAt}*/>
+					<PrimaryButton isSmall onClick={() => {}} /*onMouseDown={knockAt}*/>
 						<PrevSongSvg />
 					</PrimaryButton>
 					<PrimaryButton
-						size="large"
-						css={{
-							mx: '8px'
-						}}
 						onClick={() => setPlaying(!isPlaying)}
-						/* onPointerDown={knockAt} */
+						/* onMouseDown={knockAt} */
 					>
 						{isPlaying ? <PauseSvg /> : <PlaySvg />}
 					</PrimaryButton>
-					<PrimaryButton size="small" /*onPointerDown={knockAt}*/>
+					<PrimaryButton isSmall onClick={() => {}} /*onMouseDown={knockAt}*/>
 						<NextSongSvg />
 					</PrimaryButton>
 				</Flex>

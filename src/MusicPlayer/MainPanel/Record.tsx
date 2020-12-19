@@ -1,37 +1,83 @@
-import React, { useContext, useState } from 'react';
-import { cx } from 'pu2';
+import React, { useContext, useState, useEffect } from 'react';
+import { Box, Flex } from 'core/primitives';
 
 import { Context } from '../MusicPlayerProvider';
 
-const css = require('./Record.scss');
+const css = require('./Record.css');
 
-export const Record = props => {
+export const Record = (props) => {
 	const { currentSong, isPlaying, setPlaying, isPlaylistOpen } = useContext(Context);
 
 	const [perspective, setPerspective] = useState(false);
-	setTimeout(() => {
-		setPerspective(true);
-	}, 2000);
-	if (!currentSong) {
-		return null;
-	}
+	useEffect(() => {
+		if (!perspective) {
+			setTimeout(() => {
+				setPerspective(true);
+			}, 2000);
+		}
+	}, [perspective]);
+
+	const { art } = currentSong || { art: 'https://placekitten.com/200/300' };
+	// if (!currentSong) {
+	// 	return null;
+	// }
+
+	const centerChildren = {
+		alignItems: 'center',
+		justifyContent: 'center'
+	};
+
 	return (
-		<div
-			className={cx(
-				css.container,
-				isPlaylistOpen && css.isPlaylistOpen,
-				perspective && css.perspective
-			)}
+		<Flex
+			{...centerChildren}
+			bottom={isPlaylistOpen ? '32px' : '180px'}
+			left="0px"
+			opacity={isPlaylistOpen ? '0' : '1'}
+			position="absolute"
+			transform={perspective ? 'perspective(500px) rotateX(30deg)' : 'perspective(0px) rotateX(0deg)'}
+			transition="opacity 300ms cubic-bezier(0.770, 0.060, 0.240, 0.925) 100ms, bottom 600ms cubic-bezier(0.770, 0.060, 0.240, 0.925)"
+			width="100%"
 		>
-			<div className={css.disc_0} onClick={() => setPlaying(!isPlaying)}>
-				<div className={css.disc_1}>
-					<div className={css.disc_2}>
-						<div className={cx(css.discImage, isPlaying && css.rotating)}>
-							<img className={css.img} src={currentSong.art} />
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+			<Flex
+				{...centerChildren}
+				animation={isPlaying && `${css.rotating} 8s linear infinite`}
+				background="radial-gradient(circle at 100% 0%, #205c92 0%, transparent 60%, transparent 100%), radial-gradient(circle at 0% 100%, purple 0%, transparent 60%, transparent 100%)"
+				border="1px solid rgba(0,0,0,0.2)"
+				borderRadius="50%"
+				boxShadow="1px 1px 1px 0px inset white, -1px -1px 1px 0px inset white, 4px 4px 8px rgba(0,0,0,0.2)"
+				height="188px"
+				onClick={() => setPlaying(!isPlaying)}
+				width="188px"
+			>
+				<Flex
+					{...centerChildren}
+					border="1px solid rgba(255,255,255,0.2)"
+					borderRadius="50%"
+					height="166px"
+					width="166px"
+				>
+					<Flex
+						{...centerChildren}
+						border="1px solid rgba(255,255,255,0.2)"
+						borderRadius="50%"
+						height="146px"
+						width="146px"
+					>
+						<Flex
+							{...centerChildren}
+							animation={isPlaying && `${css.rotating} 6s linear infinite`}
+							background="linear-gradient(0deg, black, white)"
+							border="2px solid white"
+							borderRadius="50%"
+							height="120px"
+							overflow="hidden"
+							width="120px"
+						>
+							<Box as="img" height="100%" objectFit="cover" src={art} width="100%" />
+						</Flex>
+					</Flex>
+				</Flex>
+			</Flex>
+		</Flex>
 	);
 };
