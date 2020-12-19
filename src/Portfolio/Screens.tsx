@@ -40,9 +40,7 @@ const TitleImage = () => {
 			height="70vh"
 			overflow="hidden"
 			maskImage={maskImage}
-			css={{
-				webkitMaskImage: maskImage
-			}}
+			webkitMaskImage={maskImage}
 		>
 			<img
 				style={{

@@ -5,15 +5,13 @@ import { Box, Button, Flex } from 'core/primitives';
 const Progress = ({ percent }) => {
 	return (
 		<Box
-			css={{
-				position: 'absolute',
-				top: '0px',
-				left: '0px',
-				height: '100%',
-				zIndex: '-1',
-				transition: 'width 100ms linear',
-				background: 'black'
-			}}
+			background="black"
+			height="100%"
+			left="0px"
+			position="absolute"
+			top="0px"
+			transition="width 100ms linear"
+			zIndex="-1"
 			style={{
 				width: `${percent}%`
 			}}
@@ -25,24 +23,20 @@ export const PlaylistEntry = ({ song }) => {
 	const { bufferingSongId, bufferingSongProgress, bufferAndPlaySong, currentSong } = useContext(Context);
 	const isCurrent = currentSong && currentSong.id === song.id;
 
-	// TODO: SHOULD THIS BE <Flex> or <Relative>, SINCE IT'S A FLEX CONTAINER AND HOLDS AN ABSOLUTE ELEMENT
 	return (
 		<Flex
+			alignItems="center"
+			justifyContent="space-betweeen"
+			position="relative"
+			px="16px"
+			py="14px"
 			css={{
-				position: 'relative',
-				py: '14px',
-				px: '16px',
-
-				alignItems: 'center',
-				justifyContent: 'space-between',
-
 				':first-of-type': {
 					pt: '30px'
 				},
 				':last-of-type': {
 					pb: '30px'
 				},
-
 				':not(:first-of-type)': {
 					borderTop: '1px solid rgba(255,255,255,0.3)'
 				},
