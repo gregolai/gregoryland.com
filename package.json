@@ -16,7 +16,7 @@
 	"author": "Gregory Dalton",
 	"homepage": "https://gregoryland.com",
 	"dependencies": {
-		"markdown-to-jsx": "^6.11.1",
+		"markdown-to-jsx": "^6.11.4",
 		"pu2": "0.0.46",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
