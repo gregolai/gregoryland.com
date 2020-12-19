@@ -1,13 +1,15 @@
-const uid = require('uid');
+const uid = (len) => {
+	return Math.random().toString(35).substr(2, len);
+};
 
-const isFunction = f => typeof f === 'function';
+const isFunction = (f) => typeof f === 'function';
 
 /**
  * @param {Array<object>} list
  * @param {Function|string} id
  */
 const getOne = (list, id) => {
-	const index = list.findIndex(isFunction(id) ? id : item => item.id === id);
+	const index = list.findIndex(isFunction(id) ? id : (item) => item.id === id);
 	return {
 		index,
 		item: list[index] || null
@@ -22,7 +24,7 @@ const getMany = (list, ids) => {
 	const indices = [];
 	const items = [];
 
-	const filterFn = isFunction(ids) ? ids : item => ids.indexOf(item.id) !== -1;
+	const filterFn = isFunction(ids) ? ids : (item) => ids.indexOf(item.id) !== -1;
 
 	for (let i = 0; i < list.length; ++i) {
 		if (filterFn(list[i], i, list)) {
@@ -66,7 +68,7 @@ module.exports = {
 		const items = [];
 		const indices = [];
 
-		values.forEach(value => {
+		values.forEach((value) => {
 			const { item, index } = db.createOne(
 				list,
 				{

@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlPlugin = require('html-webpack-plugin');
-const PreloadPlugin = require('preload-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 // SIZE HELPERS
@@ -17,11 +16,6 @@ const STATIC_DIR_NAME = 'static';
 
 const localIdentName = opts.dev ? '[name]__[local]___[hash:base64:4]' : '[hash:base64:4]';
 
-const babelOptions = {
-	presets: ['env'],
-	plugins: ['transform-decorators-legacy', 'transform-class-properties', 'transform-runtime']
-};
-
 /**
  * @type {webpack.Configuration}
  */
@@ -29,24 +23,16 @@ const config = {
 	cache: true,
 	context: paths.root,
 	mode: opts.env,
-	devtool: opts.devtool,
+	/**
+	 * Stop compilation early in production
+	 */
+	bail: opts.prod,
+	devtool: opts.dev ? 'cheap-module-source-map' : false,
 	node: {
 		fs: 'empty'
 	},
 
-	entry: (() => {
-		const main = [paths.main];
-
-		// if (opts.dev) {
-		// 	main.unshift(`webpack-dev-server/client?http://localhost:${opts.devPort}`);
-		// }
-
-		return {
-			main
-		};
-	})(),
-
-	externals: {},
+	entry: [paths.main],
 
 	module: (() => {
 		const rules = [
@@ -67,7 +53,7 @@ const config = {
 			},
 			{
 				test: /\.(ts|tsx)$/,
-				exclude: /node_modules/,
+				include: paths.src,
 				use: [
 					{
 						loader: 'ts-loader',
@@ -84,7 +70,7 @@ const config = {
 				]
 			},
 			{
-				test: /\.(scss)$/,
+				test: /\.scss$/,
 				exclude: /node_modules/,
 				use: [
 					{ loader: MiniCssExtractPlugin.loader, options: {} },
@@ -111,22 +97,11 @@ const config = {
 				test: /\.md$/i,
 				use: [{ loader: 'raw-loader' }]
 			}
-			// {
-			// 	// BLUEPRINTJS ASSETS/FONTS
-			// 	test: /\.(ico|gif|png|jpg|jpeg|svg|woff|eot|ttf)$/,
-			// 	use: [
-			// 		{
-			// 			loader: 'file-loader',
-			// 			options: {
-			// 				name: '[name]_[hash:4].[ext]'
-			// 			}
-			// 		}
-			// 	]
-			// }
 		];
 
 		return {
-			rules
+			rules,
+			strictExportPresence: true
 		};
 	})(),
 

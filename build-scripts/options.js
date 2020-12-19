@@ -29,7 +29,6 @@ const paths = (() => {
 module.exports = {
 	hot,
 	stats,
-	devtool: dev ? 'source-map' : undefined,
 	env,
 	dev,
 	prod: !dev,
