@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const opts = require('./options');
 
-gulp.task('build:dev', callback => {
+gulp.task('build:dev', (callback) => {
 	console.log('build:dev');
 	const config = require('./webpack.config');
 
@@ -50,7 +50,7 @@ gulp.task('watch:dev', () => {
 		publicPath: config.output.publicPath
 	});
 
-	devServer.listen(opts.devPort, 'localhost', err => {
+	devServer.listen(opts.devPort, 'localhost', (err) => {
 		if (err) {
 			console.error('[watch:dev]', err);
 		}

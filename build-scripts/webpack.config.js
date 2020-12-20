@@ -7,7 +7,6 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 // SIZE HELPERS
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const Visualizer = require('webpack-visualizer-plugin');
 
 const opts = require('./options');
 const paths = opts.paths;
@@ -136,7 +135,6 @@ const config = {
 
 		if (opts.stats) {
 			plugins.push(new BundleAnalyzerPlugin());
-			plugins.push(new Visualizer());
 		}
 
 		if (opts.dev && opts.hot) {
@@ -155,11 +153,7 @@ const config = {
 	})(),
 
 	resolve: {
-		alias: {
-			// NOT READY TO REMAP REACT TO PREACT
-			// react: 'preact/compat',
-			// 'react-dom': 'preact/compat'
-		},
+		alias: {},
 		extensions: ['.ts', '.tsx', '.js', '.jsx'],
 		modules: [paths.src, 'node_modules']
 	},
@@ -198,6 +192,7 @@ const config = {
 		}
 
 		return {
+			chunkIds: 'natural',
 			minimize: opts.prod,
 			minimizer: [new TerserPlugin(minimizerOpts)],
 			nodeEnv: opts.env,
