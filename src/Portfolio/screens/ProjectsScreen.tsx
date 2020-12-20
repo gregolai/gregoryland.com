@@ -4,15 +4,11 @@ import { space } from 'core/tokens';
 
 const PlayInline = ({ height, src, title }) => {
 	const [isOpen, setOpen] = useState(false);
+
 	return (
 		<Box>
 			{isOpen && <Button onClick={() => setOpen(false)}>Close</Button>}
-			<Flex
-				alignItems="center"
-				backgroundColor="rgba(0,0,0,0.2)"
-				height={isOpen && height}
-				justifyContent="center"
-			>
+			<Flex alignItems="center" backgroundColor="rgba(0,0,0,0.2)" justifyContent="center">
 				{!isOpen && (
 					<Button
 						onClick={() => setOpen(true)}
@@ -32,8 +28,8 @@ const PlayInline = ({ height, src, title }) => {
 				{isOpen && (
 					<iframe
 						// @ts-ignore
-						webkitallowfullscreen
-						mozallowfullscreen
+						webkitallowfullscreen="true"
+						mozallowfullscreen="true"
 						allowFullScreen
 						style={{ width: '100%', height }}
 						src={src}
