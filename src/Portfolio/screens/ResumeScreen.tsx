@@ -1,7 +1,13 @@
 import React, { Fragment, useContext } from 'react';
 import { Resume } from '../../Resume/Resume';
 
+let printing = false;
+
 const printResume = () => {
+	if (printing) return;
+
+	printing = true;
+
 	const iframe = document.createElement('iframe');
 	iframe.src = window.location.href;
 	iframe.style.position = 'absolute';
@@ -13,6 +19,7 @@ const printResume = () => {
 
 		setTimeout(() => {
 			document.body.removeChild(iframe);
+			printing = false;
 		}, 2000);
 	});
 };

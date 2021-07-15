@@ -1,7 +1,7 @@
 import React, { Suspense, useContext, useEffect, useState } from 'react';
-import { Portfolio, PortfolioContext } from '../Portfolio';
 import { Box, Flex, Text } from '../../core/primitives';
 import { space } from '../../core/tokens';
+import { NAV_WIDTH } from '../Nav';
 
 interface LinkProps {
 	pathname: string;
@@ -49,23 +49,14 @@ const Loading = () => {
 	);
 };
 
-const NAV_WIDTH = '160px';
-
-export const Screen: React.FC<Props> = ({ center = false, background, css, id, link, children }) => {
-	const [el, setEl] = useState(null);
-	const { registerScreen } = useContext(PortfolioContext);
-
-	useEffect(() => {
-		if (el && link) {
-			registerScreen({ el, id, link });
-		}
-	}, [el]);
-
+export const Screen: React.FC<Props> = ({ center = false, background, css, children }) => {
 	return (
-		<Box ref={setEl} id={id} position="relative" css={css}>
-			<Box position="absolute" top="0px" left="0px" width="100%" height="100%">
-				{background}
-			</Box>
+		<Box position="relative" css={css}>
+			{background && (
+				<Box position="absolute" top="0px" left="0px" width="100%" height="100%">
+					{background}
+				</Box>
+			)}
 			<Box
 				position="relative"
 				height="100%"

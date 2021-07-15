@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Flex, Text } from '../core/primitives';
 import { space } from '../core/tokens';
 import { PageLink } from '../Router/NewRouter';
+import { screens2 } from './screens2';
 
 const SocialLink = ({ name, url }) => (
 	<Text.BodyMedium textAlign="right" pr={space._3}>
@@ -19,22 +20,19 @@ const Gradient = ({ children, color }) => (
 	</>
 );
 
-const Nav = ({ currentScreen, screens }) => {
-	const options = screens.map(({ id, link }) => ({
-		label: link.label,
-		pathname: link.pathname,
-		value: id
-	}));
+export const NAV_WIDTH = '160px';
+
+export const Nav = ({ currentScreen }) => {
 	const value = currentScreen?.id;
 
 	return (
-		<Flex flexDirection="column" position="fixed" left="0px" top="0px" height="100%" width="160px">
+		<Flex flexDirection="column" position="fixed" left="0px" top="0px" height="100%" width={NAV_WIDTH}>
 			<Gradient color="rgba(255,255,255,0.95)">
-				{options.map((option) => {
-					const isActive = option.value === value;
+				{screens2.map((s) => {
+					const isActive = s.id === value;
 					return (
 						<PageLink
-							key={option.value}
+							key={s.id}
 							as={Text.BodyMedium}
 							borderRight={isActive && '2px solid black'}
 							justifyContent="flex-end"
@@ -50,17 +48,17 @@ const Nav = ({ currentScreen, screens }) => {
 									textDecoration: 'underline'
 								}
 							}}
-							to={option.pathname}
+							to={s.pathname}
 						>
-							{option.label}
+							{s.label}
 						</PageLink>
 					);
 				})}
-				<SocialLink key="ig" name="Instagram" url="https://www.instagram.com/gregolai/" />
-				<SocialLink key="li" name="LinkedIn" url="https://www.linkedin.com/in/gregolai/" />
+				<Box pt={space._4}>
+					<SocialLink key="ig" name="Instagram" url="https://www.instagram.com/gregolai/" />
+					<SocialLink key="li" name="LinkedIn" url="https://www.linkedin.com/in/gregolai/" />
+				</Box>
 			</Gradient>
 		</Flex>
 	);
 };
-
-export default Nav;

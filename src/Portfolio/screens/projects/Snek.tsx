@@ -26,7 +26,7 @@ import { space } from '../../../core/tokens';
 				},
 */
 
-const Snek = () => {
+export const Snek = () => {
 	return (
 		<Screen
 			id="snek"
@@ -56,8 +56,6 @@ const Snek = () => {
 					</Box>
 				</Box>
 			</Flex>
-			<Box></Box>
 		</Screen>
 	);
 };
-export default Snek;

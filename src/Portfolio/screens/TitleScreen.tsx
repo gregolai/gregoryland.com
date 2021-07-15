@@ -2,13 +2,11 @@ import React from 'react';
 import { Box, Text, Flex } from '../../core/primitives';
 import { space } from '../../core/tokens';
 
-const { BodyBook, BodyMedium } = Text;
-
-const Lang = ({ children }) => <BodyMedium display="inline-block">{children}</BodyMedium>;
+const Lang = ({ children }) => <Text.BodyMedium display="inline-block">{children}</Text.BodyMedium>;
 const LangDivider = () => (
-	<BodyMedium display="inline-block" px={space._2}>
+	<Text.BodyMedium display="inline-block" px={space._2}>
 		{'\u25CF'}
-	</BodyMedium>
+	</Text.BodyMedium>
 );
 
 export const TitleScreen = () => {
@@ -45,12 +43,12 @@ export const TitleScreen = () => {
 					throughout my professional career, that there's also great value in using trusted,
 					well-tested, open source libraries.
 				</BodyBook> */}
-						<BodyBook color="white">
+						<Text.BodyBook color="white">
 							Hey, I'm Greg, a software developer in NYC. This site showcases my passion for
 							software development and my career experience. I built this site to reflect my joy
 							of creation; forging a beautiful website from the ground up, with simplicity in
 							mind.
-						</BodyBook>
+						</Text.BodyBook>
 					</Box>
 				</Box>
 			</Flex>
