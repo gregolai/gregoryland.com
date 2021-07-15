@@ -22,7 +22,7 @@ export const Blog = () => {
 
 	return (
 		<div>
-			{pages.map(page => {
+			{pages.map((page) => {
 				return (
 					<div
 						key={page.title}

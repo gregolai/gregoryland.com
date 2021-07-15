@@ -7,8 +7,7 @@ export const pages: Page[] = [
 				/* webpackChunkName: "page-test" */
 				'./pages/Test.md'
 			),
-		thumb:
-			'https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Simulation_Theory_%28album%29.jpg/220px-Simulation_Theory_%28album%29.jpg',
+		thumb: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Simulation_Theory_%28album%29.jpg/220px-Simulation_Theory_%28album%29.jpg',
 		title: 'TEST'
 	},
 	{
@@ -18,8 +17,7 @@ export const pages: Page[] = [
 				'./pages/page1.md'
 			),
 
-		thumb:
-			'https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Simulation_Theory_%28album%29.jpg/220px-Simulation_Theory_%28album%29.jpg',
+		thumb: 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e1/Simulation_Theory_%28album%29.jpg/220px-Simulation_Theory_%28album%29.jpg',
 		title: 'PAGE 1!!!'
 	},
 	{

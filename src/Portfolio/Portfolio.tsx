@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Box } from '../core/primitives';
 import { PageRouter } from '../Router/NewRouter';
@@ -6,11 +6,6 @@ import { Nav } from './Nav';
 import { useDocumentScrollY } from '../utils/DocumentScrollProvider';
 import { useWindowInnerDimensions } from '../utils/WindowInnerDimensionsProvider';
 import { screens2 } from './screens2';
-
-interface LinkProps {
-	pathname: string;
-	label: string;
-}
 
 const TRANSITION_DURATION = 300;
 

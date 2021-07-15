@@ -3,15 +3,9 @@ import { Box, Flex, Text } from '../../core/primitives';
 import { space } from '../../core/tokens';
 import { NAV_WIDTH } from '../Nav';
 
-interface LinkProps {
-	pathname: string;
-	label: string;
-}
-
 interface Props {
 	id?: string;
 	label?: string;
-	link?: LinkProps;
 	children: React.ReactChild | React.ReactChild[];
 	[key: string]: any;
 }
