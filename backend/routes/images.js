@@ -19,21 +19,34 @@ const canBeThumbnailed = (absolutePath) => {
  * @param app {express.Express}
  */
 module.exports = (app) => {
-	app.get('/img/:localpath', async (req, res) => {
-		const imgPath = path.resolve(DIR_IMG, req.params['localpath']);
+	/**
+	 * Get the localpaths of all the image files
+	 */
+	app.get('/streetart', (req, res) => {
+		const DIR_IMG_STREETART = path.resolve(DIR_IMG, 'streetart');
 
-		if (!pathIsWithin(imgPath, DIR_IMG)) {
-			res.sendStatus(404);
-			return;
-		}
+		const imgs = fs
+			.readdirSync(DIR_IMG_STREETART)
+			.filter((imgName) => imgName !== '.' && imgName !== '..')
+			.map((imgName) => `streetart/${imgName}`);
 
-		res.sendFile(imgPath);
+		res.json(imgs);
 	});
+
+	// app.get('/img/:localpath', async (req, res) => {
+	// 	const imgPath = path.resolve(DIR_IMG, req.params['localpath']);
+
+	// 	if (!pathIsWithin(imgPath, DIR_IMG)) {
+	// 		res.sendStatus(404);
+	// 		return;
+	// 	}
+
+	// 	res.sendFile(imgPath);
+	// });
 
 	const sendThumbnail = async (res, localPath, width) => {
 		const DIR_THUMB = path.resolve(DIR_IMG, `t/${width}`);
 		const thumbPath = path.resolve(DIR_THUMB, localPath);
-
 		if (!pathIsWithin(thumbPath, DIR_THUMB)) {
 			res.sendStatus(404);
 			return;
@@ -61,6 +74,11 @@ module.exports = (app) => {
 			}
 
 			/**
+			 * Create the directories required (if necessary)
+			 */
+			fs.mkdirSync(path.dirname(thumbPath), { recursive: true });
+
+			/**
 			 * Read image, resize + convert to JPG, then write it to thumbnails
 			 */
 			const imgBuffer = fs.readFileSync(imgPath);
@@ -71,13 +89,14 @@ module.exports = (app) => {
 		res.sendFile(thumbPath);
 	};
 
-	app.get('/img/t/:localpath', async (req, res) => {
-		sendThumbnail(res, req.params['localpath'], VALID_THUMB_WIDTHS[0]);
+	VALID_THUMB_WIDTHS.forEach((width) => {
+		app.get(`/img/t/${width}/*`, async (req, res) => {
+			console.log({ 'req params': req.params });
+			sendThumbnail(res, req.params[0], width);
+		});
 	});
 
-	VALID_THUMB_WIDTHS.forEach((width) => {
-		app.get(`/img/t/${width}/:localpath`, async (req, res) => {
-			sendThumbnail(res, req.params['localpath'], width);
-		});
+	app.get('/img/t/*', async (req, res) => {
+		sendThumbnail(res, req.params[0], VALID_THUMB_WIDTHS[0]);
 	});
 };

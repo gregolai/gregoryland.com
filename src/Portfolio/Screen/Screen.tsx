@@ -54,7 +54,7 @@ export const Screen: React.FC<Props> = ({ center = false, background, css, child
 			<Box
 				position="relative"
 				height="100%"
-				pl={NAV_WIDTH}
+				ml={NAV_WIDTH}
 				display={center && 'flex'}
 				alignItems={center && 'center'}
 				justifyContent={center && 'center'}

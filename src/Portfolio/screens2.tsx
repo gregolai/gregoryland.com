@@ -47,6 +47,32 @@ const TitleImage = () => {
 	);
 };
 
+class StreetArts extends React.Component {
+	state = {
+		filenames: []
+	};
+
+	async componentDidMount() {
+		const res = await fetch('http://localhost:8087/streetart');
+		const filenames = await res.json();
+		this.setState({ filenames });
+	}
+
+	render() {
+		return (
+			<Box>
+				{this.state.filenames.map((filename) => {
+					return (
+						<Box as="a" p={space._4} href={`http://localhost:8087/img/${filename}`}>
+							<img src={`http://localhost:8087/img/t/128/${filename}`} />
+						</Box>
+					);
+				})}
+			</Box>
+		);
+	}
+}
+
 export const screens2 = [
 	{
 		id: 'title',
@@ -139,6 +165,58 @@ export const screens2 = [
 				}}
 			>
 				<MusicPlayerScreen />
+			</Screen>
+		)
+	},
+	{
+		id: 'drawings',
+		label: 'Drawings',
+		pathname: '/drawings',
+		screen: (
+			<Screen
+				css={{
+					padding: space._8
+				}}
+			>
+				<Flex
+					p={space._4}
+					justifyContent="center"
+					background="rgba(255,255,255,0.8)"
+					border="2px solid black"
+				>
+					Showcase my drawings here, both original and from sources.
+				</Flex>
+			</Screen>
+		)
+	},
+	{
+		id: 'blog',
+		label: 'Blog',
+		pathname: '/blog',
+		screen: (
+			<Screen
+				css={{
+					padding: space._8
+				}}
+			>
+				<Flex
+					p={space._4}
+					justifyContent="center"
+					background="rgba(255,255,255,0.8)"
+					border="2px solid black"
+				>
+					Blog about my favorite video games.
+				</Flex>
+			</Screen>
+		)
+	},
+	{
+		id: 'streetart',
+		label: 'Street Art',
+		pathname: '/streetart',
+		screen: (
+			<Screen>
+				<StreetArts />
 			</Screen>
 		)
 	},
