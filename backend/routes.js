@@ -11,7 +11,7 @@ const DATABASE = (() => {
 		load: () => {
 			return JSON.parse(fs.readFileSync(DB_PATH, { encoding: 'utf-8' }));
 		},
-		save: db => {
+		save: (db) => {
 			fs.writeFileSync(DB_PATH, JSON.stringify(db, null, '\t'));
 		}
 	};
@@ -20,8 +20,8 @@ const DATABASE = (() => {
 /**
  * @param app {express.Express}
  */
-module.exports = app => {
-	// app.get('/albums', (req, res) => {});
+module.exports = (app) => {
+	require('./routes/images')(app);
 
 	app.get('/albums/:id', (req, res) => {
 		const { albums, songs } = DATABASE.load();
