@@ -25,7 +25,7 @@ export const createTextComponent = (() => {
 const Label = (() => {
 	const baseProps = {
 		as: 'p',
-		fontSize: '9.75px',
+		fontSize: '11px',
 		lineHeight: '11px',
 		letterSpacing: '0.75px',
 		textTransform: 'uppercase'
@@ -51,7 +51,7 @@ const Caption = (() => {
 const Action = (() => {
 	const baseProps = {
 		as: 'p',
-		fontSize: '12.5px',
+		fontSize: '12px',
 		lineHeight: '22px',
 		letterSpacing: '0.5px',
 		textTransform: 'uppercase'

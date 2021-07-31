@@ -1,8 +1,14 @@
 import React from 'react';
-import { HeaderContact } from './HeaderContact';
 import { Job } from './Job';
 import { Text, Box, Ul, Li, Flex } from './primitives';
 import { space } from './tokens';
+
+const HeaderContact = ({ label, text }) => (
+	<Flex alignItems="center" justifyContent="space-between">
+		<Text.Label>{label}</Text.Label>
+		<Text.BodyMedium textAlign="right">{text}</Text.BodyMedium>
+	</Flex>
+);
 
 export const Resume = (props) => (
 	<Box

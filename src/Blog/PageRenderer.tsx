@@ -4,13 +4,7 @@ import { compiler } from 'markdown-to-jsx';
 import { Page } from './Blog';
 import { Text } from '../core/primitives';
 
-interface Props {
-	page: Page;
-}
-
-export default (props: Props) => {
-	const { page } = props;
-
+export const PageRenderer: React.FC<{ page: Page }> = ({ page }) => {
 	const [content, setContent] = useState(null);
 
 	useEffect(() => {

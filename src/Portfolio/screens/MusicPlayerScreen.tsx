@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { Splat } from '../Screen/Splat';
 import { MusicPlayer } from '../../MusicPlayer/MusicPlayer';
 import { Box, Text } from '../../core/primitives';
 import { space } from '../../core/tokens';

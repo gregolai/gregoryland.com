@@ -12,7 +12,8 @@ const PlayInline = ({ height, src, title }) => {
 				{!isOpen && (
 					<Button
 						onClick={() => setOpen(true)}
-						backgroundColor="rgba(255,255,255,0.4)"
+						backgroundColo
+						r="rgba(255,255,255,0.4)"
 						my={space._7}
 						px={space._4}
 						py={space._3}

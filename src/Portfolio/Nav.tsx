@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box, Flex, Text } from '../core/primitives';
 import { space } from '../core/tokens';
-import { PageLink } from '../Router/NewRouter';
-import { screens2 } from './screens2';
+import { PageLink } from '../Router/NewRouter3';
+import { routes } from './routes';
 
 const SocialLink = ({ name, url }) => (
 	<Text.BodyMedium textAlign="right" pr={space._3}>
@@ -28,7 +28,7 @@ export const Nav = ({ currentScreen }) => {
 	return (
 		<Flex flexDirection="column" position="fixed" left="0px" top="0px" height="100%" width={NAV_WIDTH}>
 			<Gradient color="rgba(255,255,255,0.95)">
-				{screens2.map((s) => {
+				{routes.map((s) => {
 					const isActive = s.id === value;
 					return (
 						<PageLink
@@ -48,7 +48,7 @@ export const Nav = ({ currentScreen }) => {
 									textDecoration: 'underline'
 								}
 							}}
-							to={s.pathname}
+							to={s.path}
 						>
 							{s.label}
 						</PageLink>

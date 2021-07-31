@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from 'react';
 
 import { Box } from '../core/primitives';
-import { PageRouter } from '../Router/NewRouter';
+import { PageRouter } from '../Router/NewRouter3';
 import { Nav } from './Nav';
 import { useDocumentScrollY } from '../utils/DocumentScrollProvider';
 import { useWindowInnerDimensions } from '../utils/WindowInnerDimensionsProvider';
-import { screens2 } from './screens2';
+import { routes } from './routes';
 
 const TRANSITION_DURATION = 300;
 
+const enum TransitionState {
+	NONE,
+	ENTERING,
+	EXITING
+}
+
 export const Portfolio = () => {
-	const screenRefs = screens2.map((_) => React.createRef<HTMLDivElement>());
+	const screenEls = React.useRef<HTMLElement[]>(new Array(routes.length));
 
 	const [transition, setTransition] = useState({
-		state: 0,
+		state: TransitionState.NONE,
 		screenEl: undefined
 	});
 
-	const [currentWindowScreen, setCurrentWindowScreen] = useState<HTMLDivElement>(null);
+	const [currentWindowScreen, setCurrentWindowScreen] = useState<HTMLElement>(null);
 
 	{
 		const scrollY = useDocumentScrollY();
@@ -26,8 +32,8 @@ export const Portfolio = () => {
 		useEffect(() => {
 			const atY = scrollY + windowHeight * 0.5;
 
-			for (let i = 0; i < screenRefs.length; ++i) {
-				const screenEl = screenRefs[i].current;
+			for (let i = 0; i < screenEls.current.length; ++i) {
+				const screenEl = screenEls.current[i];
 				if (!screenEl || currentWindowScreen === screenEl) {
 					continue;
 				}
@@ -47,19 +53,19 @@ export const Portfolio = () => {
 		const { state, screenEl } = transition;
 
 		let timeoutId;
-		if (state === 1) {
+		if (state === TransitionState.ENTERING) {
 			timeoutId = setTimeout(() => {
 				document.scrollingElement.scrollTo(0, screenEl.offsetTop);
 
 				setTransition({
-					state: 2,
+					state: TransitionState.EXITING,
 					screenEl
 				});
 			}, TRANSITION_DURATION);
-		} else if (state === 2) {
+		} else if (state === TransitionState.EXITING) {
 			timeoutId = setTimeout(() => {
 				setTransition({
-					state: 0,
+					state: TransitionState.NONE,
 					screenEl: undefined
 				});
 			}, TRANSITION_DURATION);
@@ -68,21 +74,19 @@ export const Portfolio = () => {
 		return () => {
 			clearTimeout(timeoutId);
 		};
-	}, [transition.state]);
+	}, [transition]);
 
 	return (
 		<PageRouter
 			onTransition={(location, action) => {
-				if (transition.state !== 0) return;
+				if (transition.state !== TransitionState.NONE) return;
 
-				const nextScreen = screens2.find((s) => s.pathname === location.pathname);
+				const nextScreen = routes.find((s) => s.path === location.pathname);
 				if (!nextScreen) return;
 
-				const screenEl = document.getElementById(nextScreen.id);
-
 				setTransition({
-					state: 1,
-					screenEl
+					state: TransitionState.ENTERING,
+					screenEl: document.getElementById(nextScreen.id)
 				});
 			}}
 		>
@@ -91,9 +95,9 @@ export const Portfolio = () => {
 				overflow="hidden"
 				transition={`opacity ${TRANSITION_DURATION}ms ease-in-out`}
 			>
-				{screens2.map((s, i) => (
-					<Box key={s.id} id={s.id} ref={screenRefs[i]}>
-						{s.screen}
+				{routes.map((s, i) => (
+					<Box key={s.id} id={s.id} ref={(el) => (screenEls.current[i] = el)}>
+						<s.Component />
 					</Box>
 				))}
 			</Box>

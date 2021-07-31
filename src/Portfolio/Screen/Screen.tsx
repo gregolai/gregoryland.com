@@ -3,11 +3,13 @@ import { Box, Flex, Text } from '../../core/primitives';
 import { space } from '../../core/tokens';
 import { NAV_WIDTH } from '../Nav';
 
-interface Props {
-	id?: string;
-	label?: string;
+type BoxProps = React.ComponentProps<typeof Box>;
+
+interface ScreenProps {
+	background?: React.ReactElement;
+	center?: boolean;
 	children: React.ReactChild | React.ReactChild[];
-	[key: string]: any;
+	css?: BoxProps['css'];
 }
 
 const LoadingBar = ({ i }) => (
@@ -43,7 +45,7 @@ const Loading = () => {
 	);
 };
 
-export const Screen: React.FC<Props> = ({ center = false, background, css, children }) => {
+export const Screen: React.FC<ScreenProps> = ({ center = false, background, css, children }) => {
 	return (
 		<Box position="relative" css={css}>
 			{background && (

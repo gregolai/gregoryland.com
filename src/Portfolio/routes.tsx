@@ -1,5 +1,6 @@
 import { Box } from 'pu2';
 import React, { lazy } from 'react';
+import { Blog } from '../Blog/Blog';
 import { Flex, Text } from '../core/primitives';
 import { space } from '../core/tokens';
 import { useDocumentScrollY } from '../utils/DocumentScrollProvider';
@@ -14,13 +15,6 @@ const MusicPlayerScreen = lazy(() =>
 		/* webpackChunkName: "MusicPlayerScreen" */
 		'./screens/MusicPlayerScreen'
 	).then((module) => ({ default: module.MusicPlayerScreen }))
-);
-
-const FourthScreen = lazy(() =>
-	import(
-		/* webpackChunkName: "FourthScreen" */
-		'./screens/FourthScreen'
-	).then((module) => ({ default: module.FourthScreen }))
 );
 
 const TitleImage = () => {
@@ -47,7 +41,7 @@ const TitleImage = () => {
 	);
 };
 
-class StreetArts extends React.Component {
+class Pics extends React.Component {
 	state = {
 		filenames: []
 	};
@@ -73,12 +67,12 @@ class StreetArts extends React.Component {
 	}
 }
 
-export const screens2 = [
+export const routes = [
 	{
 		id: 'title',
 		label: 'Home',
-		pathname: '/',
-		screen: (
+		path: '/',
+		Component: () => (
 			<Screen
 				background={<TitleImage />}
 				css={{
@@ -92,8 +86,8 @@ export const screens2 = [
 	{
 		id: 'resume',
 		label: 'Resume',
-		pathname: '/resume',
-		screen: (
+		path: '/resume',
+		Component: () => (
 			<Screen
 				background={
 					<>
@@ -133,8 +127,8 @@ export const screens2 = [
 	{
 		id: 'music',
 		label: 'Music Player',
-		pathname: '/music',
-		screen: (
+		path: '/music',
+		Component: () => (
 			<Screen
 				background={
 					<>
@@ -171,8 +165,8 @@ export const screens2 = [
 	{
 		id: 'drawings',
 		label: 'Drawings',
-		pathname: '/drawings',
-		screen: (
+		path: '/drawings',
+		Component: () => (
 			<Screen
 				css={{
 					padding: space._8
@@ -192,8 +186,8 @@ export const screens2 = [
 	{
 		id: 'blog',
 		label: 'Blog',
-		pathname: '/blog',
-		screen: (
+		path: '/blog',
+		Component: () => (
 			<Screen
 				css={{
 					padding: space._8
@@ -207,48 +201,33 @@ export const screens2 = [
 				>
 					Blog about my favorite video games.
 				</Flex>
+				<Blog />
 			</Screen>
 		)
 	},
 	{
-		id: 'streetart',
-		label: 'Street Art',
-		pathname: '/streetart',
-		screen: (
+		id: 'pics',
+		label: 'Pics',
+		path: '/pics',
+		Component: () => (
 			<Screen>
-				<StreetArts />
-			</Screen>
-		)
-	},
-	{
-		id: 'fourth',
-		label: 'Music Player 2',
-		pathname: '/fourth',
-		screen: (
-			<Screen
-				background={
-					<>
-						<Splat x="50%" y="0%" color="rgba(255,255,255,0.4)" width="1200px" />
-						<Splat x="10%" y="70%" color="rgba(255,0,255,0.2)" width="2100px" />
-						<Splat x="80%" y="30%" color="rgba(255,137,60,0.2)" width="2100px" />
-					</>
-				}
-				center
-				css={{
-					minHeight: '640px',
-					height: '100vh'
-				}}
-			>
-				<FourthScreen />
+				<Pics />
 			</Screen>
 		)
 	},
 	{
 		id: 'projects',
 		label: 'Projects',
-		pathname: '/projects',
-		screen: (
+		path: '/projects',
+		Component: () => (
 			<Screen
+				background={
+					<>
+						<Splat x="50%" y="1200px" color="rgba(255,255,255,0.8)" width="1200px" />
+						<Splat x="80%" y="1600px" color="rgba(255,137,60,0.2)" width="2100px" />
+						<Splat x="10%" y="2300px" color="rgba(255,0,255,0.2)" width="2100px" />
+					</>
+				}
 				css={{
 					minHeight: '100vh',
 					background:
@@ -262,8 +241,8 @@ export const screens2 = [
 	{
 		id: 'snek',
 		label: 'Snek',
-		pathname: '/snek',
-		screen: (
+		path: '/snek',
+		Component: () => (
 			<Screen
 				css={{
 					height: '700px'

@@ -9,13 +9,12 @@ export interface Page {
 	thumb: string;
 }
 
-const PageRenderer = lazy(
-	() =>
-		import(
-			/* webpackChunkName: "blog-page-renderer" */
-			'./PageRenderer'
-		) as any
-) as any;
+const PageRenderer = lazy(() =>
+	import(
+		/* webpackChunkName: "blog-page-renderer" */
+		'./PageRenderer'
+	).then((module) => ({ default: module.PageRenderer }))
+);
 
 export const Blog = () => {
 	const [currentPage, setCurrentPage] = useState<Page>(null);
