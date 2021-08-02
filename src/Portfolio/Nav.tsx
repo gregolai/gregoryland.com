@@ -5,17 +5,15 @@ import { PageLink } from '../Router/NewRouter3';
 import { routes } from './routes';
 
 const SocialLink = ({ name, url }) => (
-	<Text.BodyMedium textAlign="right" pr={space._3}>
-		<a href={url}>{name}</a>
+	<Text.BodyMedium as="a" href={url} textAlign="right" pr={space._3} color={null} display="block">
+		{name}
 	</Text.BodyMedium>
 );
 
 const Gradient = ({ children, color }) => (
 	<>
 		<Box flex="1" background={`linear-gradient(transparent, ${color})`} />
-		<Box position="relative" background={color}>
-			{children}
-		</Box>
+		<Box background={color}>{children}</Box>
 		<Box flex="1" background={`linear-gradient(${color}, transparent)`} />
 	</>
 );
