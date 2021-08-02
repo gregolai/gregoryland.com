@@ -1,4 +1,7 @@
-import React, { Fragment, useContext } from 'react';
+import { Box } from 'pu2';
+import React from 'react';
+import { Flex } from '../../core/primitives';
+import { space } from '../../core/tokens';
 import { Resume } from '../../Resume/Resume';
 
 let printing = false;
@@ -24,14 +27,18 @@ const printResume = () => {
 	});
 };
 
+const PrintButton = (props: React.ComponentProps<typeof Box>) => (
+	<Box as="button" py={space._1} px={space._4} alignSelf="center" onClick={printResume} {...props}>
+		Print My Resume
+	</Box>
+);
+
 export const ResumeScreen = () => {
 	return (
-		<>
-			<button style={{ position: 'absolute', top: 0, right: 0, zIndex: 1 }} onClick={printResume}>
-				Print My Resume
-			</button>
-
-			<Resume css={{ zIndex: '1', width: '80%', minWidth: '800px', maxWidth: '1000px' }} />
-		</>
+		<Flex zIndex="1" flexDirection="column">
+			<PrintButton mb={space._4} />
+			<Resume zIndex="1" minWidth="800px" maxWidth="1000px" />
+			<PrintButton mt={space._4} />
+		</Flex>
 	);
 };

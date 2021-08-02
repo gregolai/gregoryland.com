@@ -10,7 +10,7 @@ const HeaderContact = ({ label, text }) => (
 	</Flex>
 );
 
-export const Resume = (props) => (
+export const Resume = (props: React.ComponentProps<typeof Box>) => (
 	<Box
 		backgroundColor="white"
 		boxShadow="4px 4px 2px rgba(0,0,0,0.3)"
@@ -18,7 +18,6 @@ export const Resume = (props) => (
 		p={space._8}
 		{...props}
 		css={{
-			...props.css,
 			'@media print': {
 				p: space._0
 			}
