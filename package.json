@@ -35,7 +35,7 @@
     "name": "gregoryland",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/gregolai/gregolai.github.io.git"
+        "url": "git+https://github.com/gregolai/gregoryland.com.git"
     },
     "scripts": {
         "build": "webpack",
