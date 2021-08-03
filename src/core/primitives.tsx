@@ -65,8 +65,10 @@ const Action = (() => {
 const BodyBook = (() => {
 	const baseProps = {
 		as: 'p',
-		fontSize: '14px',
-		lineHeight: '22px'
+		fontSize: '16px',
+		lineHeight: '22px',
+		letterSpacing: '1px',
+		fontWeight: '400'
 	};
 	if (__DEV__) {
 		baseProps['debug-tag'] = 'Text.BodyBook';
@@ -77,8 +79,10 @@ const BodyBook = (() => {
 const BodyBookTabular = (() => {
 	const baseProps = {
 		as: 'p',
-		fontSize: '14px',
+		fontSize: '16px',
 		lineHeight: '22px',
+		letterSpacing: '1px',
+		fontWeight: '400',
 		'font-feature-settings': '"tnum" on, "lnum" on'
 	};
 	if (__DEV__) {
@@ -90,7 +94,7 @@ const BodyBookTabular = (() => {
 const BodyMedium = (() => {
 	const baseProps = {
 		as: 'p',
-		fontSize: '14px',
+		fontSize: '16px',
 		lineHeight: '22px',
 		fontWeight: '600'
 	};

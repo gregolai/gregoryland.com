@@ -38,3 +38,10 @@ export const enum space {
 	_7 = '48px', // B
 	_8 = '72px' // C
 }
+
+/**
+ * Names from: https://chir.ag/projects/name-that-color/
+ */
+export const enum palette {
+	linkwater = 'rgb(214, 229, 244)'
+}
