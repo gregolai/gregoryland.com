@@ -10,6 +10,13 @@ const HeaderContact = ({ label, text }) => (
 	</Flex>
 );
 
+const Lang = ({ children }) => <Text.BodyMedium display="inline-block">{children}</Text.BodyMedium>;
+const LangDivider = () => (
+	<Text.BodyMedium display="inline-block" px={space._5}>
+		{'\u25CF'}
+	</Text.BodyMedium>
+);
+
 export const Resume = (props: React.ComponentProps<typeof Box>) => (
 	<Box
 		backgroundColor="white"
@@ -24,55 +31,47 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 		}}
 	>
 		{/* HEADER */}
-		<Flex justifyContent="space-between" pb={space._7} minHeight="310px">
-			<Flex flex="0" flexDirection="column" justifyContent="space-between" pr={space._9}>
+		<Flex justifyContent="space-between" pb={space._7}>
+			<Box>
 				<Text.MegaTitle>Gregory Dalton</Text.MegaTitle>
 
 				{/* SKILLS */}
-				<Flex justifyContent="space-around">
-					<Text.BodyMedium display="inline-block">TypeScript</Text.BodyMedium>
-					<Text.BodyMedium display="inline-block" px={space._2}>
-						{'\u25CF'}
-					</Text.BodyMedium>
-					<Text.BodyMedium display="inline-block">JavaScript</Text.BodyMedium>
-					<Text.BodyMedium display="inline-block" px={space._2}>
-						{'\u25CF'}
-					</Text.BodyMedium>
-					<Text.BodyMedium display="inline-block">C#</Text.BodyMedium>
-					<Text.BodyMedium display="inline-block" px={space._2}>
-						{'\u25CF'}
-					</Text.BodyMedium>
-					<Text.BodyMedium display="inline-block">C++</Text.BodyMedium>
-				</Flex>
-			</Flex>
+				<Box pt={space._6} pl={space._5}>
+					<Lang>TypeScript</Lang>
+					<LangDivider />
+					<Lang>JavaScript</Lang>
+					<LangDivider />
+					<Lang>Node</Lang>
+					<LangDivider />
+					<Lang>C#</Lang>
+					<LangDivider />
+					<Lang>C++</Lang>
+				</Box>
+			</Box>
 
 			<Flex
+				flex="1"
+				pl={space._9}
 				flexDirection="column"
 				justifyContent="sapce-between"
 				maxWidth="352px"
-				pt={space._8} // Perception modifier
 			>
 				{/* CONTACT */}
 				<Box>
-					<HeaderContact label="Phone" text="(714) 651-2126" />
 					<HeaderContact label="Email" text="gregolai@gmail.com" />
-					<HeaderContact label="Site" text="www.gregoryland.com" />
+					<HeaderContact label="Website" text="gregoryland.com" />
 				</Box>
 				{/* EDUCATION */}
 				<Box>
 					<Text.Subtitle>B.S. Computer Science</Text.Subtitle>
 					<Text.Label>California State University, Long Beach</Text.Label>
 					<Text.Label pb={space._4}>Class of 2009</Text.Label>
-					<Ul>
-						<Li>
-							<Text.BodyBook>
-								Participated in the programming team and two regional competitions.
-							</Text.BodyBook>
+					<Ul listStyleType="'\276F'">
+						<Li pl={space._4} listStyleType={null}>
+							Programming team
 						</Li>
-						<Li>
-							<Text.BodyBook>
-								Tau Beta Pi Engineering Honor Society member, Theta Chapter.
-							</Text.BodyBook>
+						<Li pl={space._4} listStyleType={null}>
+							Tau Beta Pi Engineering Honor Society
 						</Li>
 					</Ul>
 				</Box>
@@ -81,7 +80,7 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 
 		{/* BODY */}
 		<Box px={space._5} pt={space._5}>
-			<Job where="Squarespace" from="May 2017" to="Present" role="Software Engineer">
+			<Job where="Squarespace" from="May 2017" to="January 2021" role="Software Engineer">
 				<Ul>
 					<Li>
 						<Text.BodyBook>Design Platform Team - Level 3 Engineer</Text.BodyBook>
@@ -117,7 +116,7 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 					</Li>
 				</Ul>
 			</Job>
-			<Job where="Agorafy" from="December 2016" to="May 2017" role="Software Engineer">
+			<Job where="Agorafy" from="December 2016" to="May 2017" role="Frontend Developer">
 				<Ul>
 					<Li>
 						<Text.BodyBook>
@@ -136,7 +135,7 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 					</Li>
 				</Ul>
 			</Job>
-			<Job where="YouVisit" from="January 2015" to="April 2016" role="Software Engineer">
+			<Job where="YouVisit" from="January 2015" to="April 2016" role="Full-stack Developer">
 				<Ul>
 					<Li>
 						<Text.BodyBook>
@@ -184,7 +183,12 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 					</Li>
 				</Ul>
 			</Job>
-			<Job where="M & M Environmental" from="August 2014" to="December 2014" role="Software Engineer">
+			<Job
+				where="M & M Environmental"
+				from="August 2014"
+				to="December 2014"
+				role="Full-stack Developer"
+			>
 				<Ul>
 					<Li>
 						<Text.BodyBook>

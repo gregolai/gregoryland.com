@@ -37,7 +37,7 @@ export const ResumeScreen = () => {
 	return (
 		<Flex zIndex="1" flexDirection="column">
 			<PrintButton mb={space._4} />
-			<Resume zIndex="1" minWidth="800px" maxWidth="1000px" />
+			<Resume zIndex="1" minWidth="900px" maxWidth="1000px" />
 			<PrintButton mt={space._4} />
 		</Flex>
 	);

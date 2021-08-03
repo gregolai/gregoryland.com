@@ -43,5 +43,6 @@ export const enum space {
  * Names from: https://chir.ag/projects/name-that-color/
  */
 export const enum palette {
-	linkwater = 'rgb(214, 229, 244)'
+	linkwater = 'rgb(214, 229, 244)',
+	mineshaft = 'rgb(49, 49, 49)'
 }

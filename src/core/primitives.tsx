@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { Box } from 'pu2';
-import { space } from './tokens';
+import { palette, space } from './tokens';
 
 type BoxProps = React.ComponentPropsWithRef<typeof Box>;
 
@@ -16,7 +16,7 @@ export const createTextComponent = (() => {
 			textRendering: 'optimizeLegibility',
 			webkitFontSmoothing: 'subpixel-antialiased',
 			mozOsxFontSmoothing: 'grayscale',
-			color: '#313131',
+			color: palette.mineshaft,
 			m: space._0,
 			...baseProps
 		});
@@ -110,7 +110,8 @@ const Subtitle = (() => {
 		fontSize: '18px',
 		lineHeight: '28px',
 		fontWeight: '600',
-		letterSpacing: '1px'
+		letterSpacing: '1px',
+		margin: '0px'
 	};
 	if (__DEV__) {
 		baseProps['debug-tag'] = 'Text.Subtitle';

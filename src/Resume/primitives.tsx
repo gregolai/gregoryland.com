@@ -8,7 +8,7 @@ export const Text = {
 	MegaTitle: (() => {
 		const baseProps = {
 			as: 'h1',
-			fontSize: '120px',
+			fontSize: '80px',
 			lineHeight: '1',
 			fontWeight: '500',
 			fontFamily: '"Playfair Display", serif'
