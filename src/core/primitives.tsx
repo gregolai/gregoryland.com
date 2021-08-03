@@ -108,7 +108,7 @@ const Subtitle = (() => {
 	const baseProps = {
 		as: 'p',
 		fontSize: '18px',
-		lineHeight: '28px',
+		lineHeight: '32px',
 		fontWeight: '600',
 		letterSpacing: '1px',
 		margin: '0px'
