@@ -9,18 +9,17 @@ const LangDivider = () => (
 	</Text.BodyMedium>
 );
 
-const Polaroid = () => {
-	return (
-		<Box
-			padding="20px 20px 80px 20px"
-			background="url('img/grain.png')"
-			border="3px solid black"
-			transform="rotate(6deg)"
-		>
-			<img src="//static.gregoryland.com/gregory.jpeg?w=300" />
-		</Box>
-	);
-};
+const Polaroid = () => (
+	<Box
+		padding="20px 20px 80px 20px"
+		background="url('img/grain.png')"
+		backgroundSize="300px"
+		border="3px solid black"
+		transform="rotate(6deg)"
+	>
+		<img src="//static.gregoryland.com/gregory.jpeg?w=300" />
+	</Box>
+);
 
 const LeftArea = () => {
 	return (
