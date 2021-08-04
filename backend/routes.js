@@ -21,8 +21,6 @@ const DATABASE = (() => {
  * @param app {express.Express}
  */
 module.exports = (app) => {
-	require('./routes/images')(app);
-
 	app.get('/albums/:id', (req, res) => {
 		const { albums, songs } = DATABASE.load();
 
