@@ -19,7 +19,7 @@ const Polaroid = () => (
 		transform="rotate(6deg)"
 		boxShadow="inset 2px 2px 6px rgb(0,0,0,0.4), 4px 4px 10px rgba(0,0,0,0.5)"
 	>
-		<img src="//static.gregoryland.com/gregory.jpeg?w=300" />
+		<img src="//static.gregoryland.com/gregory.jpeg?w=300" width="300px" />
 	</Box>
 );
 
