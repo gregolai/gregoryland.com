@@ -9,7 +9,6 @@ export const App = () => {
 	if (window.self !== window.top) {
 		return <Resume />;
 	}
-
 	return (
 		<DocumentScrollProvider>
 			<WindowInnerDimensionsProvider>
