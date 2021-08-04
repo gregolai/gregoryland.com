@@ -41,24 +41,25 @@ const TitleImage = () => {
 	);
 };
 
-class Pics extends React.Component {
+class Pics extends React.Component<{ dir: string }> {
 	state = {
-		filenames: []
+		files: []
 	};
 
 	async componentDidMount() {
-		const res = await fetch('http://localhost:8087/streetart');
-		const filenames = await res.json();
-		this.setState({ filenames });
+		const res = await fetch(`https://static.gregoryland.com/${this.props.dir}`);
+		this.setState({
+			files: await res.json()
+		});
 	}
 
 	render() {
 		return (
 			<Box>
-				{this.state.filenames.map((filename) => {
+				{this.state.files.map((file) => {
 					return (
-						<Box as="a" p={space._4} href={`http://localhost:8087/img/${filename}`}>
-							<img src={`http://localhost:8087/img/t/128/${filename}`} />
+						<Box as="a" p={space._4} href={`https://static.gregoryland.com${file}`}>
+							<img src={`https://static.gregoryland.com${file}?w=128`} />
 						</Box>
 					);
 				})}
@@ -212,7 +213,7 @@ export const routes = [
 		path: '/pics',
 		Component: () => (
 			<Screen>
-				<Pics />
+				<Pics dir="graffiti" />
 			</Screen>
 		)
 	},
