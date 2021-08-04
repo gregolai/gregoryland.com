@@ -39,6 +39,7 @@
     },
     "scripts": {
         "build": "webpack",
+        "build:prod": "NODE_ENV=production webpack",
         "format": "prettier src/**/* --write",
         "start": "concurrently --kill-others \"npm run start:serve\" \"npm run start:watch\"",
         "start:serve": "serve ./public -p 8086",

@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const isDev = true;
+const isDev = process.env.NODE_ENV !== 'production';
 
 /**
  * @type {webpack.Configuration}
