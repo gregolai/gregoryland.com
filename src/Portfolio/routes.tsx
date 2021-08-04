@@ -4,7 +4,7 @@ import { Blog } from '../Blog/Blog';
 import { Flex, Text } from '../core/primitives';
 import { space } from '../core/tokens';
 import { useDocumentScrollY } from '../utils/DocumentScrollProvider';
-import { Screen } from './screen/Screen';
+import { Screen } from './Screen/Screen';
 import { Splat } from './Screen/Splat';
 import { ProjectsScreen } from './screens/ProjectsScreen';
 import { ResumeScreen } from './screens/ResumeScreen';
