@@ -21,8 +21,7 @@ body {
 	min-height: 100vh;
 	padding: 0;
 	scroll-behavior: smooth;
-	/* background-color: rgb(214, 229, 244); */
-	background-color: black;
+	background-color: rgb(214, 229, 244);
 }
 
 #app {
