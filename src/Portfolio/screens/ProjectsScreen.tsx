@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { compiler } from 'markdown-to-jsx';
 import { Flex, Box, Text, Button } from '../../core/primitives';
 import { space } from '../../core/tokens';
 
@@ -58,7 +59,12 @@ export const ProjectsScreen = () => {
 							thumb: 'img/projects/thumbs/snek1.jpg'
 						}
 					],
-					items: ['100% Vanilla HTML/JS/CSS'],
+					items: [
+						`A little project I made a coding exercise for my application at Squarespace, prior to them changing the assignment.
+It was written entirely in HTML/CSS/JS with no external libraries and I had about 3 hours to complete it. I'm proud
+that I was able to whip this up in that timeframe, as I've had experience with game development and using the HTML
+canvas element.`
+					],
 					playInline: {
 						title: 'Play SNEK',
 						src: `https://gregoryland.com/projects/snek/`,
@@ -85,10 +91,9 @@ export const ProjectsScreen = () => {
 						}
 					],
 					items: [
-						'A coding exercise I worked on for Vimeo to demonstrate how an HTML5 video player could be designed and developed.',
-						'Self-designed interface with playhead scrubbing, video buffer, fullscreen capabilities, and switching to next/previous video.',
-						'Uses vanilla javascript with no 3rd party libraries.',
-						'Not mobile-friendly at the moment, but I could fix that by rendering the video to a canvas and creating a custom UI.'
+						`I applied as a software developer for Vimeo in 2016. I was tasked with creating a custom video player as part of
+the application process. Ultimately, they didn't end up hiring me, but I'm nonetheless grateful for the opportunity. This project doesn't use any external libraries and features
+playhead scrubbing (dragging the playhead), video buffering, fullscreen capabilities, and switching to the previous and next video. I designed the interface. It's not mobile-friendly, but it could be with a few tweaks.`
 					],
 					playInline: {
 						title: 'Play Vimeo Coding Project',
@@ -111,8 +116,9 @@ export const ProjectsScreen = () => {
 						}
 					],
 					items: [
-						'I wanted to port the Star Field project from ActionScript over to JavaScript canvas, so I did.',
-						'If using Chrome, the sliders will sometimes cause the page to freeze. Use Firefox if you encounter this issue.'
+						`The classic Windows StarField screensaver in javascript. I ported it from a 2012 ActionScript project I
+wrote (FYI ActionScript runs much faster). Instead of creating/destroying Star instances, it recycles the
+dead stars into new ones using a Star pool.`
 					],
 					playInline: {
 						title: 'Play Starfield',
@@ -141,9 +147,12 @@ export const ProjectsScreen = () => {
 						}
 					],
 					items: [
-						'An attempt at an HTML5 web port of Warcraft 2',
-						'Contains multiplayer support using websockets, web workers, and the lock-step algorithm for keeping players in-sync.',
-						'I have refactored the codebase for awhile and decided to put this project on hold.'
+						`I have a huge nostalgia for Warcraft 2 and 3, so I had an ambition of bringing it to the web. It ended up as mostly
+a learning exercise of scope creep, asset management, logic flow, as well as using websockets to integrate a working
+(but ridiculously laggy) peer-to-peer lock-step synchronized multiplayer experience, with much inspiration from
+[this article](https://www.gamasutra.com/view/feature/131503/1500_archers_on_a_288_network_.php). WebRTC was new
+and would have been much better to keep the game in-sync, but it was complicated and over-my-head at the time.
+`
 					],
 					playInline: {
 						title: 'Play War Game',
@@ -167,8 +176,8 @@ export const ProjectsScreen = () => {
 						}
 					],
 					items: [
-						'Demonstrates using two 2D canvas elements and a shader to do masking using WebGL.',
-						'This could be used for fast 2D shadows or for other interesting purposes.'
+						`I used a few HTML canvas elements and a shader to demonstrate masking using WebGL. The first is the unlit layer,
+the second is the shadow mask, and the third is a composite by multiplying each.`
 					],
 					playInline: {
 						title: 'Play Masking Demo',
@@ -351,7 +360,7 @@ export const ProjectsScreen = () => {
 					<Box pb={space._6}>
 						{proj.items.map((item, i2) => (
 							<Text.BodyBookTabular key={i2} pl={space._6} pt={space._1}>
-								{item}
+								{compiler(item)}
 							</Text.BodyBookTabular>
 						))}
 					</Box>

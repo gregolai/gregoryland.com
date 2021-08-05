@@ -1,7 +1,5 @@
 import { Box } from 'pu2';
 import React, { lazy } from 'react';
-import { Blog } from '../Blog/Blog';
-import { Flex, Text } from '../core/primitives';
 import { space } from '../core/tokens';
 import { useDocumentScrollY } from '../utils/DocumentScrollProvider';
 import { Screen } from './Screen/Screen';
@@ -126,97 +124,97 @@ export const routes = [
 			</Screen>
 		)
 	},
-	{
-		id: 'music',
-		label: 'Music Player',
-		path: '/music',
-		Component: () => (
-			<Screen
-				background={
-					<>
-						<Splat color="rgba(255,255,255,0.3)" x="20%" y="20%" width={900} />
-						<Splat color="rgba(255,255,255,0.3)" x="80%" y="80%" width={1400} />
+	// {
+	// 	id: 'music',
+	// 	label: 'Music Player',
+	// 	path: '/music',
+	// 	Component: () => (
+	// 		<Screen
+	// 			background={
+	// 				<>
+	// 					<Splat color="rgba(255,255,255,0.3)" x="20%" y="20%" width={900} />
+	// 					<Splat color="rgba(255,255,255,0.3)" x="80%" y="80%" width={1400} />
 
-						{/* DIAGONAL LINE BACK */}
-						<div
-							style={{
-								background: 'rgb(97, 95, 107)',
-								height: '500px',
-								position: 'absolute',
-								width: '100%',
-								transform: 'translateY(-250px) rotate(-25deg) scaleX(20)',
+	// 					{/* DIAGONAL LINE BACK */}
+	// 					<div
+	// 						style={{
+	// 							background: 'rgb(97, 95, 107)',
+	// 							height: '500px',
+	// 							position: 'absolute',
+	// 							width: '100%',
+	// 							transform: 'translateY(-250px) rotate(-25deg) scaleX(20)',
 
-								top: '0px',
-								right: '0px',
-								transformOrigin: 'right top'
-							}}
-						/>
-					</>
-				}
-				center
-				css={{
-					height: '800px',
-					background:
-						'linear-gradient(transparent 0%, rgba(175, 204, 232, 0.5) 50%, transparent 100%), radial-gradient(circle at 50% 50%, rgba(181, 175, 233, 0.3) 0%, transparent 350px)'
-				}}
-			>
-				<MusicPlayerScreen />
-			</Screen>
-		)
-	},
-	{
-		id: 'drawings',
-		label: 'Drawings',
-		path: '/drawings',
-		Component: () => (
-			<Screen
-				css={{
-					padding: space._8
-				}}
-			>
-				<Flex
-					p={space._4}
-					justifyContent="center"
-					background="rgba(255,255,255,0.8)"
-					border="2px solid black"
-				>
-					Showcase my drawings here, both original and from sources.
-				</Flex>
-			</Screen>
-		)
-	},
-	{
-		id: 'blog',
-		label: 'Blog',
-		path: '/blog',
-		Component: () => (
-			<Screen
-				css={{
-					padding: space._8
-				}}
-			>
-				<Flex
-					p={space._4}
-					justifyContent="center"
-					background="rgba(255,255,255,0.8)"
-					border="2px solid black"
-				>
-					Blog about my favorite video games.
-				</Flex>
-				<Blog />
-			</Screen>
-		)
-	},
-	{
-		id: 'pics',
-		label: 'Pics',
-		path: '/pics',
-		Component: () => (
-			<Screen>
-				<Pics dir="graffiti" />
-			</Screen>
-		)
-	},
+	// 							top: '0px',
+	// 							right: '0px',
+	// 							transformOrigin: 'right top'
+	// 						}}
+	// 					/>
+	// 				</>
+	// 			}
+	// 			center
+	// 			css={{
+	// 				height: '800px',
+	// 				background:
+	// 					'linear-gradient(transparent 0%, rgba(175, 204, 232, 0.5) 50%, transparent 100%), radial-gradient(circle at 50% 50%, rgba(181, 175, 233, 0.3) 0%, transparent 350px)'
+	// 			}}
+	// 		>
+	// 			<MusicPlayerScreen />
+	// 		</Screen>
+	// 	)
+	// },
+	// {
+	// 	id: 'drawings',
+	// 	label: 'Drawings',
+	// 	path: '/drawings',
+	// 	Component: () => (
+	// 		<Screen
+	// 			css={{
+	// 				padding: space._8
+	// 			}}
+	// 		>
+	// 			<Flex
+	// 				p={space._4}
+	// 				justifyContent="center"
+	// 				background="rgba(255,255,255,0.8)"
+	// 				border="2px solid black"
+	// 			>
+	// 				Showcase my drawings here, both original and from sources.
+	// 			</Flex>
+	// 		</Screen>
+	// 	)
+	// },
+	// {
+	// 	id: 'blog',
+	// 	label: 'Blog',
+	// 	path: '/blog',
+	// 	Component: () => (
+	// 		<Screen
+	// 			css={{
+	// 				padding: space._8
+	// 			}}
+	// 		>
+	// 			<Flex
+	// 				p={space._4}
+	// 				justifyContent="center"
+	// 				background="rgba(255,255,255,0.8)"
+	// 				border="2px solid black"
+	// 			>
+	// 				Blog about my favorite video games.
+	// 			</Flex>
+	// 			<Blog />
+	// 		</Screen>
+	// 	)
+	// },
+	// {
+	// 	id: 'pics',
+	// 	label: 'Pics',
+	// 	path: '/pics',
+	// 	Component: () => (
+	// 		<Screen>
+	// 			<Pics dir="graffiti" />
+	// 		</Screen>
+	// 	)
+	// },
 	{
 		id: 'projects',
 		label: 'Projects',
@@ -237,37 +235,6 @@ export const routes = [
 				}}
 			>
 				<ProjectsScreen />
-			</Screen>
-		)
-	},
-	{
-		id: 'snek',
-		label: 'Snek',
-		path: '/snek',
-		Component: () => (
-			<Screen
-				css={{
-					height: '700px'
-					// background: 'linear-gradient(180deg,transparent 0%, rgb(169, 203, 236) 50%, transparent 100%)'
-				}}
-			>
-				<Flex justifyContent="space-between" px={space._7}>
-					<Box>
-						<Text.Caption>May 2017</Text.Caption>
-						<Text.Caption as="a" href={'https://gregoryland.com/projects/snek/snek.zip'}>
-							Source Code
-						</Text.Caption>
-
-						<Text.Caption as="a" href={'https://gregoryland.com/projects/snek/'}>
-							Play SNEK
-						</Text.Caption>
-					</Box>
-					<Box>
-						<Box backgroundColor="black" p={space._5} width="300px">
-							<Text.BodyBook color="white">100% Vanilla HTML/JS/CSS</Text.BodyBook>
-						</Box>
-					</Box>
-				</Flex>
 			</Screen>
 		)
 	}
