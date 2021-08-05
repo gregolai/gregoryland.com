@@ -195,7 +195,7 @@ the second is the shadow mask, and the third is a composite by multiplying each.
 					},
 					images: [
 						{
-							title: 'Command listing',
+							title: 'Command listing (fake ads)',
 							url: 'img/projects/cmdtool1.png',
 							thumb: 'img/projects/thumbs/cmdtool1.jpg'
 						},
@@ -210,26 +210,33 @@ the second is the shadow mask, and the third is a composite by multiplying each.
 							thumb: 'img/projects/thumbs/cmdtool3.jpg'
 						},
 						{
-							title: 'You can pop it out for multiple instances!',
+							title: "Multiple command windows. Cool! (After 9 years that's still my windows background)",
 							url: 'img/projects/cmdtool4.png',
 							thumb: 'img/projects/thumbs/cmdtool4.jpg'
 						},
 						{
-							title: 'Editor command version selector',
+							title: 'Version selector',
 							url: 'img/projects/cmdtool5.png',
 							thumb: 'img/projects/thumbs/cmdtool5.jpg'
 						},
 						{
-							title: 'Select desired version on command page',
+							title: 'Version comparison',
 							url: 'img/projects/cmdtool6.png',
 							thumb: 'img/projects/thumbs/cmdtool6.jpg'
 						}
 					],
 					items: [
-						'An idea my friend and I had for creating a GUI for UNIX/Windows-based command-line parameters.',
-						'It would function like wikipedia, where users would visually create and edit the GUIs to generate command-line parameters.',
-						'The tool was quite ambitious for a web project, but fun to work on.',
-						'We got relatively far in our progress and created a basic versioning system for the edited GUIs.'
+						`Have you ever been confused how to use the command-line? Well, as a sweet Windows summer child,
+						I sure was. "Let's create an interface for all these weird command line doodads!", my friend
+						suggested, so we got to work on creating a graphical interface for common Windows/Mac/Unix
+						command-line commands. It was pretty cool. You could open multiple windows for various commands
+						and see full descriptions of what parameters would do. Most commands had "-h" or "--help" as
+						an argument, but assaulted you with thousands of lines of nerdy jargon. This was unacceptable!
+						I wanted inputs, radios, and checkboxes to give me that command I was looking for.
+						The site would evolve like wikipedia, with users creating and editing versions of commands and
+						parameters. It even had a versioning system
+						and was quite an ambitious full-stack web project. It *may* even still be up and running...it's
+						worth checking out if you're a computer nerd like me.`
 					]
 				},
 				{
