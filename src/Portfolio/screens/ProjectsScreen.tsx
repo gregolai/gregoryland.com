@@ -227,8 +227,9 @@ the second is the shadow mask, and the third is a composite by multiplying each.
 					],
 					items: [
 						`Have you ever been confused how to use the command-line? Well, as a sweet Windows summer child,
-						I sure was. "Let's create an interface for all these weird command line doodads!", my friend
-						suggested, so we got to work on creating a graphical interface for common Windows/Mac/Unix
+						I sure was. My friend [Greg Miller](http://gmiller.net) suggested, "Let's create an interface
+						for all these weird command line doodads!", so we got to work on creating a graphical interface
+						for common Windows/Mac/Unix
 						command-line commands. It was pretty cool. You could open multiple windows for various commands
 						and see full descriptions of what parameters would do. Most commands had "-h" or "--help" as
 						an argument, but assaulted you with thousands of lines of nerdy jargon. This was unacceptable!
@@ -258,13 +259,16 @@ the second is the shadow mask, and the third is a composite by multiplying each.
 						}
 					],
 					items: [
-						'A project I wrote in ActionScript that mimics the old Windows starfield screensaver.',
-						'It continues to create stars until the FPS reaches the target FPS and efficiently buffers them for reuse.',
-						'If the target FPS is greater than the real FPS, the application will start removing stars until an equilibrium is formed.',
-						'Decrease / Increase target FPS: E / R',
-						'Decrease / Increase acceleration: D / F',
-						'Decrease / Increase star growth time: C / V',
-						'Toggle GUI: X'
+						`The classic Windows StarField screensaver in ActionScript. Unfortunately, this won't run in the browser.
+						I ported it to JavaScript later on (see above).
+						It recycles dead stars into new ones using a pooling scheme. Another interesting thing is that
+						you can have it spawn enough stars to match a target frames-per-second (FPS). It will constantly
+						monitor this and throttle accordingly. The true pinnacle of AI! Here are the controls:
+
+* E/R: Decrease / Increase target FPS
+* D/F: Decrease / Increase acceleration
+* C/V: Decrease / Increase star growth time
+* X: Toggle GUI`
 					]
 				},
 				{
@@ -288,11 +292,18 @@ the second is the shadow mask, and the third is a composite by multiplying each.
 						}
 					],
 					items: [
-						'I wanted to make a 3D planet-to-planet RTS game, so I tested the use of a sub-divided <a href="https://upload.wikimedia.org/wikipedia/commons/9/9c/Icosahedron-golden-rectangles.svg">icosahedron</a> for the planets.',
-						'I could decrease the level-of-detail as planets got further and increase it as planets got nearer.',
-						'This worked out alright, until I realized that texture-mapping and pathfinding would be incredibly difficult.',
-						'I think extruding a cube would have been a better choice for a coordinate system and I realized the scope of the project was ridiculous. I had fun with the math, though.',
-						'A / Z - Increase / Decrease Level-of-Detail (LOD).'
+						`My ambitions far outweighed my talents. A real-time strategy game across planets in space sounds awesome, right?
+"Sounds simple enough to build"...haha. Well, I tried, and I learned how to subdivide an
+[icosahedron](https://upload.wikimedia.org/wikipedia/commons/9/9c/Icosahedron-golden-rectangles.svg) for
+level-of-detail (LOD) indices that I'd pass to OpenGL for rendering. The LOD would increase as the camera got closer
+and decrease as it got further away. At that point, I realized texture-mapping and pathfinding would be a bitch, so
+I became discouraged and quit. Later on, I came back and made a Java applet version with texture-mapping and terrain
+height editing, but I can't find the project :( A better solution for this, instead of using an icosphere, is to
+simply extrude a cube and live with the imperfect edge-sizes, because at least texture-mapping and pathfinding would
+be much easier. I really had fun with the math on this project, though.
+
+* A/Z: Increase / Decrease Level-of-Detail (LOD)
+`
 					]
 				},
 				{
@@ -316,10 +327,14 @@ the second is the shadow mask, and the third is a composite by multiplying each.
 						}
 					],
 					items: [
-						'I worked on this game with my friend, <a href="http://gmiller.net">Greg Miller</a>, in an attempt to combine our talents (programming and design).',
-						'I wanted to write a game completely in C++/OpenGL without using any 3rd party libraries and we gave ourselves a 3-day weekend to do it.',
-						'Our game was inspired by a news story about <a href="https://www.youtube.com/watch?v=xhRW4WmfrDA">Dusty the Kleptomaniac Kitty</a>, a burglar cat in San Mateo, California.',
-						'The ideas is that you play as a cat that walks around the neighborhood solving quests and <strike>stealing</strike> collecting stuff from people.'
+						`A third-person simulation of being a kleptomaniac cat in a suburban neighborhood. I combined my C++/OpenGL programming
+talents with the design talents of my friend, [Greg Miller](http://gmiller.net), to create a game within a 3-day weekend.
+The idea was inspired by a [news story about Dusty the Kleptomaniac Kitty](https://www.youtube.com/watch?v=fDX7tevXO1E),
+a burglar cat in San Mateo, California. Our game idea revolved around solving quests on a day-night cycle by stealing
+items around the neighborhood. Scope creep and clashing ideas ended this project, but it was fun while it lasted. I also
+got to explore the [Drawbridge ghost town](http://www.gmiller.net/2013/08/drawbridge-ghost-town/) with Greg, which was
+super exciting.
+`
 					]
 				}
 			].map((proj, i) => (
