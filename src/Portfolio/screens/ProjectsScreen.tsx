@@ -151,7 +151,8 @@ dead stars into new ones using a Star pool.`
 a learning exercise of scope creep, asset management, logic flow, as well as using websockets to integrate a working
 (but ridiculously laggy) peer-to-peer lock-step synchronized multiplayer experience, with much inspiration from
 [this article](https://www.gamasutra.com/view/feature/131503/1500_archers_on_a_288_network_.php). WebRTC was new
-and would have been much better to keep the game in-sync, but it was complicated and over-my-head at the time.
+and would have been much better to keep the game in-sync, but it was complicated and over-my-head at the time. This
+game I wrote is very incomplete and has several of bugs...you are warned! :P
 `
 					],
 					playInline: {

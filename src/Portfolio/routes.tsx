@@ -105,11 +105,11 @@ export const routes = [
 								height: '500px',
 								position: 'absolute',
 								width: '100%',
-								transform: 'translateY(250px) rotate(25deg) scaleX(20)',
+								transform: 'translateY(0px) rotate(25deg) scaleX(200)',
 
 								right: '0px',
 								bottom: '0px',
-								transformOrigin: 'right top'
+								transformOrigin: 'right bottom'
 							}}
 						/>
 					</>
@@ -226,6 +226,20 @@ export const routes = [
 						<Splat x="50%" y="1200px" color="rgba(255,255,255,0.8)" width="1200px" />
 						<Splat x="80%" y="1600px" color="rgba(255,137,60,0.2)" width="2100px" />
 						<Splat x="10%" y="2300px" color="rgba(255,0,255,0.2)" width="2100px" />
+						{/* DIAGONAL LINE BACK */}
+						{/* <div
+							style={{
+								background: 'rgb(97, 95, 107)',
+								height: '500px',
+								position: 'absolute',
+								width: '100%',
+								transform: 'translateY(-250px) rotate(-25deg) scaleX(20)',
+
+								top: '0px',
+								right: '0px',
+								transformOrigin: 'right top'
+							}}
+						/> */}
 					</>
 				}
 				css={{
