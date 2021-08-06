@@ -80,12 +80,12 @@ canvas element.`
 					},
 					images: [
 						{
-							title: 'User Interface',
+							title: 'A slick UI',
 							url: 'img/projects/html5-player1.png',
 							thumb: 'img/projects/thumbs/html5-player1.jpg'
 						},
 						{
-							title: 'Fullscreen',
+							title: 'Fullscreen with playhead and buffer',
 							url: 'img/projects/html5-player2.png',
 							thumb: 'img/projects/thumbs/html5-player2.jpg'
 						}
@@ -136,7 +136,7 @@ dead stars into new ones using a Star pool.`
 					},
 					images: [
 						{
-							title: 'Similar to "Warcraft 3" - five units are selected, but 3 peasants are grouped as active (as shown by the yellow icon border)',
+							title: 'Yes, melord! Three peasants are the active group here.',
 							url: 'img/projects/war1.png',
 							thumb: 'img/projects/thumbs/war1.jpg'
 						},
@@ -317,12 +317,12 @@ be much easier. I really had fun with the math on this project, though.
 					},
 					images: [
 						{
-							title: 'Screenshot #1',
+							title: 'Cat, Shrubbery, House',
 							url: 'img/projects/catgame1.png',
 							thumb: 'img/projects/thumbs/catgame1.jpg'
 						},
 						{
-							title: 'Screenshot #2',
+							title: 'Cat or minecraft?',
 							url: 'img/projects/catgame2.png',
 							thumb: 'img/projects/thumbs/catgame2.jpg'
 						}
