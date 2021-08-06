@@ -83,50 +83,50 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 			<Job where="Squarespace" from="May 2017" to="January 2021" role="Software Engineer">
 				<Ul>
 					<Li>
-						<Text.BodyBook>Design Platform Team - Level 3 Engineer</Text.BodyBook>
-					</Li>
-					<Li>
 						<Text.BodyBook>
-							Configured build tools, NPM package management systems, and code migration
-							strategies.
+							Used TypeSript, JavaScript, NPM, React, and React-Native
 						</Text.BodyBook>
-					</Li>
-					<Li>
+						<Text.BodyBook>L3 Engineer - Design Platform team</Text.BodyBook>
 						<Text.BodyBook>
-							Part of a team effort to move a deeply integrated, consumer-facing DESKTOP CMS to
-							be a responsive and mobile-friendly experience.
+							Focus on preventing breaking changes by encouraging unit tests with Jest and
+							integration tests with Cypress/Puppeteer
 						</Text.BodyBook>
-					</Li>
-					<Li>
+						<Text.BodyBook>Style guide creation and documentation using Gatsby</Text.BodyBook>
+						<Text.BodyBook>Multi-package NPM project with Lerna</Text.BodyBook>
+						<Text.BodyBook>Cross-team collaboration and package management</Text.BodyBook>
 						<Text.BodyBook>
-							Some React-Native experience, targeting iOS and Android devices.
+							UX, including accessibility, intuitive controls, and focus on user experience
 						</Text.BodyBook>
-					</Li>
-					<Li>
+						<Text.BodyBook>Tech debt incorporated it into weekly tasks</Text.BodyBook>
 						<Text.BodyBook>
-							Unit and integration tests using Jest, Enzyme, Puppeteer/Cypress. Some test-driven
-							development used for refactoring and codemods.
+							Test-driven development used for refactoring via codemods and code migration
+							strategies
 						</Text.BodyBook>
-					</Li>
-					<Li>
+						<Text.BodyBook>Build tool configuration and automation</Text.BodyBook>
 						<Text.BodyBook>
-							Consideration on exposiing a clean API, composition patterns, and tradeoffs
-							between simplicity and flexibility.
+							Part of a collaborated effort to expand our deeply integrated desktop CMS to
+							iOS/Android/mobile web. Used react-native and iOS/Android emulators.
+						</Text.BodyBook>
+						<Text.BodyBook>
+							Tradeoffs beween simplicity and flexibility, composition patterns, exposing an
+							intuitive API
 						</Text.BodyBook>
 					</Li>
 				</Ul>
 			</Job>
-			<Job where="Agorafy" from="December 2016" to="May 2017" role="Frontend Developer">
+			<Job where="Agorafy" from="December 2016" to="May 2017" role="Frontend Engineer">
 				<Ul>
 					<Li>
 						<Text.BodyBook>
-							Engineered a CMS frontend from scratch, allowing users to search and filter
-							through a wide variety of real estate properties
+							Used JavaScript, React+Redux, to collaborate with our backend engineers in
+							creating a REST API for our project needs
 						</Text.BodyBook>
 						<Text.BodyBook>
-							Communication with our backend developers to sync the needs of our backend REST
-							API with the needs of our frontend.
+							Led a small 3-person team using modern tech to build a CMS frontend for
+							real-estate listings. Users could search and filter through a variety of real
+							estate properties
 						</Text.BodyBook>
+						<Text.BodyBook>Company went bankrupt; stopped paying its employees</Text.BodyBook>
 					</Li>
 					<Li>
 						<Text.BodyBook>
@@ -135,31 +135,35 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 					</Li>
 				</Ul>
 			</Job>
-			<Job where="YouVisit" from="January 2015" to="April 2016" role="Full-stack Developer">
+			<Job where="YouVisit" from="January 2015" to="April 2016" role="Full-stack Engineer">
 				<Ul>
 					<Li>
+						<Text.BodyBook>Used PHP, MySQL, HTML, CSS, and JavaScript/jQuery</Text.BodyBook>
+						<Text.BodyBook>
+							Solution-oriented projects with an emphasis on building it fast, versus properly
+							incrementally refactoring
+						</Text.BodyBook>
 						<Text.BodyBook>
 							Hybrid app development and testing for both mobile and desktop systems using
-							JavaScript, PHP, MySQL, and Node. Used an MVC back-end with a RESTful API and some
+							JavaScript, PHP, MySQL, and Node. Used an MVC back-end with a REST API and minimal
 							unit testing.
 						</Text.BodyBook>
+						<Text.BodyBook>
+							Mobile JavaScript GPS API, data collection, and real-time visualization of app
+							users to our clients. Batched Node requests that were periodically inserted into
+							our database. Used the Google Maps API to view campus paths and tour hotspots.
+						</Text.BodyBook>
+						<Text.BodyBook>Developed and maintained CMS features for our clients</Text.BodyBook>
 					</Li>
 					<Li>
 						<Text.BodyBook>
-							Developed a project tracking system in our CMS to track the stages of tour
-							production.
+							Wrote a project tracking system in our CMS to track the stages of tour production.
 						</Text.BodyBook>
 					</Li>
 					<Li>
 						<Text.BodyBook>
-							Implemented mobile geolocation tracking, batching requests from Node to our
-							database, and using Google Maps API to view campus paths and hotspots.
-						</Text.BodyBook>
-					</Li>
-					<Li>
-						<Text.BodyBook>
-							Organized large-scale analytics of site visitor data into useful for our clients
-							to download.
+							Organized large-scale analytics of site visitor data into useful formats for our
+							clients to download.
 						</Text.BodyBook>
 					</Li>
 					<Li>
@@ -187,10 +191,11 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 				where="M & M Environmental"
 				from="August 2014"
 				to="December 2014"
-				role="Full-stack Developer"
+				role="Full-stack Engineer (Entry-level)"
 			>
 				<Ul>
 					<Li>
+						<Text.BodyBook>Used PHP, MySQL, HTML, CSS, and JavaScript</Text.BodyBook>
 						<Text.BodyBook>
 							Built a calendar and scheduling application using PHP, MySQL/MSSQL, and JavaScript
 							for managing technician availability.

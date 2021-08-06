@@ -10,9 +10,11 @@ export const Job = ({ children, where, role, from, to }) => (
 				<Text.BodyMedium>{where}</Text.BodyMedium>
 			</Box>
 
-			<Text.Subtitle ml={space._9} pl={space._6} pb={space._4}>
-				{from} - {to}
-			</Text.Subtitle>
+			<Box textAlign="right">
+				<Text.Subtitle ml={space._9} pl={space._6}>
+					{from} - {to}
+				</Text.Subtitle>
+			</Box>
 		</Flex>
 		<Box p={space._5}>{children}</Box>
 	</Box>
