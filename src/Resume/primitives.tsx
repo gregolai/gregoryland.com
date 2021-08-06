@@ -5,6 +5,33 @@ export { Box, Button, Flex } from '../core/primitives';
 export const Text = {
 	..._CoreText,
 
+	JobHeader: (() => {
+		const baseProps = {
+			as: 'p',
+			fontSize: '18px',
+			lineHeight: '32px',
+			fontWeight: '600',
+			margin: '0px'
+		};
+		if (__DEV__) {
+			baseProps['debug-tag'] = 'Text.JobHeader';
+		}
+		return createComponent(baseProps);
+	})(),
+
+	BulletItem: (() => {
+		const baseProps = {
+			as: 'p',
+			fontSize: '16px',
+			lineHeight: '22px',
+			fontWeight: '400'
+		};
+		if (__DEV__) {
+			baseProps['debug-tag'] = 'Text.BulletItem';
+		}
+		return createTextComponent(baseProps);
+	})(),
+
 	MegaTitle: (() => {
 		const baseProps = {
 			as: 'h1',

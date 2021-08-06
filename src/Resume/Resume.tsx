@@ -17,10 +17,16 @@ const LangDivider = () => (
 	</Text.BodyMedium>
 );
 
-const List = ({ children }) => <Ul>{children}</Ul>;
+const List = ({ children }) => <Ul listStyleType="'\2022'">{children}</Ul>;
 const ListItem = ({ children }) => (
-	<Li>
-		<Text.BodyBook>{children}</Text.BodyBook>
+	<Li
+		pl={space._4}
+		listStyleType={null}
+		css={{
+			':not(:last-of-type)': { pb: space._2 }
+		}}
+	>
+		<Text.BulletItem>{children}</Text.BulletItem>
 	</Li>
 );
 
@@ -38,7 +44,7 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 		}}
 	>
 		{/* HEADER */}
-		<Flex justifyContent="space-between" pb={space._7}>
+		<Flex justifyContent="space-between" pb={space._5}>
 			<Box>
 				<Text.MegaTitle>Gregory Dalton</Text.MegaTitle>
 
@@ -64,23 +70,17 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 				maxWidth="352px"
 			>
 				{/* CONTACT */}
-				<Box>
+				<Box pb={space._2}>
 					<HeaderContact label="Email" text="gregolai@gmail.com" />
 					<HeaderContact label="Website" text="gregoryland.com" />
 				</Box>
 				{/* EDUCATION */}
-				<Box>
+				<Box border="2px solid black" p={space._1}>
 					<Text.Subtitle>B.S. Computer Science</Text.Subtitle>
 					<Text.Label>California State University, Long Beach</Text.Label>
 					<Text.Label pb={space._4}>Class of 2009</Text.Label>
-					<Ul listStyleType="'\276F'">
-						<Li pl={space._4} listStyleType={null}>
-							Programming team
-						</Li>
-						<Li pl={space._4} listStyleType={null}>
-							Tau Beta Pi Engineering Honor Society
-						</Li>
-					</Ul>
+					<Text.Label>Programming team</Text.Label>
+					<Text.Label>Tau Beta Pi Engineering Honor Society</Text.Label>
 				</Box>
 			</Flex>
 		</Flex>
@@ -89,36 +89,32 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 		<Box px={space._5} pt={space._5}>
 			<Job where="Squarespace" from="May 2017" to="January 2021" role="Software Engineer">
 				<List>
-					<ListItem>Used TypeSript, JavaScript, NPM, React, and React-Native</ListItem>
-					<ListItem>L3 Engineer - Design Platform team</ListItem>
+					<ListItem>
+						As a proud L3 Engineer on the Design Platform team, we build React/React-Native
+						components and tooling that were visually and behaviorally consistent across all areas
+						of our product. This included the creation of a style guide, compositional patterns, a
+						solid API, and documentation using Gatsby.
+					</ListItem>
 					<ListItem>
 						Focus on preventing breaking changes by encouraging unit tests with Jest and
-						integration tests with Cypress/Puppeteer
+						integration tests with Cypress/Puppeteer.
 					</ListItem>
-					<ListItem>Style guide creation and documentation using Gatsby</ListItem>
-					<ListItem>Multi-package NPM project with Lerna</ListItem>
-					<ListItem>Cross-team collaboration and package management</ListItem>
-					<ListItem>
-						UX, including accessibility, intuitive controls, and focus on user experience
-					</ListItem>
-					<ListItem>Tech debt incorporated it into weekly tasks</ListItem>
+					<ListItem>Cross-team collaboration and NPM package management.</ListItem>
+					<ListItem>Focus on UX, including accessibility and intuitive design.</ListItem>
+					<ListItem>Tech debt incorporated it into weekly tasks.</ListItem>
 					<ListItem>
 						Test-driven development used for refactoring via codemods and code migration
-						strategies
+						strategies.
 					</ListItem>
-					<ListItem>Build tool configuration and automation</ListItem>
 					<ListItem>
 						Part of a multi-team effort to expand our deeply integrated desktop CMS to
 						iOS/Android/mobile web for our customers. Used react-native and iOS/Android emulators.
 					</ListItem>
-					<ListItem>
-						Managed tradeoffs beween simplicity and flexibility, composition patterns, exposing an
-						intuitive API
-					</ListItem>
+					<ListItem>Context-dependent tradeoffs beween simplicity and flexibility.</ListItem>
 					<ListItem>
 						Learned humbleness, importance of a well-thought API, using open-source code where
 						appropriate, development cycle completion, feature migration, test quality and code
-						coverage, teamwork, and writing manageable pull requests
+						coverage, teamwork, and writing manageable pull requests.
 					</ListItem>
 				</List>
 			</Job>
@@ -126,41 +122,38 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 				<List>
 					<ListItem>
 						Collaborated with our backend engineers to create a REST API for our real-estate
-						listing project
+						listing project.
 					</ListItem>
 					<ListItem>
 						Led a 3-person team using JS/React+Redux to build a CMS frontend. Users could search
-						and filter through a variety of real estate properties
+						and filter through a variety of real estate properties.
 					</ListItem>
 					<ListItem>
-						Agorafy went bankrupt and stopped paying its employees, so we had to leave
+						Agorafy went bankrupt and stopped paying its employees, so we had to leave.
 					</ListItem>
 				</List>
 			</Job>
 			<Job where="YouVisit" from="January 2015" to="April 2016" role="Full-stack Engineer">
 				<List>
 					<ListItem>
-						Solution-oriented projects using PHP/MySQL/HTML/CSS/JS/jQuery/Node with an emphasis on
-						building features fast
+						Emphasis on developing features fast using PHP/MySQL/HTML/CSS/JS/jQuery/Node.
+					</ListItem>
+					<ListItem>
+						Used the JS geolocation API to collect location data that helped our clients visualize
+						popular campus paths and hotspots. Used websockets and Node to batch database inserts.
+						The Google Maps API was used within our CMS to view hotspots and individual paths.
+					</ListItem>
+					<ListItem>
+						Organized and aggregated large-scale metrics of site visitor data into useful formats
+						for our clients to download.
 					</ListItem>
 					<ListItem>
 						Hybrid app development and testing for both mobile and desktop. Used a custom-built
 						MVC backend with a REST API and minimal unit testing.
 					</ListItem>
-					<ListItem>Developed and maintained various CMS features for our clients</ListItem>
 					<ListItem>
-						Built a project tracking system in our CMS to track the stages of tour production.
-					</ListItem>
-					<ListItem>Built a custom A/B testing library</ListItem>
-					<ListItem>
-						Used the JS geolocation API to aggregate location data that helped our clients
-						visualize popular paths and hotspots on their campuses. Used Node to batch/buffer
-						requests that were periodically inserted into our MySQL database. The Google Maps API
-						was used within our CMS to view hotspots and individual paths.
-					</ListItem>
-					<ListItem>
-						Organized large-scale analytics of site visitor data into useful formats for our
-						clients to download.
+						Built a custom A/B testing library and project tracking system in our CMS to track the
+						stages of tour production.
 					</ListItem>
 					<ListItem>
 						Worked on embedding tours into 3rd party websites using JavaScript with JSONP to load

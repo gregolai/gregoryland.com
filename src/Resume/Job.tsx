@@ -6,14 +6,14 @@ export const Job = ({ children, where, role, from, to }) => (
 	<Box pt={space._2} borderTop="3px solid black">
 		<Flex px={space._5} justifyContent="space-between">
 			<Box>
-				<Text.Subtitle textTransform="uppercase">{role}</Text.Subtitle>
+				<Text.JobHeader textTransform="uppercase">{role}</Text.JobHeader>
 				<Text.BodyMedium>{where}</Text.BodyMedium>
 			</Box>
 
 			<Box textAlign="right">
-				<Text.Subtitle ml={space._9} pl={space._6}>
+				<Text.JobHeader ml={space._9} pl={space._6}>
 					{from} - {to}
-				</Text.Subtitle>
+				</Text.JobHeader>
 			</Box>
 		</Flex>
 		<Box p={space._5}>{children}</Box>
