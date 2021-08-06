@@ -47,8 +47,6 @@ export const Portfolio = () => {
 		}, [scrollY, windowHeight]);
 	}
 
-	console.log({ currentWindowScreen: currentWindowScreen?.id });
-
 	useEffect(() => {
 		const { state, screenEl } = transition;
 

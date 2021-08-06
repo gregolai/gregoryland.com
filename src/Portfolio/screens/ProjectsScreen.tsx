@@ -136,7 +136,7 @@ dead stars into new ones using a Star pool.`
 					},
 					images: [
 						{
-							title: 'Yes, melord! Three peasants are the active group here.',
+							title: 'Yes, me-lord! Five units are selected, but three peasants are in the active group.',
 							url: 'img/projects/war1.png',
 							thumb: 'img/projects/thumbs/war1.jpg'
 						},
@@ -382,9 +382,15 @@ super exciting.
 					)}
 					<Box pb={space._6}>
 						{proj.items.map((item, i2) => (
-							<Text.BodyBookTabular key={i2} pl={space._6} pt={space._1}>
-								{compiler(item)}
-							</Text.BodyBookTabular>
+							<Box key={i2} pl={space._6} pt={space._1}>
+								{compiler(item, {
+									overrides: {
+										p: {
+											component: Text.BodyBook
+										}
+									}
+								})}
+							</Box>
 						))}
 					</Box>
 					{proj.playInline && <PlayInline {...proj.playInline} />}

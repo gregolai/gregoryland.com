@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import { Location } from 'history';
 import { BrowserRouter, useHistory, Link, Route, NavLink } from 'react-router-dom';
@@ -10,28 +10,46 @@ interface PageRouterProps {
 	onTransition: (location: Location, action: string) => void;
 }
 
+const DumbContext = React.createContext({
+	pathname: '',
+	setPathname: (pathname: string) => {}
+});
+
 const Inner = ({ children, onTransition }) => {
-	const history = useHistory();
+	// const history = useHistory();
+
+	// useEffect(() => {
+	// 	return history.listen((location, action) => {
+	// 		const route = routes.find((route) => route.path === location.pathname);
+	// 		if (route && action !== 'POP') {
+	// 			onTransition(location, action);
+	// 		}
+	// 	});
+	// }, []);
+
+	const { pathname } = React.useContext(DumbContext);
 
 	useEffect(() => {
-		return history.listen((location, action) => {
-			const route = routes.find((route) => route.path === location.pathname);
-			if (route && action !== 'POP') {
-				onTransition(location, action);
-			}
-		});
-	}, []);
+		// Prevent transition on first render
+		if (pathname === '') return;
+
+		onTransition({ pathname }, null);
+	}, [pathname]);
 
 	return children;
 };
 
 export const PageRouter: React.FC<PageRouterProps> = ({ children, onTransition }) => {
+	const [pathname, setPathname] = useState('');
+
+	// <BrowserRouter>
 	return (
-		<BrowserRouter>
+		<DumbContext.Provider value={{ pathname, setPathname }}>
 			<Inner onTransition={onTransition}>
-				<Route path="*">{children}</Route>
+				{children}
+				{/* <Route path="*">{children}</Route> */}
 			</Inner>
-		</BrowserRouter>
+		</DumbContext.Provider>
 	);
 };
 
@@ -67,9 +85,31 @@ const PageLinkComponent = ({
 };
 
 export const PageLink = ({ children, to, ...rest }: ButtonProps & LinkProps) => {
+	// return (
+	// 	<Link {...rest} component={PageLinkComponent} to={to}>
+	// 		{children}
+	// 	</Link>
+	// );
+	const { setPathname } = useContext(DumbContext);
+
 	return (
-		<Link {...rest} component={PageLinkComponent} to={to}>
+		<Button
+			{...rest}
+			onClick={(e) => {
+				e.preventDefault();
+				setPathname(to as string);
+				// navigate();
+			}}
+			onKeyPress={(e) => {
+				// onKeyPress && onKeyPress(e);
+				if (e.key === ' ' || e.key === 'Enter') {
+					e.preventDefault();
+					setPathname(to as string);
+					// navigate();
+				}
+			}}
+		>
 			{children}
-		</Link>
+		</Button>
 	);
 };

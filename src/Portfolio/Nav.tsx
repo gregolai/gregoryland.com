@@ -32,7 +32,7 @@ export const Nav = ({ currentScreen }) => {
 						<PageLink
 							key={s.id}
 							as={Text.BodyMedium}
-							borderRight={isActive && '2px solid black'}
+							borderRight={`2px solid ${isActive ? 'black' : 'transparent'}`}
 							justifyContent="flex-end"
 							py={space._1}
 							pl={space._5}
