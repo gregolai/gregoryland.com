@@ -17,6 +17,13 @@ const LangDivider = () => (
 	</Text.BodyMedium>
 );
 
+const List = ({ children }) => <Ul>{children}</Ul>;
+const ListItem = ({ children }) => (
+	<Li>
+		<Text.BodyBook>{children}</Text.BodyBook>
+	</Li>
+);
+
 export const Resume = (props: React.ComponentProps<typeof Box>) => (
 	<Box
 		backgroundColor="white"
@@ -81,146 +88,112 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 		{/* BODY */}
 		<Box px={space._5} pt={space._5}>
 			<Job where="Squarespace" from="May 2017" to="January 2021" role="Software Engineer">
-				<Ul>
-					<Li>
-						<Text.BodyBook>
-							Used TypeSript, JavaScript, NPM, React, and React-Native
-						</Text.BodyBook>
-						<Text.BodyBook>L3 Engineer - Design Platform team</Text.BodyBook>
-						<Text.BodyBook>
-							Focus on preventing breaking changes by encouraging unit tests with Jest and
-							integration tests with Cypress/Puppeteer
-						</Text.BodyBook>
-						<Text.BodyBook>Style guide creation and documentation using Gatsby</Text.BodyBook>
-						<Text.BodyBook>Multi-package NPM project with Lerna</Text.BodyBook>
-						<Text.BodyBook>Cross-team collaboration and package management</Text.BodyBook>
-						<Text.BodyBook>
-							UX, including accessibility, intuitive controls, and focus on user experience
-						</Text.BodyBook>
-						<Text.BodyBook>Tech debt incorporated it into weekly tasks</Text.BodyBook>
-						<Text.BodyBook>
-							Test-driven development used for refactoring via codemods and code migration
-							strategies
-						</Text.BodyBook>
-						<Text.BodyBook>Build tool configuration and automation</Text.BodyBook>
-						<Text.BodyBook>
-							Part of a collaborated effort to expand our deeply integrated desktop CMS to
-							iOS/Android/mobile web. Used react-native and iOS/Android emulators.
-						</Text.BodyBook>
-						<Text.BodyBook>
-							Tradeoffs beween simplicity and flexibility, composition patterns, exposing an
-							intuitive API
-						</Text.BodyBook>
-					</Li>
-				</Ul>
+				<List>
+					<ListItem>Used TypeSript, JavaScript, NPM, React, and React-Native</ListItem>
+					<ListItem>L3 Engineer - Design Platform team</ListItem>
+					<ListItem>
+						Focus on preventing breaking changes by encouraging unit tests with Jest and
+						integration tests with Cypress/Puppeteer
+					</ListItem>
+					<ListItem>Style guide creation and documentation using Gatsby</ListItem>
+					<ListItem>Multi-package NPM project with Lerna</ListItem>
+					<ListItem>Cross-team collaboration and package management</ListItem>
+					<ListItem>
+						UX, including accessibility, intuitive controls, and focus on user experience
+					</ListItem>
+					<ListItem>Tech debt incorporated it into weekly tasks</ListItem>
+					<ListItem>
+						Test-driven development used for refactoring via codemods and code migration
+						strategies
+					</ListItem>
+					<ListItem>Build tool configuration and automation</ListItem>
+					<ListItem>
+						Part of a multi-team effort to expand our deeply integrated desktop CMS to
+						iOS/Android/mobile web for our customers. Used react-native and iOS/Android emulators.
+					</ListItem>
+					<ListItem>
+						Managed tradeoffs beween simplicity and flexibility, composition patterns, exposing an
+						intuitive API
+					</ListItem>
+					<ListItem>
+						Learned humbleness, importance of a well-thought API, using open-source code where
+						appropriate, development cycle completion, feature migration, test quality and code
+						coverage, teamwork, and writing manageable pull requests
+					</ListItem>
+				</List>
 			</Job>
 			<Job where="Agorafy" from="December 2016" to="May 2017" role="Frontend Engineer">
-				<Ul>
-					<Li>
-						<Text.BodyBook>
-							Used JavaScript, React+Redux, to collaborate with our backend engineers in
-							creating a REST API for our project needs
-						</Text.BodyBook>
-						<Text.BodyBook>
-							Led a small 3-person team using modern tech to build a CMS frontend for
-							real-estate listings. Users could search and filter through a variety of real
-							estate properties
-						</Text.BodyBook>
-						<Text.BodyBook>Company went bankrupt; stopped paying its employees</Text.BodyBook>
-					</Li>
-					<Li>
-						<Text.BodyBook>
-							Implementing new technologies at the time, such as React + Redux.
-						</Text.BodyBook>
-					</Li>
-				</Ul>
+				<List>
+					<ListItem>
+						Collaborated with our backend engineers to create a REST API for our real-estate
+						listing project
+					</ListItem>
+					<ListItem>
+						Led a 3-person team using JS/React+Redux to build a CMS frontend. Users could search
+						and filter through a variety of real estate properties
+					</ListItem>
+					<ListItem>
+						Agorafy went bankrupt and stopped paying its employees, so we had to leave
+					</ListItem>
+				</List>
 			</Job>
 			<Job where="YouVisit" from="January 2015" to="April 2016" role="Full-stack Engineer">
-				<Ul>
-					<Li>
-						<Text.BodyBook>Used PHP, MySQL, HTML, CSS, and JavaScript/jQuery</Text.BodyBook>
-						<Text.BodyBook>
-							Solution-oriented projects with an emphasis on building it fast, versus properly
-							incrementally refactoring
-						</Text.BodyBook>
-						<Text.BodyBook>
-							Hybrid app development and testing for both mobile and desktop systems using
-							JavaScript, PHP, MySQL, and Node. Used an MVC back-end with a REST API and minimal
-							unit testing.
-						</Text.BodyBook>
-						<Text.BodyBook>
-							Mobile JavaScript GPS API, data collection, and real-time visualization of app
-							users to our clients. Batched Node requests that were periodically inserted into
-							our database. Used the Google Maps API to view campus paths and tour hotspots.
-						</Text.BodyBook>
-						<Text.BodyBook>Developed and maintained CMS features for our clients</Text.BodyBook>
-					</Li>
-					<Li>
-						<Text.BodyBook>
-							Wrote a project tracking system in our CMS to track the stages of tour production.
-						</Text.BodyBook>
-					</Li>
-					<Li>
-						<Text.BodyBook>
-							Organized large-scale analytics of site visitor data into useful formats for our
-							clients to download.
-						</Text.BodyBook>
-					</Li>
-					<Li>
-						<Text.BodyBook>
-							Worked on embedding tours into 3rd party websites using JavaScript with JSONP to
-							load iframe settings.
-						</Text.BodyBook>
-					</Li>
-					<Li>
-						<Text.BodyBook>
-							Coordinated with design, sales, and marketing to implement A/B testing with a
-							massive redesign and refactor for our visitor registration form, using jQuery,
-							AJAX, PHP, and MySQL.
-						</Text.BodyBook>
-					</Li>
-					<Li>
-						<Text.BodyBook>
-							Daily standups, Jira, and git workflow for tasks, code reviews, QA, staging, and
-							release.
-						</Text.BodyBook>
-					</Li>
-				</Ul>
+				<List>
+					<ListItem>
+						Solution-oriented projects using PHP/MySQL/HTML/CSS/JS/jQuery/Node with an emphasis on
+						building features fast
+					</ListItem>
+					<ListItem>
+						Hybrid app development and testing for both mobile and desktop. Used a custom-built
+						MVC backend with a REST API and minimal unit testing.
+					</ListItem>
+					<ListItem>Developed and maintained various CMS features for our clients</ListItem>
+					<ListItem>
+						Built a project tracking system in our CMS to track the stages of tour production.
+					</ListItem>
+					<ListItem>Built a custom A/B testing library</ListItem>
+					<ListItem>
+						Used the JS geolocation API to aggregate location data that helped our clients
+						visualize popular paths and hotspots on their campuses. Used Node to batch/buffer
+						requests that were periodically inserted into our MySQL database. The Google Maps API
+						was used within our CMS to view hotspots and individual paths.
+					</ListItem>
+					<ListItem>
+						Organized large-scale analytics of site visitor data into useful formats for our
+						clients to download.
+					</ListItem>
+					<ListItem>
+						Worked on embedding tours into 3rd party websites using JavaScript with JSONP to load
+						iframe settings.
+					</ListItem>
+				</List>
 			</Job>
+			{/* DONE! */}
 			<Job
 				where="M & M Environmental"
 				from="August 2014"
 				to="December 2014"
 				role="Full-stack Engineer (Entry-level)"
 			>
-				<Ul>
-					<Li>
-						<Text.BodyBook>Used PHP, MySQL, HTML, CSS, and JavaScript</Text.BodyBook>
-						<Text.BodyBook>
-							Built a calendar and scheduling application using PHP, MySQL/MSSQL, and JavaScript
-							for managing technician availability.
-						</Text.BodyBook>
-					</Li>
-					<Li>
-						<Text.BodyBook>
-							Implemented a Vehicle GPS viewer using Google Maps API with JavaScript for
-							monitoring technician proximity to their scheduled appointments.
-						</Text.BodyBook>
-					</Li>
-					<Li>
-						<Text.BodyBook>
-							Created a Yelp review scraper that would email our recent Yelp reviews to our
-							staff.
-						</Text.BodyBook>
-					</Li>
-					<Li>
-						<Text.BodyBook>
-							Built an admin portal using JavaScript/Auth0 single-sign-on through Google. Used
-							Wordpress for viewing work shift calendars, technician locations, and Yelp
-							reviews.
-						</Text.BodyBook>
-					</Li>
-				</Ul>
+				<List>
+					<ListItem>
+						Built a cool-looking calendar and scheduling application using PHP/MySQL/JS for
+						managing technician availability.
+					</ListItem>
+					<ListItem>
+						Built a Vehicle GPS viewer using the Google Maps API for monitoring technician
+						proximity to their scheduled appointments.
+					</ListItem>
+					<ListItem>Built a Yelp review scraper and fancy frontend.</ListItem>
+					<ListItem>
+						Built an admin portal using Auth0 Google single-sign-on. Used Wordpress for viewing
+						work shift calendars, technician locations, and Yelp reviews.
+					</ListItem>
+					<ListItem>
+						Set up CRON tasks that would send aggregated morning emails to our staff about recent
+						Yelp reviews and shift calendars.
+					</ListItem>
+				</List>
 			</Job>
 		</Box>
 	</Box>
