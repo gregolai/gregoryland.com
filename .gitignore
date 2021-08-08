@@ -1,5 +1,5 @@
 node_modules
 public/js
 
-# prod only
+# prod server only
 restart.sh
