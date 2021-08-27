@@ -75,8 +75,7 @@ export const routes = [
 			<Screen
 				background={<TitleImage />}
 				css={{
-					height: '100vh',
-					minHeight: '550px'
+					minHeight: '100vh  '
 				}}
 			>
 				<TitleScreen />
@@ -117,7 +116,7 @@ export const routes = [
 				center
 				css={{
 					minHeight: '100vh',
-					py: space._6
+					pb: space._6
 				}}
 			>
 				<ResumeScreen />

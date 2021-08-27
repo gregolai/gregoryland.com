@@ -23,23 +23,56 @@ const Polaroid = () => (
 	</Box>
 );
 
+const BigBlock = ({ children, mt }) => (
+	<Box background="black" p={space._4} mt={mt}>
+		<Text.BodyBook color="white">{children}</Text.BodyBook>
+	</Box>
+);
+
 export const TitleScreen = () => {
 	return (
-		<Flex p={space._8}>
+		<Flex px={space._8} pt={space._8} pb={space._6}>
 			<Polaroid />
 			<Box pl="400px" flex="1">
-				<Text.MegaTitle display="inline-block" background="black" p={space._5} color="white">
+				<Text.MegaTitle
+					display="inline-block"
+					background="black"
+					px={space._4}
+					pb={space._2}
+					pt={space._0}
+					color="white"
+				>
 					Hey, I'm Greg
 				</Text.MegaTitle>
-				<Box background="black" p={space._5} mt={space._6}>
-					<Text.BodyBook color="white">
-						I've created this website from the ground-up. It's both personal and professional,
-						because life's too short to define an identity as just a career. Programming is fun
-						and it should stay that way. I've been programming since before 2005. My goal is to
-						open up and to express myself, which is something I haven't been great at in the past.
-						I've come to some realizations in life by connecting with my spiritual side.
-					</Text.BodyBook>
-				</Box>
+
+				<BigBlock mt={space._4}>
+					I've created this website from the ground-up. It's both personal and professional (I'm
+					just being me!). Programming is fun and I firmly believe it should stay that way. I've
+					been programming since before 2005. My goal is to open up and to express myself with
+					empathy, which I believe is the part of the solution to the political-cultural divide
+					we're seeing in 2021 America. Things aren't what they seem and there ARE solutions that
+					require compromise, skills I've learnt throughout my years as a software developer. If
+					people could only understand that I am you and you are me, love and empathy will spread.
+				</BigBlock>
+				<BigBlock mt={space._4}>
+					Premature optimization is evil. I've realized I'd much rather release a minimum viable
+					product (MVP) rather than prematurely optimize and obsess over scope-creep, behaviors I
+					used to do, only to find myself cycling through the 7 stages of grief as I was unable to
+					finish my projects. Optimization is definitely necessary, but should be planned for ahead
+					of time within the codebase architecture, not to be implemented immediately. This, also,
+					leads to unreadable code, such as the famous{' '}
+					{
+						<Box
+							as="a"
+							background="white"
+							href="https://en.wikipedia.org/wiki/Fast_inverse_square_root#Overview_of_the_code"
+						>
+							Fast Inverse Square Root
+						</Box>
+					}{' '}
+					(God bless John Carmack). Brilliant!...as long as it's done after the development phase,
+					but prior to a production release (and has added plenty of unit tests, of course).
+				</BigBlock>
 				<Box pl={space._5} mt={space._2}>
 					<Lang>TypeScript</Lang>
 					<LangDivider />

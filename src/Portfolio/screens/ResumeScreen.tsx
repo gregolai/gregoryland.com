@@ -29,7 +29,7 @@ const printResume = () => {
 
 const PrintButton = (props: React.ComponentProps<typeof Box>) => (
 	<Box as="button" py={space._1} px={space._4} alignSelf="center" onClick={printResume} {...props}>
-		Print My Resume
+		Print My Resume / Save as PDF
 	</Box>
 );
 

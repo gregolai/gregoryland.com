@@ -55,8 +55,7 @@ export const ProjectsScreen = () => {
 					images: [
 						{
 							title: 'SNEK',
-							url: 'img/projects/snek1.png',
-							thumb: 'img/projects/thumbs/snek1.jpg'
+							url: 'projects/snek1.png'
 						}
 					],
 					items: [
@@ -81,13 +80,11 @@ canvas element.`
 					images: [
 						{
 							title: 'A slick UI',
-							url: 'img/projects/html5-player1.png',
-							thumb: 'img/projects/thumbs/html5-player1.jpg'
+							url: 'projects/html5-player1.png'
 						},
 						{
 							title: 'Fullscreen with playhead and buffer',
-							url: 'img/projects/html5-player2.png',
-							thumb: 'img/projects/thumbs/html5-player2.jpg'
+							url: 'projects/html5-player2.png'
 						}
 					],
 					items: [
@@ -111,8 +108,7 @@ playhead scrubbing (dragging the playhead), video buffering, fullscreen capabili
 					images: [
 						{
 							title: 'Pretty colors',
-							url: 'img/projects/starfield-js-1.png',
-							thumb: 'img/projects/thumbs/starfield-js-1.jpg'
+							url: 'projects/starfield-js-1.png'
 						}
 					],
 					items: [
@@ -137,13 +133,11 @@ dead stars into new ones using a Star pool.`
 					images: [
 						{
 							title: 'Yes, me-lord! Five units are selected, but three peasants are in the active group.',
-							url: 'img/projects/war1.png',
-							thumb: 'img/projects/thumbs/war1.jpg'
+							url: 'projects/war1.png'
 						},
 						{
 							title: 'Units moving, Debug mode - Quad tree, grid coords, unit IDs',
-							url: 'img/projects/war2.png',
-							thumb: 'img/projects/thumbs/war2.jpg'
+							url: 'projects/war2.png'
 						}
 					],
 					items: [
@@ -172,8 +166,7 @@ game I wrote is very incomplete and has several of bugs...you are warned! :P
 					images: [
 						{
 							title: 'Two 2D inputs; One WebGL output',
-							url: 'img/projects/masking.png',
-							thumb: 'img/projects/thumbs/masking.jpg'
+							url: 'projects/masking.png'
 						}
 					],
 					items: [
@@ -197,33 +190,27 @@ the second is the shadow mask, and the third is a composite by multiplying each.
 					images: [
 						{
 							title: 'Command listing (fake ads)',
-							url: 'img/projects/cmdtool1.png',
-							thumb: 'img/projects/thumbs/cmdtool1.jpg'
+							url: 'projects/cmdtool1.png'
 						},
 						{
 							title: 'Editor',
-							url: 'img/projects/cmdtool2.png',
-							thumb: 'img/projects/thumbs/cmdtool2.jpg'
+							url: 'projects/cmdtool2.png'
 						},
 						{
 							title: 'Command page',
-							url: 'img/projects/cmdtool3.png',
-							thumb: 'img/projects/thumbs/cmdtool3.jpg'
+							url: 'projects/cmdtool3.png'
 						},
 						{
 							title: "Multiple command windows. Cool! (After 9 years that's still my windows background)",
-							url: 'img/projects/cmdtool4.png',
-							thumb: 'img/projects/thumbs/cmdtool4.jpg'
+							url: 'projects/cmdtool4.png'
 						},
 						{
 							title: 'Version selector',
-							url: 'img/projects/cmdtool5.png',
-							thumb: 'img/projects/thumbs/cmdtool5.jpg'
+							url: 'projects/cmdtool5.png'
 						},
 						{
 							title: 'Version comparison',
-							url: 'img/projects/cmdtool6.png',
-							thumb: 'img/projects/thumbs/cmdtool6.jpg'
+							url: 'projects/cmdtool6.png'
 						}
 					],
 					items: [
@@ -255,8 +242,7 @@ the second is the shadow mask, and the third is a composite by multiplying each.
 					images: [
 						{
 							title: 'Star Field',
-							url: 'img/projects/starfield-as-1.png',
-							thumb: 'img/projects/thumbs/starfield-as-1.jpg'
+							url: 'projects/starfield-as-1.png'
 						}
 					],
 					items: [
@@ -283,13 +269,11 @@ the second is the shadow mask, and the third is a composite by multiplying each.
 					images: [
 						{
 							title: 'Lowest level-of-detail',
-							url: 'img/projects/ico-lod0-1.png',
-							thumb: 'img/projects/thumbs/ico-lod0-1.jpg'
+							url: 'projects/ico-lod0-1.png'
 						},
 						{
 							title: 'Highest level-of-detail',
-							url: 'img/projects/ico-lod5-1.png',
-							thumb: 'img/projects/thumbs/ico-lod5-1.jpg'
+							url: 'projects/ico-lod5-1.png'
 						}
 					],
 					items: [
@@ -318,13 +302,11 @@ be much easier. I really had fun with the math on this project, though.
 					images: [
 						{
 							title: 'Cat, Shrubbery, House',
-							url: 'img/projects/catgame1.png',
-							thumb: 'img/projects/thumbs/catgame1.jpg'
+							url: 'projects/catgame1.png'
 						},
 						{
 							title: 'Cat or minecraft?',
-							url: 'img/projects/catgame2.png',
-							thumb: 'img/projects/thumbs/catgame2.jpg'
+							url: 'projects/catgame2.png'
 						}
 					],
 					items: [
@@ -363,7 +345,7 @@ super exciting.
 					</Flex>
 					{proj.images && (
 						<Flex alignItems="stretch">
-							{proj.images.map(({ title, url, thumb }, i) => (
+							{proj.images.map(({ title, url }, i) => (
 								<Flex
 									key={i}
 									alignItems="center"
@@ -373,8 +355,11 @@ super exciting.
 									p={space._4}
 								>
 									<Text.Label>{title}</Text.Label>
-									<a href={url} style={{ display: 'block' }}>
-										<img src={thumb} style={{ display: 'block', height: '120px' }} />
+									<a href={`//static.gregoryland.com/${url}`} style={{ display: 'block' }}>
+										<img
+											src={`//static.gregoryland.com/${url}?w=128`}
+											style={{ display: 'block', height: '120px' }}
+										/>
 									</a>
 								</Flex>
 							))}

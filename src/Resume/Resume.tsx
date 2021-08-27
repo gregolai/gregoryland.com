@@ -75,7 +75,7 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 					<HeaderContact label="Website" text="gregoryland.com" />
 				</Box>
 				{/* EDUCATION */}
-				<Box border="2px solid black" p={space._1}>
+				<Box border="2px solid black">
 					<Text.Subtitle>B.S. Computer Science</Text.Subtitle>
 					<Text.Label>California State University, Long Beach</Text.Label>
 					<Text.Label pb={space._4}>Class of 2009</Text.Label>
@@ -95,6 +95,7 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 						of our product. This included the creation of a style guide, compositional patterns, a
 						solid API, and documentation using Gatsby.
 					</ListItem>
+					<ListItem>Premature optimization is a cult-like plague.</ListItem>
 					<ListItem>
 						Focus on preventing breaking changes by encouraging unit tests with Jest and
 						integration tests with Cypress/Puppeteer.

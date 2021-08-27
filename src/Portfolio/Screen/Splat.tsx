@@ -26,7 +26,7 @@ export const Splat: React.FC<Props> = ({
 	<Box
 		position="absolute"
 		transform="translate(-50%, -50%)"
-		zIndex={overlay && '2'}
+		zIndex={overlay ? '2' : '-1'}
 		style={{
 			left: x,
 			top: y,
