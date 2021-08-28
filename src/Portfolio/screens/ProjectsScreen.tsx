@@ -358,7 +358,7 @@ super exciting.
 									<Box as="a" href={`//static.gregoryland.com/${url}`} display="block">
 										<Box
 											as="img"
-											src={`//static.gregoryland.com/${url}?w=128`}
+											src={`//static.gregoryland.com/${url}?w=256`}
 											display="block"
 											height="120px"
 										/>
