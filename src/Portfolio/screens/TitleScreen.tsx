@@ -46,21 +46,16 @@ export const TitleScreen = () => {
 				</Text.MegaTitle>
 
 				<BigBlock mt={space._4}>
-					I've created this website from the ground-up. It's both personal and professional (I'm
-					just being me!). Programming is fun and I firmly believe it should stay that way. I've
-					been programming since before 2005. My goal is to open up and to express myself with
-					empathy, which I believe is the part of the solution to the political-cultural divide
-					we're seeing in 2021 America. Things aren't what they seem and there ARE solutions that
-					require compromise, skills I've learnt throughout my years as a software developer. If
-					people could only understand that I am you and you are me, love and empathy will spread.
+					I've created this website from the ground-up. It's both personal and professional, y'all!
+					Programming is fun and I firmly believe it should stay that way. I've been writing code
+					since before 2005, even dipping my feet into developing custom Warcraft III mods. I've
+					humbled myself throughout the years.
 				</BigBlock>
 				<BigBlock mt={space._4}>
-					Premature optimization is evil. I've realized I'd much rather release a minimum viable
-					product (MVP) rather than prematurely optimize and obsess over scope-creep, behaviors I
-					used to do, only to find myself cycling through the 7 stages of grief as I was unable to
-					finish my projects. Optimization is definitely necessary, but should be planned for ahead
-					of time within the codebase architecture, not to be implemented immediately. This, also,
-					leads to unreadable code, such as the famous{' '}
+					A big struggle of mine is premature optimization of code. I'm aware that it's useful
+					during specific scenarios, but mostly irrelevant (depending on the context). It can get in
+					the way of releasing the first iteration of a product. Optimization should come later.
+					Optimizing too early can lead to unreadable code, such as the famous{' '}
 					{
 						<Box
 							as="a"
@@ -70,8 +65,7 @@ export const TitleScreen = () => {
 							Fast Inverse Square Root
 						</Box>
 					}{' '}
-					(God bless John Carmack). Brilliant!...as long as it's done after the development phase,
-					but prior to a production release (and has added plenty of unit tests, of course).
+					(God bless John Carmack). Brilliant!
 				</BigBlock>
 				<Box pl={space._5} mt={space._2}>
 					<Lang>TypeScript</Lang>
