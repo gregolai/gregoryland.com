@@ -2,6 +2,7 @@ import React from 'react';
 import { Job } from './Job';
 import { Text, Box, Ul, Li, Flex } from './primitives';
 import { space } from './tokens';
+import { Squarespace, MMEnvironmental } from '../logos';
 
 const HeaderContact = ({ label, text }) => (
 	<Flex alignItems="center" justifyContent="space-between">
@@ -44,12 +45,12 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 		}}
 	>
 		{/* HEADER */}
-		<Flex justifyContent="space-between" pb={space._5}>
+		<Flex justifyContent="space-between">
 			<Box>
 				<Text.MegaTitle>Gregory Dalton</Text.MegaTitle>
 
 				{/* SKILLS */}
-				<Box pt={space._6} pl={space._5}>
+				<Box pt={space._4} pl={space._4}>
 					<Lang>TypeScript</Lang>
 					<LangDivider />
 					<Lang>JavaScript</Lang>
@@ -62,46 +63,56 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 				</Box>
 			</Box>
 
-			<Flex
-				flex="1"
-				pl={space._9}
-				flexDirection="column"
-				justifyContent="sapce-between"
-				maxWidth="352px"
-			>
+			<Flex flex="1" flexDirection="column" justifyContent="sapce-between" maxWidth="352px">
 				{/* CONTACT */}
 				<Box pb={space._2}>
 					<HeaderContact label="Email" text="gregolai@gmail.com" />
 					<HeaderContact label="Website" text="gregoryland.com" />
 				</Box>
 				{/* EDUCATION */}
-				<Box border="2px solid black">
+				<Box borderTop="2px solid black" pt={space._2}>
 					<Text.Subtitle>B.S. Computer Science</Text.Subtitle>
 					<Text.Label>California State University, Long Beach</Text.Label>
 					<Text.Label pb={space._4}>Class of 2009</Text.Label>
-					<Text.Label>Programming team</Text.Label>
-					<Text.Label>Tau Beta Pi Engineering Honor Society</Text.Label>
+					<Text.Label>- Programming team</Text.Label>
+					<Text.Label>- Tau Beta Pi Engineering Honor Society</Text.Label>
 				</Box>
 			</Flex>
 		</Flex>
 
 		{/* BODY */}
-		<Box px={space._5} pt={space._5}>
-			<Job where="Squarespace" from="May 2017" to="January 2021" role="Software Engineer">
+		<Box pt={space._5}>
+			<Job
+				where="Squarespace"
+				from="May 2017"
+				to="January 2021"
+				role="Software Engineer"
+				topBorder={false}
+			>
 				<List>
 					<ListItem>
-						As a proud L3 Engineer on the Design Platform team, we build React/React-Native
-						components and tooling that were visually and behaviorally consistent across all areas
-						of our product. This included the creation of a style guide, compositional patterns, a
-						solid API, and documentation using Gatsby.
+						A proud L3 Engineer of the new Design Platform team. I was one of the 4 initial
+						members of the team, which grew to about 15 engineers and designers as the years
+						progressed. We designed and engineered React and React-Natiev components that were
+						visually and behaviorally consistent with each other. A Squarespace style guide and
+						theming system evolved over time.
 					</ListItem>
-					<ListItem>Premature optimization is a cult-like plague.</ListItem>
 					<ListItem>
-						Focus on preventing breaking changes by encouraging unit tests with Jest and
-						integration tests with Cypress/Puppeteer.
+						Involved in the development of a Squarespace-wide style guide, compositional patterns,
+						a solid API, and high-quality internal documentation using Gatsby.
 					</ListItem>
-					<ListItem>Cross-team collaboration and NPM package management.</ListItem>
-					<ListItem>Focus on UX, including accessibility and intuitive design.</ListItem>
+					<ListItem>
+						Learned to resist premature optimization in favor or readability. Occasionally
+						gathered performance metrics that supported future optimizations.
+					</ListItem>
+					<ListItem>
+						Focus on code integrity by encouraging unit tests with Jest and integration tests with
+						Cypress/Puppeteer.
+					</ListItem>
+					<ListItem>
+						Cross-team collaboration, NPM package management, UX, accessibility, and intuitive
+						design.
+					</ListItem>
 					<ListItem>Tech debt incorporated it into weekly tasks.</ListItem>
 					<ListItem>
 						Test-driven development used for refactoring via codemods and code migration
@@ -162,7 +173,6 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 					</ListItem>
 				</List>
 			</Job>
-			{/* DONE! */}
 			<Job
 				where="M & M Environmental"
 				from="August 2014"

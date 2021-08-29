@@ -2,6 +2,7 @@ import { Box } from 'pu2';
 import React from 'react';
 import { Flex } from '../../core/primitives';
 import { space } from '../../core/tokens';
+// import { Agorafy, MMEnvironmental, Squarespace, YouVisit } from '../../logos';
 import { Resume } from '../../Resume/Resume';
 
 let printing = false;
@@ -39,6 +40,10 @@ export const ResumeScreen = () => {
 			<PrintButton mb={space._4} />
 			<Resume zIndex="1" minWidth="900px" maxWidth="1000px" />
 			<PrintButton mt={space._4} />
+			{/* <MMEnvironmental height="50px" />
+			<YouVisit height="50px" />
+			<Agorafy height="50px" />
+			<Squarespace height="50px" /> */}
 		</Flex>
 	);
 };

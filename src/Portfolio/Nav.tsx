@@ -4,9 +4,9 @@ import { space } from '../core/tokens';
 import { PageLink } from '../Router/NewRouter3';
 import { routes } from './routes';
 
-const SocialLink = ({ name, url }) => (
-	<Text.BodyMedium as="a" href={url} textAlign="right" pr={space._3} color={null} display="block">
-		{name}
+const SocialLink = ({ children, ...props }) => (
+	<Text.BodyMedium as="a" textAlign="right" pr={space._3} color={null} display="block" {...props}>
+		{children}
 	</Text.BodyMedium>
 );
 
@@ -53,8 +53,24 @@ export const Nav = ({ currentScreen }) => {
 					);
 				})}
 				<Box pt={space._4}>
-					<SocialLink key="ig" name="Instagram" url="https://www.instagram.com/gregolai/" />
-					<SocialLink key="li" name="LinkedIn" url="https://www.linkedin.com/in/gregolai/" />
+					<SocialLink
+						href="https://www.instagram.com/gregolai/"
+						title="Pics of my life from time-to-time. Looking to be hired by an employer that enjoys non-corporate, organic memes and isn't edgy or a SJW."
+					>
+						Instagram
+					</SocialLink>
+					<SocialLink
+						href="https://www.linkedin.com/in/gregolai/"
+						title="Just another resume site that I'll occasionally update."
+					>
+						LinkedIn
+					</SocialLink>
+					<SocialLink
+						href="https://github.com/gregolai"
+						title="Too busy enjoying life to contribute as often as most. Life's precious. More power to the contibutors."
+					>
+						GitHub
+					</SocialLink>
 				</Box>
 			</Gradient>
 		</Flex>
