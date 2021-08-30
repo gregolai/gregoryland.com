@@ -11,23 +11,34 @@ module.exports = {
 	context: path.resolve(__dirname),
 	mode: isDev ? 'development' : 'production',
 	devtool: isDev ? 'cheap-module-source-map' : false,
+	target: 'web',
 	node: {
 		// fs: 'empty'
 	},
 	entry: {
+		// app: path.resolve(__dirname, 'src/App.tsx')
 		main: path.resolve(__dirname, 'src/main.ts')
 	},
-	externals: {
-		react: 'React',
-		'react-dom': 'ReactDOM'
-	},
+	externals: isDev
+		? {
+				react: 'React',
+				'react-dom': 'ReactDOM'
+		  }
+		: undefined,
 	module: {
 		strictExportPresence: true,
 		rules: [
 			{
 				test: /\.(ts|tsx)$/,
 				include: path.resolve(__dirname, 'src'),
-				use: [{ loader: 'ts-loader' }]
+				use: [
+					{
+						loader: 'ts-loader',
+						options: {
+							configFile: 'tsconfig.json'
+						}
+					}
+				]
 			},
 			{
 				test: /\.md$/i,
@@ -39,7 +50,8 @@ module.exports = {
 		path: path.resolve(__dirname, 'public'),
 		publicPath: '/',
 		filename: 'js/[name].js',
-		chunkFilename: 'js/[name].chunk.js'
+		// chunkFilename: 'js/[name].chunk.js'
+		globalObject: 'this'
 	},
 	plugins: [
 		new webpack.DefinePlugin({
@@ -47,6 +59,6 @@ module.exports = {
 		})
 	],
 	resolve: {
-		extensions: ['.ts', '.tsx', '.js', '.jsx']
+		extensions: ['.ts', '.tsx', '.js']
 	}
 };
