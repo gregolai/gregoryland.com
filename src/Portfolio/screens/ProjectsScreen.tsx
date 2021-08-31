@@ -201,7 +201,7 @@ the second is the shadow mask, and the third is a composite by multiplying each.
 							url: 'projects/cmdtool3.png'
 						},
 						{
-							title: "Multiple command windows. Cool! (After 9 years that's still my windows background)",
+							title: 'Multiple command windows. Cool!',
 							url: 'projects/cmdtool4.png'
 						},
 						{
@@ -305,7 +305,7 @@ be much easier. I really had fun with the math on this project, though.
 							url: 'projects/catgame1.png'
 						},
 						{
-							title: 'Cat or minecraft?',
+							title: 'Minecraft in cat game?',
 							url: 'projects/catgame2.png'
 						}
 					],
@@ -344,18 +344,24 @@ super exciting.
 						)}
 					</Flex>
 					{proj.images && (
-						<Flex alignItems="stretch">
+						<Flex flexWrap="wrap">
 							{proj.images.map(({ title, url }, i) => (
 								<Flex
 									key={i}
 									alignItems="center"
 									flexDirection="column"
-									justifyContent="space-between"
-									maxWidth="300px"
+									justifyContent="flex-end"
 									p={space._4}
 								>
-									<Text.Label>{title}</Text.Label>
-									<Box as="a" href={`//static.gregoryland.com/${url}`} display="block">
+									<Text.Label maxWidth="200px" textAlign="center">
+										{title}
+									</Text.Label>
+									<Box
+										as="a"
+										href={`//static.gregoryland.com/${url}`}
+										display="block"
+										pt={space._1}
+									>
 										<Box
 											as="img"
 											src={`//static.gregoryland.com/${url}?w=256`}
@@ -369,7 +375,7 @@ super exciting.
 					)}
 					<Box pb={space._6}>
 						{proj.items.map((item, i2) => (
-							<Box key={i2} pl={space._6} pt={space._1}>
+							<Box key={i2} pl={space._4} pt={space._1}>
 								{compiler(item, {
 									overrides: {
 										p: {

@@ -55,19 +55,19 @@ export const Nav = ({ currentScreen }) => {
 				<Box pt={space._4}>
 					<SocialLink
 						href="https://www.instagram.com/gregolai/"
-						title="Pics of my life from time-to-time. Looking to be hired by an employer that enjoys non-corporate, organic memes and isn't edgy or a SJW."
+						title="I'm pretty open with posting pics of my life."
 					>
 						Instagram
 					</SocialLink>
 					<SocialLink
 						href="https://www.linkedin.com/in/gregolai/"
-						title="Just another resume site that I'll occasionally update."
+						title="I don't update this as often as I should."
 					>
 						LinkedIn
 					</SocialLink>
 					<SocialLink
 						href="https://github.com/gregolai"
-						title="Too busy enjoying life to contribute as often as most. Life's precious. More power to the contibutors."
+						title="I don't contribute as often as I should."
 					>
 						GitHub
 					</SocialLink>
