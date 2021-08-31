@@ -51,22 +51,6 @@ export const TitleScreen = () => {
 					since before 2005, even dipping my feet into developing custom Warcraft III mods. I've
 					humbled myself throughout the years.
 				</BigBlock>
-				<BigBlock mt={space._4}>
-					A big struggle of mine is premature optimization of code. I'm aware that it's useful
-					during specific scenarios, but mostly irrelevant (depending on the context). It can get in
-					the way of releasing the first iteration of a product. Optimization should come later.
-					Optimizing too early can lead to unreadable code, such as the famous{' '}
-					{
-						<Box
-							as="a"
-							background="white"
-							href="https://en.wikipedia.org/wiki/Fast_inverse_square_root#Overview_of_the_code"
-						>
-							Fast Inverse Square Root
-						</Box>
-					}{' '}
-					(God bless John Carmack). Brilliant!
-				</BigBlock>
 				<Box pl={space._5} mt={space._2}>
 					<Lang>TypeScript</Lang>
 					<LangDivider />
