@@ -63,7 +63,7 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 				</Box>
 			</Box>
 
-			<Flex flex="1" flexDirection="column" justifyContent="sapce-between" maxWidth="352px">
+			<Box flex="1" pl={space._9}>
 				{/* CONTACT */}
 				<Box pb={space._2}>
 					<HeaderContact label="Email" text="gregolai@gmail.com" />
@@ -77,11 +77,11 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 					<Text.Label>- Programming team</Text.Label>
 					<Text.Label>- Tau Beta Pi Engineering Honor Society</Text.Label>
 				</Box>
-			</Flex>
+			</Box>
 		</Flex>
 
 		{/* BODY */}
-		<Box pt={space._5}>
+		<Box pt={space._6}>
 			<Job where="Squarespace" from="May 2017" to="January 2021" role="Software Engineer">
 				<List>
 					<ListItem>

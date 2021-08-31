@@ -20,7 +20,7 @@ const Polaroid = () => (
 		boxShadow="inset 2px 2px 6px rgb(0,0,0,0.4), 4px 4px 10px rgba(0,0,0,0.5)"
 	>
 		<img src="//static.gregoryland.com/gregory.jpeg?w=300" width="300px" />
-		<Text.BodyMedium textAlign="right">With love, from Austin.</Text.BodyMedium>
+		<Text.BodyMedium textAlign="right">With love...from Austin, TX.</Text.BodyMedium>
 		<Text.BodyMedium textAlign="right">@gregolai</Text.BodyMedium>
 	</Box>
 );

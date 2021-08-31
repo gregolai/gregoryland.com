@@ -16,6 +16,8 @@ export const Job = ({ children, where, role, from, to }) => (
 				</Text.JobHeader>
 			</Box>
 		</Flex>
-		<Box p={space._5}>{children}</Box>
+		<Box pb={space._6} pt={space._4} px={space._5}>
+			{children}
+		</Box>
 	</Box>
 );

@@ -94,7 +94,7 @@ const BodyBookTabular = (() => {
 const BodyMedium = (() => {
 	const baseProps = {
 		as: 'p',
-		fontSize: '16px',
+		fontSize: '18px',
 		lineHeight: '22px',
 		fontWeight: '600'
 	};

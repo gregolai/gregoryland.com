@@ -8,8 +8,8 @@ export const Text = {
 	JobHeader: (() => {
 		const baseProps = {
 			as: 'p',
-			fontSize: '18px',
-			lineHeight: '32px',
+			fontSize: '20px',
+			lineHeight: '28px',
 			fontWeight: '600',
 			margin: '0px'
 		};
