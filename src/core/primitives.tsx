@@ -67,7 +67,7 @@ const BodyBook = (() => {
 		as: 'p',
 		fontSize: '16px',
 		lineHeight: '22px',
-		letterSpacing: '1px',
+		// letterSpacing: '1px',
 		fontWeight: '400'
 	};
 	if (__DEV__) {

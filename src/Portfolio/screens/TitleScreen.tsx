@@ -47,9 +47,9 @@ export const TitleScreen = () => {
 
 				<BigBlock mt={space._4}>
 					I've created this website from the ground-up. It's both personal and professional, y'all!
-					Programming is fun and it should stay that way. I've been writing code since before 2005,
-					even dipping my feet into developing custom video game mods and level design. I'm a humble
-					fella' who enjoys life, wherever it takes me.
+					Programming is fun and it should stay that way. I've been writing code since before 2005
+					(high school), developing custom video game mods and creating levels. I'm a humble guy who
+					enjoys life, wherever it takes me.
 				</BigBlock>
 				<Box pl={space._5} mt={space._2}>
 					<Lang>TypeScript</Lang>
