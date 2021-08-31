@@ -12,7 +12,7 @@ const LangDivider = () => (
 const Polaroid = () => (
 	<Box
 		position="absolute"
-		padding="20px 20px 80px 20px"
+		padding="20px 20px 40px 20px"
 		background="url('img/grain.png')"
 		backgroundSize="300px"
 		border={`2px solid ${palette.mineshaft}`}
@@ -20,6 +20,8 @@ const Polaroid = () => (
 		boxShadow="inset 2px 2px 6px rgb(0,0,0,0.4), 4px 4px 10px rgba(0,0,0,0.5)"
 	>
 		<img src="//static.gregoryland.com/gregory.jpeg?w=300" width="300px" />
+		<Text.BodyMedium textAlign="right">With love, from Austin.</Text.BodyMedium>
+		<Text.BodyMedium textAlign="right">@gregolai</Text.BodyMedium>
 	</Box>
 );
 
