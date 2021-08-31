@@ -82,20 +82,13 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 
 		{/* BODY */}
 		<Box pt={space._5}>
-			<Job
-				where="Squarespace"
-				from="May 2017"
-				to="January 2021"
-				role="Software Engineer"
-				topBorder={false}
-			>
+			<Job where="Squarespace" from="May 2017" to="January 2021" role="Software Engineer">
 				<List>
 					<ListItem>
-						A proud L3 Engineer of the new Design Platform team. I was one of the 4 initial
-						members of the team, which grew to about 15 engineers and designers as the years
-						progressed. We designed and engineered React and React-Native components that were
-						visually and behaviorally consistent with each other. A Squarespace style guide and
-						theming system evolved over time.
+						Level 3 Engineer of the Squarespace Design Platform team. As one of the 4 starting
+						members of the team, which grew to 15 engineers and designers over the years, we
+						engineered React and React-Native components that were visually and behaviorally
+						consistent.
 					</ListItem>
 					<ListItem>
 						Developed a Squarespace style guide, compositional patterns, an API, and high-quality
@@ -110,18 +103,18 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 						Cross-team collaboration, NPM package management, UX, accessibility, and intuitive
 						design.
 					</ListItem>
-					<ListItem>Tech debt incorporated it into weekly tasks.</ListItem>
+					<ListItem>Technical debt accounted for in weekly sprints.</ListItem>
 					<ListItem>
 						Test-driven development used for refactoring via codemods and code migration
 						strategies.
 					</ListItem>
 					<ListItem>
 						Part of a multi-team effort to expand our deeply integrated desktop CMS to
-						iOS/Android/mobile web for our customers. Used react-native and iOS/Android emulators.
+						iOS/Android/mobile web for our customers.
 					</ListItem>
-					<ListItem>Context-dependent tradeoffs beween simplicity and flexibility.</ListItem>
+					<ListItem>Tradeoffs beween simplicity and flexibility.</ListItem>
 					<ListItem>
-						Learned humbleness, importance of a well-thought API, using open-source code where
+						Humbleness, importance of a well-thought API, using open-source code where
 						appropriate, development cycle completion, feature migration, test quality and code
 						coverage, teamwork, and writing manageable pull requests.
 					</ListItem>

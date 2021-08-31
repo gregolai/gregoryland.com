@@ -75,7 +75,8 @@ export const routes = [
 			<Screen
 				background={<TitleImage />}
 				css={{
-					minHeight: '100vh  '
+					height: '100vh',
+					minHeight: '600px'
 				}}
 			>
 				<TitleScreen />

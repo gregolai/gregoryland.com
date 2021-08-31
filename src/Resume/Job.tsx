@@ -2,8 +2,8 @@ import React from 'react';
 import { Text, Box, Flex } from './primitives';
 import { space } from './tokens';
 
-export const Job = ({ children, where, role, from, to, topBorder = true }) => (
-	<Box borderTop={topBorder && '3px solid black'}>
+export const Job = ({ children, where, role, from, to }) => (
+	<Box borderTop="3px solid black">
 		<Flex justifyContent="space-between">
 			<Box>
 				<Text.JobHeader textTransform="uppercase">{role}</Text.JobHeader>
