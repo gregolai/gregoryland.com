@@ -26,32 +26,34 @@ export const Nav = ({ currentScreen }) => {
 	return (
 		<Flex flexDirection="column" position="fixed" left="0px" top="0px" height="100%" width={NAV_WIDTH}>
 			<Gradient color="rgba(255,255,255,0.95)">
-				{routes.map((s) => {
-					const isActive = s.id === value;
-					return (
-						<PageLink
-							key={s.id}
-							as={Text.BodyMedium}
-							borderRight={`2px solid ${isActive ? 'black' : 'transparent'}`}
-							justifyContent="flex-end"
-							py={space._1}
-							pl={space._5}
-							pr={space._3}
-							textDecoration="none"
-							css={{
-								':focus': {
-									textDecoration: 'underline'
-								},
-								':hover': {
-									textDecoration: 'underline'
-								}
-							}}
-							to={s.path}
-						>
-							{s.label}
-						</PageLink>
-					);
-				})}
+				<Box>
+					{routes.map((s) => {
+						const isActive = s.id === value;
+						return (
+							<PageLink
+								key={s.id}
+								as={Text.BodyMedium}
+								borderRight={`2px solid ${isActive ? 'black' : 'transparent'}`}
+								justifyContent="flex-end"
+								py={space._1}
+								pl={space._5}
+								pr={space._3}
+								textDecoration="none"
+								css={{
+									':focus': {
+										textDecoration: 'underline'
+									},
+									':hover': {
+										textDecoration: 'underline'
+									}
+								}}
+								to={s.path}
+							>
+								{s.label}
+							</PageLink>
+						);
+					})}
+				</Box>
 				<Box pt={space._4}>
 					<SocialLink
 						href="https://www.instagram.com/gregolai/"
