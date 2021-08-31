@@ -93,18 +93,15 @@ export const Resume = (props: React.ComponentProps<typeof Box>) => (
 					<ListItem>
 						A proud L3 Engineer of the new Design Platform team. I was one of the 4 initial
 						members of the team, which grew to about 15 engineers and designers as the years
-						progressed. We designed and engineered React and React-Natiev components that were
+						progressed. We designed and engineered React and React-Native components that were
 						visually and behaviorally consistent with each other. A Squarespace style guide and
 						theming system evolved over time.
 					</ListItem>
 					<ListItem>
-						Involved in the development of a Squarespace-wide style guide, compositional patterns,
-						a solid API, and high-quality internal documentation using Gatsby.
+						Developed a Squarespace style guide, compositional patterns, an API, and high-quality
+						documentation using Gatsby.
 					</ListItem>
-					<ListItem>
-						Learned to resist premature optimization in favor or readability. Occasionally
-						gathered performance metrics that supported future optimizations.
-					</ListItem>
+					<ListItem>Favor readability over premature optimization.</ListItem>
 					<ListItem>
 						Focus on code integrity by encouraging unit tests with Jest and integration tests with
 						Cypress/Puppeteer.
