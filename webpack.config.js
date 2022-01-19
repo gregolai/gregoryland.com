@@ -3,6 +3,7 @@ const webpack = require('webpack');
 
 const isDev = process.env.NODE_ENV !== 'production';
 
+const srcDir = path.resolve(__dirname, 'src');
 /**
  * @type {webpack.Configuration}
  */
@@ -25,9 +26,14 @@ module.exports = {
 		strictExportPresence: true,
 		rules: [
 			{
-				test: /\.(ts|tsx)$/,
-				include: path.resolve(__dirname, 'src'),
-				use: [{ loader: 'ts-loader' }]
+				test: /\.(js|jsx|ts|tsx)$/,
+				include: srcDir,
+				loader: 'ts-loader'
+			},
+			{
+				test: /\.css$/,
+				include: srcDir,
+				use: ['style-loader', 'css-loader']
 			},
 			{
 				test: /\.md$/i,

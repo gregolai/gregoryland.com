@@ -3,7 +3,7 @@
 		"allowJs": true,
 		"allowSyntheticDefaultImports": true,
 		"esModuleInterop": true,
-		"experimentalDecorators": true,
+		// "experimentalDecorators": true,
 		"importHelpers": true,
 		"jsx": "react",
 		"lib": ["esnext", "dom"],
@@ -11,7 +11,7 @@
 		"moduleResolution": "Node",
 		"outDir": "public/js",
 		"target": "ES2018",
-		"types": [],
+		"types": ["node"],
 		"typeRoots": ["node_modules/@types", "src/@types"]
 	},
 	"include": ["src"]
