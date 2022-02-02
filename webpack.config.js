@@ -4,6 +4,13 @@ const webpack = require('webpack');
 const isDev = process.env.NODE_ENV !== 'production';
 
 const srcDir = path.resolve(__dirname, 'src');
+
+let outDir = path.resolve(__dirname, 'dist');
+
+if (process.env.PRESET === 'client') {
+	outDir = path.resolve(__dirname, 'dist/client');
+}
+
 /**
  * @type {webpack.Configuration}
  */
@@ -42,7 +49,7 @@ module.exports = {
 		]
 	},
 	output: {
-		path: path.resolve(__dirname, 'public'),
+		path: outDir,
 		publicPath: '/',
 		filename: 'js/[name].js',
 		chunkFilename: 'js/[name].chunk.js'

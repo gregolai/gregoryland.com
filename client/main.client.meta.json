@@ -1,0 +1,942 @@
+{
+  "inputs": {
+    "node_modules/object-assign/index.js": {
+      "bytes": 2108,
+      "imports": []
+    },
+    "node_modules/react/cjs/react.development.js": {
+      "bytes": 72141,
+      "imports": [
+        {
+          "path": "node_modules/object-assign/index.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/react/index.js": {
+      "bytes": 190,
+      "imports": [
+        {
+          "path": "node_modules/react/cjs/react.development.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/scheduler/cjs/scheduler.development.js": {
+      "bytes": 17563,
+      "imports": []
+    },
+    "node_modules/scheduler/index.js": {
+      "bytes": 198,
+      "imports": [
+        {
+          "path": "node_modules/scheduler/cjs/scheduler.development.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/scheduler/cjs/scheduler-tracing.development.js": {
+      "bytes": 9001,
+      "imports": []
+    },
+    "node_modules/scheduler/tracing.js": {
+      "bytes": 214,
+      "imports": [
+        {
+          "path": "node_modules/scheduler/cjs/scheduler-tracing.development.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/react-dom/cjs/react-dom.development.js": {
+      "bytes": 894563,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/object-assign/index.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/scheduler/index.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/scheduler/tracing.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/react-dom/index.js": {
+      "bytes": 1363,
+      "imports": [
+        {
+          "path": "node_modules/react-dom/cjs/react-dom.development.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/@babel/runtime/helpers/esm/extends.js": {
+      "bytes": 397,
+      "imports": []
+    },
+    "node_modules/history/index.js": {
+      "bytes": 7428,
+      "imports": [
+        {
+          "path": "node_modules/@babel/runtime/helpers/esm/extends.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "node_modules/react-router/index.js": {
+      "bytes": 34321,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/history/index.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "node_modules/react-router-dom/index.js": {
+      "bytes": 11565,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/history/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-router/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-router/index.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "node_modules/tslib/tslib.js": {
+      "bytes": 14860,
+      "imports": []
+    },
+    "node_modules/pu2/style-lib/internal/utils.js": {
+      "bytes": 298,
+      "imports": []
+    },
+    "node_modules/pu2/style-lib/internal/Handler.js": {
+      "bytes": 148,
+      "imports": []
+    },
+    "node_modules/pu2/style-lib/internal/BrowserHandler.js": {
+      "bytes": 2305,
+      "imports": [
+        {
+          "path": "node_modules/pu2/style-lib/internal/utils.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/internal/Handler.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/pu2/style-lib/internal/StyleProvider.js": {
+      "bytes": 869,
+      "imports": [
+        {
+          "path": "node_modules/tslib/tslib.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/lodash/_arrayReduce.js": {
+      "bytes": 787,
+      "imports": []
+    },
+    "node_modules/lodash/_basePropertyOf.js": {
+      "bytes": 358,
+      "imports": []
+    },
+    "node_modules/lodash/_deburrLetter.js": {
+      "bytes": 3411,
+      "imports": [
+        {
+          "path": "node_modules/lodash/_basePropertyOf.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/lodash/_freeGlobal.js": {
+      "bytes": 173,
+      "imports": []
+    },
+    "node_modules/lodash/_root.js": {
+      "bytes": 300,
+      "imports": [
+        {
+          "path": "node_modules/lodash/_freeGlobal.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/lodash/_Symbol.js": {
+      "bytes": 118,
+      "imports": [
+        {
+          "path": "node_modules/lodash/_root.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/lodash/_arrayMap.js": {
+      "bytes": 556,
+      "imports": []
+    },
+    "node_modules/lodash/isArray.js": {
+      "bytes": 488,
+      "imports": []
+    },
+    "node_modules/lodash/_getRawTag.js": {
+      "bytes": 1139,
+      "imports": [
+        {
+          "path": "node_modules/lodash/_Symbol.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/lodash/_objectToString.js": {
+      "bytes": 565,
+      "imports": []
+    },
+    "node_modules/lodash/_baseGetTag.js": {
+      "bytes": 792,
+      "imports": [
+        {
+          "path": "node_modules/lodash/_Symbol.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/lodash/_getRawTag.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/lodash/_objectToString.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/lodash/isObjectLike.js": {
+      "bytes": 614,
+      "imports": []
+    },
+    "node_modules/lodash/isSymbol.js": {
+      "bytes": 682,
+      "imports": [
+        {
+          "path": "node_modules/lodash/_baseGetTag.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/lodash/isObjectLike.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/lodash/_baseToString.js": {
+      "bytes": 1154,
+      "imports": [
+        {
+          "path": "node_modules/lodash/_Symbol.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/lodash/_arrayMap.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/lodash/isArray.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/lodash/isSymbol.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/lodash/toString.js": {
+      "bytes": 580,
+      "imports": [
+        {
+          "path": "node_modules/lodash/_baseToString.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/lodash/deburr.js": {
+      "bytes": 1617,
+      "imports": [
+        {
+          "path": "node_modules/lodash/_deburrLetter.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/lodash/toString.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/lodash/_asciiWords.js": {
+      "bytes": 404,
+      "imports": []
+    },
+    "node_modules/lodash/_hasUnicodeWord.js": {
+      "bytes": 491,
+      "imports": []
+    },
+    "node_modules/lodash/_unicodeWords.js": {
+      "bytes": 3060,
+      "imports": []
+    },
+    "node_modules/lodash/words.js": {
+      "bytes": 1031,
+      "imports": [
+        {
+          "path": "node_modules/lodash/_asciiWords.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/lodash/_hasUnicodeWord.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/lodash/toString.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/lodash/_unicodeWords.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/lodash/_createCompounder.js": {
+      "bytes": 635,
+      "imports": [
+        {
+          "path": "node_modules/lodash/_arrayReduce.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/lodash/deburr.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/lodash/words.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/lodash/kebabCase.js": {
+      "bytes": 659,
+      "imports": [
+        {
+          "path": "node_modules/lodash/_createCompounder.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/pu2/style-lib/internal/style-props.generated.js": {
+      "bytes": 7355,
+      "imports": []
+    },
+    "node_modules/pu2/style-lib/internal/parser.js": {
+      "bytes": 3333,
+      "imports": [
+        {
+          "path": "node_modules/tslib/tslib.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/lodash/kebabCase.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/internal/style-props.generated.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/pu2/style-lib/browser/BrowserStyleProvider.js": {
+      "bytes": 802,
+      "imports": [
+        {
+          "path": "node_modules/tslib/tslib.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/internal/BrowserHandler.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/internal/StyleProvider.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/internal/parser.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/pu2/cx.js": {
+      "bytes": 796,
+      "imports": []
+    },
+    "node_modules/pu2/style-lib/browser/useStyle.js": {
+      "bytes": 430,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/internal/StyleProvider.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/pu2/style-lib/browser/Box.js": {
+      "bytes": 825,
+      "imports": [
+        {
+          "path": "node_modules/tslib/tslib.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/pu2/cx.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/browser/useStyle.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/internal/style-props.generated.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/pu2/style-lib/browser/index.js": {
+      "bytes": 477,
+      "imports": [
+        {
+          "path": "node_modules/pu2/style-lib/browser/BrowserStyleProvider.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/browser/Box.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "node_modules/pu2/style-lib/index.js": {
+      "bytes": 169,
+      "imports": [
+        {
+          "path": "node_modules/tslib/tslib.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/browser/index.js",
+          "kind": "require-call"
+        }
+      ]
+    },
+    "src/theme.ts": {
+      "bytes": 965,
+      "imports": []
+    },
+    "src/primitives.tsx": {
+      "bytes": 1604,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/Links.tsx": {
+      "bytes": 2285,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-router-dom/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/Header.tsx": {
+      "bytes": 740,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-router-dom/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/Links.tsx",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/Resume/Resume.tsx": {
+      "bytes": 6610,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/pages/page.Home.tsx": {
+      "bytes": 1360,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/Links.tsx",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/pages/page.Career.tsx": {
+      "bytes": 288,
+      "imports": [
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/Resume/Resume.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/pages/page.Life.tsx": {
+      "bytes": 1313,
+      "imports": [
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/pages/page.Projects.tsx": {
+      "bytes": 789,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives.tsx",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/img/agorafy.png": {
+      "bytes": 3516,
+      "imports": []
+    },
+    "src/App.tsx": {
+      "bytes": 1036,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-router-dom/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/Header.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/Resume/Resume.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/pages/page.Home.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/pages/page.Career.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/pages/page.Life.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/pages/page.Projects.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/img/agorafy.png",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/main.client.tsx": {
+      "bytes": 397,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-dom/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-router-dom/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/App.tsx",
+          "kind": "import-statement"
+        }
+      ]
+    }
+  },
+  "outputs": {
+    "client/assets/agorafy-47AP76AG.png": {
+      "imports": [],
+      "exports": [],
+      "inputs": {
+        "src/img/agorafy.png": {
+          "bytesInOutput": 3516
+        }
+      },
+      "bytes": 3516
+    },
+    "client/main.client.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 1558619
+    },
+    "client/main.client.js": {
+      "imports": [],
+      "exports": [],
+      "entryPoint": "src/main.client.tsx",
+      "inputs": {
+        "node_modules/object-assign/index.js": {
+          "bytesInOutput": 2262
+        },
+        "node_modules/react/cjs/react.development.js": {
+          "bytesInOutput": 66028
+        },
+        "node_modules/react/index.js": {
+          "bytesInOutput": 247
+        },
+        "node_modules/scheduler/cjs/scheduler.development.js": {
+          "bytesInOutput": 18469
+        },
+        "node_modules/scheduler/index.js": {
+          "bytesInOutput": 259
+        },
+        "node_modules/scheduler/cjs/scheduler-tracing.development.js": {
+          "bytesInOutput": 10197
+        },
+        "node_modules/scheduler/tracing.js": {
+          "bytesInOutput": 267
+        },
+        "node_modules/react-dom/cjs/react-dom.development.js": {
+          "bytesInOutput": 811578
+        },
+        "node_modules/react-dom/index.js": {
+          "bytesInOutput": 279
+        },
+        "node_modules/tslib/tslib.js": {
+          "bytesInOutput": 16633
+        },
+        "node_modules/pu2/style-lib/internal/utils.js": {
+          "bytesInOutput": 447
+        },
+        "node_modules/pu2/style-lib/internal/Handler.js": {
+          "bytesInOutput": 304
+        },
+        "node_modules/pu2/style-lib/internal/BrowserHandler.js": {
+          "bytesInOutput": 2619
+        },
+        "node_modules/pu2/style-lib/internal/StyleProvider.js": {
+          "bytesInOutput": 1086
+        },
+        "node_modules/lodash/_arrayReduce.js": {
+          "bytesInOutput": 528
+        },
+        "node_modules/lodash/_basePropertyOf.js": {
+          "bytesInOutput": 305
+        },
+        "node_modules/lodash/_deburrLetter.js": {
+          "bytesInOutput": 4558
+        },
+        "node_modules/lodash/_freeGlobal.js": {
+          "bytesInOutput": 245
+        },
+        "node_modules/lodash/_root.js": {
+          "bytesInOutput": 332
+        },
+        "node_modules/lodash/_Symbol.js": {
+          "bytesInOutput": 202
+        },
+        "node_modules/lodash/_arrayMap.js": {
+          "bytesInOutput": 415
+        },
+        "node_modules/lodash/isArray.js": {
+          "bytesInOutput": 172
+        },
+        "node_modules/lodash/_getRawTag.js": {
+          "bytesInOutput": 904
+        },
+        "node_modules/lodash/_objectToString.js": {
+          "bytesInOutput": 352
+        },
+        "node_modules/lodash/_baseGetTag.js": {
+          "bytesInOutput": 683
+        },
+        "node_modules/lodash/isObjectLike.js": {
+          "bytesInOutput": 255
+        },
+        "node_modules/lodash/isSymbol.js": {
+          "bytesInOutput": 414
+        },
+        "node_modules/lodash/_baseToString.js": {
+          "bytesInOutput": 899
+        },
+        "node_modules/lodash/toString.js": {
+          "bytesInOutput": 287
+        },
+        "node_modules/lodash/deburr.js": {
+          "bytesInOutput": 790
+        },
+        "node_modules/lodash/_asciiWords.js": {
+          "bytesInOutput": 308
+        },
+        "node_modules/lodash/_hasUnicodeWord.js": {
+          "bytesInOutput": 352
+        },
+        "node_modules/lodash/_unicodeWords.js": {
+          "bytesInOutput": 3131
+        },
+        "node_modules/lodash/words.js": {
+          "bytesInOutput": 626
+        },
+        "node_modules/lodash/_createCompounder.js": {
+          "bytesInOutput": 540
+        },
+        "node_modules/lodash/kebabCase.js": {
+          "bytesInOutput": 346
+        },
+        "node_modules/pu2/style-lib/internal/style-props.generated.js": {
+          "bytesInOutput": 10668
+        },
+        "node_modules/pu2/style-lib/internal/parser.js": {
+          "bytesInOutput": 3538
+        },
+        "node_modules/pu2/style-lib/browser/BrowserStyleProvider.js": {
+          "bytesInOutput": 965
+        },
+        "node_modules/pu2/cx.js": {
+          "bytesInOutput": 912
+        },
+        "node_modules/pu2/style-lib/browser/useStyle.js": {
+          "bytesInOutput": 594
+        },
+        "node_modules/pu2/style-lib/browser/Box.js": {
+          "bytesInOutput": 973
+        },
+        "node_modules/pu2/style-lib/browser/index.js": {
+          "bytesInOutput": 649
+        },
+        "node_modules/pu2/style-lib/index.js": {
+          "bytesInOutput": 291
+        },
+        "src/main.client.tsx": {
+          "bytesInOutput": 556
+        },
+        "node_modules/react-router-dom/index.js": {
+          "bytesInOutput": 5444
+        },
+        "node_modules/@babel/runtime/helpers/esm/extends.js": {
+          "bytesInOutput": 407
+        },
+        "node_modules/history/index.js": {
+          "bytesInOutput": 4350
+        },
+        "node_modules/react-router/index.js": {
+          "bytesInOutput": 20900
+        },
+        "src/App.tsx": {
+          "bytesInOutput": 1667
+        },
+        "src/Header.tsx": {
+          "bytesInOutput": 846
+        },
+        "src/primitives.tsx": {
+          "bytesInOutput": 1737
+        },
+        "src/Links.tsx": {
+          "bytesInOutput": 2313
+        },
+        "src/Resume/Resume.tsx": {
+          "bytesInOutput": 9664
+        },
+        "src/pages/page.Home.tsx": {
+          "bytesInOutput": 2044
+        },
+        "src/pages/page.Career.tsx": {
+          "bytesInOutput": 260
+        },
+        "src/pages/page.Life.tsx": {
+          "bytesInOutput": 2865
+        },
+        "src/pages/page.Projects.tsx": {
+          "bytesInOutput": 1181
+        },
+        "src/img/agorafy.png": {
+          "bytesInOutput": 53
+        }
+      },
+      "bytes": 1026770
+    }
+  }
+}
