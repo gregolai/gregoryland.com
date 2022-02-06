@@ -20526,13 +20526,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
             return Reflect.metadata(metadataKey, metadataValue);
         };
-        __awaiter = function(thisArg, _arguments, P4, generator) {
+        __awaiter = function(thisArg, _arguments, P5, generator) {
           function adopt(value) {
-            return value instanceof P4 ? value : new P4(function(resolve) {
+            return value instanceof P5 ? value : new P5(function(resolve) {
               resolve(value);
             });
           }
-          return new (P4 || (P4 = Promise))(function(resolve, reject) {
+          return new (P5 || (P5 = Promise))(function(resolve, reject) {
             function fulfilled(value) {
               try {
                 step(generator.next(value));
@@ -23359,14 +23359,18 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   }
 
   // src/Resume/Resume2.tsx
-  var ResumeP = (props) => /* @__PURE__ */ import_react10.default.createElement(P, {
-    fontSize: "14px",
-    lineHeight: "18px",
+  var CommonText = (props) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    fontSize: "14px" /* _14px */,
+    lineHeight: "28px" /* _28px */,
+    ...props
+  });
+  var Para = (props) => /* @__PURE__ */ import_react10.default.createElement(CommonText, {
+    lineHeight: "20px" /* _20px */,
     ...props
   });
   var NameText = (props) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
     fontSize: "39px" /* _39px */,
-    letterSpacing: "6px" /* _6px */,
+    letterSpacing: "4px" /* _4px */,
     textTransform: "uppercase",
     ...props
   });
@@ -23376,7 +23380,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     ...props
   });
   var HRSmall = (props) => /* @__PURE__ */ import_react10.default.createElement(HR, {
-    w: "40px"
+    w: "40px",
+    ...props
   });
   var Diamond = (props) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
     position: "absolute",
@@ -23390,28 +23395,35 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var TextHeading = (props) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
     fontSize: "18px" /* _18px */,
     fontWeight: "600",
-    letterSpacing: "6px" /* _6px */,
+    letterSpacing: "4px" /* _4px */,
     textTransform: "uppercase",
     ...props
   });
-  var LeftSection = ({ title, children }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(TextHeading, {
+  var LeftSection = ({ title, children, ...rest }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    ...rest
+  }, /* @__PURE__ */ import_react10.default.createElement(TextHeading, {
     pb: "18px" /* _18px */
   }, title), /* @__PURE__ */ import_react10.default.createElement(HRSmall, null), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
     pt: "18px" /* _18px */
   }, children));
-  var RightSection = ({ title, children }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(Flex, {
+  var RightSection = ({ title, children }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    pt: "38px" /* _38px */,
+    css: { ":first-of-type": { pt: "0px" } }
+  }, /* @__PURE__ */ import_react10.default.createElement(Flex, {
     position: "relative",
     alignItems: "center"
-  }, /* @__PURE__ */ import_react10.default.createElement(Diamond, {
-    position: "absolute",
-    left: "-1px"
-  }), /* @__PURE__ */ import_react10.default.createElement(TextHeading, {
+  }, /* @__PURE__ */ import_react10.default.createElement(Diamond, null), /* @__PURE__ */ import_react10.default.createElement(TextHeading, {
+    pl: "30px" /* _30px */
+  }, title), /* @__PURE__ */ import_react10.default.createElement(Flex, {
+    position: "relative",
+    ml: "30px" /* _30px */,
+    flex: "1",
+    alignItems: "center"
+  }, /* @__PURE__ */ import_react10.default.createElement(Diamond, null), /* @__PURE__ */ import_react10.default.createElement(HR, {
+    w: "100%"
+  }))), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
     pl: "30px" /* _30px */,
-    flex: "1"
-  }, title), /* @__PURE__ */ import_react10.default.createElement(HRSmall, null)), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
-    pl: "30px" /* _30px */,
-    pt: "30px" /* _30px */,
-    pb: "30px" /* _30px */
+    pt: "38px" /* _38px */
   }, children));
   var Contact = ({ Icon, label, text }) => {
     const iconClassName = (0, import_style_lib4.useStyle)({ color: "white", width: "38px" /* _38px */, height: "38px" /* _38px */, m: "-2px" });
@@ -23452,39 +23464,47 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     color: "white",
     textTransform: "uppercase"
   }, "Resume"));
-  var Job = ({ children }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, children);
-  var JobHead = ({ title, from, to, where, city }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(Text, {
-    display: "block",
+  var Job = ({ children }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    pt: "38px" /* _38px */,
+    css: { ":first-of-type": { pt: "0px" } }
+  }, children);
+  var JobHead = ({ title, from, to, where, city }) => /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null, /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
     textTransform: "uppercase",
     fontWeight: "600",
-    letterSpacing: "1px",
-    pb: "8px" /* _4 */
-  }, title), /* @__PURE__ */ import_react10.default.createElement(Text, {
-    display: "block",
+    fontSize: "14px" /* _14px */,
+    letterSpacing: "1px"
+  }, title), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
     color: "#8A8A8A",
-    fontSize: "14px",
-    pb: "8px" /* _4 */
+    fontSize: "14px" /* _14px */,
+    lineHeight: "28px" /* _28px */
   }, from, " - ", to, " | ", where, " | ", city));
-  var JobSummary = ({ children }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(ResumeP, null, children));
+  var JobSummary = ({ children }) => /* @__PURE__ */ import_react10.default.createElement(Para, {
+    lineHeight: "20px" /* _20px */
+  }, children);
   var JobBullet = ({ children }) => /* @__PURE__ */ import_react10.default.createElement(Flex, {
     alignItems: "center",
-    pt: "8px" /* _4 */
+    pt: "10px" /* _10px */
   }, /* @__PURE__ */ import_react10.default.createElement(HR, {
-    w: "20px"
-  }), /* @__PURE__ */ import_react10.default.createElement(ResumeP, {
+    w: "18px" /* _18px */
+  }), /* @__PURE__ */ import_react10.default.createElement(Para, {
     flex: "1",
-    pl: "18px" /* _6 */
+    pl: "18px" /* _18px */,
+    lineHeight: "20px" /* _20px */
   }, children));
-  var Skill = ({ name, value }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
-    borderRadius: "10px",
+  var Skill = ({ name, value }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    pt: "18px" /* _18px */,
+    css: { ":first-of-type": { pt: "0px" } }
+  }, /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
     bg: "darkgray",
     overflow: "hidden"
   }, /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
-    h: "20px",
+    h: "12px" /* _12px */,
     bg: "lightgray",
     w: `${value * 10}%`
   })), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
-    textAlign: "center"
+    textAlign: "center",
+    fontSize: "14px" /* _14px */,
+    pt: "4px" /* _4px */
   }, name));
   var PageSplit = ({ left, right, ...rest }) => /* @__PURE__ */ import_react10.default.createElement(Flex, {
     ...rest
@@ -23494,50 +23514,59 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   }, left), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
     w: "260px"
   }, right));
+  var bg = "#FAFAFA";
+  var HideVerticalStubHack = () => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    position: "absolute",
+    bg,
+    w: "2px",
+    h: "8px"
+  });
   var Resume = () => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
     position: "relative",
-    bg: "#FAFAFA",
+    bg,
     px: "60px" /* _60px */,
     pb: "60px" /* _60px */,
-    lineHeight: "1"
+    lineHeight: "1",
+    fontFamily: "system-ui,sans-serif"
   }, /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
     position: "absolute",
     top: "0",
     left: "0",
     w: "100%",
-    bg: "#DAD8D9",
-    h: "24px" /* _7 */
+    bg: "#DBD9DA",
+    h: "30px" /* _30px */
   }), /* @__PURE__ */ import_react10.default.createElement(PageSplit, {
     left: /* @__PURE__ */ import_react10.default.createElement(Flex, {
       alignItems: "stretch",
       pb: "38px" /* _38px */
     }, /* @__PURE__ */ import_react10.default.createElement(ResumeBanner, null), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
       flex: "1",
-      pl: "30px" /* _30px */,
-      pt: "24px" /* _7 */
+      pt: "30px" /* _30px */
+    }, /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+      pb: "18px" /* _18px */,
+      pt: "30px" /* _30px */
     }, /* @__PURE__ */ import_react10.default.createElement(NameText, {
       color: "#6F6F6F",
-      pt: "38px" /* _38px */
+      pl: "30px" /* _30px */
     }, "Gregory"), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
       position: "relative"
-    }, /* @__PURE__ */ import_react10.default.createElement(Diamond, {
-      position: "absolute",
-      left: -1 * parseInt("24px" /* _7 */, 10) + "px"
-    })), /* @__PURE__ */ import_react10.default.createElement(NameText, {
-      pt: "10px" /* _10px */,
-      fontWeight: "600",
-      pb: "18px" /* _18px */
-    }, "Dalton"), /* @__PURE__ */ import_react10.default.createElement(HRSmall, null), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    }, /* @__PURE__ */ import_react10.default.createElement(Diamond, null)), /* @__PURE__ */ import_react10.default.createElement(NameText, {
+      pl: "30px" /* _30px */,
+      pt: "4px" /* _4px */,
+      fontWeight: "600"
+    }, "Dalton")), /* @__PURE__ */ import_react10.default.createElement(HRSmall, {
+      ml: "30px" /* _30px */
+    }), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+      pl: "30px" /* _30px */,
       pt: "18px" /* _18px */,
       color: "gray",
       fontSize: "18px" /* _18px */,
       fontWeight: "600",
-      letterSpacing: "6px" /* _6px */,
+      letterSpacing: "4px" /* _4px */,
       textTransform: "uppercase"
     }, "Software Engineer"))),
     right: /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
-      pt: "24px" /* _7 */,
-      w: "100%",
+      pt: "30px" /* _30px */,
       h: "100%",
       bg: "url('https://images.unsplash.com/photo-1644123550420-ee28152ab925?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2781&q=80')",
       backgroundSize: "cover",
@@ -23545,11 +23574,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     })
   }), /* @__PURE__ */ import_react10.default.createElement(PageSplit, {
     left: /* @__PURE__ */ import_react10.default.createElement(LeftSection, {
+      pt: "18px" /* _18px */,
       title: "Career Summary"
-    }, "summary"),
+    }, /* @__PURE__ */ import_react10.default.createElement(Para, null, "This is my career summary. It's meant to summarize my career. What have I learnt? What are my goals? Why do I do what I do? It should be very short.")),
     right: /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
       bg: "black",
-      p: "30px" /* _30px */
+      px: "30px" /* _30px */,
+      py: "18px" /* _18px */
     }, /* @__PURE__ */ import_react10.default.createElement(Contact, {
       Icon: MdOutlineEmail,
       label: "Email",
@@ -23588,7 +23619,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       title: "Entry-level Engineer",
       where: "M&M Environmental"
     }), /* @__PURE__ */ import_react10.default.createElement(JobSummary, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built a cool-looking calendar and scheduling application using PHP/MySQL/JS for managing technician availability."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built a Vehicle GPS viewer using the Google Maps API for monitoring technician proximity to their scheduled appointments."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built a Yelp review scraper and fancy frontend."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built an admin portal using Auth0 Google single-sign-on. Used Wordpress for viewing work shift calendars, technician locations, and Yelp reviews."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Set up CRON tasks that would send aggregated morning emails to our staff about recent Yelp reviews and shift calendars.")))),
-    right: /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    right: /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null, /* @__PURE__ */ import_react10.default.createElement(HideVerticalStubHack, null), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
       bl: "2px solid black",
       h: "100%"
     }, /* @__PURE__ */ import_react10.default.createElement(RightSection, {
@@ -23608,12 +23639,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       name: "Javascript",
       value: 9
     }), /* @__PURE__ */ import_react10.default.createElement(Skill, {
+      name: "Typescript",
+      value: 8
+    }), /* @__PURE__ */ import_react10.default.createElement(Skill, {
       name: "React",
       value: 8
     }), /* @__PURE__ */ import_react10.default.createElement(Skill, {
-      name: "C#",
+      name: "C#, C++, Backend",
       value: 6
-    })))
+    }))))
   }));
 
   // src/pages/page.Career.tsx

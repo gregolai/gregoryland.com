@@ -2,27 +2,27 @@
 import React from 'react';
 import { Box, useStyle } from 'pu2/style-lib';
 import { Flex, Img, P, Text } from '../primitives';
-import { FontSize2, LetterSpacing2, Space, Space2 } from './resume-theme';
+import { FontSize2, LetterSpacing2, LineHeight2, Space2 } from './resume-theme';
 import { MdOutlineEmail } from 'react-icons/md';
 import { MdFace } from 'react-icons/md';
 /*
 	Copy of:
 	https://www.etsy.com/listing/958270979/professional-resume-template-with-photo?gpla=1&gao=1&&utm_source=google&utm_medium=cpc&utm_campaign=shopping_us_c-paper_and_party_supplies-paper-stationery-design_and_templates-templates&utm_custom1=_k_Cj0KCQiA9OiPBhCOARIsAI0y71A_daDNEpZVXbnWQHzR_XX6Ys_EnEw5Dg0jWD9rbz_bJdHiTQCEQTgaAi23EALw_wcB_k_&utm_content=go_12573359918_120439649718_507799175895_pla-315907316571_c__958270979_122461060&utm_custom2=12573359918&gclid=Cj0KCQiA9OiPBhCOARIsAI0y71A_daDNEpZVXbnWQHzR_XX6Ys_EnEw5Dg0jWD9rbz_bJdHiTQCEQTgaAi23EALw_wcB
 */
-
-const ResumeP = (props) => <P fontSize="14px" lineHeight="18px" {...props} />;
+const CommonText = (props) => <Box fontSize={FontSize2._14px} lineHeight={LineHeight2._28px} {...props} />;
+const Para = (props) => <CommonText lineHeight={LineHeight2._20px} {...props} />;
 
 const NameText = (props) => (
 	<Box
 		fontSize={FontSize2._39px}
-		letterSpacing={LetterSpacing2._6px}
+		letterSpacing={LetterSpacing2._4px}
 		textTransform="uppercase"
 		{...props}
 	/>
 );
 
 const HR = (props) => <Box bb="2px solid black" mt="-1px" {...props} />;
-const HRSmall = (props) => <HR w="40px" />;
+const HRSmall = (props) => <HR w="40px" {...props} />;
 
 const Diamond = (props) => (
 	<Box
@@ -40,14 +40,14 @@ const TextHeading = (props) => (
 	<Box
 		fontSize={FontSize2._18px}
 		fontWeight="600"
-		letterSpacing={LetterSpacing2._6px}
+		letterSpacing={LetterSpacing2._4px}
 		textTransform="uppercase"
 		{...props}
 	/>
 );
 
-const LeftSection = ({ title, children }) => (
-	<Box>
+const LeftSection = ({ title, children, ...rest }) => (
+	<Box {...rest}>
 		<TextHeading pb={Space2._18px}>{title}</TextHeading>
 		<HRSmall />
 		<Box pt={Space2._18px}>{children}</Box>
@@ -55,16 +55,16 @@ const LeftSection = ({ title, children }) => (
 );
 
 const RightSection = ({ title, children }) => (
-	<Box>
+	<Box pt={Space2._38px} css={{ ':first-of-type': { pt: '0px' } }}>
 		<Flex position="relative" alignItems="center">
-			<Diamond position="absolute" left="-1px" />
-
-			<TextHeading pl={Space2._30px} flex="1">
-				{title}
-			</TextHeading>
-			<HRSmall />
+			<Diamond />
+			<TextHeading pl={Space2._30px}>{title}</TextHeading>
+			<Flex position="relative" ml={Space2._30px} flex="1" alignItems="center">
+				<Diamond />
+				<HR w="100%" />
+			</Flex>
 		</Flex>
-		<Box pl={Space2._30px} pt={Space2._30px} pb={Space2._30px}>
+		<Box pl={Space2._30px} pt={Space2._38px}>
 			{children}
 		</Box>
 	</Box>
@@ -111,38 +111,40 @@ const ResumeBanner = (props) => (
 	</Box>
 );
 
-const Job = ({ children }) => <Box>{children}</Box>;
+const Job = ({ children }) => (
+	<Box pt={Space2._38px} css={{ ':first-of-type': { pt: '0px' } }}>
+		{children}
+	</Box>
+);
 
 const JobHead = ({ title, from, to, where, city }) => (
-	<Box>
-		<Text display="block" textTransform="uppercase" fontWeight="600" letterSpacing="1px" pb={Space._4}>
+	<>
+		<Box textTransform="uppercase" fontWeight="600" fontSize={FontSize2._14px} letterSpacing="1px">
 			{title}
-		</Text>
-		<Text display="block" color="#8A8A8A" fontSize="14px" pb={Space._4}>
+		</Box>
+		<Box color="#8A8A8A" fontSize={FontSize2._14px} lineHeight={LineHeight2._28px}>
 			{from} - {to} | {where} | {city}
-		</Text>
-	</Box>
+		</Box>
+	</>
 );
-const JobSummary = ({ children }) => (
-	<Box>
-		<ResumeP>{children}</ResumeP>
-	</Box>
-);
+const JobSummary = ({ children }) => <Para lineHeight={LineHeight2._20px}>{children}</Para>;
 const JobBullet = ({ children }) => (
-	<Flex alignItems="center" pt={Space._4}>
-		<HR w="20px" />
-		<ResumeP flex="1" pl={Space._6}>
+	<Flex alignItems="center" pt={Space2._10px}>
+		<HR w={Space2._18px} />
+		<Para flex="1" pl={Space2._18px} lineHeight={LineHeight2._20px}>
 			{children}
-		</ResumeP>
+		</Para>
 	</Flex>
 );
 
 const Skill = ({ name, value }) => (
-	<Box>
-		<Box borderRadius="10px" bg="darkgray" overflow="hidden">
-			<Box h="20px" bg="lightgray" w={`${value * 10}%`} />
+	<Box pt={Space2._18px} css={{ ':first-of-type': { pt: '0px' } }}>
+		<Box bg="darkgray" overflow="hidden">
+			<Box h={Space2._12px} bg="lightgray" w={`${value * 10}%`} />
 		</Box>
-		<Box textAlign="center">{name}</Box>
+		<Box textAlign="center" fontSize={FontSize2._14px} pt={Space2._4px}>
+			{name}
+		</Box>
 	</Box>
 );
 
@@ -155,30 +157,43 @@ const PageSplit = ({ left, right, ...rest }) => (
 	</Flex>
 );
 
+const bg = '#FAFAFA';
+const HideVerticalStubHack = () => <Box position="absolute" bg={bg} w="2px" h="8px" />;
+
 export const Resume = () => (
-	<Box position="relative" bg="#FAFAFA" px={Space2._60px} pb={Space2._60px} lineHeight="1">
-		<Box position="absolute" top="0" left="0" w="100%" bg="#DAD8D9" h={Space._7} />
+	<Box
+		position="relative"
+		bg={bg}
+		px={Space2._60px}
+		pb={Space2._60px}
+		lineHeight="1"
+		fontFamily="system-ui,sans-serif"
+	>
+		<Box position="absolute" top="0" left="0" w="100%" bg="#DBD9DA" h={Space2._30px} />
 		<PageSplit
 			left={
 				<Flex alignItems="stretch" pb={Space2._38px}>
 					<ResumeBanner />
-					<Box flex="1" pl={Space2._30px} pt={Space._7}>
-						<NameText color="#6F6F6F" pt={Space2._38px}>
-							Gregory
-						</NameText>
-						<Box position="relative">
-							<Diamond position="absolute" left={-1 * parseInt(Space._7, 10) + 'px'} />
+					<Box flex="1" pt={Space2._30px}>
+						<Box pb={Space2._18px} pt={Space2._30px}>
+							<NameText color="#6F6F6F" pl={Space2._30px}>
+								Gregory
+							</NameText>
+							<Box position="relative">
+								<Diamond />
+							</Box>
+							<NameText pl={Space2._30px} pt={Space2._4px} fontWeight="600">
+								Dalton
+							</NameText>
 						</Box>
-						<NameText pt={Space2._10px} fontWeight="600" pb={Space2._18px}>
-							Dalton
-						</NameText>
-						<HRSmall />
+						<HRSmall ml={Space2._30px} />
 						<Box
+							pl={Space2._30px}
 							pt={Space2._18px}
 							color="gray"
 							fontSize={FontSize2._18px}
 							fontWeight="600"
-							letterSpacing={LetterSpacing2._6px}
+							letterSpacing={LetterSpacing2._4px}
 							textTransform="uppercase"
 						>
 							Software Engineer
@@ -188,8 +203,7 @@ export const Resume = () => (
 			}
 			right={
 				<Box
-					pt={Space._7}
-					w="100%"
+					pt={Space2._30px}
 					h="100%"
 					bg="url('https://images.unsplash.com/photo-1644123550420-ee28152ab925?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2781&q=80')"
 					backgroundSize="cover"
@@ -198,10 +212,17 @@ export const Resume = () => (
 			}
 		/>
 		<PageSplit
-			left={<LeftSection title="Career Summary">summary</LeftSection>}
+			left={
+				<LeftSection pt={Space2._18px} title="Career Summary">
+					<Para>
+						This is my career summary. It's meant to summarize my career. What have I learnt? What
+						are my goals? Why do I do what I do? It should be very short.
+					</Para>
+				</LeftSection>
+			}
 			right={
 				<Box>
-					<Box bg="black" p={Space2._30px}>
+					<Box bg="black" px={Space2._30px} py={Space2._18px}>
 						<Contact Icon={MdOutlineEmail} label="Email" text="gregolai@gmail.com" />
 						<Contact Icon={MdFace} label="Website" text="gregoryland.com" />
 					</Box>
@@ -358,22 +379,26 @@ export const Resume = () => (
 				</LeftSection>
 			}
 			right={
-				<Box bl="2px solid black" h="100%">
-					<RightSection title="Education">
-						<Box fontSize={FontSize2._14px} fontWeight="600" textTransform="uppercase">
-							Bachelor of Science, Computer Science
-						</Box>
-						<Box fontSize={FontSize2._12px} pt={Space2._10px}>
-							2004 - 2009
-						</Box>
-						<Box fontSize={FontSize2._12px}>California State University, Long Beach</Box>
-					</RightSection>
-					<RightSection title="Skills">
-						<Skill name="Javascript" value={9} />
-						<Skill name="React" value={8} />
-						<Skill name="C#" value={6} />
-					</RightSection>
-				</Box>
+				<>
+					<HideVerticalStubHack />
+					<Box bl="2px solid black" h="100%">
+						<RightSection title="Education">
+							<Box fontSize={FontSize2._14px} fontWeight="600" textTransform="uppercase">
+								Bachelor of Science, Computer Science
+							</Box>
+							<Box fontSize={FontSize2._12px} pt={Space2._10px}>
+								2004 - 2009
+							</Box>
+							<Box fontSize={FontSize2._12px}>California State University, Long Beach</Box>
+						</RightSection>
+						<RightSection title="Skills">
+							<Skill name="Javascript" value={9} />
+							<Skill name="Typescript" value={8} />
+							<Skill name="React" value={8} />
+							<Skill name="C#, C++, Backend" value={6} />
+						</RightSection>
+					</Box>
+				</>
 			}
 		/>
 	</Box>

@@ -20652,7 +20652,7 @@ var require_react_production_min = __commonJS({
         throw b = "" + a, Error(z(31, b === "[object Object]" ? "object with keys {" + Object.keys(a).join(", ") + "}" : b));
       return h;
     }
-    function P4(a, b, c) {
+    function P5(a, b, c) {
       if (a == null)
         return a;
       var e = [], d = 0;
@@ -20685,18 +20685,18 @@ var require_react_production_min = __commonJS({
       return a;
     }
     var T = { ReactCurrentDispatcher: R, ReactCurrentBatchConfig: { transition: 0 }, ReactCurrentOwner: G, IsSomeRendererActing: { current: false }, assign: l };
-    exports2.Children = { map: P4, forEach: function(a, b, c) {
-      P4(a, function() {
+    exports2.Children = { map: P5, forEach: function(a, b, c) {
+      P5(a, function() {
         b.apply(this, arguments);
       }, c);
     }, count: function(a) {
       var b = 0;
-      P4(a, function() {
+      P5(a, function() {
         b++;
       });
       return b;
     }, toArray: function(a) {
-      return P4(a, function(a2) {
+      return P5(a, function(a2) {
         return a2;
       }) || [];
     }, only: function(a) {
@@ -22640,7 +22640,7 @@ var require_react_dom_server_node_production_min = __commonJS({
       return a === b && (a !== 0 || 1 / a === 1 / b) || a !== a && b !== b;
     }
     var Ba = typeof Object.is === "function" ? Object.is : Aa;
-    var P4 = null;
+    var P5 = null;
     var Q = null;
     var R = null;
     var S = false;
@@ -22648,9 +22648,9 @@ var require_react_dom_server_node_production_min = __commonJS({
     var U = null;
     var V = 0;
     function W() {
-      if (P4 === null)
+      if (P5 === null)
         throw Error(p(321));
-      return P4;
+      return P5;
     }
     function Ca() {
       if (0 < V)
@@ -22668,7 +22668,7 @@ var require_react_dom_server_node_production_min = __commonJS({
       return c;
     }
     function Fa() {
-      P4 = null;
+      P5 = null;
       T = false;
       Q = null;
       V = 0;
@@ -22678,7 +22678,7 @@ var require_react_dom_server_node_production_min = __commonJS({
       return typeof b === "function" ? b(a) : b;
     }
     function Ha(a, b, c) {
-      P4 = W();
+      P5 = W();
       R = Da();
       if (S) {
         var d = R.queue;
@@ -22697,11 +22697,11 @@ var require_react_dom_server_node_production_min = __commonJS({
       a = a === Ga ? typeof b === "function" ? b() : b : c !== void 0 ? c(b) : b;
       R.memoizedState = a;
       a = R.queue = { last: null, dispatch: null };
-      a = a.dispatch = Ia.bind(null, P4, a);
+      a = a.dispatch = Ia.bind(null, P5, a);
       return [R.memoizedState, a];
     }
     function Ja(a, b) {
-      P4 = W();
+      P5 = W();
       R = Da();
       b = b === void 0 ? null : b;
       if (R !== null) {
@@ -22730,7 +22730,7 @@ var require_react_dom_server_node_production_min = __commonJS({
     function Ia(a, b, c) {
       if (!(25 > V))
         throw Error(p(301));
-      if (a === P4)
+      if (a === P5)
         if (T = true, a = { action: c, next: null }, U === null && (U = /* @__PURE__ */ new Map()), c = U.get(b), c === void 0)
           U.set(b, a);
         else {
@@ -22752,7 +22752,7 @@ var require_react_dom_server_node_production_min = __commonJS({
       I(a, b);
       return a[b];
     }, useMemo: Ja, useReducer: Ha, useRef: function(a) {
-      P4 = W();
+      P5 = W();
       R = Da();
       var b = R.memoizedState;
       return b === null ? (a = { current: a }, R.memoizedState = a) : b;
@@ -22884,7 +22884,7 @@ var require_react_dom_server_node_production_min = __commonJS({
             var k = h2.getDerivedStateFromProps.call(null, d2.props, e.state);
             k != null && (e.state = l({}, e.state, k));
           }
-        } else if (P4 = {}, e = h2(d2.props, f2, m), e = Ea(h2, d2.props, e, f2), e == null || e.render == null) {
+        } else if (P5 = {}, e = h2(d2.props, f2, m), e = Ea(h2, d2.props, e, f2), e == null || e.render == null) {
           a = e;
           ab(a, h2);
           return;
@@ -23107,7 +23107,7 @@ var require_react_dom_server_node_production_min = __commonJS({
         if (typeof c === "object" && c !== null)
           switch (c.$$typeof) {
             case ca:
-              P4 = {};
+              P5 = {};
               var d = c.render(a2.props, a2.ref);
               d = Ea(c.render, a2.props, d, a2.ref);
               d = Z(d);
@@ -27402,10 +27402,10 @@ var require_react_router_production_min = __commonJS({
           e3.children && e3.children.length > 0 && (e3.index === true && a(false), y(e3.children, t2, o2, s2)), (e3.path != null || e3.index) && t2.push({ path: s2, score: E(s2, e3.index), routesMeta: o2 });
         }), t2;
       }
-      const C = /^:\w+$/, P4 = (e2) => e2 === "*";
+      const C = /^:\w+$/, P5 = (e2) => e2 === "*";
       function E(e2, t2) {
         let n2 = e2.split("/"), a2 = n2.length;
-        return n2.some(P4) && (a2 += -2), t2 && (a2 += 2), n2.filter((e3) => !P4(e3)).reduce((e3, t3) => e3 + (C.test(t3) ? 3 : t3 === "" ? 1 : 10), a2);
+        return n2.some(P5) && (a2 += -2), t2 && (a2 += 2), n2.filter((e3) => !P5(e3)).reduce((e3, t3) => e3 + (C.test(t3) ? 3 : t3 === "" ? 1 : 10), a2);
       }
       function R(e2, t2) {
         let { routesMeta: n2 } = e2, a2 = {}, r2 = "/", i2 = [];
@@ -28201,9 +28201,9 @@ var require_react_router_dom_production_min = __commonJS({
           i2 && i2(e3), e3.defaultPrevented || c2 || p(e3);
         }, ref: r2, target: d }));
       }), s = t.forwardRef(function(e2, r2) {
-        let { "aria-current": u2 = "page", caseSensitive: s2 = false, className: l2 = "", end: f2 = false, style: d, to: b, children: y } = e2, m = a(e2, i), p = n.useLocation(), g = n.useResolvedPath(b), h = p.pathname, P4 = g.pathname;
-        s2 || (h = h.toLowerCase(), P4 = P4.toLowerCase());
-        let O, R = h === P4 || !f2 && h.startsWith(P4) && h.charAt(P4.length) === "/", v = R ? u2 : void 0;
+        let { "aria-current": u2 = "page", caseSensitive: s2 = false, className: l2 = "", end: f2 = false, style: d, to: b, children: y } = e2, m = a(e2, i), p = n.useLocation(), g = n.useResolvedPath(b), h = p.pathname, P5 = g.pathname;
+        s2 || (h = h.toLowerCase(), P5 = P5.toLowerCase());
+        let O, R = h === P5 || !f2 && h.startsWith(P5) && h.charAt(P5.length) === "/", v = R ? u2 : void 0;
         O = typeof l2 == "function" ? l2({ isActive: R }) : [l2, R ? "active" : null].filter(Boolean).join(" ");
         let j = typeof d == "function" ? d({ isActive: R }) : d;
         return t.createElement(c, o({}, m, { "aria-current": v, className: O, ref: r2, style: j, to: b }), typeof y == "function" ? y({ isActive: R }) : y);
@@ -28903,13 +28903,13 @@ var require_tslib = __commonJS({
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
           return Reflect.metadata(metadataKey, metadataValue);
       };
-      __awaiter = function(thisArg, _arguments, P4, generator) {
+      __awaiter = function(thisArg, _arguments, P5, generator) {
         function adopt(value) {
-          return value instanceof P4 ? value : new P4(function(resolve) {
+          return value instanceof P5 ? value : new P5(function(resolve) {
             resolve(value);
           });
         }
-        return new (P4 || (P4 = Promise))(function(resolve, reject) {
+        return new (P5 || (P5 = Promise))(function(resolve, reject) {
           function fulfilled(value) {
             try {
               step(generator.next(value));
@@ -31119,22 +31119,25 @@ function MdOutlineEmail(props) {
 }
 
 // src/Resume/Resume2.tsx
-var ResumeP = (props) => /* @__PURE__ */ import_react6.default.createElement(P, __spreadValues({
-  fontSize: "14px",
-  lineHeight: "18px"
+var CommonText = (props) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, __spreadValues({
+  fontSize: "14px" /* _14px */,
+  lineHeight: "28px" /* _28px */
+}, props));
+var Para = (props) => /* @__PURE__ */ import_react6.default.createElement(CommonText, __spreadValues({
+  lineHeight: "20px" /* _20px */
 }, props));
 var NameText = (props) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, __spreadValues({
   fontSize: "39px" /* _39px */,
-  letterSpacing: "6px" /* _6px */,
+  letterSpacing: "4px" /* _4px */,
   textTransform: "uppercase"
 }, props));
 var HR = (props) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, __spreadValues({
   bb: "2px solid black",
   mt: "-1px"
 }, props));
-var HRSmall = (props) => /* @__PURE__ */ import_react6.default.createElement(HR, {
+var HRSmall = (props) => /* @__PURE__ */ import_react6.default.createElement(HR, __spreadValues({
   w: "40px"
-});
+}, props));
 var Diamond = (props) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, __spreadValues({
   position: "absolute",
   left: "-1px",
@@ -31146,27 +31149,35 @@ var Diamond = (props) => /* @__PURE__ */ import_react6.default.createElement(imp
 var TextHeading = (props) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, __spreadValues({
   fontSize: "18px" /* _18px */,
   fontWeight: "600",
-  letterSpacing: "6px" /* _6px */,
+  letterSpacing: "4px" /* _4px */,
   textTransform: "uppercase"
 }, props));
-var LeftSection = ({ title, children }) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react6.default.createElement(TextHeading, {
-  pb: "18px" /* _18px */
-}, title), /* @__PURE__ */ import_react6.default.createElement(HRSmall, null), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
-  pt: "18px" /* _18px */
-}, children));
-var RightSection = ({ title, children }) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react6.default.createElement(Flex, {
+var LeftSection = (_a) => {
+  var _b = _a, { title, children } = _b, rest = __objRest(_b, ["title", "children"]);
+  return /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, __spreadValues({}, rest), /* @__PURE__ */ import_react6.default.createElement(TextHeading, {
+    pb: "18px" /* _18px */
+  }, title), /* @__PURE__ */ import_react6.default.createElement(HRSmall, null), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+    pt: "18px" /* _18px */
+  }, children));
+};
+var RightSection = ({ title, children }) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+  pt: "38px" /* _38px */,
+  css: { ":first-of-type": { pt: "0px" } }
+}, /* @__PURE__ */ import_react6.default.createElement(Flex, {
   position: "relative",
   alignItems: "center"
-}, /* @__PURE__ */ import_react6.default.createElement(Diamond, {
-  position: "absolute",
-  left: "-1px"
-}), /* @__PURE__ */ import_react6.default.createElement(TextHeading, {
+}, /* @__PURE__ */ import_react6.default.createElement(Diamond, null), /* @__PURE__ */ import_react6.default.createElement(TextHeading, {
+  pl: "30px" /* _30px */
+}, title), /* @__PURE__ */ import_react6.default.createElement(Flex, {
+  position: "relative",
+  ml: "30px" /* _30px */,
+  flex: "1",
+  alignItems: "center"
+}, /* @__PURE__ */ import_react6.default.createElement(Diamond, null), /* @__PURE__ */ import_react6.default.createElement(HR, {
+  w: "100%"
+}))), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
   pl: "30px" /* _30px */,
-  flex: "1"
-}, title), /* @__PURE__ */ import_react6.default.createElement(HRSmall, null)), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
-  pl: "30px" /* _30px */,
-  pt: "30px" /* _30px */,
-  pb: "30px" /* _30px */
+  pt: "38px" /* _38px */
 }, children));
 var Contact = ({ Icon, label, text }) => {
   const iconClassName = (0, import_style_lib4.useStyle)({ color: "white", width: "38px" /* _38px */, height: "38px" /* _38px */, m: "-2px" });
@@ -31206,39 +31217,47 @@ var ResumeBanner = (props) => /* @__PURE__ */ import_react6.default.createElemen
   color: "white",
   textTransform: "uppercase"
 }, "Resume"));
-var Job = ({ children }) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, children);
-var JobHead = ({ title, from, to, where, city }) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react6.default.createElement(Text, {
-  display: "block",
+var Job = ({ children }) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+  pt: "38px" /* _38px */,
+  css: { ":first-of-type": { pt: "0px" } }
+}, children);
+var JobHead = ({ title, from, to, where, city }) => /* @__PURE__ */ import_react6.default.createElement(import_react6.default.Fragment, null, /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
   textTransform: "uppercase",
   fontWeight: "600",
-  letterSpacing: "1px",
-  pb: "8px" /* _4 */
-}, title), /* @__PURE__ */ import_react6.default.createElement(Text, {
-  display: "block",
+  fontSize: "14px" /* _14px */,
+  letterSpacing: "1px"
+}, title), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
   color: "#8A8A8A",
-  fontSize: "14px",
-  pb: "8px" /* _4 */
+  fontSize: "14px" /* _14px */,
+  lineHeight: "28px" /* _28px */
 }, from, " - ", to, " | ", where, " | ", city));
-var JobSummary = ({ children }) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react6.default.createElement(ResumeP, null, children));
+var JobSummary = ({ children }) => /* @__PURE__ */ import_react6.default.createElement(Para, {
+  lineHeight: "20px" /* _20px */
+}, children);
 var JobBullet = ({ children }) => /* @__PURE__ */ import_react6.default.createElement(Flex, {
   alignItems: "center",
-  pt: "8px" /* _4 */
+  pt: "10px" /* _10px */
 }, /* @__PURE__ */ import_react6.default.createElement(HR, {
-  w: "20px"
-}), /* @__PURE__ */ import_react6.default.createElement(ResumeP, {
+  w: "18px" /* _18px */
+}), /* @__PURE__ */ import_react6.default.createElement(Para, {
   flex: "1",
-  pl: "18px" /* _6 */
+  pl: "18px" /* _18px */,
+  lineHeight: "20px" /* _20px */
 }, children));
-var Skill = ({ name, value }) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
-  borderRadius: "10px",
+var Skill = ({ name, value }) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+  pt: "18px" /* _18px */,
+  css: { ":first-of-type": { pt: "0px" } }
+}, /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
   bg: "darkgray",
   overflow: "hidden"
 }, /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
-  h: "20px",
+  h: "12px" /* _12px */,
   bg: "lightgray",
   w: `${value * 10}%`
 })), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
-  textAlign: "center"
+  textAlign: "center",
+  fontSize: "14px" /* _14px */,
+  pt: "4px" /* _4px */
 }, name));
 var PageSplit = (_a) => {
   var _b = _a, { left, right } = _b, rest = __objRest(_b, ["left", "right"]);
@@ -31249,50 +31268,59 @@ var PageSplit = (_a) => {
     w: "260px"
   }, right));
 };
+var bg = "#FAFAFA";
+var HideVerticalStubHack = () => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+  position: "absolute",
+  bg,
+  w: "2px",
+  h: "8px"
+});
 var Resume = () => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
   position: "relative",
-  bg: "#FAFAFA",
+  bg,
   px: "60px" /* _60px */,
   pb: "60px" /* _60px */,
-  lineHeight: "1"
+  lineHeight: "1",
+  fontFamily: "system-ui,sans-serif"
 }, /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
   position: "absolute",
   top: "0",
   left: "0",
   w: "100%",
-  bg: "#DAD8D9",
-  h: "24px" /* _7 */
+  bg: "#DBD9DA",
+  h: "30px" /* _30px */
 }), /* @__PURE__ */ import_react6.default.createElement(PageSplit, {
   left: /* @__PURE__ */ import_react6.default.createElement(Flex, {
     alignItems: "stretch",
     pb: "38px" /* _38px */
   }, /* @__PURE__ */ import_react6.default.createElement(ResumeBanner, null), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
     flex: "1",
-    pl: "30px" /* _30px */,
-    pt: "24px" /* _7 */
+    pt: "30px" /* _30px */
+  }, /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+    pb: "18px" /* _18px */,
+    pt: "30px" /* _30px */
   }, /* @__PURE__ */ import_react6.default.createElement(NameText, {
     color: "#6F6F6F",
-    pt: "38px" /* _38px */
+    pl: "30px" /* _30px */
   }, "Gregory"), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
     position: "relative"
-  }, /* @__PURE__ */ import_react6.default.createElement(Diamond, {
-    position: "absolute",
-    left: -1 * parseInt("24px" /* _7 */, 10) + "px"
-  })), /* @__PURE__ */ import_react6.default.createElement(NameText, {
-    pt: "10px" /* _10px */,
-    fontWeight: "600",
-    pb: "18px" /* _18px */
-  }, "Dalton"), /* @__PURE__ */ import_react6.default.createElement(HRSmall, null), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+  }, /* @__PURE__ */ import_react6.default.createElement(Diamond, null)), /* @__PURE__ */ import_react6.default.createElement(NameText, {
+    pl: "30px" /* _30px */,
+    pt: "4px" /* _4px */,
+    fontWeight: "600"
+  }, "Dalton")), /* @__PURE__ */ import_react6.default.createElement(HRSmall, {
+    ml: "30px" /* _30px */
+  }), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+    pl: "30px" /* _30px */,
     pt: "18px" /* _18px */,
     color: "gray",
     fontSize: "18px" /* _18px */,
     fontWeight: "600",
-    letterSpacing: "6px" /* _6px */,
+    letterSpacing: "4px" /* _4px */,
     textTransform: "uppercase"
   }, "Software Engineer"))),
   right: /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
-    pt: "24px" /* _7 */,
-    w: "100%",
+    pt: "30px" /* _30px */,
     h: "100%",
     bg: "url('https://images.unsplash.com/photo-1644123550420-ee28152ab925?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2781&q=80')",
     backgroundSize: "cover",
@@ -31300,11 +31328,13 @@ var Resume = () => /* @__PURE__ */ import_react6.default.createElement(import_st
   })
 }), /* @__PURE__ */ import_react6.default.createElement(PageSplit, {
   left: /* @__PURE__ */ import_react6.default.createElement(LeftSection, {
+    pt: "18px" /* _18px */,
     title: "Career Summary"
-  }, "summary"),
+  }, /* @__PURE__ */ import_react6.default.createElement(Para, null, "This is my career summary. It's meant to summarize my career. What have I learnt? What are my goals? Why do I do what I do? It should be very short.")),
   right: /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
     bg: "black",
-    p: "30px" /* _30px */
+    px: "30px" /* _30px */,
+    py: "18px" /* _18px */
   }, /* @__PURE__ */ import_react6.default.createElement(Contact, {
     Icon: MdOutlineEmail,
     label: "Email",
@@ -31343,7 +31373,7 @@ var Resume = () => /* @__PURE__ */ import_react6.default.createElement(import_st
     title: "Entry-level Engineer",
     where: "M&M Environmental"
   }), /* @__PURE__ */ import_react6.default.createElement(JobSummary, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Built a cool-looking calendar and scheduling application using PHP/MySQL/JS for managing technician availability."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Built a Vehicle GPS viewer using the Google Maps API for monitoring technician proximity to their scheduled appointments."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Built a Yelp review scraper and fancy frontend."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Built an admin portal using Auth0 Google single-sign-on. Used Wordpress for viewing work shift calendars, technician locations, and Yelp reviews."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Set up CRON tasks that would send aggregated morning emails to our staff about recent Yelp reviews and shift calendars.")))),
-  right: /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+  right: /* @__PURE__ */ import_react6.default.createElement(import_react6.default.Fragment, null, /* @__PURE__ */ import_react6.default.createElement(HideVerticalStubHack, null), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
     bl: "2px solid black",
     h: "100%"
   }, /* @__PURE__ */ import_react6.default.createElement(RightSection, {
@@ -31363,12 +31393,15 @@ var Resume = () => /* @__PURE__ */ import_react6.default.createElement(import_st
     name: "Javascript",
     value: 9
   }), /* @__PURE__ */ import_react6.default.createElement(Skill, {
+    name: "Typescript",
+    value: 8
+  }), /* @__PURE__ */ import_react6.default.createElement(Skill, {
     name: "React",
     value: 8
   }), /* @__PURE__ */ import_react6.default.createElement(Skill, {
-    name: "C#",
+    name: "C#, C++, Backend",
     value: 6
-  })))
+  }))))
 }));
 
 // src/pages/page.Career.tsx
@@ -31447,7 +31480,7 @@ img {
 body {
 	scroll-behavior: smooth;
 	overflow-y: scroll;
-	font-family: sans-serif;
+	font-family: system-ui,sans-serif;
 	/* font-size: 16px; */
 	/* line-height: 1rem; */
 	min-height: 100vh;

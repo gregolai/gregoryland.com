@@ -31,7 +31,7 @@ img {
 body {
 	scroll-behavior: smooth;
 	overflow-y: scroll;
-	font-family: sans-serif;
+	font-family: system-ui,sans-serif;
 	/* font-size: 16px; */
 	/* line-height: 1rem; */
 	min-height: 100vh;

@@ -15,7 +15,9 @@ export const enum Space {
 }
 
 export const enum Space2 {
+	_4px = '4px',
 	_10px = '10px',
+	_12px = '12px',
 	_18px = '18px',
 	_30px = '30px',
 	_38px = '38px',
@@ -36,8 +38,14 @@ export const enum FontSize2 {
 	_39px = '39px'
 }
 
+export const enum LineHeight2 {
+	_20px = '20px',
+	_28px = '28px',
+	_30px = '30px'
+}
+
 export const enum LetterSpacing2 {
-	_6px = '6px'
+	_4px = '4px'
 }
 
 export const enum LineHeight {
