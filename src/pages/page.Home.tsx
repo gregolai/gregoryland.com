@@ -35,8 +35,7 @@ const BigGrid = () => {
 				}}
 			/>
 			<Box gridArea="c" py={Space._6} px={Space._8} bb="2px solid black" bg="#f7f2e9">
-				<H2>I can build your website</H2>
-				<P>...yes, yes I can.</P>
+				<H2>Human / Programmer</H2>
 				<P py={Space._5}>
 					My name's Greg and this is my website. Please have a look and print my resume.
 				</P>

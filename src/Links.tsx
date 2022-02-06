@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box } from 'pu2/style-lib';
 import { Link, useLocation } from 'react-router-dom';
-import { Flex, Text, H3, Img } from './primitives';
+import { Flex, H3, Img } from './primitives';
 import { Space } from './theme';
 
 type BoxProps = React.ComponentPropsWithRef<typeof Box>;

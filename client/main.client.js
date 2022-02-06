@@ -2440,11 +2440,11 @@
       if (true) {
         (function() {
           "use strict";
-          var React11 = require_react();
+          var React14 = require_react();
           var _assign = require_object_assign();
           var Scheduler = require_scheduler();
           var tracing = require_tracing();
-          var ReactSharedInternals = React11.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React14.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function warn(format) {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2476,7 +2476,7 @@
               Function.prototype.apply.call(console[level], console, argsWithFormat);
             }
           }
-          if (!React11) {
+          if (!React14) {
             {
               throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
             }
@@ -3692,7 +3692,7 @@
           var didWarnInvalidChild = false;
           function flattenChildren(children) {
             var content = "";
-            React11.Children.forEach(children, function(child) {
+            React14.Children.forEach(children, function(child) {
               if (child == null) {
                 return;
               }
@@ -3703,7 +3703,7 @@
           function validateProps(element, props) {
             {
               if (typeof props.children === "object" && props.children !== null) {
-                React11.Children.forEach(props.children, function(child) {
+                React14.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -10896,7 +10896,7 @@
           }
           var fakeInternalInstance = {};
           var isArray = Array.isArray;
-          var emptyRefsObject = new React11.Component().refs;
+          var emptyRefsObject = new React14.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -20423,8 +20423,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var require_tslib = __commonJS({
     "node_modules/tslib/tslib.js"(exports, module) {
       var __extends;
-      var __assign;
-      var __rest;
+      var __assign2;
+      var __rest2;
       var __decorate;
       var __param;
       var __metadata;
@@ -20486,7 +20486,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           }
           d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
         };
-        __assign = Object.assign || function(t) {
+        __assign2 = Object.assign || function(t) {
           for (var s, i = 1, n = arguments.length; i < n; i++) {
             s = arguments[i];
             for (var p in s)
@@ -20495,7 +20495,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           }
           return t;
         };
-        __rest = function(s, e) {
+        __rest2 = function(s, e) {
           var t = {};
           for (var p in s)
             if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
@@ -20821,8 +20821,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           return kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value), value;
         };
         exporter("__extends", __extends);
-        exporter("__assign", __assign);
-        exporter("__rest", __rest);
+        exporter("__assign", __assign2);
+        exporter("__rest", __rest2);
         exporter("__decorate", __decorate);
         exporter("__param", __param);
         exporter("__metadata", __metadata);
@@ -22098,7 +22098,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       exports.useStyle = void 0;
       var react_1 = require_react();
       var StyleProvider_1 = require_StyleProvider();
-      var useStyle = (input) => {
+      var useStyle2 = (input) => {
         const c = (0, react_1.useContext)(StyleProvider_1.StyleContext);
         if (!c)
           return "";
@@ -22106,7 +22106,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         c.add(p);
         return p.className;
       };
-      exports.useStyle = useStyle;
+      exports.useStyle = useStyle2;
     }
   });
 
@@ -22140,7 +22140,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     "node_modules/pu2/style-lib/browser/index.js"(exports) {
       "use strict";
       Object.defineProperty(exports, "__esModule", { value: true });
-      exports.Box = exports.BrowserStyleProvider = void 0;
+      exports.useStyle = exports.Box = exports.BrowserStyleProvider = void 0;
       var BrowserStyleProvider_1 = require_BrowserStyleProvider();
       Object.defineProperty(exports, "BrowserStyleProvider", { enumerable: true, get: function() {
         return BrowserStyleProvider_1.BrowserStyleProvider;
@@ -22148,6 +22148,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       var Box_1 = require_Box();
       Object.defineProperty(exports, "Box", { enumerable: true, get: function() {
         return Box_1.Box;
+      } });
+      var useStyle_1 = require_useStyle();
+      Object.defineProperty(exports, "useStyle", { enumerable: true, get: function() {
+        return useStyle_1.useStyle;
       } });
     }
   });
@@ -22163,7 +22167,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   });
 
   // src/main.client.tsx
-  var import_react12 = __toESM(require_react());
+  var import_react15 = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
 
   // node_modules/react-router-dom/index.js
@@ -23038,11 +23042,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   }
 
   // src/main.client.tsx
-  var import_style_lib6 = __toESM(require_style_lib());
+  var import_style_lib7 = __toESM(require_style_lib());
 
   // src/App.tsx
-  var import_react11 = __toESM(require_react());
-  var import_style_lib5 = __toESM(require_style_lib());
+  var import_react14 = __toESM(require_react());
+  var import_style_lib6 = __toESM(require_style_lib());
 
   // src/Header.tsx
   var import_react5 = __toESM(require_react());
@@ -23064,6 +23068,18 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     m: "0px" /* _0 */
   });
   var Button = (props) => /* @__PURE__ */ import_react3.default.createElement(import_style_lib.Box, {
+    border: "2px solid black",
+    cursor: "pointer",
+    color: "black",
+    bg: "white",
+    px: "12px" /* _5 */,
+    py: "6px" /* _3 */,
+    css: {
+      ":hover": {
+        color: "white",
+        bg: "black"
+      }
+    },
     ...props,
     as: "button"
   });
@@ -23203,122 +23219,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // src/Resume/Resume.tsx
   var import_react6 = __toESM(require_react());
-  var import_style_lib3 = __toESM(require_style_lib());
-  var HeaderContact = ({ label, text }) => /* @__PURE__ */ import_react6.default.createElement(Flex, {
-    alignItems: "center",
-    justifyContent: "space-between"
-  }, /* @__PURE__ */ import_react6.default.createElement(Text, null, label), /* @__PURE__ */ import_react6.default.createElement(Text, {
-    textAlign: "right"
-  }, text));
-  var Job = ({
-    children,
-    city,
-    where,
-    role,
-    from,
-    to
-  }) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib3.Box, {
-    borderTop: "3px solid black"
-  }, /* @__PURE__ */ import_react6.default.createElement(Flex, {
-    justifyContent: "space-between",
-    py: "12px" /* _5 */,
-    px: "24px" /* _7 */
-  }, /* @__PURE__ */ import_react6.default.createElement(import_style_lib3.Box, null, /* @__PURE__ */ import_react6.default.createElement(Text, {
-    display: "block",
-    textTransform: "uppercase",
-    fontWeight: "600"
-  }, role), /* @__PURE__ */ import_react6.default.createElement(Flex, {
-    pt: "6px" /* _3 */,
-    justifyContent: "space-between"
-  }, /* @__PURE__ */ import_react6.default.createElement(Text, null, where), /* @__PURE__ */ import_react6.default.createElement(Text, {
-    pl: "24px" /* _7 */,
-    whiteSpace: "nowrap"
-  }, city))), /* @__PURE__ */ import_react6.default.createElement(Text, {
-    textAlign: "right",
-    textTransform: "uppercase",
-    fontWeight: "600"
-  }, from, " - ", to)), /* @__PURE__ */ import_react6.default.createElement(import_style_lib3.Box, {
-    pb: "18px" /* _6 */,
-    px: "12px" /* _5 */
-  }, children));
-  var LiP = ({ children }) => /* @__PURE__ */ import_react6.default.createElement(Li, {
-    lineHeight: "24px" /* _3 */,
-    pb: "4px" /* _2 */
-  }, /* @__PURE__ */ import_react6.default.createElement(P, null, children));
-  var Resume = () => /* @__PURE__ */ import_react6.default.createElement(import_style_lib3.Box, {
-    maxWidth: "1000px",
-    backgroundColor: "white",
-    boxShadow: "4px 4px 2px rgba(0,0,0,0.3)",
-    lineHeight: "1",
-    p: "36px" /* _8 */,
-    css: {
-      "@media print": {
-        p: "0px" /* _0 */
-      }
-    }
-  }, /* @__PURE__ */ import_react6.default.createElement(Flex, {
-    justifyContent: "space-between"
-  }, /* @__PURE__ */ import_react6.default.createElement(import_style_lib3.Box, null, /* @__PURE__ */ import_react6.default.createElement(Text, null, "Gregory Dalton"), /* @__PURE__ */ import_react6.default.createElement(Ul, null, /* @__PURE__ */ import_react6.default.createElement(Li, null, /* @__PURE__ */ import_react6.default.createElement(Text, null, "Typescript")), /* @__PURE__ */ import_react6.default.createElement(Li, null, /* @__PURE__ */ import_react6.default.createElement(Text, null, "Javascript")), /* @__PURE__ */ import_react6.default.createElement(Li, null, /* @__PURE__ */ import_react6.default.createElement(Text, null, "Node")), /* @__PURE__ */ import_react6.default.createElement(Li, null, /* @__PURE__ */ import_react6.default.createElement(Text, null, "C#")))), /* @__PURE__ */ import_react6.default.createElement(import_style_lib3.Box, {
-    flex: "1",
-    pl: "54px" /* _9 */
-  }, /* @__PURE__ */ import_react6.default.createElement(import_style_lib3.Box, {
-    pb: "4px" /* _2 */
-  }, /* @__PURE__ */ import_react6.default.createElement(HeaderContact, {
-    label: "email",
-    text: "gregolai@gmail.com"
-  }), /* @__PURE__ */ import_react6.default.createElement(HeaderContact, {
-    label: "website",
-    text: "gregoryland.com"
-  })), /* @__PURE__ */ import_react6.default.createElement(import_style_lib3.Box, {
-    borderTop: "2px solid black",
-    pt: "4px" /* _2 */
-  }, /* @__PURE__ */ import_react6.default.createElement(Text, {
-    display: "block"
-  }, "B.S. Computer Science"), /* @__PURE__ */ import_react6.default.createElement(Text, {
-    display: "block"
-  }, "California State University, Long Beach"), /* @__PURE__ */ import_react6.default.createElement(Text, {
-    display: "block",
-    pb: "8px" /* _4 */
-  }, "Class of 2009"), /* @__PURE__ */ import_react6.default.createElement(Text, {
-    display: "block"
-  }, "- Programming team"), /* @__PURE__ */ import_react6.default.createElement(Text, {
-    display: "block"
-  }, "- Tau Beta Pi Engineering Honor Society")))), /* @__PURE__ */ import_react6.default.createElement(import_style_lib3.Box, {
-    pt: "18px" /* _6 */
-  }, /* @__PURE__ */ import_react6.default.createElement(Job, {
-    city: "New York, NY",
-    where: "Squarespace",
-    from: "May 2017",
-    to: "January 2021",
-    role: "Software Engineer"
-  }, /* @__PURE__ */ import_react6.default.createElement(Ul, null, /* @__PURE__ */ import_react6.default.createElement(LiP, null, "As one of the starting members of the Squarespace Design Platform team, I developed consistent and reusable React and React-Native components."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Developed Squarespace style guides, compositional patterns, APIs, and high-quality documentation using Gatsby."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Discovering and reasoning about various long term and short term trade-offs when developing components. Simplicity versus flexibility. Readability vs performance. Third party code vs in-house code. Etc."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Unit testing with Jest. Integration testing with Cypress and Puppeteer."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Collaborated across teams to understand bigger picture scope. This involved managing NPM packages, user experience, accessibility, and intuitive design."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Feature migration and refactoring using code mods and test-driven techniques."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "The importance of a well-designed API, teamwork, and writing good pull requests."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Part of a multi-team effort to integrate our CMS into a mobile browser experience for customers."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Learned to be humble about what I don't know, questioning why we do things a certain way and learning from others' experience."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Wrote a custom Table, DateTime picker, etc."))), /* @__PURE__ */ import_react6.default.createElement(Job, {
-    city: "New York, NY",
-    where: "Agorafy",
-    from: "December 2016",
-    to: "May 2017",
-    role: "Frontend Engineer"
-  }, /* @__PURE__ */ import_react6.default.createElement(Ul, null, /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Collaborated with our backend engineers to create a REST API for our real-estate listing project."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Led a 3-person team using JS/React+Redux to build a CMS frontend. Users could search and filter through a variety of real estate properties."))), /* @__PURE__ */ import_react6.default.createElement(Job, {
-    city: "New York, NY",
-    where: "YouVisit",
-    from: "Jan 2015",
-    to: "Apr 2016",
-    role: "Full-stack Engineer"
-  }, /* @__PURE__ */ import_react6.default.createElement(Ul, null, /* @__PURE__ */ import_react6.default.createElement(LiP, null, "PHP/MySQL/HTML/CSS/JS/jQuery/Node"), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Wrote a client tool using the JS geolocation API to collect location data and hotspots for college campuses. Websockets worked with a Node backend to batch database inserts into our SQL database. A client could log into the CMS and view users' paths on Google Maps."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Organized and aggregated large-scale metrics of site visitor data into useful formats for our clients to download."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Hybrid app development and testing for both mobile and desktop. Used a custom-built MVC backend with a REST API and minimal unit testing."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Built a custom A/B testing library and project tracking system in our CMS to track the stages of tour production."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Worked on embedding tours into 3rd party websites using JavaScript with JSONP to load iframe settings."))), /* @__PURE__ */ import_react6.default.createElement(Job, {
-    city: "New York, NY",
-    where: "M & M Environmental",
-    from: "August 2014",
-    to: "December 2014",
-    role: "Entry-level Full-stack Engineer"
-  }, /* @__PURE__ */ import_react6.default.createElement(Ul, null, /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Built a cool-looking calendar and scheduling application using PHP/MySQL/JS for managing technician availability."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Built a Vehicle GPS viewer using the Google Maps API for monitoring technician proximity to their scheduled appointments."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Built a Yelp review scraper and fancy frontend."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Built an admin portal using Auth0 Google single-sign-on. Used Wordpress for viewing work shift calendars, technician locations, and Yelp reviews."), /* @__PURE__ */ import_react6.default.createElement(LiP, null, "Set up CRON tasks that would send aggregated morning emails to our staff about recent Yelp reviews and shift calendars.")))));
 
   // src/pages/page.Home.tsx
   var import_react7 = __toESM(require_react());
-  var import_style_lib4 = __toESM(require_style_lib());
+  var import_style_lib3 = __toESM(require_style_lib());
   var gridTemplateAreas = '"b c c c" "b d d d"';
   var gridTemplateAreasMobile = '"a a a a" "c c c c" "d d d d"';
   var bigImgUrl = "https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80";
   var BigGrid = () => {
-    return /* @__PURE__ */ import_react7.default.createElement(import_style_lib4.Box, {
+    return /* @__PURE__ */ import_react7.default.createElement(import_style_lib3.Box, {
       display: "grid",
       gridTemplateAreas,
       gridTemplateColumns: "7fr 3fr 3fr 3fr",
@@ -23328,7 +23237,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           gridTemplateAreas: gridTemplateAreasMobile
         }
       }
-    }, /* @__PURE__ */ import_react7.default.createElement(import_style_lib4.Box, {
+    }, /* @__PURE__ */ import_react7.default.createElement(import_style_lib3.Box, {
       bg: `50%/50% url("${bigImgUrl}")`,
       backgroundSize: "cover",
       br: "2px solid black",
@@ -23338,13 +23247,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           display: "none"
         }
       }
-    }), /* @__PURE__ */ import_react7.default.createElement(import_style_lib4.Box, {
+    }), /* @__PURE__ */ import_react7.default.createElement(import_style_lib3.Box, {
       gridArea: "c",
       py: "18px" /* _6 */,
       px: "36px" /* _8 */,
       bb: "2px solid black",
       bg: "#f7f2e9"
-    }, /* @__PURE__ */ import_react7.default.createElement(H2, null, "I can build your website"), /* @__PURE__ */ import_react7.default.createElement(P, null, "...yes, yes I can."), /* @__PURE__ */ import_react7.default.createElement(P, {
+    }, /* @__PURE__ */ import_react7.default.createElement(H2, null, "Human / Programmer"), /* @__PURE__ */ import_react7.default.createElement(P, {
       py: "12px" /* _5 */
     }, "My name's Greg and this is my website. Please have a look and print my resume."), /* @__PURE__ */ import_react7.default.createElement(Button, null, "View my resume")), /* @__PURE__ */ import_react7.default.createElement(Links, {
       gridArea: "d"
@@ -23353,65 +23262,417 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var PageHome = () => /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null, /* @__PURE__ */ import_react7.default.createElement(BigGrid, null));
 
   // src/pages/page.Career.tsx
+  var import_style_lib5 = __toESM(require_style_lib());
+  var import_react11 = __toESM(require_react());
+
+  // src/Resume/Resume2.tsx
+  var import_react10 = __toESM(require_react());
+  var import_style_lib4 = __toESM(require_style_lib());
+
+  // node_modules/react-icons/lib/esm/iconBase.js
+  var import_react9 = __toESM(require_react());
+
+  // node_modules/react-icons/lib/esm/iconContext.js
   var import_react8 = __toESM(require_react());
-  var PageCareer = () => /* @__PURE__ */ import_react8.default.createElement(Flex, {
+  var DefaultContext = {
+    color: void 0,
+    size: void 0,
+    className: void 0,
+    style: void 0,
+    attr: void 0
+  };
+  var IconContext = import_react8.default.createContext && import_react8.default.createContext(DefaultContext);
+
+  // node_modules/react-icons/lib/esm/iconBase.js
+  var __assign = function() {
+    __assign = Object.assign || function(t) {
+      for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s)
+          if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+      }
+      return t;
+    };
+    return __assign.apply(this, arguments);
+  };
+  var __rest = function(s, e) {
+    var t = {};
+    for (var p in s)
+      if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+      for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+        if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+          t[p[i]] = s[p[i]];
+      }
+    return t;
+  };
+  function Tree2Element(tree) {
+    return tree && tree.map(function(node, i) {
+      return import_react9.default.createElement(node.tag, __assign({
+        key: i
+      }, node.attr), Tree2Element(node.child));
+    });
+  }
+  function GenIcon(data) {
+    return function(props) {
+      return import_react9.default.createElement(IconBase, __assign({
+        attr: __assign({}, data.attr)
+      }, props), Tree2Element(data.child));
+    };
+  }
+  function IconBase(props) {
+    var elem = function(conf) {
+      var attr = props.attr, size = props.size, title = props.title, svgProps = __rest(props, ["attr", "size", "title"]);
+      var computedSize = size || conf.size || "1em";
+      var className;
+      if (conf.className)
+        className = conf.className;
+      if (props.className)
+        className = (className ? className + " " : "") + props.className;
+      return import_react9.default.createElement("svg", __assign({
+        stroke: "currentColor",
+        fill: "currentColor",
+        strokeWidth: "0"
+      }, conf.attr, attr, svgProps, {
+        className,
+        style: __assign(__assign({
+          color: props.color || conf.color
+        }, conf.style), props.style),
+        height: computedSize,
+        width: computedSize,
+        xmlns: "http://www.w3.org/2000/svg"
+      }), title && import_react9.default.createElement("title", null, title), props.children);
+    };
+    return IconContext !== void 0 ? import_react9.default.createElement(IconContext.Consumer, null, function(conf) {
+      return elem(conf);
+    }) : elem(DefaultContext);
+  }
+
+  // node_modules/react-icons/md/index.esm.js
+  function MdFace(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "fill": "none", "d": "M0 0h24v24H0z" } }, { "tag": "path", "attr": { "d": "M9 11.75a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zm6 0a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37a9.974 9.974 0 0010.41 3.97c.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z" } }] })(props);
+  }
+  function MdOutlineEmail(props) {
+    return GenIcon({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "fill": "none", "d": "M0 0h24v24H0V0z" } }, { "tag": "path", "attr": { "d": "M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z" } }] })(props);
+  }
+
+  // src/Resume/Resume2.tsx
+  var ResumeP = (props) => /* @__PURE__ */ import_react10.default.createElement(P, {
+    fontSize: "14px",
+    lineHeight: "18px",
+    ...props
+  });
+  var NameText = (props) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    fontSize: "39px" /* _39px */,
+    letterSpacing: "6px" /* _6px */,
+    textTransform: "uppercase",
+    ...props
+  });
+  var HR = (props) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    bb: "2px solid black",
+    mt: "-1px",
+    ...props
+  });
+  var HRSmall = (props) => /* @__PURE__ */ import_react10.default.createElement(HR, {
+    w: "40px"
+  });
+  var Diamond = (props) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    position: "absolute",
+    left: "-1px",
+    width: "8px",
+    height: "8px",
+    bg: "black",
+    transform: "translateX(-50%) rotateZ(45deg)",
+    ...props
+  });
+  var TextHeading = (props) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    fontSize: "18px" /* _18px */,
+    fontWeight: "600",
+    letterSpacing: "6px" /* _6px */,
+    textTransform: "uppercase",
+    ...props
+  });
+  var LeftSection = ({ title, children }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(TextHeading, {
+    pb: "18px" /* _18px */
+  }, title), /* @__PURE__ */ import_react10.default.createElement(HRSmall, null), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    pt: "18px" /* _18px */
+  }, children));
+  var RightSection = ({ title, children }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(Flex, {
+    position: "relative",
+    alignItems: "center"
+  }, /* @__PURE__ */ import_react10.default.createElement(Diamond, {
+    position: "absolute",
+    left: "-1px"
+  }), /* @__PURE__ */ import_react10.default.createElement(TextHeading, {
+    pl: "30px" /* _30px */,
+    flex: "1"
+  }, title), /* @__PURE__ */ import_react10.default.createElement(HRSmall, null)), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    pl: "30px" /* _30px */,
+    pt: "30px" /* _30px */,
+    pb: "30px" /* _30px */
+  }, children));
+  var Contact = ({ Icon, label, text }) => {
+    const iconClassName = (0, import_style_lib4.useStyle)({ color: "white", width: "38px" /* _38px */, height: "38px" /* _38px */, m: "-2px" });
+    return /* @__PURE__ */ import_react10.default.createElement(Flex, {
+      py: "18px" /* _18px */,
+      alignItems: "stretch",
+      bb: "2px solid white",
+      css: {
+        ":first-of-type": { pt: "0px" },
+        ":last-of-type": { bb: "none", pb: "0px" }
+      }
+    }, /* @__PURE__ */ import_react10.default.createElement(Icon, {
+      className: iconClassName
+    }), /* @__PURE__ */ import_react10.default.createElement(Flex, {
+      flex: "1",
+      pl: "18px" /* _18px */,
+      flexDirection: "column",
+      justifyContent: "space-between"
+    }, /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+      color: "white",
+      fontWeight: "600",
+      textTransform: "uppercase"
+    }, label), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+      color: "white"
+    }, text)));
+  };
+  var ResumeBanner = (props) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    position: "relative",
+    w: "30px",
+    bg: "black",
+    ...props
+  }, /* @__PURE__ */ import_react10.default.createElement(Text, {
+    position: "absolute",
+    bottom: "0",
+    left: "50%",
+    transform: "rotateZ(-90deg) translate(10px, 50%)",
+    transformOrigin: "bottom left",
+    color: "white",
+    textTransform: "uppercase"
+  }, "Resume"));
+  var Job = ({ children }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, children);
+  var JobHead = ({ title, from, to, where, city }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(Text, {
+    display: "block",
+    textTransform: "uppercase",
+    fontWeight: "600",
+    letterSpacing: "1px",
+    pb: "8px" /* _4 */
+  }, title), /* @__PURE__ */ import_react10.default.createElement(Text, {
+    display: "block",
+    color: "#8A8A8A",
+    fontSize: "14px",
+    pb: "8px" /* _4 */
+  }, from, " - ", to, " | ", where, " | ", city));
+  var JobSummary = ({ children }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(ResumeP, null, children));
+  var JobBullet = ({ children }) => /* @__PURE__ */ import_react10.default.createElement(Flex, {
+    alignItems: "center",
+    pt: "8px" /* _4 */
+  }, /* @__PURE__ */ import_react10.default.createElement(HR, {
+    w: "20px"
+  }), /* @__PURE__ */ import_react10.default.createElement(ResumeP, {
+    flex: "1",
+    pl: "18px" /* _6 */
+  }, children));
+  var Skill = ({ name, value }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    borderRadius: "10px",
+    bg: "darkgray",
+    overflow: "hidden"
+  }, /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    h: "20px",
+    bg: "lightgray",
+    w: `${value * 10}%`
+  })), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    textAlign: "center"
+  }, name));
+  var PageSplit = ({ left, right, ...rest }) => /* @__PURE__ */ import_react10.default.createElement(Flex, {
+    ...rest
+  }, /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    flex: "1",
+    pr: "38px" /* _38px */
+  }, left), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    w: "260px"
+  }, right));
+  var Resume = () => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    position: "relative",
+    bg: "#FAFAFA",
+    px: "60px" /* _60px */,
+    pb: "60px" /* _60px */,
+    lineHeight: "1"
+  }, /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    position: "absolute",
+    top: "0",
+    left: "0",
+    w: "100%",
+    bg: "#DAD8D9",
+    h: "24px" /* _7 */
+  }), /* @__PURE__ */ import_react10.default.createElement(PageSplit, {
+    left: /* @__PURE__ */ import_react10.default.createElement(Flex, {
+      alignItems: "stretch",
+      pb: "38px" /* _38px */
+    }, /* @__PURE__ */ import_react10.default.createElement(ResumeBanner, null), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+      flex: "1",
+      pl: "30px" /* _30px */,
+      pt: "24px" /* _7 */
+    }, /* @__PURE__ */ import_react10.default.createElement(NameText, {
+      color: "#6F6F6F",
+      pt: "38px" /* _38px */
+    }, "Gregory"), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+      position: "relative"
+    }, /* @__PURE__ */ import_react10.default.createElement(Diamond, {
+      position: "absolute",
+      left: -1 * parseInt("24px" /* _7 */, 10) + "px"
+    })), /* @__PURE__ */ import_react10.default.createElement(NameText, {
+      pt: "10px" /* _10px */,
+      fontWeight: "600",
+      pb: "18px" /* _18px */
+    }, "Dalton"), /* @__PURE__ */ import_react10.default.createElement(HRSmall, null), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+      pt: "18px" /* _18px */,
+      color: "gray",
+      fontSize: "18px" /* _18px */,
+      fontWeight: "600",
+      letterSpacing: "6px" /* _6px */,
+      textTransform: "uppercase"
+    }, "Software Engineer"))),
+    right: /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+      pt: "24px" /* _7 */,
+      w: "100%",
+      h: "100%",
+      bg: "url('https://images.unsplash.com/photo-1644123550420-ee28152ab925?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2781&q=80')",
+      backgroundSize: "cover",
+      backgroundPosition: "50% 50%"
+    })
+  }), /* @__PURE__ */ import_react10.default.createElement(PageSplit, {
+    left: /* @__PURE__ */ import_react10.default.createElement(LeftSection, {
+      title: "Career Summary"
+    }, "summary"),
+    right: /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+      bg: "black",
+      p: "30px" /* _30px */
+    }, /* @__PURE__ */ import_react10.default.createElement(Contact, {
+      Icon: MdOutlineEmail,
+      label: "Email",
+      text: "gregolai@gmail.com"
+    }), /* @__PURE__ */ import_react10.default.createElement(Contact, {
+      Icon: MdFace,
+      label: "Website",
+      text: "gregoryland.com"
+    })))
+  }), /* @__PURE__ */ import_react10.default.createElement(PageSplit, {
+    pt: "30px" /* _30px */,
+    left: /* @__PURE__ */ import_react10.default.createElement(LeftSection, {
+      title: "Work Experience"
+    }, /* @__PURE__ */ import_react10.default.createElement(Job, null, /* @__PURE__ */ import_react10.default.createElement(JobHead, {
+      city: "New York, NY",
+      from: "May 2017",
+      to: "Jan 2021",
+      title: "Software Engineer",
+      where: "Squarespace"
+    }), /* @__PURE__ */ import_react10.default.createElement(JobSummary, null, "Design Platform team. I wrote many React and React-Native components that were used throughout Squarespace on many different teams."), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Developed Squarespace style guides, compositional patterns, APIs, and high-quality documentation using Gatsby."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Discovering and reasoning about various long term and short term trade-offs when developing components. Simplicity versus flexibility. Readability vs performance. Third party code vs in-house code. Etc."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Unit testing with Jest. Integration testing with Cypress and Puppeteer."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Collaborated across teams to understand bigger picture scope. This involved managing NPM packages, user experience, accessibility, and intuitive design."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Feature migration and refactoring using code mods and test-driven techniques."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "The importance of a well-designed API, teamwork, and writing good pull requests."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Part of a multi-team effort to integrate our CMS into a mobile browser experience for customers."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Learned to be humble about what I don't know, questioning why we do things a certain way and learning from others' experience."))), /* @__PURE__ */ import_react10.default.createElement(Job, null, /* @__PURE__ */ import_react10.default.createElement(JobHead, {
+      city: "New York, NY",
+      from: "Dec 2016",
+      to: "May 2017",
+      title: "Frontend Engineer",
+      where: "Agorafy"
+    }), /* @__PURE__ */ import_react10.default.createElement(JobSummary, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Collaborated with our backend engineers to create a REST API for our real-estate listing project."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Led a 3-person team using JS/React+Redux to build a CMS frontend. Users could search and filter through a variety of real estate properties."))), /* @__PURE__ */ import_react10.default.createElement(Job, null, /* @__PURE__ */ import_react10.default.createElement(JobHead, {
+      city: "New York, NY",
+      from: "Jan 2015",
+      to: "Apr 2016",
+      title: "Full-stack Engineer",
+      where: "YouVisit"
+    }), /* @__PURE__ */ import_react10.default.createElement(JobSummary, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "PHP/MySQL/HTML/CSS/JS/jQuery/Node"), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Wrote a client tool using the JS geolocation API to collect location data and hotspots for college campuses. Websockets worked with a Node backend to batch database inserts into our SQL database. A client could log into the CMS and view users' paths on Google Maps."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Organized and aggregated large-scale metrics of site visitor data into useful formats for our clients to download."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Hybrid app development and testing for both mobile and desktop. Used a custom-built MVC backend with a REST API and minimal unit testing."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built a custom A/B testing library and project tracking system in our CMS to track the stages of tour production."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Worked on embedding tours into 3rd party websites using JavaScript with JSONP to load iframe settings."))), /* @__PURE__ */ import_react10.default.createElement(Job, null, /* @__PURE__ */ import_react10.default.createElement(JobHead, {
+      city: "New York, NY",
+      from: "Aug 2014",
+      to: "Dec 2014",
+      title: "Entry-level Engineer",
+      where: "M&M Environmental"
+    }), /* @__PURE__ */ import_react10.default.createElement(JobSummary, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built a cool-looking calendar and scheduling application using PHP/MySQL/JS for managing technician availability."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built a Vehicle GPS viewer using the Google Maps API for monitoring technician proximity to their scheduled appointments."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built a Yelp review scraper and fancy frontend."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built an admin portal using Auth0 Google single-sign-on. Used Wordpress for viewing work shift calendars, technician locations, and Yelp reviews."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Set up CRON tasks that would send aggregated morning emails to our staff about recent Yelp reviews and shift calendars.")))),
+    right: /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+      bl: "2px solid black",
+      h: "100%"
+    }, /* @__PURE__ */ import_react10.default.createElement(RightSection, {
+      title: "Education"
+    }, /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+      fontSize: "14px" /* _14px */,
+      fontWeight: "600",
+      textTransform: "uppercase"
+    }, "Bachelor of Science, Computer Science"), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+      fontSize: "12px" /* _12px */,
+      pt: "10px" /* _10px */
+    }, "2004 - 2009"), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+      fontSize: "12px" /* _12px */
+    }, "California State University, Long Beach")), /* @__PURE__ */ import_react10.default.createElement(RightSection, {
+      title: "Skills"
+    }, /* @__PURE__ */ import_react10.default.createElement(Skill, {
+      name: "Javascript",
+      value: 9
+    }), /* @__PURE__ */ import_react10.default.createElement(Skill, {
+      name: "React",
+      value: 8
+    }), /* @__PURE__ */ import_react10.default.createElement(Skill, {
+      name: "C#",
+      value: 6
+    })))
+  }));
+
+  // src/pages/page.Career.tsx
+  var PageCareer = () => /* @__PURE__ */ import_react11.default.createElement(import_react11.default.Fragment, null, /* @__PURE__ */ import_react11.default.createElement(Button, null, "Print my resume"), /* @__PURE__ */ import_react11.default.createElement(Flex, {
     justifyContent: "center",
     pt: "18px" /* _6 */
-  }, /* @__PURE__ */ import_react8.default.createElement(Resume, null));
+  }, /* @__PURE__ */ import_react11.default.createElement(import_style_lib5.Box, {
+    boxShadow: "5px 5px 3px rgba(0,0,0,0.3)",
+    maxWidth: "1000px"
+  }, /* @__PURE__ */ import_react11.default.createElement(Resume, null))));
 
   // src/pages/page.Life.tsx
-  var import_react9 = __toESM(require_react());
-  var PageLife = () => /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null, /* @__PURE__ */ import_react9.default.createElement(H2, {
+  var import_react12 = __toESM(require_react());
+  var PageLife = () => /* @__PURE__ */ import_react12.default.createElement(import_react12.default.Fragment, null, /* @__PURE__ */ import_react12.default.createElement(H2, null, "From animal, to robot"), /* @__PURE__ */ import_react12.default.createElement(P, null, "I have deep respect for people who build things themselves. There' something about owning your creation that's beautuiful. As we move towards a greater level of abstraction we face the danger of not remembering who we are. We must not forget ourselves across the vast digital ocean! The joy of creation must not be lost!"), /* @__PURE__ */ import_react12.default.createElement(P, null, "As we abstract up the tree we must recontexualize who we are...just as we do in life as we age. It's fractal-like."), /* @__PURE__ */ import_react12.default.createElement(P, null, "Our analog human experience is touching hands with our digital creations. It's ok to be weird because life is weird. It's the fire that keeps us going. Consciousness, the greatest mystery alongside the Big Bang and black holes, is fundamentally paradoxical."), /* @__PURE__ */ import_react12.default.createElement(P, null, "Everything boils down to mental models. When the state of your organism matches the state of the local environment, you are in flow with the universe"), /* @__PURE__ */ import_react12.default.createElement(H2, {
     pt: "24px" /* _7 */
-  }, "What got me into dev?"), /* @__PURE__ */ import_react9.default.createElement(P, null, "Map editors...Warcraft 3 editor...UT2004 scripting...Starcraft. etc."), /* @__PURE__ */ import_react9.default.createElement(H2, {
+  }, "What got me into dev?"), /* @__PURE__ */ import_react12.default.createElement(P, null, "Map editors...Warcraft 3 editor...UT2004 scripting...Starcraft. etc."), /* @__PURE__ */ import_react12.default.createElement(H2, {
     pt: "24px" /* _7 */
-  }, "Why I write code"), /* @__PURE__ */ import_react9.default.createElement(P, null, "For better or for worse, most people don't think like I do."), /* @__PURE__ */ import_react9.default.createElement(P, null, "I think like a scientist. Skeptical by nature."), /* @__PURE__ */ import_react9.default.createElement(P, null, "I try not to be someone I'm not. I try to maintain an honest character."), /* @__PURE__ */ import_react9.default.createElement(H2, {
+  }, "Why I write code"), /* @__PURE__ */ import_react12.default.createElement(P, null, "For better or for worse, most people don't think like I do."), /* @__PURE__ */ import_react12.default.createElement(P, null, "I think like a scientist. Skeptical by nature."), /* @__PURE__ */ import_react12.default.createElement(P, null, "I try not to be someone I'm not. I try to maintain an honest character."), /* @__PURE__ */ import_react12.default.createElement(H2, {
     pt: "24px" /* _7 */
-  }, "Why I moved to Texas"), /* @__PURE__ */ import_react9.default.createElement(P, null, "Weather"), /* @__PURE__ */ import_react9.default.createElement(P, null, "Nicer people"), /* @__PURE__ */ import_react9.default.createElement(P, null, "More space"), /* @__PURE__ */ import_react9.default.createElement(H2, {
+  }, "Why I moved to Texas"), /* @__PURE__ */ import_react12.default.createElement(P, null, "Environment is everything"), /* @__PURE__ */ import_react12.default.createElement(H2, {
     pt: "24px" /* _7 */
-  }, "Favorite video games"), /* @__PURE__ */ import_react9.default.createElement(H3, null, "Hollow Knight"), /* @__PURE__ */ import_react9.default.createElement(H3, null, "Kid Chameleon"), /* @__PURE__ */ import_react9.default.createElement(H3, null, "Starcraft"), /* @__PURE__ */ import_react9.default.createElement(H3, null, "The Talos Principle"), /* @__PURE__ */ import_react9.default.createElement(H3, null, "Thief: The Dark Project"), /* @__PURE__ */ import_react9.default.createElement(H3, null, "Thief 2: The Metal Age"), /* @__PURE__ */ import_react9.default.createElement(H3, null, "Undertale"), /* @__PURE__ */ import_react9.default.createElement(H3, null, "Warcraft 3"), /* @__PURE__ */ import_react9.default.createElement(H2, {
+  }, "Favorite video games"), /* @__PURE__ */ import_react12.default.createElement(H3, null, "Hollow Knight"), /* @__PURE__ */ import_react12.default.createElement(H3, null, "Kid Chameleon"), /* @__PURE__ */ import_react12.default.createElement(H3, null, "Starcraft"), /* @__PURE__ */ import_react12.default.createElement(H3, null, "The Talos Principle"), /* @__PURE__ */ import_react12.default.createElement(H3, null, "Thief: The Dark Project"), /* @__PURE__ */ import_react12.default.createElement(H3, null, "Thief 2: The Metal Age"), /* @__PURE__ */ import_react12.default.createElement(H3, null, "Undertale"), /* @__PURE__ */ import_react12.default.createElement(H3, null, "Warcraft 3"), /* @__PURE__ */ import_react12.default.createElement(H2, {
     pt: "24px" /* _7 */
-  }, "My personal roadmap"), /* @__PURE__ */ import_react9.default.createElement(Ul, null, /* @__PURE__ */ import_react9.default.createElement(Li, null, "Work for an awesome company in Austin"), /* @__PURE__ */ import_react9.default.createElement(Li, null, "Remember to take breaks throughout the day"), /* @__PURE__ */ import_react9.default.createElement(Li, null, "Expand my personal utility library"), /* @__PURE__ */ import_react9.default.createElement(Li, null, "Work on a small project that people find useful"), /* @__PURE__ */ import_react9.default.createElement(Li, null, 'Learn some "big picture" things'), /* @__PURE__ */ import_react9.default.createElement(Li, null, "Get better at math"), /* @__PURE__ */ import_react9.default.createElement(Li, null, "Make a boyfriend?")));
+  }, "My personal roadmap"), /* @__PURE__ */ import_react12.default.createElement(Ul, null, /* @__PURE__ */ import_react12.default.createElement(Li, null, "Work for an awesome company in Austin"), /* @__PURE__ */ import_react12.default.createElement(Li, null, "Remember to take breaks throughout the day"), /* @__PURE__ */ import_react12.default.createElement(Li, null, "Expand my personal utility library"), /* @__PURE__ */ import_react12.default.createElement(Li, null, "Work on a small project that people find useful"), /* @__PURE__ */ import_react12.default.createElement(Li, null, 'Learn some "big picture" things'), /* @__PURE__ */ import_react12.default.createElement(Li, null, "Get better at math"), /* @__PURE__ */ import_react12.default.createElement(Li, null, "Make a boyfriend?")));
 
   // src/pages/page.Projects.tsx
-  var import_react10 = __toESM(require_react());
-  var PageProjects = () => /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null, /* @__PURE__ */ import_react10.default.createElement(P, null, "I wrote my own little CSS-in-JS styling lib", " ", /* @__PURE__ */ import_react10.default.createElement("a", {
+  var import_react13 = __toESM(require_react());
+  var PageProjects = () => /* @__PURE__ */ import_react13.default.createElement(import_react13.default.Fragment, null, /* @__PURE__ */ import_react13.default.createElement(H2, null, "Just a few of many projects I've worked on in my free time"), /* @__PURE__ */ import_react13.default.createElement(H3, null, "SNEK"), /* @__PURE__ */ import_react13.default.createElement(H3, null, "HTML5 Vimeo player"), /* @__PURE__ */ import_react13.default.createElement(H3, null, "WarGame"), /* @__PURE__ */ import_react13.default.createElement(H3, null, "JS & ActionScript Starfield"), /* @__PURE__ */ import_react13.default.createElement(H3, null, "JS Canvas Masking"), /* @__PURE__ */ import_react13.default.createElement(H3, null, "CmdTool"), /* @__PURE__ */ import_react13.default.createElement(H3, null, "IcoSphere"), /* @__PURE__ */ import_react13.default.createElement(H3, null, "Cat Game"), /* @__PURE__ */ import_react13.default.createElement(P, null, "I wrote my own little CSS-in-JS styling lib", " ", /* @__PURE__ */ import_react13.default.createElement("a", {
     href: "https://github.com/gregolai/pu2/tree/master/src/style-lib"
-  }, "here"), `. It supports server-side rendering. It's what's rendering this site. I built it because CSS is aweful. It really is. Having to repeat the same selectors is only "cascading" in behavior, not as it appears to the developer. Third-party CSS-in-JS come with a lot of cruft and buy-in to a specific framework. It's not that difficult to write your own, and you learn a lot from it.`), /* @__PURE__ */ import_react10.default.createElement(P, null, "War Game"), /* @__PURE__ */ import_react10.default.createElement(P, null, "Cmd Tool"), /* @__PURE__ */ import_react10.default.createElement(P, null, "Cat Game"), /* @__PURE__ */ import_react10.default.createElement(P, null, "A plethora of incomplete projects written in a variety of programming languages."));
-
-  // src/img/agorafy.png
-  var agorafy_default = "./assets/agorafy-47AP76AG.png";
+  }, "here"), `. It supports server-side rendering. It's what's rendering this site. I built it because CSS is aweful. It really is. Having to repeat the same selectors is only "cascading" in behavior, not as it appears to the developer. Third-party CSS-in-JS come with a lot of cruft and buy-in to a specific framework. It's not that difficult to write your own, and you learn a lot from it.`));
 
   // src/App.tsx
-  var PageFrame = () => /* @__PURE__ */ import_react11.default.createElement(import_style_lib5.Box, null, /* @__PURE__ */ import_react11.default.createElement(Header, null), /* @__PURE__ */ import_react11.default.createElement("img", {
-    src: agorafy_default
-  }), /* @__PURE__ */ import_react11.default.createElement("main", null, /* @__PURE__ */ import_react11.default.createElement(Outlet, null)));
+  var PageFrame = () => /* @__PURE__ */ import_react14.default.createElement(import_style_lib6.Box, null, /* @__PURE__ */ import_react14.default.createElement(Header, null), /* @__PURE__ */ import_react14.default.createElement("main", null, /* @__PURE__ */ import_react14.default.createElement(Outlet, null)));
   var App = () => {
-    return /* @__PURE__ */ import_react11.default.createElement(import_style_lib5.Box, {
+    return /* @__PURE__ */ import_react14.default.createElement(import_style_lib6.Box, {
       py: "18px" /* _6 */,
       px: "4%",
       minHeight: "100vh",
       bg: "#D6E5f4"
-    }, /* @__PURE__ */ import_react11.default.createElement(Routes, null, /* @__PURE__ */ import_react11.default.createElement(Route, {
+    }, /* @__PURE__ */ import_react14.default.createElement(Routes, null, /* @__PURE__ */ import_react14.default.createElement(Route, {
       path: "/",
-      element: /* @__PURE__ */ import_react11.default.createElement(PageFrame, null)
-    }, /* @__PURE__ */ import_react11.default.createElement(Route, {
+      element: /* @__PURE__ */ import_react14.default.createElement(PageFrame, null)
+    }, /* @__PURE__ */ import_react14.default.createElement(Route, {
       index: true,
-      element: /* @__PURE__ */ import_react11.default.createElement(PageHome, null)
-    }), /* @__PURE__ */ import_react11.default.createElement(Route, {
+      element: /* @__PURE__ */ import_react14.default.createElement(PageHome, null)
+    }), /* @__PURE__ */ import_react14.default.createElement(Route, {
       path: "career",
-      element: /* @__PURE__ */ import_react11.default.createElement(PageCareer, null)
-    }), /* @__PURE__ */ import_react11.default.createElement(Route, {
+      element: /* @__PURE__ */ import_react14.default.createElement(PageCareer, null)
+    }), /* @__PURE__ */ import_react14.default.createElement(Route, {
       path: "life",
-      element: /* @__PURE__ */ import_react11.default.createElement(PageLife, null)
-    }), /* @__PURE__ */ import_react11.default.createElement(Route, {
+      element: /* @__PURE__ */ import_react14.default.createElement(PageLife, null)
+    }), /* @__PURE__ */ import_react14.default.createElement(Route, {
       path: "projects",
-      element: /* @__PURE__ */ import_react11.default.createElement(PageProjects, null)
+      element: /* @__PURE__ */ import_react14.default.createElement(PageProjects, null)
     }))));
   };
 
   // src/main.client.tsx
-  import_react_dom.default.hydrate(/* @__PURE__ */ import_react12.default.createElement(import_react12.StrictMode, null, /* @__PURE__ */ import_react12.default.createElement(import_style_lib6.BrowserStyleProvider, null, /* @__PURE__ */ import_react12.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react12.default.createElement(App, null)))), document.getElementById("root"));
+  import_react_dom.default.hydrate(/* @__PURE__ */ import_react15.default.createElement(import_react15.StrictMode, null, /* @__PURE__ */ import_react15.default.createElement(import_style_lib7.BrowserStyleProvider, null, /* @__PURE__ */ import_react15.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react15.default.createElement(App, null)))), document.getElementById("root"));
 })();
 /*
 object-assign

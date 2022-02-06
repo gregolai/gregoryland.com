@@ -23339,7 +23339,7 @@ var require_react_dom_server_node_development = __commonJS({
     if (process.env.NODE_ENV !== "production") {
       (function() {
         "use strict";
-        var React11 = require_react();
+        var React12 = require_react();
         var _assign = require_object_assign();
         var stream = require("stream");
         var ReactVersion = "17.0.2";
@@ -23350,7 +23350,7 @@ var require_react_dom_server_node_development = __commonJS({
           }
           return "Minified React error #" + code + "; visit " + url + " for the full message or use the non-minified dev environment for full errors and additional helpful warnings.";
         }
-        var ReactSharedInternals = React11.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+        var ReactSharedInternals = React12.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
         function warn(format) {
           {
             for (var _len = arguments.length, args2 = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -25587,7 +25587,7 @@ var require_react_dom_server_node_development = __commonJS({
           }
           warnUnknownProperties(type, props, eventRegistry);
         }
-        var toArray = React11.Children.toArray;
+        var toArray = React12.Children.toArray;
         var currentDebugStacks = [];
         var ReactCurrentDispatcher$1 = ReactSharedInternals.ReactCurrentDispatcher;
         var ReactDebugCurrentFrame$1;
@@ -25742,7 +25742,7 @@ var require_react_dom_server_node_development = __commonJS({
           return null;
         }
         function flattenTopLevelChildren(children) {
-          if (!React11.isValidElement(children)) {
+          if (!React12.isValidElement(children)) {
             return toArray(children);
           }
           var element = children;
@@ -25750,7 +25750,7 @@ var require_react_dom_server_node_development = __commonJS({
             return [element];
           }
           var fragmentChildren = element.props.children;
-          if (!React11.isValidElement(fragmentChildren)) {
+          if (!React12.isValidElement(fragmentChildren)) {
             return toArray(fragmentChildren);
           }
           var fragmentChildElement = fragmentChildren;
@@ -25761,7 +25761,7 @@ var require_react_dom_server_node_development = __commonJS({
             return children;
           }
           var content = "";
-          React11.Children.forEach(children, function(child) {
+          React12.Children.forEach(children, function(child) {
             if (child == null) {
               return;
             }
@@ -25827,7 +25827,7 @@ var require_react_dom_server_node_development = __commonJS({
           }
         }
         function resolve(child, context, threadID) {
-          while (React11.isValidElement(child)) {
+          while (React12.isValidElement(child)) {
             var element = child;
             var Component = element.type;
             {
@@ -26200,7 +26200,7 @@ var require_react_dom_server_node_development = __commonJS({
               context = _resolve.context;
               if (nextChild === null || nextChild === false) {
                 return "";
-              } else if (!React11.isValidElement(nextChild)) {
+              } else if (!React12.isValidElement(nextChild)) {
                 if (nextChild != null && nextChild.$$typeof != null) {
                   var $$typeof = nextChild.$$typeof;
                   if (!($$typeof !== REACT_PORTAL_TYPE)) {
@@ -26299,7 +26299,7 @@ var require_react_dom_server_node_development = __commonJS({
                   }
                   case REACT_MEMO_TYPE: {
                     var _element = nextChild;
-                    var _nextChildren6 = [React11.createElement(elementType.type, _assign({
+                    var _nextChildren6 = [React12.createElement(elementType.type, _assign({
                       ref: _element.ref
                     }, _element.props))];
                     var _frame6 = {
@@ -26381,7 +26381,7 @@ var require_react_dom_server_node_development = __commonJS({
                     var payload = lazyComponent._payload;
                     var init = lazyComponent._init;
                     var result = init(payload);
-                    var _nextChildren10 = [React11.createElement(result, _assign({
+                    var _nextChildren10 = [React12.createElement(result, _assign({
                       ref: _element2.ref
                     }, _element2.props))];
                     var _frame10 = {
@@ -27534,7 +27534,7 @@ var require_react_router_development = __commonJS({
   "node_modules/react-router/umd/react-router.development.js"(exports2, module2) {
     (function(global2, factory) {
       typeof exports2 === "object" && typeof module2 !== "undefined" ? factory(exports2, require_react(), require_main()) : typeof define === "function" && define.amd ? define(["exports", "react", "history"], factory) : (global2 = global2 || self, factory(global2.ReactRouter = {}, global2.React, global2.HistoryLibrary));
-    })(exports2, function(exports3, React11, history) {
+    })(exports2, function(exports3, React12, history) {
       "use strict";
       function invariant(cond, message2) {
         if (!cond)
@@ -27557,15 +27557,15 @@ var require_react_router_development = __commonJS({
           warning(false, message2);
         }
       }
-      const NavigationContext = /* @__PURE__ */ React11.createContext(null);
+      const NavigationContext = /* @__PURE__ */ React12.createContext(null);
       {
         NavigationContext.displayName = "Navigation";
       }
-      const LocationContext = /* @__PURE__ */ React11.createContext(null);
+      const LocationContext = /* @__PURE__ */ React12.createContext(null);
       {
         LocationContext.displayName = "Location";
       }
-      const RouteContext = /* @__PURE__ */ React11.createContext({
+      const RouteContext = /* @__PURE__ */ React12.createContext({
         outlet: null,
         matches: []
       });
@@ -27579,7 +27579,7 @@ var require_react_router_development = __commonJS({
           initialEntries,
           initialIndex
         } = _ref;
-        let historyRef = React11.useRef();
+        let historyRef = React12.useRef();
         if (historyRef.current == null) {
           historyRef.current = history.createMemoryHistory({
             initialEntries,
@@ -27587,12 +27587,12 @@ var require_react_router_development = __commonJS({
           });
         }
         let history$1 = historyRef.current;
-        let [state, setState] = React11.useState({
+        let [state, setState] = React12.useState({
           action: history$1.action,
           location: history$1.location
         });
-        React11.useLayoutEffect(() => history$1.listen(setState), [history$1]);
-        return /* @__PURE__ */ React11.createElement(Router, {
+        React12.useLayoutEffect(() => history$1.listen(setState), [history$1]);
+        return /* @__PURE__ */ React12.createElement(Router, {
           basename,
           children,
           location: state.location,
@@ -27607,9 +27607,9 @@ var require_react_router_development = __commonJS({
           state
         } = _ref2;
         !useInRouterContext() ? invariant(false, "<Navigate> may be used only in the context of a <Router> component.") : void 0;
-        warning(!React11.useContext(NavigationContext).static, "<Navigate> must not be used on the initial render in a <StaticRouter>. This is a no-op, but you should modify your code so the <Navigate> is only ever rendered in response to some user interaction or state change.");
+        warning(!React12.useContext(NavigationContext).static, "<Navigate> must not be used on the initial render in a <StaticRouter>. This is a no-op, but you should modify your code so the <Navigate> is only ever rendered in response to some user interaction or state change.");
         let navigate = useNavigate2();
-        React11.useEffect(() => {
+        React12.useEffect(() => {
           navigate(to, {
             replace,
             state
@@ -27634,7 +27634,7 @@ var require_react_router_development = __commonJS({
         } = _ref3;
         !!useInRouterContext() ? invariant(false, "You cannot render a <Router> inside another <Router>. You should never have more than one in your app.") : void 0;
         let basename = normalizePathname(basenameProp);
-        let navigationContext = React11.useMemo(() => ({
+        let navigationContext = React12.useMemo(() => ({
           basename,
           navigator: navigator2,
           static: staticProp
@@ -27649,7 +27649,7 @@ var require_react_router_development = __commonJS({
           state = null,
           key = "default"
         } = locationProp;
-        let location = React11.useMemo(() => {
+        let location = React12.useMemo(() => {
           let trailingPathname = stripBasename(pathname, basename);
           if (trailingPathname == null) {
             return null;
@@ -27666,9 +27666,9 @@ var require_react_router_development = __commonJS({
         if (location == null) {
           return null;
         }
-        return /* @__PURE__ */ React11.createElement(NavigationContext.Provider, {
+        return /* @__PURE__ */ React12.createElement(NavigationContext.Provider, {
           value: navigationContext
-        }, /* @__PURE__ */ React11.createElement(LocationContext.Provider, {
+        }, /* @__PURE__ */ React12.createElement(LocationContext.Provider, {
           children,
           value: {
             location,
@@ -27688,7 +27688,7 @@ var require_react_router_development = __commonJS({
         let {
           basename,
           navigator: navigator2
-        } = React11.useContext(NavigationContext);
+        } = React12.useContext(NavigationContext);
         let {
           hash,
           pathname,
@@ -27707,40 +27707,40 @@ var require_react_router_development = __commonJS({
         });
       }
       function useInRouterContext() {
-        return React11.useContext(LocationContext) != null;
+        return React12.useContext(LocationContext) != null;
       }
       function useLocation3() {
         !useInRouterContext() ? invariant(false, "useLocation() may be used only in the context of a <Router> component.") : void 0;
-        return React11.useContext(LocationContext).location;
+        return React12.useContext(LocationContext).location;
       }
       function useNavigationType() {
-        return React11.useContext(LocationContext).navigationType;
+        return React12.useContext(LocationContext).navigationType;
       }
       function useMatch(pattern) {
         !useInRouterContext() ? invariant(false, "useMatch() may be used only in the context of a <Router> component.") : void 0;
         let {
           pathname
         } = useLocation3();
-        return React11.useMemo(() => matchPath(pattern, pathname), [pathname, pattern]);
+        return React12.useMemo(() => matchPath(pattern, pathname), [pathname, pattern]);
       }
       function useNavigate2() {
         !useInRouterContext() ? invariant(false, "useNavigate() may be used only in the context of a <Router> component.") : void 0;
         let {
           basename,
           navigator: navigator2
-        } = React11.useContext(NavigationContext);
+        } = React12.useContext(NavigationContext);
         let {
           matches
-        } = React11.useContext(RouteContext);
+        } = React12.useContext(RouteContext);
         let {
           pathname: locationPathname
         } = useLocation3();
         let routePathnamesJson = JSON.stringify(matches.map((match) => match.pathnameBase));
-        let activeRef = React11.useRef(false);
-        React11.useEffect(() => {
+        let activeRef = React12.useRef(false);
+        React12.useEffect(() => {
           activeRef.current = true;
         });
-        let navigate = React11.useCallback(function(to, options) {
+        let navigate = React12.useCallback(function(to, options) {
           if (options === void 0) {
             options = {};
           }
@@ -27759,14 +27759,14 @@ var require_react_router_development = __commonJS({
         }, [basename, navigator2, routePathnamesJson, locationPathname]);
         return navigate;
       }
-      const OutletContext = /* @__PURE__ */ React11.createContext(null);
+      const OutletContext = /* @__PURE__ */ React12.createContext(null);
       function useOutletContext() {
-        return React11.useContext(OutletContext);
+        return React12.useContext(OutletContext);
       }
       function useOutlet(context) {
-        let outlet = React11.useContext(RouteContext).outlet;
+        let outlet = React12.useContext(RouteContext).outlet;
         if (outlet) {
-          return /* @__PURE__ */ React11.createElement(OutletContext.Provider, {
+          return /* @__PURE__ */ React12.createElement(OutletContext.Provider, {
             value: context
           }, outlet);
         }
@@ -27775,25 +27775,25 @@ var require_react_router_development = __commonJS({
       function useParams() {
         let {
           matches
-        } = React11.useContext(RouteContext);
+        } = React12.useContext(RouteContext);
         let routeMatch = matches[matches.length - 1];
         return routeMatch ? routeMatch.params : {};
       }
       function useResolvedPath(to) {
         let {
           matches
-        } = React11.useContext(RouteContext);
+        } = React12.useContext(RouteContext);
         let {
           pathname: locationPathname
         } = useLocation3();
         let routePathnamesJson = JSON.stringify(matches.map((match) => match.pathnameBase));
-        return React11.useMemo(() => resolveTo(to, JSON.parse(routePathnamesJson), locationPathname), [to, routePathnamesJson, locationPathname]);
+        return React12.useMemo(() => resolveTo(to, JSON.parse(routePathnamesJson), locationPathname), [to, routePathnamesJson, locationPathname]);
       }
       function useRoutes(routes, locationArg) {
         !useInRouterContext() ? invariant(false, "useRoutes() may be used only in the context of a <Router> component.") : void 0;
         let {
           matches: parentMatches
-        } = React11.useContext(RouteContext);
+        } = React12.useContext(RouteContext);
         let routeMatch = parentMatches[parentMatches.length - 1];
         let parentParams = routeMatch ? routeMatch.params : {};
         let parentPathname = routeMatch ? routeMatch.pathname : "/";
@@ -27832,11 +27832,11 @@ var require_react_router_development = __commonJS({
       }
       function createRoutesFromChildren(children) {
         let routes = [];
-        React11.Children.forEach(children, (element) => {
-          if (!/* @__PURE__ */ React11.isValidElement(element)) {
+        React12.Children.forEach(children, (element) => {
+          if (!/* @__PURE__ */ React12.isValidElement(element)) {
             return;
           }
-          if (element.type === React11.Fragment) {
+          if (element.type === React12.Fragment) {
             routes.push.apply(routes, createRoutesFromChildren(element.props.children));
             return;
           }
@@ -27985,8 +27985,8 @@ var require_react_router_development = __commonJS({
         if (matches == null)
           return null;
         return matches.reduceRight((outlet, match, index) => {
-          return /* @__PURE__ */ React11.createElement(RouteContext.Provider, {
-            children: match.route.element !== void 0 ? match.route.element : /* @__PURE__ */ React11.createElement(Outlet2, null),
+          return /* @__PURE__ */ React12.createElement(RouteContext.Provider, {
+            children: match.route.element !== void 0 ? match.route.element : /* @__PURE__ */ React12.createElement(Outlet2, null),
             value: {
               outlet,
               matches: parentMatches.concat(matches.slice(0, index + 1))
@@ -28314,7 +28314,7 @@ var require_react_router_dom_development = __commonJS({
   "node_modules/react-router-dom/umd/react-router-dom.development.js"(exports2, module2) {
     (function(global2, factory) {
       typeof exports2 === "object" && typeof module2 !== "undefined" ? factory(exports2, require_react(), require_main(), require_main2()) : typeof define === "function" && define.amd ? define(["exports", "react", "history", "react-router"], factory) : (global2 = global2 || self, factory(global2.ReactRouterDOM = {}, global2.React, global2.HistoryLibrary, global2.ReactRouter));
-    })(exports2, function(exports3, React11, history, reactRouter) {
+    })(exports2, function(exports3, React12, history, reactRouter) {
       "use strict";
       function _extends() {
         _extends = Object.assign || function(target) {
@@ -28361,19 +28361,19 @@ var require_react_router_dom_development = __commonJS({
           children,
           window: window2
         } = _ref;
-        let historyRef = React11.useRef();
+        let historyRef = React12.useRef();
         if (historyRef.current == null) {
           historyRef.current = history.createBrowserHistory({
             window: window2
           });
         }
         let history$1 = historyRef.current;
-        let [state, setState] = React11.useState({
+        let [state, setState] = React12.useState({
           action: history$1.action,
           location: history$1.location
         });
-        React11.useLayoutEffect(() => history$1.listen(setState), [history$1]);
-        return /* @__PURE__ */ React11.createElement(reactRouter.Router, {
+        React12.useLayoutEffect(() => history$1.listen(setState), [history$1]);
+        return /* @__PURE__ */ React12.createElement(reactRouter.Router, {
           basename,
           children,
           location: state.location,
@@ -28387,19 +28387,19 @@ var require_react_router_dom_development = __commonJS({
           children,
           window: window2
         } = _ref2;
-        let historyRef = React11.useRef();
+        let historyRef = React12.useRef();
         if (historyRef.current == null) {
           historyRef.current = history.createHashHistory({
             window: window2
           });
         }
         let history$1 = historyRef.current;
-        let [state, setState] = React11.useState({
+        let [state, setState] = React12.useState({
           action: history$1.action,
           location: history$1.location
         });
-        React11.useLayoutEffect(() => history$1.listen(setState), [history$1]);
-        return /* @__PURE__ */ React11.createElement(reactRouter.Router, {
+        React12.useLayoutEffect(() => history$1.listen(setState), [history$1]);
+        return /* @__PURE__ */ React12.createElement(reactRouter.Router, {
           basename,
           children,
           location: state.location,
@@ -28413,12 +28413,12 @@ var require_react_router_dom_development = __commonJS({
           children,
           history: history2
         } = _ref3;
-        const [state, setState] = React11.useState({
+        const [state, setState] = React12.useState({
           action: history2.action,
           location: history2.location
         });
-        React11.useLayoutEffect(() => history2.listen(setState), [history2]);
-        return /* @__PURE__ */ React11.createElement(reactRouter.Router, {
+        React12.useLayoutEffect(() => history2.listen(setState), [history2]);
+        return /* @__PURE__ */ React12.createElement(reactRouter.Router, {
           basename,
           children,
           location: state.location,
@@ -28432,7 +28432,7 @@ var require_react_router_dom_development = __commonJS({
       function isModifiedEvent(event) {
         return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
       }
-      const Link2 = /* @__PURE__ */ React11.forwardRef(function LinkWithRef(_ref4, ref) {
+      const Link2 = /* @__PURE__ */ React12.forwardRef(function LinkWithRef(_ref4, ref) {
         let {
           onClick,
           reloadDocument,
@@ -28454,7 +28454,7 @@ var require_react_router_dom_development = __commonJS({
             internalOnClick(event);
           }
         }
-        return /* @__PURE__ */ React11.createElement("a", _extends({}, rest, {
+        return /* @__PURE__ */ React12.createElement("a", _extends({}, rest, {
           href,
           onClick: handleClick,
           ref,
@@ -28464,7 +28464,7 @@ var require_react_router_dom_development = __commonJS({
       {
         Link2.displayName = "Link";
       }
-      const NavLink = /* @__PURE__ */ React11.forwardRef(function NavLinkWithRef(_ref5, ref) {
+      const NavLink = /* @__PURE__ */ React12.forwardRef(function NavLinkWithRef(_ref5, ref) {
         let {
           "aria-current": ariaCurrentProp = "page",
           caseSensitive = false,
@@ -28495,7 +28495,7 @@ var require_react_router_dom_development = __commonJS({
         let style = typeof styleProp === "function" ? styleProp({
           isActive
         }) : styleProp;
-        return /* @__PURE__ */ React11.createElement(Link2, _extends({}, rest, {
+        return /* @__PURE__ */ React12.createElement(Link2, _extends({}, rest, {
           "aria-current": ariaCurrent,
           className,
           ref,
@@ -28517,7 +28517,7 @@ var require_react_router_dom_development = __commonJS({
         let navigate = reactRouter.useNavigate();
         let location = reactRouter.useLocation();
         let path2 = reactRouter.useResolvedPath(to);
-        return React11.useCallback((event) => {
+        return React12.useCallback((event) => {
           if (event.button === 0 && (!target || target === "_self") && !isModifiedEvent(event)) {
             event.preventDefault();
             let replace = !!replaceProp || history.createPath(location) === history.createPath(path2);
@@ -28530,9 +28530,9 @@ var require_react_router_dom_development = __commonJS({
       }
       function useSearchParams(defaultInit) {
         warning(typeof URLSearchParams !== "undefined", "You cannot use the `useSearchParams` hook in a browser that does not support the URLSearchParams API. If you need to support Internet Explorer 11, we recommend you load a polyfill such as https://github.com/ungap/url-search-params\n\nIf you're unsure how to load polyfills, we recommend you check out https://polyfill.io/v3/ which provides some recommendations about how to load polyfills only for users that need them, instead of for every user.");
-        let defaultSearchParamsRef = React11.useRef(createSearchParams(defaultInit));
+        let defaultSearchParamsRef = React12.useRef(createSearchParams(defaultInit));
         let location = reactRouter.useLocation();
-        let searchParams = React11.useMemo(() => {
+        let searchParams = React12.useMemo(() => {
           let searchParams2 = createSearchParams(location.search);
           for (let key of defaultSearchParamsRef.current.keys()) {
             if (!searchParams2.has(key)) {
@@ -28544,7 +28544,7 @@ var require_react_router_dom_development = __commonJS({
           return searchParams2;
         }, [location.search]);
         let navigate = reactRouter.useNavigate();
-        let setSearchParams = React11.useCallback((nextInit, navigateOptions) => {
+        let setSearchParams = React12.useCallback((nextInit, navigateOptions) => {
           navigate("?" + createSearchParams(nextInit), navigateOptions);
         }, [navigate]);
         return [searchParams, setSearchParams];
@@ -28744,7 +28744,7 @@ var require_server2 = __commonJS({
   "node_modules/react-router-dom/server.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
-    var React11 = require_react();
+    var React12 = require_react();
     var history = require_main();
     var reactRouterDom = require_main3();
     function StaticRouter2({
@@ -28783,7 +28783,7 @@ var require_server2 = __commonJS({
           throw new Error(`You cannot use navigator.forward() on the server because it is a stateless environment.`);
         }
       };
-      return /* @__PURE__ */ React11.createElement(reactRouterDom.Router, {
+      return /* @__PURE__ */ React12.createElement(reactRouterDom.Router, {
         basename,
         children,
         location,
@@ -30323,7 +30323,10 @@ var require_SSRStyleProvider = __commonJS({
     var StyleProvider_1 = require_StyleProvider();
     var parser_1 = require_parser();
     var SSRStyleProvider2 = ({ children, collector }) => {
-      const parser = (0, react_1.useRef)((0, parser_1.createParser)((i) => `g-${i}`));
+      const parser = (0, react_1.useRef)(null);
+      if (parser.current === null) {
+        parser.current = (0, parser_1.createParser)((i) => `g-${i}`);
+      }
       return react_1.default.createElement(StyleProvider_1.InternalStyleProvider, { handler: collector, parser: parser.current }, children);
     };
     exports2.SSRStyleProvider = SSRStyleProvider2;
@@ -30550,7 +30553,7 @@ var require_useStyle = __commonJS({
     exports2.useStyle = void 0;
     var react_1 = require_react();
     var StyleProvider_1 = require_StyleProvider();
-    var useStyle = (input) => {
+    var useStyle2 = (input) => {
       const c = (0, react_1.useContext)(StyleProvider_1.StyleContext);
       if (!c)
         return "";
@@ -30558,7 +30561,7 @@ var require_useStyle = __commonJS({
       c.add(p);
       return p.className;
     };
-    exports2.useStyle = useStyle;
+    exports2.useStyle = useStyle2;
   }
 });
 
@@ -30593,7 +30596,7 @@ var require_browser2 = __commonJS({
   "node_modules/pu2/style-lib/browser/index.js"(exports2) {
     "use strict";
     Object.defineProperty(exports2, "__esModule", { value: true });
-    exports2.Box = exports2.BrowserStyleProvider = void 0;
+    exports2.useStyle = exports2.Box = exports2.BrowserStyleProvider = void 0;
     var BrowserStyleProvider_1 = require_BrowserStyleProvider();
     Object.defineProperty(exports2, "BrowserStyleProvider", { enumerable: true, get: function() {
       return BrowserStyleProvider_1.BrowserStyleProvider;
@@ -30601,6 +30604,10 @@ var require_browser2 = __commonJS({
     var Box_1 = require_Box();
     Object.defineProperty(exports2, "Box", { enumerable: true, get: function() {
       return Box_1.Box;
+    } });
+    var useStyle_1 = require_useStyle();
+    Object.defineProperty(exports2, "useStyle", { enumerable: true, get: function() {
+      return useStyle_1.useStyle;
     } });
   }
 });
@@ -30615,17 +30622,277 @@ var require_style_lib = __commonJS({
   }
 });
 
+// node_modules/react-icons/lib/cjs/iconsManifest.js
+var require_iconsManifest = __commonJS({
+  "node_modules/react-icons/lib/cjs/iconsManifest.js"(exports2, module2) {
+    module2.exports.IconsManifest = [
+      {
+        "id": "fa",
+        "name": "Font Awesome",
+        "projectUrl": "https://fontawesome.com/",
+        "license": "CC BY 4.0 License",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      {
+        "id": "io",
+        "name": "Ionicons 4",
+        "projectUrl": "https://ionicons.com/",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/ionic-team/ionicons/blob/master/LICENSE"
+      },
+      {
+        "id": "io5",
+        "name": "Ionicons 5",
+        "projectUrl": "https://ionicons.com/",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/ionic-team/ionicons/blob/master/LICENSE"
+      },
+      {
+        "id": "md",
+        "name": "Material Design icons",
+        "projectUrl": "http://google.github.io/material-design-icons/",
+        "license": "Apache License Version 2.0",
+        "licenseUrl": "https://github.com/google/material-design-icons/blob/master/LICENSE"
+      },
+      {
+        "id": "ti",
+        "name": "Typicons",
+        "projectUrl": "http://s-ings.com/typicons/",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+      },
+      {
+        "id": "go",
+        "name": "Github Octicons icons",
+        "projectUrl": "https://octicons.github.com/",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/primer/octicons/blob/master/LICENSE"
+      },
+      {
+        "id": "fi",
+        "name": "Feather",
+        "projectUrl": "https://feathericons.com/",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/feathericons/feather/blob/master/LICENSE"
+      },
+      {
+        "id": "gi",
+        "name": "Game Icons",
+        "projectUrl": "https://game-icons.net/",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+      },
+      {
+        "id": "wi",
+        "name": "Weather Icons",
+        "projectUrl": "https://erikflowers.github.io/weather-icons/",
+        "license": "SIL OFL 1.1",
+        "licenseUrl": "http://scripts.sil.org/OFL"
+      },
+      {
+        "id": "di",
+        "name": "Devicons",
+        "projectUrl": "https://vorillaz.github.io/devicons/",
+        "license": "MIT",
+        "licenseUrl": "https://opensource.org/licenses/MIT"
+      },
+      {
+        "id": "ai",
+        "name": "Ant Design Icons",
+        "projectUrl": "https://github.com/ant-design/ant-design-icons",
+        "license": "MIT",
+        "licenseUrl": "https://opensource.org/licenses/MIT"
+      },
+      {
+        "id": "bs",
+        "name": "Bootstrap Icons",
+        "projectUrl": "https://github.com/twbs/icons",
+        "license": "MIT",
+        "licenseUrl": "https://opensource.org/licenses/MIT"
+      },
+      {
+        "id": "ri",
+        "name": "Remix Icon",
+        "projectUrl": "https://github.com/Remix-Design/RemixIcon",
+        "license": "Apache License Version 2.0",
+        "licenseUrl": "http://www.apache.org/licenses/"
+      },
+      {
+        "id": "fc",
+        "name": "Flat Color Icons",
+        "projectUrl": "https://github.com/icons8/flat-color-icons",
+        "license": "MIT",
+        "licenseUrl": "https://opensource.org/licenses/MIT"
+      },
+      {
+        "id": "gr",
+        "name": "Grommet-Icons",
+        "projectUrl": "https://github.com/grommet/grommet-icons",
+        "license": "Apache License Version 2.0",
+        "licenseUrl": "http://www.apache.org/licenses/"
+      },
+      {
+        "id": "hi",
+        "name": "Heroicons",
+        "projectUrl": "https://github.com/tailwindlabs/heroicons",
+        "license": "MIT",
+        "licenseUrl": "https://opensource.org/licenses/MIT"
+      },
+      {
+        "id": "si",
+        "name": "Simple Icons",
+        "projectUrl": "https://simpleicons.org/",
+        "license": "CC0 1.0 Universal",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      {
+        "id": "im",
+        "name": "IcoMoon Free",
+        "projectUrl": "https://github.com/Keyamoon/IcoMoon-Free",
+        "license": "CC BY 4.0 License"
+      },
+      {
+        "id": "bi",
+        "name": "BoxIcons",
+        "projectUrl": "https://github.com/atisawd/boxicons",
+        "license": "CC BY 4.0 License"
+      },
+      {
+        "id": "cg",
+        "name": "css.gg",
+        "projectUrl": "https://github.com/astrit/css.gg",
+        "license": "MIT",
+        "licenseUrl": "https://opensource.org/licenses/MIT"
+      },
+      {
+        "id": "vsc",
+        "name": "VS Code Icons",
+        "projectUrl": "https://github.com/microsoft/vscode-codicons",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ];
+  }
+});
+
+// node_modules/react-icons/lib/cjs/iconContext.js
+var require_iconContext = __commonJS({
+  "node_modules/react-icons/lib/cjs/iconContext.js"(exports2) {
+    "use strict";
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.IconContext = exports2.DefaultContext = void 0;
+    var React12 = require_react();
+    exports2.DefaultContext = {
+      color: void 0,
+      size: void 0,
+      className: void 0,
+      style: void 0,
+      attr: void 0
+    };
+    exports2.IconContext = React12.createContext && React12.createContext(exports2.DefaultContext);
+  }
+});
+
+// node_modules/react-icons/lib/cjs/iconBase.js
+var require_iconBase = __commonJS({
+  "node_modules/react-icons/lib/cjs/iconBase.js"(exports2) {
+    "use strict";
+    var __assign = exports2 && exports2.__assign || function() {
+      __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+          s = arguments[i];
+          for (var p in s)
+            if (Object.prototype.hasOwnProperty.call(s, p))
+              t[p] = s[p];
+        }
+        return t;
+      };
+      return __assign.apply(this, arguments);
+    };
+    var __rest = exports2 && exports2.__rest || function(s, e) {
+      var t = {};
+      for (var p in s)
+        if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+          t[p] = s[p];
+      if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+          if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+            t[p[i]] = s[p[i]];
+        }
+      return t;
+    };
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    exports2.IconBase = exports2.GenIcon = void 0;
+    var React12 = require_react();
+    var iconContext_1 = require_iconContext();
+    function Tree2Element(tree) {
+      return tree && tree.map(function(node, i) {
+        return React12.createElement(node.tag, __assign({ key: i }, node.attr), Tree2Element(node.child));
+      });
+    }
+    function GenIcon2(data) {
+      return function(props) {
+        return React12.createElement(IconBase, __assign({ attr: __assign({}, data.attr) }, props), Tree2Element(data.child));
+      };
+    }
+    exports2.GenIcon = GenIcon2;
+    function IconBase(props) {
+      var elem = function(conf) {
+        var attr = props.attr, size = props.size, title = props.title, svgProps = __rest(props, ["attr", "size", "title"]);
+        var computedSize = size || conf.size || "1em";
+        var className;
+        if (conf.className)
+          className = conf.className;
+        if (props.className)
+          className = (className ? className + " " : "") + props.className;
+        return React12.createElement("svg", __assign({ stroke: "currentColor", fill: "currentColor", strokeWidth: "0" }, conf.attr, attr, svgProps, { className, style: __assign(__assign({ color: props.color || conf.color }, conf.style), props.style), height: computedSize, width: computedSize, xmlns: "http://www.w3.org/2000/svg" }), title && React12.createElement("title", null, title), props.children);
+      };
+      return iconContext_1.IconContext !== void 0 ? React12.createElement(iconContext_1.IconContext.Consumer, null, function(conf) {
+        return elem(conf);
+      }) : elem(iconContext_1.DefaultContext);
+    }
+    exports2.IconBase = IconBase;
+  }
+});
+
+// node_modules/react-icons/lib/cjs/index.js
+var require_cjs = __commonJS({
+  "node_modules/react-icons/lib/cjs/index.js"(exports2) {
+    "use strict";
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      Object.defineProperty(o, k2, { enumerable: true, get: function() {
+        return m[k];
+      } });
+    } : function(o, m, k, k2) {
+      if (k2 === void 0)
+        k2 = k;
+      o[k2] = m[k];
+    });
+    var __exportStar = exports2 && exports2.__exportStar || function(m, exports3) {
+      for (var p in m)
+        if (p !== "default" && !exports3.hasOwnProperty(p))
+          __createBinding(exports3, m, p);
+    };
+    Object.defineProperty(exports2, "__esModule", { value: true });
+    __exportStar(require_iconsManifest(), exports2);
+    __exportStar(require_iconBase(), exports2);
+    __exportStar(require_iconContext(), exports2);
+  }
+});
+
 // src/main.server.tsx
 var import_express = __toESM(require_express2());
 var import_path = __toESM(require("path"));
-var import_react10 = __toESM(require_react());
+var import_react11 = __toESM(require_react());
 var import_server = __toESM(require_server());
 var import_server2 = __toESM(require_server2());
 var import_server3 = __toESM(require_server3());
 
 // src/App.tsx
-var import_react9 = __toESM(require_react());
-var import_style_lib5 = __toESM(require_style_lib());
+var import_react10 = __toESM(require_react());
+var import_style_lib6 = __toESM(require_style_lib());
 var import_react_router_dom3 = __toESM(require_main3());
 
 // src/Header.tsx
@@ -30646,7 +30913,20 @@ var Text = createComponent({
   color: "#323232" /* mineshaft */,
   m: "0px" /* _0 */
 });
-var Button = (props) => /* @__PURE__ */ import_react.default.createElement(import_style_lib.Box, __spreadProps(__spreadValues({}, props), {
+var Button = (props) => /* @__PURE__ */ import_react.default.createElement(import_style_lib.Box, __spreadProps(__spreadValues({
+  border: "2px solid black",
+  cursor: "pointer",
+  color: "black",
+  bg: "white",
+  px: "12px" /* _5 */,
+  py: "6px" /* _3 */,
+  css: {
+    ":hover": {
+      color: "white",
+      bg: "black"
+    }
+  }
+}, props), {
   as: "button"
 }));
 var H1 = (props) => /* @__PURE__ */ import_react.default.createElement(Text, __spreadProps(__spreadValues({}, props), {
@@ -30779,122 +31059,15 @@ var Header = () => {
 
 // src/Resume/Resume.tsx
 var import_react4 = __toESM(require_react());
-var import_style_lib3 = __toESM(require_style_lib());
-var HeaderContact = ({ label, text }) => /* @__PURE__ */ import_react4.default.createElement(Flex, {
-  alignItems: "center",
-  justifyContent: "space-between"
-}, /* @__PURE__ */ import_react4.default.createElement(Text, null, label), /* @__PURE__ */ import_react4.default.createElement(Text, {
-  textAlign: "right"
-}, text));
-var Job = ({
-  children,
-  city,
-  where,
-  role,
-  from,
-  to
-}) => /* @__PURE__ */ import_react4.default.createElement(import_style_lib3.Box, {
-  borderTop: "3px solid black"
-}, /* @__PURE__ */ import_react4.default.createElement(Flex, {
-  justifyContent: "space-between",
-  py: "12px" /* _5 */,
-  px: "24px" /* _7 */
-}, /* @__PURE__ */ import_react4.default.createElement(import_style_lib3.Box, null, /* @__PURE__ */ import_react4.default.createElement(Text, {
-  display: "block",
-  textTransform: "uppercase",
-  fontWeight: "600"
-}, role), /* @__PURE__ */ import_react4.default.createElement(Flex, {
-  pt: "6px" /* _3 */,
-  justifyContent: "space-between"
-}, /* @__PURE__ */ import_react4.default.createElement(Text, null, where), /* @__PURE__ */ import_react4.default.createElement(Text, {
-  pl: "24px" /* _7 */,
-  whiteSpace: "nowrap"
-}, city))), /* @__PURE__ */ import_react4.default.createElement(Text, {
-  textAlign: "right",
-  textTransform: "uppercase",
-  fontWeight: "600"
-}, from, " - ", to)), /* @__PURE__ */ import_react4.default.createElement(import_style_lib3.Box, {
-  pb: "18px" /* _6 */,
-  px: "12px" /* _5 */
-}, children));
-var LiP = ({ children }) => /* @__PURE__ */ import_react4.default.createElement(Li, {
-  lineHeight: "24px" /* _3 */,
-  pb: "4px" /* _2 */
-}, /* @__PURE__ */ import_react4.default.createElement(P, null, children));
-var Resume = () => /* @__PURE__ */ import_react4.default.createElement(import_style_lib3.Box, {
-  maxWidth: "1000px",
-  backgroundColor: "white",
-  boxShadow: "4px 4px 2px rgba(0,0,0,0.3)",
-  lineHeight: "1",
-  p: "36px" /* _8 */,
-  css: {
-    "@media print": {
-      p: "0px" /* _0 */
-    }
-  }
-}, /* @__PURE__ */ import_react4.default.createElement(Flex, {
-  justifyContent: "space-between"
-}, /* @__PURE__ */ import_react4.default.createElement(import_style_lib3.Box, null, /* @__PURE__ */ import_react4.default.createElement(Text, null, "Gregory Dalton"), /* @__PURE__ */ import_react4.default.createElement(Ul, null, /* @__PURE__ */ import_react4.default.createElement(Li, null, /* @__PURE__ */ import_react4.default.createElement(Text, null, "Typescript")), /* @__PURE__ */ import_react4.default.createElement(Li, null, /* @__PURE__ */ import_react4.default.createElement(Text, null, "Javascript")), /* @__PURE__ */ import_react4.default.createElement(Li, null, /* @__PURE__ */ import_react4.default.createElement(Text, null, "Node")), /* @__PURE__ */ import_react4.default.createElement(Li, null, /* @__PURE__ */ import_react4.default.createElement(Text, null, "C#")))), /* @__PURE__ */ import_react4.default.createElement(import_style_lib3.Box, {
-  flex: "1",
-  pl: "54px" /* _9 */
-}, /* @__PURE__ */ import_react4.default.createElement(import_style_lib3.Box, {
-  pb: "4px" /* _2 */
-}, /* @__PURE__ */ import_react4.default.createElement(HeaderContact, {
-  label: "email",
-  text: "gregolai@gmail.com"
-}), /* @__PURE__ */ import_react4.default.createElement(HeaderContact, {
-  label: "website",
-  text: "gregoryland.com"
-})), /* @__PURE__ */ import_react4.default.createElement(import_style_lib3.Box, {
-  borderTop: "2px solid black",
-  pt: "4px" /* _2 */
-}, /* @__PURE__ */ import_react4.default.createElement(Text, {
-  display: "block"
-}, "B.S. Computer Science"), /* @__PURE__ */ import_react4.default.createElement(Text, {
-  display: "block"
-}, "California State University, Long Beach"), /* @__PURE__ */ import_react4.default.createElement(Text, {
-  display: "block",
-  pb: "8px" /* _4 */
-}, "Class of 2009"), /* @__PURE__ */ import_react4.default.createElement(Text, {
-  display: "block"
-}, "- Programming team"), /* @__PURE__ */ import_react4.default.createElement(Text, {
-  display: "block"
-}, "- Tau Beta Pi Engineering Honor Society")))), /* @__PURE__ */ import_react4.default.createElement(import_style_lib3.Box, {
-  pt: "18px" /* _6 */
-}, /* @__PURE__ */ import_react4.default.createElement(Job, {
-  city: "New York, NY",
-  where: "Squarespace",
-  from: "May 2017",
-  to: "January 2021",
-  role: "Software Engineer"
-}, /* @__PURE__ */ import_react4.default.createElement(Ul, null, /* @__PURE__ */ import_react4.default.createElement(LiP, null, "As one of the starting members of the Squarespace Design Platform team, I developed consistent and reusable React and React-Native components."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Developed Squarespace style guides, compositional patterns, APIs, and high-quality documentation using Gatsby."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Discovering and reasoning about various long term and short term trade-offs when developing components. Simplicity versus flexibility. Readability vs performance. Third party code vs in-house code. Etc."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Unit testing with Jest. Integration testing with Cypress and Puppeteer."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Collaborated across teams to understand bigger picture scope. This involved managing NPM packages, user experience, accessibility, and intuitive design."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Feature migration and refactoring using code mods and test-driven techniques."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "The importance of a well-designed API, teamwork, and writing good pull requests."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Part of a multi-team effort to integrate our CMS into a mobile browser experience for customers."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Learned to be humble about what I don't know, questioning why we do things a certain way and learning from others' experience."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Wrote a custom Table, DateTime picker, etc."))), /* @__PURE__ */ import_react4.default.createElement(Job, {
-  city: "New York, NY",
-  where: "Agorafy",
-  from: "December 2016",
-  to: "May 2017",
-  role: "Frontend Engineer"
-}, /* @__PURE__ */ import_react4.default.createElement(Ul, null, /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Collaborated with our backend engineers to create a REST API for our real-estate listing project."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Led a 3-person team using JS/React+Redux to build a CMS frontend. Users could search and filter through a variety of real estate properties."))), /* @__PURE__ */ import_react4.default.createElement(Job, {
-  city: "New York, NY",
-  where: "YouVisit",
-  from: "Jan 2015",
-  to: "Apr 2016",
-  role: "Full-stack Engineer"
-}, /* @__PURE__ */ import_react4.default.createElement(Ul, null, /* @__PURE__ */ import_react4.default.createElement(LiP, null, "PHP/MySQL/HTML/CSS/JS/jQuery/Node"), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Wrote a client tool using the JS geolocation API to collect location data and hotspots for college campuses. Websockets worked with a Node backend to batch database inserts into our SQL database. A client could log into the CMS and view users' paths on Google Maps."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Organized and aggregated large-scale metrics of site visitor data into useful formats for our clients to download."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Hybrid app development and testing for both mobile and desktop. Used a custom-built MVC backend with a REST API and minimal unit testing."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Built a custom A/B testing library and project tracking system in our CMS to track the stages of tour production."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Worked on embedding tours into 3rd party websites using JavaScript with JSONP to load iframe settings."))), /* @__PURE__ */ import_react4.default.createElement(Job, {
-  city: "New York, NY",
-  where: "M & M Environmental",
-  from: "August 2014",
-  to: "December 2014",
-  role: "Entry-level Full-stack Engineer"
-}, /* @__PURE__ */ import_react4.default.createElement(Ul, null, /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Built a cool-looking calendar and scheduling application using PHP/MySQL/JS for managing technician availability."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Built a Vehicle GPS viewer using the Google Maps API for monitoring technician proximity to their scheduled appointments."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Built a Yelp review scraper and fancy frontend."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Built an admin portal using Auth0 Google single-sign-on. Used Wordpress for viewing work shift calendars, technician locations, and Yelp reviews."), /* @__PURE__ */ import_react4.default.createElement(LiP, null, "Set up CRON tasks that would send aggregated morning emails to our staff about recent Yelp reviews and shift calendars.")))));
 
 // src/pages/page.Home.tsx
 var import_react5 = __toESM(require_react());
-var import_style_lib4 = __toESM(require_style_lib());
+var import_style_lib3 = __toESM(require_style_lib());
 var gridTemplateAreas = '"b c c c" "b d d d"';
 var gridTemplateAreasMobile = '"a a a a" "c c c c" "d d d d"';
 var bigImgUrl = "https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80";
 var BigGrid = () => {
-  return /* @__PURE__ */ import_react5.default.createElement(import_style_lib4.Box, {
+  return /* @__PURE__ */ import_react5.default.createElement(import_style_lib3.Box, {
     display: "grid",
     gridTemplateAreas,
     gridTemplateColumns: "7fr 3fr 3fr 3fr",
@@ -30904,7 +31077,7 @@ var BigGrid = () => {
         gridTemplateAreas: gridTemplateAreasMobile
       }
     }
-  }, /* @__PURE__ */ import_react5.default.createElement(import_style_lib4.Box, {
+  }, /* @__PURE__ */ import_react5.default.createElement(import_style_lib3.Box, {
     bg: `50%/50% url("${bigImgUrl}")`,
     backgroundSize: "cover",
     br: "2px solid black",
@@ -30914,13 +31087,13 @@ var BigGrid = () => {
         display: "none"
       }
     }
-  }), /* @__PURE__ */ import_react5.default.createElement(import_style_lib4.Box, {
+  }), /* @__PURE__ */ import_react5.default.createElement(import_style_lib3.Box, {
     gridArea: "c",
     py: "18px" /* _6 */,
     px: "36px" /* _8 */,
     bb: "2px solid black",
     bg: "#f7f2e9"
-  }, /* @__PURE__ */ import_react5.default.createElement(H2, null, "I can build your website"), /* @__PURE__ */ import_react5.default.createElement(P, null, "...yes, yes I can."), /* @__PURE__ */ import_react5.default.createElement(P, {
+  }, /* @__PURE__ */ import_react5.default.createElement(H2, null, "Human / Programmer"), /* @__PURE__ */ import_react5.default.createElement(P, {
     py: "12px" /* _5 */
   }, "My name's Greg and this is my website. Please have a look and print my resume."), /* @__PURE__ */ import_react5.default.createElement(Button, null, "View my resume")), /* @__PURE__ */ import_react5.default.createElement(Links, {
     gridArea: "d"
@@ -30929,60 +31102,327 @@ var BigGrid = () => {
 var PageHome = () => /* @__PURE__ */ import_react5.default.createElement(import_react5.default.Fragment, null, /* @__PURE__ */ import_react5.default.createElement(BigGrid, null));
 
 // src/pages/page.Career.tsx
+var import_style_lib5 = __toESM(require_style_lib());
+var import_react7 = __toESM(require_react());
+
+// src/Resume/Resume2.tsx
 var import_react6 = __toESM(require_react());
-var PageCareer = () => /* @__PURE__ */ import_react6.default.createElement(Flex, {
+var import_style_lib4 = __toESM(require_style_lib());
+
+// node_modules/react-icons/md/index.esm.js
+var import_lib = __toESM(require_cjs());
+function MdFace(props) {
+  return (0, import_lib.GenIcon)({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "fill": "none", "d": "M0 0h24v24H0z" } }, { "tag": "path", "attr": { "d": "M9 11.75a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zm6 0a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8 0-.29.02-.58.05-.86 2.36-1.05 4.23-2.98 5.21-5.37a9.974 9.974 0 0010.41 3.97c.21.71.33 1.47.33 2.26 0 4.41-3.59 8-8 8z" } }] })(props);
+}
+function MdOutlineEmail(props) {
+  return (0, import_lib.GenIcon)({ "tag": "svg", "attr": { "viewBox": "0 0 24 24" }, "child": [{ "tag": "path", "attr": { "fill": "none", "d": "M0 0h24v24H0V0z" } }, { "tag": "path", "attr": { "d": "M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z" } }] })(props);
+}
+
+// src/Resume/Resume2.tsx
+var ResumeP = (props) => /* @__PURE__ */ import_react6.default.createElement(P, __spreadValues({
+  fontSize: "14px",
+  lineHeight: "18px"
+}, props));
+var NameText = (props) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, __spreadValues({
+  fontSize: "39px" /* _39px */,
+  letterSpacing: "6px" /* _6px */,
+  textTransform: "uppercase"
+}, props));
+var HR = (props) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, __spreadValues({
+  bb: "2px solid black",
+  mt: "-1px"
+}, props));
+var HRSmall = (props) => /* @__PURE__ */ import_react6.default.createElement(HR, {
+  w: "40px"
+});
+var Diamond = (props) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, __spreadValues({
+  position: "absolute",
+  left: "-1px",
+  width: "8px",
+  height: "8px",
+  bg: "black",
+  transform: "translateX(-50%) rotateZ(45deg)"
+}, props));
+var TextHeading = (props) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, __spreadValues({
+  fontSize: "18px" /* _18px */,
+  fontWeight: "600",
+  letterSpacing: "6px" /* _6px */,
+  textTransform: "uppercase"
+}, props));
+var LeftSection = ({ title, children }) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react6.default.createElement(TextHeading, {
+  pb: "18px" /* _18px */
+}, title), /* @__PURE__ */ import_react6.default.createElement(HRSmall, null), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+  pt: "18px" /* _18px */
+}, children));
+var RightSection = ({ title, children }) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react6.default.createElement(Flex, {
+  position: "relative",
+  alignItems: "center"
+}, /* @__PURE__ */ import_react6.default.createElement(Diamond, {
+  position: "absolute",
+  left: "-1px"
+}), /* @__PURE__ */ import_react6.default.createElement(TextHeading, {
+  pl: "30px" /* _30px */,
+  flex: "1"
+}, title), /* @__PURE__ */ import_react6.default.createElement(HRSmall, null)), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+  pl: "30px" /* _30px */,
+  pt: "30px" /* _30px */,
+  pb: "30px" /* _30px */
+}, children));
+var Contact = ({ Icon, label, text }) => {
+  const iconClassName = (0, import_style_lib4.useStyle)({ color: "white", width: "38px" /* _38px */, height: "38px" /* _38px */, m: "-2px" });
+  return /* @__PURE__ */ import_react6.default.createElement(Flex, {
+    py: "18px" /* _18px */,
+    alignItems: "stretch",
+    bb: "2px solid white",
+    css: {
+      ":first-of-type": { pt: "0px" },
+      ":last-of-type": { bb: "none", pb: "0px" }
+    }
+  }, /* @__PURE__ */ import_react6.default.createElement(Icon, {
+    className: iconClassName
+  }), /* @__PURE__ */ import_react6.default.createElement(Flex, {
+    flex: "1",
+    pl: "18px" /* _18px */,
+    flexDirection: "column",
+    justifyContent: "space-between"
+  }, /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+    color: "white",
+    fontWeight: "600",
+    textTransform: "uppercase"
+  }, label), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+    color: "white"
+  }, text)));
+};
+var ResumeBanner = (props) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, __spreadValues({
+  position: "relative",
+  w: "30px",
+  bg: "black"
+}, props), /* @__PURE__ */ import_react6.default.createElement(Text, {
+  position: "absolute",
+  bottom: "0",
+  left: "50%",
+  transform: "rotateZ(-90deg) translate(10px, 50%)",
+  transformOrigin: "bottom left",
+  color: "white",
+  textTransform: "uppercase"
+}, "Resume"));
+var Job = ({ children }) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, children);
+var JobHead = ({ title, from, to, where, city }) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react6.default.createElement(Text, {
+  display: "block",
+  textTransform: "uppercase",
+  fontWeight: "600",
+  letterSpacing: "1px",
+  pb: "8px" /* _4 */
+}, title), /* @__PURE__ */ import_react6.default.createElement(Text, {
+  display: "block",
+  color: "#8A8A8A",
+  fontSize: "14px",
+  pb: "8px" /* _4 */
+}, from, " - ", to, " | ", where, " | ", city));
+var JobSummary = ({ children }) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react6.default.createElement(ResumeP, null, children));
+var JobBullet = ({ children }) => /* @__PURE__ */ import_react6.default.createElement(Flex, {
+  alignItems: "center",
+  pt: "8px" /* _4 */
+}, /* @__PURE__ */ import_react6.default.createElement(HR, {
+  w: "20px"
+}), /* @__PURE__ */ import_react6.default.createElement(ResumeP, {
+  flex: "1",
+  pl: "18px" /* _6 */
+}, children));
+var Skill = ({ name, value }) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+  borderRadius: "10px",
+  bg: "darkgray",
+  overflow: "hidden"
+}, /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+  h: "20px",
+  bg: "lightgray",
+  w: `${value * 10}%`
+})), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+  textAlign: "center"
+}, name));
+var PageSplit = (_a) => {
+  var _b = _a, { left, right } = _b, rest = __objRest(_b, ["left", "right"]);
+  return /* @__PURE__ */ import_react6.default.createElement(Flex, __spreadValues({}, rest), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+    flex: "1",
+    pr: "38px" /* _38px */
+  }, left), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+    w: "260px"
+  }, right));
+};
+var Resume = () => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+  position: "relative",
+  bg: "#FAFAFA",
+  px: "60px" /* _60px */,
+  pb: "60px" /* _60px */,
+  lineHeight: "1"
+}, /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+  position: "absolute",
+  top: "0",
+  left: "0",
+  w: "100%",
+  bg: "#DAD8D9",
+  h: "24px" /* _7 */
+}), /* @__PURE__ */ import_react6.default.createElement(PageSplit, {
+  left: /* @__PURE__ */ import_react6.default.createElement(Flex, {
+    alignItems: "stretch",
+    pb: "38px" /* _38px */
+  }, /* @__PURE__ */ import_react6.default.createElement(ResumeBanner, null), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+    flex: "1",
+    pl: "30px" /* _30px */,
+    pt: "24px" /* _7 */
+  }, /* @__PURE__ */ import_react6.default.createElement(NameText, {
+    color: "#6F6F6F",
+    pt: "38px" /* _38px */
+  }, "Gregory"), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+    position: "relative"
+  }, /* @__PURE__ */ import_react6.default.createElement(Diamond, {
+    position: "absolute",
+    left: -1 * parseInt("24px" /* _7 */, 10) + "px"
+  })), /* @__PURE__ */ import_react6.default.createElement(NameText, {
+    pt: "10px" /* _10px */,
+    fontWeight: "600",
+    pb: "18px" /* _18px */
+  }, "Dalton"), /* @__PURE__ */ import_react6.default.createElement(HRSmall, null), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+    pt: "18px" /* _18px */,
+    color: "gray",
+    fontSize: "18px" /* _18px */,
+    fontWeight: "600",
+    letterSpacing: "6px" /* _6px */,
+    textTransform: "uppercase"
+  }, "Software Engineer"))),
+  right: /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+    pt: "24px" /* _7 */,
+    w: "100%",
+    h: "100%",
+    bg: "url('https://images.unsplash.com/photo-1644123550420-ee28152ab925?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2781&q=80')",
+    backgroundSize: "cover",
+    backgroundPosition: "50% 50%"
+  })
+}), /* @__PURE__ */ import_react6.default.createElement(PageSplit, {
+  left: /* @__PURE__ */ import_react6.default.createElement(LeftSection, {
+    title: "Career Summary"
+  }, "summary"),
+  right: /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+    bg: "black",
+    p: "30px" /* _30px */
+  }, /* @__PURE__ */ import_react6.default.createElement(Contact, {
+    Icon: MdOutlineEmail,
+    label: "Email",
+    text: "gregolai@gmail.com"
+  }), /* @__PURE__ */ import_react6.default.createElement(Contact, {
+    Icon: MdFace,
+    label: "Website",
+    text: "gregoryland.com"
+  })))
+}), /* @__PURE__ */ import_react6.default.createElement(PageSplit, {
+  pt: "30px" /* _30px */,
+  left: /* @__PURE__ */ import_react6.default.createElement(LeftSection, {
+    title: "Work Experience"
+  }, /* @__PURE__ */ import_react6.default.createElement(Job, null, /* @__PURE__ */ import_react6.default.createElement(JobHead, {
+    city: "New York, NY",
+    from: "May 2017",
+    to: "Jan 2021",
+    title: "Software Engineer",
+    where: "Squarespace"
+  }), /* @__PURE__ */ import_react6.default.createElement(JobSummary, null, "Design Platform team. I wrote many React and React-Native components that were used throughout Squarespace on many different teams."), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Developed Squarespace style guides, compositional patterns, APIs, and high-quality documentation using Gatsby."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Discovering and reasoning about various long term and short term trade-offs when developing components. Simplicity versus flexibility. Readability vs performance. Third party code vs in-house code. Etc."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Unit testing with Jest. Integration testing with Cypress and Puppeteer."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Collaborated across teams to understand bigger picture scope. This involved managing NPM packages, user experience, accessibility, and intuitive design."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Feature migration and refactoring using code mods and test-driven techniques."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "The importance of a well-designed API, teamwork, and writing good pull requests."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Part of a multi-team effort to integrate our CMS into a mobile browser experience for customers."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Learned to be humble about what I don't know, questioning why we do things a certain way and learning from others' experience."))), /* @__PURE__ */ import_react6.default.createElement(Job, null, /* @__PURE__ */ import_react6.default.createElement(JobHead, {
+    city: "New York, NY",
+    from: "Dec 2016",
+    to: "May 2017",
+    title: "Frontend Engineer",
+    where: "Agorafy"
+  }), /* @__PURE__ */ import_react6.default.createElement(JobSummary, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Collaborated with our backend engineers to create a REST API for our real-estate listing project."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Led a 3-person team using JS/React+Redux to build a CMS frontend. Users could search and filter through a variety of real estate properties."))), /* @__PURE__ */ import_react6.default.createElement(Job, null, /* @__PURE__ */ import_react6.default.createElement(JobHead, {
+    city: "New York, NY",
+    from: "Jan 2015",
+    to: "Apr 2016",
+    title: "Full-stack Engineer",
+    where: "YouVisit"
+  }), /* @__PURE__ */ import_react6.default.createElement(JobSummary, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "PHP/MySQL/HTML/CSS/JS/jQuery/Node"), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Wrote a client tool using the JS geolocation API to collect location data and hotspots for college campuses. Websockets worked with a Node backend to batch database inserts into our SQL database. A client could log into the CMS and view users' paths on Google Maps."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Organized and aggregated large-scale metrics of site visitor data into useful formats for our clients to download."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Hybrid app development and testing for both mobile and desktop. Used a custom-built MVC backend with a REST API and minimal unit testing."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Built a custom A/B testing library and project tracking system in our CMS to track the stages of tour production."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Worked on embedding tours into 3rd party websites using JavaScript with JSONP to load iframe settings."))), /* @__PURE__ */ import_react6.default.createElement(Job, null, /* @__PURE__ */ import_react6.default.createElement(JobHead, {
+    city: "New York, NY",
+    from: "Aug 2014",
+    to: "Dec 2014",
+    title: "Entry-level Engineer",
+    where: "M&M Environmental"
+  }), /* @__PURE__ */ import_react6.default.createElement(JobSummary, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Built a cool-looking calendar and scheduling application using PHP/MySQL/JS for managing technician availability."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Built a Vehicle GPS viewer using the Google Maps API for monitoring technician proximity to their scheduled appointments."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Built a Yelp review scraper and fancy frontend."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Built an admin portal using Auth0 Google single-sign-on. Used Wordpress for viewing work shift calendars, technician locations, and Yelp reviews."), /* @__PURE__ */ import_react6.default.createElement(JobBullet, null, "Set up CRON tasks that would send aggregated morning emails to our staff about recent Yelp reviews and shift calendars.")))),
+  right: /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+    bl: "2px solid black",
+    h: "100%"
+  }, /* @__PURE__ */ import_react6.default.createElement(RightSection, {
+    title: "Education"
+  }, /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+    fontSize: "14px" /* _14px */,
+    fontWeight: "600",
+    textTransform: "uppercase"
+  }, "Bachelor of Science, Computer Science"), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+    fontSize: "12px" /* _12px */,
+    pt: "10px" /* _10px */
+  }, "2004 - 2009"), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
+    fontSize: "12px" /* _12px */
+  }, "California State University, Long Beach")), /* @__PURE__ */ import_react6.default.createElement(RightSection, {
+    title: "Skills"
+  }, /* @__PURE__ */ import_react6.default.createElement(Skill, {
+    name: "Javascript",
+    value: 9
+  }), /* @__PURE__ */ import_react6.default.createElement(Skill, {
+    name: "React",
+    value: 8
+  }), /* @__PURE__ */ import_react6.default.createElement(Skill, {
+    name: "C#",
+    value: 6
+  })))
+}));
+
+// src/pages/page.Career.tsx
+var PageCareer = () => /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null, /* @__PURE__ */ import_react7.default.createElement(Button, null, "Print my resume"), /* @__PURE__ */ import_react7.default.createElement(Flex, {
   justifyContent: "center",
   pt: "18px" /* _6 */
-}, /* @__PURE__ */ import_react6.default.createElement(Resume, null));
+}, /* @__PURE__ */ import_react7.default.createElement(import_style_lib5.Box, {
+  boxShadow: "5px 5px 3px rgba(0,0,0,0.3)",
+  maxWidth: "1000px"
+}, /* @__PURE__ */ import_react7.default.createElement(Resume, null))));
 
 // src/pages/page.Life.tsx
-var import_react7 = __toESM(require_react());
-var PageLife = () => /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null, /* @__PURE__ */ import_react7.default.createElement(H2, {
+var import_react8 = __toESM(require_react());
+var PageLife = () => /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(H2, null, "From animal, to robot"), /* @__PURE__ */ import_react8.default.createElement(P, null, "I have deep respect for people who build things themselves. There' something about owning your creation that's beautuiful. As we move towards a greater level of abstraction we face the danger of not remembering who we are. We must not forget ourselves across the vast digital ocean! The joy of creation must not be lost!"), /* @__PURE__ */ import_react8.default.createElement(P, null, "As we abstract up the tree we must recontexualize who we are...just as we do in life as we age. It's fractal-like."), /* @__PURE__ */ import_react8.default.createElement(P, null, "Our analog human experience is touching hands with our digital creations. It's ok to be weird because life is weird. It's the fire that keeps us going. Consciousness, the greatest mystery alongside the Big Bang and black holes, is fundamentally paradoxical."), /* @__PURE__ */ import_react8.default.createElement(P, null, "Everything boils down to mental models. When the state of your organism matches the state of the local environment, you are in flow with the universe"), /* @__PURE__ */ import_react8.default.createElement(H2, {
   pt: "24px" /* _7 */
-}, "What got me into dev?"), /* @__PURE__ */ import_react7.default.createElement(P, null, "Map editors...Warcraft 3 editor...UT2004 scripting...Starcraft. etc."), /* @__PURE__ */ import_react7.default.createElement(H2, {
+}, "What got me into dev?"), /* @__PURE__ */ import_react8.default.createElement(P, null, "Map editors...Warcraft 3 editor...UT2004 scripting...Starcraft. etc."), /* @__PURE__ */ import_react8.default.createElement(H2, {
   pt: "24px" /* _7 */
-}, "Why I write code"), /* @__PURE__ */ import_react7.default.createElement(P, null, "For better or for worse, most people don't think like I do."), /* @__PURE__ */ import_react7.default.createElement(P, null, "I think like a scientist. Skeptical by nature."), /* @__PURE__ */ import_react7.default.createElement(P, null, "I try not to be someone I'm not. I try to maintain an honest character."), /* @__PURE__ */ import_react7.default.createElement(H2, {
+}, "Why I write code"), /* @__PURE__ */ import_react8.default.createElement(P, null, "For better or for worse, most people don't think like I do."), /* @__PURE__ */ import_react8.default.createElement(P, null, "I think like a scientist. Skeptical by nature."), /* @__PURE__ */ import_react8.default.createElement(P, null, "I try not to be someone I'm not. I try to maintain an honest character."), /* @__PURE__ */ import_react8.default.createElement(H2, {
   pt: "24px" /* _7 */
-}, "Why I moved to Texas"), /* @__PURE__ */ import_react7.default.createElement(P, null, "Weather"), /* @__PURE__ */ import_react7.default.createElement(P, null, "Nicer people"), /* @__PURE__ */ import_react7.default.createElement(P, null, "More space"), /* @__PURE__ */ import_react7.default.createElement(H2, {
+}, "Why I moved to Texas"), /* @__PURE__ */ import_react8.default.createElement(P, null, "Environment is everything"), /* @__PURE__ */ import_react8.default.createElement(H2, {
   pt: "24px" /* _7 */
-}, "Favorite video games"), /* @__PURE__ */ import_react7.default.createElement(H3, null, "Hollow Knight"), /* @__PURE__ */ import_react7.default.createElement(H3, null, "Kid Chameleon"), /* @__PURE__ */ import_react7.default.createElement(H3, null, "Starcraft"), /* @__PURE__ */ import_react7.default.createElement(H3, null, "The Talos Principle"), /* @__PURE__ */ import_react7.default.createElement(H3, null, "Thief: The Dark Project"), /* @__PURE__ */ import_react7.default.createElement(H3, null, "Thief 2: The Metal Age"), /* @__PURE__ */ import_react7.default.createElement(H3, null, "Undertale"), /* @__PURE__ */ import_react7.default.createElement(H3, null, "Warcraft 3"), /* @__PURE__ */ import_react7.default.createElement(H2, {
+}, "Favorite video games"), /* @__PURE__ */ import_react8.default.createElement(H3, null, "Hollow Knight"), /* @__PURE__ */ import_react8.default.createElement(H3, null, "Kid Chameleon"), /* @__PURE__ */ import_react8.default.createElement(H3, null, "Starcraft"), /* @__PURE__ */ import_react8.default.createElement(H3, null, "The Talos Principle"), /* @__PURE__ */ import_react8.default.createElement(H3, null, "Thief: The Dark Project"), /* @__PURE__ */ import_react8.default.createElement(H3, null, "Thief 2: The Metal Age"), /* @__PURE__ */ import_react8.default.createElement(H3, null, "Undertale"), /* @__PURE__ */ import_react8.default.createElement(H3, null, "Warcraft 3"), /* @__PURE__ */ import_react8.default.createElement(H2, {
   pt: "24px" /* _7 */
-}, "My personal roadmap"), /* @__PURE__ */ import_react7.default.createElement(Ul, null, /* @__PURE__ */ import_react7.default.createElement(Li, null, "Work for an awesome company in Austin"), /* @__PURE__ */ import_react7.default.createElement(Li, null, "Remember to take breaks throughout the day"), /* @__PURE__ */ import_react7.default.createElement(Li, null, "Expand my personal utility library"), /* @__PURE__ */ import_react7.default.createElement(Li, null, "Work on a small project that people find useful"), /* @__PURE__ */ import_react7.default.createElement(Li, null, 'Learn some "big picture" things'), /* @__PURE__ */ import_react7.default.createElement(Li, null, "Get better at math"), /* @__PURE__ */ import_react7.default.createElement(Li, null, "Make a boyfriend?")));
+}, "My personal roadmap"), /* @__PURE__ */ import_react8.default.createElement(Ul, null, /* @__PURE__ */ import_react8.default.createElement(Li, null, "Work for an awesome company in Austin"), /* @__PURE__ */ import_react8.default.createElement(Li, null, "Remember to take breaks throughout the day"), /* @__PURE__ */ import_react8.default.createElement(Li, null, "Expand my personal utility library"), /* @__PURE__ */ import_react8.default.createElement(Li, null, "Work on a small project that people find useful"), /* @__PURE__ */ import_react8.default.createElement(Li, null, 'Learn some "big picture" things'), /* @__PURE__ */ import_react8.default.createElement(Li, null, "Get better at math"), /* @__PURE__ */ import_react8.default.createElement(Li, null, "Make a boyfriend?")));
 
 // src/pages/page.Projects.tsx
-var import_react8 = __toESM(require_react());
-var PageProjects = () => /* @__PURE__ */ import_react8.default.createElement(import_react8.default.Fragment, null, /* @__PURE__ */ import_react8.default.createElement(P, null, "I wrote my own little CSS-in-JS styling lib", " ", /* @__PURE__ */ import_react8.default.createElement("a", {
+var import_react9 = __toESM(require_react());
+var PageProjects = () => /* @__PURE__ */ import_react9.default.createElement(import_react9.default.Fragment, null, /* @__PURE__ */ import_react9.default.createElement(H2, null, "Just a few of many projects I've worked on in my free time"), /* @__PURE__ */ import_react9.default.createElement(H3, null, "SNEK"), /* @__PURE__ */ import_react9.default.createElement(H3, null, "HTML5 Vimeo player"), /* @__PURE__ */ import_react9.default.createElement(H3, null, "WarGame"), /* @__PURE__ */ import_react9.default.createElement(H3, null, "JS & ActionScript Starfield"), /* @__PURE__ */ import_react9.default.createElement(H3, null, "JS Canvas Masking"), /* @__PURE__ */ import_react9.default.createElement(H3, null, "CmdTool"), /* @__PURE__ */ import_react9.default.createElement(H3, null, "IcoSphere"), /* @__PURE__ */ import_react9.default.createElement(H3, null, "Cat Game"), /* @__PURE__ */ import_react9.default.createElement(P, null, "I wrote my own little CSS-in-JS styling lib", " ", /* @__PURE__ */ import_react9.default.createElement("a", {
   href: "https://github.com/gregolai/pu2/tree/master/src/style-lib"
-}, "here"), `. It supports server-side rendering. It's what's rendering this site. I built it because CSS is aweful. It really is. Having to repeat the same selectors is only "cascading" in behavior, not as it appears to the developer. Third-party CSS-in-JS come with a lot of cruft and buy-in to a specific framework. It's not that difficult to write your own, and you learn a lot from it.`), /* @__PURE__ */ import_react8.default.createElement(P, null, "War Game"), /* @__PURE__ */ import_react8.default.createElement(P, null, "Cmd Tool"), /* @__PURE__ */ import_react8.default.createElement(P, null, "Cat Game"), /* @__PURE__ */ import_react8.default.createElement(P, null, "A plethora of incomplete projects written in a variety of programming languages."));
-
-// src/img/agorafy.png
-var agorafy_default = "./assets/agorafy-47AP76AG.png";
+}, "here"), `. It supports server-side rendering. It's what's rendering this site. I built it because CSS is aweful. It really is. Having to repeat the same selectors is only "cascading" in behavior, not as it appears to the developer. Third-party CSS-in-JS come with a lot of cruft and buy-in to a specific framework. It's not that difficult to write your own, and you learn a lot from it.`));
 
 // src/App.tsx
-var PageFrame = () => /* @__PURE__ */ import_react9.default.createElement(import_style_lib5.Box, null, /* @__PURE__ */ import_react9.default.createElement(Header, null), /* @__PURE__ */ import_react9.default.createElement("img", {
-  src: agorafy_default
-}), /* @__PURE__ */ import_react9.default.createElement("main", null, /* @__PURE__ */ import_react9.default.createElement(import_react_router_dom3.Outlet, null)));
+var PageFrame = () => /* @__PURE__ */ import_react10.default.createElement(import_style_lib6.Box, null, /* @__PURE__ */ import_react10.default.createElement(Header, null), /* @__PURE__ */ import_react10.default.createElement("main", null, /* @__PURE__ */ import_react10.default.createElement(import_react_router_dom3.Outlet, null)));
 var App = () => {
-  return /* @__PURE__ */ import_react9.default.createElement(import_style_lib5.Box, {
+  return /* @__PURE__ */ import_react10.default.createElement(import_style_lib6.Box, {
     py: "18px" /* _6 */,
     px: "4%",
     minHeight: "100vh",
     bg: "#D6E5f4"
-  }, /* @__PURE__ */ import_react9.default.createElement(import_react_router_dom3.Routes, null, /* @__PURE__ */ import_react9.default.createElement(import_react_router_dom3.Route, {
+  }, /* @__PURE__ */ import_react10.default.createElement(import_react_router_dom3.Routes, null, /* @__PURE__ */ import_react10.default.createElement(import_react_router_dom3.Route, {
     path: "/",
-    element: /* @__PURE__ */ import_react9.default.createElement(PageFrame, null)
-  }, /* @__PURE__ */ import_react9.default.createElement(import_react_router_dom3.Route, {
+    element: /* @__PURE__ */ import_react10.default.createElement(PageFrame, null)
+  }, /* @__PURE__ */ import_react10.default.createElement(import_react_router_dom3.Route, {
     index: true,
-    element: /* @__PURE__ */ import_react9.default.createElement(PageHome, null)
-  }), /* @__PURE__ */ import_react9.default.createElement(import_react_router_dom3.Route, {
+    element: /* @__PURE__ */ import_react10.default.createElement(PageHome, null)
+  }), /* @__PURE__ */ import_react10.default.createElement(import_react_router_dom3.Route, {
     path: "career",
-    element: /* @__PURE__ */ import_react9.default.createElement(PageCareer, null)
-  }), /* @__PURE__ */ import_react9.default.createElement(import_react_router_dom3.Route, {
+    element: /* @__PURE__ */ import_react10.default.createElement(PageCareer, null)
+  }), /* @__PURE__ */ import_react10.default.createElement(import_react_router_dom3.Route, {
     path: "life",
-    element: /* @__PURE__ */ import_react9.default.createElement(PageLife, null)
-  }), /* @__PURE__ */ import_react9.default.createElement(import_react_router_dom3.Route, {
+    element: /* @__PURE__ */ import_react10.default.createElement(PageLife, null)
+  }), /* @__PURE__ */ import_react10.default.createElement(import_react_router_dom3.Route, {
     path: "projects",
-    element: /* @__PURE__ */ import_react9.default.createElement(PageProjects, null)
+    element: /* @__PURE__ */ import_react10.default.createElement(PageProjects, null)
   }))));
 };
 
@@ -31047,11 +31487,11 @@ var server = (0, import_express.default)();
 server.use("/", import_express.default.static(import_path.default.resolve(__dirname, "../client")));
 server.get("*", async (req, res) => {
   const collector = new import_server3.SSRStyleCollector();
-  const appHtml = (0, import_server.renderToString)(/* @__PURE__ */ import_react10.default.createElement(import_react10.StrictMode, null, /* @__PURE__ */ import_react10.default.createElement(import_server3.SSRStyleProvider, {
+  const appHtml = (0, import_server.renderToString)(/* @__PURE__ */ import_react11.default.createElement(import_react11.StrictMode, null, /* @__PURE__ */ import_react11.default.createElement(import_server3.SSRStyleProvider, {
     collector
-  }, /* @__PURE__ */ import_react10.default.createElement(import_server2.StaticRouter, {
+  }, /* @__PURE__ */ import_react11.default.createElement(import_server2.StaticRouter, {
     location: req.originalUrl
-  }, /* @__PURE__ */ import_react10.default.createElement(App, null)))));
+  }, /* @__PURE__ */ import_react11.default.createElement(App, null)))));
   const styleHtml = collector.getHtml();
   res.status(200).set({ "Content-Type": "text/html" }).end(renderSSR({ appHtml, styleHtml }));
 });

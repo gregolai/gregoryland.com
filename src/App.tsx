@@ -11,12 +11,9 @@ import { PageCareer } from './pages/page.Career';
 import { PageLife } from './pages/page.Life';
 import { PageProjects } from './pages/page.Projects';
 
-import agorafySrc from './img/agorafy.png';
-
 const PageFrame = () => (
 	<Box>
 		<Header />
-		<img src={agorafySrc} />
 		<main>
 			<Outlet />
 		</main>

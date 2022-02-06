@@ -18,7 +18,24 @@ export const Text = createComponent({
 	m: Space._0
 });
 
-export const Button = (props: BoxProps) => <Box {...props} as="button" />;
+export const Button = (props: BoxProps) => (
+	<Box
+		border="2px solid black"
+		cursor="pointer"
+		color="black"
+		bg="white"
+		px={Space._5}
+		py={Space._3}
+		css={{
+			':hover': {
+				color: 'white',
+				bg: 'black'
+			}
+		}}
+		{...props}
+		as="button"
+	/>
+);
 
 export const H1 = (props: BoxProps) => <Text {...props} as="h1" fontFamily="Chakra Petch" />;
 export const H2 = (props: BoxProps) => <Text {...props} as="h2" fontWeight="500" fontFamily="Chakra Petch" />;

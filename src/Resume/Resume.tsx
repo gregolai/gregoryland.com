@@ -57,9 +57,7 @@ const LiP = ({ children }: { children: React.ReactNode }) => (
 
 export const Resume = () => (
 	<Box
-		maxWidth="1000px"
 		backgroundColor="white"
-		boxShadow="4px 4px 2px rgba(0,0,0,0.3)"
 		lineHeight="1" // Keep lineHeight: '1' until it's defaulted to globally
 		p={Space._8}
 		css={{

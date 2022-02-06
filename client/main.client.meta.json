@@ -448,7 +448,7 @@
       ]
     },
     "node_modules/pu2/style-lib/browser/index.js": {
-      "bytes": 477,
+      "bytes": 652,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/browser/BrowserStyleProvider.js",
@@ -456,6 +456,10 @@
         },
         {
           "path": "node_modules/pu2/style-lib/browser/Box.js",
+          "kind": "require-call"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/browser/useStyle.js",
           "kind": "require-call"
         }
       ]
@@ -478,7 +482,7 @@
       "imports": []
     },
     "src/primitives.tsx": {
-      "bytes": 1604,
+      "bytes": 1791,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -495,7 +499,7 @@
       ]
     },
     "src/Links.tsx": {
-      "bytes": 2285,
+      "bytes": 2279,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -549,7 +553,7 @@
       ]
     },
     "src/Resume/Resume.tsx": {
-      "bytes": 6610,
+      "bytes": 6548,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -570,7 +574,7 @@
       ]
     },
     "src/pages/page.Home.tsx": {
-      "bytes": 1360,
+      "bytes": 1324,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -594,8 +598,97 @@
         }
       ]
     },
+    "src/Resume/resume-theme.ts": {
+      "bytes": 1231,
+      "imports": []
+    },
+    "node_modules/react-icons/lib/esm/iconsManifest.js": {
+      "bytes": 4149,
+      "imports": []
+    },
+    "node_modules/react-icons/lib/esm/iconContext.js": {
+      "bytes": 245,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "node_modules/react-icons/lib/esm/iconBase.js": {
+      "bytes": 2324,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-icons/lib/esm/iconContext.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "node_modules/react-icons/lib/esm/index.js": {
+      "bytes": 91,
+      "imports": [
+        {
+          "path": "node_modules/react-icons/lib/esm/iconsManifest.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-icons/lib/esm/iconBase.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-icons/lib/esm/iconContext.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "node_modules/react-icons/md/index.esm.js": {
+      "bytes": 1727514,
+      "imports": [
+        {
+          "path": "node_modules/react-icons/lib/esm/index.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/Resume/Resume2.tsx": {
+      "bytes": 11865,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/Resume/resume-theme.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-icons/md/index.esm.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-icons/md/index.esm.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/img/gregory.jpg": {
+      "bytes": 5524,
+      "imports": []
+    },
     "src/pages/page.Career.tsx": {
-      "bytes": 288,
+      "bytes": 550,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -610,17 +703,21 @@
           "kind": "import-statement"
         },
         {
-          "path": "src/Resume/Resume.tsx",
+          "path": "src/Resume/Resume2.tsx",
           "kind": "import-statement"
         },
         {
           "path": "src/theme.ts",
           "kind": "import-statement"
+        },
+        {
+          "path": "src/img/gregory.jpg",
+          "kind": "import-statement"
         }
       ]
     },
     "src/pages/page.Life.tsx": {
-      "bytes": 1313,
+      "bytes": 2248,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -641,7 +738,7 @@
       ]
     },
     "src/pages/page.Projects.tsx": {
-      "bytes": 789,
+      "bytes": 916,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -653,12 +750,8 @@
         }
       ]
     },
-    "src/img/agorafy.png": {
-      "bytes": 3516,
-      "imports": []
-    },
     "src/App.tsx": {
-      "bytes": 1036,
+      "bytes": 964,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -703,10 +796,6 @@
         {
           "path": "src/pages/page.Projects.tsx",
           "kind": "import-statement"
-        },
-        {
-          "path": "src/img/agorafy.png",
-          "kind": "import-statement"
         }
       ]
     },
@@ -737,21 +826,11 @@
     }
   },
   "outputs": {
-    "client/assets/agorafy-47AP76AG.png": {
-      "imports": [],
-      "exports": [],
-      "inputs": {
-        "src/img/agorafy.png": {
-          "bytesInOutput": 3516
-        }
-      },
-      "bytes": 3516
-    },
     "client/main.client.js.map": {
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 1558619
+      "bytes": 3461799
     },
     "client/main.client.js": {
       "imports": [],
@@ -786,7 +865,7 @@
           "bytesInOutput": 279
         },
         "node_modules/tslib/tslib.js": {
-          "bytesInOutput": 16633
+          "bytesInOutput": 16639
         },
         "node_modules/pu2/style-lib/internal/utils.js": {
           "bytesInOutput": 447
@@ -879,13 +958,13 @@
           "bytesInOutput": 912
         },
         "node_modules/pu2/style-lib/browser/useStyle.js": {
-          "bytesInOutput": 594
+          "bytesInOutput": 596
         },
         "node_modules/pu2/style-lib/browser/Box.js": {
           "bytesInOutput": 973
         },
         "node_modules/pu2/style-lib/browser/index.js": {
-          "bytesInOutput": 649
+          "bytesInOutput": 846
         },
         "node_modules/pu2/style-lib/index.js": {
           "bytesInOutput": 291
@@ -906,37 +985,49 @@
           "bytesInOutput": 20900
         },
         "src/App.tsx": {
-          "bytesInOutput": 1667
+          "bytesInOutput": 1574
         },
         "src/Header.tsx": {
           "bytesInOutput": 846
         },
         "src/primitives.tsx": {
-          "bytesInOutput": 1737
+          "bytesInOutput": 1965
         },
         "src/Links.tsx": {
           "bytesInOutput": 2313
         },
         "src/Resume/Resume.tsx": {
-          "bytesInOutput": 9664
+          "bytesInOutput": 48
         },
         "src/pages/page.Home.tsx": {
-          "bytesInOutput": 2044
+          "bytesInOutput": 1954
         },
         "src/pages/page.Career.tsx": {
-          "bytesInOutput": 260
+          "bytesInOutput": 652
+        },
+        "src/Resume/Resume2.tsx": {
+          "bytesInOutput": 16914
+        },
+        "node_modules/react-icons/lib/esm/index.js": {
+          "bytesInOutput": 0
+        },
+        "node_modules/react-icons/lib/esm/iconBase.js": {
+          "bytesInOutput": 2433
+        },
+        "node_modules/react-icons/lib/esm/iconContext.js": {
+          "bytesInOutput": 286
+        },
+        "node_modules/react-icons/md/index.esm.js": {
+          "bytesInOutput": 892
         },
         "src/pages/page.Life.tsx": {
-          "bytesInOutput": 2865
+          "bytesInOutput": 3955
         },
         "src/pages/page.Projects.tsx": {
-          "bytesInOutput": 1181
-        },
-        "src/img/agorafy.png": {
-          "bytesInOutput": 53
+          "bytesInOutput": 1576
         }
       },
-      "bytes": 1026770
+      "bytes": 1040016
     }
   }
 }

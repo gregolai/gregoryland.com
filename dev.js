@@ -12,6 +12,7 @@ const writeFile = async (json, dest) => {
 };
 
 const loader = {
+	'.jpg': 'file',
 	'.png': 'file'
 };
 
