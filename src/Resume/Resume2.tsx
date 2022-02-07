@@ -1,29 +1,28 @@
 // @ts-nocheck
 import React from 'react';
 import { Box, useStyle } from 'pu2/style-lib';
-import { Flex, Img, P, Text } from '../primitives';
-import { FontSize2, LetterSpacing2, LineHeight2, Palette, Space2 } from './resume-theme';
 import { MdOutlineEmail } from 'react-icons/md';
 import { MdFace } from 'react-icons/md';
-import { GiDiploma } from 'react-icons/gi';
-
-const border = `2px solid ${Palette.darkest}`;
+import { Flex } from '../primitives';
+import { FontSize, LetterSpacing, LineHeight, Palette, Space } from './resume-theme';
 
 /*
 	Copy of:
 	https://www.etsy.com/listing/958270979/professional-resume-template-with-photo?gpla=1&gao=1&&utm_source=google&utm_medium=cpc&utm_campaign=shopping_us_c-paper_and_party_supplies-paper-stationery-design_and_templates-templates&utm_custom1=_k_Cj0KCQiA9OiPBhCOARIsAI0y71A_daDNEpZVXbnWQHzR_XX6Ys_EnEw5Dg0jWD9rbz_bJdHiTQCEQTgaAi23EALw_wcB_k_&utm_content=go_12573359918_120439649718_507799175895_pla-315907316571_c__958270979_122461060&utm_custom2=12573359918&gclid=Cj0KCQiA9OiPBhCOARIsAI0y71A_daDNEpZVXbnWQHzR_XX6Ys_EnEw5Dg0jWD9rbz_bJdHiTQCEQTgaAi23EALw_wcB
 */
 
+const border = `2px solid ${Palette.darkest}`;
+
 const Para = (props) => (
-	<Box {...props} fontSize={FontSize2._14px} letterSpacing="0px" lineHeight={LineHeight2._20px} />
+	<Box {...props} fontSize={FontSize._14px} letterSpacing="0px" lineHeight={LineHeight._20px} />
 );
 
 const NameHeading = (props) => (
 	<Box
 		color={Palette.darkest}
 		{...props}
-		fontSize={FontSize2._39px}
-		letterSpacing={LetterSpacing2._4px}
+		fontSize={FontSize._39px}
+		letterSpacing={LetterSpacing._4px}
 		textTransform="uppercase"
 	/>
 );
@@ -33,9 +32,9 @@ const MediumHeading = (props) => (
 	<Box
 		color={Palette.darkest}
 		{...props}
-		fontSize={FontSize2._18px}
+		fontSize={FontSize._18px}
 		fontWeight="700"
-		letterSpacing={LetterSpacing2._4px}
+		letterSpacing={LetterSpacing._4px}
 		textTransform="uppercase"
 	/>
 );
@@ -45,10 +44,10 @@ const SmallHeading = (props) => (
 	<Box
 		color={Palette.darkest}
 		{...props}
-		fontSize={FontSize2._14px}
+		fontSize={FontSize._14px}
 		fontWeight="700"
 		letterSpacing="0px"
-		lineHeight={LineHeight2._18px}
+		lineHeight={LineHeight._18px}
 		textTransform="uppercase"
 	/>
 );
@@ -58,10 +57,10 @@ const SubHeading = (props) => (
 	<Box
 		color={Palette.dark}
 		{...props}
-		fontSize={FontSize2._14px}
+		fontSize={FontSize._14px}
 		fontWeight="400"
 		letterSpacing="0px"
-		lineHeight={LineHeight2._18px}
+		lineHeight={LineHeight._18px}
 	/>
 );
 
@@ -73,7 +72,7 @@ const FullName = ({ pl, pt }) => (
 		<Box position="relative">
 			<Diamond />
 		</Box>
-		<NameHeading fontWeight="600" pl={pl} pt={Space2._4px}>
+		<NameHeading fontWeight="600" pl={pl} pt={Space._4px}>
 			Dalton
 		</NameHeading>
 	</Box>
@@ -102,7 +101,7 @@ const Diamond = (props) => (
 const LeftSection = ({ title, children, ...rest }) => (
 	<Box {...rest}>
 		<MediumHeading>{title}</MediumHeading>
-		<Box pt={Space2._18px}>{children}</Box>
+		<Box pt={Space._18px}>{children}</Box>
 	</Box>
 );
 
@@ -110,7 +109,7 @@ const Icon = ({ Comp, ...rest }) => <Comp className={useStyle(rest)} />;
 
 const Contact = ({ IconComp, label, text }) => (
 	<Flex
-		py={Space2._18px}
+		py={Space._18px}
 		alignItems="stretch"
 		bb="2px solid white"
 		css={{
@@ -118,9 +117,9 @@ const Contact = ({ IconComp, label, text }) => (
 			':last-of-type': { bb: 'none', pb: '0px' }
 		}}
 	>
-		<Icon Comp={IconComp} w={Space2._30px} h={Space2._30px} color="white" />
+		<Icon Comp={IconComp} w={Space._30px} h={Space._30px} color="white" />
 
-		<Flex flex="1" pl={Space2._18px} flexDirection="column" justifyContent="space-between">
+		<Flex flex="1" pl={Space._18px} flexDirection="column" justifyContent="space-between">
 			<SmallHeading color="white">{label}</SmallHeading>
 			<Box color="white">{text}</Box>
 		</Flex>
@@ -129,7 +128,7 @@ const Contact = ({ IconComp, label, text }) => (
 
 const ResumeBanner = (props) => (
 	<Box position="relative" w="30px" bg={Palette.darkest} {...props}>
-		<Text
+		<Box
 			position="absolute"
 			bottom="0"
 			left="50%"
@@ -139,12 +138,12 @@ const ResumeBanner = (props) => (
 			textTransform="uppercase"
 		>
 			Resume
-		</Text>
+		</Box>
 	</Box>
 );
 
 const Job = ({ children }) => (
-	<Box pt={Space2._18px} css={{ ':first-of-type': { pt: '0px' } }}>
+	<Box pt={Space._18px} css={{ ':first-of-type': { pt: '0px' } }}>
 		{children}
 	</Box>
 );
@@ -163,23 +162,23 @@ const JobHead = ({ title, from, to, where, city }) => (
 	</>
 );
 
-const JobSummary = ({ children }) => <Para pt={Space2._8px}>{children}</Para>;
+const JobSummary = ({ children }) => <Para pt={Space._8px}>{children}</Para>;
 
 const JobBullet = ({ children }) => (
-	<Flex alignItems="center" pt={Space2._8px}>
-		<HR w={Space2._18px} />
-		<Para flex="1" pl={Space2._18px} lineHeight={LineHeight2._20px}>
+	<Flex alignItems="center" pt={Space._8px}>
+		<HR w={Space._18px} />
+		<Para flex="1" pl={Space._18px}>
 			{children}
 		</Para>
 	</Flex>
 );
 
 const Skill = ({ name, value }) => (
-	<Box pt={Space2._18px} css={{ ':first-of-type': { pt: '0px' } }}>
+	<Box pt={Space._18px} css={{ ':first-of-type': { pt: '0px' } }}>
 		<Box bg={Palette.lighter} overflow="hidden">
-			<Box h={Space2._12px} bg={Palette.light} w={`${value * 10}%`} />
+			<Box h={Space._12px} bg={Palette.light} w={`${value * 10}%`} />
 		</Box>
-		<Box textAlign="center" fontSize={FontSize2._14px} pt={Space2._4px}>
+		<Box textAlign="center" fontSize={FontSize._14px} pt={Space._4px}>
 			{name}
 		</Box>
 	</Box>
@@ -187,7 +186,7 @@ const Skill = ({ name, value }) => (
 
 const PageSplit = ({ left, right, ...rest }) => (
 	<Flex {...rest}>
-		<Box flex="1" pr={Space2._30px}>
+		<Box flex="1" pr={Space._30px}>
 			{left}
 		</Box>
 		<Box w="260px">{right}</Box>
@@ -195,32 +194,32 @@ const PageSplit = ({ left, right, ...rest }) => (
 );
 
 const HideVerticalStubHack = (props) => (
-	<Box {...props} position="absolute" bg={Palette.bg} w="2px" h="8px" />
+	<Box {...props} position="absolute" bg={Palette.bg} w="4px" h="8px" />
 );
 
 export const Resume = () => (
 	<Box
 		position="relative"
 		bg={Palette.bg}
-		px={Space2._60px}
-		pb={Space2._60px}
+		px={Space._60px}
+		pb={Space._60px}
 		lineHeight="1"
 		fontFamily="system-ui,sans-serif"
 	>
-		<Box position="absolute" top="0" left="0" w="100%" bg="#DBD9DA" h={Space2._30px} />
+		<Box position="absolute" top="0" left="0" w="100%" bg="#DBD9DA" h={Space._30px} />
 		<PageSplit
 			left={
-				<Flex alignItems="stretch" pb={Space2._38px}>
+				<Flex alignItems="stretch" pb={Space._38px}>
 					<ResumeBanner />
-					<Box flex="1" pt={Space2._30px}>
-						<FullName pt={Space2._30px} pl={Space2._30px} />
-						<PrimaryRole pl={Space2._30px} pt={Space2._18px} />
+					<Box flex="1" pt={Space._30px}>
+						<FullName pt={Space._30px} pl={Space._30px} />
+						<PrimaryRole pt={Space._18px} pl={Space._30px} />
 					</Box>
 				</Flex>
 			}
 			right={
 				<Box
-					pt={Space2._30px}
+					pt={Space._30px}
 					h="100%"
 					bg="url('https://images.unsplash.com/photo-1644123550420-ee28152ab925?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2781&q=80')"
 					backgroundSize="cover"
@@ -231,13 +230,13 @@ export const Resume = () => (
 		<PageSplit
 			left={
 				<Flex>
-					<LeftSection flex="1" pt={Space2._18px} title="Career Summary">
+					<LeftSection flex="1" pt={Space._18px} title="Career Summary">
 						<Para>
 							This is my career summary. It's meant to summarize my career. What have I learnt?
 							What are my goals? Why do I do what I do? It should be very short.
 						</Para>
 					</LeftSection>
-					<LeftSection flex="1" pt={Space2._18px} title="Education" pl={Space2._30px}>
+					<LeftSection flex="1" pt={Space._18px} title="Education" pl={Space._30px}>
 						<SmallHeading>2009</SmallHeading>
 						<SmallHeading>Bachelor of Science</SmallHeading>
 						<SmallHeading>Computer Science</SmallHeading>
@@ -246,26 +245,26 @@ export const Resume = () => (
 				</Flex>
 			}
 			right={
-				<Box bg={Palette.darkest} px={Space2._30px} py={Space2._18px}>
+				<Box bg={Palette.darkest} px={Space._30px} py={Space._18px}>
 					<Contact IconComp={MdOutlineEmail} label="Email" text="gregolai@gmail.com" />
 					<Contact IconComp={MdFace} label="Website" text="gregoryland.com" />
 				</Box>
 			}
 		/>
-		<Box pt={Space2._30px}>
-			<Box position="relative" float="right" w="260px" ml={Space2._30px} mb={Space2._18px}>
+		<Box pt={Space._30px}>
+			<Box position="relative" float="right" w="260px" ml={Space._30px} mb={Space._18px}>
 				<HideVerticalStubHack />
 				<HideVerticalStubHack right="0px" />
 				<Box bx={border} bb={border}>
 					<Flex position="relative" alignItems="center">
 						<Diamond />
-						<MediumHeading pl={Space2._30px}>Skills</MediumHeading>
-						<Flex position="relative" ml={Space2._30px} flex="1" alignItems="center">
+						<MediumHeading pl={Space._30px}>Skills</MediumHeading>
+						<Flex position="relative" ml={Space._30px} flex="1" alignItems="center">
 							<Diamond />
 							<HR w="100%" />
 						</Flex>
 					</Flex>
-					<Box px={Space2._30px} py={Space2._18px}>
+					<Box px={Space._30px} py={Space._18px}>
 						<Skill name="Javascript" value={9} />
 						<Skill name="Typescript" value={8} />
 						<Skill name="React" value={8} />

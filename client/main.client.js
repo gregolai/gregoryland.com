@@ -20526,13 +20526,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
             return Reflect.metadata(metadataKey, metadataValue);
         };
-        __awaiter = function(thisArg, _arguments, P5, generator) {
+        __awaiter = function(thisArg, _arguments, P4, generator) {
           function adopt(value) {
-            return value instanceof P5 ? value : new P5(function(resolve) {
+            return value instanceof P4 ? value : new P4(function(resolve) {
               resolve(value);
             });
           }
-          return new (P5 || (P5 = Promise))(function(resolve, reject) {
+          return new (P4 || (P4 = Promise))(function(resolve, reject) {
             function fulfilled(value) {
               try {
                 step(generator.next(value));
@@ -23465,7 +23465,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     w: "30px",
     bg: "#303030" /* darkest */,
     ...props
-  }, /* @__PURE__ */ import_react10.default.createElement(Text, {
+  }, /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
     position: "absolute",
     bottom: "0",
     left: "50%",
@@ -23491,8 +23491,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     w: "18px" /* _18px */
   }), /* @__PURE__ */ import_react10.default.createElement(Para, {
     flex: "1",
-    pl: "18px" /* _18px */,
-    lineHeight: "20px" /* _20px */
+    pl: "18px" /* _18px */
   }, children));
   var Skill = ({ name, value }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
     pt: "18px" /* _18px */,
@@ -23521,7 +23520,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     ...props,
     position: "absolute",
     bg: "#FAFAFA" /* bg */,
-    w: "2px",
+    w: "4px",
     h: "8px"
   });
   var Resume = () => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
@@ -23549,8 +23548,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       pt: "30px" /* _30px */,
       pl: "30px" /* _30px */
     }), /* @__PURE__ */ import_react10.default.createElement(PrimaryRole, {
-      pl: "30px" /* _30px */,
-      pt: "18px" /* _18px */
+      pt: "18px" /* _18px */,
+      pl: "30px" /* _30px */
     }))),
     right: /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
       pt: "30px" /* _30px */,

@@ -20652,7 +20652,7 @@ var require_react_production_min = __commonJS({
         throw b = "" + a, Error(z(31, b === "[object Object]" ? "object with keys {" + Object.keys(a).join(", ") + "}" : b));
       return h;
     }
-    function P5(a, b, c) {
+    function P4(a, b, c) {
       if (a == null)
         return a;
       var e = [], d = 0;
@@ -20685,18 +20685,18 @@ var require_react_production_min = __commonJS({
       return a;
     }
     var T = { ReactCurrentDispatcher: R, ReactCurrentBatchConfig: { transition: 0 }, ReactCurrentOwner: G, IsSomeRendererActing: { current: false }, assign: l };
-    exports2.Children = { map: P5, forEach: function(a, b, c) {
-      P5(a, function() {
+    exports2.Children = { map: P4, forEach: function(a, b, c) {
+      P4(a, function() {
         b.apply(this, arguments);
       }, c);
     }, count: function(a) {
       var b = 0;
-      P5(a, function() {
+      P4(a, function() {
         b++;
       });
       return b;
     }, toArray: function(a) {
-      return P5(a, function(a2) {
+      return P4(a, function(a2) {
         return a2;
       }) || [];
     }, only: function(a) {
@@ -22640,7 +22640,7 @@ var require_react_dom_server_node_production_min = __commonJS({
       return a === b && (a !== 0 || 1 / a === 1 / b) || a !== a && b !== b;
     }
     var Ba = typeof Object.is === "function" ? Object.is : Aa;
-    var P5 = null;
+    var P4 = null;
     var Q = null;
     var R = null;
     var S = false;
@@ -22648,9 +22648,9 @@ var require_react_dom_server_node_production_min = __commonJS({
     var U = null;
     var V = 0;
     function W() {
-      if (P5 === null)
+      if (P4 === null)
         throw Error(p(321));
-      return P5;
+      return P4;
     }
     function Ca() {
       if (0 < V)
@@ -22668,7 +22668,7 @@ var require_react_dom_server_node_production_min = __commonJS({
       return c;
     }
     function Fa() {
-      P5 = null;
+      P4 = null;
       T = false;
       Q = null;
       V = 0;
@@ -22678,7 +22678,7 @@ var require_react_dom_server_node_production_min = __commonJS({
       return typeof b === "function" ? b(a) : b;
     }
     function Ha(a, b, c) {
-      P5 = W();
+      P4 = W();
       R = Da();
       if (S) {
         var d = R.queue;
@@ -22697,11 +22697,11 @@ var require_react_dom_server_node_production_min = __commonJS({
       a = a === Ga ? typeof b === "function" ? b() : b : c !== void 0 ? c(b) : b;
       R.memoizedState = a;
       a = R.queue = { last: null, dispatch: null };
-      a = a.dispatch = Ia.bind(null, P5, a);
+      a = a.dispatch = Ia.bind(null, P4, a);
       return [R.memoizedState, a];
     }
     function Ja(a, b) {
-      P5 = W();
+      P4 = W();
       R = Da();
       b = b === void 0 ? null : b;
       if (R !== null) {
@@ -22730,7 +22730,7 @@ var require_react_dom_server_node_production_min = __commonJS({
     function Ia(a, b, c) {
       if (!(25 > V))
         throw Error(p(301));
-      if (a === P5)
+      if (a === P4)
         if (T = true, a = { action: c, next: null }, U === null && (U = /* @__PURE__ */ new Map()), c = U.get(b), c === void 0)
           U.set(b, a);
         else {
@@ -22752,7 +22752,7 @@ var require_react_dom_server_node_production_min = __commonJS({
       I(a, b);
       return a[b];
     }, useMemo: Ja, useReducer: Ha, useRef: function(a) {
-      P5 = W();
+      P4 = W();
       R = Da();
       var b = R.memoizedState;
       return b === null ? (a = { current: a }, R.memoizedState = a) : b;
@@ -22884,7 +22884,7 @@ var require_react_dom_server_node_production_min = __commonJS({
             var k = h2.getDerivedStateFromProps.call(null, d2.props, e.state);
             k != null && (e.state = l({}, e.state, k));
           }
-        } else if (P5 = {}, e = h2(d2.props, f2, m), e = Ea(h2, d2.props, e, f2), e == null || e.render == null) {
+        } else if (P4 = {}, e = h2(d2.props, f2, m), e = Ea(h2, d2.props, e, f2), e == null || e.render == null) {
           a = e;
           ab(a, h2);
           return;
@@ -23107,7 +23107,7 @@ var require_react_dom_server_node_production_min = __commonJS({
         if (typeof c === "object" && c !== null)
           switch (c.$$typeof) {
             case ca:
-              P5 = {};
+              P4 = {};
               var d = c.render(a2.props, a2.ref);
               d = Ea(c.render, a2.props, d, a2.ref);
               d = Z(d);
@@ -27402,10 +27402,10 @@ var require_react_router_production_min = __commonJS({
           e3.children && e3.children.length > 0 && (e3.index === true && a(false), y(e3.children, t2, o2, s2)), (e3.path != null || e3.index) && t2.push({ path: s2, score: E(s2, e3.index), routesMeta: o2 });
         }), t2;
       }
-      const C = /^:\w+$/, P5 = (e2) => e2 === "*";
+      const C = /^:\w+$/, P4 = (e2) => e2 === "*";
       function E(e2, t2) {
         let n2 = e2.split("/"), a2 = n2.length;
-        return n2.some(P5) && (a2 += -2), t2 && (a2 += 2), n2.filter((e3) => !P5(e3)).reduce((e3, t3) => e3 + (C.test(t3) ? 3 : t3 === "" ? 1 : 10), a2);
+        return n2.some(P4) && (a2 += -2), t2 && (a2 += 2), n2.filter((e3) => !P4(e3)).reduce((e3, t3) => e3 + (C.test(t3) ? 3 : t3 === "" ? 1 : 10), a2);
       }
       function R(e2, t2) {
         let { routesMeta: n2 } = e2, a2 = {}, r2 = "/", i2 = [];
@@ -28201,9 +28201,9 @@ var require_react_router_dom_production_min = __commonJS({
           i2 && i2(e3), e3.defaultPrevented || c2 || p(e3);
         }, ref: r2, target: d }));
       }), s = t.forwardRef(function(e2, r2) {
-        let { "aria-current": u2 = "page", caseSensitive: s2 = false, className: l2 = "", end: f2 = false, style: d, to: b, children: y } = e2, m = a(e2, i), p = n.useLocation(), g = n.useResolvedPath(b), h = p.pathname, P5 = g.pathname;
-        s2 || (h = h.toLowerCase(), P5 = P5.toLowerCase());
-        let O, R = h === P5 || !f2 && h.startsWith(P5) && h.charAt(P5.length) === "/", v = R ? u2 : void 0;
+        let { "aria-current": u2 = "page", caseSensitive: s2 = false, className: l2 = "", end: f2 = false, style: d, to: b, children: y } = e2, m = a(e2, i), p = n.useLocation(), g = n.useResolvedPath(b), h = p.pathname, P4 = g.pathname;
+        s2 || (h = h.toLowerCase(), P4 = P4.toLowerCase());
+        let O, R = h === P4 || !f2 && h.startsWith(P4) && h.charAt(P4.length) === "/", v = R ? u2 : void 0;
         O = typeof l2 == "function" ? l2({ isActive: R }) : [l2, R ? "active" : null].filter(Boolean).join(" ");
         let j = typeof d == "function" ? d({ isActive: R }) : d;
         return t.createElement(c, o({}, m, { "aria-current": v, className: O, ref: r2, style: j, to: b }), typeof y == "function" ? y({ isActive: R }) : y);
@@ -28903,13 +28903,13 @@ var require_tslib = __commonJS({
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
           return Reflect.metadata(metadataKey, metadataValue);
       };
-      __awaiter = function(thisArg, _arguments, P5, generator) {
+      __awaiter = function(thisArg, _arguments, P4, generator) {
         function adopt(value) {
-          return value instanceof P5 ? value : new P5(function(resolve) {
+          return value instanceof P4 ? value : new P4(function(resolve) {
             resolve(value);
           });
         }
-        return new (P5 || (P5 = Promise))(function(resolve, reject) {
+        return new (P4 || (P4 = Promise))(function(resolve, reject) {
           function fulfilled(value) {
             try {
               step(generator.next(value));
@@ -31225,7 +31225,7 @@ var ResumeBanner = (props) => /* @__PURE__ */ import_react6.default.createElemen
   position: "relative",
   w: "30px",
   bg: "#303030" /* darkest */
-}, props), /* @__PURE__ */ import_react6.default.createElement(Text, {
+}, props), /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
   position: "absolute",
   bottom: "0",
   left: "50%",
@@ -31251,8 +31251,7 @@ var JobBullet = ({ children }) => /* @__PURE__ */ import_react6.default.createEl
   w: "18px" /* _18px */
 }), /* @__PURE__ */ import_react6.default.createElement(Para, {
   flex: "1",
-  pl: "18px" /* _18px */,
-  lineHeight: "20px" /* _20px */
+  pl: "18px" /* _18px */
 }, children));
 var Skill = ({ name, value }) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
   pt: "18px" /* _18px */,
@@ -31281,7 +31280,7 @@ var PageSplit = (_a) => {
 var HideVerticalStubHack = (props) => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, __spreadProps(__spreadValues({}, props), {
   position: "absolute",
   bg: "#FAFAFA" /* bg */,
-  w: "2px",
+  w: "4px",
   h: "8px"
 }));
 var Resume = () => /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
@@ -31309,8 +31308,8 @@ var Resume = () => /* @__PURE__ */ import_react6.default.createElement(import_st
     pt: "30px" /* _30px */,
     pl: "30px" /* _30px */
   }), /* @__PURE__ */ import_react6.default.createElement(PrimaryRole, {
-    pl: "30px" /* _30px */,
-    pt: "18px" /* _18px */
+    pt: "18px" /* _18px */,
+    pl: "30px" /* _30px */
   }))),
   right: /* @__PURE__ */ import_react6.default.createElement(import_style_lib4.Box, {
     pt: "30px" /* _30px */,
