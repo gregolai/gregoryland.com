@@ -16,7 +16,7 @@ export const enum Space {
 
 export const enum Space2 {
 	_4px = '4px',
-	_10px = '10px',
+	_8px = '8px',
 	_12px = '12px',
 	_18px = '18px',
 	_30px = '30px',
@@ -39,6 +39,8 @@ export const enum FontSize2 {
 }
 
 export const enum LineHeight2 {
+	_16px = '16px',
+	_18px = '18px',
 	_20px = '20px',
 	_28px = '28px',
 	_30px = '30px'
@@ -58,7 +60,7 @@ export const enum LineHeight {
 }
 
 export const enum Palette {
-	darkest = '#323232',
+	darkest = '#303030',
 	darker = '#6F6F6F',
 	dark = '#808080',
 	light = '#A9A9A9',

@@ -599,7 +599,7 @@
       ]
     },
     "src/Resume/resume-theme.ts": {
-      "bytes": 1351,
+      "bytes": 1383,
       "imports": []
     },
     "node_modules/react-icons/lib/esm/iconsManifest.js": {
@@ -664,7 +664,7 @@
       ]
     },
     "src/Resume/Resume2.tsx": {
-      "bytes": 12979,
+      "bytes": 12875,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -843,7 +843,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 3463547
+      "bytes": 3463292
     },
     "client/main.client.js": {
       "imports": [],
@@ -1019,7 +1019,7 @@
           "bytesInOutput": 652
         },
         "src/Resume/Resume2.tsx": {
-          "bytesInOutput": 18633
+          "bytesInOutput": 18560
         },
         "node_modules/react-icons/lib/esm/index.js": {
           "bytesInOutput": 0
@@ -1040,7 +1040,7 @@
           "bytesInOutput": 1576
         }
       },
-      "bytes": 1041735
+      "bytes": 1041662
     }
   }
 }

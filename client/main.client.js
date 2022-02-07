@@ -23359,7 +23359,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   }
 
   // src/Resume/Resume2.tsx
-  var border = `2px solid ${"#323232" /* darkest */}`;
+  var border = `2px solid ${"#303030" /* darkest */}`;
   var Para = (props) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
     ...props,
     fontSize: "14px" /* _14px */,
@@ -23367,14 +23367,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     lineHeight: "20px" /* _20px */
   });
   var NameHeading = (props) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
-    color: "#323232" /* darkest */,
+    color: "#303030" /* darkest */,
     ...props,
     fontSize: "39px" /* _39px */,
     letterSpacing: "4px" /* _4px */,
     textTransform: "uppercase"
   });
   var MediumHeading = (props) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
-    color: "#323232" /* darkest */,
+    color: "#303030" /* darkest */,
     ...props,
     fontSize: "18px" /* _18px */,
     fontWeight: "700",
@@ -23382,11 +23382,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     textTransform: "uppercase"
   });
   var SmallHeading = (props) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
-    color: "#323232" /* darkest */,
+    color: "#303030" /* darkest */,
     ...props,
     fontSize: "14px" /* _14px */,
     fontWeight: "700",
     letterSpacing: "0px",
+    lineHeight: "18px" /* _18px */,
     textTransform: "uppercase"
   });
   var SubHeading = (props) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
@@ -23395,7 +23396,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     fontSize: "14px" /* _14px */,
     fontWeight: "400",
     letterSpacing: "0px",
-    lineHeight: "28px" /* _28px */
+    lineHeight: "18px" /* _18px */
   });
   var FullName = ({ pl, pt }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
     pt
@@ -23424,30 +23425,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     left: "-1px",
     width: "8px",
     height: "8px",
-    bg: "#323232" /* darkest */,
+    bg: "#303030" /* darkest */,
     transform: "translateX(-50%) rotateZ(45deg)",
     ...props
   });
   var LeftSection = ({ title, children, ...rest }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
     ...rest
   }, /* @__PURE__ */ import_react10.default.createElement(MediumHeading, null, title), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
-    pt: "18px" /* _18px */
-  }, children));
-  var RightSection = ({ title, children }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(Flex, {
-    position: "relative",
-    alignItems: "center"
-  }, /* @__PURE__ */ import_react10.default.createElement(Diamond, null), /* @__PURE__ */ import_react10.default.createElement(MediumHeading, {
-    pl: "30px" /* _30px */
-  }, title), /* @__PURE__ */ import_react10.default.createElement(Flex, {
-    position: "relative",
-    ml: "30px" /* _30px */,
-    flex: "1",
-    alignItems: "center"
-  }, /* @__PURE__ */ import_react10.default.createElement(Diamond, null), /* @__PURE__ */ import_react10.default.createElement(HR, {
-    w: "100%"
-  }))), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
-    px: "30px" /* _30px */,
-    pb: "30px" /* _30px */,
     pt: "18px" /* _18px */
   }, children));
   var Icon = ({ Comp, ...rest }) => /* @__PURE__ */ import_react10.default.createElement(Comp, {
@@ -23479,7 +23463,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var ResumeBanner = (props) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
     position: "relative",
     w: "30px",
-    bg: "#323232" /* darkest */,
+    bg: "#303030" /* darkest */,
     ...props
   }, /* @__PURE__ */ import_react10.default.createElement(Text, {
     position: "absolute",
@@ -23491,15 +23475,18 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     textTransform: "uppercase"
   }, "Resume"));
   var Job = ({ children }) => /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
-    pt: "38px" /* _38px */,
+    pt: "18px" /* _18px */,
     css: { ":first-of-type": { pt: "0px" } }
   }, children);
   var JobHead = ({ title, from, to, where, city }) => /* @__PURE__ */ import_react10.default.createElement(import_react10.default.Fragment, null, /* @__PURE__ */ import_react10.default.createElement(Flex, {
     justifyContent: "space-between"
   }, /* @__PURE__ */ import_react10.default.createElement(SmallHeading, null, title), /* @__PURE__ */ import_react10.default.createElement(SmallHeading, null, from, " - ", to)), /* @__PURE__ */ import_react10.default.createElement(SubHeading, null, where, " | ", city));
+  var JobSummary = ({ children }) => /* @__PURE__ */ import_react10.default.createElement(Para, {
+    pt: "8px" /* _8px */
+  }, children);
   var JobBullet = ({ children }) => /* @__PURE__ */ import_react10.default.createElement(Flex, {
     alignItems: "center",
-    pt: "10px" /* _10px */
+    pt: "8px" /* _8px */
   }, /* @__PURE__ */ import_react10.default.createElement(HR, {
     w: "18px" /* _18px */
   }), /* @__PURE__ */ import_react10.default.createElement(Para, {
@@ -23584,7 +23571,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       pl: "30px" /* _30px */
     }, /* @__PURE__ */ import_react10.default.createElement(SmallHeading, null, "2009"), /* @__PURE__ */ import_react10.default.createElement(SmallHeading, null, "Bachelor of Science"), /* @__PURE__ */ import_react10.default.createElement(SmallHeading, null, "Computer Science"), /* @__PURE__ */ import_react10.default.createElement(SubHeading, null, "California State University, Long Beach"))),
     right: /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
-      bg: "#323232" /* darkest */,
+      bg: "#303030" /* darkest */,
       px: "30px" /* _30px */,
       py: "18px" /* _18px */
     }, /* @__PURE__ */ import_react10.default.createElement(Contact, {
@@ -23596,58 +23583,73 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       label: "Website",
       text: "gregoryland.com"
     }))
-  }), /* @__PURE__ */ import_react10.default.createElement(PageSplit, {
-    pt: "30px" /* _30px */,
-    left: /* @__PURE__ */ import_react10.default.createElement(LeftSection, {
-      title: "Work Experience"
-    }, /* @__PURE__ */ import_react10.default.createElement(Job, null, /* @__PURE__ */ import_react10.default.createElement(JobHead, {
-      city: "New York, NY",
-      from: "May 2017",
-      to: "January 2021",
-      title: "Software Engineer",
-      where: "Squarespace"
-    }), /* @__PURE__ */ import_react10.default.createElement(Para, null, "Design Platform team. I wrote many React and React-Native components that were used throughout Squarespace on many different teams."), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Developed Squarespace style guides, compositional patterns, APIs, and high-quality documentation using Gatsby."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Discovering and reasoning about various long term and short term trade-offs when developing components. Simplicity versus flexibility. Readability vs performance. Third party code vs in-house code. Etc."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Unit testing with Jest. Integration testing with Cypress and Puppeteer."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Collaborated across teams to understand bigger picture scope. This involved managing NPM packages, user experience, accessibility, and intuitive design."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Feature migration and refactoring using code mods and test-driven techniques."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "The importance of a well-designed API, teamwork, and writing good pull requests."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Part of a multi-team effort to integrate our CMS into a mobile browser experience for customers."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Learned to be humble about what I don't know, questioning why we do things a certain way and learning from others' experience."))), /* @__PURE__ */ import_react10.default.createElement(Job, null, /* @__PURE__ */ import_react10.default.createElement(JobHead, {
-      city: "New York, NY",
-      from: "December 2016",
-      to: "May 2017",
-      title: "Frontend Engineer",
-      where: "Agorafy"
-    }), /* @__PURE__ */ import_react10.default.createElement(Para, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Collaborated with our backend engineers to create a REST API for our real-estate listing project."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Led a 3-person team using JS/React+Redux to build a CMS frontend. Users could search and filter through a variety of real estate properties."))), /* @__PURE__ */ import_react10.default.createElement(Job, null, /* @__PURE__ */ import_react10.default.createElement(JobHead, {
-      city: "New York, NY",
-      from: "January 2015",
-      to: "April 2016",
-      title: "Full-stack Engineer",
-      where: "YouVisit"
-    }), /* @__PURE__ */ import_react10.default.createElement(Para, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "PHP/MySQL/HTML/CSS/JS/jQuery/Node"), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Wrote a client tool using the JS geolocation API to collect location data and hotspots for college campuses. Websockets worked with a Node backend to batch database inserts into our SQL database. A client could log into the CMS and view users' paths on Google Maps."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Organized and aggregated large-scale metrics of site visitor data into useful formats for our clients to download."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Hybrid app development and testing for both mobile and desktop. Used a custom-built MVC backend with a REST API and minimal unit testing."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built a custom A/B testing library and project tracking system in our CMS to track the stages of tour production."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Worked on embedding tours into 3rd party websites using JavaScript with JSONP to load iframe settings."))), /* @__PURE__ */ import_react10.default.createElement(Job, null, /* @__PURE__ */ import_react10.default.createElement(JobHead, {
-      city: "New York, NY",
-      from: "August 2014",
-      to: "December 2014",
-      title: "Entry-level Engineer",
-      where: "M&M Environmental"
-    }), /* @__PURE__ */ import_react10.default.createElement(Para, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built a cool-looking calendar and scheduling application using PHP/MySQL/JS for managing technician availability."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built a Vehicle GPS viewer using the Google Maps API for monitoring technician proximity to their scheduled appointments."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built a Yelp review scraper and fancy frontend."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built an admin portal using Auth0 Google single-sign-on. Used Wordpress for viewing work shift calendars, technician locations, and Yelp reviews."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Set up CRON tasks that would send aggregated morning emails to our staff about recent Yelp reviews and shift calendars.")))),
-    right: /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
-      position: "relative"
-    }, /* @__PURE__ */ import_react10.default.createElement(HideVerticalStubHack, null), /* @__PURE__ */ import_react10.default.createElement(HideVerticalStubHack, {
-      right: "0px"
-    }), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
-      bx: border,
-      bb: border
-    }, /* @__PURE__ */ import_react10.default.createElement(RightSection, {
-      title: "Skills"
-    }, /* @__PURE__ */ import_react10.default.createElement(Skill, {
-      name: "Javascript",
-      value: 9
-    }), /* @__PURE__ */ import_react10.default.createElement(Skill, {
-      name: "Typescript",
-      value: 8
-    }), /* @__PURE__ */ import_react10.default.createElement(Skill, {
-      name: "React",
-      value: 8
-    }), /* @__PURE__ */ import_react10.default.createElement(Skill, {
-      name: "C#, C++, Backend",
-      value: 6
-    }))))
-  }));
+  }), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    pt: "30px" /* _30px */
+  }, /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    position: "relative",
+    float: "right",
+    w: "260px",
+    ml: "30px" /* _30px */,
+    mb: "18px" /* _18px */
+  }, /* @__PURE__ */ import_react10.default.createElement(HideVerticalStubHack, null), /* @__PURE__ */ import_react10.default.createElement(HideVerticalStubHack, {
+    right: "0px"
+  }), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    bx: border,
+    bb: border
+  }, /* @__PURE__ */ import_react10.default.createElement(Flex, {
+    position: "relative",
+    alignItems: "center"
+  }, /* @__PURE__ */ import_react10.default.createElement(Diamond, null), /* @__PURE__ */ import_react10.default.createElement(MediumHeading, {
+    pl: "30px" /* _30px */
+  }, "Skills"), /* @__PURE__ */ import_react10.default.createElement(Flex, {
+    position: "relative",
+    ml: "30px" /* _30px */,
+    flex: "1",
+    alignItems: "center"
+  }, /* @__PURE__ */ import_react10.default.createElement(Diamond, null), /* @__PURE__ */ import_react10.default.createElement(HR, {
+    w: "100%"
+  }))), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, {
+    px: "30px" /* _30px */,
+    py: "18px" /* _18px */
+  }, /* @__PURE__ */ import_react10.default.createElement(Skill, {
+    name: "Javascript",
+    value: 9
+  }), /* @__PURE__ */ import_react10.default.createElement(Skill, {
+    name: "Typescript",
+    value: 8
+  }), /* @__PURE__ */ import_react10.default.createElement(Skill, {
+    name: "React",
+    value: 8
+  }), /* @__PURE__ */ import_react10.default.createElement(Skill, {
+    name: "C#, C++, Backend",
+    value: 6
+  })))), /* @__PURE__ */ import_react10.default.createElement(LeftSection, {
+    title: "Work Experience"
+  }, /* @__PURE__ */ import_react10.default.createElement(Job, null, /* @__PURE__ */ import_react10.default.createElement(JobHead, {
+    city: "New York, NY",
+    from: "May 2017",
+    to: "January 2021",
+    title: "Software Engineer",
+    where: "Squarespace"
+  }), /* @__PURE__ */ import_react10.default.createElement(JobSummary, null, "Design Platform team. I wrote many React and React-Native components that were used throughout Squarespace on many different teams."), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Developed Squarespace style guides, compositional patterns, APIs, and high-quality documentation using Gatsby."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Discovering and reasoning about various long term and short term trade-offs when developing components. Simplicity versus flexibility. Readability vs performance. Third party code vs in-house code. Etc."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Unit testing with Jest. Integration testing with Cypress and Puppeteer."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Collaborated across teams to understand bigger picture scope. This involved managing NPM packages, user experience, accessibility, and intuitive design."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Feature migration and refactoring using code mods and test-driven techniques."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "The importance of a well-designed API, teamwork, and writing good pull requests."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Part of a multi-team effort to integrate our CMS into a mobile browser experience for customers."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Learned to be humble about what I don't know, questioning why we do things a certain way and learning from others' experience."))), /* @__PURE__ */ import_react10.default.createElement(Job, null, /* @__PURE__ */ import_react10.default.createElement(JobHead, {
+    city: "New York, NY",
+    from: "December 2016",
+    to: "May 2017",
+    title: "Frontend Engineer",
+    where: "Agorafy"
+  }), /* @__PURE__ */ import_react10.default.createElement(JobSummary, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Collaborated with our backend engineers to create a REST API for our real-estate listing project."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Led a 3-person team using JS/React+Redux to build a CMS frontend. Users could search and filter through a variety of real estate properties."))), /* @__PURE__ */ import_react10.default.createElement(Job, null, /* @__PURE__ */ import_react10.default.createElement(JobHead, {
+    city: "New York, NY",
+    from: "January 2015",
+    to: "April 2016",
+    title: "Full-stack Engineer",
+    where: "YouVisit"
+  }), /* @__PURE__ */ import_react10.default.createElement(JobSummary, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "PHP/MySQL/HTML/CSS/JS/jQuery/Node"), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Wrote a client tool using the JS geolocation API to collect location data and hotspots for college campuses. Websockets worked with a Node backend to batch database inserts into our SQL database. A client could log into the CMS and view users' paths on Google Maps."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Organized and aggregated large-scale metrics of site visitor data into useful formats for our clients to download."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Hybrid app development and testing for both mobile and desktop. Used a custom-built MVC backend with a REST API and minimal unit testing."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built a custom A/B testing library and project tracking system in our CMS to track the stages of tour production."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Worked on embedding tours into 3rd party websites using JavaScript with JSONP to load iframe settings."))), /* @__PURE__ */ import_react10.default.createElement(Job, null, /* @__PURE__ */ import_react10.default.createElement(JobHead, {
+    city: "New York, NY",
+    from: "August 2014",
+    to: "December 2014",
+    title: "Entry-level Engineer",
+    where: "M&M Environmental"
+  }), /* @__PURE__ */ import_react10.default.createElement(JobSummary, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react10.default.createElement(import_style_lib4.Box, null, /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built a cool-looking calendar and scheduling application using PHP/MySQL/JS for managing technician availability."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built a Vehicle GPS viewer using the Google Maps API for monitoring technician proximity to their scheduled appointments."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built a Yelp review scraper and fancy frontend."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Built an admin portal using Auth0 Google single-sign-on. Used Wordpress for viewing work shift calendars, technician locations, and Yelp reviews."), /* @__PURE__ */ import_react10.default.createElement(JobBullet, null, "Set up CRON tasks that would send aggregated morning emails to our staff about recent Yelp reviews and shift calendars."))))));
 
   // src/pages/page.Career.tsx
   var PageCareer = () => /* @__PURE__ */ import_react11.default.createElement(import_react11.default.Fragment, null, /* @__PURE__ */ import_react11.default.createElement(Button, null, "Print my resume"), /* @__PURE__ */ import_react11.default.createElement(Flex, {
