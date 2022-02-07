@@ -599,7 +599,7 @@
       ]
     },
     "src/Resume/resume-theme.ts": {
-      "bytes": 1348,
+      "bytes": 1351,
       "imports": []
     },
     "node_modules/react-icons/lib/esm/iconsManifest.js": {
@@ -654,8 +654,17 @@
         }
       ]
     },
+    "node_modules/react-icons/gi/index.esm.js": {
+      "bytes": 6900602,
+      "imports": [
+        {
+          "path": "node_modules/react-icons/lib/esm/index.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
     "src/Resume/Resume2.tsx": {
-      "bytes": 12858,
+      "bytes": 12979,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -679,6 +688,10 @@
         },
         {
           "path": "node_modules/react-icons/md/index.esm.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-icons/gi/index.esm.js",
           "kind": "import-statement"
         }
       ]
@@ -830,7 +843,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 3463487
+      "bytes": 3463547
     },
     "client/main.client.js": {
       "imports": [],
@@ -1006,7 +1019,7 @@
           "bytesInOutput": 652
         },
         "src/Resume/Resume2.tsx": {
-          "bytesInOutput": 18481
+          "bytesInOutput": 18633
         },
         "node_modules/react-icons/lib/esm/index.js": {
           "bytesInOutput": 0
@@ -1027,7 +1040,7 @@
           "bytesInOutput": 1576
         }
       },
-      "bytes": 1041583
+      "bytes": 1041735
     }
   }
 }

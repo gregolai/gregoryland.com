@@ -45,6 +45,7 @@ export const enum LineHeight2 {
 }
 
 export const enum LetterSpacing2 {
+	_1px = '1px',
 	_4px = '4px'
 }
 
@@ -56,13 +57,13 @@ export const enum LineHeight {
 	_4 = '30px'
 }
 
-/**
- * Names from: https://chir.ag/projects/name-that-color/
- */
 export const enum Palette {
-	black = '#000000',
-	linkwater = '#D9E4F5',
-	mineshaft = '#323232'
+	darkest = '#323232',
+	darker = '#6F6F6F',
+	dark = '#808080',
+	light = '#A9A9A9',
+	lighter = '#D3D3D3',
+	bg = '#FAFAFA'
 }
 
 /**

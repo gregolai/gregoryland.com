@@ -2,27 +2,89 @@
 import React from 'react';
 import { Box, useStyle } from 'pu2/style-lib';
 import { Flex, Img, P, Text } from '../primitives';
-import { FontSize2, LetterSpacing2, LineHeight2, Space2 } from './resume-theme';
+import { FontSize2, LetterSpacing2, LineHeight2, Palette, Space2 } from './resume-theme';
 import { MdOutlineEmail } from 'react-icons/md';
 import { MdFace } from 'react-icons/md';
+import { GiDiploma } from 'react-icons/gi';
+
+const border = `2px solid ${Palette.darkest}`;
+
 /*
 	Copy of:
 	https://www.etsy.com/listing/958270979/professional-resume-template-with-photo?gpla=1&gao=1&&utm_source=google&utm_medium=cpc&utm_campaign=shopping_us_c-paper_and_party_supplies-paper-stationery-design_and_templates-templates&utm_custom1=_k_Cj0KCQiA9OiPBhCOARIsAI0y71A_daDNEpZVXbnWQHzR_XX6Ys_EnEw5Dg0jWD9rbz_bJdHiTQCEQTgaAi23EALw_wcB_k_&utm_content=go_12573359918_120439649718_507799175895_pla-315907316571_c__958270979_122461060&utm_custom2=12573359918&gclid=Cj0KCQiA9OiPBhCOARIsAI0y71A_daDNEpZVXbnWQHzR_XX6Ys_EnEw5Dg0jWD9rbz_bJdHiTQCEQTgaAi23EALw_wcB
 */
-const CommonText = (props) => <Box fontSize={FontSize2._14px} lineHeight={LineHeight2._28px} {...props} />;
-const Para = (props) => <CommonText lineHeight={LineHeight2._20px} {...props} />;
 
-const NameText = (props) => (
+const Para = (props) => (
+	<Box {...props} fontSize={FontSize2._14px} letterSpacing="0px" lineHeight={LineHeight2._20px} />
+);
+
+const NameHeading = (props) => (
 	<Box
+		color={Palette.darkest}
+		{...props}
 		fontSize={FontSize2._39px}
 		letterSpacing={LetterSpacing2._4px}
 		textTransform="uppercase"
-		{...props}
 	/>
 );
 
-const HR = (props) => <Box bb="2px solid black" mt="-1px" {...props} />;
-const HRSmall = (props) => <HR w="40px" {...props} />;
+// Work Experience / Career Summary
+const MediumHeading = (props) => (
+	<Box
+		color={Palette.darkest}
+		{...props}
+		fontSize={FontSize2._18px}
+		fontWeight="700"
+		letterSpacing={LetterSpacing2._4px}
+		textTransform="uppercase"
+	/>
+);
+
+// Job / Contact label
+const SmallHeading = (props) => (
+	<Box
+		color={Palette.darkest}
+		{...props}
+		fontSize={FontSize2._14px}
+		fontWeight="700"
+		letterSpacing="0px"
+		textTransform="uppercase"
+	/>
+);
+
+// Company name / College name
+const SubHeading = (props) => (
+	<Box
+		color={Palette.dark}
+		{...props}
+		fontSize={FontSize2._14px}
+		fontWeight="400"
+		letterSpacing="0px"
+		lineHeight={LineHeight2._28px}
+	/>
+);
+
+const FullName = ({ pl, pt }) => (
+	<Box pt={pt}>
+		<NameHeading color={Palette.darker} pl={pl}>
+			Gregory
+		</NameHeading>
+		<Box position="relative">
+			<Diamond />
+		</Box>
+		<NameHeading fontWeight="600" pl={pl} pt={Space2._4px}>
+			Dalton
+		</NameHeading>
+	</Box>
+);
+
+const PrimaryRole = ({ pl, pt }) => (
+	<MediumHeading pl={pl} pt={pt} color={Palette.dark}>
+		Software Engineer
+	</MediumHeading>
+);
+
+const HR = (props) => <Box bb={border} mt="-1px" {...props} />;
 
 const Diamond = (props) => (
 	<Box
@@ -30,73 +92,58 @@ const Diamond = (props) => (
 		left="-1px"
 		width="8px"
 		height="8px"
-		bg="black"
+		bg={Palette.darkest}
 		transform="translateX(-50%) rotateZ(45deg)"
-		{...props}
-	/>
-);
-
-const TextHeading = (props) => (
-	<Box
-		fontSize={FontSize2._18px}
-		fontWeight="600"
-		letterSpacing={LetterSpacing2._4px}
-		textTransform="uppercase"
 		{...props}
 	/>
 );
 
 const LeftSection = ({ title, children, ...rest }) => (
 	<Box {...rest}>
-		<TextHeading pb={Space2._18px}>{title}</TextHeading>
-		<HRSmall />
+		<MediumHeading>{title}</MediumHeading>
 		<Box pt={Space2._18px}>{children}</Box>
 	</Box>
 );
 
 const RightSection = ({ title, children }) => (
-	<Box pt={Space2._38px} css={{ ':first-of-type': { pt: '0px' } }}>
+	<Box>
 		<Flex position="relative" alignItems="center">
 			<Diamond />
-			<TextHeading pl={Space2._30px}>{title}</TextHeading>
+			<MediumHeading pl={Space2._30px}>{title}</MediumHeading>
 			<Flex position="relative" ml={Space2._30px} flex="1" alignItems="center">
 				<Diamond />
 				<HR w="100%" />
 			</Flex>
 		</Flex>
-		<Box pl={Space2._30px} pt={Space2._38px}>
+		<Box px={Space2._30px} pb={Space2._30px} pt={Space2._18px}>
 			{children}
 		</Box>
 	</Box>
 );
 
-const Contact = ({ Icon, label, text }) => {
-	// Icon is 2px inset, but we want exact pixels so add -2px margin
-	const iconClassName = useStyle({ color: 'white', width: Space2._38px, height: Space2._38px, m: '-2px' });
-	return (
-		<Flex
-			py={Space2._18px}
-			alignItems="stretch"
-			bb="2px solid white"
-			css={{
-				':first-of-type': { pt: '0px' },
-				':last-of-type': { bb: 'none', pb: '0px' }
-			}}
-		>
-			<Icon className={iconClassName} />
+const Icon = ({ Comp, ...rest }) => <Comp className={useStyle(rest)} />;
 
-			<Flex flex="1" pl={Space2._18px} flexDirection="column" justifyContent="space-between">
-				<Box color="white" fontWeight="600" textTransform="uppercase">
-					{label}
-				</Box>
-				<Box color="white">{text}</Box>
-			</Flex>
+const Contact = ({ IconComp, label, text }) => (
+	<Flex
+		py={Space2._18px}
+		alignItems="stretch"
+		bb="2px solid white"
+		css={{
+			':first-of-type': { pt: '0px' },
+			':last-of-type': { bb: 'none', pb: '0px' }
+		}}
+	>
+		<Icon Comp={IconComp} w={Space2._30px} h={Space2._30px} color="white" />
+
+		<Flex flex="1" pl={Space2._18px} flexDirection="column" justifyContent="space-between">
+			<SmallHeading color="white">{label}</SmallHeading>
+			<Box color="white">{text}</Box>
 		</Flex>
-	);
-};
+	</Flex>
+);
 
 const ResumeBanner = (props) => (
-	<Box position="relative" w="30px" bg="black" {...props}>
+	<Box position="relative" w="30px" bg={Palette.darkest} {...props}>
 		<Text
 			position="absolute"
 			bottom="0"
@@ -119,15 +166,18 @@ const Job = ({ children }) => (
 
 const JobHead = ({ title, from, to, where, city }) => (
 	<>
-		<Box textTransform="uppercase" fontWeight="600" fontSize={FontSize2._14px} letterSpacing="1px">
-			{title}
-		</Box>
-		<Box color="#8A8A8A" fontSize={FontSize2._14px} lineHeight={LineHeight2._28px}>
-			{from} - {to} | {where} | {city}
-		</Box>
+		<Flex justifyContent="space-between">
+			<SmallHeading>{title}</SmallHeading>
+			<SmallHeading>
+				{from} - {to}
+			</SmallHeading>
+		</Flex>
+		<SubHeading>
+			{where} | {city}
+		</SubHeading>
 	</>
 );
-const JobSummary = ({ children }) => <Para lineHeight={LineHeight2._20px}>{children}</Para>;
+
 const JobBullet = ({ children }) => (
 	<Flex alignItems="center" pt={Space2._10px}>
 		<HR w={Space2._18px} />
@@ -139,8 +189,8 @@ const JobBullet = ({ children }) => (
 
 const Skill = ({ name, value }) => (
 	<Box pt={Space2._18px} css={{ ':first-of-type': { pt: '0px' } }}>
-		<Box bg="darkgray" overflow="hidden">
-			<Box h={Space2._12px} bg="lightgray" w={`${value * 10}%`} />
+		<Box bg={Palette.lighter} overflow="hidden">
+			<Box h={Space2._12px} bg={Palette.light} w={`${value * 10}%`} />
 		</Box>
 		<Box textAlign="center" fontSize={FontSize2._14px} pt={Space2._4px}>
 			{name}
@@ -150,20 +200,21 @@ const Skill = ({ name, value }) => (
 
 const PageSplit = ({ left, right, ...rest }) => (
 	<Flex {...rest}>
-		<Box flex="1" pr={Space2._38px}>
+		<Box flex="1" pr={Space2._30px}>
 			{left}
 		</Box>
 		<Box w="260px">{right}</Box>
 	</Flex>
 );
 
-const bg = '#FAFAFA';
-const HideVerticalStubHack = () => <Box position="absolute" bg={bg} w="2px" h="8px" />;
+const HideVerticalStubHack = (props) => (
+	<Box {...props} position="absolute" bg={Palette.bg} w="2px" h="8px" />
+);
 
 export const Resume = () => (
 	<Box
 		position="relative"
-		bg={bg}
+		bg={Palette.bg}
 		px={Space2._60px}
 		pb={Space2._60px}
 		lineHeight="1"
@@ -175,29 +226,8 @@ export const Resume = () => (
 				<Flex alignItems="stretch" pb={Space2._38px}>
 					<ResumeBanner />
 					<Box flex="1" pt={Space2._30px}>
-						<Box pb={Space2._18px} pt={Space2._30px}>
-							<NameText color="#6F6F6F" pl={Space2._30px}>
-								Gregory
-							</NameText>
-							<Box position="relative">
-								<Diamond />
-							</Box>
-							<NameText pl={Space2._30px} pt={Space2._4px} fontWeight="600">
-								Dalton
-							</NameText>
-						</Box>
-						<HRSmall ml={Space2._30px} />
-						<Box
-							pl={Space2._30px}
-							pt={Space2._18px}
-							color="gray"
-							fontSize={FontSize2._18px}
-							fontWeight="600"
-							letterSpacing={LetterSpacing2._4px}
-							textTransform="uppercase"
-						>
-							Software Engineer
-						</Box>
+						<FullName pt={Space2._30px} pl={Space2._30px} />
+						<PrimaryRole pl={Space2._30px} pt={Space2._18px} />
 					</Box>
 				</Flex>
 			}
@@ -213,19 +243,25 @@ export const Resume = () => (
 		/>
 		<PageSplit
 			left={
-				<LeftSection pt={Space2._18px} title="Career Summary">
-					<Para>
-						This is my career summary. It's meant to summarize my career. What have I learnt? What
-						are my goals? Why do I do what I do? It should be very short.
-					</Para>
-				</LeftSection>
+				<Flex>
+					<LeftSection flex="1" pt={Space2._18px} title="Career Summary">
+						<Para>
+							This is my career summary. It's meant to summarize my career. What have I learnt?
+							What are my goals? Why do I do what I do? It should be very short.
+						</Para>
+					</LeftSection>
+					<LeftSection flex="1" pt={Space2._18px} title="Education" pl={Space2._30px}>
+						<SmallHeading>2009</SmallHeading>
+						<SmallHeading>Bachelor of Science</SmallHeading>
+						<SmallHeading>Computer Science</SmallHeading>
+						<SubHeading>California State University, Long Beach</SubHeading>
+					</LeftSection>
+				</Flex>
 			}
 			right={
-				<Box>
-					<Box bg="black" px={Space2._30px} py={Space2._18px}>
-						<Contact Icon={MdOutlineEmail} label="Email" text="gregolai@gmail.com" />
-						<Contact Icon={MdFace} label="Website" text="gregoryland.com" />
-					</Box>
+				<Box bg={Palette.darkest} px={Space2._30px} py={Space2._18px}>
+					<Contact IconComp={MdOutlineEmail} label="Email" text="gregolai@gmail.com" />
+					<Contact IconComp={MdFace} label="Website" text="gregoryland.com" />
 				</Box>
 			}
 		/>
@@ -237,14 +273,14 @@ export const Resume = () => (
 						<JobHead
 							city="New York, NY"
 							from="May 2017"
-							to="Jan 2021"
+							to="January 2021"
 							title="Software Engineer"
 							where="Squarespace"
 						/>
-						<JobSummary>
+						<Para>
 							Design Platform team. I wrote many React and React-Native components that were
 							used throughout Squarespace on many different teams.
-						</JobSummary>
+						</Para>
 						<Box>
 							<JobBullet>
 								Developed Squarespace style guides, compositional patterns, APIs, and
@@ -282,16 +318,16 @@ export const Resume = () => (
 					<Job>
 						<JobHead
 							city="New York, NY"
-							from="Dec 2016"
+							from="December 2016"
 							to="May 2017"
 							title="Frontend Engineer"
 							where="Agorafy"
 						/>
-						<JobSummary>
+						<Para>
 							This is a job summary. This is a job summary. This is a job summary. This is a job
 							summary. This is a job summary. This is a job summary. This is a job summary. This
 							is a job summary. This is a job summary.
-						</JobSummary>
+						</Para>
 						<Box>
 							<JobBullet>
 								Collaborated with our backend engineers to create a REST API for our
@@ -306,16 +342,16 @@ export const Resume = () => (
 					<Job>
 						<JobHead
 							city="New York, NY"
-							from="Jan 2015"
-							to="Apr 2016"
+							from="January 2015"
+							to="April 2016"
 							title="Full-stack Engineer"
 							where="YouVisit"
 						/>
-						<JobSummary>
+						<Para>
 							This is a job summary. This is a job summary. This is a job summary. This is a job
 							summary. This is a job summary. This is a job summary. This is a job summary. This
 							is a job summary. This is a job summary.
-						</JobSummary>
+						</Para>
 						<Box>
 							<JobBullet>PHP/MySQL/HTML/CSS/JS/jQuery/Node</JobBullet>
 
@@ -346,16 +382,16 @@ export const Resume = () => (
 					<Job>
 						<JobHead
 							city="New York, NY"
-							from="Aug 2014"
-							to="Dec 2014"
+							from="August 2014"
+							to="December 2014"
 							title="Entry-level Engineer"
 							where="M&M Environmental"
 						/>
-						<JobSummary>
+						<Para>
 							This is a job summary. This is a job summary. This is a job summary. This is a job
 							summary. This is a job summary. This is a job summary. This is a job summary. This
 							is a job summary. This is a job summary.
-						</JobSummary>
+						</Para>
 						<Box>
 							<JobBullet>
 								Built a cool-looking calendar and scheduling application using PHP/MySQL/JS
@@ -379,18 +415,10 @@ export const Resume = () => (
 				</LeftSection>
 			}
 			right={
-				<>
+				<Box position="relative">
 					<HideVerticalStubHack />
-					<Box bl="2px solid black" h="100%">
-						<RightSection title="Education">
-							<Box fontSize={FontSize2._14px} fontWeight="600" textTransform="uppercase">
-								Bachelor of Science, Computer Science
-							</Box>
-							<Box fontSize={FontSize2._12px} pt={Space2._10px}>
-								2004 - 2009
-							</Box>
-							<Box fontSize={FontSize2._12px}>California State University, Long Beach</Box>
-						</RightSection>
+					<HideVerticalStubHack right="0px" />
+					<Box bx={border} bb={border}>
 						<RightSection title="Skills">
 							<Skill name="Javascript" value={9} />
 							<Skill name="Typescript" value={8} />
@@ -398,7 +426,7 @@ export const Resume = () => (
 							<Skill name="C#, C++, Backend" value={6} />
 						</RightSection>
 					</Box>
-				</>
+				</Box>
 			}
 		/>
 	</Box>
