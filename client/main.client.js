@@ -23042,11 +23042,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   }
 
   // src/main.client.tsx
-  var import_style_lib7 = __toESM(require_style_lib());
+  var import_style_lib9 = __toESM(require_style_lib());
 
   // src/App.tsx
   var import_react14 = __toESM(require_react());
-  var import_style_lib6 = __toESM(require_style_lib());
+  var import_style_lib8 = __toESM(require_style_lib());
 
   // src/Header.tsx
   var import_react5 = __toESM(require_react());
@@ -23082,6 +23082,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     },
     ...props,
     as: "button"
+  });
+  var Anchor = (props) => /* @__PURE__ */ import_react3.default.createElement(import_style_lib.Box, {
+    ...props,
+    as: "a"
+  });
+  var AnchorNewTab = (props) => /* @__PURE__ */ import_react3.default.createElement(Anchor, {
+    ...props,
+    target: "_blank",
+    rel: "noopener noreferrer"
   });
   var H1 = (props) => /* @__PURE__ */ import_react3.default.createElement(Text, {
     ...props,
@@ -23202,7 +23211,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       justifyContent: "space-between",
       alignItems: "center",
       css: {
-        ["@media only screen and (max-width: 767px)" /* phone */]: {
+        ["@media only screen and (max-width: 1024px)" /* smallScreen */]: {
           flexDirection: "column",
           ">h1": {
             pb: "8px" /* _4 */
@@ -23233,7 +23242,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       gridTemplateColumns: "7fr 3fr 3fr 3fr",
       b: "2px solid black",
       css: {
-        ["@media only screen and (max-width: 767px)" /* phone */]: {
+        ["@media only screen and (max-width: 480px)" /* phone */]: {
           gridTemplateAreas: gridTemplateAreasMobile
         }
       }
@@ -23243,7 +23252,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       br: "2px solid black",
       gridArea: "b",
       css: {
-        ["@media only screen and (max-width: 767px)" /* phone */]: {
+        ["@media only screen and (max-width: 480px)" /* phone */]: {
           display: "none"
         }
       }
@@ -23660,8 +23669,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   }, /* @__PURE__ */ import_react11.default.createElement(Resume, null))));
 
   // src/pages/page.Life.tsx
+  var import_style_lib6 = __toESM(require_style_lib());
   var import_react12 = __toESM(require_react());
-  var PageLife = () => /* @__PURE__ */ import_react12.default.createElement(import_react12.default.Fragment, null, /* @__PURE__ */ import_react12.default.createElement(H2, null, "From animal, to robot"), /* @__PURE__ */ import_react12.default.createElement(P, null, "I have deep respect for people who build things themselves. There' something about owning your creation that's beautuiful. As we move towards a greater level of abstraction we face the danger of not remembering who we are. We must not forget ourselves across the vast digital ocean! The joy of creation must not be lost!"), /* @__PURE__ */ import_react12.default.createElement(P, null, "As we abstract up the tree we must recontexualize who we are...just as we do in life as we age. It's fractal-like."), /* @__PURE__ */ import_react12.default.createElement(P, null, "Our analog human experience is touching hands with our digital creations. It's ok to be weird because life is weird. It's the fire that keeps us going. Consciousness, the greatest mystery alongside the Big Bang and black holes, is fundamentally paradoxical."), /* @__PURE__ */ import_react12.default.createElement(P, null, "Everything boils down to mental models. When the state of your organism matches the state of the local environment, you are in flow with the universe"), /* @__PURE__ */ import_react12.default.createElement(H2, {
+  var Section = ({ children, title }) => /* @__PURE__ */ import_react12.default.createElement(import_style_lib6.Box, null, /* @__PURE__ */ import_react12.default.createElement(H2, null, title), children);
+  var PageLife = () => /* @__PURE__ */ import_react12.default.createElement(import_react12.default.Fragment, null, /* @__PURE__ */ import_react12.default.createElement(Section, {
+    title: "Some things I've learnt"
+  }, /* @__PURE__ */ import_react12.default.createElement(Ul, null, /* @__PURE__ */ import_react12.default.createElement(Li, null, "Despite how tempting it may be to build your own tools, it may be better to use someone else's."), /* @__PURE__ */ import_react12.default.createElement(Li, null, "A well-designed API is almost always better than one written quickly without care."), /* @__PURE__ */ import_react12.default.createElement(Li, null, "Accept that you may be wrong about things."))), /* @__PURE__ */ import_react12.default.createElement(Section, {
+    title: "From animal, to robot"
+  }, /* @__PURE__ */ import_react12.default.createElement(P, null, "I have deep respect for people who build things themselves. There' something about owning your creation that's beautuiful. As we move towards a greater level of abstraction we face the danger of not remembering who we are. We must not forget ourselves across the vast digital ocean! The joy of creation must not be lost!"), /* @__PURE__ */ import_react12.default.createElement(P, null, "As we abstract up the tree we must recontexualize who we are...just as we do in life as we age. It's fractal-like."), /* @__PURE__ */ import_react12.default.createElement(P, null, "Our analog human experience is touching hands with our digital creations. It's ok to be weird because life is weird. It's the fire that keeps us going. Consciousness, the greatest mystery alongside the Big Bang and black holes, is fundamentally paradoxical."), /* @__PURE__ */ import_react12.default.createElement(P, null, "Everything boils down to mental models. When the state of your organism matches the state of the local environment, you are in flow with the universe")), /* @__PURE__ */ import_react12.default.createElement(H2, {
     pt: "24px" /* _7 */
   }, "What got me into dev?"), /* @__PURE__ */ import_react12.default.createElement(P, null, "Map editors...Warcraft 3 editor...UT2004 scripting...Starcraft. etc."), /* @__PURE__ */ import_react12.default.createElement(H2, {
     pt: "24px" /* _7 */
@@ -23675,14 +23690,65 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // src/pages/page.Projects.tsx
   var import_react13 = __toESM(require_react());
-  var PageProjects = () => /* @__PURE__ */ import_react13.default.createElement(import_react13.default.Fragment, null, /* @__PURE__ */ import_react13.default.createElement(H2, null, "Just a few of many projects I've worked on in my free time"), /* @__PURE__ */ import_react13.default.createElement(H3, null, "SNEK"), /* @__PURE__ */ import_react13.default.createElement(H3, null, "HTML5 Vimeo player"), /* @__PURE__ */ import_react13.default.createElement(H3, null, "WarGame"), /* @__PURE__ */ import_react13.default.createElement(H3, null, "JS & ActionScript Starfield"), /* @__PURE__ */ import_react13.default.createElement(H3, null, "JS Canvas Masking"), /* @__PURE__ */ import_react13.default.createElement(H3, null, "CmdTool"), /* @__PURE__ */ import_react13.default.createElement(H3, null, "IcoSphere"), /* @__PURE__ */ import_react13.default.createElement(H3, null, "Cat Game"), /* @__PURE__ */ import_react13.default.createElement(P, null, "I wrote my own little CSS-in-JS styling lib", " ", /* @__PURE__ */ import_react13.default.createElement("a", {
-    href: "https://github.com/gregolai/pu2/tree/master/src/style-lib"
-  }, "here"), `. It supports server-side rendering. It's what's rendering this site. I built it because CSS is aweful. It really is. Having to repeat the same selectors is only "cascading" in behavior, not as it appears to the developer. Third-party CSS-in-JS come with a lot of cruft and buy-in to a specific framework. It's not that difficult to write your own, and you learn a lot from it.`));
+  var import_style_lib7 = __toESM(require_style_lib());
+
+  // src/img/gaugan_output.jpg
+  var gaugan_output_default = "./assets/gaugan_output-KFHZT5BJ.jpg";
+
+  // src/pages/page.Projects.tsx
+  var Project = ({ children, codeSrc, playSrc, title }) => /* @__PURE__ */ import_react13.default.createElement(import_style_lib7.Box, {
+    my: "18px" /* _6 */
+  }, /* @__PURE__ */ import_react13.default.createElement(H3, null, title), /* @__PURE__ */ import_react13.default.createElement(P, null, children), playSrc && /* @__PURE__ */ import_react13.default.createElement(AnchorNewTab, {
+    href: playSrc
+  }, /* @__PURE__ */ import_react13.default.createElement(Button, null, "Play in new tab")), codeSrc && /* @__PURE__ */ import_react13.default.createElement(Anchor, {
+    href: codeSrc,
+    pl: playSrc && "18px" /* _6 */
+  }, /* @__PURE__ */ import_react13.default.createElement(Button, null, "View code")));
+  var PageProjects = () => /* @__PURE__ */ import_react13.default.createElement(import_react13.default.Fragment, null, /* @__PURE__ */ import_react13.default.createElement(H2, null, "Just a few of many projects I've worked on in my free time"), /* @__PURE__ */ import_react13.default.createElement(Project, {
+    codeSrc: "https://github.com/gregolai/gregoryland.com",
+    title: "gregoryland.com"
+  }, "This website."), /* @__PURE__ */ import_react13.default.createElement(Project, {
+    codeSrc: "https://github.com/gregolai/pu2/tree/master/src/style-lib",
+    title: "Style Lib"
+  }, "(Yet another) CSS-in-JS styling library I wrote. It's being used on this site."), /* @__PURE__ */ import_react13.default.createElement(Project, {
+    codeSrc: "https://github.com/gregolai/animator",
+    title: "Squarespace Animator"
+  }, `A project I worked on during "hack week" at Squarespace. It's a CSS animation tool.`), /* @__PURE__ */ import_react13.default.createElement(Project, {
+    codeSrc: "https://github.com/gregolai/snek",
+    playSrc: "https://gregoryland.com/projects/snek/",
+    title: "SNEK"
+  }, "A small snake game I wrote for Squarespace during my hiring process."), /* @__PURE__ */ import_react13.default.createElement(Project, {
+    codeSrc: "https://github.com/gregolai/vimeo-player",
+    playSrc: "https://gregoryland.com/projects/vimeo-player/public/",
+    title: "HTML5 Vimeo Player"
+  }, "I wrote this for a Vimeo interview. I learned a lot about the JS video API."), /* @__PURE__ */ import_react13.default.createElement(Project, {
+    codeSrc: "https://github.com/gregolai/warnew",
+    playSrc: "https://gregoryland.com/projects/warnew/",
+    title: "War Game"
+  }, "A little Warcraft 2 clone I started working on."), /* @__PURE__ */ import_react13.default.createElement(Project, {
+    codeSrc: "https://github.com/gregolai/starfield-demo",
+    playSrc: "https://gregoryland.com/projects/starfield-js/",
+    title: "Starfields"
+  }, "A couple of star field projects using ActionScript, then Javascript."), /* @__PURE__ */ import_react13.default.createElement(Project, {
+    codeSrc: "https://github.com/gregolai/canvas-masking-demo",
+    playSrc: "https://gregoryland.com/projects/masking/",
+    title: "Canvas Masking"
+  }, "A little JS canvas masking demo."), /* @__PURE__ */ import_react13.default.createElement(Project, {
+    title: "CmdTool"
+  }, "My friend and I had an idea for a tool to visualize command-line (CLI) commands as graphical (GUI) equivalents. It was one of my first web projects. Kinda like a command-line wikipedia."), /* @__PURE__ */ import_react13.default.createElement(Project, {
+    codeSrc: "https://github.com/gregolai/Icosphere",
+    title: "IcoSphere"
+  }, "An icosahedron that can be subdivided."), /* @__PURE__ */ import_react13.default.createElement(Project, {
+    codeSrc: "https://github.com/gregolai/CatGame",
+    title: "Cat Game"
+  }, "The start of a game where you play as a cat that sneaks around the neighborhood stealing things and completes missions."), /* @__PURE__ */ import_react13.default.createElement(Img, {
+    src: gaugan_output_default
+  }));
 
   // src/App.tsx
-  var PageFrame = () => /* @__PURE__ */ import_react14.default.createElement(import_style_lib6.Box, null, /* @__PURE__ */ import_react14.default.createElement(Header, null), /* @__PURE__ */ import_react14.default.createElement("main", null, /* @__PURE__ */ import_react14.default.createElement(Outlet, null)));
+  var PageFrame = () => /* @__PURE__ */ import_react14.default.createElement(import_style_lib8.Box, null, /* @__PURE__ */ import_react14.default.createElement(Header, null), /* @__PURE__ */ import_react14.default.createElement("main", null, /* @__PURE__ */ import_react14.default.createElement(Outlet, null)));
   var App = () => {
-    return /* @__PURE__ */ import_react14.default.createElement(import_style_lib6.Box, {
+    return /* @__PURE__ */ import_react14.default.createElement(import_style_lib8.Box, {
       py: "18px" /* _6 */,
       px: "4%",
       minHeight: "100vh",
@@ -23706,7 +23772,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
 
   // src/main.client.tsx
-  import_react_dom.default.hydrate(/* @__PURE__ */ import_react15.default.createElement(import_react15.StrictMode, null, /* @__PURE__ */ import_react15.default.createElement(import_style_lib7.BrowserStyleProvider, null, /* @__PURE__ */ import_react15.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react15.default.createElement(App, null)))), document.getElementById("root"));
+  import_react_dom.default.hydrate(/* @__PURE__ */ import_react15.default.createElement(import_react15.StrictMode, null, /* @__PURE__ */ import_react15.default.createElement(import_style_lib9.BrowserStyleProvider, null, /* @__PURE__ */ import_react15.default.createElement(BrowserRouter, null, /* @__PURE__ */ import_react15.default.createElement(App, null)))), document.getElementById("root"));
 })();
 /*
 object-assign

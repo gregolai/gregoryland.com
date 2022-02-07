@@ -3,28 +3,47 @@ import React from 'react';
 import { H2, H3, Li, P, Ul } from '../primitives';
 import { Space } from '../theme';
 
+const Section = ({ children, title }) => (
+	<Box>
+		<H2>{title}</H2>
+		{children}
+	</Box>
+);
+
 export const PageLife = () => (
 	<>
-		<H2>From animal, to robot</H2>
-		<P>
-			I have deep respect for people who build things themselves. There' something about owning your
-			creation that's beautuiful. As we move towards a greater level of abstraction we face the danger
-			of not remembering who we are. We must not forget ourselves across the vast digital ocean! The joy
-			of creation must not be lost!
-		</P>
-		<P>
-			As we abstract up the tree we must recontexualize who we are...just as we do in life as we age.
-			It's fractal-like.
-		</P>
-		<P>
-			Our analog human experience is touching hands with our digital creations. It's ok to be weird
-			because life is weird. It's the fire that keeps us going. Consciousness, the greatest mystery
-			alongside the Big Bang and black holes, is fundamentally paradoxical.
-		</P>
-		<P>
-			Everything boils down to mental models. When the state of your organism matches the state of the
-			local environment, you are in flow with the universe
-		</P>
+		<Section title="Some things I've learnt">
+			<Ul>
+				<Li>
+					Despite how tempting it may be to build your own tools, it may be better to use someone
+					else's.
+				</Li>
+				<Li>A well-designed API is almost always better than one written quickly without care.</Li>
+				<Li>Accept that you may be wrong about things.</Li>
+			</Ul>
+		</Section>
+
+		<Section title="From animal, to robot">
+			<P>
+				I have deep respect for people who build things themselves. There' something about owning your
+				creation that's beautuiful. As we move towards a greater level of abstraction we face the
+				danger of not remembering who we are. We must not forget ourselves across the vast digital
+				ocean! The joy of creation must not be lost!
+			</P>
+			<P>
+				As we abstract up the tree we must recontexualize who we are...just as we do in life as we
+				age. It's fractal-like.
+			</P>
+			<P>
+				Our analog human experience is touching hands with our digital creations. It's ok to be weird
+				because life is weird. It's the fire that keeps us going. Consciousness, the greatest mystery
+				alongside the Big Bang and black holes, is fundamentally paradoxical.
+			</P>
+			<P>
+				Everything boils down to mental models. When the state of your organism matches the state of
+				the local environment, you are in flow with the universe
+			</P>
+		</Section>
 
 		<H2 pt={Space._7}>What got me into dev?</H2>
 		<P>Map editors...Warcraft 3 editor...UT2004 scripting...Starcraft. etc.</P>

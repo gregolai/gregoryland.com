@@ -37,6 +37,11 @@ export const Button = (props: BoxProps) => (
 	/>
 );
 
+export const Anchor = (props: BoxProps) => <Box {...props} as="a" />;
+export const AnchorNewTab = (props: BoxProps) => (
+	<Anchor {...props} target="_blank" rel="noopener noreferrer" />
+);
+
 export const H1 = (props: BoxProps) => <Text {...props} as="h1" fontFamily="Chakra Petch" />;
 export const H2 = (props: BoxProps) => <Text {...props} as="h2" fontWeight="500" fontFamily="Chakra Petch" />;
 export const H3 = (props: BoxProps) => <Text {...props} as="h3" fontWeight="500" fontFamily="Chakra Petch" />;

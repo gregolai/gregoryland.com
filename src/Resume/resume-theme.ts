@@ -31,12 +31,3 @@ export const enum Palette {
 	lighter = '#D3D3D3',
 	bg = '#FAFAFA'
 }
-
-/**
- * https://stackoverflow.com/questions/16443380/common-css-media-queries-break-points
- */
-export const enum MediaQ {
-	desktop = '@media only screen and (min-width: 768px)',
-	phone = '@media only screen and (max-width: 767px)',
-	phonePortrait = '@media only screen and (max-width: 767px) and (orientation: portrait)'
-}

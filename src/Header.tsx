@@ -20,7 +20,7 @@ export const Header = () => {
 			justifyContent="space-between"
 			alignItems="center"
 			css={{
-				[MediaQ.phone]: {
+				[MediaQ.smallScreen]: {
 					flexDirection: 'column',
 					'>h1': {
 						pb: Space._4

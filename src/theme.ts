@@ -39,10 +39,10 @@ export const enum Palette {
 }
 
 /**
- * https://stackoverflow.com/questions/16443380/common-css-media-queries-break-points
+ * https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/
  */
 export const enum MediaQ {
-	desktop = '@media only screen and (min-width: 768px)',
-	phone = '@media only screen and (max-width: 767px)',
-	phonePortrait = '@media only screen and (max-width: 767px) and (orientation: portrait)'
+	phone = '@media only screen and (max-width: 480px)',
+	tablet = '@media only screen and (max-width: 768px)',
+	smallScreen = '@media only screen and (max-width: 1024px)'
 }

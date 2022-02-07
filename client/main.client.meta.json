@@ -478,11 +478,11 @@
       ]
     },
     "src/theme.ts": {
-      "bytes": 965,
+      "bytes": 959,
       "imports": []
     },
     "src/primitives.tsx": {
-      "bytes": 1791,
+      "bytes": 1981,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -524,7 +524,7 @@
       ]
     },
     "src/Header.tsx": {
-      "bytes": 740,
+      "bytes": 746,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -651,7 +651,7 @@
       ]
     },
     "src/Resume/resume-theme.ts": {
-      "bytes": 816,
+      "bytes": 493,
       "imports": []
     },
     "src/Resume/Resume2.tsx": {
@@ -717,7 +717,7 @@
       ]
     },
     "src/pages/page.Life.tsx": {
-      "bytes": 2248,
+      "bytes": 2735,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -737,15 +737,31 @@
         }
       ]
     },
+    "src/img/gaugan_output.jpg": {
+      "bytes": 1226287,
+      "imports": []
+    },
     "src/pages/page.Projects.tsx": {
-      "bytes": 916,
+      "bytes": 3058,
       "imports": [
         {
           "path": "node_modules/react/index.js",
           "kind": "import-statement"
         },
         {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
           "path": "src/primitives.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/img/gaugan_output.jpg",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
           "kind": "import-statement"
         }
       ]
@@ -826,11 +842,21 @@
     }
   },
   "outputs": {
+    "client/assets/gaugan_output-KFHZT5BJ.jpg": {
+      "imports": [],
+      "exports": [],
+      "inputs": {
+        "src/img/gaugan_output.jpg": {
+          "bytesInOutput": 1226287
+        }
+      },
+      "bytes": 1226287
+    },
     "client/main.client.js.map": {
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 3463134
+      "bytes": 3467464
     },
     "client/main.client.js": {
       "imports": [],
@@ -988,10 +1014,10 @@
           "bytesInOutput": 1574
         },
         "src/Header.tsx": {
-          "bytesInOutput": 846
+          "bytesInOutput": 853
         },
         "src/primitives.tsx": {
-          "bytesInOutput": 1965
+          "bytesInOutput": 2266
         },
         "src/Links.tsx": {
           "bytesInOutput": 2313
@@ -1021,13 +1047,16 @@
           "bytesInOutput": 892
         },
         "src/pages/page.Life.tsx": {
-          "bytesInOutput": 3955
+          "bytesInOutput": 4826
         },
         "src/pages/page.Projects.tsx": {
-          "bytesInOutput": 1576
+          "bytesInOutput": 3937
+        },
+        "src/img/gaugan_output.jpg": {
+          "bytesInOutput": 59
         }
       },
-      "bytes": 1041643
+      "bytes": 1045318
     }
   }
 }
