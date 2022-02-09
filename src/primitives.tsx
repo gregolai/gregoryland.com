@@ -1,6 +1,9 @@
 import React, { forwardRef } from 'react';
 import { Box } from 'pu2/style-lib';
-import { FontSize, Palette, Space } from './theme';
+import { FontSize, Space } from './theme';
+import type { IconType } from 'react-icons';
+import { Link, LinkProps, useLocation } from 'react-router-dom';
+import { HiExternalLink } from 'react-icons/hi';
 
 type BoxProps = React.ComponentPropsWithRef<typeof Box>;
 
@@ -11,40 +14,97 @@ export const createComponent = (baseProps: BoxProps) =>
 
 export const Text = createComponent({
 	as: 'span',
+	lineHeight: '1',
 	textRendering: 'optimizeLegibility',
 	webkitFontSmoothing: 'subpixel-antialiased',
 	mozOsxFontSmoothing: 'grayscale',
-	color: Palette.mineshaft,
+	// color: Palette.mineshaft,
 	m: Space._0
 });
 
-export const Button = (props: BoxProps) => (
-	<Box
-		border="2px solid black"
-		cursor="pointer"
-		color="black"
-		bg="white"
-		px={Space._5}
-		py={Space._3}
-		css={{
-			':hover': {
-				color: 'white',
-				bg: 'black'
-			}
-		}}
-		{...props}
-		as="button"
-	/>
+interface ButtonProps extends BoxProps {}
+
+interface IconTextProps extends BoxProps {
+	Icon?: IconType;
+	IconRight?: IconType;
+}
+
+export const IconText = ({ children, Icon, IconRight, ...rest }: IconTextProps) => (
+	<Flex alignItems="center" {...rest}>
+		{Icon && <Box as={Icon} size={FontSize._3} mr={Space._4} />}
+		<Text fontFamily="Chakra Petch" fontSize={FontSize._3} fontWeight="600">
+			{children}
+		</Text>
+		{IconRight && <Box as={IconRight} size={FontSize._3} ml={Space._4} />}
+	</Flex>
 );
+
+export const Button = ({ children, ...rest }: ButtonProps) => {
+	return (
+		<Box
+			px={Space._6}
+			py={Space._5}
+			b="2px solid black"
+			bg="white"
+			color="black"
+			{...rest}
+			css={{
+				':hover': {
+					bg: 'black',
+					color: 'white'
+				},
+				...rest.css
+			}}
+		>
+			{children}
+		</Box>
+	);
+};
+
+interface LinkButtonProps extends ButtonProps {
+	newTab?: boolean;
+	to: string;
+}
+
+const newTabProps = (newTab?: boolean) =>
+	newTab
+		? {
+				rel: 'noopener noreferrer',
+				target: '_blank',
+				IconRight: HiExternalLink
+		  }
+		: {};
+
+export const InternalLinkButton = ({ newTab, to, ...rest }: LinkButtonProps & LinkProps) => {
+	const loc = useLocation();
+
+	let extra: BoxProps = {};
+	if (loc.pathname === to) {
+		extra.bg = '#A0A0A0';
+		extra.color = 'white';
+	}
+	return <Button as={Link} textDecoration="none" to={to} {...extra} {...rest} {...newTabProps(newTab)} />;
+};
+
+export const ExternalLinkButton = ({ newTab, to, ...rest }: LinkButtonProps) => {
+	return <Button as="a" textDecoration="none" href={to} to={to} {...rest} {...newTabProps(newTab)} />;
+};
 
 export const Anchor = (props: BoxProps) => <Box {...props} as="a" />;
-export const AnchorNewTab = (props: BoxProps) => (
-	<Anchor {...props} target="_blank" rel="noopener noreferrer" />
+export const AnchorButton = (props: BoxProps) => <Button {...props} as="a" textDecoration="none" />;
+export const AnchorButtonNewTab = (props: BoxProps) => (
+	<AnchorButton {...props} target="_blank" rel="noopener noreferrer" />
 );
 
-export const H1 = (props: BoxProps) => <Text {...props} as="h1" fontFamily="Chakra Petch" />;
-export const H2 = (props: BoxProps) => <Text {...props} as="h2" fontWeight="500" fontFamily="Chakra Petch" />;
-export const H3 = (props: BoxProps) => <Text {...props} as="h3" fontWeight="500" fontFamily="Chakra Petch" />;
+export const H1 = (props: BoxProps) => (
+	<Text {...props} as="h1" fontFamily="Chakra Petch" fontSize={FontSize._5} />
+);
+export const H2 = (props: BoxProps) => (
+	<Text {...props} as="h2" fontWeight="500" fontFamily="Chakra Petch" fontSize={FontSize._4} />
+);
+export const H3 = (props: BoxProps) => (
+	<Text {...props} as="h3" fontWeight="500" fontFamily="Chakra Petch" fontSize={FontSize._3} />
+);
 export const H4 = (props: BoxProps) => <Text {...props} as="h4" fontFamily="Chakra Petch" />;
 export const H5 = (props: BoxProps) => <Text {...props} as="h5" fontFamily="Chakra Petch" />;
 export const H6 = (props: BoxProps) => <Text {...props} as="h6" fontFamily="Chakra Petch" />;

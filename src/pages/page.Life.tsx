@@ -10,6 +10,19 @@ const Section = ({ children, title }) => (
 	</Box>
 );
 
+const videoGames = [
+	'Factorio',
+	'Hollow Knight',
+	'Kid Chameleon',
+	'Starcraft',
+	'Super Meat Boy',
+	'The Talos Principle',
+	'Thief: The Dark Project',
+	'Thief 2: The Metal Age',
+	'Undertale',
+	'Warcraft 3'
+];
+
 export const PageLife = () => (
 	<>
 		<Section title="Some things I've learnt">
@@ -20,15 +33,20 @@ export const PageLife = () => (
 				</Li>
 				<Li>A well-designed API is almost always better than one written quickly without care.</Li>
 				<Li>Accept that you may be wrong about things.</Li>
+				<Li>
+					Something I do while designing my website is to open a second tab in Chrome and play with
+					the CSS to my heart's content in devtools. When I get it looking right, I make adjustments
+					to the code while refreshing the first tab until it looks right. It's a winning strategy.
+				</Li>
 			</Ul>
 		</Section>
 
 		<Section title="From animal, to robot">
 			<P>
-				I have deep respect for people who build things themselves. There' something about owning your
-				creation that's beautuiful. As we move towards a greater level of abstraction we face the
+				I have deep respect for people who build things themselves. There's something about owning
+				your creation that's beautiful. As we move towards a greater level of abstraction we face the
 				danger of not remembering who we are. We must not forget ourselves across the vast digital
-				ocean! The joy of creation must not be lost!
+				ocean. The joy of creation must not be lost!
 			</P>
 			<P>
 				As we abstract up the tree we must recontexualize who we are...just as we do in life as we
@@ -47,21 +65,20 @@ export const PageLife = () => (
 
 		<H2 pt={Space._7}>What got me into dev?</H2>
 		<P>Map editors...Warcraft 3 editor...UT2004 scripting...Starcraft. etc.</P>
+
 		<H2 pt={Space._7}>Why I write code</H2>
 		<P>For better or for worse, most people don't think like I do.</P>
 		<P>I think like a scientist. Skeptical by nature.</P>
 		<P>I try not to be someone I'm not. I try to maintain an honest character.</P>
-		<H2 pt={Space._7}>Why I moved to Texas</H2>
-		<P>Environment is everything</P>
-		<H2 pt={Space._7}>Favorite video games</H2>
-		<H3>Hollow Knight</H3>
-		<H3>Kid Chameleon</H3>
-		<H3>Starcraft</H3>
-		<H3>The Talos Principle</H3>
-		<H3>Thief: The Dark Project</H3>
-		<H3>Thief 2: The Metal Age</H3>
-		<H3>Undertale</H3>
-		<H3>Warcraft 3</H3>
+
+		<Section title="Favorite video games">
+			<Ul>
+				{videoGames.map((v) => (
+					<Li key={v}>{v}</Li>
+				))}
+			</Ul>
+		</Section>
+
 		<H2 pt={Space._7}>My personal roadmap</H2>
 		<Ul>
 			<Li>Work for an awesome company in Austin</Li>

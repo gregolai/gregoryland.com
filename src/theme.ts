@@ -18,7 +18,9 @@ export const enum FontSize {
 	_0 = '11px',
 	_1 = '13px',
 	_2 = '16px',
-	_3 = '20px'
+	_3 = '20px',
+	_4 = '24px',
+	_5 = '32px'
 }
 
 export const enum LineHeight {

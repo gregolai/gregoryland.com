@@ -7,7 +7,7 @@ import gregorySrc from '../img/gregory.jpg';
 
 export const PageCareer = () => (
 	<>
-		<Button>Print my resume</Button>
+		{/* <Button>Print my resume</Button> */}
 		{/* <Img src={gregorySrc} /> */}
 		<Flex justifyContent="center" pt={Space._6}>
 			<Box

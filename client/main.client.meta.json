@@ -478,125 +478,8 @@
       ]
     },
     "src/theme.ts": {
-      "bytes": 959,
+      "bytes": 987,
       "imports": []
-    },
-    "src/primitives.tsx": {
-      "bytes": 1981,
-      "imports": [
-        {
-          "path": "node_modules/react/index.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "node_modules/pu2/style-lib/index.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "src/theme.ts",
-          "kind": "import-statement"
-        }
-      ]
-    },
-    "src/Links.tsx": {
-      "bytes": 2279,
-      "imports": [
-        {
-          "path": "node_modules/react/index.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "node_modules/pu2/style-lib/index.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "node_modules/react-router-dom/index.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "src/primitives.tsx",
-          "kind": "import-statement"
-        },
-        {
-          "path": "src/theme.ts",
-          "kind": "import-statement"
-        }
-      ]
-    },
-    "src/Header.tsx": {
-      "bytes": 746,
-      "imports": [
-        {
-          "path": "node_modules/react/index.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "node_modules/pu2/style-lib/index.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "node_modules/react-router-dom/index.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "src/theme.ts",
-          "kind": "import-statement"
-        },
-        {
-          "path": "src/primitives.tsx",
-          "kind": "import-statement"
-        },
-        {
-          "path": "src/Links.tsx",
-          "kind": "import-statement"
-        }
-      ]
-    },
-    "src/Resume/Resume.tsx": {
-      "bytes": 6548,
-      "imports": [
-        {
-          "path": "node_modules/react/index.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "node_modules/pu2/style-lib/index.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "src/primitives.tsx",
-          "kind": "import-statement"
-        },
-        {
-          "path": "src/theme.ts",
-          "kind": "import-statement"
-        }
-      ]
-    },
-    "src/pages/page.Home.tsx": {
-      "bytes": 1324,
-      "imports": [
-        {
-          "path": "node_modules/react/index.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "node_modules/pu2/style-lib/index.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "src/theme.ts",
-          "kind": "import-statement"
-        },
-        {
-          "path": "src/primitives.tsx",
-          "kind": "import-statement"
-        },
-        {
-          "path": "src/Links.tsx",
-          "kind": "import-statement"
-        }
-      ]
     },
     "node_modules/react-icons/lib/esm/iconsManifest.js": {
       "bytes": 4149,
@@ -637,6 +520,216 @@
         },
         {
           "path": "node_modules/react-icons/lib/esm/iconContext.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "node_modules/react-icons/hi/index.esm.js": {
+      "bytes": 186346,
+      "imports": [
+        {
+          "path": "node_modules/react-icons/lib/esm/index.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/primitives.tsx": {
+      "bytes": 3663,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-router-dom/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-icons/hi/index.esm.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/Links.tsx": {
+      "bytes": 2279,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-router-dom/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "node_modules/react-icons/ai/index.esm.js": {
+      "bytes": 643075,
+      "imports": [
+        {
+          "path": "node_modules/react-icons/lib/esm/index.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/Header.tsx": {
+      "bytes": 943,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-router-dom/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/Links.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-icons/ai/index.esm.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "node_modules/react-icons/bi/index.esm.js": {
+      "bytes": 353608,
+      "imports": [
+        {
+          "path": "node_modules/react-icons/lib/esm/index.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "node_modules/react-icons/gi/index.esm.js": {
+      "bytes": 6900602,
+      "imports": [
+        {
+          "path": "node_modules/react-icons/lib/esm/index.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/Nav.tsx": {
+      "bytes": 3134,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-icons/ai/index.esm.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-icons/bi/index.esm.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-icons/gi/index.esm.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-icons/hi/index.esm.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-router-dom/index.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/Resume/Resume.tsx": {
+      "bytes": 6548,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/pages/page.Home.tsx": {
+      "bytes": 1582,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-icons/ai/index.esm.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/Links.tsx",
           "kind": "import-statement"
         }
       ]
@@ -688,7 +781,7 @@
       "imports": []
     },
     "src/pages/page.Career.tsx": {
-      "bytes": 550,
+      "bytes": 558,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -717,7 +810,7 @@
       ]
     },
     "src/pages/page.Life.tsx": {
-      "bytes": 2735,
+      "bytes": 3050,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -742,7 +835,7 @@
       "imports": []
     },
     "src/pages/page.Projects.tsx": {
-      "bytes": 3058,
+      "bytes": 3108,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -750,6 +843,10 @@
         },
         {
           "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-icons/ai/index.esm.js",
           "kind": "import-statement"
         },
         {
@@ -767,7 +864,7 @@
       ]
     },
     "src/App.tsx": {
-      "bytes": 964,
+      "bytes": 1305,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -783,6 +880,10 @@
         },
         {
           "path": "src/Header.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/Nav.tsx",
           "kind": "import-statement"
         },
         {
@@ -856,7 +957,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 3467464
+      "bytes": 11731345
     },
     "client/main.client.js": {
       "imports": [],
@@ -996,7 +1097,7 @@
           "bytesInOutput": 291
         },
         "src/main.client.tsx": {
-          "bytesInOutput": 556
+          "bytesInOutput": 558
         },
         "node_modules/react-router-dom/index.js": {
           "bytesInOutput": 5444
@@ -1011,28 +1112,13 @@
           "bytesInOutput": 20900
         },
         "src/App.tsx": {
-          "bytesInOutput": 1574
+          "bytesInOutput": 1888
         },
         "src/Header.tsx": {
-          "bytesInOutput": 853
+          "bytesInOutput": 600
         },
         "src/primitives.tsx": {
-          "bytesInOutput": 2266
-        },
-        "src/Links.tsx": {
-          "bytesInOutput": 2313
-        },
-        "src/Resume/Resume.tsx": {
-          "bytesInOutput": 48
-        },
-        "src/pages/page.Home.tsx": {
-          "bytesInOutput": 1954
-        },
-        "src/pages/page.Career.tsx": {
-          "bytesInOutput": 652
-        },
-        "src/Resume/Resume2.tsx": {
-          "bytesInOutput": 18541
+          "bytesInOutput": 3540
         },
         "node_modules/react-icons/lib/esm/index.js": {
           "bytesInOutput": 0
@@ -1043,20 +1129,50 @@
         "node_modules/react-icons/lib/esm/iconContext.js": {
           "bytesInOutput": 286
         },
+        "node_modules/react-icons/hi/index.esm.js": {
+          "bytesInOutput": 417
+        },
+        "src/Links.tsx": {
+          "bytesInOutput": 2313
+        },
+        "node_modules/react-icons/ai/index.esm.js": {
+          "bytesInOutput": 2744
+        },
+        "src/Nav.tsx": {
+          "bytesInOutput": 3229
+        },
+        "node_modules/react-icons/bi/index.esm.js": {
+          "bytesInOutput": 441
+        },
+        "node_modules/react-icons/gi/index.esm.js": {
+          "bytesInOutput": 5976
+        },
+        "src/Resume/Resume.tsx": {
+          "bytesInOutput": 48
+        },
+        "src/pages/page.Home.tsx": {
+          "bytesInOutput": 2168
+        },
+        "src/pages/page.Career.tsx": {
+          "bytesInOutput": 565
+        },
+        "src/Resume/Resume2.tsx": {
+          "bytesInOutput": 18541
+        },
         "node_modules/react-icons/md/index.esm.js": {
           "bytesInOutput": 892
         },
         "src/pages/page.Life.tsx": {
-          "bytesInOutput": 4826
+          "bytesInOutput": 4699
         },
         "src/pages/page.Projects.tsx": {
-          "bytesInOutput": 3937
+          "bytesInOutput": 3792
         },
         "src/img/gaugan_output.jpg": {
           "bytesInOutput": 59
         }
       },
-      "bytes": 1045318
+      "bytes": 1059566
     }
   }
 }

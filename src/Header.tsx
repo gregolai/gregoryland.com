@@ -1,22 +1,28 @@
 import React from 'react';
 import { Box } from 'pu2/style-lib';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { MediaQ, Space } from './theme';
-import { Button, Flex, H1 } from './primitives';
+import { To, Link, useLocation, useNavigate } from 'react-router-dom';
+import { FontSize, MediaQ, Palette, Space } from './theme';
+import {
+	AnchorButton,
+	AnchorButtonNewTab,
+	Button,
+	ExternalLinkButton,
+	Flex,
+	H1,
+	InternalLinkButton,
+	Text
+} from './primitives';
 import { Links } from './Links';
+import type { IconType } from 'react-icons';
+import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
+import type { BoxProps } from 'pu2/style-lib/browser/Box';
 
 export const Header = () => {
-	const loc = useLocation();
-
-	const isRoot = loc.pathname === '/';
-
 	return (
 		<Flex
 			as="header"
 			bg="#f7f2e9"
 			border="2px solid black"
-			py={Space._6}
-			px={Space._9}
 			justifyContent="space-between"
 			alignItems="center"
 			css={{
@@ -28,9 +34,9 @@ export const Header = () => {
 				}
 			}}
 		>
-			<H1 textAlign="center">Gregory Dalton</H1>
+			{/* <Links hideImg includeHome={!isRoot} /> */}
 
-			<Links hideImg includeHome={!isRoot} />
+			<H1 flex="1">Gregory Dalton</H1>
 		</Flex>
 	);
 };

@@ -1,7 +1,19 @@
 import React from 'react';
 import { Box } from 'pu2/style-lib';
 import { MediaQ, Space } from '../theme';
-import { Button, H2, H3, Img, P } from '../primitives';
+import {
+	AnchorButton,
+	AnchorButtonNewTab,
+	Button,
+	Flex,
+	H2,
+	H3,
+	Img,
+	InternalLinkButton,
+	P,
+	Text
+} from '../primitives';
+import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 import { Links } from '../Links';
 
 const gridTemplateAreas = '"b c c c" "b d d d"';
@@ -34,12 +46,16 @@ const BigGrid = () => {
 					}
 				}}
 			/>
-			<Box gridArea="c" py={Space._6} px={Space._8} bb="2px solid black" bg="#f7f2e9">
-				<H2>Human / Programmer</H2>
-				<P py={Space._5}>
-					My name's Greg and this is my website. Please have a look and print my resume.
-				</P>
-				<Button>View my resume</Button>
+			<Box gridArea="c" py={Space._6} px={Space._9} bb="2px solid black" bg="#f7f2e9">
+				<Flex>
+					<Box flex="1">
+						<H2>Human / Programmer</H2>
+						<P py={Space._5}>
+							My name's Greg and this is my website. Please have a look and print my resume.
+						</P>
+						<InternalLinkButton to="/career">View my resume</InternalLinkButton>
+					</Box>
+				</Flex>
 			</Box>
 			<Links gridArea="d" />
 		</Box>
