@@ -19,24 +19,23 @@ import type { BoxProps } from 'pu2/style-lib/browser/Box';
 
 export const Header = () => {
 	return (
-		<Flex
+		<Box
 			as="header"
 			bg="#f7f2e9"
 			border="2px solid black"
-			justifyContent="space-between"
-			alignItems="center"
-			css={{
-				[MediaQ.smallScreen]: {
-					flexDirection: 'column',
-					'>h1': {
-						pb: Space._4
-					}
-				}
-			}}
+			py={Space._6}
+			// css={{
+			// 	[MediaQ.smallScreen]: {
+			// 		flexDirection: 'column',
+			// 		'>h1': {
+			// 			pb: Space._4
+			// 		}
+			// 	}
+			// }}
 		>
 			{/* <Links hideImg includeHome={!isRoot} /> */}
 
-			<H1 flex="1">Gregory Dalton</H1>
-		</Flex>
+			<H1 textAlign="center">Gregory Dalton</H1>
+		</Box>
 	);
 };

@@ -112,6 +112,15 @@ const startServer = async () => {
 
 	server = spawn('node', ['server/main.server.js']);
 
+	server.stdout.setEncoding('utf-8');
+	server.stdout.on('data', (data) => {
+		console.log(data);
+	});
+	server.stderr.setEncoding('utf-8');
+	server.stderr.on('data', (data) => {
+		console.error(data);
+	});
+
 	// const ret = spawnSync('node', ['dist/main.server.js']);
 	// console.log('Spawn server result:', ret);
 	// if (ret.stderr) {

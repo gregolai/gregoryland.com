@@ -24,7 +24,7 @@ const videoGames = [
 ];
 
 export const PageLife = () => (
-	<>
+	<Box p={Space._6}>
 		<Section title="Some things I've learnt">
 			<Ul>
 				<Li>
@@ -87,7 +87,6 @@ export const PageLife = () => (
 			<Li>Work on a small project that people find useful</Li>
 			<Li>Learn some "big picture" things</Li>
 			<Li>Get better at math</Li>
-			<Li>Make a boyfriend?</Li>
 		</Ul>
-	</>
+	</Box>
 );

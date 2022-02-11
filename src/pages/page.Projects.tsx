@@ -1,20 +1,8 @@
 import React from 'react';
 import { Box } from 'pu2/style-lib';
 import { AiFillGithub } from 'react-icons/ai';
-import {
-	Anchor,
-	AnchorButtonNewTab,
-	Button,
-	ExternalLinkButton,
-	Flex,
-	H2,
-	H3,
-	Img,
-	P,
-	Text
-} from '../primitives';
+import { ExternalLinkButton, Flex, H3, IconText, Img, P } from '../primitives';
 
-import aiImgSrc from '../img/gaugan_output.jpg';
 import { Space } from '../theme';
 
 interface ProjectProps {
@@ -25,14 +13,18 @@ interface ProjectProps {
 }
 
 const Project = ({ children, github, playSrc, title }: ProjectProps) => (
-	<Box my={Space._6}>
+	<Box py={Space._5}>
 		<H3>{title}</H3>
 		<P>{children}</P>
 		<Flex alignItems="center">
-			{playSrc && <ExternalLinkButton to={playSrc}>Open in new tab</ExternalLinkButton>}
+			{playSrc && (
+				<ExternalLinkButton to={playSrc}>
+					<IconText>Open in new tab</IconText>
+				</ExternalLinkButton>
+			)}
 			{github && (
-				<ExternalLinkButton to={github} Icon={AiFillGithub} ml={playSrc && Space._6}>
-					View code
+				<ExternalLinkButton to={github} ml={playSrc && Space._6}>
+					<IconText Icon={AiFillGithub}>View code</IconText>
 				</ExternalLinkButton>
 			)}
 		</Flex>
@@ -40,7 +32,7 @@ const Project = ({ children, github, playSrc, title }: ProjectProps) => (
 );
 
 export const PageProjects = () => (
-	<>
+	<Box p={Space._6}>
 		<Project github="https://github.com/gregolai/gregoryland.com" title="gregoryland.com">
 			This website.
 		</Project>
@@ -96,6 +88,5 @@ export const PageProjects = () => (
 			The start of a game where you play as a cat that sneaks around the neighborhood stealing things
 			and completes missions.
 		</Project>
-		<Img src={aiImgSrc} />
-	</>
+	</Box>
 );

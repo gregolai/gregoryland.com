@@ -14,7 +14,7 @@ export const createComponent = (baseProps: BoxProps) =>
 
 export const Text = createComponent({
 	as: 'span',
-	lineHeight: '1',
+	// lineHeight: '1',
 	textRendering: 'optimizeLegibility',
 	webkitFontSmoothing: 'subpixel-antialiased',
 	mozOsxFontSmoothing: 'grayscale',
@@ -22,17 +22,20 @@ export const Text = createComponent({
 	m: Space._0
 });
 
-interface ButtonProps extends BoxProps {}
+interface ButtonProps extends BoxProps {
+	children?: React.ReactNode;
+}
 
 interface IconTextProps extends BoxProps {
-	Icon?: IconType;
-	IconRight?: IconType;
+	children?: React.ReactNode;
+	Icon?: IconType | false;
+	IconRight?: IconType | false;
 }
 
 export const IconText = ({ children, Icon, IconRight, ...rest }: IconTextProps) => (
 	<Flex alignItems="center" {...rest}>
 		{Icon && <Box as={Icon} size={FontSize._3} mr={Space._4} />}
-		<Text fontFamily="Chakra Petch" fontSize={FontSize._3} fontWeight="600">
+		<Text fontFamily="Chakra Petch" fontSize={FontSize._3} fontWeight="600" lineHeight="1">
 			{children}
 		</Text>
 		{IconRight && <Box as={IconRight} size={FontSize._3} ml={Space._4} />}
@@ -47,6 +50,8 @@ export const Button = ({ children, ...rest }: ButtonProps) => {
 			b="2px solid black"
 			bg="white"
 			color="black"
+			display="flex"
+			cursor="pointer"
 			{...rest}
 			css={{
 				':hover': {
@@ -70,12 +75,11 @@ const newTabProps = (newTab?: boolean) =>
 	newTab
 		? {
 				rel: 'noopener noreferrer',
-				target: '_blank',
-				IconRight: HiExternalLink
+				target: '_blank'
 		  }
 		: {};
 
-export const InternalLinkButton = ({ newTab, to, ...rest }: LinkButtonProps & LinkProps) => {
+export const InternalLinkButton = ({ newTab, to, ...rest }: LinkButtonProps) => {
 	const loc = useLocation();
 
 	let extra: BoxProps = {};

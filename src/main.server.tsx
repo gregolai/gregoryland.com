@@ -78,18 +78,24 @@ const server = express();
 server.use('/', express.static(path.resolve(__dirname, '../client')));
 
 server.get('*', async (req: any, res: any) => {
-	const collector = new SSRStyleCollector();
-	const appHtml = renderToString(
-		<StrictMode>
-			<SSRStyleProvider collector={collector}>
-				<StaticRouter location={req.originalUrl}>
-					<App />
-				</StaticRouter>
-			</SSRStyleProvider>
-		</StrictMode>
-	);
-	const styleHtml = collector.getHtml();
-
+	let appHtml = '';
+	let styleHtml = '';
+	try {
+		const collector = new SSRStyleCollector();
+		appHtml = renderToString(
+			<StrictMode>
+				<SSRStyleProvider collector={collector}>
+					<StaticRouter location={req.originalUrl}>
+						<App />
+					</StaticRouter>
+				</SSRStyleProvider>
+			</StrictMode>
+		);
+		styleHtml = collector.getHtml();
+	} catch (ex) {
+		// UNABLE TO SSR
+		console.error('UNABLE TO SSR\r\n', ex);
+	}
 	res.status(200).set({ 'Content-Type': 'text/html' }).end(renderSSR({ appHtml, styleHtml }));
 });
 

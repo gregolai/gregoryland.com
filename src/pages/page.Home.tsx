@@ -13,7 +13,6 @@ import {
 	P,
 	Text
 } from '../primitives';
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
 import { Links } from '../Links';
 
 const gridTemplateAreas = '"b c c c" "b d d d"';
@@ -49,7 +48,7 @@ const BigGrid = () => {
 			<Box gridArea="c" py={Space._6} px={Space._9} bb="2px solid black" bg="#f7f2e9">
 				<Flex>
 					<Box flex="1">
-						<H2>Human / Programmer</H2>
+						<H2>My website</H2>
 						<P py={Space._5}>
 							My name's Greg and this is my website. Please have a look and print my resume.
 						</P>
@@ -63,7 +62,7 @@ const BigGrid = () => {
 };
 
 export const PageHome = () => (
-	<>
+	<Box p={Space._6}>
 		<BigGrid />
-	</>
+	</Box>
 );

@@ -48,3 +48,12 @@ export const enum MediaQ {
 	tablet = '@media only screen and (max-width: 768px)',
 	smallScreen = '@media only screen and (max-width: 1024px)'
 }
+
+export const enum Breakpoint {
+	phone = 480,
+	tablet = 768,
+	smallScreen = 1024
+}
+
+export const mediaLessThan = (bp: Breakpoint) => `@media only screen and (max-width:${bp}px)`;
+export const mediaGreaterThan = (bp: Breakpoint) => `@media only screen and (min-width:${bp + 1}px)`;

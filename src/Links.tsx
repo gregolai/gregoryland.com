@@ -47,7 +47,7 @@ export const Links = ({ hideImg, includeHome, ...rest }: Props) => {
 	const linksToRender = includeHome ? [homeLink, ...links] : links;
 
 	return (
-		<Flex {...rest} as="nav" b="2px solid black">
+		<Flex {...rest} as="nav">
 			{linksToRender.map(({ to, imgSrc, text }) => (
 				<Box
 					key={to}

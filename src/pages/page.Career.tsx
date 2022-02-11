@@ -1,22 +1,28 @@
 import { Box } from 'pu2/style-lib';
 import React from 'react';
 import { Button, Flex, Img, P } from '../primitives';
-import { Resume } from '../Resume/Resume2';
-import { Space } from '../theme';
-import gregorySrc from '../img/gregory.jpg';
+import { ResumeDesktop } from '../Resume/Resume.desktop';
+import { ResumeMobile } from '../Resume/Resume.mobile';
+import { Breakpoint, mediaGreaterThan, mediaLessThan, Space } from '../theme';
+import { MediaHide } from '../MediaHide';
 
 export const PageCareer = () => (
 	<>
 		{/* <Button>Print my resume</Button> */}
-		{/* <Img src={gregorySrc} /> */}
-		<Flex justifyContent="center" pt={Space._6}>
-			<Box
-				//border="2px solid black"
-				boxShadow="5px 5px 3px rgba(0,0,0,0.3)"
-				maxWidth="1000px"
-			>
-				<Resume />
-			</Box>
-		</Flex>
+		<MediaHide
+			q={mediaLessThan(Breakpoint.tablet)}
+			render={(props) => (
+				<Flex justifyContent="center" py={Space._6} {...props}>
+					<Box
+						//border="2px solid black"
+						boxShadow="5px 5px 3px rgba(0,0,0,0.3)"
+						maxWidth="1000px"
+					>
+						<ResumeDesktop />
+					</Box>
+				</Flex>
+			)}
+		/>
+		<MediaHide q={mediaGreaterThan(Breakpoint.tablet)} render={ResumeMobile} />
 	</>
 );
