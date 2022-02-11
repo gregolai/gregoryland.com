@@ -6,7 +6,7 @@ import { GiComputerFan, GiEnergyBreath } from 'react-icons/gi';
 export interface NavLink {
 	label: string;
 	newTab?: boolean;
-	Icon?: IconType;
+	Icon: IconType;
 	to: string;
 }
 

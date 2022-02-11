@@ -4,7 +4,8 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { externalLinks, internalLinks } from './links';
 import { NavButtonStack } from './NavButtonStack';
-import { Flex, H3 } from '../primitives';
+import { Flex, H1 } from '../primitives2';
+import { Space } from '../theme';
 
 export const NavDesktop = (props: BoxProps) => {
 	const loc = useLocation();
@@ -20,7 +21,9 @@ export const NavDesktop = (props: BoxProps) => {
 			{...props}
 		>
 			<Box flex="1">
-				<H3>Gregory Dalton</H3>
+				<H1 px={Space._6} py={Space._3}>
+					Gregory Dalton
+				</H1>
 				<NavButtonStack links={internalLinks} />
 			</Box>
 			<NavButtonStack links={externalLinks} />

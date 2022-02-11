@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react';
-import { Box, useStyle } from 'pu2/style-lib';
-import { Flex } from '../primitives';
+import { Box } from 'pu2/style-lib';
+import { Flex } from '../primitives2';
 import { Palette, Space } from './resume-theme';
 import {
 	Contacts,
@@ -11,8 +11,6 @@ import {
 	CareerSummary,
 	Education,
 	WorkExperience,
-	Header,
-	FullName,
 	PrimaryRole,
 	FirstName,
 	LastName

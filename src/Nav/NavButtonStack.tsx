@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex } from '../primitives';
+import { Flex } from '../primitives2';
 import { NavButton } from './NavButton';
 import type { BoxProps } from 'pu2/style-lib/browser/Box';
 import type { NavLink } from './links';

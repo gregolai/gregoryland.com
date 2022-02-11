@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box } from 'pu2/style-lib';
-import { Button, Flex, H3, IconText } from '../primitives';
+import { Button, Flex, H3, Icon, Span } from '../primitives2';
 import { Space } from '../theme';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
@@ -20,18 +20,27 @@ export const NavMobile = (props: BoxProps) => {
 		<Box as="nav" {...props}>
 			<Button
 				to="/"
+				w="100%"
 				py={Space._6}
-				display="flex"
 				b="none"
 				bb="2px solid black"
 				justifyContent="space-between"
 				onClick={() => setOpen(!isOpen)}
 			>
-				<IconText Icon={isOpen ? IoIosArrowDown : GiHamburgerMenu}>Menu</IconText>
+				<Flex alignItems="center">
+					<Icon as={isOpen ? IoIosArrowDown : GiHamburgerMenu} />
+					<Span>Menu</Span>
+				</Flex>
+				{/* <IconText Icon={isOpen ? IoIosArrowDown : GiHamburgerMenu}>Menu</IconText> */}
 
 				<H3 textAlign="center">Gregory Dalton</H3>
 
-				{currentLink && <IconText Icon={currentLink.Icon}>{currentLink.label}</IconText>}
+				{currentLink && (
+					<Flex alignItems="center">
+						<Icon as={currentLink.Icon} />
+						<Span>{currentLink.label}</Span>
+					</Flex>
+				)}
 			</Button>
 			{isOpen && (
 				<Flex bb="2px solid black">

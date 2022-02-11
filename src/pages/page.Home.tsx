@@ -1,19 +1,9 @@
 import React from 'react';
 import { Box } from 'pu2/style-lib';
 import { MediaQ, Space } from '../theme';
-import {
-	AnchorButton,
-	AnchorButtonNewTab,
-	Button,
-	Flex,
-	H2,
-	H3,
-	Img,
-	InternalLinkButton,
-	P,
-	Text
-} from '../primitives';
+import { Button, Flex, H3, Icon, LinkButton, Para, Span } from '../primitives2';
 import { Links } from '../Links';
+import { FaExternalLinkSquareAlt } from 'react-icons/fa';
 
 const gridTemplateAreas = '"b c c c" "b d d d"';
 const gridTemplateAreasMobile = '"a a a a" "c c c c" "d d d d"';
@@ -48,11 +38,31 @@ const BigGrid = () => {
 			<Box gridArea="c" py={Space._6} px={Space._9} bb="2px solid black" bg="#f7f2e9">
 				<Flex>
 					<Box flex="1">
-						<H2>My website</H2>
-						<P py={Space._5}>
+						<Button>
+							<Span>I am a button</Span>
+						</Button>
+						<Button>
+							<Icon as={FaExternalLinkSquareAlt} />
+							<Span pl={Space._4}>I am a button with an Icon</Span>
+						</Button>
+						<Button>
+							<Icon as={FaExternalLinkSquareAlt} />
+							<Span px={Space._4}>I am a button with an Icon on both sides</Span>
+							<Icon as={FaExternalLinkSquareAlt} />
+						</Button>
+						<LinkButton newTab to="https://github.com">
+							External link
+						</LinkButton>
+						<LinkButton newTab to="/career">
+							Internal link
+						</LinkButton>
+						<H3>My website</H3>
+						<Para>
 							My name's Greg and this is my website. Please have a look and print my resume.
-						</P>
-						<InternalLinkButton to="/career">View my resume</InternalLinkButton>
+						</Para>
+						<LinkButton to="/career">
+							<Span>View my resume</Span>
+						</LinkButton>
 					</Box>
 				</Flex>
 			</Box>

@@ -548,7 +548,7 @@
       ]
     },
     "src/Nav/links.tsx": {
-      "bytes": 992,
+      "bytes": 991,
       "imports": [
         {
           "path": "node_modules/react-icons/ai/index.esm.js",
@@ -568,17 +568,8 @@
       "bytes": 1268,
       "imports": []
     },
-    "node_modules/react-icons/hi/index.esm.js": {
-      "bytes": 186346,
-      "imports": [
-        {
-          "path": "node_modules/react-icons/lib/esm/index.js",
-          "kind": "import-statement"
-        }
-      ]
-    },
-    "src/primitives.tsx": {
-      "bytes": 3751,
+    "src/primitives2/_createComponent.tsx": {
+      "bytes": 332,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -587,9 +578,14 @@
         {
           "path": "node_modules/pu2/style-lib/index.js",
           "kind": "import-statement"
-        },
+        }
+      ]
+    },
+    "src/primitives2/Button.tsx": {
+      "bytes": 1019,
+      "imports": [
         {
-          "path": "src/theme.ts",
+          "path": "node_modules/react/index.js",
           "kind": "import-statement"
         },
         {
@@ -597,37 +593,105 @@
           "kind": "import-statement"
         },
         {
-          "path": "node_modules/react-icons/hi/index.esm.js",
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives2/_createComponent.tsx",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/primitives2/Flex.tsx": {
+      "bytes": 113,
+      "imports": [
+        {
+          "path": "src/primitives2/_createComponent.tsx",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/primitives2/Icon.tsx": {
+      "bytes": 343,
+      "imports": [
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/primitives2/Text.tsx": {
+      "bytes": 1231,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives2/_createComponent.tsx",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/primitives2/index.ts": {
+      "bytes": 162,
+      "imports": [
+        {
+          "path": "src/primitives2/Button.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives2/Flex.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives2/Icon.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives2/Text.tsx",
           "kind": "import-statement"
         }
       ]
     },
     "src/Nav/NavButton.tsx": {
-      "bytes": 850,
+      "bytes": 438,
       "imports": [
         {
           "path": "node_modules/react/index.js",
           "kind": "import-statement"
         },
         {
-          "path": "node_modules/react-icons/hi/index.esm.js",
+          "path": "src/theme.ts",
           "kind": "import-statement"
         },
         {
-          "path": "src/primitives.tsx",
+          "path": "src/primitives2/index.ts",
           "kind": "import-statement"
         }
       ]
     },
     "src/Nav/NavButtonStack.tsx": {
-      "bytes": 552,
+      "bytes": 553,
       "imports": [
         {
           "path": "node_modules/react/index.js",
           "kind": "import-statement"
         },
         {
-          "path": "src/primitives.tsx",
+          "path": "src/primitives2/index.ts",
           "kind": "import-statement"
         },
         {
@@ -637,7 +701,7 @@
       ]
     },
     "src/Nav/Nav.desktop.tsx": {
-      "bytes": 728,
+      "bytes": 802,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -660,7 +724,11 @@
           "kind": "import-statement"
         },
         {
-          "path": "src/primitives.tsx",
+          "path": "src/primitives2/index.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
           "kind": "import-statement"
         }
       ]
@@ -675,7 +743,7 @@
       ]
     },
     "src/Nav/Nav.mobile.tsx": {
-      "bytes": 1441,
+      "bytes": 1637,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -686,7 +754,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "src/primitives.tsx",
+          "path": "src/primitives2/index.ts",
           "kind": "import-statement"
         },
         {
@@ -729,7 +797,7 @@
       ]
     },
     "src/Links.tsx": {
-      "bytes": 2259,
+      "bytes": 2272,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -744,7 +812,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "src/primitives.tsx",
+          "path": "src/primitives2/index.ts",
           "kind": "import-statement"
         },
         {
@@ -753,8 +821,17 @@
         }
       ]
     },
+    "node_modules/react-icons/fa/index.esm.js": {
+      "bytes": 1347361,
+      "imports": [
+        {
+          "path": "node_modules/react-icons/lib/esm/index.js",
+          "kind": "import-statement"
+        }
+      ]
+    },
     "src/pages/page.Home.tsx": {
-      "bytes": 1513,
+      "bytes": 2093,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -769,11 +846,15 @@
           "kind": "import-statement"
         },
         {
-          "path": "src/primitives.tsx",
+          "path": "src/primitives2/index.ts",
           "kind": "import-statement"
         },
         {
           "path": "src/Links.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-icons/fa/index.esm.js",
           "kind": "import-statement"
         }
       ]
@@ -809,7 +890,7 @@
       ]
     },
     "src/Resume/resume-elements.tsx": {
-      "bytes": 10318,
+      "bytes": 10319,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -832,13 +913,13 @@
           "kind": "import-statement"
         },
         {
-          "path": "src/primitives.tsx",
+          "path": "src/primitives2/index.ts",
           "kind": "import-statement"
         }
       ]
     },
     "src/Resume/Resume.desktop.tsx": {
-      "bytes": 2370,
+      "bytes": 2341,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -849,7 +930,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "src/primitives.tsx",
+          "path": "src/primitives2/index.ts",
           "kind": "import-statement"
         },
         {
@@ -867,7 +948,7 @@
       ]
     },
     "src/Resume/Resume.mobile.tsx": {
-      "bytes": 731,
+      "bytes": 693,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -875,10 +956,6 @@
         },
         {
           "path": "node_modules/pu2/style-lib/index.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "src/primitives.tsx",
           "kind": "import-statement"
         },
         {
@@ -896,7 +973,7 @@
       "imports": []
     },
     "src/pages/page.Career.tsx": {
-      "bytes": 837,
+      "bytes": 822,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -907,7 +984,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "src/primitives.tsx",
+          "path": "src/primitives2/index.ts",
           "kind": "import-statement"
         },
         {
@@ -929,7 +1006,7 @@
       ]
     },
     "src/pages/page.Life.tsx": {
-      "bytes": 3039,
+      "bytes": 2688,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -940,7 +1017,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "src/primitives.tsx",
+          "path": "src/primitives2/index.ts",
           "kind": "import-statement"
         },
         {
@@ -950,7 +1027,7 @@
       ]
     },
     "src/pages/page.Projects.tsx": {
-      "bytes": 3071,
+      "bytes": 3038,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -965,7 +1042,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "src/primitives.tsx",
+          "path": "src/primitives2/index.ts",
           "kind": "import-statement"
         },
         {
@@ -975,7 +1052,7 @@
       ]
     },
     "src/App.tsx": {
-      "bytes": 1430,
+      "bytes": 1431,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -1018,7 +1095,7 @@
           "kind": "import-statement"
         },
         {
-          "path": "src/primitives.tsx",
+          "path": "src/primitives2/index.ts",
           "kind": "import-statement"
         }
       ]
@@ -1054,7 +1131,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 12218788
+      "bytes": 13400362
     },
     "client/main.client.js": {
       "imports": [],
@@ -1089,7 +1166,7 @@
           "bytesInOutput": 279
         },
         "node_modules/tslib/tslib.js": {
-          "bytesInOutput": 16639
+          "bytesInOutput": 16634
         },
         "node_modules/pu2/style-lib/internal/utils.js": {
           "bytesInOutput": 447
@@ -1212,7 +1289,7 @@
           "bytesInOutput": 2336
         },
         "src/Nav/Nav.desktop.tsx": {
-          "bytesInOutput": 825
+          "bytesInOutput": 886
         },
         "node_modules/react-icons/lib/esm/index.js": {
           "bytesInOutput": 0
@@ -1236,34 +1313,49 @@
           "bytesInOutput": 753
         },
         "src/Nav/NavButtonStack.tsx": {
-          "bytesInOutput": 373
+          "bytesInOutput": 376
         },
-        "src/primitives.tsx": {
-          "bytesInOutput": 3379
+        "src/primitives2/Button.tsx": {
+          "bytesInOutput": 880
         },
         "src/theme.ts": {
           "bytesInOutput": 159
         },
-        "node_modules/react-icons/hi/index.esm.js": {
-          "bytesInOutput": 369
+        "src/primitives2/_createComponent.tsx": {
+          "bytesInOutput": 311
+        },
+        "src/primitives2/index.ts": {
+          "bytesInOutput": 0
+        },
+        "src/primitives2/Flex.tsx": {
+          "bytesInOutput": 51
+        },
+        "src/primitives2/Icon.tsx": {
+          "bytesInOutput": 251
+        },
+        "src/primitives2/Text.tsx": {
+          "bytesInOutput": 1100
         },
         "src/Nav/NavButton.tsx": {
-          "bytesInOutput": 573
+          "bytesInOutput": 439
         },
         "src/Nav/index.ts": {
           "bytesInOutput": 0
         },
         "src/Nav/Nav.mobile.tsx": {
-          "bytesInOutput": 1547
+          "bytesInOutput": 1863
         },
         "node_modules/react-icons/io/index.esm.js": {
           "bytesInOutput": 341
         },
         "src/pages/page.Home.tsx": {
-          "bytesInOutput": 2174
+          "bytesInOutput": 3339
         },
         "src/Links.tsx": {
-          "bytesInOutput": 2291
+          "bytesInOutput": 2326
+        },
+        "node_modules/react-icons/fa/index.esm.js": {
+          "bytesInOutput": 561
         },
         "src/pages/page.Career.tsx": {
           "bytesInOutput": 876
@@ -1272,28 +1364,28 @@
           "bytesInOutput": 3279
         },
         "src/Resume/resume-elements.tsx": {
-          "bytesInOutput": 14419
+          "bytesInOutput": 14423
         },
         "node_modules/react-icons/md/index.esm.js": {
           "bytesInOutput": 892
         },
         "src/Resume/resume-primitives.tsx": {
-          "bytesInOutput": 1920
+          "bytesInOutput": 1922
         },
         "src/Resume/Resume.mobile.tsx": {
-          "bytesInOutput": 1072
+          "bytesInOutput": 1074
         },
         "src/MediaHide.tsx": {
           "bytesInOutput": 90
         },
         "src/pages/page.Life.tsx": {
-          "bytesInOutput": 4631
+          "bytesInOutput": 3908
         },
         "src/pages/page.Projects.tsx": {
-          "bytesInOutput": 3852
+          "bytesInOutput": 3921
         }
       },
-      "bytes": 1063302
+      "bytes": 1063655
     }
   }
 }

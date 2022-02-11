@@ -1,11 +1,11 @@
 import { Box } from 'pu2/style-lib';
 import React from 'react';
-import { H2, H3, Li, P, Ul } from '../primitives';
+import { H3, Li, Para, Ul } from '../primitives2';
 import { Space } from '../theme';
 
 const Section = ({ children, title }) => (
 	<Box>
-		<H2>{title}</H2>
+		<H3>{title}</H3>
 		{children}
 	</Box>
 );
@@ -42,34 +42,26 @@ export const PageLife = () => (
 		</Section>
 
 		<Section title="From animal, to robot">
-			<P>
+			<Para>
 				I have deep respect for people who build things themselves. There's something about owning
 				your creation that's beautiful. As we move towards a greater level of abstraction we face the
 				danger of not remembering who we are. We must not forget ourselves across the vast digital
 				ocean. The joy of creation must not be lost!
-			</P>
-			<P>
+			</Para>
+			<Para>
 				As we abstract up the tree we must recontexualize who we are...just as we do in life as we
 				age. It's fractal-like.
-			</P>
-			<P>
+			</Para>
+			<Para>
 				Our analog human experience is touching hands with our digital creations. It's ok to be weird
 				because life is weird. It's the fire that keeps us going. Consciousness, the greatest mystery
 				alongside the Big Bang and black holes, is fundamentally paradoxical.
-			</P>
-			<P>
+			</Para>
+			<Para>
 				Everything boils down to mental models. When the state of your organism matches the state of
 				the local environment, you are in flow with the universe
-			</P>
+			</Para>
 		</Section>
-
-		<H2 pt={Space._7}>What got me into dev?</H2>
-		<P>Map editors...Warcraft 3 editor...UT2004 scripting...Starcraft. etc.</P>
-
-		<H2 pt={Space._7}>Why I write code</H2>
-		<P>For better or for worse, most people don't think like I do.</P>
-		<P>I think like a scientist. Skeptical by nature.</P>
-		<P>I try not to be someone I'm not. I try to maintain an honest character.</P>
 
 		<Section title="Favorite video games">
 			<Ul>
@@ -79,7 +71,7 @@ export const PageLife = () => (
 			</Ul>
 		</Section>
 
-		<H2 pt={Space._7}>My personal roadmap</H2>
+		<H3 pt={Space._7}>My personal roadmap</H3>
 		<Ul>
 			<Li>Work for an awesome company in Austin</Li>
 			<Li>Remember to take breaks throughout the day</Li>

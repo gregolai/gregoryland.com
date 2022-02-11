@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box } from 'pu2/style-lib';
 import { Link, useLocation } from 'react-router-dom';
-import { Flex, H3, Img } from './primitives';
+import { Flex, H3 } from './primitives2';
 import { Space } from './theme';
 
 type BoxProps = React.ComponentPropsWithRef<typeof Box>;
@@ -69,7 +69,8 @@ export const Links = ({ hideImg, includeHome, ...rest }: Props) => {
 				>
 					{!hideImg && (
 						<Box height="160px" bb="2px solid black" overflow="hidden">
-							<Img
+							<Box
+								as="img"
 								src={imgSrc}
 								objectFit="cover"
 								objectPosition="50% 50%"

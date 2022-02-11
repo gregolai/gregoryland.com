@@ -2,8 +2,7 @@ import React, { forwardRef } from 'react';
 import { Box } from 'pu2/style-lib';
 import { FontSize, Space } from './theme';
 import type { IconType } from 'react-icons';
-import { Link, LinkProps, useLocation } from 'react-router-dom';
-import { HiExternalLink } from 'react-icons/hi';
+import { Link, useLocation } from 'react-router-dom';
 
 type BoxProps = React.ComponentPropsWithRef<typeof Box>;
 
@@ -35,7 +34,7 @@ interface IconTextProps extends BoxProps {
 export const IconText = ({ children, Icon, IconRight, ...rest }: IconTextProps) => (
 	<Flex alignItems="center" {...rest}>
 		{Icon && <Box as={Icon} size={FontSize._3} mr={Space._4} />}
-		<Text fontFamily="Chakra Petch" fontSize={FontSize._3} fontWeight="600" lineHeight="1">
+		<Text fontFamily="Chakra Petch,system-ui" fontSize={FontSize._3} fontWeight="600" lineHeight="1">
 			{children}
 		</Text>
 		{IconRight && <Box as={IconRight} size={FontSize._3} ml={Space._4} />}
@@ -93,12 +92,6 @@ export const InternalLinkButton = ({ newTab, to, ...rest }: LinkButtonProps) => 
 export const ExternalLinkButton = ({ newTab, to, ...rest }: LinkButtonProps) => {
 	return <Button as="a" textDecoration="none" href={to} to={to} {...rest} {...newTabProps(newTab)} />;
 };
-
-export const Anchor = (props: BoxProps) => <Box {...props} as="a" />;
-export const AnchorButton = (props: BoxProps) => <Button {...props} as="a" textDecoration="none" />;
-export const AnchorButtonNewTab = (props: BoxProps) => (
-	<AnchorButton {...props} target="_blank" rel="noopener noreferrer" />
-);
 
 export const H1 = (props: BoxProps) => (
 	<Text {...props} as="h1" fontFamily="Chakra Petch" fontSize={FontSize._5} />

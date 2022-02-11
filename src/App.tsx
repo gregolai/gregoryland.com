@@ -10,7 +10,7 @@ import { PageCareer } from './pages/page.Career';
 import { PageLife } from './pages/page.Life';
 import { PageProjects } from './pages/page.Projects';
 import { MediaHide } from './MediaHide';
-import { Flex } from './primitives';
+import { Flex } from './primitives2';
 
 const navWidth = '180px';
 

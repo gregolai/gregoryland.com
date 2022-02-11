@@ -13,7 +13,7 @@ import {
 	SubHeading
 } from './resume-primitives';
 import { FontSize, Palette, Space } from './resume-theme';
-import { Flex } from '../primitives';
+import { Flex } from '../primitives2';
 
 const border = `2px solid ${Palette.darkest}`;
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box } from 'pu2/style-lib';
 import { AiFillGithub } from 'react-icons/ai';
-import { ExternalLinkButton, Flex, H3, IconText, Img, P } from '../primitives';
+import { Flex, H3, Icon, LinkButton, Para, Span } from '../primitives2';
 
 import { Space } from '../theme';
 
@@ -15,17 +15,18 @@ interface ProjectProps {
 const Project = ({ children, github, playSrc, title }: ProjectProps) => (
 	<Box py={Space._5}>
 		<H3>{title}</H3>
-		<P>{children}</P>
-		<Flex alignItems="center">
+		<Para>{children}</Para>
+		<Flex alignItems="stretch">
 			{playSrc && (
-				<ExternalLinkButton to={playSrc}>
-					<IconText>Open in new tab</IconText>
-				</ExternalLinkButton>
+				<LinkButton newTab to={playSrc}>
+					<Span>Open in new tab</Span>
+				</LinkButton>
 			)}
 			{github && (
-				<ExternalLinkButton to={github} ml={playSrc && Space._6}>
-					<IconText Icon={AiFillGithub}>View code</IconText>
-				</ExternalLinkButton>
+				<LinkButton newTab to={github}>
+					<Icon as={AiFillGithub} mr={Space._5} />
+					<Span>View code</Span>
+				</LinkButton>
 			)}
 		</Flex>
 	</Box>
