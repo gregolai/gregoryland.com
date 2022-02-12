@@ -3,6 +3,33 @@ import { Box } from 'pu2/style-lib';
 import { FontSize, LetterSpacing, LineHeight, Palette, Space } from '../resume-theme';
 import type { BoxProps } from 'pu2/style-lib/browser/Box';
 
+const border = `2px solid ${Palette.darkest}`;
+
+export const HR = (props: BoxProps) => <Box bb={border} mt="-1px" {...props} />;
+
+export const Diamond = (props: BoxProps) => (
+	<Box
+		position="absolute"
+		left="-1px"
+		width="8px"
+		height="8px"
+		bg={Palette.darkest}
+		transform="translateX(-50%) rotateZ(45deg)"
+		{...props}
+	/>
+);
+
+// "Gregory" and "Dalton"
+export const NameHeading = (props: BoxProps) => (
+	<Box
+		color={Palette.darkest}
+		{...props}
+		fontSize={FontSize._39px}
+		letterSpacing={LetterSpacing._4px}
+		textTransform="uppercase"
+	/>
+);
+
 // Job / Contact label
 export const SmallHeading = (props: BoxProps) => (
 	<Box
@@ -38,6 +65,10 @@ export const SubHeading = (props: BoxProps) => (
 		letterSpacing="0px"
 		lineHeight={LineHeight._18px}
 	/>
+);
+
+export const Para = (props: BoxProps) => (
+	<Box {...props} fontSize={FontSize._14px} letterSpacing="0px" lineHeight={LineHeight._20px} />
 );
 
 interface SectionFrameProps extends BoxProps {

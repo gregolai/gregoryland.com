@@ -16,6 +16,7 @@ export const Button = forwardRef(({ invert, ...rest }: ButtonProps, ref) => {
 	};
 	return (
 		<Box
+			ref={ref}
 			alignItems="center"
 			as="button"
 			b="2px solid black"

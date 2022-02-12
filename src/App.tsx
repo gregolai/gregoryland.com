@@ -9,6 +9,7 @@ import { PageHome } from './pages/page.Home';
 import { PageCareer } from './pages/page.Career';
 import { PageLife } from './pages/page.Life';
 import { PageProjects } from './pages/page.Projects';
+import { PageResumePrint } from './pages/page.ResumePrint';
 import { MediaHide } from './MediaHide';
 import { Flex } from './primitives';
 import type { BoxProps } from 'pu2/style-lib/browser/Box';
@@ -51,6 +52,7 @@ const PageFrame = () => (
 export const App = () => {
 	return (
 		<Routes>
+			<Route path="/resume-print" element={<PageResumePrint />} />
 			<Route path="/" element={<PageFrame />}>
 				<Route index element={<PageHome />} />
 				<Route path="career" element={<PageCareer />} />

@@ -1,8 +1,7 @@
 import { Box } from 'pu2/style-lib';
 import React from 'react';
 import { Flex } from '../primitives';
-import { ResumeDesktop } from '../Resume/Resume.desktop';
-import { ResumeMobile } from '../Resume/Resume.mobile';
+import { ResumeDesktop, ResumeMobile } from '../Resume';
 import { Breakpoint, mediaGreaterThan, mediaLessThan, Space } from '../theme';
 import { MediaHide } from '../MediaHide';
 
