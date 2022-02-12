@@ -1,6 +1,6 @@
 import { Box } from 'pu2/style-lib';
 import React from 'react';
-import { Flex } from '../primitives2';
+import { Flex } from '../primitives';
 import { ResumeDesktop } from '../Resume/Resume.desktop';
 import { ResumeMobile } from '../Resume/Resume.mobile';
 import { Breakpoint, mediaGreaterThan, mediaLessThan, Space } from '../theme';
@@ -16,7 +16,7 @@ export const PageCareer = () => (
 					<Box
 						//border="2px solid black"
 						boxShadow="5px 5px 3px rgba(0,0,0,0.3)"
-						maxWidth="1000px"
+						maxWidth="980px"
 					>
 						<ResumeDesktop />
 					</Box>

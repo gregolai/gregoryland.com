@@ -1,14 +1,12 @@
 import { Box } from 'pu2/style-lib';
 import type { BoxProps } from 'pu2/style-lib/browser/Box';
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import { externalLinks, internalLinks } from './links';
 import { NavButtonStack } from './NavButtonStack';
-import { Flex, H1 } from '../primitives2';
+import { Flex, H1 } from '../primitives';
 import { Space } from '../theme';
 
 export const NavDesktop = (props: BoxProps) => {
-	const loc = useLocation();
 	return (
 		<Flex
 			as="nav"

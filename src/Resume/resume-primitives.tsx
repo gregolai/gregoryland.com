@@ -1,9 +1,7 @@
 import React from 'react';
-import { Box, useStyle } from 'pu2/style-lib';
+import { Box } from 'pu2/style-lib';
 import { FontSize, LetterSpacing, LineHeight, Palette } from './resume-theme';
 import type { BoxProps } from 'pu2/style-lib/browser/Box';
-
-export const Icon = ({ Comp, ...rest }: any) => <Comp className={useStyle(rest)} />;
 
 export const Diamond = (props: BoxProps) => (
 	<Box

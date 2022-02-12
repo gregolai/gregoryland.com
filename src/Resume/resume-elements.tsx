@@ -1,19 +1,9 @@
 import { Box } from 'pu2/style-lib';
 import type { BoxProps } from 'pu2/style-lib/browser/Box';
 import React from 'react';
-import type { IconType } from 'react-icons';
-import { MdFace, MdOutlineEmail } from 'react-icons/md';
-import {
-	Diamond,
-	Icon,
-	MediumHeading,
-	NameHeading,
-	Para,
-	SmallHeading,
-	SubHeading
-} from './resume-primitives';
+import { Diamond, MediumHeading, NameHeading, Para, SmallHeading, SubHeading } from './resume-primitives';
 import { FontSize, Palette, Space } from './resume-theme';
-import { Flex } from '../primitives2';
+import { Flex } from '../primitives';
 
 const border = `2px solid ${Palette.darkest}`;
 
@@ -34,38 +24,6 @@ export const PrimaryRole = ({ pl }: Pick<BoxProps, 'pl'>) => (
 	<MediumHeading pl={pl} pt={Space._18px} color={Palette.dark}>
 		Software Engineer
 	</MediumHeading>
-);
-
-interface ContactProps {
-	IconComp: IconType;
-	label: string;
-	text: string;
-}
-const Contact = ({ IconComp, label, text }: ContactProps) => (
-	<Flex
-		py={Space._18px}
-		alignItems="stretch"
-		bb="2px solid white"
-		css={{
-			':first-of-type': { pt: '0px' },
-			':last-of-type': { bb: 'none', pb: '0px' }
-		}}
-	>
-		<Icon Comp={IconComp} w={Space._30px} h={Space._30px} color="white" />
-
-		<Flex flex="1" pl={Space._18px} flexDirection="column" justifyContent="space-between">
-			<SmallHeading color="white">{label}</SmallHeading>
-			<Box color="white">{text}</Box>
-		</Flex>
-	</Flex>
-);
-
-interface ContactsProps extends Pick<BoxProps, 'px' | 'py'> {}
-export const Contacts = ({ px, py }: ContactsProps) => (
-	<Box bg={Palette.darkest} px={px} py={py}>
-		<Contact IconComp={MdOutlineEmail} label="Email" text="gregolai@gmail.com" />
-		<Contact IconComp={MdFace} label="Website" text="gregoryland.com" />
-	</Box>
 );
 
 interface SkillProps {
@@ -140,15 +98,6 @@ export const CareerSummary = (props: BoxProps) => (
 			This is my career summary. It's meant to summarize my career. What have I learnt? What are my
 			goals? Why do I do what I do? It should be very short.
 		</Para>
-	</LeftSection>
-);
-
-export const Education = (props: BoxProps) => (
-	<LeftSection {...props} title="Education">
-		<SmallHeading>2009</SmallHeading>
-		<SmallHeading>Bachelor of Science</SmallHeading>
-		<SmallHeading>Computer Science</SmallHeading>
-		<SubHeading>California State University, Long Beach</SubHeading>
 	</LeftSection>
 );
 

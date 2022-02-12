@@ -1,7 +1,8 @@
 import type { IconType } from 'react-icons';
-import { AiFillGithub, AiFillHome, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
+import { AiFillGithub, AiOutlineHome, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
+import { FaRegKeyboard } from 'react-icons/fa';
 import { BiBuildings } from 'react-icons/bi';
-import { GiComputerFan, GiEnergyBreath } from 'react-icons/gi';
+import { GiEnergyBreath } from 'react-icons/gi';
 
 export interface NavLink {
 	label: string;
@@ -14,7 +15,7 @@ export const internalLinks: NavLink[] = [
 	{
 		label: 'Home',
 		to: '/',
-		Icon: AiFillHome
+		Icon: AiOutlineHome
 	},
 	{
 		label: 'Career',
@@ -24,7 +25,7 @@ export const internalLinks: NavLink[] = [
 	{
 		label: 'Projects',
 		to: '/projects',
-		Icon: GiComputerFan
+		Icon: FaRegKeyboard
 	},
 	{
 		label: 'Life',

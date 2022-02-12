@@ -1,9 +1,8 @@
 import React from 'react';
 import { Box } from 'pu2/style-lib';
 import { AiFillGithub } from 'react-icons/ai';
-import { Flex, H3, Icon, LinkButton, Para, Span } from '../primitives2';
-
-import { Space } from '../theme';
+import { Flex, H3, Icon, LinkButton, Para, Span } from '../primitives';
+import { Breakpoint, mediaLessThan, Space } from '../theme';
 
 interface ProjectProps {
 	children: React.ReactNode;
@@ -13,22 +12,62 @@ interface ProjectProps {
 }
 
 const Project = ({ children, github, playSrc, title }: ProjectProps) => (
-	<Box py={Space._5}>
-		<H3>{title}</H3>
-		<Para>{children}</Para>
-		<Flex alignItems="stretch">
-			{playSrc && (
-				<LinkButton newTab to={playSrc}>
-					<Span>Open in new tab</Span>
-				</LinkButton>
-			)}
-			{github && (
-				<LinkButton newTab to={github}>
-					<Icon as={AiFillGithub} mr={Space._5} />
-					<Span>View code</Span>
-				</LinkButton>
-			)}
+	<Box
+		b="2px solid black"
+		my={Space._6}
+		py={Space._6}
+		px={Space._9}
+		bg="#F7F2E9"
+		css={{
+			[mediaLessThan(Breakpoint.tablet)]: {
+				px: Space._5,
+				py: Space._5
+			}
+		}}
+	>
+		<Flex
+			alignItems="center"
+			css={{
+				[mediaLessThan(Breakpoint.tablet)]: {
+					alignItems: 'flex-start'
+				}
+			}}
+		>
+			<H3 flex="1">{title}</H3>
+			<Flex
+				alignItems="stretch"
+				pl={Space._5}
+				css={{
+					[mediaLessThan(Breakpoint.tablet)]: {
+						flexDirection: 'column'
+					}
+				}}
+			>
+				{playSrc && (
+					<LinkButton newTab to={playSrc}>
+						<Span>Open in new tab</Span>
+					</LinkButton>
+				)}
+				{github && (
+					<LinkButton
+						newTab
+						to={github}
+						ml={playSrc && Space._5}
+						css={{
+							[mediaLessThan(Breakpoint.tablet)]: {
+								ml: playSrc && '0px',
+								mt: playSrc && Space._5
+							}
+						}}
+					>
+						<Icon as={AiFillGithub} mr={Space._5} />
+						<Span>View code</Span>
+					</LinkButton>
+				)}
+			</Flex>
 		</Flex>
+
+		<Para>{children}</Para>
 	</Box>
 );
 

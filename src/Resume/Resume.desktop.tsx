@@ -1,20 +1,19 @@
 // @ts-nocheck
 import React from 'react';
 import { Box } from 'pu2/style-lib';
-import { Flex } from '../primitives2';
+import { Flex } from '../primitives';
 import { Palette, Space } from './resume-theme';
 import {
-	Contacts,
 	Skills,
 	ResumeFrame,
 	ResumeProfileImg,
 	CareerSummary,
-	Education,
 	WorkExperience,
 	PrimaryRole,
 	FirstName,
 	LastName
 } from './resume-elements';
+import { ContactInfo, Education } from './sections';
 import { Diamond } from './resume-primitives';
 
 /*
@@ -67,14 +66,14 @@ export const ResumeDesktop = () => (
 		<PageSplit
 			left={
 				<Flex pt={Space._18px}>
-					<CareerSummary flex="1" />
+					{/* <CareerSummary flex="1" /> */}
+					<Skills flex="1" /*w="260px" float="right"  mb={Space._18px} ml={Space._30px}*/ />
 					<Education flex="1" pl={Space._30px} />
 				</Flex>
 			}
-			right={<Contacts px={Space._30px} py={Space._18px} />}
+			right={<ContactInfo />}
 		/>
 		<Box pt={Space._30px}>
-			<Skills w="260px" float="right" mb={Space._18px} ml={Space._30px} />
 			<WorkExperience />
 		</Box>
 	</ResumeFrame>

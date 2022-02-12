@@ -1,6 +1,6 @@
 import { Box } from 'pu2/style-lib';
 import React from 'react';
-import { H3, Li, Para, Ul } from '../primitives2';
+import { H3, Li, Para, Ul } from '../primitives';
 import { Space } from '../theme';
 
 const Section = ({ children, title }) => (
@@ -71,14 +71,15 @@ export const PageLife = () => (
 			</Ul>
 		</Section>
 
-		<H3 pt={Space._7}>My personal roadmap</H3>
-		<Ul>
-			<Li>Work for an awesome company in Austin</Li>
-			<Li>Remember to take breaks throughout the day</Li>
-			<Li>Expand my personal utility library</Li>
-			<Li>Work on a small project that people find useful</Li>
-			<Li>Learn some "big picture" things</Li>
-			<Li>Get better at math</Li>
-		</Ul>
+		<Section title="My roadmap">
+			<Ul>
+				<Li>Work for an awesome company in Austin</Li>
+				<Li>Remember to take breaks throughout the day</Li>
+				<Li>Expand my personal utility library</Li>
+				<Li>Work on a small project that people find useful</Li>
+				<Li>Learn some "big picture" things</Li>
+				<Li>Get better at math</Li>
+			</Ul>
+		</Section>
 	</Box>
 );

@@ -1,24 +1,11 @@
 import React from 'react';
 import { Box } from 'pu2/style-lib';
-import { Link, useLocation } from 'react-router-dom';
-import { Flex, H3 } from './primitives2';
-import { Space } from './theme';
+import { Link } from 'react-router-dom';
+import { Flex, H3 } from './primitives';
+import { Breakpoint, mediaLessThan, Space } from './theme';
+import type { BoxProps } from 'pu2/style-lib/browser/Box';
 
-type BoxProps = React.ComponentPropsWithRef<typeof Box>;
-
-interface LinkProps {
-	imgSrc: string;
-	text: string;
-	to: string;
-}
-
-const homeLink: LinkProps = {
-	imgSrc: '',
-	text: 'Home',
-	to: '/'
-};
-
-export const links: LinkProps[] = [
+const links = [
 	{
 		imgSrc: 'https://images.unsplash.com/photo-1536329583941-14287ec6fc4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
 		text: 'Career',
@@ -36,19 +23,10 @@ export const links: LinkProps[] = [
 	}
 ];
 
-type Props = BoxProps & {
-	hideImg?: boolean;
-	includeHome?: boolean;
-};
-
-export const Links = ({ hideImg, includeHome, ...rest }: Props) => {
-	const loc = useLocation();
-
-	const linksToRender = includeHome ? [homeLink, ...links] : links;
-
+export const Links = ({ ...rest }: BoxProps) => {
 	return (
-		<Flex {...rest} as="nav">
-			{linksToRender.map(({ to, imgSrc, text }) => (
+		<Flex {...rest}>
+			{links.map(({ to, imgSrc, text }) => (
 				<Box
 					key={to}
 					as={Link}
@@ -67,26 +45,29 @@ export const Links = ({ hideImg, includeHome, ...rest }: Props) => {
 						}
 					}}
 				>
-					{!hideImg && (
-						<Box height="160px" bb="2px solid black" overflow="hidden">
-							<Box
-								as="img"
-								src={imgSrc}
-								objectFit="cover"
-								objectPosition="50% 50%"
-								width="100%"
-								height="100%"
-								transition="transform 0.2s ease-in-out"
-							/>
-						</Box>
-					)}
+					<Box height="160px" bb="2px solid black" overflow="hidden">
+						<Box
+							as="img"
+							src={imgSrc}
+							objectFit="cover"
+							objectPosition="50% 50%"
+							width="100%"
+							height="100%"
+							transition="transform 0.2s ease-in-out"
+						/>
+					</Box>
 					<H3
 						whiteSpace="nowrap"
 						py={Space._1}
 						px={Space._7}
 						css={{
-							background: loc.pathname === to ? 'black' : 'white',
-							color: loc.pathname === to ? 'white' : 'black'
+							background: 'white',
+							color: 'black',
+
+							[mediaLessThan(Breakpoint.smallScreen)]: {
+								px: '0px',
+								textAlign: 'center'
+							}
 						}}
 					>
 						{text}

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Box } from 'pu2/style-lib';
-import { Flex, Li, P, Text, Ul } from '../../primitives';
+import { Flex, Li, Para, Span, Ul } from '../../primitives';
 import { LineHeight, Space } from '../../theme';
 
 const HeaderContact = ({ label, text }: { label: string; text: string }) => (
 	<Flex alignItems="center" justifyContent="space-between">
-		<Text>{label}</Text>
-		<Text textAlign="right">{text}</Text>
+		<Span>{label}</Span>
+		<Span textAlign="right">{text}</Span>
 	</Flex>
 );
 
@@ -28,20 +28,20 @@ const Job = ({
 	<Box borderTop="3px solid black">
 		<Flex justifyContent="space-between" py={Space._5} px={Space._7}>
 			<Box>
-				<Text display="block" textTransform="uppercase" fontWeight="600">
+				<Span display="block" textTransform="uppercase" fontWeight="600">
 					{role}
-				</Text>
+				</Span>
 				<Flex pt={Space._3} justifyContent="space-between">
-					<Text>{where}</Text>
-					<Text pl={Space._7} whiteSpace="nowrap">
+					<Span>{where}</Span>
+					<Span pl={Space._7} whiteSpace="nowrap">
 						{city}
-					</Text>
+					</Span>
 				</Flex>
 			</Box>
 
-			<Text textAlign="right" textTransform="uppercase" fontWeight="600">
+			<Span textAlign="right" textTransform="uppercase" fontWeight="600">
 				{from} - {to}
-			</Text>
+			</Span>
 		</Flex>
 		<Box pb={Space._6} px={Space._5}>
 			{children}
@@ -51,7 +51,7 @@ const Job = ({
 
 const LiP = ({ children }: { children: React.ReactNode }) => (
 	<Li lineHeight={LineHeight._3} pb={Space._2}>
-		<P>{children}</P>
+		<Para>{children}</Para>
 	</Li>
 );
 
@@ -68,21 +68,21 @@ export const Resume = () => (
 	>
 		<Flex justifyContent="space-between">
 			<Box>
-				<Text>Gregory Dalton</Text>
+				<Span>Gregory Dalton</Span>
 
 				{/* SKILLS */}
 				<Ul>
 					<Li>
-						<Text>Typescript</Text>
+						<Span>Typescript</Span>
 					</Li>
 					<Li>
-						<Text>Javascript</Text>
+						<Span>Javascript</Span>
 					</Li>
 					<Li>
-						<Text>Node</Text>
+						<Span>Node</Span>
 					</Li>
 					<Li>
-						<Text>C#</Text>
+						<Span>C#</Span>
 					</Li>
 				</Ul>
 			</Box>
@@ -95,13 +95,13 @@ export const Resume = () => (
 				</Box>
 				{/* EDUCATION */}
 				<Box borderTop="2px solid black" pt={Space._2}>
-					<Text display="block">B.S. Computer Science</Text>
-					<Text display="block">California State University, Long Beach</Text>
-					<Text display="block" pb={Space._4}>
+					<Span display="block">B.S. Computer Science</Span>
+					<Span display="block">California State University, Long Beach</Span>
+					<Span display="block" pb={Space._4}>
 						Class of 2009
-					</Text>
-					<Text display="block">- Programming team</Text>
-					<Text display="block">- Tau Beta Pi Engineering Honor Society</Text>
+					</Span>
+					<Span display="block">- Programming team</Span>
+					<Span display="block">- Tau Beta Pi Engineering Honor Society</Span>
 				</Box>
 			</Box>
 		</Flex>
