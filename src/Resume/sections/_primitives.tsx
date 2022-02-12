@@ -59,12 +59,12 @@ export const MediumHeading = (props: BoxProps) => (
 // Company name / College name
 export const SubHeading = (props: BoxProps) => (
 	<Box
-		color={Palette.dark}
+		color={Palette.darker}
 		{...props}
 		fontSize={FontSize._14px}
 		fontWeight="400"
 		letterSpacing="0px"
-		lineHeight={LineHeight._18px}
+		lineHeight={LineHeight._20px}
 	/>
 );
 

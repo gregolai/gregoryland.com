@@ -39,6 +39,6 @@ export const ResumeDesktop = () => (
 				<ContactInfo />
 			</Right>
 		</Flex>
-		<WorkExperience pt={Space._30px} />
+		<WorkExperience />
 	</ResumeFrame>
 );

@@ -872,7 +872,7 @@
       "imports": []
     },
     "src/Resume/sections/_primitives.tsx": {
-      "bytes": 2085,
+      "bytes": 2087,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -944,10 +944,18 @@
       ]
     },
     "src/Resume/sections/Education.tsx": {
-      "bytes": 474,
+      "bytes": 627,
       "imports": [
         {
           "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives/index.ts",
           "kind": "import-statement"
         },
         {
@@ -1087,7 +1095,7 @@
       ]
     },
     "src/Resume/Resume.desktop.tsx": {
-      "bytes": 1572,
+      "bytes": 1555,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -1325,7 +1333,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 13402432
+      "bytes": 13402641
     },
     "client/main.client.js": {
       "imports": [],
@@ -1555,13 +1563,13 @@
           "bytesInOutput": 875
         },
         "src/Resume/Resume.desktop.tsx": {
-          "bytesInOutput": 1740
+          "bytesInOutput": 1712
         },
         "src/Resume/sections/CareerSummary.tsx": {
           "bytesInOutput": 418
         },
         "src/Resume/sections/_primitives.tsx": {
-          "bytesInOutput": 2409
+          "bytesInOutput": 2411
         },
         "src/Resume/sections/index.ts": {
           "bytesInOutput": 0
@@ -1573,7 +1581,7 @@
           "bytesInOutput": 892
         },
         "src/Resume/sections/Education.tsx": {
-          "bytesInOutput": 578
+          "bytesInOutput": 822
         },
         "src/Resume/sections/NameAndRole.tsx": {
           "bytesInOutput": 1580
@@ -1609,7 +1617,7 @@
           "bytesInOutput": 154
         }
       },
-      "bytes": 1060819
+      "bytes": 1061037
     }
   }
 }
