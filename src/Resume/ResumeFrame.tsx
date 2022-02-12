@@ -7,7 +7,7 @@ interface ResumeFrameProps extends BoxProps {
 	children: React.ReactNode;
 }
 export const ResumeFrame = ({ children, ...rest }: ResumeFrameProps) => (
-	<Box {...rest} position="relative" bg={Palette.bg} lineHeight="1" fontFamily="system-ui,sans-serif">
+	<Box bg={Palette.bg} lineHeight="1" fontFamily="system-ui,sans-serif" {...rest}>
 		{children}
 	</Box>
 );

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Space } from './resume-theme';
-import { ResumeFrame } from './resume-elements';
 import type { BoxProps } from 'pu2/style-lib/browser/Box';
 import {
 	CareerSummary,
@@ -11,6 +10,7 @@ import {
 	Skills,
 	WorkExperience
 } from './sections';
+import { ResumeFrame } from './ResumeFrame';
 
 export const ResumeMobile = (props: BoxProps) => (
 	<ResumeFrame p={Space._18px} {...props}>

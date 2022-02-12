@@ -3,8 +3,8 @@ import React from 'react';
 import { Box } from 'pu2/style-lib';
 import { Flex } from '../primitives';
 import { Space } from './resume-theme';
-import { ResumeFrame } from './resume-elements';
 import { ContactInfo, Education, NameAndRole, ProfileImage, Skills, WorkExperience } from './sections';
+import { ResumeFrame } from './ResumeFrame';
 
 /*
 	Copy of:
