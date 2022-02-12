@@ -2,6 +2,7 @@ import React from 'react';
 import { Box } from 'pu2/style-lib';
 import { FontSize, LetterSpacing, LineHeight, Palette, Space } from '../resume-theme';
 import type { BoxProps } from 'pu2/style-lib/browser/Box';
+import { mediaLessThan, Breakpoint } from '../../theme';
 
 const border = `2px solid ${Palette.darkest}`;
 
@@ -78,6 +79,15 @@ interface SectionFrameProps extends BoxProps {
 export const SectionFrame = ({ title, children, ...rest }: SectionFrameProps) => (
 	<Box {...rest}>
 		<MediumHeading>{title}</MediumHeading>
-		<Box pt={Space._18px}>{children}</Box>
+		<Box
+			pt={Space._18px}
+			css={{
+				[mediaLessThan(Breakpoint.tablet)]: {
+					pt: Space._8px
+				}
+			}}
+		>
+			{children}
+		</Box>
 	</Box>
 );

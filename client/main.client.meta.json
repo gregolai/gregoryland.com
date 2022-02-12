@@ -872,7 +872,7 @@
       "imports": []
     },
     "src/Resume/sections/_primitives.tsx": {
-      "bytes": 1931,
+      "bytes": 2085,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -884,6 +884,10 @@
         },
         {
           "path": "src/Resume/resume-theme.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
           "kind": "import-statement"
         }
       ]
@@ -991,14 +995,10 @@
       ]
     },
     "src/Resume/sections/Skills.tsx": {
-      "bytes": 1530,
+      "bytes": 658,
       "imports": [
         {
           "path": "node_modules/react/index.js",
-          "kind": "import-statement"
-        },
-        {
-          "path": "node_modules/pu2/style-lib/index.js",
           "kind": "import-statement"
         },
         {
@@ -1007,10 +1007,6 @@
         },
         {
           "path": "src/Resume/sections/_primitives.tsx",
-          "kind": "import-statement"
-        },
-        {
-          "path": "src/primitives/index.ts",
           "kind": "import-statement"
         }
       ]
@@ -1329,7 +1325,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 13403928
+      "bytes": 13402432
     },
     "client/main.client.js": {
       "imports": [],
@@ -1565,7 +1561,7 @@
           "bytesInOutput": 418
         },
         "src/Resume/sections/_primitives.tsx": {
-          "bytesInOutput": 2311
+          "bytesInOutput": 2409
         },
         "src/Resume/sections/index.ts": {
           "bytesInOutput": 0
@@ -1586,7 +1582,7 @@
           "bytesInOutput": 477
         },
         "src/Resume/sections/Skills.tsx": {
-          "bytesInOutput": 2650
+          "bytesInOutput": 598
         },
         "src/Resume/sections/WorkExperience.tsx": {
           "bytesInOutput": 7966
@@ -1613,7 +1609,7 @@
           "bytesInOutput": 154
         }
       },
-      "bytes": 1062773
+      "bytes": 1060819
     }
   }
 }

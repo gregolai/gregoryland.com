@@ -30892,7 +30892,7 @@ var import_server3 = __toESM(require_server3());
 
 // src/App.tsx
 var import_react26 = __toESM(require_react());
-var import_style_lib19 = __toESM(require_style_lib());
+var import_style_lib18 = __toESM(require_style_lib());
 var import_react_router_dom5 = __toESM(require_main3());
 
 // src/Nav/Nav.desktop.tsx
@@ -31334,16 +31334,16 @@ var BigGrid = () => {
   }));
 };
 var PageHome = () => /* @__PURE__ */ import_react10.default.createElement(import_style_lib7.Box, {
-  p: "18px" /* _6 */
+  p: "36px" /* _8 */
 }, /* @__PURE__ */ import_react10.default.createElement(BigGrid, null));
 
 // src/pages/page.Career.tsx
-var import_style_lib16 = __toESM(require_style_lib());
+var import_style_lib15 = __toESM(require_style_lib());
 var import_react22 = __toESM(require_react());
 
 // src/Resume/Resume.desktop.tsx
 var import_react20 = __toESM(require_react());
-var import_style_lib15 = __toESM(require_style_lib());
+var import_style_lib14 = __toESM(require_style_lib());
 
 // src/Resume/sections/CareerSummary.tsx
 var import_react12 = __toESM(require_react());
@@ -31404,7 +31404,12 @@ var Para2 = (props) => /* @__PURE__ */ import_react11.default.createElement(impo
 var SectionFrame = (_a) => {
   var _b = _a, { title, children } = _b, rest = __objRest(_b, ["title", "children"]);
   return /* @__PURE__ */ import_react11.default.createElement(import_style_lib8.Box, __spreadValues({}, rest), /* @__PURE__ */ import_react11.default.createElement(MediumHeading, null, title), /* @__PURE__ */ import_react11.default.createElement(import_style_lib8.Box, {
-    pt: "18px" /* _18px */
+    pt: "18px" /* _18px */,
+    css: {
+      [mediaLessThan(768 /* tablet */)]: {
+        pt: "8px" /* _8px */
+      }
+    }
   }, children));
 };
 
@@ -31515,68 +31520,28 @@ var ProfileImage = (props) => /* @__PURE__ */ import_react16.default.createEleme
 
 // src/Resume/sections/Skills.tsx
 var import_react17 = __toESM(require_react());
-var import_style_lib12 = __toESM(require_style_lib());
-var border2 = `2px solid ${"#303030" /* darkest */}`;
-var Skill = ({ name, value }) => /* @__PURE__ */ import_react17.default.createElement(import_style_lib12.Box, {
-  pt: "18px" /* _18px */,
-  css: { ":first-of-type": { pt: "0px" } }
-}, /* @__PURE__ */ import_react17.default.createElement(import_style_lib12.Box, {
-  bg: "#D3D3D3" /* lighter */,
-  overflow: "hidden"
-}, /* @__PURE__ */ import_react17.default.createElement(import_style_lib12.Box, {
-  h: "12px" /* _12px */,
-  bg: "#A9A9A9" /* light */,
-  w: `${value * 10}%`
-})), /* @__PURE__ */ import_react17.default.createElement(import_style_lib12.Box, {
-  textAlign: "center",
-  fontSize: "14px" /* _14px */,
-  pt: "4px" /* _4px */
-}, name));
-var HideVerticalStubHack = (props) => /* @__PURE__ */ import_react17.default.createElement(import_style_lib12.Box, __spreadProps(__spreadValues({}, props), {
-  position: "absolute",
-  bg: "#FAFAFA" /* bg */,
-  w: "4px",
-  h: "8px"
-}));
-var Skills = (props) => /* @__PURE__ */ import_react17.default.createElement(import_style_lib12.Box, __spreadValues({
-  position: "relative"
-}, props), /* @__PURE__ */ import_react17.default.createElement(HideVerticalStubHack, null), /* @__PURE__ */ import_react17.default.createElement(HideVerticalStubHack, {
-  right: "0px"
-}), /* @__PURE__ */ import_react17.default.createElement(import_style_lib12.Box, {
-  bx: border2,
-  bb: border2
-}, /* @__PURE__ */ import_react17.default.createElement(Flex, {
-  position: "relative",
-  alignItems: "center"
-}, /* @__PURE__ */ import_react17.default.createElement(Diamond, null), /* @__PURE__ */ import_react17.default.createElement(MediumHeading, {
-  px: "30px" /* _30px */
-}, "Skills"), /* @__PURE__ */ import_react17.default.createElement(Flex, {
-  position: "relative",
-  flex: "1",
-  alignItems: "center"
-}, /* @__PURE__ */ import_react17.default.createElement(Diamond, null), /* @__PURE__ */ import_react17.default.createElement(HR, {
-  w: "100%"
-}))), /* @__PURE__ */ import_react17.default.createElement(import_style_lib12.Box, {
-  px: "30px" /* _30px */,
-  py: "18px" /* _18px */
-}, /* @__PURE__ */ import_react17.default.createElement(Skill, {
-  name: "Javascript",
-  value: 9
-}), /* @__PURE__ */ import_react17.default.createElement(Skill, {
-  name: "Typescript",
-  value: 8
-}), /* @__PURE__ */ import_react17.default.createElement(Skill, {
-  name: "React",
-  value: 8
-}), /* @__PURE__ */ import_react17.default.createElement(Skill, {
-  name: "C#, C++, Backend",
-  value: 6
-}))));
+var skills = [
+  { name: "Javascript" },
+  { name: "Typescript" },
+  { name: "React" },
+  { name: "NodeJS" },
+  { name: "C#" },
+  { name: "C++" }
+];
+var Skills = (props) => /* @__PURE__ */ import_react17.default.createElement(SectionFrame, __spreadProps(__spreadValues({}, props), {
+  title: "Skills"
+}), skills.map((skill) => /* @__PURE__ */ import_react17.default.createElement(SmallHeading, {
+  key: skill.name,
+  display: "inline-block",
+  color: "#303030" /* darkest */,
+  mr: "18px" /* _18px */,
+  mb: "4px" /* _4px */
+}, skill.name)));
 
 // src/Resume/sections/WorkExperience.tsx
-var import_style_lib13 = __toESM(require_style_lib());
+var import_style_lib12 = __toESM(require_style_lib());
 var import_react18 = __toESM(require_react());
-var Job = ({ children }) => /* @__PURE__ */ import_react18.default.createElement(import_style_lib13.Box, {
+var Job = ({ children }) => /* @__PURE__ */ import_react18.default.createElement(import_style_lib12.Box, {
   pt: "18px" /* _18px */,
   css: { ":first-of-type": { pt: "0px" } }
 }, children);
@@ -31603,32 +31568,32 @@ var WorkExperience = (props) => /* @__PURE__ */ import_react18.default.createEle
   to: "January 2021",
   title: "Software Engineer",
   where: "Squarespace"
-}), /* @__PURE__ */ import_react18.default.createElement(JobSummary, null, "Design Platform team. I wrote many React and React-Native components that were used throughout Squarespace on many different teams."), /* @__PURE__ */ import_react18.default.createElement(import_style_lib13.Box, null, /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Developed Squarespace style guides, compositional patterns, APIs, and high-quality documentation using Gatsby."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Discovering and reasoning about various long term and short term trade-offs when developing components. Simplicity versus flexibility. Readability vs performance. Third party code vs in-house code. Etc."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Unit testing with Jest. Integration testing with Cypress and Puppeteer."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Collaborated across teams to understand bigger picture scope. This involved managing NPM packages, user experience, accessibility, and intuitive design."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Feature migration and refactoring using code mods and test-driven techniques."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "The importance of a well-designed API, teamwork, and writing good pull requests."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Part of a multi-team effort to integrate our CMS into a mobile browser experience for customers."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Learned to be humble about what I don't know, questioning why we do things a certain way and learning from others' experience."))), /* @__PURE__ */ import_react18.default.createElement(Job, null, /* @__PURE__ */ import_react18.default.createElement(JobHead, {
+}), /* @__PURE__ */ import_react18.default.createElement(JobSummary, null, "Design Platform team. I wrote many React and React-Native components that were used throughout Squarespace on many different teams."), /* @__PURE__ */ import_react18.default.createElement(import_style_lib12.Box, null, /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Developed Squarespace style guides, compositional patterns, APIs, and high-quality documentation using Gatsby."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Discovering and reasoning about various long term and short term trade-offs when developing components. Simplicity versus flexibility. Readability vs performance. Third party code vs in-house code. Etc."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Unit testing with Jest. Integration testing with Cypress and Puppeteer."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Collaborated across teams to understand bigger picture scope. This involved managing NPM packages, user experience, accessibility, and intuitive design."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Feature migration and refactoring using code mods and test-driven techniques."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "The importance of a well-designed API, teamwork, and writing good pull requests."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Part of a multi-team effort to integrate our CMS into a mobile browser experience for customers."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Learned to be humble about what I don't know, questioning why we do things a certain way and learning from others' experience."))), /* @__PURE__ */ import_react18.default.createElement(Job, null, /* @__PURE__ */ import_react18.default.createElement(JobHead, {
   city: "New York, NY",
   from: "December 2016",
   to: "May 2017",
   title: "Frontend Engineer",
   where: "Agorafy"
-}), /* @__PURE__ */ import_react18.default.createElement(JobSummary, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react18.default.createElement(import_style_lib13.Box, null, /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Collaborated with our backend engineers to create a REST API for our real-estate listing project."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Led a 3-person team using JS/React+Redux to build a CMS frontend. Users could search and filter through a variety of real estate properties."))), /* @__PURE__ */ import_react18.default.createElement(Job, null, /* @__PURE__ */ import_react18.default.createElement(JobHead, {
+}), /* @__PURE__ */ import_react18.default.createElement(JobSummary, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react18.default.createElement(import_style_lib12.Box, null, /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Collaborated with our backend engineers to create a REST API for our real-estate listing project."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Led a 3-person team using JS/React+Redux to build a CMS frontend. Users could search and filter through a variety of real estate properties."))), /* @__PURE__ */ import_react18.default.createElement(Job, null, /* @__PURE__ */ import_react18.default.createElement(JobHead, {
   city: "New York, NY",
   from: "January 2015",
   to: "April 2016",
   title: "Full-stack Engineer",
   where: "YouVisit"
-}), /* @__PURE__ */ import_react18.default.createElement(JobSummary, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react18.default.createElement(import_style_lib13.Box, null, /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "PHP/MySQL/HTML/CSS/JS/jQuery/Node"), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Wrote a client tool using the JS geolocation API to collect location data and hotspots for college campuses. Websockets worked with a Node backend to batch database inserts into our SQL database. A client could log into the CMS and view users' paths on Google Maps."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Organized and aggregated large-scale metrics of site visitor data into useful formats for our clients to download."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Hybrid app development and testing for both mobile and desktop. Used a custom-built MVC backend with a REST API and minimal unit testing."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Built a custom A/B testing library and project tracking system in our CMS to track the stages of tour production."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Worked on embedding tours into 3rd party websites using JavaScript with JSONP to load iframe settings."))), /* @__PURE__ */ import_react18.default.createElement(Job, null, /* @__PURE__ */ import_react18.default.createElement(JobHead, {
+}), /* @__PURE__ */ import_react18.default.createElement(JobSummary, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react18.default.createElement(import_style_lib12.Box, null, /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "PHP/MySQL/HTML/CSS/JS/jQuery/Node"), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Wrote a client tool using the JS geolocation API to collect location data and hotspots for college campuses. Websockets worked with a Node backend to batch database inserts into our SQL database. A client could log into the CMS and view users' paths on Google Maps."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Organized and aggregated large-scale metrics of site visitor data into useful formats for our clients to download."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Hybrid app development and testing for both mobile and desktop. Used a custom-built MVC backend with a REST API and minimal unit testing."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Built a custom A/B testing library and project tracking system in our CMS to track the stages of tour production."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Worked on embedding tours into 3rd party websites using JavaScript with JSONP to load iframe settings."))), /* @__PURE__ */ import_react18.default.createElement(Job, null, /* @__PURE__ */ import_react18.default.createElement(JobHead, {
   city: "New York, NY",
   from: "August 2014",
   to: "December 2014",
   title: "Entry-level Engineer",
   where: "M&M Environmental"
-}), /* @__PURE__ */ import_react18.default.createElement(JobSummary, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react18.default.createElement(import_style_lib13.Box, null, /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Built a cool-looking calendar and scheduling application using PHP/MySQL/JS for managing technician availability."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Built a Vehicle GPS viewer using the Google Maps API for monitoring technician proximity to their scheduled appointments."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Built a Yelp review scraper and fancy frontend."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Built an admin portal using Auth0 Google single-sign-on. Used Wordpress for viewing work shift calendars, technician locations, and Yelp reviews."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Set up CRON tasks that would send aggregated morning emails to our staff about recent Yelp reviews and shift calendars."))));
+}), /* @__PURE__ */ import_react18.default.createElement(JobSummary, null, "This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary. This is a job summary."), /* @__PURE__ */ import_react18.default.createElement(import_style_lib12.Box, null, /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Built a cool-looking calendar and scheduling application using PHP/MySQL/JS for managing technician availability."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Built a Vehicle GPS viewer using the Google Maps API for monitoring technician proximity to their scheduled appointments."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Built a Yelp review scraper and fancy frontend."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Built an admin portal using Auth0 Google single-sign-on. Used Wordpress for viewing work shift calendars, technician locations, and Yelp reviews."), /* @__PURE__ */ import_react18.default.createElement(JobBullet, null, "Set up CRON tasks that would send aggregated morning emails to our staff about recent Yelp reviews and shift calendars."))));
 
 // src/Resume/ResumeFrame.tsx
 var import_react19 = __toESM(require_react());
-var import_style_lib14 = __toESM(require_style_lib());
+var import_style_lib13 = __toESM(require_style_lib());
 var ResumeFrame = (_a) => {
   var _b = _a, { children } = _b, rest = __objRest(_b, ["children"]);
-  return /* @__PURE__ */ import_react19.default.createElement(import_style_lib14.Box, __spreadValues({
+  return /* @__PURE__ */ import_react19.default.createElement(import_style_lib13.Box, __spreadValues({
     bg: "#FAFAFA" /* bg */,
     lineHeight: "1",
     fontFamily: "system-ui,sans-serif"
@@ -31636,11 +31601,11 @@ var ResumeFrame = (_a) => {
 };
 
 // src/Resume/Resume.desktop.tsx
-var Left = ({ children }) => /* @__PURE__ */ import_react20.default.createElement(import_style_lib15.Box, {
+var Left = ({ children }) => /* @__PURE__ */ import_react20.default.createElement(import_style_lib14.Box, {
   flex: "1",
   pr: "30px" /* _30px */
 }, children);
-var Right = ({ children }) => /* @__PURE__ */ import_react20.default.createElement(import_style_lib15.Box, {
+var Right = ({ children }) => /* @__PURE__ */ import_react20.default.createElement(import_style_lib14.Box, {
   w: "260px"
 }, children);
 var ResumeDesktop = () => /* @__PURE__ */ import_react20.default.createElement(ResumeFrame, {
@@ -31697,7 +31662,7 @@ var PageCareer = () => /* @__PURE__ */ import_react22.default.createElement(impo
   render: (props) => /* @__PURE__ */ import_react22.default.createElement(Flex, __spreadValues({
     justifyContent: "center",
     py: "18px" /* _6 */
-  }, props), /* @__PURE__ */ import_react22.default.createElement(import_style_lib16.Box, {
+  }, props), /* @__PURE__ */ import_react22.default.createElement(import_style_lib15.Box, {
     boxShadow: "5px 5px 3px rgba(0,0,0,0.3)",
     maxWidth: "980px"
   }, /* @__PURE__ */ import_react22.default.createElement(ResumeDesktop, null)))
@@ -31707,9 +31672,9 @@ var PageCareer = () => /* @__PURE__ */ import_react22.default.createElement(impo
 }));
 
 // src/pages/page.Life.tsx
-var import_style_lib17 = __toESM(require_style_lib());
+var import_style_lib16 = __toESM(require_style_lib());
 var import_react23 = __toESM(require_react());
-var Section = ({ children, title }) => /* @__PURE__ */ import_react23.default.createElement(import_style_lib17.Box, null, /* @__PURE__ */ import_react23.default.createElement(H3, null, title), children);
+var Section = ({ children, title }) => /* @__PURE__ */ import_react23.default.createElement(import_style_lib16.Box, null, /* @__PURE__ */ import_react23.default.createElement(H3, null, title), children);
 var videoGames = [
   "Factorio",
   "Hollow Knight",
@@ -31722,7 +31687,7 @@ var videoGames = [
   "Undertale",
   "Warcraft 3"
 ];
-var PageLife = () => /* @__PURE__ */ import_react23.default.createElement(import_style_lib17.Box, {
+var PageLife = () => /* @__PURE__ */ import_react23.default.createElement(import_style_lib16.Box, {
   p: "18px" /* _6 */
 }, /* @__PURE__ */ import_react23.default.createElement(Section, {
   title: "Some things I've learnt"
@@ -31738,8 +31703,8 @@ var PageLife = () => /* @__PURE__ */ import_react23.default.createElement(import
 
 // src/pages/page.Projects.tsx
 var import_react24 = __toESM(require_react());
-var import_style_lib18 = __toESM(require_style_lib());
-var Project = ({ children, github, playSrc, title }) => /* @__PURE__ */ import_react24.default.createElement(import_style_lib18.Box, {
+var import_style_lib17 = __toESM(require_style_lib());
+var Project = ({ children, github, playSrc, title }) => /* @__PURE__ */ import_react24.default.createElement(import_style_lib17.Box, {
   b: "2px solid black",
   my: "18px" /* _6 */,
   py: "18px" /* _6 */,
@@ -31785,7 +31750,7 @@ var Project = ({ children, github, playSrc, title }) => /* @__PURE__ */ import_r
   as: AiFillGithub,
   mr: "12px" /* _5 */
 }), /* @__PURE__ */ import_react24.default.createElement(Span, null, "View code")))), /* @__PURE__ */ import_react24.default.createElement(Para, null, children));
-var PageProjects = () => /* @__PURE__ */ import_react24.default.createElement(import_style_lib18.Box, {
+var PageProjects = () => /* @__PURE__ */ import_react24.default.createElement(import_style_lib17.Box, {
   p: "18px" /* _6 */
 }, /* @__PURE__ */ import_react24.default.createElement(Project, {
   github: "https://github.com/gregolai/gregoryland.com",
@@ -31835,14 +31800,14 @@ var navWidth = "180px";
 var Main = (props) => {
   const loc = (0, import_react_router_dom5.useLocation)();
   console.log(loc);
-  return /* @__PURE__ */ import_react26.default.createElement(import_style_lib19.Box, __spreadValues({
+  return /* @__PURE__ */ import_react26.default.createElement(import_style_lib18.Box, __spreadValues({
     as: "main"
   }, props), /* @__PURE__ */ import_react26.default.createElement(import_react_router_dom5.Outlet, null));
 };
-var PageFrame = () => /* @__PURE__ */ import_react26.default.createElement(import_style_lib19.Box, {
+var PageFrame = () => /* @__PURE__ */ import_react26.default.createElement(import_style_lib18.Box, {
   bg: "#D6E5f4"
 }, /* @__PURE__ */ import_react26.default.createElement(MediaHide, {
-  render: (props) => /* @__PURE__ */ import_react26.default.createElement(import_style_lib19.Box, __spreadValues({}, props), /* @__PURE__ */ import_react26.default.createElement(NavDesktop, {
+  render: (props) => /* @__PURE__ */ import_react26.default.createElement(import_style_lib18.Box, __spreadValues({}, props), /* @__PURE__ */ import_react26.default.createElement(NavDesktop, {
     w: navWidth
   }), /* @__PURE__ */ import_react26.default.createElement(Main, {
     ml: navWidth,

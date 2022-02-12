@@ -72,7 +72,7 @@ const BigGrid = () => {
 };
 
 export const PageHome = () => (
-	<Box p={Space._6}>
+	<Box p={Space._8}>
 		<BigGrid />
 	</Box>
 );
