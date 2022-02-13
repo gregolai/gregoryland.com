@@ -1007,7 +1007,7 @@
       ]
     },
     "src/Resume/sections/WorkExperience.tsx": {
-      "bytes": 6356,
+      "bytes": 6247,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -1316,7 +1316,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 13404031
+      "bytes": 13403867
     },
     "client/main.client.js": {
       "imports": [],
@@ -1573,7 +1573,7 @@
           "bytesInOutput": 598
         },
         "src/Resume/sections/WorkExperience.tsx": {
-          "bytesInOutput": 7966
+          "bytesInOutput": 7835
         },
         "src/Resume/ResumeFrame.tsx": {
           "bytesInOutput": 349
@@ -1597,7 +1597,7 @@
           "bytesInOutput": 154
         }
       },
-      "bytes": 1061169
+      "bytes": 1061038
     }
   }
 }

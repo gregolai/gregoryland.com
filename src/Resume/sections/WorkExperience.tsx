@@ -63,14 +63,11 @@ export const WorkExperience = (props: BoxProps) => (
 				where="Squarespace"
 			/>
 			<JobSummary>
-				Design Platform team. I wrote many React and React-Native components that were used throughout
-				Squarespace on many different teams.
+				I worked on the Squarespace Design Platform team. I wrote many React and React-Native
+				components that were used throughout the Squarespace platform by various other teams. Exposing
+				a solid API, style guide, compositional patterns, and documentation was very imporant.
 			</JobSummary>
 			<Box>
-				<JobBullet>
-					Developed Squarespace style guides, compositional patterns, APIs, and high-quality
-					documentation using Gatsby.
-				</JobBullet>
 				<JobBullet>
 					Discovering and reasoning about various long term and short term trade-offs when
 					developing components. Simplicity versus flexibility. Readability vs performance. Third
@@ -106,18 +103,14 @@ export const WorkExperience = (props: BoxProps) => (
 				where="Agorafy"
 			/>
 			<JobSummary>
-				This is a job summary. This is a job summary. This is a job summary. This is a job summary.
-				This is a job summary. This is a job summary. This is a job summary. This is a job summary.
-				This is a job summary.
+				I was responsible for working with Agorafy's backend team in creating a CMS for viewing and
+				editing real-estate listings. Everyone left after the company went bankrupt.
 			</JobSummary>
 			<Box>
+				<JobBullet>Daily stand-ups with the backend team in synchronizing our REST API.</JobBullet>
 				<JobBullet>
-					Collaborated with our backend engineers to create a REST API for our real-estate listing
-					project.
-				</JobBullet>
-				<JobBullet>
-					Led a 3-person team using JS/React+Redux to build a CMS frontend. Users could search and
-					filter through a variety of real estate properties.
+					This was my first job building a website using React and React Redux, before React had a
+					decent Context API.
 				</JobBullet>
 			</Box>
 		</Job>
@@ -130,9 +123,8 @@ export const WorkExperience = (props: BoxProps) => (
 				where="YouVisit"
 			/>
 			<JobSummary>
-				This is a job summary. This is a job summary. This is a job summary. This is a job summary.
-				This is a job summary. This is a job summary. This is a job summary. This is a job summary.
-				This is a job summary.
+				YouVisit was a company that built 3D virtual tours, mostly for college campuses. Most of my
+				responsibilities revolved around our CMS, where our clients could customize their tours.
 			</JobSummary>
 			<Box>
 				<JobBullet>PHP/MySQL/HTML/CSS/JS/jQuery/Node</JobBullet>
@@ -165,31 +157,33 @@ export const WorkExperience = (props: BoxProps) => (
 				city="New York, NY"
 				from="August 2014"
 				to="December 2014"
-				title="Entry-level Engineer"
+				title="Junior Web Developer"
 				where="M&M Environmental"
 			/>
 			<JobSummary>
-				This is a job summary. This is a job summary. This is a job summary. This is a job summary.
-				This is a job summary. This is a job summary. This is a job summary. This is a job summary.
-				This is a job summary.
+				This was my first actual programming job, where I worked as a sole developer for a pest
+				control company on things relating to improving internal business operations. I developed
+				using PHP, MySQL, and Javascript.
 			</JobSummary>
 			<Box>
 				<JobBullet>
-					Built a cool-looking calendar and scheduling application using PHP/MySQL/JS for managing
-					technician availability.
+					I built a calendar and scheduling application for managing technician availability.
 				</JobBullet>
 				<JobBullet>
-					Built a Vehicle GPS viewer using the Google Maps API for monitoring technician proximity
-					to their scheduled appointments.
-				</JobBullet>
-				<JobBullet>Built a Yelp review scraper and fancy frontend.</JobBullet>
-				<JobBullet>
-					Built an admin portal using Auth0 Google single-sign-on. Used Wordpress for viewing work
-					shift calendars, technician locations, and Yelp reviews.
+					I built a vehicle GPS viewer using the Google Maps API that would monitor our technicians'
+					proximity to their scheduled appointments.
 				</JobBullet>
 				<JobBullet>
-					Set up CRON tasks that would send aggregated morning emails to our staff about recent Yelp
-					reviews and shift calendars.
+					I built a beautiful Yelp review scraper (for our own business) that would collect recent
+					reviews so we could attempt to remedy any dissatisfied customers.
+				</JobBullet>
+				<JobBullet>
+					Built a Wordpress portal for viewing schedule calendars, technician locations, and Yelp
+					reviews, as mentioned above.
+				</JobBullet>
+				<JobBullet>
+					Set up a CRON task that would email our staff about technician schedules and recent Yelp
+					reviews.
 				</JobBullet>
 			</Box>
 		</Job>
