@@ -31051,6 +31051,19 @@ var LinkButton = (_a) => {
   return /* @__PURE__ */ import_react2.default.createElement(Button, __spreadValues({}, props), children);
 };
 
+// src/primitives/Frame.tsx
+var Frame = createComponent({
+  px: "54px" /* _9 */,
+  py: "18px" /* _6 */,
+  bg: "#F7F2E9",
+  css: {
+    [mediaLessThan(768 /* tablet */)]: {
+      px: "12px" /* _5 */,
+      py: "12px" /* _5 */
+    }
+  }
+});
+
 // src/primitives/Flex.tsx
 var Flex = createComponent({ display: "flex" });
 
@@ -31238,7 +31251,7 @@ var links = [
 ];
 var Links = (_a) => {
   var rest = __objRest(_a, []);
-  return /* @__PURE__ */ import_react9.default.createElement(Flex, __spreadValues({}, rest), links.map(({ to, imgSrc, text }) => /* @__PURE__ */ import_react9.default.createElement(import_style_lib6.Box, {
+  return /* @__PURE__ */ import_react9.default.createElement(Flex, __spreadValues({}, rest), links.map(({ to, imgSrc: imgSrc2, text }) => /* @__PURE__ */ import_react9.default.createElement(import_style_lib6.Box, {
     key: to,
     as: import_react_router_dom4.Link,
     to,
@@ -31261,7 +31274,7 @@ var Links = (_a) => {
     overflow: "hidden"
   }, /* @__PURE__ */ import_react9.default.createElement(import_style_lib6.Box, {
     as: "img",
-    src: imgSrc,
+    src: imgSrc2,
     objectFit: "cover",
     objectPosition: "50% 50%",
     width: "100%",
@@ -31308,12 +31321,9 @@ var BigGrid = () => {
         display: "none"
       }
     }
-  }), /* @__PURE__ */ import_react10.default.createElement(import_style_lib7.Box, {
+  }), /* @__PURE__ */ import_react10.default.createElement(Frame, {
     gridArea: "c",
-    py: "18px" /* _6 */,
-    px: "54px" /* _9 */,
-    bb: "2px solid black",
-    bg: "#F7F2E9"
+    bb: "2px solid black"
   }, /* @__PURE__ */ import_react10.default.createElement(H3, null, "My site"), /* @__PURE__ */ import_react10.default.createElement(Para, null, "Hi, my name's Greg and this is my website. It's primarily meant to showcase my career and the projects I've done over the years. I've been working as a web developer since 2014 and have been programming little projects on my own for over a decade. I graduated from CSU Long Beach with a degree in Computer Science."), /* @__PURE__ */ import_react10.default.createElement(Para, null, "I currently reside in Austin, Texas and looking for a job position that challenges and inspires me. I'd prefer to work in an office, but I'm open to a remote role if the job is right. Please have a look at my site and print my resume."), /* @__PURE__ */ import_react10.default.createElement(LinkButton, {
     display: "inline-flex",
     to: "/career",
@@ -31507,8 +31517,9 @@ var NameAndRole = (_a) => {
 // src/Resume/sections/ProfileImage.tsx
 var import_style_lib12 = __toESM(require_style_lib());
 var import_react15 = __toESM(require_react());
+var imgSrc = "https://images.unsplash.com/photo-1644123550420-ee28152ab925?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2781&q=80";
 var ProfileImage = (props) => /* @__PURE__ */ import_react15.default.createElement(import_style_lib12.Box, __spreadValues({
-  bg: "url('https://images.unsplash.com/photo-1644123550420-ee28152ab925?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2781&q=80')",
+  bg: `url('${imgSrc}')`,
   backgroundSize: "cover",
   backgroundPosition: "50% 50%"
 }, props));
@@ -31665,9 +31676,14 @@ var PageCareer = () => /* @__PURE__ */ import_react21.default.createElement(impo
 // src/pages/page.Life.tsx
 var import_style_lib17 = __toESM(require_style_lib());
 var import_react22 = __toESM(require_react());
-var Section = ({ children, title }) => /* @__PURE__ */ import_react22.default.createElement(import_style_lib17.Box, null, /* @__PURE__ */ import_react22.default.createElement(H3, null, title), children);
+var Section = ({ children, title }) => /* @__PURE__ */ import_react22.default.createElement(Frame, {
+  m: "36px" /* _8 */,
+  b: "2px solid black"
+}, /* @__PURE__ */ import_react22.default.createElement(H3, null, title), children);
 var videoGames = [
   "Factorio",
+  "Final Fantasy VII",
+  "Final Fantasy VIII",
   "Hollow Knight",
   "Kid Chameleon",
   "Starcraft",
@@ -31678,19 +31694,15 @@ var videoGames = [
   "Undertale",
   "Warcraft 3"
 ];
-var PageLife = () => /* @__PURE__ */ import_react22.default.createElement(import_style_lib17.Box, {
-  p: "18px" /* _6 */
-}, /* @__PURE__ */ import_react22.default.createElement(Section, {
-  title: "Some things I've learnt"
-}, /* @__PURE__ */ import_react22.default.createElement(Ul, null, /* @__PURE__ */ import_react22.default.createElement(Li, null, "Despite how tempting it may be to build your own tools, it may be better to use someone else's."), /* @__PURE__ */ import_react22.default.createElement(Li, null, "A well-designed API is almost always better than one written quickly without care."), /* @__PURE__ */ import_react22.default.createElement(Li, null, "Accept that you may be wrong about things."), /* @__PURE__ */ import_react22.default.createElement(Li, null, "Something I do while designing my website is to open a second tab in Chrome and play with the CSS to my heart's content in devtools. When I get it looking right, I make adjustments to the code while refreshing the first tab until it looks right. It's a winning strategy."))), /* @__PURE__ */ import_react22.default.createElement(Section, {
-  title: "From animal, to robot"
-}, /* @__PURE__ */ import_react22.default.createElement(Para, null, "I have deep respect for people who build things themselves. There's something about owning your creation that's beautiful. As we move towards a greater level of abstraction we face the danger of not remembering who we are. We must not forget ourselves across the vast digital ocean. The joy of creation must not be lost!"), /* @__PURE__ */ import_react22.default.createElement(Para, null, "As we abstract up the tree we must recontexualize who we are...just as we do in life as we age. It's fractal-like."), /* @__PURE__ */ import_react22.default.createElement(Para, null, "Our analog human experience is touching hands with our digital creations. It's ok to be weird because life is weird. It's the fire that keeps us going. Consciousness, the greatest mystery alongside the Big Bang and black holes, is fundamentally paradoxical."), /* @__PURE__ */ import_react22.default.createElement(Para, null, "Everything boils down to mental models. When the state of your organism matches the state of the local environment, you are in flow with the universe")), /* @__PURE__ */ import_react22.default.createElement(Section, {
+var PageLife = () => /* @__PURE__ */ import_react22.default.createElement(import_style_lib17.Box, null, /* @__PURE__ */ import_react22.default.createElement(Section, {
+  title: "Dev stuff I've learnt"
+}, /* @__PURE__ */ import_react22.default.createElement(Ul, null, /* @__PURE__ */ import_react22.default.createElement(Li, null, "Being OK with a team's coding practices. If it gets the job done and makes your life easier, this is almost always a win."), /* @__PURE__ */ import_react22.default.createElement(Li, null, "Creating your own tool is tempting, but it's often better to build on the backs of giants by using highly dependable libraries if one exists."), /* @__PURE__ */ import_react22.default.createElement(Li, null, "It's almost always better to take time on a well-designed API rather than a quick one. You'll thank your future self as your project scales."), /* @__PURE__ */ import_react22.default.createElement(Li, null, "You may be wrong about things and that's ok."), /* @__PURE__ */ import_react22.default.createElement(Li, null, "Separate your personal life from your work life. Leave your work at work. If you don't do this, you'll burnout fast. It also makes work more productive."))), /* @__PURE__ */ import_react22.default.createElement(Section, {
+  title: "My ramblings...from animal, to robot"
+}, /* @__PURE__ */ import_react22.default.createElement(Para, null, "I like thinking really deep into things, reducing everything to the evolutionary mechanisms that create us, and perhaps even the universe itself."), /* @__PURE__ */ import_react22.default.createElement(Para, null, "I have deep respect for people who build things themselves. There's something about owning your creation that's beautiful. As we move towards a greater level of abstraction we face the danger of forgetting the joy of creation."), /* @__PURE__ */ import_react22.default.createElement(Para, null, "Our analog human experience is touching hands with our digital creations. It's ok to be weird because life is weird. It's the fire that keeps us going. Consciousness, the greatest mystery alongside the Big Bang and black holes, is fundamentally paradoxical.")), /* @__PURE__ */ import_react22.default.createElement(Section, {
   title: "Favorite video games"
 }, /* @__PURE__ */ import_react22.default.createElement(Ul, null, videoGames.map((v) => /* @__PURE__ */ import_react22.default.createElement(Li, {
   key: v
-}, v)))), /* @__PURE__ */ import_react22.default.createElement(Section, {
-  title: "My roadmap"
-}, /* @__PURE__ */ import_react22.default.createElement(Ul, null, /* @__PURE__ */ import_react22.default.createElement(Li, null, "Work for an awesome company in Austin"), /* @__PURE__ */ import_react22.default.createElement(Li, null, "Remember to take breaks throughout the day"), /* @__PURE__ */ import_react22.default.createElement(Li, null, "Expand my personal utility library"), /* @__PURE__ */ import_react22.default.createElement(Li, null, "Work on a small project that people find useful"), /* @__PURE__ */ import_react22.default.createElement(Li, null, 'Learn some "big picture" things'), /* @__PURE__ */ import_react22.default.createElement(Li, null, "Get better at math"))));
+}, v)))));
 
 // src/pages/page.Projects.tsx
 var import_react23 = __toESM(require_react());
@@ -31707,16 +31719,12 @@ var ImgLink = (_a) => {
     src: `${href}?w=256`
   }));
 };
-var Project = ({ children, github, imgs, playSrc, title }) => /* @__PURE__ */ import_react23.default.createElement(import_style_lib18.Box, {
+var Project = ({ children, github, imgs, playSrc, title }) => /* @__PURE__ */ import_react23.default.createElement(Frame, {
   b: "2px solid black",
   my: "18px" /* _6 */,
-  py: "18px" /* _6 */,
-  px: "54px" /* _9 */,
-  bg: "#F7F2E9",
   css: {
     [mediaLessThan(768 /* tablet */)]: {
-      px: "12px" /* _5 */,
-      py: "12px" /* _5 */
+      p: "12px" /* _5 */
     }
   }
 }, /* @__PURE__ */ import_react23.default.createElement(Flex, {
@@ -31811,7 +31819,7 @@ var PageProjects = () => /* @__PURE__ */ import_react23.default.createElement(im
   github: "https://github.com/gregolai/CatGame",
   imgs: ["catgame1.png", "catgame2.png"],
   title: "Cat Game"
-}, "The start of a game where you play as a cat that sneaks around the neighborhood stealing things and completes missions."));
+}, "The start of a game where you play as a cat that sneaks around the neighborhood stealing things and completing missions."));
 
 // src/pages/page.ResumePrint.tsx
 var import_react24 = __toESM(require_react());

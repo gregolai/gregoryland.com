@@ -619,6 +619,19 @@
         }
       ]
     },
+    "src/primitives/Frame.tsx": {
+      "bytes": 293,
+      "imports": [
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives/_createComponent.tsx",
+          "kind": "import-statement"
+        }
+      ]
+    },
     "src/primitives/Flex.tsx": {
       "bytes": 113,
       "imports": [
@@ -663,10 +676,14 @@
       ]
     },
     "src/primitives/index.ts": {
-      "bytes": 162,
+      "bytes": 195,
       "imports": [
         {
           "path": "src/primitives/Button.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives/Frame.tsx",
           "kind": "import-statement"
         },
         {
@@ -839,7 +856,7 @@
       ]
     },
     "src/pages/page.Home.tsx": {
-      "bytes": 2284,
+      "bytes": 2254,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -977,7 +994,7 @@
       ]
     },
     "src/Resume/sections/ProfileImage.tsx": {
-      "bytes": 430,
+      "bytes": 452,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -1174,7 +1191,7 @@
       ]
     },
     "src/pages/page.Life.tsx": {
-      "bytes": 2694,
+      "bytes": 2417,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -1195,7 +1212,7 @@
       ]
     },
     "src/pages/page.Projects.tsx": {
-      "bytes": 4694,
+      "bytes": 4640,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -1316,7 +1333,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 13403716
+      "bytes": 13403596
     },
     "client/main.client.js": {
       "imports": [],
@@ -1515,6 +1532,9 @@
         "src/primitives/index.ts": {
           "bytesInOutput": 0
         },
+        "src/primitives/Frame.tsx": {
+          "bytesInOutput": 232
+        },
         "src/primitives/Flex.tsx": {
           "bytesInOutput": 51
         },
@@ -1537,10 +1557,10 @@
           "bytesInOutput": 341
         },
         "src/pages/page.Home.tsx": {
-          "bytesInOutput": 2905
+          "bytesInOutput": 2814
         },
         "src/Links.tsx": {
-          "bytesInOutput": 2145
+          "bytesInOutput": 2155
         },
         "src/pages/page.Career.tsx": {
           "bytesInOutput": 875
@@ -1567,7 +1587,7 @@
           "bytesInOutput": 1580
         },
         "src/Resume/sections/ProfileImage.tsx": {
-          "bytesInOutput": 477
+          "bytesInOutput": 505
         },
         "src/Resume/sections/Skills.tsx": {
           "bytesInOutput": 598
@@ -1588,16 +1608,16 @@
           "bytesInOutput": 90
         },
         "src/pages/page.Life.tsx": {
-          "bytesInOutput": 3890
+          "bytesInOutput": 3083
         },
         "src/pages/page.Projects.tsx": {
-          "bytesInOutput": 5747
+          "bytesInOutput": 5632
         },
         "src/pages/page.ResumePrint.tsx": {
           "bytesInOutput": 154
         }
       },
-      "bytes": 1061597
+      "bytes": 1060885
     }
   }
 }

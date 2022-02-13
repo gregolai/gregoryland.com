@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from 'pu2/style-lib';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Breakpoint, mediaLessThan, Space } from '../theme';
-import { H3, Icon, LinkButton, Para, Span } from '../primitives';
+import { Frame, H3, Icon, LinkButton, Para, Span } from '../primitives';
 import { Links } from '../Links';
 const bigImgUrl =
 	'https://images.unsplash.com/photo-1593642532454-e138e28a63f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80';
@@ -34,7 +34,7 @@ const BigGrid = () => {
 					}
 				}}
 			/>
-			<Box gridArea="c" py={Space._6} px={Space._9} bb="2px solid black" bg="#F7F2E9">
+			<Frame gridArea="c" bb="2px solid black">
 				<H3>My site</H3>
 				<Para>
 					Hi, my name's Greg and this is my website. It's primarily meant to showcase my career and
@@ -66,7 +66,7 @@ const BigGrid = () => {
 						ml={Space._5}
 					/>
 				</LinkButton>
-			</Box>
+			</Frame>
 			<Links gridArea="d" />
 		</Box>
 	);

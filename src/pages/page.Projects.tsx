@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box } from 'pu2/style-lib';
 import { AiFillGithub } from 'react-icons/ai';
-import { Flex, H3, Icon, LinkButton, Para, Span } from '../primitives';
+import { Flex, Frame, H3, Icon, LinkButton, Para, Span } from '../primitives';
 import { Breakpoint, mediaLessThan, Space } from '../theme';
 import type { BoxProps } from 'pu2/style-lib/browser/Box';
 
@@ -25,16 +25,12 @@ interface ProjectProps {
 	title: string;
 }
 const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
-	<Box
+	<Frame
 		b="2px solid black"
 		my={Space._6}
-		py={Space._6}
-		px={Space._9}
-		bg="#F7F2E9"
 		css={{
 			[mediaLessThan(Breakpoint.tablet)]: {
-				px: Space._5,
-				py: Space._5
+				p: Space._5
 			}
 		}}
 	>
@@ -87,7 +83,7 @@ const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 			</Flex>
 		)}
 		<Para>{children}</Para>
-	</Box>
+	</Frame>
 );
 
 export const PageProjects = () => (
