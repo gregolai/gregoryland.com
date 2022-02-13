@@ -1017,8 +1017,12 @@
         }
       ]
     },
+    "src/img/me_suit.jpg": {
+      "bytes": 34460,
+      "imports": []
+    },
     "src/Resume/sections/ProfileImage.tsx": {
-      "bytes": 452,
+      "bytes": 564,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -1026,6 +1030,10 @@
         },
         {
           "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/img/me_suit.jpg",
           "kind": "import-statement"
         }
       ]
@@ -1390,11 +1398,21 @@
     }
   },
   "outputs": {
+    "client/assets/me_suit-UH264YVS.jpg": {
+      "imports": [],
+      "exports": [],
+      "inputs": {
+        "src/img/me_suit.jpg": {
+          "bytesInOutput": 34460
+        }
+      },
+      "bytes": 34460
+    },
     "client/main.client.js.map": {
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 13409717
+      "bytes": 13409852
     },
     "client/main.client.js": {
       "imports": [],
@@ -1618,7 +1636,7 @@
           "bytesInOutput": 3000
         },
         "src/Links.tsx": {
-          "bytesInOutput": 2155
+          "bytesInOutput": 2145
         },
         "src/pages/page.Career.tsx": {
           "bytesInOutput": 1887
@@ -1648,7 +1666,10 @@
           "bytesInOutput": 1580
         },
         "src/Resume/sections/ProfileImage.tsx": {
-          "bytesInOutput": 505
+          "bytesInOutput": 394
+        },
+        "src/img/me_suit.jpg": {
+          "bytesInOutput": 53
         },
         "src/Resume/sections/Skills.tsx": {
           "bytesInOutput": 598
@@ -1681,7 +1702,7 @@
           "bytesInOutput": 152
         }
       },
-      "bytes": 1065813
+      "bytes": 1065818
     }
   }
 }

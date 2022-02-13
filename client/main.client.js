@@ -23501,7 +23501,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var Links = ({ ...rest }) => {
     return /* @__PURE__ */ import_react13.default.createElement(Flex, {
       ...rest
-    }, links.map(({ to, imgSrc: imgSrc2, text }) => /* @__PURE__ */ import_react13.default.createElement(import_style_lib7.Box, {
+    }, links.map(({ to, imgSrc, text }) => /* @__PURE__ */ import_react13.default.createElement(import_style_lib7.Box, {
       key: to,
       as: Link,
       to,
@@ -23524,7 +23524,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       overflow: "hidden"
     }, /* @__PURE__ */ import_react13.default.createElement(import_style_lib7.Box, {
       as: "img",
-      src: imgSrc2,
+      src: imgSrc,
       objectFit: "cover",
       objectPosition: "50% 50%",
       width: "100%",
@@ -23793,11 +23793,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   // src/Resume/sections/ProfileImage.tsx
   var import_style_lib13 = __toESM(require_style_lib());
   var import_react20 = __toESM(require_react());
-  var imgSrc = "https://images.unsplash.com/photo-1644123550420-ee28152ab925?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2781&q=80";
+
+  // src/img/me_suit.jpg
+  var me_suit_default = "./assets/me_suit-UH264YVS.jpg";
+
+  // src/Resume/sections/ProfileImage.tsx
   var ProfileImage = (props) => /* @__PURE__ */ import_react20.default.createElement(import_style_lib13.Box, {
-    bg: `url('${imgSrc}')`,
+    bg: `url('${me_suit_default}')`,
     backgroundSize: "cover",
     backgroundPosition: "50% 50%",
+    filter: "brightness(1.6) contrast(0.8) saturate(0)",
     ...props
   });
 
