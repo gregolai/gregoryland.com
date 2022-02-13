@@ -23984,22 +23984,23 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       }, 2e3);
     });
   };
+  var PrintButton = () => /* @__PURE__ */ import_react27.default.createElement(Button, {
+    m: "0 auto",
+    onClick: () => printResume()
+  }, "Print my resume / Save as PDF");
   var PageCareer = () => /* @__PURE__ */ import_react27.default.createElement(import_react27.default.Fragment, null, /* @__PURE__ */ import_react27.default.createElement(MediaHide, {
     q: mediaLessThan(768 /* tablet */),
     render: (props) => /* @__PURE__ */ import_react27.default.createElement(import_style_lib18.Box, {
       ...props,
       py: "18px" /* _6 */
-    }, /* @__PURE__ */ import_react27.default.createElement(Button, {
-      m: "0 auto",
-      onClick: () => printResume()
-    }, "Print my resume"), /* @__PURE__ */ import_react27.default.createElement(Flex, {
+    }, /* @__PURE__ */ import_react27.default.createElement(PrintButton, null), /* @__PURE__ */ import_react27.default.createElement(Flex, {
       justifyContent: "center",
-      pt: "18px" /* _6 */,
+      py: "18px" /* _6 */,
       ...props
     }, /* @__PURE__ */ import_react27.default.createElement(import_style_lib18.Box, {
       boxShadow: "5px 5px 3px rgba(0,0,0,0.3)",
       maxWidth: "980px"
-    }, /* @__PURE__ */ import_react27.default.createElement(ResumeDesktop, null))))
+    }, /* @__PURE__ */ import_react27.default.createElement(ResumeDesktop, null))), /* @__PURE__ */ import_react27.default.createElement(PrintButton, null))
   }), /* @__PURE__ */ import_react27.default.createElement(MediaHide, {
     q: mediaGreaterThan(768 /* tablet */),
     render: ResumeMobile

@@ -29,24 +29,25 @@ const printResume = () => {
 	});
 };
 
+const PrintButton = () => (
+	<Button m="0 auto" onClick={() => printResume()}>
+		Print my resume / Save as PDF
+	</Button>
+);
+
 export const PageCareer = () => (
 	<>
 		<MediaHide
 			q={mediaLessThan(Breakpoint.tablet)}
 			render={(props) => (
 				<Box {...props} py={Space._6}>
-					<Button m="0 auto" onClick={() => printResume()}>
-						Print my resume
-					</Button>
-					<Flex justifyContent="center" pt={Space._6} {...props}>
-						<Box
-							//border="2px solid black"
-							boxShadow="5px 5px 3px rgba(0,0,0,0.3)"
-							maxWidth="980px"
-						>
+					<PrintButton />
+					<Flex justifyContent="center" py={Space._6} {...props}>
+						<Box boxShadow="5px 5px 3px rgba(0,0,0,0.3)" maxWidth="980px">
 							<ResumeDesktop />
 						</Box>
 					</Flex>
+					<PrintButton />
 				</Box>
 			)}
 		/>

@@ -1223,7 +1223,7 @@
       "imports": []
     },
     "src/pages/page.Career.tsx": {
-      "bytes": 1412,
+      "bytes": 1433,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -1394,7 +1394,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 13409677
+      "bytes": 13409717
     },
     "client/main.client.js": {
       "imports": [],
@@ -1621,7 +1621,7 @@
           "bytesInOutput": 2155
         },
         "src/pages/page.Career.tsx": {
-          "bytesInOutput": 1707
+          "bytesInOutput": 1887
         },
         "src/Resume/Resume.desktop.tsx": {
           "bytesInOutput": 1712
@@ -1681,7 +1681,7 @@
           "bytesInOutput": 152
         }
       },
-      "bytes": 1065633
+      "bytes": 1065813
     }
   }
 }
