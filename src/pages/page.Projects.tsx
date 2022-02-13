@@ -168,7 +168,7 @@ export const PageProjects = () => (
 			title="Cat Game"
 		>
 			The start of a game where you play as a cat that sneaks around the neighborhood stealing things
-			and completes missions.
+			and completing missions.
 		</Project>
 	</Box>
 );
