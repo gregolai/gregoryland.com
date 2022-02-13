@@ -1,5 +1,4 @@
-const { execSync, spawn, spawnSync } = require('child_process');
-const fs = require('fs');
+const { spawn } = require('child_process');
 const fps = require('fs/promises');
 const path = require('path');
 const esbuild = require('esbuild');
@@ -16,7 +15,7 @@ const loader = {
 	'.png': 'file'
 };
 
-const isDev = true;
+const isDev = process.env.NODE_ENV === 'production' ? false : true;
 
 const fail = (m) => console.log(kleur.bgRed(kleur.white(m)));
 const success = (m) => console.log(kleur.bgGreen(kleur.black(m)));
@@ -37,7 +36,7 @@ const buildClient = async () => {
 			// logLevel: 'info',
 			logLevel: 'silent',
 			metafile: true,
-			// minify: true,
+			// minify: !isDev,
 			outbase: 'src',
 			outdir: 'client',
 			plugins: [

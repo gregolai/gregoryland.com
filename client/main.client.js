@@ -20924,13 +20924,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         }
         _add(className, obj) {
           const str = (0, utils_1.createRuleStr)(className, obj);
-          if (true) {
-            const delim = ` /**/    /**/ `;
-            const lines = this._el.innerText.split(delim);
-            lines.push(str);
-            this._el.innerText = lines.join(delim);
-          } else {
-            this._sheet.insertRule(str, this._sheet.cssRules.length);
+          if (str) {
+            if (true) {
+              const delim = ` /**/    /**/ `;
+              const lines = this._el.innerText.split(delim);
+              lines.push(str);
+              this._el.innerText = lines.join(delim);
+            } else {
+              this._sheet.insertRule(str, this._sheet.cssRules.length);
+            }
           }
         }
         _insertStyleEl(el, parent = document.head) {
@@ -23802,7 +23804,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     bg: `url('${me_suit_default}')`,
     backgroundSize: "cover",
     backgroundPosition: "50% 50%",
-    filter: "brightness(1.6) contrast(0.8) saturate(0)",
+    filter: "brightness(1.5) contrast(0.9) saturate(0.5)",
     ...props
   });
 
@@ -24130,7 +24132,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   }, /* @__PURE__ */ import_react29.default.createElement(Project, {
     github: "https://github.com/gregolai/gregoryland.com",
     title: "gregoryland.com"
-  }, "This website."), /* @__PURE__ */ import_react29.default.createElement(Project, {
+  }, "This mobile-friendly website. This one uses my custom built style lib and server-side-rendering (SSR)."), /* @__PURE__ */ import_react29.default.createElement(Project, {
     github: "https://github.com/gregolai/pu2/tree/master/src/style-lib",
     title: "Style Lib"
   }, "(Yet another) CSS-in-JS styling library I wrote. It's being used on this site."), /* @__PURE__ */ import_react29.default.createElement(Project, {

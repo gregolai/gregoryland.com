@@ -11,7 +11,7 @@ export const ProfileImage = (props: BoxProps) => (
 		bg={`url('${imgSrc}')`}
 		backgroundSize="cover"
 		backgroundPosition="50% 50%"
-		filter="brightness(1.6) contrast(0.8) saturate(0)"
+		filter="brightness(1.5) contrast(0.9) saturate(0.5)"
 		{...props}
 	/>
 );

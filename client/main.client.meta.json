@@ -138,7 +138,7 @@
       "imports": []
     },
     "node_modules/pu2/style-lib/internal/BrowserHandler.js": {
-      "bytes": 2305,
+      "bytes": 2370,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/internal/utils.js",
@@ -1022,7 +1022,7 @@
       "imports": []
     },
     "src/Resume/sections/ProfileImage.tsx": {
-      "bytes": 564,
+      "bytes": 566,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -1281,7 +1281,7 @@
       ]
     },
     "src/pages/page.Projects.tsx": {
-      "bytes": 4766,
+      "bytes": 4858,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -1412,7 +1412,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 13409852
+      "bytes": 13410038
     },
     "client/main.client.js": {
       "imports": [],
@@ -1456,7 +1456,7 @@
           "bytesInOutput": 304
         },
         "node_modules/pu2/style-lib/internal/BrowserHandler.js": {
-          "bytesInOutput": 2619
+          "bytesInOutput": 2668
         },
         "node_modules/pu2/style-lib/internal/StyleProvider.js": {
           "bytesInOutput": 1086
@@ -1666,7 +1666,7 @@
           "bytesInOutput": 1580
         },
         "src/Resume/sections/ProfileImage.tsx": {
-          "bytesInOutput": 394
+          "bytesInOutput": 396
         },
         "src/img/me_suit.jpg": {
           "bytesInOutput": 53
@@ -1696,13 +1696,13 @@
           "bytesInOutput": 4076
         },
         "src/pages/page.Projects.tsx": {
-          "bytesInOutput": 5796
+          "bytesInOutput": 5885
         },
         "src/pages/page.ResumePrint.tsx": {
           "bytesInOutput": 152
         }
       },
-      "bytes": 1065818
+      "bytes": 1065958
     }
   }
 }
