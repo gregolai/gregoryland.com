@@ -73,7 +73,14 @@ const BigGrid = () => {
 };
 
 export const PageHome = () => (
-	<Box p={Space._8}>
+	<Box
+		p={Space._8}
+		css={{
+			[mediaLessThan(Breakpoint.tablet)]: {
+				p: Space._6
+			}
+		}}
+	>
 		<BigGrid />
 	</Box>
 );

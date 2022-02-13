@@ -36,8 +36,9 @@ interface ProjectProps {
 const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 	<Frame
 		b="2px solid black"
-		my={Space._6}
+		mt={Space._6}
 		css={{
+			':first-of-type': { mt: '0px' },
 			[mediaLessThan(Breakpoint.tablet)]: {
 				p: Space._5
 			}
@@ -85,16 +86,7 @@ const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 			</Flex>
 		</Flex>
 		{imgs && (
-			<Flex
-				flexWrap="wrap"
-				gap={Space._5}
-				my={Space._5}
-				css={{
-					[mediaLessThan(Breakpoint.tablet)]: {
-						justifyContent: 'space-around'
-					}
-				}}
-			>
+			<Flex flexWrap="wrap" gap={Space._5} my={Space._5}>
 				{imgs.map((filename, i) => (
 					<ImgLink key={filename} filename={filename} />
 				))}

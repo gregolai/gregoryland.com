@@ -8,7 +8,13 @@ interface SectionProps {
 	title: string;
 }
 const Section = ({ children, title }: SectionProps) => (
-	<Frame m={Space._8} b="2px solid black">
+	<Frame
+		b="2px solid black"
+		mt={Space._6}
+		css={{
+			':first-of-type': { mt: '0px' }
+		}}
+	>
 		<H3>{title}</H3>
 		{children}
 	</Frame>
@@ -30,7 +36,7 @@ const videoGames = [
 ];
 
 export const PageLife = () => (
-	<Box>
+	<Box p={Space._6}>
 		<Section title="Dev stuff I've learnt">
 			<Ul>
 				<Li>

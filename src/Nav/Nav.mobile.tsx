@@ -7,7 +7,7 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoIosArrowDown } from 'react-icons/io';
 import type { BoxProps } from 'pu2/style-lib/browser/Box';
 import { useLocation } from 'react-router-dom';
-import { NavButtonStack } from './NavButtonStack';
+import { NavButtons } from './NavButtons';
 import { externalLinks, internalLinks } from './links';
 
 export const NavMobile = (props: BoxProps) => {
@@ -33,13 +33,13 @@ export const NavMobile = (props: BoxProps) => {
 			</Button>
 			{isOpen && (
 				<Flex bb="2px solid black" bg="white">
-					<NavButtonStack
+					<NavButtons
 						br="2px solid black"
 						flex="1"
 						links={internalLinks}
 						onButtonClick={() => setOpen(false)}
 					/>
-					<NavButtonStack flex="1" links={externalLinks} onButtonClick={() => setOpen(false)} />
+					<NavButtons flex="1" links={externalLinks} onButtonClick={() => setOpen(false)} />
 				</Flex>
 			)}
 		</Box>
