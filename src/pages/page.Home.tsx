@@ -43,8 +43,9 @@ const BigGrid = () => {
 					Long Beach with a degree in Computer Science.
 				</Para>
 				<Para>
-					I currently reside in Austin, Texas. I'm currently looking for a job position that
-					challenges and inspires me. Please have a look at my site and print my resume.
+					I currently reside in Austin, Texas and looking for a job position that challenges and
+					inspires me. I'd prefer to work in an office, but I'm open to a remote role if the job is
+					right. Please have a look at my site and print my resume.
 				</Para>
 				<LinkButton
 					display="inline-flex"

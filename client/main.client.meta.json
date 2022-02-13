@@ -839,7 +839,7 @@
       ]
     },
     "src/pages/page.Home.tsx": {
-      "bytes": 2206,
+      "bytes": 2284,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -1316,7 +1316,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 13403632
+      "bytes": 13403716
     },
     "client/main.client.js": {
       "imports": [],
@@ -1537,7 +1537,7 @@
           "bytesInOutput": 341
         },
         "src/pages/page.Home.tsx": {
-          "bytesInOutput": 2832
+          "bytesInOutput": 2905
         },
         "src/Links.tsx": {
           "bytesInOutput": 2145
@@ -1597,7 +1597,7 @@
           "bytesInOutput": 154
         }
       },
-      "bytes": 1061524
+      "bytes": 1061597
     }
   }
 }
