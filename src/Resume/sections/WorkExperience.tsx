@@ -64,33 +64,30 @@ export const WorkExperience = (props: BoxProps) => (
 			/>
 			<JobSummary>
 				I worked on the Squarespace Design Platform team. I wrote many React and React-Native
-				components that were used throughout the Squarespace platform by various other teams. Exposing
-				a solid API, style guide, compositional patterns, and documentation was very imporant.
+				components that were used throughout the Squarespace platform by various other teams.
+				Delivering a solid API, style guide, compositional patterns, and documentation was very
+				imporant. I learnt teamwork, humbleness, good coding practices, reasons for design decisions,
+				and how to write meaningful pull requests.
 			</JobSummary>
 			<Box>
 				<JobBullet>
-					Discovering and reasoning about various long term and short term trade-offs when
-					developing components. Simplicity versus flexibility. Readability vs performance. Third
-					party code vs in-house code. Etc.
-				</JobBullet>
-				<JobBullet>Unit testing with Jest. Integration testing with Cypress and Puppeteer.</JobBullet>
-				<JobBullet>
-					Collaborated across teams to understand bigger picture scope. This involved managing NPM
-					packages, user experience, accessibility, and intuitive design.
+					Reasoning about various trade-offs and implementation details that come with exposing an
+					API to consumers. Simplicity vs flexibility; Readability vs perforamnce; Building our own
+					X vs using a 3rd party library.
 				</JobBullet>
 				<JobBullet>
-					Feature migration and refactoring using code mods and test-driven techniques.
+					We used Jest for our unit tests. Cypress and Puppeteer for our integration tests.
 				</JobBullet>
 				<JobBullet>
-					The importance of a well-designed API, teamwork, and writing good pull requests.
+					Collaborated with teams using our components to understand their needs. This involved
+					managing NPM packages, user experience, accessibility, and intuitive design.
 				</JobBullet>
 				<JobBullet>
-					Part of a multi-team effort to integrate our CMS into a mobile browser experience for
-					customers.
+					I wrote codemods using an abstract-syntax-tree library and test-driven techniques to help
+					consumers migrate API features.
 				</JobBullet>
 				<JobBullet>
-					Learned to be humble about what I don't know, questioning why we do things a certain way
-					and learning from others' experience.
+					I was part of a multi-team effort to expand our CMS to a mobile-browser experience.
 				</JobBullet>
 			</Box>
 		</Job>
@@ -124,31 +121,31 @@ export const WorkExperience = (props: BoxProps) => (
 			/>
 			<JobSummary>
 				YouVisit was a company that built 3D virtual tours, mostly for college campuses. Most of my
-				responsibilities revolved around our CMS, where our clients could customize their tours.
+				responsibilities revolved around our CMS, where our clients could sign in and customize their
+				tours.
 			</JobSummary>
 			<Box>
-				<JobBullet>PHP/MySQL/HTML/CSS/JS/jQuery/Node</JobBullet>
-
 				<JobBullet>
-					Wrote a client tool using the JS geolocation API to collect location data and hotspots for
-					college campuses. Websockets worked with a Node backend to batch database inserts into our
-					SQL database. A client could log into the CMS and view users' paths on Google Maps.
+					Required considerations to be made for both desktop and mobile platforms. We used
+					BrowserStack to test on different devices.
+				</JobBullet>
+				<JobBullet>I wrote code using PHP, MySQL, jQuery, and a little NodeJS.</JobBullet>
+				<JobBullet>
+					I organized and aggregated large-scale metrics of visitor data into useful formats for our
+					clients to download.
 				</JobBullet>
 				<JobBullet>
-					Organized and aggregated large-scale metrics of site visitor data into useful formats for
-					our clients to download.
+					I built a client tool using the JS Geolocation API to aggregate mobile device locations
+					into walk paths and tour hotspots. For this, I used websockets and wrote a NodeJS backend
+					for batching inserts into our SQL database. The Google Maps API was used on the frontend.
 				</JobBullet>
 				<JobBullet>
-					Hybrid app development and testing for both mobile and desktop. Used a custom-built MVC
-					backend with a REST API and minimal unit testing.
+					I built a custom library for A/B testing. Our future product decisions would depend on the
+					quality of the data gathered using it.
 				</JobBullet>
+				<JobBullet>I designed some CMS features that would be available to our clients.</JobBullet>
 				<JobBullet>
-					Built a custom A/B testing library and project tracking system in our CMS to track the
-					stages of tour production.
-				</JobBullet>
-				<JobBullet>
-					Worked on embedding tours into 3rd party websites using JavaScript with JSONP to load
-					iframe settings.
+					I worked on embedding tours into 3rd party websites with JSONP and iframes.
 				</JobBullet>
 			</Box>
 		</Job>
@@ -178,11 +175,11 @@ export const WorkExperience = (props: BoxProps) => (
 					reviews so we could attempt to remedy any dissatisfied customers.
 				</JobBullet>
 				<JobBullet>
-					Built a Wordpress portal for viewing schedule calendars, technician locations, and Yelp
+					I built a Wordpress portal for viewing schedule calendars, technician locations, and Yelp
 					reviews, as mentioned above.
 				</JobBullet>
 				<JobBullet>
-					Set up a CRON task that would email our staff about technician schedules and recent Yelp
+					I set up a CRON task that would email our staff about technician schedules and recent Yelp
 					reviews.
 				</JobBullet>
 			</Box>

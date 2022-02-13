@@ -620,14 +620,18 @@
       ]
     },
     "src/primitives/Frame.tsx": {
-      "bytes": 293,
+      "bytes": 510,
       "imports": [
         {
-          "path": "src/theme.ts",
+          "path": "node_modules/react/index.js",
           "kind": "import-statement"
         },
         {
-          "path": "src/primitives/_createComponent.tsx",
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
           "kind": "import-statement"
         }
       ]
@@ -1007,7 +1011,7 @@
       ]
     },
     "src/Resume/sections/WorkExperience.tsx": {
-      "bytes": 6247,
+      "bytes": 6276,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -1316,7 +1320,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 13403867
+      "bytes": 13404180
     },
     "client/main.client.js": {
       "imports": [],
@@ -1501,7 +1505,7 @@
           "bytesInOutput": 756
         },
         "src/Nav/NavButtons.tsx": {
-          "bytesInOutput": 999
+          "bytesInOutput": 1005
         },
         "src/primitives/Button.tsx": {
           "bytesInOutput": 1333
@@ -1516,7 +1520,7 @@
           "bytesInOutput": 0
         },
         "src/primitives/Frame.tsx": {
-          "bytesInOutput": 232
+          "bytesInOutput": 476
         },
         "src/primitives/Flex.tsx": {
           "bytesInOutput": 51
@@ -1549,7 +1553,7 @@
           "bytesInOutput": 1712
         },
         "src/Resume/sections/ContactInfo.tsx": {
-          "bytesInOutput": 1255
+          "bytesInOutput": 1257
         },
         "node_modules/react-icons/md/index.esm.js": {
           "bytesInOutput": 892
@@ -1573,7 +1577,7 @@
           "bytesInOutput": 598
         },
         "src/Resume/sections/WorkExperience.tsx": {
-          "bytesInOutput": 7835
+          "bytesInOutput": 7827
         },
         "src/Resume/ResumeFrame.tsx": {
           "bytesInOutput": 349
@@ -1597,7 +1601,7 @@
           "bytesInOutput": 154
         }
       },
-      "bytes": 1061038
+      "bytes": 1061282
     }
   }
 }
