@@ -1,4 +1,3 @@
-export { CareerSummary } from './CareerSummary';
 export { ContactInfo } from './ContactInfo';
 export { Education } from './Education';
 export { NameAndRole } from './NameAndRole';

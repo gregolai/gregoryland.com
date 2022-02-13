@@ -3,15 +3,28 @@ import { Box } from 'pu2/style-lib';
 import { AiFillGithub } from 'react-icons/ai';
 import { Flex, H3, Icon, LinkButton, Para, Span } from '../primitives';
 import { Breakpoint, mediaLessThan, Space } from '../theme';
+import type { BoxProps } from 'pu2/style-lib/browser/Box';
+
+interface ImgLinkProps extends BoxProps {
+	filename: string;
+}
+const ImgLink = ({ filename, ...rest }: ImgLinkProps) => {
+	const href = `https://static.gregoryland.com/projects/${filename}`;
+	return (
+		<Box as="a" href={href} {...rest}>
+			<Box as="img" h="120px" src={`${href}?w=256`} />
+		</Box>
+	);
+};
 
 interface ProjectProps {
 	children: React.ReactNode;
 	github?: string;
+	imgs?: string[];
 	playSrc?: string;
 	title: string;
 }
-
-const Project = ({ children, github, playSrc, title }: ProjectProps) => (
+const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 	<Box
 		b="2px solid black"
 		my={Space._6}
@@ -66,7 +79,13 @@ const Project = ({ children, github, playSrc, title }: ProjectProps) => (
 				)}
 			</Flex>
 		</Flex>
-
+		{imgs && (
+			<Flex>
+				{imgs.map((filename, i) => (
+					<ImgLink key={filename} filename={filename} pl={i > 0 && Space._5} />
+				))}
+			</Flex>
+		)}
 		<Para>{children}</Para>
 	</Box>
 );
@@ -84,6 +103,7 @@ export const PageProjects = () => (
 		</Project>
 		<Project
 			github="https://github.com/gregolai/snek"
+			imgs={['snek1.png']}
 			playSrc="https://gregoryland.com/projects/snek/"
 			title="SNEK"
 		>
@@ -91,13 +111,15 @@ export const PageProjects = () => (
 		</Project>
 		<Project
 			github="https://github.com/gregolai/vimeo-player"
+			imgs={['html5-player1.png', 'html5-player2.png']}
 			playSrc="https://gregoryland.com/projects/vimeo-player/public/"
 			title="HTML5 Vimeo Player"
 		>
-			I wrote this for a Vimeo interview. I learned a lot about the JS video API.
+			I wrote this for a Vimeo interview. I learned a lot about the HTML5 video API.
 		</Project>
 		<Project
 			github="https://github.com/gregolai/warnew"
+			imgs={['war1.png', 'war2.png']}
 			playSrc="https://gregoryland.com/projects/warnew/"
 			title="War Game"
 		>
@@ -105,6 +127,7 @@ export const PageProjects = () => (
 		</Project>
 		<Project
 			github="https://github.com/gregolai/starfield-demo"
+			imgs={['starfield-as-1.png', 'starfield-js-1.png']}
 			playSrc="https://gregoryland.com/projects/starfield-js/"
 			title="Starfields"
 		>
@@ -112,19 +135,38 @@ export const PageProjects = () => (
 		</Project>
 		<Project
 			github="https://github.com/gregolai/canvas-masking-demo"
+			imgs={['masking.png']}
 			playSrc="https://gregoryland.com/projects/masking/"
 			title="Canvas Masking"
 		>
 			A little JS canvas masking demo.
 		</Project>
-		<Project title="CmdTool">
+		<Project
+			imgs={[
+				'cmdtool1.png',
+				'cmdtool2.png',
+				'cmdtool3.png',
+				'cmdtool4.png',
+				'cmdtool5.png',
+				'cmdtool6.png'
+			]}
+			title="CmdTool"
+		>
 			My friend and I had an idea for a tool to visualize command-line (CLI) commands as graphical (GUI)
 			equivalents. It was one of my first web projects. Kinda like a command-line wikipedia.
 		</Project>
-		<Project github="https://github.com/gregolai/Icosphere" title="IcoSphere">
+		<Project
+			github="https://github.com/gregolai/Icosphere"
+			imgs={['ico-lod0-1.png', 'ico-lod5-1.png']}
+			title="IcoSphere"
+		>
 			An icosahedron that can be subdivided.
 		</Project>
-		<Project github="https://github.com/gregolai/CatGame" title="Cat Game">
+		<Project
+			github="https://github.com/gregolai/CatGame"
+			imgs={['catgame1.png', 'catgame2.png']}
+			title="Cat Game"
+		>
 			The start of a game where you play as a cat that sneaks around the neighborhood stealing things
 			and completes missions.
 		</Project>
