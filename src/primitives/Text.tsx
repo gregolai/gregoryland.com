@@ -36,6 +36,15 @@ export const H3 = createComponent({
 	...textRendering
 });
 
+export const H4 = createComponent({
+	as: 'h4',
+	fontFamily: 'Chakra Petch,system-ui',
+	fontSize: FontSize._3,
+	fontWeight: '500',
+	lineHeight: '1.3em',
+	...textRendering
+});
+
 export const Li = createComponent({
 	as: 'li',
 	fontSize: FontSize._2,

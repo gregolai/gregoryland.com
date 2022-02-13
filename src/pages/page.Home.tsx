@@ -36,6 +36,7 @@ const BigGrid = () => {
 			/>
 			<Frame gridArea="c" bb="2px solid black">
 				<H3>My site</H3>
+				<Span>Now mobile-friendly!</Span>
 				<Para>
 					Hi, my name's Greg and this is my website. It's primarily meant to showcase my career and
 					the projects I've done over the years. I've been working as a web developer since 2014 and

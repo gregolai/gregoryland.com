@@ -23334,6 +23334,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     lineHeight: "1.3em",
     ...textRendering
   });
+  var H4 = createComponent({
+    as: "h4",
+    fontFamily: "Chakra Petch,system-ui",
+    fontSize: "20px" /* _3 */,
+    fontWeight: "500",
+    lineHeight: "1.3em",
+    ...textRendering
+  });
   var Li = createComponent({
     as: "li",
     fontSize: "16px" /* _2 */,
@@ -23564,7 +23572,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }), /* @__PURE__ */ import_react14.default.createElement(Frame, {
       gridArea: "c",
       bb: "2px solid black"
-    }, /* @__PURE__ */ import_react14.default.createElement(H3, null, "My site"), /* @__PURE__ */ import_react14.default.createElement(Para, null, "Hi, my name's Greg and this is my website. It's primarily meant to showcase my career and the projects I've done over the years. I've been working as a web developer since 2014 and have been programming little projects on my own for over a decade. I graduated from CSU Long Beach with a degree in Computer Science."), /* @__PURE__ */ import_react14.default.createElement(Para, null, "I currently reside in Austin, Texas and looking for a job position that challenges and inspires me. I'd prefer to work in an office, but I'm open to a remote role if the job is right. Please have a look at my site and print my resume."), /* @__PURE__ */ import_react14.default.createElement(LinkButton, {
+    }, /* @__PURE__ */ import_react14.default.createElement(H3, null, "My site"), /* @__PURE__ */ import_react14.default.createElement(Span, null, "Now mobile-friendly!"), /* @__PURE__ */ import_react14.default.createElement(Para, null, "Hi, my name's Greg and this is my website. It's primarily meant to showcase my career and the projects I've done over the years. I've been working as a web developer since 2014 and have been programming little projects on my own for over a decade. I graduated from CSU Long Beach with a degree in Computer Science."), /* @__PURE__ */ import_react14.default.createElement(Para, null, "I currently reside in Austin, Texas and looking for a job position that challenges and inspires me. I'd prefer to work in an office, but I'm open to a remote role if the job is right. Please have a look at my site and print my resume."), /* @__PURE__ */ import_react14.default.createElement(LinkButton, {
       display: "inline-flex",
       to: "/career",
       css: {
@@ -23950,11 +23958,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     p: "18px" /* _6 */
   }, /* @__PURE__ */ import_react26.default.createElement(Section, {
     title: "Dev stuff I've learnt"
-  }, /* @__PURE__ */ import_react26.default.createElement(Ul, null, /* @__PURE__ */ import_react26.default.createElement(Li, null, "Being OK with a team's coding practices. If it gets the job done and makes your life easier, this is almost always a win."), /* @__PURE__ */ import_react26.default.createElement(Li, null, "Creating your own tool is tempting, but it's often better to build on the backs of giants by using highly dependable libraries if one exists."), /* @__PURE__ */ import_react26.default.createElement(Li, null, "It's almost always better to take time on a well-designed API rather than a quick one. You'll thank your future self as your project scales."), /* @__PURE__ */ import_react26.default.createElement(Li, null, "You may be wrong about things and that's ok."), /* @__PURE__ */ import_react26.default.createElement(Li, null, "Separate your personal life from your work life. Leave your work at work. If you don't do this, you'll burnout fast. It also makes work more productive."))), /* @__PURE__ */ import_react26.default.createElement(Section, {
-    title: "My ramblings...from animal, to robot"
-  }, /* @__PURE__ */ import_react26.default.createElement(Para, null, "I like thinking really deep into things, reducing everything to the evolutionary mechanisms that create us, and perhaps even the universe itself."), /* @__PURE__ */ import_react26.default.createElement(Para, null, "I have deep respect for people who build things themselves. There's something about owning your creation that's beautiful. As we move towards a greater level of abstraction we face the danger of forgetting the joy of creation."), /* @__PURE__ */ import_react26.default.createElement(Para, null, "Our analog human experience is touching hands with our digital creations. It's ok to be weird because life is weird. It's the fire that keeps us going. Consciousness, the greatest mystery alongside the Big Bang and black holes, is fundamentally paradoxical.")), /* @__PURE__ */ import_react26.default.createElement(Section, {
-    title: "Favorite video games"
-  }, /* @__PURE__ */ import_react26.default.createElement(Ul, null, videoGames.map((v) => /* @__PURE__ */ import_react26.default.createElement(Li, {
+  }, /* @__PURE__ */ import_react26.default.createElement(Ul, null, /* @__PURE__ */ import_react26.default.createElement(Li, null, "I've learnt to be OK with teamwork and letting other people make your life easier, even if it doesn't follow coding conventions you normally employ. This is critical when working with large teams."), /* @__PURE__ */ import_react26.default.createElement(Li, null, "Writing things from scratch is tempting, but it's often better to build on the backs of giants by using a highly dependable library instead, assuming one exists."), /* @__PURE__ */ import_react26.default.createElement(Li, null, "It's almost always better to take time on a well-designed API rather than a quick one. API consumers, as well as your future self, will thank you as your projects scale."), /* @__PURE__ */ import_react26.default.createElement(Li, null, "You may be wrong about things and that's ok."), /* @__PURE__ */ import_react26.default.createElement(Li, null, "Separate your personal life from your work life. Leave your work at work. If you don't do this, you'll burnout fast. It also makes work-time more productive."))), /* @__PURE__ */ import_react26.default.createElement(Section, {
+    title: "My ramblings"
+  }, /* @__PURE__ */ import_react26.default.createElement(H4, null, "The joy of creation"), /* @__PURE__ */ import_react26.default.createElement(Para, null, "I have deep respect for people who build things themselves. There's something about owning your creation that's so beautiful. As we move towards a greater level of abstraction we face the danger of forgetting what inspired us in the first place."), /* @__PURE__ */ import_react26.default.createElement(H4, null, "From animal to robot"), /* @__PURE__ */ import_react26.default.createElement(Para, null, 'I like thinking really deep into things, reducing everything to the evolutionary mechanisms that create us, and perhaps even the universe itself. There was this very interesting idea I came across recently that made me start questioning how far this "evolution" thing goes. I heard that maybe the universe descended from a black hole from a parent universe, and that the selective pressure for universal constants is finely tuned by evolution to create descendent universes by means of black holes.'), /* @__PURE__ */ import_react26.default.createElement(Para, null, "Humanity's further merging with computers and AI is inevitable. Throughout our journey we need to take a step back and remember who we actually are. Are we animal or are we robot? And how do we structure our lives to live healthily in a society.")), /* @__PURE__ */ import_react26.default.createElement(Section, {
+    title: "Some of my favorite video games"
+  }, /* @__PURE__ */ import_react26.default.createElement(Span, null, "I love games with great soundtracks!"), /* @__PURE__ */ import_react26.default.createElement(Ul, null, videoGames.map((v) => /* @__PURE__ */ import_react26.default.createElement(Li, {
     key: v
   }, v)))));
 
