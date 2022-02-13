@@ -30242,13 +30242,13 @@ var require_parser = __commonJS({
           case ":":
           case " ":
           case ">":
-            if (true) {
+            if (false) {
               console.assert(typeof value === "object");
             }
             recurse(value, getRule, acc, `${sel}${key}`, media_key);
             break;
           case "@":
-            if (true) {
+            if (false) {
               console.assert(typeof value === "object");
             }
             recurse(value, getRule, acc, sel, key.substring(7));
@@ -30467,7 +30467,7 @@ var require_BrowserHandler = __commonJS({
       _add(className, obj) {
         const str = (0, utils_1.createRuleStr)(className, obj);
         if (str) {
-          if (true) {
+          if (false) {
             const delim = ` /**/    /**/ `;
             const lines = this._el.innerText.split(delim);
             lines.push(str);
@@ -30881,6 +30881,15 @@ var require_cjs = __commonJS({
     __exportStar(require_iconsManifest(), exports2);
     __exportStar(require_iconBase(), exports2);
     __exportStar(require_iconContext(), exports2);
+  }
+});
+
+// client/main.client.manifest.json
+var require_main_client_manifest = __commonJS({
+  "client/main.client.manifest.json"(exports2, module2) {
+    module2.exports = {
+      "main.client.tsx": "main.client.js"
+    };
   }
 });
 
@@ -31987,9 +31996,9 @@ var App = () => {
 // src/main.server.tsx
 var manifest;
 (async () => {
-  manifest = true ? {
+  manifest = false ? {
     "main.client.tsx": "main.client.js"
-  } : await null;
+  } : await Promise.resolve().then(() => __toESM(require_main_client_manifest()));
 })();
 var cssReset = `
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
