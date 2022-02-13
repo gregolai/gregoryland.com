@@ -31022,7 +31022,7 @@ var Button = (0, import_react2.forwardRef)((_a, ref) => {
     px: "18px" /* _6 */,
     py: "8px" /* _4 */
   }, rest), invertColorProps), {
-    css: {
+    css: __spreadValues({
       ":hover": {
         bg: "black",
         color: "white"
@@ -31030,7 +31030,7 @@ var Button = (0, import_react2.forwardRef)((_a, ref) => {
       [mediaLessThan(768 /* tablet */)]: {
         py: "12px" /* _5 */
       }
-    }
+    }, rest.css)
   }));
 });
 var LinkButton = (_a) => {
@@ -31738,17 +31738,20 @@ var printResume = () => {
     }, 2e3);
   });
 };
-var PageCareer = () => /* @__PURE__ */ import_react23.default.createElement(import_react23.default.Fragment, null, /* @__PURE__ */ import_react23.default.createElement(Button, {
-  onClick: () => printResume()
-}, "Print my resume"), /* @__PURE__ */ import_react23.default.createElement(MediaHide, {
+var PageCareer = () => /* @__PURE__ */ import_react23.default.createElement(import_react23.default.Fragment, null, /* @__PURE__ */ import_react23.default.createElement(MediaHide, {
   q: mediaLessThan(768 /* tablet */),
-  render: (props) => /* @__PURE__ */ import_react23.default.createElement(Flex, __spreadValues({
-    justifyContent: "center",
+  render: (props) => /* @__PURE__ */ import_react23.default.createElement(import_style_lib18.Box, __spreadProps(__spreadValues({}, props), {
     py: "18px" /* _6 */
+  }), /* @__PURE__ */ import_react23.default.createElement(Button, {
+    m: "0 auto",
+    onClick: () => printResume()
+  }, "Print my resume"), /* @__PURE__ */ import_react23.default.createElement(Flex, __spreadValues({
+    justifyContent: "center",
+    pt: "18px" /* _6 */
   }, props), /* @__PURE__ */ import_react23.default.createElement(import_style_lib18.Box, {
     boxShadow: "5px 5px 3px rgba(0,0,0,0.3)",
     maxWidth: "980px"
-  }, /* @__PURE__ */ import_react23.default.createElement(ResumeDesktop, null)))
+  }, /* @__PURE__ */ import_react23.default.createElement(ResumeDesktop, null))))
 }), /* @__PURE__ */ import_react23.default.createElement(MediaHide, {
   q: mediaGreaterThan(768 /* tablet */),
   render: ResumeMobile

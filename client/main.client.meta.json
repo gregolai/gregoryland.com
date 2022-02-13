@@ -595,7 +595,7 @@
       ]
     },
     "src/primitives/Button.tsx": {
-      "bytes": 1438,
+      "bytes": 1478,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -1173,7 +1173,7 @@
       ]
     },
     "src/Resume/Resume.print.tsx": {
-      "bytes": 1144,
+      "bytes": 859,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -1223,7 +1223,7 @@
       "imports": []
     },
     "src/pages/page.Career.tsx": {
-      "bytes": 1330,
+      "bytes": 1412,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -1394,7 +1394,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 13409744
+      "bytes": 13409677
     },
     "client/main.client.js": {
       "imports": [],
@@ -1582,7 +1582,7 @@
           "bytesInOutput": 1005
         },
         "src/primitives/Button.tsx": {
-          "bytesInOutput": 1333
+          "bytesInOutput": 1354
         },
         "src/theme.ts": {
           "bytesInOutput": 200
@@ -1621,7 +1621,7 @@
           "bytesInOutput": 2155
         },
         "src/pages/page.Career.tsx": {
-          "bytesInOutput": 1555
+          "bytesInOutput": 1707
         },
         "src/Resume/Resume.desktop.tsx": {
           "bytesInOutput": 1712
@@ -1681,7 +1681,7 @@
           "bytesInOutput": 152
         }
       },
-      "bytes": 1065460
+      "bytes": 1065633
     }
   }
 }

@@ -9,7 +9,7 @@ interface ButtonProps extends BoxProps {
 	invert?: boolean;
 }
 
-export const Button = forwardRef(({ invert, ...rest }: ButtonProps, ref) => {
+export const Button: React.FC<ButtonProps> = forwardRef(({ invert, ...rest }: ButtonProps, ref) => {
 	const invertColorProps = invert && {
 		bg: 'black',
 		color: 'white'
@@ -35,7 +35,8 @@ export const Button = forwardRef(({ invert, ...rest }: ButtonProps, ref) => {
 				},
 				[mediaLessThan(Breakpoint.tablet)]: {
 					py: Space._5
-				}
+				},
+				...rest.css
 			}}
 		/>
 	);

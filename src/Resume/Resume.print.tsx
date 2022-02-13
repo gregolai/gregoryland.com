@@ -5,20 +5,6 @@ import { Space } from './resume-theme';
 import { ContactInfoPrint, Education, NameAndRole, ProfileImage, Skills, WorkExperience } from './sections';
 import { ResumeFrame } from './ResumeFrame';
 
-interface LeftProps {
-	children: React.ReactNode;
-}
-const Left = ({ children }: LeftProps) => (
-	<Box flex="1" pr={Space._30px}>
-		{children}
-	</Box>
-);
-
-interface RightProps {
-	children: React.ReactNode;
-}
-const Right = ({ children }: RightProps) => <Box w="260px">{children}</Box>;
-
 export const ResumePrint = () => (
 	<ResumeFrame pb={Space._60px} bg="lightblue">
 		<Flex alignItems="flex-start" justifyContent="space-between">

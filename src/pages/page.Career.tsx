@@ -31,19 +31,23 @@ const printResume = () => {
 
 export const PageCareer = () => (
 	<>
-		<Button onClick={() => printResume()}>Print my resume</Button>
 		<MediaHide
 			q={mediaLessThan(Breakpoint.tablet)}
 			render={(props) => (
-				<Flex justifyContent="center" py={Space._6} {...props}>
-					<Box
-						//border="2px solid black"
-						boxShadow="5px 5px 3px rgba(0,0,0,0.3)"
-						maxWidth="980px"
-					>
-						<ResumeDesktop />
-					</Box>
-				</Flex>
+				<Box {...props} py={Space._6}>
+					<Button m="0 auto" onClick={() => printResume()}>
+						Print my resume
+					</Button>
+					<Flex justifyContent="center" pt={Space._6} {...props}>
+						<Box
+							//border="2px solid black"
+							boxShadow="5px 5px 3px rgba(0,0,0,0.3)"
+							maxWidth="980px"
+						>
+							<ResumeDesktop />
+						</Box>
+					</Flex>
+				</Box>
 			)}
 		/>
 		<MediaHide q={mediaGreaterThan(Breakpoint.tablet)} render={ResumeMobile} />
