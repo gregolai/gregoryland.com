@@ -31121,7 +31121,7 @@ var Ul = createComponent({
 // src/Nav/NavButton.tsx
 var import_react5 = __toESM(require_react());
 var import_react_router_dom2 = __toESM(require_main3());
-var NavButton = ({ link }) => {
+var NavButton = ({ link, onClick }) => {
   const loc = (0, import_react_router_dom2.useLocation)();
   const isActive = loc.pathname === link.to;
   let extraProps = {};
@@ -31132,7 +31132,8 @@ var NavButton = ({ link }) => {
   return /* @__PURE__ */ import_react5.default.createElement(LinkButton, __spreadValues({
     newTab: link.newTab,
     to: link.to,
-    b: "none"
+    b: "none",
+    onClick
   }, extraProps), link.Icon && /* @__PURE__ */ import_react5.default.createElement(Icon, {
     as: link.Icon,
     mr: "12px" /* _5 */
@@ -31160,7 +31161,8 @@ var NavDesktop = (props) => {
     justifyContent: "space-between",
     w: "240px",
     h: "100vh",
-    bg: "white"
+    bg: "white",
+    overflow: "scroll"
   }, props), /* @__PURE__ */ import_react7.default.createElement(import_style_lib4.Box, {
     flex: "1"
   }, /* @__PURE__ */ import_react7.default.createElement(H1, {
@@ -31707,16 +31709,20 @@ var PageLife = () => /* @__PURE__ */ import_react22.default.createElement(import
 // src/pages/page.Projects.tsx
 var import_react23 = __toESM(require_react());
 var import_style_lib18 = __toESM(require_style_lib());
-var ImgLink = (_a) => {
-  var _b = _a, { filename } = _b, rest = __objRest(_b, ["filename"]);
+var ImgLink = ({ filename }) => {
   const href = `https://static.gregoryland.com/projects/${filename}`;
-  return /* @__PURE__ */ import_react23.default.createElement(import_style_lib18.Box, __spreadValues({
+  return /* @__PURE__ */ import_react23.default.createElement(import_style_lib18.Box, {
     as: "a",
     href
-  }, rest), /* @__PURE__ */ import_react23.default.createElement(import_style_lib18.Box, {
+  }, /* @__PURE__ */ import_react23.default.createElement(import_style_lib18.Box, {
     as: "img",
     h: "120px",
-    src: `${href}?w=256`
+    src: `${href}?w=256`,
+    css: {
+      [mediaLessThan(768 /* tablet */)]: {
+        h: "80px"
+      }
+    }
   }));
 };
 var Project = ({ children, github, imgs, playSrc, title }) => /* @__PURE__ */ import_react23.default.createElement(Frame, {
@@ -31739,6 +31745,7 @@ var Project = ({ children, github, imgs, playSrc, title }) => /* @__PURE__ */ im
 }, title), /* @__PURE__ */ import_react23.default.createElement(Flex, {
   alignItems: "stretch",
   pl: "12px" /* _5 */,
+  gap: "12px" /* _5 */,
   css: {
     [mediaLessThan(768 /* tablet */)]: {
       flexDirection: "column"
@@ -31750,7 +31757,6 @@ var Project = ({ children, github, imgs, playSrc, title }) => /* @__PURE__ */ im
 }, /* @__PURE__ */ import_react23.default.createElement(Span, null, "Open in new tab")), github && /* @__PURE__ */ import_react23.default.createElement(LinkButton, {
   newTab: true,
   to: github,
-  ml: playSrc && "12px" /* _5 */,
   css: {
     [mediaLessThan(768 /* tablet */)]: {
       ml: playSrc && "0px",
@@ -31760,11 +31766,21 @@ var Project = ({ children, github, imgs, playSrc, title }) => /* @__PURE__ */ im
 }, /* @__PURE__ */ import_react23.default.createElement(Icon, {
   as: AiFillGithub,
   mr: "12px" /* _5 */
-}), /* @__PURE__ */ import_react23.default.createElement(Span, null, "View code")))), imgs && /* @__PURE__ */ import_react23.default.createElement(Flex, null, imgs.map((filename, i) => /* @__PURE__ */ import_react23.default.createElement(ImgLink, {
+}), /* @__PURE__ */ import_react23.default.createElement(Span, null, "View code")))), imgs && /* @__PURE__ */ import_react23.default.createElement(Flex, {
+  flexWrap: "wrap",
+  gap: "12px" /* _5 */,
+  my: "12px" /* _5 */,
+  css: {
+    [mediaLessThan(768 /* tablet */)]: {
+      justifyContent: "space-around"
+    }
+  }
+}, imgs.map((filename, i) => /* @__PURE__ */ import_react23.default.createElement(ImgLink, {
   key: filename,
-  filename,
-  pl: i > 0 && "12px" /* _5 */
-}))), /* @__PURE__ */ import_react23.default.createElement(Para, null, children));
+  filename
+}))), /* @__PURE__ */ import_react23.default.createElement(Para, {
+  textIndent: "0px"
+}, children));
 var PageProjects = () => /* @__PURE__ */ import_react23.default.createElement(import_style_lib18.Box, {
   p: "18px" /* _6 */
 }, /* @__PURE__ */ import_react23.default.createElement(Project, {

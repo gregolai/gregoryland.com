@@ -7,9 +7,10 @@ import type { BoxProps } from 'pu2/style-lib/browser/Box';
 
 interface NavButtonProps {
 	link: NavLink;
+	onClick?: (link: NavLink) => void;
 }
 
-export const NavButton = ({ link }: NavButtonProps) => {
+export const NavButton = ({ link, onClick }: NavButtonProps) => {
 	const loc = useLocation();
 	const isActive = loc.pathname === link.to;
 
@@ -20,7 +21,7 @@ export const NavButton = ({ link }: NavButtonProps) => {
 	}
 
 	return (
-		<LinkButton newTab={link.newTab} to={link.to} b="none" {...extraProps}>
+		<LinkButton newTab={link.newTab} to={link.to} b="none" onClick={onClick} {...extraProps}>
 			{link.Icon && <Icon as={link.Icon} mr={Space._5} />}
 			<Span>{link.label}</Span>
 		</LinkButton>

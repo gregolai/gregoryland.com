@@ -23359,7 +23359,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // src/Nav/NavButton.tsx
   var import_react9 = __toESM(require_react());
-  var NavButton = ({ link }) => {
+  var NavButton = ({ link, onClick }) => {
     const loc = useLocation();
     const isActive = loc.pathname === link.to;
     let extraProps = {};
@@ -23371,6 +23371,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       newTab: link.newTab,
       to: link.to,
       b: "none",
+      onClick,
       ...extraProps
     }, link.Icon && /* @__PURE__ */ import_react9.default.createElement(Icon, {
       as: link.Icon,
@@ -23398,6 +23399,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       w: "240px",
       h: "100vh",
       bg: "white",
+      overflow: "scroll",
       ...props
     }, /* @__PURE__ */ import_react11.default.createElement(import_style_lib4.Box, {
       flex: "1"
@@ -23948,16 +23950,20 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   // src/pages/page.Projects.tsx
   var import_react27 = __toESM(require_react());
   var import_style_lib18 = __toESM(require_style_lib());
-  var ImgLink = ({ filename, ...rest }) => {
+  var ImgLink = ({ filename }) => {
     const href = `https://static.gregoryland.com/projects/${filename}`;
     return /* @__PURE__ */ import_react27.default.createElement(import_style_lib18.Box, {
       as: "a",
-      href,
-      ...rest
+      href
     }, /* @__PURE__ */ import_react27.default.createElement(import_style_lib18.Box, {
       as: "img",
       h: "120px",
-      src: `${href}?w=256`
+      src: `${href}?w=256`,
+      css: {
+        [mediaLessThan(768 /* tablet */)]: {
+          h: "80px"
+        }
+      }
     }));
   };
   var Project = ({ children, github, imgs, playSrc, title }) => /* @__PURE__ */ import_react27.default.createElement(Frame, {
@@ -23980,6 +23986,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   }, title), /* @__PURE__ */ import_react27.default.createElement(Flex, {
     alignItems: "stretch",
     pl: "12px" /* _5 */,
+    gap: "12px" /* _5 */,
     css: {
       [mediaLessThan(768 /* tablet */)]: {
         flexDirection: "column"
@@ -23991,7 +23998,6 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   }, /* @__PURE__ */ import_react27.default.createElement(Span, null, "Open in new tab")), github && /* @__PURE__ */ import_react27.default.createElement(LinkButton, {
     newTab: true,
     to: github,
-    ml: playSrc && "12px" /* _5 */,
     css: {
       [mediaLessThan(768 /* tablet */)]: {
         ml: playSrc && "0px",
@@ -24001,11 +24007,21 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   }, /* @__PURE__ */ import_react27.default.createElement(Icon, {
     as: AiFillGithub,
     mr: "12px" /* _5 */
-  }), /* @__PURE__ */ import_react27.default.createElement(Span, null, "View code")))), imgs && /* @__PURE__ */ import_react27.default.createElement(Flex, null, imgs.map((filename, i) => /* @__PURE__ */ import_react27.default.createElement(ImgLink, {
+  }), /* @__PURE__ */ import_react27.default.createElement(Span, null, "View code")))), imgs && /* @__PURE__ */ import_react27.default.createElement(Flex, {
+    flexWrap: "wrap",
+    gap: "12px" /* _5 */,
+    my: "12px" /* _5 */,
+    css: {
+      [mediaLessThan(768 /* tablet */)]: {
+        justifyContent: "space-around"
+      }
+    }
+  }, imgs.map((filename, i) => /* @__PURE__ */ import_react27.default.createElement(ImgLink, {
     key: filename,
-    filename,
-    pl: i > 0 && "12px" /* _5 */
-  }))), /* @__PURE__ */ import_react27.default.createElement(Para, null, children));
+    filename
+  }))), /* @__PURE__ */ import_react27.default.createElement(Para, {
+    textIndent: "0px"
+  }, children));
   var PageProjects = () => /* @__PURE__ */ import_react27.default.createElement(import_style_lib18.Box, {
     p: "18px" /* _6 */
   }, /* @__PURE__ */ import_react27.default.createElement(Project, {

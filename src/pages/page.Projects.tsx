@@ -5,14 +5,23 @@ import { Flex, Frame, H3, Icon, LinkButton, Para, Span } from '../primitives';
 import { Breakpoint, mediaLessThan, Space } from '../theme';
 import type { BoxProps } from 'pu2/style-lib/browser/Box';
 
-interface ImgLinkProps extends BoxProps {
+interface ImgLinkProps {
 	filename: string;
 }
-const ImgLink = ({ filename, ...rest }: ImgLinkProps) => {
+const ImgLink = ({ filename }: ImgLinkProps) => {
 	const href = `https://static.gregoryland.com/projects/${filename}`;
 	return (
-		<Box as="a" href={href} {...rest}>
-			<Box as="img" h="120px" src={`${href}?w=256`} />
+		<Box as="a" href={href}>
+			<Box
+				as="img"
+				h="120px"
+				src={`${href}?w=256`}
+				css={{
+					[mediaLessThan(Breakpoint.tablet)]: {
+						h: '80px'
+					}
+				}}
+			/>
 		</Box>
 	);
 };
@@ -46,6 +55,7 @@ const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 			<Flex
 				alignItems="stretch"
 				pl={Space._5}
+				gap={Space._5}
 				css={{
 					[mediaLessThan(Breakpoint.tablet)]: {
 						flexDirection: 'column'
@@ -61,7 +71,6 @@ const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 					<LinkButton
 						newTab
 						to={github}
-						ml={playSrc && Space._5}
 						css={{
 							[mediaLessThan(Breakpoint.tablet)]: {
 								ml: playSrc && '0px',
@@ -76,13 +85,22 @@ const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 			</Flex>
 		</Flex>
 		{imgs && (
-			<Flex>
+			<Flex
+				flexWrap="wrap"
+				gap={Space._5}
+				my={Space._5}
+				css={{
+					[mediaLessThan(Breakpoint.tablet)]: {
+						justifyContent: 'space-around'
+					}
+				}}
+			>
 				{imgs.map((filename, i) => (
-					<ImgLink key={filename} filename={filename} pl={i > 0 && Space._5} />
+					<ImgLink key={filename} filename={filename} />
 				))}
 			</Flex>
 		)}
-		<Para>{children}</Para>
+		<Para textIndent="0px">{children}</Para>
 	</Frame>
 );
 

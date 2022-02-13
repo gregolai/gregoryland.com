@@ -701,7 +701,7 @@
       ]
     },
     "src/Nav/NavButton.tsx": {
-      "bytes": 743,
+      "bytes": 806,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -739,7 +739,7 @@
       ]
     },
     "src/Nav/Nav.desktop.tsx": {
-      "bytes": 725,
+      "bytes": 746,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -1212,7 +1212,7 @@
       ]
     },
     "src/pages/page.Projects.tsx": {
-      "bytes": 4640,
+      "bytes": 4851,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -1333,7 +1333,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 13403596
+      "bytes": 13404179
     },
     "client/main.client.js": {
       "imports": [],
@@ -1491,7 +1491,7 @@
           "bytesInOutput": 2599
         },
         "src/Nav/Nav.desktop.tsx": {
-          "bytesInOutput": 855
+          "bytesInOutput": 881
         },
         "node_modules/react-icons/lib/esm/index.js": {
           "bytesInOutput": 0
@@ -1545,7 +1545,7 @@
           "bytesInOutput": 1110
         },
         "src/Nav/NavButton.tsx": {
-          "bytesInOutput": 654
+          "bytesInOutput": 678
         },
         "src/Nav/index.ts": {
           "bytesInOutput": 0
@@ -1611,13 +1611,13 @@
           "bytesInOutput": 3083
         },
         "src/pages/page.Projects.tsx": {
-          "bytesInOutput": 5632
+          "bytesInOutput": 5865
         },
         "src/pages/page.ResumePrint.tsx": {
           "bytesInOutput": 154
         }
       },
-      "bytes": 1060885
+      "bytes": 1061168
     }
   }
 }

@@ -16,6 +16,7 @@ export const NavDesktop = (props: BoxProps) => {
 			w="240px"
 			h="100vh"
 			bg="white"
+			overflow="scroll"
 			{...props}
 		>
 			<Box flex="1">
