@@ -32049,7 +32049,7 @@ var renderSSR = ({ appHtml, styleHtml }) => `
 <body><div id="root">${appHtml}</div></body>
 </html>
 `;
-var port = 8086;
+var port = process.env.PORT || 8086;
 var server = (0, import_express.default)();
 server.use("/", import_express.default.static(import_path.default.resolve(__dirname, "../client")));
 server.get("*", async (req, res) => {

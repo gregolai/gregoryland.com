@@ -72,7 +72,8 @@ const renderSSR = ({ appHtml, styleHtml }: any) => `
 </html>
 `;
 
-const port = 8086;
+// @ts-ignore
+const port = process.env.PORT || 8086;
 const server = express();
 
 server.use('/', express.static(path.resolve(__dirname, '../client')));
