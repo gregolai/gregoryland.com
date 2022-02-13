@@ -1,4 +1,4 @@
 import React from 'react';
-import { ResumeDesktop } from '../Resume';
+import { ResumeDesktop, ResumePrint } from '../Resume';
 
-export const PageResumePrint = () => <ResumeDesktop />;
+export const PageResumePrint = () => <ResumePrint />;

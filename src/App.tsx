@@ -12,19 +12,8 @@ import { PageProjects } from './pages/page.Projects';
 import { PageResumePrint } from './pages/page.ResumePrint';
 import { MediaHide } from './MediaHide';
 import { Flex } from './primitives';
-import type { BoxProps } from 'pu2/style-lib/browser/Box';
 
 const navWidth = '180px';
-
-const Main = (props: BoxProps) => {
-	const loc = useLocation();
-	console.log(loc);
-	return (
-		<Box as="main" {...props}>
-			<Outlet />
-		</Box>
-	);
-};
 
 const PageFrame = () => (
 	<Box bg="#D6E5f4">
@@ -32,7 +21,9 @@ const PageFrame = () => (
 			render={(props) => (
 				<Box {...props}>
 					<NavDesktop w={navWidth} />
-					<Main ml={navWidth} minHeight="100vh" overflow="hidden" />
+					<Box as="main" ml={navWidth} minHeight="100vh" overflow="hidden">
+						<Outlet />
+					</Box>
 				</Box>
 			)}
 			q={mediaLessThan(Breakpoint.tablet)}
@@ -41,7 +32,9 @@ const PageFrame = () => (
 			render={(props) => (
 				<Flex flexDirection="column" minHeight="100vh" {...props}>
 					<NavMobile />
-					<Main />
+					<Box as="main">
+						<Outlet />
+					</Box>
 				</Flex>
 			)}
 			q={mediaGreaterThan(Breakpoint.tablet)}

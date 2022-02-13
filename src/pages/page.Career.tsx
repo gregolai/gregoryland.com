@@ -1,13 +1,37 @@
 import { Box } from 'pu2/style-lib';
 import React from 'react';
-import { Flex } from '../primitives';
+import { Button, Flex } from '../primitives';
 import { ResumeDesktop, ResumeMobile } from '../Resume';
 import { Breakpoint, mediaGreaterThan, mediaLessThan, Space } from '../theme';
 import { MediaHide } from '../MediaHide';
 
+let printing = false;
+const printResume = () => {
+	if (printing) return;
+
+	printing = true;
+
+	const iframe = document.createElement('iframe');
+	iframe.src = `${window.location.origin}/resume-print`;
+	iframe.style.position = 'absolute';
+	iframe.style.top = '-10000px';
+	document.body.appendChild(iframe);
+
+	// @ts-ignore
+	iframe.contentWindow.addEventListener('DOMContentLoaded', () => {
+		// @ts-ignore
+		iframe.contentWindow.print();
+
+		setTimeout(() => {
+			document.body.removeChild(iframe);
+			printing = false;
+		}, 2000);
+	});
+};
+
 export const PageCareer = () => (
 	<>
-		{/* <Button>Print my resume</Button> */}
+		<Button onClick={() => printResume()}>Print my resume</Button>
 		<MediaHide
 			q={mediaLessThan(Breakpoint.tablet)}
 			render={(props) => (

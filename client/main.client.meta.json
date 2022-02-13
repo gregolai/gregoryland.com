@@ -578,7 +578,7 @@
       ]
     },
     "src/theme.ts": {
-      "bytes": 1268,
+      "bytes": 1316,
       "imports": []
     },
     "src/primitives/_createComponent.tsx": {
@@ -872,7 +872,7 @@
       ]
     },
     "src/Resume/resume-theme.ts": {
-      "bytes": 493,
+      "bytes": 508,
       "imports": []
     },
     "node_modules/react-icons/md/index.esm.js": {
@@ -906,7 +906,7 @@
       ]
     },
     "src/Resume/sections/ContactInfo.tsx": {
-      "bytes": 1120,
+      "bytes": 1329,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -930,6 +930,43 @@
         },
         {
           "path": "src/primitives/index.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
+          "kind": "import-statement"
+        }
+      ]
+    },
+    "src/Resume/sections/ContactInfo.print.tsx": {
+      "bytes": 704,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/Resume/resume-theme.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/react-icons/md/index.esm.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/Resume/sections/_primitives.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives/index.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/theme.ts",
           "kind": "import-statement"
         }
       ]
@@ -1036,10 +1073,14 @@
       ]
     },
     "src/Resume/sections/index.ts": {
-      "bytes": 264,
+      "bytes": 320,
       "imports": [
         {
           "path": "src/Resume/sections/ContactInfo.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/Resume/sections/ContactInfo.print.tsx",
           "kind": "import-statement"
         },
         {
@@ -1082,7 +1123,7 @@
       ]
     },
     "src/Resume/Resume.desktop.tsx": {
-      "bytes": 1555,
+      "bytes": 1675,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -1131,8 +1172,37 @@
         }
       ]
     },
+    "src/Resume/Resume.print.tsx": {
+      "bytes": 1144,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "node_modules/pu2/style-lib/index.js",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/primitives/index.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/Resume/resume-theme.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/Resume/sections/index.ts",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/Resume/ResumeFrame.tsx",
+          "kind": "import-statement"
+        }
+      ]
+    },
     "src/Resume/index.ts": {
-      "bytes": 98,
+      "bytes": 144,
       "imports": [
         {
           "path": "src/Resume/Resume.desktop.tsx",
@@ -1140,6 +1210,10 @@
         },
         {
           "path": "src/Resume/Resume.mobile.tsx",
+          "kind": "import-statement"
+        },
+        {
+          "path": "src/Resume/Resume.print.tsx",
           "kind": "import-statement"
         }
       ]
@@ -1149,7 +1223,7 @@
       "imports": []
     },
     "src/pages/page.Career.tsx": {
-      "bytes": 763,
+      "bytes": 1330,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -1178,7 +1252,7 @@
       ]
     },
     "src/pages/page.Life.tsx": {
-      "bytes": 3112,
+      "bytes": 3246,
       "imports": [
         {
           "path": "node_modules/pu2/style-lib/index.js",
@@ -1224,7 +1298,7 @@
       ]
     },
     "src/pages/page.ResumePrint.tsx": {
-      "bytes": 127,
+      "bytes": 138,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -1237,7 +1311,7 @@
       ]
     },
     "src/App.tsx": {
-      "bytes": 1707,
+      "bytes": 1567,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -1320,7 +1394,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 13405281
+      "bytes": 13409744
     },
     "client/main.client.js": {
       "imports": [],
@@ -1475,7 +1549,7 @@
           "bytesInOutput": 20900
         },
         "src/App.tsx": {
-          "bytesInOutput": 2599
+          "bytesInOutput": 2526
         },
         "src/Nav/Nav.desktop.tsx": {
           "bytesInOutput": 873
@@ -1511,7 +1585,7 @@
           "bytesInOutput": 1333
         },
         "src/theme.ts": {
-          "bytesInOutput": 159
+          "bytesInOutput": 200
         },
         "src/primitives/_createComponent.tsx": {
           "bytesInOutput": 311
@@ -1547,13 +1621,13 @@
           "bytesInOutput": 2155
         },
         "src/pages/page.Career.tsx": {
-          "bytesInOutput": 875
+          "bytesInOutput": 1555
         },
         "src/Resume/Resume.desktop.tsx": {
           "bytesInOutput": 1712
         },
         "src/Resume/sections/ContactInfo.tsx": {
-          "bytesInOutput": 1257
+          "bytesInOutput": 1373
         },
         "node_modules/react-icons/md/index.esm.js": {
           "bytesInOutput": 892
@@ -1563,6 +1637,9 @@
         },
         "src/Resume/sections/index.ts": {
           "bytesInOutput": 0
+        },
+        "src/Resume/sections/ContactInfo.print.tsx": {
+          "bytesInOutput": 744
         },
         "src/Resume/sections/Education.tsx": {
           "bytesInOutput": 822
@@ -1588,20 +1665,23 @@
         "src/Resume/Resume.mobile.tsx": {
           "bytesInOutput": 786
         },
+        "src/Resume/Resume.print.tsx": {
+          "bytesInOutput": 1397
+        },
         "src/MediaHide.tsx": {
           "bytesInOutput": 90
         },
         "src/pages/page.Life.tsx": {
-          "bytesInOutput": 3921
+          "bytesInOutput": 4076
         },
         "src/pages/page.Projects.tsx": {
           "bytesInOutput": 5796
         },
         "src/pages/page.ResumePrint.tsx": {
-          "bytesInOutput": 154
+          "bytesInOutput": 152
         }
       },
-      "bytes": 1062320
+      "bytes": 1065460
     }
   }
 }

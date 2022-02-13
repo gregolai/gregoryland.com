@@ -26,7 +26,7 @@ export const NameHeading = (props: BoxProps) => (
 		color={Palette.darkest}
 		{...props}
 		fontSize={FontSize._39px}
-		letterSpacing={LetterSpacing._4px}
+		letterSpacing={LetterSpacing._2px}
 		textTransform="uppercase"
 	/>
 );

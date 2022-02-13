@@ -21,18 +21,25 @@ const Section = ({ children, title }: SectionProps) => (
 );
 
 const videoGames = [
+	'Cuphead',
 	'Factorio',
 	'Final Fantasy VII',
 	'Final Fantasy VIII',
+	'FTL',
 	'Hollow Knight',
 	'Kid Chameleon',
+	'Satisfactory',
+	'Shenzhen I/O (and any Zachtronics game)',
+	'Slay the Spire',
 	'Starcraft',
+	'Starcraft II',
+	'Subnautica',
 	'Super Meat Boy',
 	'The Talos Principle',
 	'Thief: The Dark Project',
 	'Thief 2: The Metal Age',
 	'Undertale',
-	'Warcraft 3'
+	'Warcraft III'
 ];
 
 export const PageLife = () => (

@@ -57,3 +57,4 @@ export const enum Breakpoint {
 
 export const mediaLessThan = (bp: Breakpoint) => `@media only screen and (max-width:${bp}px)`;
 export const mediaGreaterThan = (bp: Breakpoint) => `@media only screen and (min-width:${bp + 1}px)`;
+export const mediaPrint = () => `@media print`;

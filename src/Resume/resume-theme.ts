@@ -20,6 +20,7 @@ export const enum LineHeight {
 }
 
 export const enum LetterSpacing {
+	_2px = '2px',
 	_4px = '4px'
 }
 

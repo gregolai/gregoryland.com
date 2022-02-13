@@ -5,9 +5,26 @@ import { Palette, Space } from '../resume-theme';
 import { MdFace, MdOutlineEmail } from 'react-icons/md';
 import { SmallHeading } from './_primitives';
 import { Flex, Icon, Span } from '../../primitives';
+import { mediaPrint } from '../../theme';
 
 export const ContactInfo = (props: BoxProps) => (
-	<Box bg={Palette.darkest} px={Space._30px} py={Space._18px} {...props}>
+	<Flex
+		bg={Palette.darkest}
+		color="white"
+		flexDirection="column"
+		px={Space._30px}
+		py={Space._18px}
+		{...props}
+		css={{
+			[mediaPrint()]: {
+				bg: 'white',
+				color: 'black',
+				flexDirection: 'row',
+				px: '0px',
+				py: '0px'
+			}
+		}}
+	>
 		{[
 			{
 				IconComp: MdOutlineEmail,
@@ -24,7 +41,6 @@ export const ContactInfo = (props: BoxProps) => (
 				key={label}
 				alignItems="center"
 				bb="2px solid white"
-				color="white"
 				py={Space._18px}
 				css={{
 					':first-of-type': { pt: '0px' },
@@ -38,5 +54,5 @@ export const ContactInfo = (props: BoxProps) => (
 				</Flex>
 			</Flex>
 		))}
-	</Box>
+	</Flex>
 );
