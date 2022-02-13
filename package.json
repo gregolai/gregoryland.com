@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"scripts": {
 		"build:prod": "NODE_ENV=production node scripts/build.js",
-		"serve:prod": "PORT=80 node ./server/main.server.js",
+		"serve:prod": "node ./server/main.server.js",
 		"__build": "npm run build:client && npm run build:server",
 		"__build:client": "vite build --outDir dist/client --ssrManifest",
 		"__build:server": "vite build --ssr src/entry.server.tsx --outDir dist/server",
