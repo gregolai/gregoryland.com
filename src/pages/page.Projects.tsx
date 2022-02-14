@@ -45,7 +45,7 @@ const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 		}}
 	>
 		<Flex
-			alignItems="flex-start"
+			alignItems="center"
 			justifyContent="space-between"
 			css={{
 				[mediaLessThan(Breakpoint.tablet)]: {
