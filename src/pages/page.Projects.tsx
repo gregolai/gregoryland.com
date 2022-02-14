@@ -57,7 +57,11 @@ const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 			<Flex
 				alignItems="stretch"
 				gap={Space._5}
-				pt={Space._4}
+				css={{
+					[mediaLessThan(Breakpoint.tablet)]: {
+						pt: Space._4
+					}
+				}}
 			>
 				{playSrc && (
 					<LinkButton newTab to={playSrc}>
@@ -76,7 +80,7 @@ const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 			</Flex>
 		</Flex>
 		{imgs && (
-			<Flex flexWrap="wrap" justifyContent="space-between" gap={Space._4} pt={Space._5}>
+			<Flex flexWrap="wrap" gap={Space._4} pt={Space._5}>
 				{imgs.map((filename, i) => (
 					<ImgLink key={filename} filename={filename} />
 				))}
