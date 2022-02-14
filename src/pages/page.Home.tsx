@@ -36,7 +36,6 @@ const BigGrid = () => {
 			/>
 			<Frame gridArea="c" bb="2px solid black">
 				<H3>My site</H3>
-				<Span>Now mobile-friendly!</Span>
 				<Para>
 					Hi, my name's Greg and this is my website. It's primarily meant to showcase my career and
 					the projects I've done over the years. I've been working as a web developer since 2014 and
@@ -46,8 +45,9 @@ const BigGrid = () => {
 				<Para>
 					I currently reside in Austin, Texas and looking for a job position that challenges and
 					inspires me. I'd prefer to work in an office, but I'm open to a remote role if the job is
-					right. Please have a look at my site and print my resume.
+					right.
 				</Para>
+				<Para>Please have a look and print my resume.</Para>
 				<LinkButton
 					display="inline-flex"
 					to="/career"

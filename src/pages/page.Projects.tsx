@@ -93,8 +93,7 @@ const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 export const PageProjects = () => (
 	<Box p={Space._6}>
 		<Project github="https://github.com/gregolai/gregoryland.com" title="gregoryland.com">
-			This mobile-friendly website. This one uses my custom built style lib and server-side-rendering
-			(SSR).
+			A mobile-friendly website built using a my custom style lib and server-side rendering. You're looking at it right now.
 		</Project>
 		<Project github="https://github.com/gregolai/pu2/tree/master/src/style-lib" title="Style Lib">
 			(Yet another) CSS-in-JS styling library I wrote. It's being used on this site.
