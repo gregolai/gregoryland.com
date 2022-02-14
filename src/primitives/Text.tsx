@@ -32,7 +32,7 @@ export const H3 = createComponent({
 	fontFamily: 'Chakra Petch,system-ui',
 	fontSize: FontSize._4,
 	fontWeight: '500',
-	lineHeight: '1.3em',
+	lineHeight: '1.1em',
 	...textRendering
 });
 

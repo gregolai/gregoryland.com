@@ -15,7 +15,7 @@ const Section = ({ children, title }: SectionProps) => (
 			':first-of-type': { mt: '0px' }
 		}}
 	>
-		<H3>{title}</H3>
+		<H3 pb={Space._4}>{title}</H3>
 		{children}
 	</Frame>
 );
