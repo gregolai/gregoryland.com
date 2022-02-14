@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box } from 'pu2/style-lib';
-import { Button, Flex, H3, Icon, Span } from '../primitives';
+import { Button, Flex, H4, Icon, Span } from '../primitives';
 import { Space } from '../theme';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
@@ -18,15 +18,15 @@ export const NavMobile = (props: BoxProps) => {
 
 	return (
 		<Box as="nav" {...props}>
-			<Button invert w="100%" b="none" justifyContent="space-between" onClick={() => setOpen(!isOpen)}>
+			<Button invert w="100%" b="none" p={Space._5} justifyContent="space-between" onClick={() => setOpen(!isOpen)}>
 				<Flex alignItems="center">
-					<Icon as={isOpen ? IoIosArrowDown : GiHamburgerMenu} mr={Space._5} />
-					<H3 textAlign="center">Gregory Dalton</H3>
+					<Icon as={isOpen ? IoIosArrowDown : GiHamburgerMenu} mr={Space._4} />
+					<H4 textAlign="center">Gregory Dalton</H4>
 				</Flex>
 
 				{currentLink && (
 					<Flex alignItems="center">
-						<Icon as={currentLink.Icon} mr={Space._5} />
+						<Icon as={currentLink.Icon} mr={Space._4} />
 						<Span>{currentLink.label}</Span>
 					</Flex>
 				)}

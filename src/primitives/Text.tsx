@@ -21,7 +21,7 @@ const textRendering = {
 
 export const H1 = createComponent({
 	as: 'h1',
-	fontFamily: 'Chakra Petch',
+	fontFamily: 'Chakra Petch,system-ui',
 	fontSize: FontSize._5,
 	lineHeight: '1.1em',
 	...textRendering
