@@ -24,6 +24,7 @@ export const Button: React.FC<ButtonProps> = forwardRef(({ invert, ...rest }: Bu
 			color="black"
 			cursor="pointer"
 			display="flex"
+			m="0px"
 			px={Space._6}
 			py={Space._4}
 			{...rest}

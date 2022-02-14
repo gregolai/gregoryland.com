@@ -45,23 +45,17 @@ const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 		}}
 	>
 		<Flex
-			alignItems="center"
+			alignItems="flex-start"
 			css={{
 				[mediaLessThan(Breakpoint.tablet)]: {
-					alignItems: 'flex-start'
+					display: 'block'
 				}
 			}}
 		>
 			<H3 flex="1">{title}</H3>
 			<Flex
 				alignItems="stretch"
-				pl={Space._5}
 				gap={Space._5}
-				css={{
-					[mediaLessThan(Breakpoint.tablet)]: {
-						flexDirection: 'column'
-					}
-				}}
 			>
 				{playSrc && (
 					<LinkButton newTab to={playSrc}>
@@ -72,12 +66,6 @@ const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 					<LinkButton
 						newTab
 						to={github}
-						css={{
-							[mediaLessThan(Breakpoint.tablet)]: {
-								ml: playSrc && '0px',
-								mt: playSrc && Space._5
-							}
-						}}
 					>
 						<Icon as={AiFillGithub} mr={Space._5} />
 						<Span>View code</Span>
