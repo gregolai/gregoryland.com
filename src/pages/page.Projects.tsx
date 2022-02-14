@@ -46,16 +46,18 @@ const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 	>
 		<Flex
 			alignItems="flex-start"
+			justifyContent="space-between"
 			css={{
 				[mediaLessThan(Breakpoint.tablet)]: {
 					display: 'block'
 				}
 			}}
 		>
-			<H3 flex="1">{title}</H3>
+			<H3>{title}</H3>
 			<Flex
 				alignItems="stretch"
 				gap={Space._5}
+				pt={Space._4}
 			>
 				{playSrc && (
 					<LinkButton newTab to={playSrc}>
@@ -74,7 +76,7 @@ const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 			</Flex>
 		</Flex>
 		{imgs && (
-			<Flex flexWrap="wrap" gap={Space._5} my={Space._5}>
+			<Flex flexWrap="wrap" justifyContent="space-between" gap={Space._4} pt={Space._5}>
 				{imgs.map((filename, i) => (
 					<ImgLink key={filename} filename={filename} />
 				))}
@@ -102,7 +104,7 @@ export const PageProjects = () => (
 			playSrc="https://gregoryland.com/projects/snek/"
 			title="SNEK"
 		>
-			A small snake game I wrote for Squarespace during my hiring process.
+			A small snake game I wrote for my hiring process at Squarespace.
 		</Project>
 		<Project
 			github="https://github.com/gregolai/vimeo-player"
