@@ -4,6 +4,7 @@ projects
 client
 !client/favicon.ico
 
+server
 
 # prod server only
 # restart.sh
