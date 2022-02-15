@@ -78,17 +78,16 @@ const server = express();
 
 // server.use('/', express.static(path.resolve(__dirname, '../client')));
 
-server.use('/projects/snek', express.static(path.resolve(__dirname, '../projects/snek')));
+server.use('*/projects/snek', express.static(path.resolve(__dirname, '../projects/snek')));
 server.use(
-	'/projects/vimeo-player',
+	'*/projects/vimeo-player',
 	express.static(path.resolve(__dirname, '../projects/vimeo-player/public'))
 );
-server.use('/projects/warnew', express.static(path.resolve(__dirname, '../projects/warnew')));
-server.use('/projects/starfield-js', express.static(path.resolve(__dirname, '../projects/starfield-js')));
-server.use('/projects/masking', express.static(path.resolve(__dirname, '../projects/masking')));
-server.use('/projects/bar', express.static(path.resolve(__dirname, '../projects/bar')));
+server.use('*/projects/warnew', express.static(path.resolve(__dirname, '../projects/warnew')));
+server.use('*/projects/starfield-js', express.static(path.resolve(__dirname, '../projects/starfield-js')));
+server.use('*/projects/masking', express.static(path.resolve(__dirname, '../projects/masking')));
+server.use('*/projects/bar', express.static(path.resolve(__dirname, '../projects/bar')));
 
-console.log(__dirname);
 server.get('*', async (req: any, res: any) => {
 	let appHtml = '';
 	let styleHtml = '';
