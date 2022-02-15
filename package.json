@@ -2,6 +2,7 @@
 	"name": "gregoryland",
 	"version": "1.0.0",
 	"scripts": {
+		"dev": "node ./dev.js",
 		"build:prod": "NODE_ENV=production node scripts/build.js",
 		"serve:prod": "node ./server/main.server.js",
 		"__build": "npm run build:client && npm run build:server",
