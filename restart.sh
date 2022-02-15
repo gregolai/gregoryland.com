@@ -1,5 +1,7 @@
 #!/bin/bash
+git stash push --include-untracked
 git pull
+git stash drop
 npm i
 
 pm2 stop --silent gregoryland.com
