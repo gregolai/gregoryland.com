@@ -112,7 +112,7 @@ export const PageProjects = () => (
 		<Project
 			github="https://github.com/gregolai/vimeo-player"
 			imgs={['html5-player1.png', 'html5-player2.png']}
-			playSrc="https://gregoryland.com/projects/vimeo-player/public/"
+			playSrc="https://gregoryland.com/projects/vimeo-player/"
 			title="HTML5 Vimeo Player"
 		>
 			I wrote this for a Vimeo interview. I learned a lot about the HTML5 video API.
