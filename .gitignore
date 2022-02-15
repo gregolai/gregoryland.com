@@ -1,5 +1,9 @@
 node_modules
-public/js
+projects
+
+client
+!client/favicon.ico
+
 
 # prod server only
 # restart.sh
