@@ -84,7 +84,6 @@ server.use(
 server.use('/projects/warnew', express.static(path.resolve(__dirname, '../projects/warnew')));
 server.use('/projects/starfield-js', express.static(path.resolve(__dirname, '../projects/starfield-js')));
 server.use('/projects/masking', express.static(path.resolve(__dirname, '../projects/masking')));
-server.use('/projects/bar', express.static(path.resolve(__dirname, '../projects/bar')));
 
 server.use('/', express.static(path.resolve(__dirname, '../client')));
 
