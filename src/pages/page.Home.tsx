@@ -45,9 +45,8 @@ const BigGrid = () => {
 				<Para>
 					I currently reside in Austin, Texas and looking for a job position that challenges and
 					inspires me. I'd prefer to work in an office, but I'm open to a remote role if the job is
-					right.
+					right. Please have a look at my site and print my resume.
 				</Para>
-				<Para>Please have a look and print my resume.</Para>
 				<LinkButton
 					display="inline-flex"
 					to="/career"

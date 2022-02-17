@@ -5,8 +5,3 @@ client
 !client/favicon.ico
 
 server
-
-# prod server only
-# restart.sh
-
-old-gregoryland.com

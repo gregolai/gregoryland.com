@@ -1,4 +1,3 @@
-// @ts-ignore
 import express from 'express';
 import path from 'path';
 import React, { StrictMode } from 'react';
@@ -6,16 +5,9 @@ import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom/server';
 import { SSRStyleCollector, SSRStyleProvider } from 'pu2/style-lib/server';
 
-import { App } from './App';
+import manifest from '../client/main.client.manifest.json';
 
-let manifest: any;
-(async () => {
-	manifest = __DEV__
-		? {
-				'main.client.tsx': 'main.client.js'
-		  }
-		: await import('../client/main.client.manifest.json');
-})();
+import { App } from './App';
 
 const cssReset = `
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
@@ -61,12 +53,7 @@ const renderSSR = ({ appHtml, styleHtml }: any) => `
 	<title>Gregory Dalton</title>
 	<style>${cssReset}</style>
 	${styleHtml}
-	${
-		manifest && manifest['main.client.css']
-			? `<link href="${manifest['main.client.css']}" rel="stylesheet" />`
-			: ''
-	}
-	<script defer src="${manifest && manifest['main.client.tsx']}"></script>
+	<script defer type="text/javascript" src="${manifest['main.client.tsx']}"></script>
 </head>
 <body><div id="root">${appHtml}</div></body>
 </html>
@@ -87,26 +74,46 @@ server.use('/projects/masking', express.static(path.resolve(__dirname, '../proje
 
 server.use('/', express.static(path.resolve(__dirname, '../client')));
 
+// CACHE RENDERS OF PAGE
+const SSR_USE_CACHE = !__DEV__;
+// MAP FULL RENDERED SSR BY REQ URL
+const SSR_CACHED = new Map<string, string>();
+
 server.get('*', async (req: any, res: any) => {
-	let appHtml = '';
-	let styleHtml = '';
-	try {
-		const collector = new SSRStyleCollector();
-		appHtml = renderToString(
-			<StrictMode>
-				<SSRStyleProvider collector={collector}>
-					<StaticRouter location={req.originalUrl}>
-						<App />
-					</StaticRouter>
-				</SSRStyleProvider>
-			</StrictMode>
-		);
-		styleHtml = collector.getHtml();
-	} catch (ex) {
-		// UNABLE TO SSR
-		console.error('UNABLE TO SSR\r\n', ex);
+	const location = req.originalUrl;
+
+	let fullHtml: string = '';
+
+	if (SSR_USE_CACHE && SSR_CACHED.has(location)) {
+		fullHtml = SSR_CACHED.get(location) as string;
+	} else {
+		let appHtml = '';
+		let styleHtml = '';
+		try {
+			const collector = new SSRStyleCollector();
+			appHtml = renderToString(
+				<StrictMode>
+					<SSRStyleProvider collector={collector}>
+						<StaticRouter location={req.originalUrl}>
+							<App />
+						</StaticRouter>
+					</SSRStyleProvider>
+				</StrictMode>
+			);
+			styleHtml = collector.getHtml();
+		} catch (ex) {
+			// UNABLE TO SSR
+			console.error('UNABLE TO SSR\r\n', ex);
+		}
+
+		fullHtml = renderSSR({ appHtml, styleHtml });
+
+		if (SSR_USE_CACHE) {
+			SSR_CACHED.set(location, fullHtml);
+		}
 	}
-	res.status(200).set({ 'Content-Type': 'text/html' }).end(renderSSR({ appHtml, styleHtml }));
+
+	res.status(200).set({ 'Content-Type': 'text/html' }).end(fullHtml);
 });
 
 server.listen(port, () => {
