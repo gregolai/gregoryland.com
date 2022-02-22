@@ -79,7 +79,7 @@ const SSR_USE_CACHE = !__DEV__;
 // MAP FULL RENDERED SSR BY REQ URL
 const SSR_CACHED = new Map<string, string>();
 
-server.get('*', async (req: any, res: any) => {
+server.get('*', async (req, res) => {
 	const location = req.originalUrl;
 
 	let fullHtml: string = '';
@@ -113,7 +113,9 @@ server.get('*', async (req: any, res: any) => {
 		}
 	}
 
-	res.status(200).set({ 'Content-Type': 'text/html' }).end(fullHtml);
+	res.status(200);
+	res.setHeader('Content-Type', 'text/html');
+	res.end(fullHtml);
 });
 
 server.listen(port, () => {
