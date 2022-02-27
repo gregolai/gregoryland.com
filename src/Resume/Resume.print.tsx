@@ -6,7 +6,7 @@ import { ContactInfoPrint, Education, NameAndRole, ProfileImage, Skills, WorkExp
 import { ResumeFrame } from './ResumeFrame';
 
 export const ResumePrint = () => (
-	<ResumeFrame pb={Space._60px} bg="lightblue">
+	<ResumeFrame>
 		<Flex alignItems="flex-start" justifyContent="space-between">
 			<Box pb={Space._38px}>
 				<NameAndRole />
