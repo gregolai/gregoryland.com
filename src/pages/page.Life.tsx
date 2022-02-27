@@ -75,13 +75,18 @@ const DrawingsSection = () => {
 };
 
 const videoGames = [
+	'Caesar III',
+	'Crypt of the Necrodancer',
 	'Cuphead',
+	'Death Road to Canada',
 	'Factorio',
 	'Final Fantasy VII',
 	'Final Fantasy VIII',
 	'FTL',
 	'Hollow Knight',
+	'Hotline Miami',
 	'Kid Chameleon',
+	'Killer Queen',
 	'Populous - The Beginning',
 	'C&C Red Alert',
 	'C&C Red Alert 2',
@@ -95,9 +100,11 @@ const videoGames = [
 	'The Talos Principle',
 	'Thief: The Dark Project',
 	'Thief 2: The Metal Age',
+	'Towerfall',
 	'Undertale',
 	'Warcraft II',
-	'Warcraft III'
+	'Warcraft III (custom scripted maps)',
+	'Zachtronics games (Schenzhen I/O, Opus Magnum, TIS-100)'
 ];
 
 export const PageLife = () => (
