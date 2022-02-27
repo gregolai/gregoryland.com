@@ -1,7 +1,5 @@
 #!/bin/bash
-git stash push --include-untracked
 git pull
-git stash drop
 npm i
 
 npm run build:prod
