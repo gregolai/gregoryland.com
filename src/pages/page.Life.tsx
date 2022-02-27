@@ -58,13 +58,27 @@ function useFetch(url: string, options = {}, dependencies = []) {
 
 const DrawingsSection = () => {
 	const { loading, error, value } = useFetch('https://static.gregoryland.com/drawings/', {}, []);
-
 	return (
 		<Section title="My Drawings">
-			{loading && <Span>Loading...</Span>}
 			{!loading && (
 				<>
 					<Span>I looked at sources and drew what I saw by hand.</Span>
+					<Flex flexWrap="wrap" gap={Space._4} pt={Space._5}>
+						{!loading && value.map((filename) => <ImgLink key={filename} filename={filename} />)}
+					</Flex>
+				</>
+			)}
+		</Section>
+	);
+};
+
+const PicsSection = () => {
+	const { loading, error, value } = useFetch('https://static.gregoryland.com/me/', {}, []);
+	return (
+		<Section title="Some pics of me">
+			{!loading && (
+				<>
+					<Span>Some of my pics</Span>
 					<Flex flexWrap="wrap" gap={Space._4} pt={Space._5}>
 						{!loading && value.map((filename) => <ImgLink key={filename} filename={filename} />)}
 					</Flex>
@@ -156,6 +170,7 @@ export const PageLife = () => (
 		</Section>
 
 		<DrawingsSection />
+		<PicsSection />
 
 		<Section title="Some of my favorite video games">
 			<Para>These games really influenced and inspired me. I could write essays on some of these.</Para>
