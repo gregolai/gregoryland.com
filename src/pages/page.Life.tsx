@@ -61,15 +61,18 @@ const DrawingsSection = () => {
 
 	return (
 		<Section title="My Drawings">
-			<Span>I looked at sources and drew what I saw by hand.</Span>
-			<Flex flexWrap="wrap" gap={Space._4} pt={Space._5}>
-				{!loading && value.map((filename) => <ImgLink key={filename} filename={filename} />)}
-			</Flex>
+			{loading && <Span>Loading...</Span>}
+			{!loading && (
+				<>
+					<Span>I looked at sources and drew what I saw by hand.</Span>
+					<Flex flexWrap="wrap" gap={Space._4} pt={Space._5}>
+						{!loading && value.map((filename) => <ImgLink key={filename} filename={filename} />)}
+					</Flex>
+				</>
+			)}
 		</Section>
 	);
 };
-
-const drawings = ['aang.png', 'aang_badass.jpeg', 'aang_happy.jpeg'];
 
 const videoGames = [
 	'Cuphead',
@@ -79,6 +82,9 @@ const videoGames = [
 	'FTL',
 	'Hollow Knight',
 	'Kid Chameleon',
+	'Populous - The Beginning',
+	'C&C Red Alert',
+	'C&C Red Alert 2',
 	'Satisfactory',
 	'Shenzhen I/O (and any Zachtronics game)',
 	'Slay the Spire',
@@ -90,34 +96,12 @@ const videoGames = [
 	'Thief: The Dark Project',
 	'Thief 2: The Metal Age',
 	'Undertale',
+	'Warcraft II',
 	'Warcraft III'
 ];
 
 export const PageLife = () => (
 	<Box p={Space._6}>
-		<Section title="Dev stuff I've learnt">
-			<Ul>
-				<Li>
-					I've learnt to be OK with teamwork and letting other people make your life easier, even if
-					it doesn't follow coding conventions you normally employ. This is critical when working
-					with large teams.
-				</Li>
-				<Li>
-					Writing things from scratch is tempting, but it's often better to build on the backs of
-					giants by using a highly dependable library instead, assuming one exists.
-				</Li>
-				<Li>
-					It's almost always better to take time on a well-designed API rather than a quick one. API
-					consumers, as well as your future self, will thank you as your projects scale.
-				</Li>
-				<Li>You may be wrong about things and that's ok.</Li>
-				<Li>
-					Separate your personal life from your work life. Leave your work at work. If you don't do
-					this, you'll burnout fast. It also makes work-time more productive.
-				</Li>
-			</Ul>
-		</Section>
-
 		<Section title="My ramblings">
 			<H4>The joy of creation</H4>
 			<Para>
@@ -141,11 +125,33 @@ export const PageLife = () => (
 				do we structure our lives to live healthily in a society.
 			</Para>
 		</Section>
+		<Section title="Dev stuff I've learnt">
+			<Ul>
+				<Li>
+					I've learnt to be OK with teamwork and letting other people make your life easier, even if
+					it doesn't follow coding conventions you normally employ. This is critical when working
+					with large teams.
+				</Li>
+				<Li>
+					Writing things from scratch is tempting, but it's often better to build on the backs of
+					giants by using a highly dependable library instead, assuming one exists.
+				</Li>
+				<Li>
+					It's almost always better to take time on a well-designed API rather than a quick one. API
+					consumers, as well as your future self, will thank you as your projects scale.
+				</Li>
+				<Li>You may be wrong about things and that's ok.</Li>
+				<Li>
+					Separate your personal life from your work life. Leave your work at work. If you don't do
+					this, you'll burnout fast. It also makes work-time more productive.
+				</Li>
+			</Ul>
+		</Section>
 
 		<DrawingsSection />
 
 		<Section title="Some of my favorite video games">
-			<Span>I love games with great soundtracks!</Span>
+			<Para>These games really influenced and inspired me. I could write essays on some of these.</Para>
 			<Ul>
 				{videoGames.map((v) => (
 					<Li key={v}>{v}</Li>
