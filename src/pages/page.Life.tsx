@@ -9,7 +9,7 @@ interface ImgLinkProps {
 	filename: string;
 }
 const ImgLink = ({ filename }: ImgLinkProps) => {
-	const href = `https://static.gregoryland.com/${filename}`;
+	const href = `https://static.gregoryland.com${filename}`;
 	return (
 		<Box as="a" href={href}>
 			<Box
@@ -57,7 +57,7 @@ function useFetch(url: string, options = {}, dependencies = []) {
 }
 
 const DrawingsSection = () => {
-	const { loading, error, value } = useFetch('https://static.gregoryland.com/drawings/', {}, []);
+	const { loading, error, value } = useFetch('https://static.gregoryland.com/drawings', {}, []);
 	return (
 		<Section title="My Drawings">
 			{!loading && (
@@ -73,7 +73,7 @@ const DrawingsSection = () => {
 };
 
 const PicsSection = () => {
-	const { loading, error, value } = useFetch('https://static.gregoryland.com/me/', {}, []);
+	const { loading, error, value } = useFetch('https://static.gregoryland.com/me', {}, []);
 	return (
 		<Section title="Some pics of me">
 			{!loading && (
