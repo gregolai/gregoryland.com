@@ -89,6 +89,8 @@ const PicsSection = () => {
 };
 
 const videoGames = [
+	'C&C Red Alert',
+	'C&C Red Alert 2',
 	'Caesar III',
 	'Crypt of the Necrodancer',
 	'Cuphead',
@@ -102,8 +104,6 @@ const videoGames = [
 	'Kid Chameleon',
 	'Killer Queen',
 	'Populous - The Beginning',
-	'C&C Red Alert',
-	'C&C Red Alert 2',
 	'Satisfactory',
 	'Shenzhen I/O (and any Zachtronics game)',
 	'Slay the Spire',
@@ -111,6 +111,7 @@ const videoGames = [
 	'Starcraft II',
 	'Subnautica',
 	'Super Meat Boy',
+	'The Curse of Monkey Island',
 	'The Talos Principle',
 	'Thief: The Dark Project',
 	'Thief 2: The Metal Age',
