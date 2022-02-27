@@ -173,7 +173,7 @@ export const PageLife = () => (
 		<PicsSection />
 
 		<Section title="Some of my favorite video games">
-			<Para>These games really influenced and inspired me. I could write essays on some of these.</Para>
+			<Span>These games really influenced and inspired me. I could write essays on some of these.</Span>
 			<Ul>
 				{videoGames.map((v) => (
 					<Li key={v}>{v}</Li>
