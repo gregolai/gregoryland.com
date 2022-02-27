@@ -1,7 +1,30 @@
 import { Box } from 'pu2/style-lib';
 import React from 'react';
-import { Frame, H3, H4, Li, Para, Span, Ul } from '../primitives';
-import { Space } from '../theme';
+import { useAsync } from 'react-use';
+import { Flex, Frame, H3, H4, Li, Para, Span, Ul } from '../primitives';
+import { Breakpoint, mediaLessThan, Space } from '../theme';
+
+// TODO: Consolidate this with the thumbs in page.Projects.tsx
+interface ImgLinkProps {
+	filename: string;
+}
+const ImgLink = ({ filename }: ImgLinkProps) => {
+	const href = `https://static.gregoryland.com/${filename}`;
+	return (
+		<Box as="a" href={href}>
+			<Box
+				as="img"
+				h="120px"
+				src={`${href}?w=256`}
+				css={{
+					[mediaLessThan(Breakpoint.tablet)]: {
+						h: '80px'
+					}
+				}}
+			/>
+		</Box>
+	);
+};
 
 interface SectionProps {
 	children: React.ReactNode;
@@ -19,6 +42,34 @@ const Section = ({ children, title }: SectionProps) => (
 		{children}
 	</Frame>
 );
+
+// From Web Dev Simplified
+const DEFUALT_OPTIONS = {
+	headers: { 'Content-Type': 'application/json' }
+};
+function useFetch(url: string, options = {}, dependencies = []) {
+	return useAsync(() => {
+		return fetch(url, { ...DEFUALT_OPTIONS, ...options }).then((res) => {
+			if (res.ok) return res.json();
+			return res.json().then((json) => Promise.reject(json));
+		});
+	}, dependencies);
+}
+
+const DrawingsSection = () => {
+	const { loading, error, value } = useFetch('https://static.gregoryland.com/drawings/', {}, []);
+
+	return (
+		<Section title="My Drawings">
+			<Span>I looked at sources and drew what I saw by hand.</Span>
+			<Flex flexWrap="wrap" gap={Space._4} pt={Space._5}>
+				{!loading && value.map((filename) => <ImgLink key={filename} filename={filename} />)}
+			</Flex>
+		</Section>
+	);
+};
+
+const drawings = ['aang.png', 'aang_badass.jpeg', 'aang_happy.jpeg'];
 
 const videoGames = [
 	'Cuphead',
@@ -90,6 +141,8 @@ export const PageLife = () => (
 				do we structure our lives to live healthily in a society.
 			</Para>
 		</Section>
+
+		<DrawingsSection />
 
 		<Section title="Some of my favorite video games">
 			<Span>I love games with great soundtracks!</Span>
