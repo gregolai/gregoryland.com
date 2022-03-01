@@ -67,7 +67,8 @@ export const WorkExperience = (props: BoxProps) => (
 				components that were used throughout the Squarespace platform by various other teams.
 				Delivering a solid API, style guide, compositional patterns, and documentation was very
 				imporant. I learnt teamwork, humbleness, good coding practices, reasons for design decisions,
-				and how to write meaningful pull requests.
+				and how to write meaningful pull requests. I've been blessed to have such a knowledgable and
+				passionate team lead.
 			</JobSummary>
 			<Box>
 				<JobBullet>
