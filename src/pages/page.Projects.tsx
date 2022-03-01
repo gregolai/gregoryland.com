@@ -69,10 +69,7 @@ const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 					</LinkButton>
 				)}
 				{github && (
-					<LinkButton
-						newTab
-						to={github}
-					>
+					<LinkButton newTab to={github}>
 						<Icon as={AiFillGithub} mr={Space._5} />
 						<Span>View code</Span>
 					</LinkButton>
@@ -93,7 +90,8 @@ const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 export const PageProjects = () => (
 	<Box p={Space._6}>
 		<Project github="https://github.com/gregolai/gregoryland.com" title="gregoryland.com">
-			A mobile-friendly website built using a my custom style lib and server-side rendering. You're looking at it right now.
+			A mobile-friendly website built using a my custom style lib and server-side rendering. You're
+			looking at it right now.
 		</Project>
 		<Project github="https://github.com/gregolai/pu2/tree/master/src/style-lib" title="Style Lib">
 			(Yet another) CSS-in-JS styling library I wrote. It's being used on this site.
@@ -123,7 +121,8 @@ export const PageProjects = () => (
 			playSrc="https://gregoryland.com/projects/warnew/"
 			title="War Game"
 		>
-			A little Warcraft 2 clone I started working on.
+			A little Warcraft 2 clone I started working on. Scope creep killed the project, but I did manage
+			to get a crude TCP-based multiplayer version working at one point.
 		</Project>
 		<Project
 			github="https://github.com/gregolai/starfield-demo"
@@ -153,7 +152,11 @@ export const PageProjects = () => (
 			title="CmdTool"
 		>
 			My friend and I had an idea for a tool to visualize command-line (CLI) commands as graphical (GUI)
-			equivalents. It was one of my first web projects. Kinda like a command-line wikipedia.
+			equivalents. It was one of my first full-stack web projects, utilizing MySQL, PHP, and Javascript.
+		</Project>
+		<Project title="Flash Card Site">
+			A site for creating flashcards that reinforces the things you get wrong more often. It was a
+			little idea I put some work into where I learned MySQL, PHP, and Javascript.
 		</Project>
 		<Project
 			github="https://github.com/gregolai/Icosphere"

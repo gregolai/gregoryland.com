@@ -73,7 +73,7 @@ export const WorkExperience = (props: BoxProps) => (
 				<JobBullet>
 					Reasoning about various trade-offs and implementation details that come with exposing an
 					API to consumers. Simplicity vs flexibility; Readability vs perforamnce; Building our own
-					X vs using a 3rd party library.
+					vs using a 3rd party library.
 				</JobBullet>
 				<JobBullet>
 					We used Jest for our unit tests. Cypress and Puppeteer for our integration tests.
