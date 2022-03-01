@@ -53,11 +53,11 @@ export const externalLinks: NavLink[] = [
 		newTab: true,
 		to: 'https://linkedin.com/in/gregolai',
 		Icon: AiFillLinkedin
-	},
-	{
-		label: 'IG',
-		newTab: true,
-		to: 'https://instagram.com/gregolai',
-		Icon: AiFillInstagram
 	}
+	// {
+	// 	label: 'IG',
+	// 	newTab: true,
+	// 	to: 'https://instagram.com/gregolai',
+	// 	Icon: AiFillInstagram
+	// }
 ];
