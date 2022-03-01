@@ -3,6 +3,7 @@ import { AiFillGithub, AiOutlineHome, AiFillInstagram, AiFillLinkedin } from 're
 import { FaRegKeyboard } from 'react-icons/fa';
 import { BiBuildings } from 'react-icons/bi';
 import { GiEnergyBreath } from 'react-icons/gi';
+import { MdOutlineEmail } from 'react-icons/md';
 
 export interface NavLink {
 	label: string;
@@ -35,6 +36,12 @@ export const internalLinks: NavLink[] = [
 ];
 
 export const externalLinks: NavLink[] = [
+	{
+		label: 'Email',
+		newTab: false,
+		to: 'mailto:gregolai@gmail.com?subject=Hey Greg',
+		Icon: MdOutlineEmail
+	},
 	{
 		label: 'Github',
 		newTab: true,
