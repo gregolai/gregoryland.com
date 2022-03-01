@@ -2,26 +2,26 @@ import React from 'react';
 import { Box } from 'pu2/style-lib';
 import { Flex } from '../primitives';
 import { Space } from './resume-theme';
-import { ContactInfoPrint, Education, NameAndRole, ProfileImage, Skills, WorkExperience } from './sections';
+import { ContactInfo, Education, NameAndRole, Skills, WorkExperience } from './sections';
 import { ResumeFrame } from './ResumeFrame';
+import { MediumHeading, NameHeading } from './sections/_primitives';
 
 export const ResumePrint = () => (
 	<ResumeFrame>
-		<Flex alignItems="flex-start" justifyContent="space-between">
-			<Box pb={Space._38px}>
-				<NameAndRole />
+		<Flex alignItems="stretch">
+			<Box flex="1">
+				<NameHeading display="inline-block">Gregory</NameHeading>
+				<NameHeading display="inline-block" fontWeight="600" pl={Space._18px}>
+					Dalton
+				</NameHeading>
+				<MediumHeading pt={Space._18px}>Software Engineer</MediumHeading>
 			</Box>
-			<Box flex="1" pl={Space._30px}>
-				<Flex pb={Space._38px} justifyContent="space-between">
-					<ContactInfoPrint.Email flex="1" />
-					<ContactInfoPrint.Website flex="1" pl={Space._30px} />
-				</Flex>
-				<Flex>
-					<Education flex="1" />
-					<Skills flex="1" pl={Space._30px} />
-				</Flex>
-			</Box>
+			<ContactInfo px="0px" py="0px" />
 		</Flex>
-		<WorkExperience />
+		<Flex pt={Space._30px}>
+			<Skills flex="1" />
+			<Education flex="1" pl={Space._30px} />
+		</Flex>
+		<WorkExperience pt={Space._30px} />
 	</ResumeFrame>
 );

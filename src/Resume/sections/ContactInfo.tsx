@@ -18,10 +18,7 @@ export const ContactInfo = (props: BoxProps) => (
 		css={{
 			[mediaPrint()]: {
 				bg: 'white',
-				color: 'black',
-				flexDirection: 'row',
-				px: '0px',
-				py: '0px'
+				color: Palette.darkest
 			}
 		}}
 	>
@@ -43,6 +40,10 @@ export const ContactInfo = (props: BoxProps) => (
 				bb="2px solid white"
 				py={Space._18px}
 				css={{
+					[mediaPrint()]: {
+						py: Space._8px,
+						bb: 'none'
+					},
 					':first-of-type': { pt: '0px' },
 					':last-of-type': { bb: 'none', pb: '0px' }
 				}}

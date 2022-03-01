@@ -44,7 +44,7 @@ interface JobBulletProps {
 	children: React.ReactNode;
 }
 const JobBullet = ({ children }: JobBulletProps) => (
-	<Flex alignItems="center" pt={Space._8px}>
+	<Flex alignItems="center" pt={Space._8px} breakInside="avoid">
 		<HR w={Space._18px} />
 		<Para flex="1" pl={Space._18px}>
 			{children}
@@ -102,7 +102,7 @@ export const WorkExperience = (props: BoxProps) => (
 			/>
 			<JobSummary>
 				I was responsible for working with Agorafy's backend team in creating a CMS for viewing and
-				editing real-estate listings. Everyone left after the company went bankrupt.
+				editing real-estate listings. Everyone left after the company dissolved.
 			</JobSummary>
 			<Box>
 				<JobBullet>Daily stand-ups with the backend team in synchronizing our REST API.</JobBullet>

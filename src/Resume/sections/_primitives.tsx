@@ -49,7 +49,7 @@ export const MediumHeading = (props: BoxProps) => (
 	<Box
 		color={Palette.darkest}
 		{...props}
-		fontSize={FontSize._18px}
+		fontSize={FontSize._20px}
 		fontWeight="700"
 		letterSpacing={LetterSpacing._4px}
 		textTransform="uppercase"
@@ -80,7 +80,7 @@ export const SectionFrame = ({ title, children, ...rest }: SectionFrameProps) =>
 	<Box {...rest}>
 		<MediumHeading>{title}</MediumHeading>
 		<Box
-			pt={Space._18px}
+			pt={Space._12px}
 			css={{
 				[mediaLessThan(Breakpoint.tablet)]: {
 					pt: Space._8px

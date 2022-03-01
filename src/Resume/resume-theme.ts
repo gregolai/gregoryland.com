@@ -10,7 +10,7 @@ export const enum Space {
 
 export const enum FontSize {
 	_14px = '14px',
-	_18px = '18px',
+	_20px = '20px',
 	_39px = '39px'
 }
 
@@ -29,6 +29,5 @@ export const enum Palette {
 	darker = '#6F6F6F',
 	dark = '#808080',
 	light = '#A9A9A9',
-	lighter = '#D3D3D3',
-	bg = '#FAFAFA'
+	lighter = '#D3D3D3'
 }

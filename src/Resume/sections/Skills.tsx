@@ -1,7 +1,8 @@
 import React from 'react';
 import { Palette, Space } from '../resume-theme';
+import { Box } from 'pu2/style-lib';
 import type { BoxProps } from 'pu2/style-lib/browser/Box';
-import { SectionFrame, SmallHeading } from './_primitives';
+import { SectionFrame, SubHeading } from './_primitives';
 
 const skills = [
 	{ name: 'Javascript' },
@@ -15,15 +16,9 @@ const skills = [
 export const Skills = (props: BoxProps) => (
 	<SectionFrame {...props} title="Skills">
 		{skills.map((skill) => (
-			<SmallHeading
-				key={skill.name}
-				display="inline-block"
-				color={Palette.darkest}
-				mr={Space._18px}
-				mb={Space._4px}
-			>
+			<SubHeading key={skill.name} display="inline-block" color={Palette.darkest} mr={Space._18px}>
 				{skill.name}
-			</SmallHeading>
+			</SubHeading>
 		))}
 	</SectionFrame>
 );
