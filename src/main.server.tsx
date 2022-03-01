@@ -54,16 +54,6 @@ const renderSSR = ({ appHtml, styleHtml }: any) => `
 	<style>${cssReset}</style>
 	${styleHtml}
 	<script defer type="text/javascript" src="${manifest['main.client.tsx']}"></script>
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-42WLPYC2FE"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	
-	  gtag('config', 'G-42WLPYC2FE');
-	</script>
 </head>
 <body><div id="root">${appHtml}</div></body>
 </html>
