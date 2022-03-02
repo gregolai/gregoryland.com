@@ -58,7 +58,7 @@ export const Links = ({ ...rest }: BoxProps) => {
 					</Box>
 					<H3
 						whiteSpace="nowrap"
-						py={Space._1}
+						py={Space._3}
 						px={Space._7}
 						css={{
 							background: 'white',
