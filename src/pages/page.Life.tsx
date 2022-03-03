@@ -99,9 +99,10 @@ const videoGames = [
 	'Hotline Miami',
 	'Kid Chameleon',
 	'Killer Queen',
+	'Opus Magnum',
 	'Populous - The Beginning',
 	'Satisfactory',
-	'Shenzhen I/O (and any Zachtronics game)',
+	'Shenzhen I/O',
 	'Slay the Spire',
 	'Starcraft',
 	'Starcraft II',
@@ -113,14 +114,14 @@ const videoGames = [
 	'Thief 2: The Metal Age',
 	'Towerfall',
 	'Undertale',
+	'Unreal Tournament 2004',
 	'Warcraft II',
-	'Warcraft III (custom scripted maps)',
-	'Zachtronics games (Schenzhen I/O, Opus Magnum, TIS-100)'
+	'Warcraft III (custom scripted maps)'
 ];
 
 export const PageLife = () => (
 	<Box p={Space._6}>
-		<Section title="My ramblings">
+		{/* <Section title="My ramblings">
 			<H4>The joy of creation</H4>
 			<Para>
 				I have deep respect for people who build things themselves. There's something about owning
@@ -164,13 +165,13 @@ export const PageLife = () => (
 					this, you'll burnout fast. It also makes work-time more productive.
 				</Li>
 			</Ul>
-		</Section>
+		</Section> */}
 
 		<DrawingsSection />
 		<PicsSection />
 
 		<Section title="Some of my favorite video games">
-			<Span>These games really influenced and inspired me. I could write essays on some of these.</Span>
+			<Span>These games influenced and inspired me.</Span>
 			<Ul>
 				{videoGames.map((v) => (
 					<Li key={v}>{v}</Li>
