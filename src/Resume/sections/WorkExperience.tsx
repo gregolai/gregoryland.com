@@ -7,32 +7,27 @@ import { HR, Para, SectionFrame, SmallHeading, SubHeading } from './_primitives'
 
 interface JobProps {
 	children: React.ReactNode;
-}
-const Job = ({ children }: JobProps) => (
-	<Box pt={Space._18px} css={{ ':first-of-type': { pt: '0px' } }}>
-		{children}
-	</Box>
-);
-
-interface JobHeadProps {
-	title: string;
+	city: string;
 	from: string;
+	title: string;
 	to: string;
 	where: string;
-	city: string;
 }
-const JobHead = ({ title, from, to, where, city }: JobHeadProps) => (
-	<>
-		<Flex justifyContent="space-between">
-			<SmallHeading>{title}</SmallHeading>
-			<SmallHeading>
-				{from} - {to}
-			</SmallHeading>
-		</Flex>
-		<SubHeading>
-			{where} | {city}
-		</SubHeading>
-	</>
+const Job = ({ title, from, to, where, city, children }: JobProps) => (
+	<Box pt={Space._18px} css={{ ':first-of-type': { pt: '0px' } }}>
+		<Box breakInside="avoid">
+			<Flex justifyContent="space-between">
+				<SmallHeading>{title}</SmallHeading>
+				<SmallHeading>
+					{from} - {to}
+				</SmallHeading>
+			</Flex>
+			<SubHeading>
+				{where} | {city}
+			</SubHeading>
+		</Box>
+		{children}
+	</Box>
 );
 
 interface JobSummaryProps {
@@ -54,114 +49,115 @@ const JobBullet = ({ children }: JobBulletProps) => (
 
 export const WorkExperience = (props: BoxProps) => (
 	<SectionFrame {...props} title="Work Experience">
-		<Job>
-			<JobHead
-				city="New York, NY"
-				from="May 2017"
-				to="January 2021"
-				title="Software Engineer"
-				where="Squarespace"
-			/>
+		<Job
+			city="New York, NY"
+			from="May 2017"
+			to="January 2021"
+			title="Software Engineer"
+			where="Squarespace"
+		>
 			<JobSummary>
-				I worked on the Squarespace Design Platform team. I wrote many React and React-Native
-				components that were used throughout the Squarespace platform by various other teams.
-				Delivering a solid API, style guide, compositional patterns, and documentation was very
-				imporant. I learnt teamwork, humbleness, good coding practices, reasons for design decisions,
-				and how to write meaningful pull requests. I've been blessed to have such a knowledgable and
-				passionate team lead.
+				I worked on Squarespace's Design Platform team to develop high quality, aesthetically
+				pleasing, well tested and documented components used throughout Squarespace products. Exposing
+				an intuitive and flexible API, along with good documentation, was critical to minimizing the
+				friction others could have when using our library. I'm honored to have been part of such a
+				talented team that gave me perspective on the challenges of large-scale software development.
 			</JobSummary>
 			<Box>
 				<JobBullet>
-					Reasoning about various trade-offs and implementation details that come with exposing an
-					API to consumers. Simplicity vs flexibility; Readability vs perforamnce; Building our own
-					vs using a 3rd party library.
+					We built React and React-Native components using compositional patterns and a design
+					system.
 				</JobBullet>
 				<JobBullet>
-					We used Jest for our unit tests. Cypress and Puppeteer for our integration tests.
+					Good documentation via a Gatsby site became increasingly important as more teams opted to
+					use our components.
 				</JobBullet>
 				<JobBullet>
-					Collaborated with teams using our components to understand their needs. This involved
-					managing NPM packages, user experience, accessibility, and intuitive design.
+					Feature migration and refactoring using AST-based codemod scripts, which transformed code
+					from one shape into another.
 				</JobBullet>
 				<JobBullet>
-					I wrote codemods using an abstract-syntax-tree library and test-driven techniques to help
-					consumers migrate API features.
+					Integration and unit testing using Cypress and Jest/Puppeteer. Similar to writing good
+					documentation, the importance of these became apparent as our library evolved.
 				</JobBullet>
 				<JobBullet>
-					I was part of a multi-team effort to expand our CMS to a mobile-browser experience.
+					Understanding tradeoffs that may not seem evident initially - e.g. simplicity vs
+					flexibility, readability vs performance, using a 3rd party tool vs building one your own.
+				</JobBullet>
+				<JobBullet>
+					Cross-team collaboration to evolve our CMS into a mobile-web friendly experience.
+					Discussions were had around how to best manage NPM packages, user experience,
+					accessibility, and intuitive design.
+				</JobBullet>
+				<JobBullet>I learned to write human-readable, meaningful pull requests.</JobBullet>
+				<JobBullet>
+					Understanding the importance of humility and recognizing the strengths and weaknesses of
+					myself and others.
 				</JobBullet>
 			</Box>
 		</Job>
-		<Job>
-			<JobHead
-				city="New York, NY"
-				from="December 2016"
-				to="May 2017"
-				title="Frontend Engineer"
-				where="Agorafy"
-			/>
+		<Job city="New York, NY" from="December 2016" to="May 2017" title="Frontend Engineer" where="Agorafy">
 			<JobSummary>
-				I was responsible for working with Agorafy's backend team in creating a CMS for viewing and
-				editing real-estate listings. Everyone left after the company dissolved.
+				I was the primary frontend developer at Agorafy. I worked with the backend team in creating a
+				CMS for viewing and editing real-estate listings. The company dissolved and everyone left.
 			</JobSummary>
 			<Box>
-				<JobBullet>Daily stand-ups with the backend team in synchronizing our REST API.</JobBullet>
 				<JobBullet>
-					This was my first job building a website using React and React Redux, before React had a
-					decent Context API.
+					I had learnt some React and Redux on my own prior to this and was eager to learn more. My
+					first job with proper backend/frontend specialization roles. Daily standups kept us
+					in-sync.
+				</JobBullet>
+				<JobBullet>
+					I built a frontend that communicated with a GraphQL API in a Docker container.
 				</JobBullet>
 			</Box>
 		</Job>
-		<Job>
-			<JobHead
-				city="New York, NY"
-				from="January 2015"
-				to="April 2016"
-				title="Full-stack Engineer"
-				where="YouVisit"
-			/>
+		<Job
+			city="New York, NY"
+			from="January 2015"
+			to="April 2016"
+			title="Full-stack Engineer"
+			where="YouVisit"
+		>
 			<JobSummary>
 				YouVisit was a company that built 3D virtual tours, mostly for college campuses. Most of my
-				responsibilities revolved around our CMS, where our clients could sign in and customize their
-				tours.
+				responsibilities were writing CMS features that our clients could access.
 			</JobSummary>
 			<Box>
 				<JobBullet>
-					Required considerations to be made for both desktop and mobile platforms. We used
-					BrowserStack to test on different devices.
+					There was a heavy emphasis on generating HTML, and sometimes Javascript/jQuery,
+					dynamically using PHP and MySQL.
 				</JobBullet>
-				<JobBullet>I wrote code using PHP, MySQL, jQuery, and a little NodeJS.</JobBullet>
+				<JobBullet>We used BrowserStack to test desktop and mobile functionality.</JobBullet>
 				<JobBullet>
 					I organized and aggregated large-scale metrics of visitor data into useful formats for our
 					clients to download.
 				</JobBullet>
 				<JobBullet>
-					I built a client tool using the JS Geolocation API to aggregate mobile device locations
-					into walk paths and tour hotspots. For this, I used websockets and wrote a NodeJS backend
-					for batching inserts into our SQL database. The Google Maps API was used on the frontend.
+					I built a tool using Google Maps and the Geolocation API to aggregate mobile device
+					locations into visitor paths and hotspots. The location data streamed from a websocket to
+					a NodeJS server that would periodically batch-insert data into our MySQL database.
 				</JobBullet>
 				<JobBullet>
-					I built a custom library for A/B testing. Our future product decisions would depend on the
+					I built a small library for A/B testing. Our future product decisions would depend on the
 					quality of the data gathered using it.
 				</JobBullet>
-				<JobBullet>I designed some CMS features that would be available to our clients.</JobBullet>
 				<JobBullet>
-					I worked on embedding tours into 3rd party websites with JSONP and iframes.
+					I worked on functionality that allowed tours to be embedded into 3rd party websites using
+					iframes with JSONP.
 				</JobBullet>
 			</Box>
 		</Job>
-		<Job>
-			<JobHead
-				city="New York, NY"
-				from="August 2014"
-				to="December 2014"
-				title="Junior Web Developer"
-				where="M&M Environmental"
-			/>
+		<Job
+			city="New York, NY"
+			from="August 2014"
+			to="December 2014"
+			title="Junior Web Developer"
+			where="M&M Environmental"
+		>
 			<JobSummary>
-				This was my first actual programming job, where I worked as a sole developer for a pest
-				control company on things relating to improving internal business operations. I developed
-				using PHP, MySQL, and Javascript.
+				This was my first programming job. I was the sole developer on tools for improving internal
+				business operations. I furthered my knowledge of PHP, MySQL, and Javascript.
 			</JobSummary>
 			<Box>
 				<JobBullet>
@@ -172,16 +168,16 @@ export const WorkExperience = (props: BoxProps) => (
 					proximity to their scheduled appointments.
 				</JobBullet>
 				<JobBullet>
-					I built a beautiful Yelp review scraper (for our own business) that would collect recent
-					reviews so we could attempt to remedy any dissatisfied customers.
+					I built a beautiful Yelp review scraper for M&M Environmental that would collect recent
+					reviews so we could attempt to remedy and maintain a high customer satisfaction.
 				</JobBullet>
 				<JobBullet>
 					I built a Wordpress portal for viewing schedule calendars, technician locations, and Yelp
 					reviews, as mentioned above.
 				</JobBullet>
 				<JobBullet>
-					I set up a CRON task that would email our staff about technician schedules and recent Yelp
-					reviews.
+					I set up a CRON task that would periodically email our staff about technician schedules
+					and recent Yelp reviews.
 				</JobBullet>
 			</Box>
 		</Job>
