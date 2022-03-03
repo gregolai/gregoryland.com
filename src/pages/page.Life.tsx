@@ -43,13 +43,12 @@ const Section = ({ children, title }: SectionProps) => (
 	</Frame>
 );
 
-// From Web Dev Simplified
-const DEFUALT_OPTIONS = {
-	headers: { 'Content-Type': 'application/json' }
-};
 function useFetch(url: string, options = {}, dependencies = []) {
 	return useAsync(() => {
-		return fetch(url, { ...DEFUALT_OPTIONS, ...options }).then((res) => {
+		return fetch(url, {
+			headers: { 'Content-Type': 'application/json' },
+			...options
+		}).then((res) => {
 			if (res.ok) return res.json();
 			return res.json().then((json) => Promise.reject(json));
 		});
@@ -77,12 +76,9 @@ const PicsSection = () => {
 	return (
 		<Section title="Some pics of me">
 			{!loading && (
-				<>
-					<Span>Some of my pics</Span>
-					<Flex flexWrap="wrap" gap={Space._4} pt={Space._5}>
-						{!loading && value.map((filename) => <ImgLink key={filename} filename={filename} />)}
-					</Flex>
-				</>
+				<Flex flexWrap="wrap" gap={Space._4} pt={Space._5}>
+					{!loading && value.map((filename) => <ImgLink key={filename} filename={filename} />)}
+				</Flex>
 			)}
 		</Section>
 	);
