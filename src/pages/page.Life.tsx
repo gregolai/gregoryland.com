@@ -60,12 +60,9 @@ const DrawingsSection = () => {
 	return (
 		<Section title="My Drawings">
 			{!loading && (
-				<>
-					<Span>I looked at sources and drew what I saw by hand.</Span>
-					<Flex flexWrap="wrap" gap={Space._4} pt={Space._5}>
-						{!loading && value.map((filename) => <ImgLink key={filename} filename={filename} />)}
-					</Flex>
-				</>
+				<Flex flexWrap="wrap" gap={Space._4} pt={Space._5}>
+					{!loading && value.map((filename) => <ImgLink key={filename} filename={filename} />)}
+				</Flex>
 			)}
 		</Section>
 	);
