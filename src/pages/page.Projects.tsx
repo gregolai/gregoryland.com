@@ -28,12 +28,13 @@ const ImgLink = ({ filename }: ImgLinkProps) => {
 
 interface ProjectProps {
 	children: React.ReactNode;
+	date?: string;
 	github?: string;
 	imgs?: string[];
 	playSrc?: string;
 	title: string;
 }
-const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
+const Project = ({ children, date, github, imgs, playSrc, title }: ProjectProps) => (
 	<Frame
 		b="2px solid black"
 		mt={Space._6}
@@ -53,7 +54,10 @@ const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 				}
 			}}
 		>
-			<H3>{title}</H3>
+			<Box>
+				<H3>{title}</H3>
+				{date && <Span>{date}</Span>}
+			</Box>
 			<Flex
 				alignItems="stretch"
 				gap={Space._5}
@@ -89,17 +93,24 @@ const Project = ({ children, github, imgs, playSrc, title }: ProjectProps) => (
 
 export const PageProjects = () => (
 	<Box p={Space._6}>
-		<Project github="https://github.com/gregolai/gregoryland.com" title="gregoryland.com">
+		<Project date="2022" github="https://github.com/gregolai/gregoryland.com" title="gregoryland.com">
 			A mobile-friendly website built using a my custom style lib and server-side rendering. You're
 			looking at it right now.
 		</Project>
-		<Project github="https://github.com/gregolai/pu2/tree/master/src/style-lib" title="Style Lib">
-			(Yet another) CSS-in-JS styling library I wrote. It's being used on this site.
+		<Project
+			date="2022"
+			github="https://github.com/gregolai/pu2/tree/master/src/style-lib"
+			title="Style Lib"
+		>
+			A small CSS-in-JS styling library I wrote. It generates CSS classes on-the-fly so you can remain
+			focused on the code in front of you, rather than in a separate css file. It's being used on this
+			site.
 		</Project>
-		<Project github="https://github.com/gregolai/animator" title="Squarespace Animator">
-			A project I worked on during "hack week" at Squarespace. It's a CSS animation tool.
+		<Project date="2019" github="https://github.com/gregolai/animator" title="Squarespace Animator">
+			A CSS animation tool I worked on during "hack week" at Squarespace.
 		</Project>
 		<Project
+			date="2017"
 			github="https://github.com/gregolai/snek"
 			imgs={['snek1.png']}
 			playSrc="https://gregoryland.com/projects/snek/"
@@ -108,23 +119,27 @@ export const PageProjects = () => (
 			A small snake game I wrote for my hiring process at Squarespace.
 		</Project>
 		<Project
+			date="2017"
 			github="https://github.com/gregolai/vimeo-player"
 			imgs={['html5-player1.png', 'html5-player2.png']}
 			playSrc="https://gregoryland.com/projects/vimeo-player/"
 			title="HTML5 Vimeo Player"
 		>
-			I wrote this for a Vimeo interview. I learned a lot about the HTML5 video API.
+			A small demo I made for a Vimeo interview that uses a custom inferface with the HTML5 Video API.
 		</Project>
 		<Project
+			date="2012-2016"
 			github="https://github.com/gregolai/warnew"
 			imgs={['war1.png', 'war2.png']}
 			playSrc="https://gregoryland.com/projects/warnew/"
 			title="War Game"
 		>
-			A little Warcraft 2 clone I started working on. Scope creep killed the project, but I did manage
-			to get a crude TCP-based multiplayer version working at one point.
+			A little Warcraft 2 clone I worked on several times throughout my life. An over-ambitious scope
+			killed the project, but I did manage to get a crude TCP-based multiplayer version working at one
+			point.
 		</Project>
 		<Project
+			date="2012"
 			github="https://github.com/gregolai/starfield-demo"
 			imgs={['starfield-as-1.png', 'starfield-js-1.png']}
 			playSrc="https://gregoryland.com/projects/starfield-js/"
@@ -133,6 +148,7 @@ export const PageProjects = () => (
 			A couple of star field projects using ActionScript, then Javascript.
 		</Project>
 		<Project
+			date="2012"
 			github="https://github.com/gregolai/canvas-masking-demo"
 			imgs={['masking.png']}
 			playSrc="https://gregoryland.com/projects/masking/"
@@ -141,6 +157,7 @@ export const PageProjects = () => (
 			A little JS canvas masking demo.
 		</Project>
 		<Project
+			date="2012"
 			imgs={[
 				'cmdtool1.png',
 				'cmdtool2.png',
@@ -152,13 +169,15 @@ export const PageProjects = () => (
 			title="CmdTool"
 		>
 			My friend and I had an idea for a tool to visualize command-line (CLI) commands as graphical (GUI)
-			equivalents. It was one of my first full-stack web projects, utilizing MySQL, PHP, and Javascript.
+			equivalents. It was one of my first full-stack web projects where I learnt MySQL, PHP, and
+			Javascript.
 		</Project>
-		<Project title="Flash Card Site">
+		<Project date="2011" title="Flash Card Site">
 			A site for creating flashcards that reinforces the things you get wrong more often. It was a
-			little idea I put some work into where I learned MySQL, PHP, and Javascript.
+			little idea where I learned MySQL, PHP, and Javascript.
 		</Project>
 		<Project
+			date="2010"
 			github="https://github.com/gregolai/Icosphere"
 			imgs={['ico-lod0-1.png', 'ico-lod5-1.png']}
 			title="IcoSphere"
@@ -166,12 +185,13 @@ export const PageProjects = () => (
 			An icosahedron that can be subdivided.
 		</Project>
 		<Project
+			date="2010"
 			github="https://github.com/gregolai/CatGame"
 			imgs={['catgame1.png', 'catgame2.png']}
 			title="Cat Game"
 		>
-			The start of a game where you play as a cat that sneaks around the neighborhood stealing things
-			and completing missions.
+			The start of a C++/OpenGL game where you play as a cat that sneaks around the neighborhood
+			stealing things and completing missions.
 		</Project>
 	</Box>
 );

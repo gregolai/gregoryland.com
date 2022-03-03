@@ -42,6 +42,22 @@ ul {
 }
 `;
 
+const renderPanelbear = () =>
+	__DEV__
+		? ''
+		: `
+	<!-- Panelbear -->
+	<script async src="https://cdn.panelbear.com/analytics.js?site=DUjjzlAXTGz"></script>
+	<script>
+		window.panelbear = window.panelbear || function() { (window.panelbear.q = window.panelbear.q || []).push(arguments); };
+		panelbear('config', {
+			site: 'DUjjzlAXTGz',
+			spaMode: 'history',
+			debug: ${__DEV__ ? 'true' : 'false'}
+		});
+	</script>
+`;
+
 const renderSSR = ({ appHtml, styleHtml }: any) => `
 <!DOCTYPE html>
 <html lang="en">
@@ -54,17 +70,7 @@ const renderSSR = ({ appHtml, styleHtml }: any) => `
 	<style>${cssReset}</style>
 	${styleHtml}
 	<script defer type="text/javascript" src="${manifest['main.client.tsx']}"></script>
-
-	<!-- Panelbear -->
-	<script async src="https://cdn.panelbear.com/analytics.js?site=DUjjzlAXTGz"></script>
-	<script>
-		window.panelbear = window.panelbear || function() { (window.panelbear.q = window.panelbear.q || []).push(arguments); };
-		panelbear('config', {
-			site: 'DUjjzlAXTGz',
-			spaMode: 'history',
-			debug: ${__DEV__ ? 'true' : 'false'}
-		});
-	</script>
+	${renderPanelbear()}
 </head>
 <body><div id="root">${appHtml}</div></body>
 </html>
