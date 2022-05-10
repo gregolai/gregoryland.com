@@ -14,8 +14,8 @@ interface JobProps {
 	where: string;
 }
 const Job = ({ title, from, to, where, city, children }: JobProps) => (
-	<Box pt={Space._18px} css={{ ':first-of-type': { pt: '0px' } }}>
-		<Box breakInside="avoid">
+	<Box breakInside="avoid" pt={Space._18px} css={{ ':first-of-type': { pt: '0px' } }}>
+		<Box>
 			<Flex justifyContent="space-between">
 				<SmallHeading>{title}</SmallHeading>
 				<SmallHeading>
